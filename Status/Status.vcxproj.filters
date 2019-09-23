@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{D9D6E242-F8AF-46E4-B9FD-80ECBC20BA3E}</UniqueIdentifier>
+      <Extensions>qrc;*</Extensions>
+      <ParseFiles>false</ParseFiles>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{D9D6E242-F8AF-46E4-B9FD-80ECBC20BA3E}</UniqueIdentifier>
+      <Extensions>qrc;*</Extensions>
+      <ParseFiles>false</ParseFiles>
+    </Filter>
+    <Filter Include="Core">
+      <UniqueIdentifier>{40a22ff7-cedf-4c10-8acc-9c6de6d97afb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\View">
+      <UniqueIdentifier>{1eb48215-9285-405d-b88b-1fec8c335f50}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\View\Compoent">
+      <UniqueIdentifier>{584dfcb6-f074-4dd9-9f0c-3b87a522a4b2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\View\Window">
+      <UniqueIdentifier>{ae3e32c7-584b-4042-84e6-6eea45160e48}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\Ui">
+      <UniqueIdentifier>{e980361d-d650-40d6-b728-f5a6738e3ed3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\Controller">
+      <UniqueIdentifier>{d9aefa93-e553-49a2-9140-a09288d01f3c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\Controller\Transport">
+      <UniqueIdentifier>{f7132147-5472-46fe-8f56-76c1b1ad68a9}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <QtRcc Include="Status.qrc">
+      <Filter>Resource Files</Filter>
+    </QtRcc>
+  </ItemGroup>
+  <ItemGroup>
+    <QtUic Include="Resources\ui\Status.ui">
+      <Filter>Resource Files\Ui</Filter>
+    </QtUic>
+    <QtUic Include="Resources\ui\teacher_course_widget.ui">
+      <Filter>Resource Files\Ui</Filter>
+    </QtUic>
+    <QtUic Include="Resources\ui\teacher_interaction_widget.ui">
+      <Filter>Resource Files\Ui</Filter>
+    </QtUic>
+    <QtUic Include="Resources\ui\teacher_main_window.ui">
+      <Filter>Resource Files\Ui</Filter>
+    </QtUic>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Core\View\Window\teacher_course_widget.cpp">
+      <Filter>Core\View\Window</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\View\Window\teacher_interaction_widget.cpp">
+      <Filter>Core\View\Window</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\View\Window\teacher_main_window.cpp">
+      <Filter>Core\View\Window</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\View\Component\component.cpp">
+      <Filter>Core\View\Compoent</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="Core\Controller\Transport\socket.cpp">
+      <Filter>Core\Controller\Transport</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\Controller\Transport\http_request.cpp">
+      <Filter>Core\Controller\Transport</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="Core\View\Window\teacher_course_widget.h">
+      <Filter>Core\View\Window</Filter>
+    </QtMoc>
+    <QtMoc Include="Core\View\Window\teacher_interaction_widget.h">
+      <Filter>Core\View\Window</Filter>
+    </QtMoc>
+    <QtMoc Include="Core\View\Window\teacher_main_window.h">
+      <Filter>Core\View\Window</Filter>
+    </QtMoc>
+    <QtMoc Include="Core\View\Component\component.h">
+      <Filter>Core\View\Compoent</Filter>
+    </QtMoc>
+    <QtMoc Include="Core\Controller\Transport\socket.h">
+      <Filter>Core\Controller\Transport</Filter>
+    </QtMoc>
+    <QtMoc Include="Core\Controller\Transport\http_request.h">
+      <Filter>Core\Controller\Transport</Filter>
+    </QtMoc>
+  </ItemGroup>
+</Project>

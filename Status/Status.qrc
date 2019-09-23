@@ -1,0 +1,74 @@
+<RCC>
+    <qresource prefix="/logo">
+        <file>Resources/material/logo/logo.png</file>
+    </qresource>
+    <qresource prefix="/button">
+        <file>Resources/material/button/close.png</file>
+        <file>Resources/material/button/course.png</file>
+        <file>Resources/material/button/document.png</file>
+        <file>Resources/material/button/history.png</file>
+        <file>Resources/material/button/interaction.png</file>
+        <file>Resources/material/button/logout.png</file>
+        <file>Resources/material/button/minus.png</file>
+        <file>Resources/material/button/setting.png</file>
+        <file>Resources/material/button/shrink.png</file>
+        <file>Resources/material/button/down.png</file>
+        <file>Resources/material/button/angry.png</file>
+        <file>Resources/material/button/disgust.png</file>
+        <file>Resources/material/button/fear.png</file>
+        <file>Resources/material/button/happy.png</file>
+        <file>Resources/material/button/neutral.png</file>
+        <file>Resources/material/button/sad.png</file>
+        <file>Resources/material/button/surprise.png</file>
+        <file>Resources/material/button/member.png</file>
+        <file>Resources/material/button/member_checked.png</file>
+        <file>Resources/material/button/statistic.png</file>
+        <file>Resources/material/button/statistic_checked.png</file>
+        <file>Resources/material/button/resize.png</file>
+        <file>Resources/material/button/delete.png</file>
+        <file>Resources/material/button/pen#000000.png</file>
+        <file>Resources/material/button/pen#1296db.png</file>
+        <file>Resources/material/button/color.png</file>
+        <file>Resources/material/button/rubber.png</file>
+        <file>Resources/material/button/voice.png</file>
+        <file>Resources/material/button/voice_close.png</file>
+        <file>Resources/material/button/pend#d81e06.png</file>
+        <file>Resources/material/button/circle.png</file>
+        <file>Resources/material/button/line.png</file>
+        <file>Resources/material/button/rect.png</file>
+        <file>Resources/material/button/undo.png</file>
+        <file>Resources/material/button/text.png</file>
+        <file>Resources/material/button/board.png</file>
+        <file>Resources/material/button/board_checked.png</file>
+        <file>Resources/material/button/新建.png</file>
+        <file>Resources/material/button/close_mini.png</file>
+        <file>Resources/material/button/quiz.png</file>
+        <file>Resources/material/button/quiz_checked.png</file>
+        <file>Resources/material/button/clear.png</file>
+        <file>Resources/material/button/down_2.png</file>
+        <file>Resources/material/button/full.png</file>
+        <file>Resources/material/button/normal.png</file>
+        <file>Resources/material/button/turn_off.png</file>
+        <file>Resources/material/button/turn_on.png</file>
+    </qresource>
+    <qresource prefix="/shadow">
+        <file>Resources/material/shadow/980x680_shadow.png</file>
+    </qresource>
+    <qresource prefix="/pic">
+        <file>Resources/material/pic/student.png</file>
+        <file>Resources/material/pic/teacher.png</file>
+        <file>Resources/material/pic/key.png</file>
+        <file>Resources/material/pic/concentration.png</file>
+        <file>Resources/material/pic/excellent.png</file>
+        <file>Resources/material/pic/hand.png</file>
+        <file>Resources/material/pic/time.png</file>
+        <file>Resources/material/pic/paper.png</file>
+        <file>Resources/material/pic/member.png</file>
+    </qresource>
+    <qresource prefix="/cursor">
+        <file>Resources/material/cursor/rubber.png</file>
+        <file>Resources/material/cursor/pen.png</file>
+        <file>Resources/material/cursor/shape.png</file>
+        <file>Resources/material/cursor/text.png</file>
+    </qresource>
+</RCC>
