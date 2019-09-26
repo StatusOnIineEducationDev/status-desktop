@@ -4,7 +4,7 @@
 #include <QChartView>
 
 TeacherMainWindow::TeacherMainWindow(QWidget *parent): QMainWindow(parent) {
-	ui.setupUi(this);
+	m_ui.setupUi(this);
 
 	// 初始化
 	this->is_pressed = false;
@@ -20,9 +20,9 @@ TeacherMainWindow::TeacherMainWindow(QWidget *parent): QMainWindow(parent) {
 	this->setAttribute(Qt::WA_TranslucentBackground, true);
 
 	// 信号绑定
-	this->connect(this->ui.course_btn, &QPushButton::clicked, this, &TeacherMainWindow::showTeacherCourseWidget);
-	this->connect(this->ui.interaction_btn, &QPushButton::clicked, this, &TeacherMainWindow::showTeacherInteractionWidget);
-	this->connect(this->ui.full_or_normal_btn, &QPushButton::clicked, this, &TeacherMainWindow::setWindowFull);
+	this->connect(this->m_ui.course_btn, &QPushButton::clicked, this, &TeacherMainWindow::showTeacherCourseWidget);
+	this->connect(this->m_ui.interaction_btn, &QPushButton::clicked, this, &TeacherMainWindow::showTeacherInteractionWidget);
+	this->connect(this->m_ui.full_or_normal_btn, &QPushButton::clicked, this, &TeacherMainWindow::setWindowFull);
 }
 
 TeacherMainWindow::~TeacherMainWindow() {
@@ -43,7 +43,7 @@ void TeacherMainWindow::clearWidget() {
 	if (this->teacher_course_widget != nullptr) {
 		// 先隐藏后删除，避免在主窗中留印
 		this->teacher_course_widget->hide();
-		this->ui.widget_layout->removeWidget(this->teacher_course_widget);
+		this->m_ui.widget_layout->removeWidget(this->teacher_course_widget);
 		delete this->teacher_course_widget;
 		this->teacher_course_widget = nullptr;  // 初始化指针
 	}
@@ -61,7 +61,7 @@ void TeacherMainWindow::clearWidget() {
 void TeacherMainWindow::showTeacherCourseWidget() {
 	this->clearWidget();  // 先清除主窗中当前显示的子窗
 	this->teacher_course_widget = new TeacherCourseWidget();  // 动态创建子窗
-	this->ui.widget_layout->addWidget(this->teacher_course_widget);  // 加入至layout中
+	this->m_ui.widget_layout->addWidget(this->teacher_course_widget);  // 加入至layout中
 	this->teacher_course_widget->show();  // 显示
 
 	return;
@@ -76,7 +76,7 @@ void TeacherMainWindow::showTeacherInteractionWidget() {
 	if (this->teacher_interaction_widget == nullptr) {
 		this->teacher_interaction_widget = new TeacherInteractionWidget();  // 动态创建子窗
 	}
-	this->ui.widget_layout->addWidget(this->teacher_interaction_widget);  // 加入至layout中
+	this->m_ui.widget_layout->addWidget(this->teacher_interaction_widget);  // 加入至layout中
 	this->teacher_interaction_widget->show();  // 显示
 
 	return;
@@ -91,11 +91,11 @@ void TeacherMainWindow::setWindowFull() {
 	this->setGeometry(-5, -5, window.width() + 10, window.height() + 10);
 
 	// 更换槽函数
-	this->disconnect(this->ui.full_or_normal_btn, &QPushButton::clicked, this, &TeacherMainWindow::setWindowFull);
-	this->connect(this->ui.full_or_normal_btn, &QPushButton::clicked, this, &TeacherMainWindow::setWindowNormal);
+	this->disconnect(this->m_ui.full_or_normal_btn, &QPushButton::clicked, this, &TeacherMainWindow::setWindowFull);
+	this->connect(this->m_ui.full_or_normal_btn, &QPushButton::clicked, this, &TeacherMainWindow::setWindowNormal);
 
 	// 设置tooltip
-	this->ui.full_or_normal_btn->setToolTip(QString::fromLocal8Bit("向下还原"));
+	this->m_ui.full_or_normal_btn->setToolTip(QString::fromLocal8Bit("向下还原"));
 
 	return;
 }
@@ -112,11 +112,11 @@ void TeacherMainWindow::setWindowNormal() {
 	this->setGeometry(central_point.x() - (this->baseSize().width() / 2), central_point.y() - (this->baseSize().height() / 2), this->baseSize().width(), this->baseSize().height());
 
 	// 更换槽函数
-	this->disconnect(this->ui.full_or_normal_btn, &QPushButton::clicked, this, &TeacherMainWindow::setWindowNormal);
-	this->connect(this->ui.full_or_normal_btn, &QPushButton::clicked, this, &TeacherMainWindow::setWindowFull);
+	this->disconnect(this->m_ui.full_or_normal_btn, &QPushButton::clicked, this, &TeacherMainWindow::setWindowNormal);
+	this->connect(this->m_ui.full_or_normal_btn, &QPushButton::clicked, this, &TeacherMainWindow::setWindowFull);
 
 	// 设置tooltip
-	this->ui.full_or_normal_btn->setToolTip(QString::fromLocal8Bit("最大化"));
+	this->m_ui.full_or_normal_btn->setToolTip(QString::fromLocal8Bit("最大化"));
 
 	return;
 }
@@ -165,13 +165,13 @@ void TeacherMainWindow::mouseReleaseEvent(QMouseEvent *event) {
 void TeacherMainWindow::mouseDoubleClickEvent(QMouseEvent *event) {
 	if (this->start_pos.x() < this->width() && this->start_pos.y() < 40) {
 		// 窗口已经最大化
-		if (ui.full_or_normal_btn->isChecked()) {
-			ui.full_or_normal_btn->setChecked(false);
+		if (m_ui.full_or_normal_btn->isChecked()) {
+			m_ui.full_or_normal_btn->setChecked(false);
 			this->setWindowNormal();
 		}
 		// 未最大化
 		else {
-			ui.full_or_normal_btn->setChecked(true);
+			m_ui.full_or_normal_btn->setChecked(true);
 			this->setWindowFull();
 		}
 	}

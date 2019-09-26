@@ -11,11 +11,8 @@ class TeacherCourseWidget : public QWidget {
 
 public:
 	TeacherCourseWidget(QWidget *parent = Q_NULLPTR);
-	void test(QJsonObject data);
-
-signals:
-	void operate(const QString &command, const QString &type, const QJsonObject &data);
+	const Ui::TeacherCourseWidget& ui() const { return this->m_ui; };
 
 private:
-	Ui::TeacherCourseWidget ui;
+	Ui::TeacherCourseWidget m_ui;
 };

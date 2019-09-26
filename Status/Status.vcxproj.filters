@@ -26,11 +26,14 @@
     <Filter Include="Resource Files\Ui">
       <UniqueIdentifier>{e980361d-d650-40d6-b728-f5a6738e3ed3}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Core\Controller">
-      <UniqueIdentifier>{d9aefa93-e553-49a2-9140-a09288d01f3c}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Core\Controller\Transport">
+    <Filter Include="Core\Transport">
       <UniqueIdentifier>{f7132147-5472-46fe-8f56-76c1b1ad68a9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\Model">
+      <UniqueIdentifier>{4a33d344-dcac-40b2-9e82-2eb09a1f5d7c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\Controller">
+      <UniqueIdentifier>{14856181-329b-4013-8b3b-2fbfbccf3475}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -66,11 +69,20 @@
       <Filter>Core\View\Compoent</Filter>
     </ClCompile>
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="Core\Controller\Transport\socket.cpp">
-      <Filter>Core\Controller\Transport</Filter>
+    <ClCompile Include="Core\Transport\http_request.cpp">
+      <Filter>Core\Transport</Filter>
     </ClCompile>
-    <ClCompile Include="Core\Controller\Transport\http_request.cpp">
-      <Filter>Core\Controller\Transport</Filter>
+    <ClCompile Include="Core\Model\course.cpp">
+      <Filter>Core\Model</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\Model\model_base.cpp">
+      <Filter>Core\Model</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\Controller\controller.cpp">
+      <Filter>Core\Controller</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\Model\user.cpp">
+      <Filter>Core\Model</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -86,11 +98,22 @@
     <QtMoc Include="Core\View\Component\component.h">
       <Filter>Core\View\Compoent</Filter>
     </QtMoc>
-    <QtMoc Include="Core\Controller\Transport\socket.h">
-      <Filter>Core\Controller\Transport</Filter>
+    <QtMoc Include="Core\Transport\http_request.h">
+      <Filter>Core\Transport</Filter>
     </QtMoc>
-    <QtMoc Include="Core\Controller\Transport\http_request.h">
-      <Filter>Core\Controller\Transport</Filter>
+    <QtMoc Include="Core\Controller\controller.h">
+      <Filter>Core\Controller</Filter>
     </QtMoc>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Core\Model\course.h">
+      <Filter>Core\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Model\user.h">
+      <Filter>Core\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Model\model_base.h">
+      <Filter>Core\Model</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

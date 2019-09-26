@@ -85,8 +85,21 @@
       <property name="verticalSpacing">
        <number>10</number>
       </property>
-      <item row="2" column="0">
-       <widget class="QLabel" name="create_date_text">
+      <item row="0" column="1" colspan="4">
+       <spacer name="verticalSpacer">
+        <property name="orientation">
+         <enum>Qt::Vertical</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>20</width>
+          <height>40</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item row="2" column="7">
+       <widget class="QLabel" name="course_id_text">
         <property name="font">
          <font>
           <family>微软雅黑</family>
@@ -100,76 +113,14 @@
 }</string>
         </property>
         <property name="text">
-         <string> 创建于2019-08-12</string>
+         <string/>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
         </property>
        </widget>
       </item>
-      <item row="1" column="4">
-       <widget class="QPushButton" name="pushButton_17">
-        <property name="minimumSize">
-         <size>
-          <width>80</width>
-          <height>0</height>
-         </size>
-        </property>
-        <property name="maximumSize">
-         <size>
-          <width>80</width>
-          <height>16777215</height>
-         </size>
-        </property>
-        <property name="font">
-         <font>
-          <family>微软雅黑</family>
-          <pointsize>10</pointsize>
-         </font>
-        </property>
-        <property name="cursor">
-         <cursorShape>PointingHandCursor</cursorShape>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">QPushButton {
-	border: none;
-	background: none;
-	color: #bbbbbb;
-}
-
-QPushButton::hover {
-	color: #333333;
-}</string>
-        </property>
-        <property name="text">
-         <string>加入课程</string>
-        </property>
-       </widget>
-      </item>
-      <item row="3" column="0" colspan="4">
-       <spacer name="verticalSpacer_2">
-        <property name="orientation">
-         <enum>Qt::Vertical</enum>
-        </property>
-        <property name="sizeHint" stdset="0">
-         <size>
-          <width>20</width>
-          <height>40</height>
-         </size>
-        </property>
-       </spacer>
-      </item>
-      <item row="2" column="1">
-       <spacer name="horizontalSpacer_12">
-        <property name="orientation">
-         <enum>Qt::Horizontal</enum>
-        </property>
-        <property name="sizeHint" stdset="0">
-         <size>
-          <width>40</width>
-          <height>20</height>
-         </size>
-        </property>
-       </spacer>
-      </item>
-      <item row="1" column="5">
+      <item row="1" column="6">
        <widget class="QPushButton" name="pushButton_16">
         <property name="minimumSize">
          <size>
@@ -208,8 +159,131 @@ QPushButton::hover {
         </property>
        </widget>
       </item>
-      <item row="0" column="0" colspan="4">
-       <spacer name="verticalSpacer">
+      <item row="2" column="0">
+       <widget class="QLabel" name="text">
+        <property name="minimumSize">
+         <size>
+          <width>50</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>50</width>
+          <height>16777215</height>
+         </size>
+        </property>
+        <property name="font">
+         <font>
+          <family>微软雅黑</family>
+          <pointsize>10</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QLabel {
+	background: none;
+	color: #999999;
+}</string>
+        </property>
+        <property name="text">
+         <string> 创建于</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="7" alignment="Qt::AlignRight">
+       <widget class="QPushButton" name="delete_course_btn">
+        <property name="minimumSize">
+         <size>
+          <width>80</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>80</width>
+          <height>16777215</height>
+         </size>
+        </property>
+        <property name="font">
+         <font>
+          <family>微软雅黑</family>
+          <pointsize>10</pointsize>
+         </font>
+        </property>
+        <property name="cursor">
+         <cursorShape>PointingHandCursor</cursorShape>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton {
+	border: none;
+	background: none;
+	color: #bbbbbb;
+}
+
+QPushButton::hover {
+	color: red;
+}</string>
+        </property>
+        <property name="text">
+         <string> 删除课程</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="1">
+       <widget class="QLabel" name="create_date_text">
+        <property name="minimumSize">
+         <size>
+          <width>200</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>200</width>
+          <height>16777215</height>
+         </size>
+        </property>
+        <property name="font">
+         <font>
+          <family>微软雅黑</family>
+          <pointsize>10</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QLabel {
+	background: none;
+	color: #999999;
+}</string>
+        </property>
+        <property name="text">
+         <string>2019-08-12</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="6">
+       <widget class="QLabel" name="create_time_text_2">
+        <property name="font">
+         <font>
+          <family>微软雅黑</family>
+          <pointsize>10</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QLabel {
+	background: none;
+	color: #999999;
+}</string>
+        </property>
+        <property name="text">
+         <string>id: </string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="1" colspan="4">
+       <spacer name="verticalSpacer_2">
         <property name="orientation">
          <enum>Qt::Vertical</enum>
         </property>
@@ -221,7 +295,72 @@ QPushButton::hover {
         </property>
        </spacer>
       </item>
-      <item row="1" column="0">
+      <item row="1" column="5">
+       <widget class="QPushButton" name="pushButton_17">
+        <property name="minimumSize">
+         <size>
+          <width>80</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>80</width>
+          <height>16777215</height>
+         </size>
+        </property>
+        <property name="font">
+         <font>
+          <family>微软雅黑</family>
+          <pointsize>10</pointsize>
+         </font>
+        </property>
+        <property name="cursor">
+         <cursorShape>PointingHandCursor</cursorShape>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton {
+	border: none;
+	background: none;
+	color: #bbbbbb;
+}
+
+QPushButton::hover {
+	color: #333333;
+}</string>
+        </property>
+        <property name="text">
+         <string>加入课程</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="2">
+       <spacer name="horizontalSpacer_12">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item row="1" column="2" colspan="2">
+       <spacer name="horizontalSpacer">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item row="1" column="0" colspan="2">
        <widget class="QComboBox" name="courses_comboBox">
         <property name="minimumSize">
          <size>
@@ -277,108 +416,7 @@ QComboBox QAbstractItemView::item {
           <height>16</height>
          </size>
         </property>
-        <item>
-         <property name="text">
-          <string>概率论与数理统计</string>
-         </property>
-        </item>
        </widget>
-      </item>
-      <item row="2" column="5">
-       <widget class="QLabel" name="create_time_text_2">
-        <property name="font">
-         <font>
-          <family>微软雅黑</family>
-          <pointsize>10</pointsize>
-         </font>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">QLabel {
-	background: none;
-	color: #999999;
-}</string>
-        </property>
-        <property name="text">
-         <string>id: </string>
-        </property>
-        <property name="alignment">
-         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-        </property>
-       </widget>
-      </item>
-      <item row="1" column="6" alignment="Qt::AlignRight">
-       <widget class="QPushButton" name="delete_course_btn">
-        <property name="minimumSize">
-         <size>
-          <width>80</width>
-          <height>0</height>
-         </size>
-        </property>
-        <property name="maximumSize">
-         <size>
-          <width>80</width>
-          <height>16777215</height>
-         </size>
-        </property>
-        <property name="font">
-         <font>
-          <family>微软雅黑</family>
-          <pointsize>10</pointsize>
-         </font>
-        </property>
-        <property name="cursor">
-         <cursorShape>PointingHandCursor</cursorShape>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">QPushButton {
-	border: none;
-	background: none;
-	color: #bbbbbb;
-}
-
-QPushButton::hover {
-	color: red;
-}</string>
-        </property>
-        <property name="text">
-         <string> 删除课程</string>
-        </property>
-       </widget>
-      </item>
-      <item row="2" column="6">
-       <widget class="QLabel" name="course_id_text">
-        <property name="font">
-         <font>
-          <family>微软雅黑</family>
-          <pointsize>10</pointsize>
-         </font>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">QLabel {
-	background: none;
-	color: #999999;
-}</string>
-        </property>
-        <property name="text">
-         <string>12312312</string>
-        </property>
-        <property name="alignment">
-         <set>Qt::AlignCenter</set>
-        </property>
-       </widget>
-      </item>
-      <item row="1" column="1" colspan="2">
-       <spacer name="horizontalSpacer">
-        <property name="orientation">
-         <enum>Qt::Horizontal</enum>
-        </property>
-        <property name="sizeHint" stdset="0">
-         <size>
-          <width>40</width>
-          <height>20</height>
-         </size>
-        </property>
-       </spacer>
       </item>
      </layout>
     </widget>
@@ -625,7 +663,7 @@ QScrollBar::sub-line:vertical {
 }</string>
                   </property>
                   <property name="text">
-                   <string>6</string>
+                   <string>-</string>
                   </property>
                   <property name="alignment">
                    <set>Qt::AlignCenter</set>
@@ -739,7 +777,7 @@ QScrollBar::sub-line:vertical {
 }</string>
                   </property>
                   <property name="text">
-                   <string>521</string>
+                   <string>-</string>
                   </property>
                   <property name="alignment">
                    <set>Qt::AlignCenter</set>
@@ -853,7 +891,7 @@ QScrollBar::sub-line:vertical {
 }</string>
                   </property>
                   <property name="text">
-                   <string>87</string>
+                   <string>-</string>
                   </property>
                   <property name="alignment">
                    <set>Qt::AlignCenter</set>
@@ -1003,7 +1041,7 @@ QScrollBar::sub-line:vertical {
                  </widget>
                 </item>
                 <item row="1" column="2">
-                 <widget class="QLabel" name="couse_key_text">
+                 <widget class="QLabel" name="course_key_text">
                   <property name="font">
                    <font>
                     <family>微软雅黑</family>
@@ -1017,7 +1055,7 @@ QScrollBar::sub-line:vertical {
 }</string>
                   </property>
                   <property name="text">
-                   <string>jaskne12421</string>
+                   <string>-</string>
                   </property>
                   <property name="alignment">
                    <set>Qt::AlignCenter</set>
@@ -1135,7 +1173,7 @@ QScrollBar::sub-line:vertical {
 }</string>
                   </property>
                   <property name="text">
-                   <string>879</string>
+                   <string>-</string>
                   </property>
                   <property name="alignment">
                    <set>Qt::AlignCenter</set>
@@ -1505,10 +1543,10 @@ QScrollBar::sub-line:vertical {
                      </size>
                     </property>
                     <property name="text">
-                     <string>503</string>
+                     <string>-</string>
                     </property>
                     <property name="alignment">
-                     <set>Qt::AlignCenter</set>
+                     <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
                     </property>
                    </widget>
                   </item>
@@ -1527,10 +1565,10 @@ QScrollBar::sub-line:vertical {
                      </size>
                     </property>
                     <property name="text">
-                     <string>503</string>
+                     <string>-</string>
                     </property>
                     <property name="alignment">
-                     <set>Qt::AlignCenter</set>
+                     <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
                     </property>
                    </widget>
                   </item>
@@ -1576,7 +1614,7 @@ QProgressBar::chunk {
 }</string>
                     </property>
                     <property name="value">
-                     <number>43</number>
+                     <number>5</number>
                     </property>
                     <property name="textVisible">
                      <bool>false</bool>
@@ -1612,7 +1650,7 @@ QProgressBar::chunk {
 }</string>
                     </property>
                     <property name="value">
-                     <number>43</number>
+                     <number>5</number>
                     </property>
                     <property name="textVisible">
                      <bool>false</bool>
@@ -1634,7 +1672,10 @@ QProgressBar::chunk {
                      </size>
                     </property>
                     <property name="text">
-                     <string>100</string>
+                     <string>-</string>
+                    </property>
+                    <property name="alignment">
+                     <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
                     </property>
                    </widget>
                   </item>
@@ -1653,10 +1694,10 @@ QProgressBar::chunk {
                      </size>
                     </property>
                     <property name="text">
-                     <string>503</string>
+                     <string>-</string>
                     </property>
                     <property name="alignment">
-                     <set>Qt::AlignCenter</set>
+                     <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
                     </property>
                    </widget>
                   </item>
@@ -1689,7 +1730,7 @@ QProgressBar::chunk {
 }</string>
                     </property>
                     <property name="value">
-                     <number>43</number>
+                     <number>5</number>
                     </property>
                     <property name="textVisible">
                      <bool>false</bool>
@@ -1744,10 +1785,10 @@ QProgressBar::chunk {
                      </size>
                     </property>
                     <property name="text">
-                     <string>503</string>
+                     <string>-</string>
                     </property>
                     <property name="alignment">
-                     <set>Qt::AlignCenter</set>
+                     <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
                     </property>
                    </widget>
                   </item>
@@ -1766,7 +1807,10 @@ QProgressBar::chunk {
                      </size>
                     </property>
                     <property name="text">
-                     <string>100</string>
+                     <string>-</string>
+                    </property>
+                    <property name="alignment">
+                     <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
                     </property>
                    </widget>
                   </item>
@@ -1785,10 +1829,10 @@ QProgressBar::chunk {
                      </size>
                     </property>
                     <property name="text">
-                     <string>503</string>
+                     <string>-</string>
                     </property>
                     <property name="alignment">
-                     <set>Qt::AlignCenter</set>
+                     <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
                     </property>
                    </widget>
                   </item>
@@ -1807,7 +1851,10 @@ QProgressBar::chunk {
                      </size>
                     </property>
                     <property name="text">
-                     <string>100</string>
+                     <string>-</string>
+                    </property>
+                    <property name="alignment">
+                     <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
                     </property>
                    </widget>
                   </item>
@@ -1852,7 +1899,10 @@ QProgressBar::chunk {
                      </size>
                     </property>
                     <property name="text">
-                     <string>100</string>
+                     <string>-</string>
+                    </property>
+                    <property name="alignment">
+                     <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
                     </property>
                    </widget>
                   </item>
@@ -1885,7 +1935,7 @@ QProgressBar::chunk {
 }</string>
                     </property>
                     <property name="value">
-                     <number>43</number>
+                     <number>5</number>
                     </property>
                     <property name="textVisible">
                      <bool>false</bool>
@@ -2029,7 +2079,7 @@ QProgressBar::chunk {
 }</string>
                     </property>
                     <property name="value">
-                     <number>43</number>
+                     <number>5</number>
                     </property>
                     <property name="textVisible">
                      <bool>false</bool>
@@ -2051,7 +2101,10 @@ QProgressBar::chunk {
                      </size>
                     </property>
                     <property name="text">
-                     <string>100</string>
+                     <string>-</string>
+                    </property>
+                    <property name="alignment">
+                     <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
                     </property>
                    </widget>
                   </item>
@@ -2111,7 +2164,10 @@ QProgressBar::chunk {
                      </size>
                     </property>
                     <property name="text">
-                     <string>100</string>
+                     <string>-</string>
+                    </property>
+                    <property name="alignment">
+                     <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
                     </property>
                    </widget>
                   </item>
@@ -2144,7 +2200,7 @@ QProgressBar::chunk {
 }</string>
                     </property>
                     <property name="value">
-                     <number>43</number>
+                     <number>5</number>
                     </property>
                     <property name="textVisible">
                      <bool>false</bool>
@@ -2230,10 +2286,10 @@ QProgressBar::chunk {
                      </size>
                     </property>
                     <property name="text">
-                     <string>503</string>
+                     <string>-</string>
                     </property>
                     <property name="alignment">
-                     <set>Qt::AlignCenter</set>
+                     <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
                     </property>
                    </widget>
                   </item>
@@ -2299,7 +2355,7 @@ QProgressBar::chunk {
 }</string>
                     </property>
                     <property name="value">
-                     <number>43</number>
+                     <number>5</number>
                     </property>
                     <property name="textVisible">
                      <bool>false</bool>
@@ -2365,10 +2421,10 @@ QProgressBar::chunk {
                      </size>
                     </property>
                     <property name="text">
-                     <string>503</string>
+                     <string>-</string>
                     </property>
                     <property name="alignment">
-                     <set>Qt::AlignCenter</set>
+                     <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
                     </property>
                    </widget>
                   </item>
@@ -2387,7 +2443,10 @@ QProgressBar::chunk {
                      </size>
                     </property>
                     <property name="text">
-                     <string>100</string>
+                     <string>-</string>
+                    </property>
+                    <property name="alignment">
+                     <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
                     </property>
                    </widget>
                   </item>
@@ -2647,7 +2706,7 @@ QProgressBar::chunk {
 }</string>
                   </property>
                   <property name="value">
-                   <number>25</number>
+                   <number>0</number>
                   </property>
                   <property name="textVisible">
                    <bool>true</bool>
@@ -2694,7 +2753,7 @@ QProgressBar::chunk {
 }</string>
                   </property>
                   <property name="value">
-                   <number>50</number>
+                   <number>0</number>
                   </property>
                   <property name="textVisible">
                    <bool>true</bool>
@@ -2810,7 +2869,7 @@ QProgressBar::chunk {
 }</string>
                   </property>
                   <property name="value">
-                   <number>25</number>
+                   <number>0</number>
                   </property>
                   <property name="alignment">
                    <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>

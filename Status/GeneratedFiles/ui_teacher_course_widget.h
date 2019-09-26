@@ -37,17 +37,18 @@ public:
     QGridLayout *gridLayout_2;
     QFrame *course_base_info_area;
     QGridLayout *gridLayout;
-    QLabel *create_date_text;
-    QPushButton *pushButton_17;
-    QSpacerItem *verticalSpacer_2;
-    QSpacerItem *horizontalSpacer_12;
-    QPushButton *pushButton_16;
     QSpacerItem *verticalSpacer;
-    QComboBox *courses_comboBox;
-    QLabel *create_time_text_2;
-    QPushButton *delete_course_btn;
     QLabel *course_id_text;
+    QPushButton *pushButton_16;
+    QLabel *text;
+    QPushButton *delete_course_btn;
+    QLabel *create_date_text;
+    QLabel *create_time_text_2;
+    QSpacerItem *verticalSpacer_2;
+    QPushButton *pushButton_17;
+    QSpacerItem *horizontalSpacer_12;
     QSpacerItem *horizontalSpacer;
+    QComboBox *courses_comboBox;
     QTabWidget *tabWidget;
     QWidget *course_data_tab;
     QGridLayout *gridLayout_22;
@@ -79,7 +80,7 @@ public:
     QSpacerItem *verticalSpacer_11;
     QLabel *label_10;
     QLabel *course_key_title_text;
-    QLabel *couse_key_text;
+    QLabel *course_key_text;
     QSpacerItem *horizontalSpacer_3;
     QSpacerItem *horizontalSpacer_4;
     QSpacerItem *verticalSpacer_12;
@@ -282,44 +283,23 @@ public:
         gridLayout->setHorizontalSpacing(0);
         gridLayout->setVerticalSpacing(10);
         gridLayout->setContentsMargins(5, 5, 5, 5);
-        create_date_text = new QLabel(course_base_info_area);
-        create_date_text->setObjectName(QString::fromUtf8("create_date_text"));
+        verticalSpacer = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
+
+        gridLayout->addItem(verticalSpacer, 0, 1, 1, 4);
+
+        course_id_text = new QLabel(course_base_info_area);
+        course_id_text->setObjectName(QString::fromUtf8("course_id_text"));
         QFont font;
         font.setFamily(QString::fromUtf8("\345\276\256\350\275\257\351\233\205\351\273\221"));
         font.setPointSize(10);
-        create_date_text->setFont(font);
-        create_date_text->setStyleSheet(QString::fromUtf8("QLabel {\n"
+        course_id_text->setFont(font);
+        course_id_text->setStyleSheet(QString::fromUtf8("QLabel {\n"
 "	background: none;\n"
 "	color: #999999;\n"
 "}"));
+        course_id_text->setAlignment(Qt::AlignCenter);
 
-        gridLayout->addWidget(create_date_text, 2, 0, 1, 1);
-
-        pushButton_17 = new QPushButton(course_base_info_area);
-        pushButton_17->setObjectName(QString::fromUtf8("pushButton_17"));
-        pushButton_17->setMinimumSize(QSize(80, 0));
-        pushButton_17->setMaximumSize(QSize(80, 16777215));
-        pushButton_17->setFont(font);
-        pushButton_17->setCursor(QCursor(Qt::PointingHandCursor));
-        pushButton_17->setStyleSheet(QString::fromUtf8("QPushButton {\n"
-"	border: none;\n"
-"	background: none;\n"
-"	color: #bbbbbb;\n"
-"}\n"
-"\n"
-"QPushButton::hover {\n"
-"	color: #333333;\n"
-"}"));
-
-        gridLayout->addWidget(pushButton_17, 1, 4, 1, 1);
-
-        verticalSpacer_2 = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
-
-        gridLayout->addItem(verticalSpacer_2, 3, 0, 1, 4);
-
-        horizontalSpacer_12 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
-
-        gridLayout->addItem(horizontalSpacer_12, 2, 1, 1, 1);
+        gridLayout->addWidget(course_id_text, 2, 7, 1, 1);
 
         pushButton_16 = new QPushButton(course_base_info_area);
         pushButton_16->setObjectName(QString::fromUtf8("pushButton_16"));
@@ -337,14 +317,92 @@ public:
 "	color: #333333;\n"
 "}"));
 
-        gridLayout->addWidget(pushButton_16, 1, 5, 1, 1);
+        gridLayout->addWidget(pushButton_16, 1, 6, 1, 1);
 
-        verticalSpacer = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
+        text = new QLabel(course_base_info_area);
+        text->setObjectName(QString::fromUtf8("text"));
+        text->setMinimumSize(QSize(50, 0));
+        text->setMaximumSize(QSize(50, 16777215));
+        text->setFont(font);
+        text->setStyleSheet(QString::fromUtf8("QLabel {\n"
+"	background: none;\n"
+"	color: #999999;\n"
+"}"));
 
-        gridLayout->addItem(verticalSpacer, 0, 0, 1, 4);
+        gridLayout->addWidget(text, 2, 0, 1, 1);
+
+        delete_course_btn = new QPushButton(course_base_info_area);
+        delete_course_btn->setObjectName(QString::fromUtf8("delete_course_btn"));
+        delete_course_btn->setMinimumSize(QSize(80, 0));
+        delete_course_btn->setMaximumSize(QSize(80, 16777215));
+        delete_course_btn->setFont(font);
+        delete_course_btn->setCursor(QCursor(Qt::PointingHandCursor));
+        delete_course_btn->setStyleSheet(QString::fromUtf8("QPushButton {\n"
+"	border: none;\n"
+"	background: none;\n"
+"	color: #bbbbbb;\n"
+"}\n"
+"\n"
+"QPushButton::hover {\n"
+"	color: red;\n"
+"}"));
+
+        gridLayout->addWidget(delete_course_btn, 1, 7, 1, 1, Qt::AlignRight);
+
+        create_date_text = new QLabel(course_base_info_area);
+        create_date_text->setObjectName(QString::fromUtf8("create_date_text"));
+        create_date_text->setMinimumSize(QSize(200, 0));
+        create_date_text->setMaximumSize(QSize(200, 16777215));
+        create_date_text->setFont(font);
+        create_date_text->setStyleSheet(QString::fromUtf8("QLabel {\n"
+"	background: none;\n"
+"	color: #999999;\n"
+"}"));
+
+        gridLayout->addWidget(create_date_text, 2, 1, 1, 1);
+
+        create_time_text_2 = new QLabel(course_base_info_area);
+        create_time_text_2->setObjectName(QString::fromUtf8("create_time_text_2"));
+        create_time_text_2->setFont(font);
+        create_time_text_2->setStyleSheet(QString::fromUtf8("QLabel {\n"
+"	background: none;\n"
+"	color: #999999;\n"
+"}"));
+        create_time_text_2->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
+
+        gridLayout->addWidget(create_time_text_2, 2, 6, 1, 1);
+
+        verticalSpacer_2 = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
+
+        gridLayout->addItem(verticalSpacer_2, 3, 1, 1, 4);
+
+        pushButton_17 = new QPushButton(course_base_info_area);
+        pushButton_17->setObjectName(QString::fromUtf8("pushButton_17"));
+        pushButton_17->setMinimumSize(QSize(80, 0));
+        pushButton_17->setMaximumSize(QSize(80, 16777215));
+        pushButton_17->setFont(font);
+        pushButton_17->setCursor(QCursor(Qt::PointingHandCursor));
+        pushButton_17->setStyleSheet(QString::fromUtf8("QPushButton {\n"
+"	border: none;\n"
+"	background: none;\n"
+"	color: #bbbbbb;\n"
+"}\n"
+"\n"
+"QPushButton::hover {\n"
+"	color: #333333;\n"
+"}"));
+
+        gridLayout->addWidget(pushButton_17, 1, 5, 1, 1);
+
+        horizontalSpacer_12 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        gridLayout->addItem(horizontalSpacer_12, 2, 2, 1, 1);
+
+        horizontalSpacer = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        gridLayout->addItem(horizontalSpacer, 1, 2, 1, 2);
 
         courses_comboBox = new QComboBox(course_base_info_area);
-        courses_comboBox->addItem(QString());
         courses_comboBox->setObjectName(QString::fromUtf8("courses_comboBox"));
         courses_comboBox->setMinimumSize(QSize(250, 0));
         courses_comboBox->setMaximumSize(QSize(250, 16777215));
@@ -380,51 +438,7 @@ public:
 "}"));
         courses_comboBox->setIconSize(QSize(16, 16));
 
-        gridLayout->addWidget(courses_comboBox, 1, 0, 1, 1);
-
-        create_time_text_2 = new QLabel(course_base_info_area);
-        create_time_text_2->setObjectName(QString::fromUtf8("create_time_text_2"));
-        create_time_text_2->setFont(font);
-        create_time_text_2->setStyleSheet(QString::fromUtf8("QLabel {\n"
-"	background: none;\n"
-"	color: #999999;\n"
-"}"));
-        create_time_text_2->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
-
-        gridLayout->addWidget(create_time_text_2, 2, 5, 1, 1);
-
-        delete_course_btn = new QPushButton(course_base_info_area);
-        delete_course_btn->setObjectName(QString::fromUtf8("delete_course_btn"));
-        delete_course_btn->setMinimumSize(QSize(80, 0));
-        delete_course_btn->setMaximumSize(QSize(80, 16777215));
-        delete_course_btn->setFont(font);
-        delete_course_btn->setCursor(QCursor(Qt::PointingHandCursor));
-        delete_course_btn->setStyleSheet(QString::fromUtf8("QPushButton {\n"
-"	border: none;\n"
-"	background: none;\n"
-"	color: #bbbbbb;\n"
-"}\n"
-"\n"
-"QPushButton::hover {\n"
-"	color: red;\n"
-"}"));
-
-        gridLayout->addWidget(delete_course_btn, 1, 6, 1, 1, Qt::AlignRight);
-
-        course_id_text = new QLabel(course_base_info_area);
-        course_id_text->setObjectName(QString::fromUtf8("course_id_text"));
-        course_id_text->setFont(font);
-        course_id_text->setStyleSheet(QString::fromUtf8("QLabel {\n"
-"	background: none;\n"
-"	color: #999999;\n"
-"}"));
-        course_id_text->setAlignment(Qt::AlignCenter);
-
-        gridLayout->addWidget(course_id_text, 2, 6, 1, 1);
-
-        horizontalSpacer = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
-
-        gridLayout->addItem(horizontalSpacer, 1, 1, 1, 2);
+        gridLayout->addWidget(courses_comboBox, 1, 0, 1, 2);
 
 
         gridLayout_2->addWidget(course_base_info_area, 0, 0, 1, 1);
@@ -709,16 +723,16 @@ public:
 
         gridLayout_4->addWidget(course_key_title_text, 2, 2, 1, 1);
 
-        couse_key_text = new QLabel(course_key_area);
-        couse_key_text->setObjectName(QString::fromUtf8("couse_key_text"));
-        couse_key_text->setFont(font2);
-        couse_key_text->setStyleSheet(QString::fromUtf8("QLabel {\n"
+        course_key_text = new QLabel(course_key_area);
+        course_key_text->setObjectName(QString::fromUtf8("course_key_text"));
+        course_key_text->setFont(font2);
+        course_key_text->setStyleSheet(QString::fromUtf8("QLabel {\n"
 "	background: none;\n"
 "	color: #6C6FC0;\n"
 "}"));
-        couse_key_text->setAlignment(Qt::AlignCenter);
+        course_key_text->setAlignment(Qt::AlignCenter);
 
-        gridLayout_4->addWidget(couse_key_text, 1, 2, 1, 1);
+        gridLayout_4->addWidget(course_key_text, 1, 2, 1, 1);
 
         horizontalSpacer_3 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
 
@@ -935,7 +949,7 @@ public:
         neutral_times_text->setObjectName(QString::fromUtf8("neutral_times_text"));
         neutral_times_text->setMinimumSize(QSize(25, 0));
         neutral_times_text->setMaximumSize(QSize(25, 16777215));
-        neutral_times_text->setAlignment(Qt::AlignCenter);
+        neutral_times_text->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
 
         gridLayout_7->addWidget(neutral_times_text, 14, 3, 1, 1);
 
@@ -943,7 +957,7 @@ public:
         fear_times_text->setObjectName(QString::fromUtf8("fear_times_text"));
         fear_times_text->setMinimumSize(QSize(25, 0));
         fear_times_text->setMaximumSize(QSize(25, 16777215));
-        fear_times_text->setAlignment(Qt::AlignCenter);
+        fear_times_text->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
 
         gridLayout_7->addWidget(fear_times_text, 6, 3, 1, 1);
 
@@ -969,7 +983,7 @@ public:
 "		border-radius: 4px;\n"
 "        background: #F9D31A;\n"
 "}"));
-        fear_progressBar->setValue(43);
+        fear_progressBar->setValue(5);
         fear_progressBar->setTextVisible(false);
 
         gridLayout_7->addWidget(fear_progressBar, 7, 0, 1, 7);
@@ -990,7 +1004,7 @@ public:
 "		border-radius: 4px;\n"
 "        background: #24AD1D;\n"
 "}"));
-        happy_progressBar->setValue(43);
+        happy_progressBar->setValue(5);
         happy_progressBar->setTextVisible(false);
 
         gridLayout_7->addWidget(happy_progressBar, 9, 0, 1, 7);
@@ -999,6 +1013,7 @@ public:
         disgust_percent_text->setObjectName(QString::fromUtf8("disgust_percent_text"));
         disgust_percent_text->setMinimumSize(QSize(20, 0));
         disgust_percent_text->setMaximumSize(QSize(20, 16777215));
+        disgust_percent_text->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
 
         gridLayout_7->addWidget(disgust_percent_text, 4, 5, 1, 1);
 
@@ -1006,7 +1021,7 @@ public:
         sad_times_text->setObjectName(QString::fromUtf8("sad_times_text"));
         sad_times_text->setMinimumSize(QSize(25, 0));
         sad_times_text->setMaximumSize(QSize(25, 16777215));
-        sad_times_text->setAlignment(Qt::AlignCenter);
+        sad_times_text->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
 
         gridLayout_7->addWidget(sad_times_text, 10, 3, 1, 1);
 
@@ -1026,7 +1041,7 @@ public:
 "		border-radius: 4px;\n"
 "        background: #23B7E5;\n"
 "}"));
-        disgust_progressBar->setValue(43);
+        disgust_progressBar->setValue(5);
         disgust_progressBar->setTextVisible(false);
 
         gridLayout_7->addWidget(disgust_progressBar, 5, 0, 1, 7);
@@ -1052,7 +1067,7 @@ public:
         happy_times_text->setObjectName(QString::fromUtf8("happy_times_text"));
         happy_times_text->setMinimumSize(QSize(25, 0));
         happy_times_text->setMaximumSize(QSize(25, 16777215));
-        happy_times_text->setAlignment(Qt::AlignCenter);
+        happy_times_text->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
 
         gridLayout_7->addWidget(happy_times_text, 8, 3, 1, 1);
 
@@ -1060,6 +1075,7 @@ public:
         angry_percent_text->setObjectName(QString::fromUtf8("angry_percent_text"));
         angry_percent_text->setMinimumSize(QSize(20, 0));
         angry_percent_text->setMaximumSize(QSize(20, 16777215));
+        angry_percent_text->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
 
         gridLayout_7->addWidget(angry_percent_text, 2, 5, 1, 1);
 
@@ -1067,7 +1083,7 @@ public:
         disgust_times_text->setObjectName(QString::fromUtf8("disgust_times_text"));
         disgust_times_text->setMinimumSize(QSize(25, 0));
         disgust_times_text->setMaximumSize(QSize(25, 16777215));
-        disgust_times_text->setAlignment(Qt::AlignCenter);
+        disgust_times_text->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
 
         gridLayout_7->addWidget(disgust_times_text, 4, 3, 1, 1);
 
@@ -1075,6 +1091,7 @@ public:
         happy_percent_text->setObjectName(QString::fromUtf8("happy_percent_text"));
         happy_percent_text->setMinimumSize(QSize(20, 0));
         happy_percent_text->setMaximumSize(QSize(20, 16777215));
+        happy_percent_text->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
 
         gridLayout_7->addWidget(happy_percent_text, 8, 5, 1, 1);
 
@@ -1097,6 +1114,7 @@ public:
         surprise_percent_text->setObjectName(QString::fromUtf8("surprise_percent_text"));
         surprise_percent_text->setMinimumSize(QSize(20, 0));
         surprise_percent_text->setMaximumSize(QSize(20, 16777215));
+        surprise_percent_text->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
 
         gridLayout_7->addWidget(surprise_percent_text, 12, 5, 1, 1);
 
@@ -1116,7 +1134,7 @@ public:
 "		border-radius: 4px;\n"
 "        background: rgb(0, 160, 230);\n"
 "}"));
-        neutral_progressBar->setValue(43);
+        neutral_progressBar->setValue(5);
         neutral_progressBar->setTextVisible(false);
 
         gridLayout_7->addWidget(neutral_progressBar, 15, 0, 1, 7);
@@ -1184,7 +1202,7 @@ public:
 "		border-radius: 4px;\n"
 "        background: #6C6FC0;\n"
 "}"));
-        angry_progressBar->setValue(43);
+        angry_progressBar->setValue(5);
         angry_progressBar->setTextVisible(false);
 
         gridLayout_7->addWidget(angry_progressBar, 3, 0, 1, 7);
@@ -1193,6 +1211,7 @@ public:
         sad_percent_text->setObjectName(QString::fromUtf8("sad_percent_text"));
         sad_percent_text->setMinimumSize(QSize(20, 0));
         sad_percent_text->setMaximumSize(QSize(20, 16777215));
+        sad_percent_text->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
 
         gridLayout_7->addWidget(sad_percent_text, 10, 5, 1, 1);
 
@@ -1226,6 +1245,7 @@ public:
         fear_percent_text->setObjectName(QString::fromUtf8("fear_percent_text"));
         fear_percent_text->setMinimumSize(QSize(20, 0));
         fear_percent_text->setMaximumSize(QSize(20, 16777215));
+        fear_percent_text->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
 
         gridLayout_7->addWidget(fear_percent_text, 6, 5, 1, 1);
 
@@ -1245,7 +1265,7 @@ public:
 "		border-radius: 4px;\n"
 "        background: #393E51;\n"
 "}"));
-        surprise_progressBar->setValue(43);
+        surprise_progressBar->setValue(5);
         surprise_progressBar->setTextVisible(false);
 
         gridLayout_7->addWidget(surprise_progressBar, 13, 0, 1, 7);
@@ -1281,7 +1301,7 @@ public:
         angry_times_text->setObjectName(QString::fromUtf8("angry_times_text"));
         angry_times_text->setMinimumSize(QSize(25, 0));
         angry_times_text->setMaximumSize(QSize(25, 16777215));
-        angry_times_text->setAlignment(Qt::AlignCenter);
+        angry_times_text->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
 
         gridLayout_7->addWidget(angry_times_text, 2, 3, 1, 1);
 
@@ -1318,7 +1338,7 @@ public:
 "		border-radius: 4px;\n"
 "        background: #F05050;\n"
 "}"));
-        sad_progressBar->setValue(43);
+        sad_progressBar->setValue(5);
         sad_progressBar->setTextVisible(false);
 
         gridLayout_7->addWidget(sad_progressBar, 11, 0, 1, 7);
@@ -1345,7 +1365,7 @@ public:
         surprise_times_text->setObjectName(QString::fromUtf8("surprise_times_text"));
         surprise_times_text->setMinimumSize(QSize(25, 0));
         surprise_times_text->setMaximumSize(QSize(25, 16777215));
-        surprise_times_text->setAlignment(Qt::AlignCenter);
+        surprise_times_text->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
 
         gridLayout_7->addWidget(surprise_times_text, 12, 3, 1, 1);
 
@@ -1353,6 +1373,7 @@ public:
         neutral_percent_text->setObjectName(QString::fromUtf8("neutral_percent_text"));
         neutral_percent_text->setMinimumSize(QSize(20, 0));
         neutral_percent_text->setMaximumSize(QSize(20, 16777215));
+        neutral_percent_text->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
 
         gridLayout_7->addWidget(neutral_percent_text, 14, 5, 1, 1);
 
@@ -1475,7 +1496,7 @@ public:
 "        border: none;\n"
 "        background: #24AD1D;\n"
 "}"));
-        progressBar_17->setValue(25);
+        progressBar_17->setValue(0);
         progressBar_17->setTextVisible(true);
         progressBar_17->setOrientation(Qt::Vertical);
         progressBar_17->setTextDirection(QProgressBar::TopToBottom);
@@ -1498,7 +1519,7 @@ public:
 "        border: none;\n"
 "        background: #F9D31A;\n"
 "}"));
-        excellent_progressBar->setValue(50);
+        excellent_progressBar->setValue(0);
         excellent_progressBar->setTextVisible(true);
         excellent_progressBar->setOrientation(Qt::Vertical);
         excellent_progressBar->setTextDirection(QProgressBar::TopToBottom);
@@ -1548,7 +1569,7 @@ public:
 "        border: none;\n"
 "        background: #F05050;\n"
 "}"));
-        bad_progressBar->setValue(25);
+        bad_progressBar->setValue(0);
         bad_progressBar->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter);
         bad_progressBar->setTextVisible(true);
         bad_progressBar->setOrientation(Qt::Vertical);
@@ -2368,24 +2389,23 @@ public:
     void retranslateUi(QWidget *TeacherCourseWidget)
     {
         TeacherCourseWidget->setWindowTitle(QCoreApplication::translate("TeacherCourseWidget", "Form", nullptr));
-        create_date_text->setText(QCoreApplication::translate("TeacherCourseWidget", " \345\210\233\345\273\272\344\272\2162019-08-12", nullptr));
-        pushButton_17->setText(QCoreApplication::translate("TeacherCourseWidget", "\345\212\240\345\205\245\350\257\276\347\250\213", nullptr));
+        course_id_text->setText(QString());
         pushButton_16->setText(QCoreApplication::translate("TeacherCourseWidget", "\345\210\233\345\273\272\350\257\276\347\250\213", nullptr));
-        courses_comboBox->setItemText(0, QCoreApplication::translate("TeacherCourseWidget", "\346\246\202\347\216\207\350\256\272\344\270\216\346\225\260\347\220\206\347\273\237\350\256\241", nullptr));
-
-        create_time_text_2->setText(QCoreApplication::translate("TeacherCourseWidget", "id: ", nullptr));
+        text->setText(QCoreApplication::translate("TeacherCourseWidget", " \345\210\233\345\273\272\344\272\216", nullptr));
         delete_course_btn->setText(QCoreApplication::translate("TeacherCourseWidget", " \345\210\240\351\231\244\350\257\276\347\250\213", nullptr));
-        course_id_text->setText(QCoreApplication::translate("TeacherCourseWidget", "12312312", nullptr));
-        data_2_text->setText(QCoreApplication::translate("TeacherCourseWidget", "6", nullptr));
+        create_date_text->setText(QCoreApplication::translate("TeacherCourseWidget", "2019-08-12", nullptr));
+        create_time_text_2->setText(QCoreApplication::translate("TeacherCourseWidget", "id: ", nullptr));
+        pushButton_17->setText(QCoreApplication::translate("TeacherCourseWidget", "\345\212\240\345\205\245\350\257\276\347\250\213", nullptr));
+        data_2_text->setText(QCoreApplication::translate("TeacherCourseWidget", "-", nullptr));
         title_2_text->setText(QCoreApplication::translate("TeacherCourseWidget", "\345\267\262\344\270\212\350\257\276\346\254\241\346\225\260", nullptr));
-        data_1_text->setText(QCoreApplication::translate("TeacherCourseWidget", "521", nullptr));
+        data_1_text->setText(QCoreApplication::translate("TeacherCourseWidget", "-", nullptr));
         title_1_text->setText(QCoreApplication::translate("TeacherCourseWidget", "\344\272\272\346\225\260", nullptr));
-        data_3_text->setText(QCoreApplication::translate("TeacherCourseWidget", "87", nullptr));
+        data_3_text->setText(QCoreApplication::translate("TeacherCourseWidget", "-", nullptr));
         title_3_text->setText(QCoreApplication::translate("TeacherCourseWidget", "\345\271\263\345\235\207\344\270\223\346\263\250\345\272\246", nullptr));
         label_10->setText(QString());
         course_key_title_text->setText(QCoreApplication::translate("TeacherCourseWidget", "\350\257\276\347\250\213\351\200\211\350\257\276\347\240\201", nullptr));
-        couse_key_text->setText(QCoreApplication::translate("TeacherCourseWidget", "jaskne12421", nullptr));
-        data_4_text->setText(QCoreApplication::translate("TeacherCourseWidget", "879", nullptr));
+        course_key_text->setText(QCoreApplication::translate("TeacherCourseWidget", "-", nullptr));
+        data_4_text->setText(QCoreApplication::translate("TeacherCourseWidget", "-", nullptr));
         title_4_text->setText(QCoreApplication::translate("TeacherCourseWidget", "\347\202\271\350\265\236\346\225\260", nullptr));
         emotion_report_title_text->setText(QCoreApplication::translate("TeacherCourseWidget", "\342\227\217  \345\255\246\347\224\237\350\241\250\346\203\205\346\225\260\346\215\256\346\212\245\345\221\212", nullptr));
         emotion_report_tips_text->setText(QCoreApplication::translate("TeacherCourseWidget", "\347\202\271\345\207\273\345\217\263\344\276\247\344\270\215\345\220\214\350\241\250\346\203\205\345\217\257\344\273\245\346\237\245\347\234\213\345\205\266\346\225\260\346\215\256\346\212\245\350\241\250", nullptr));
@@ -2397,41 +2417,41 @@ public:
         fear_btn->setText(QString());
         label_99->setText(QCoreApplication::translate("TeacherCourseWidget", "%", nullptr));
         label_89->setText(QCoreApplication::translate("TeacherCourseWidget", "%", nullptr));
-        neutral_times_text->setText(QCoreApplication::translate("TeacherCourseWidget", "503", nullptr));
-        fear_times_text->setText(QCoreApplication::translate("TeacherCourseWidget", "503", nullptr));
+        neutral_times_text->setText(QCoreApplication::translate("TeacherCourseWidget", "-", nullptr));
+        fear_times_text->setText(QCoreApplication::translate("TeacherCourseWidget", "-", nullptr));
         fear_title_text->setText(QCoreApplication::translate("TeacherCourseWidget", "\346\201\220\346\203\247", nullptr));
-        disgust_percent_text->setText(QCoreApplication::translate("TeacherCourseWidget", "100", nullptr));
-        sad_times_text->setText(QCoreApplication::translate("TeacherCourseWidget", "503", nullptr));
+        disgust_percent_text->setText(QCoreApplication::translate("TeacherCourseWidget", "-", nullptr));
+        sad_times_text->setText(QCoreApplication::translate("TeacherCourseWidget", "-", nullptr));
         angry_title_text->setText(QCoreApplication::translate("TeacherCourseWidget", "\347\224\237\346\260\224", nullptr));
         surprise_title_text->setText(QCoreApplication::translate("TeacherCourseWidget", "\346\203\212\350\256\266", nullptr));
         label_88->setText(QCoreApplication::translate("TeacherCourseWidget", "\346\254\241", nullptr));
-        happy_times_text->setText(QCoreApplication::translate("TeacherCourseWidget", "503", nullptr));
-        angry_percent_text->setText(QCoreApplication::translate("TeacherCourseWidget", "100", nullptr));
-        disgust_times_text->setText(QCoreApplication::translate("TeacherCourseWidget", "503", nullptr));
-        happy_percent_text->setText(QCoreApplication::translate("TeacherCourseWidget", "100", nullptr));
+        happy_times_text->setText(QCoreApplication::translate("TeacherCourseWidget", "-", nullptr));
+        angry_percent_text->setText(QCoreApplication::translate("TeacherCourseWidget", "-", nullptr));
+        disgust_times_text->setText(QCoreApplication::translate("TeacherCourseWidget", "-", nullptr));
+        happy_percent_text->setText(QCoreApplication::translate("TeacherCourseWidget", "-", nullptr));
         label_123->setText(QCoreApplication::translate("TeacherCourseWidget", "\345\220\204\350\241\250\346\203\205\345\207\272\347\216\260\346\257\224\344\276\213\345\217\212\346\254\241\346\225\260", nullptr));
         label_91->setText(QCoreApplication::translate("TeacherCourseWidget", "%", nullptr));
-        surprise_percent_text->setText(QCoreApplication::translate("TeacherCourseWidget", "100", nullptr));
+        surprise_percent_text->setText(QCoreApplication::translate("TeacherCourseWidget", "-", nullptr));
         happy_title_text->setText(QCoreApplication::translate("TeacherCourseWidget", "\351\253\230\345\205\264", nullptr));
         label_111->setText(QCoreApplication::translate("TeacherCourseWidget", "%", nullptr));
         surprise_btn->setText(QString());
         angry_btn->setText(QString());
-        sad_percent_text->setText(QCoreApplication::translate("TeacherCourseWidget", "100", nullptr));
+        sad_percent_text->setText(QCoreApplication::translate("TeacherCourseWidget", "-", nullptr));
         neutral_title_text->setText(QCoreApplication::translate("TeacherCourseWidget", "\345\271\263\346\267\241", nullptr));
         label_112->setText(QCoreApplication::translate("TeacherCourseWidget", "%", nullptr));
         label_102->setText(QCoreApplication::translate("TeacherCourseWidget", "\346\254\241", nullptr));
         label_116->setText(QCoreApplication::translate("TeacherCourseWidget", "%", nullptr));
         label_92->setText(QCoreApplication::translate("TeacherCourseWidget", "\346\254\241", nullptr));
-        fear_percent_text->setText(QCoreApplication::translate("TeacherCourseWidget", "100", nullptr));
+        fear_percent_text->setText(QCoreApplication::translate("TeacherCourseWidget", "-", nullptr));
         label_106->setText(QCoreApplication::translate("TeacherCourseWidget", "\346\254\241", nullptr));
         happy_btn->setText(QString());
-        angry_times_text->setText(QCoreApplication::translate("TeacherCourseWidget", "503", nullptr));
+        angry_times_text->setText(QCoreApplication::translate("TeacherCourseWidget", "-", nullptr));
         sad_title_text->setText(QCoreApplication::translate("TeacherCourseWidget", "\344\274\244\345\277\203", nullptr));
         disgust_title_text->setText(QCoreApplication::translate("TeacherCourseWidget", "\345\216\214\346\201\266", nullptr));
         label_120->setText(QCoreApplication::translate("TeacherCourseWidget", "\346\254\241", nullptr));
         sad_btn->setText(QString());
-        surprise_times_text->setText(QCoreApplication::translate("TeacherCourseWidget", "503", nullptr));
-        neutral_percent_text->setText(QCoreApplication::translate("TeacherCourseWidget", "100", nullptr));
+        surprise_times_text->setText(QCoreApplication::translate("TeacherCourseWidget", "-", nullptr));
+        neutral_percent_text->setText(QCoreApplication::translate("TeacherCourseWidget", "-", nullptr));
         label->setText(QCoreApplication::translate("TeacherCourseWidget", "\345\210\206\345\270\203\346\233\262\347\272\277", nullptr));
         label_97->setText(QCoreApplication::translate("TeacherCourseWidget", "\342\200\234\345\267\256\345\212\262\342\200\235\344\270\272\345\260\217\344\272\21660", nullptr));
         label_95->setText(QCoreApplication::translate("TeacherCourseWidget", "\342\200\234\344\274\230\347\247\200\342\200\235\344\270\272\345\244\247\344\272\216\347\255\211\344\272\21685", nullptr));

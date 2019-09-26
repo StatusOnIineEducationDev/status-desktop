@@ -24,6 +24,4 @@ signals:
 private:
 	static QNetworkAccessManager *manager;
 	QNetworkReply *reply;
-	QUrl url;
-	QJsonObject data;
 };

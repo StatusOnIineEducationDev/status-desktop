@@ -1,4 +1,4 @@
-#include "Core/Controller/Transport/http_request.h"
+#include "Core/Transport/http_request.h"
 #include <QNetworkRequest>
 
 QNetworkAccessManager *HttpRequest::manager = new QNetworkAccessManager();
@@ -11,10 +11,7 @@ void HttpRequest::request(QUrl &url, QJsonObject &data) {
 	QNetworkRequest request_obj(url);
 	QByteArray data_byte_arr = QJsonDocument(data).toJson(QJsonDocument::Compact);
 
-	this->url = QUrl(url);
-	this->data = data;
-
-	request_obj.setHeader(QNetworkRequest::ContentTypeHeader, "application/x-www-form-urlencoded");
+	request_obj.setHeader(QNetworkRequest::ContentTypeHeader, "application/json");
 	this->reply = this->manager->post(request_obj, data_byte_arr);
 
 	return;

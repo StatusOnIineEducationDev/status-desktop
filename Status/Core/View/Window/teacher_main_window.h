@@ -12,7 +12,10 @@ class TeacherMainWindow: public QMainWindow {
 
 public:
 	TeacherMainWindow(QWidget *parent = Q_NULLPTR);
-	~TeacherMainWindow();
+	virtual ~TeacherMainWindow();
+	const Ui::TeacherMainWindow& ui() const { return this->m_ui; };
+	const TeacherCourseWidget* teacherCourseWidget() const { return this->teacher_course_widget; }
+	const TeacherInteractionWidget* teacherInteractionWidget() const { return this->teacher_interaction_widget; }
 
 public slots:
 	/*切换至“课程管理”子窗*/
@@ -25,7 +28,7 @@ public slots:
 	void setWindowNormal();
 
 private:
-	Ui::TeacherMainWindow ui;
+	Ui::TeacherMainWindow m_ui;
 
 	TeacherCourseWidget *teacher_course_widget;  // 课程管理子窗
 	TeacherInteractionWidget *teacher_interaction_widget;  // 实时互动子窗

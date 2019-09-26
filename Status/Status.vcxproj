@@ -20,8 +20,11 @@
     <QtUic Include="Resources\ui\teacher_main_window.ui" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Core\Controller\Transport\http_request.cpp" />
-    <ClCompile Include="Core\Controller\Transport\socket.cpp" />
+    <ClCompile Include="Core\Controller\controller.cpp" />
+    <ClCompile Include="Core\Model\model_base.cpp" />
+    <ClCompile Include="Core\Model\course.cpp" />
+    <ClCompile Include="Core\Model\user.cpp" />
+    <ClCompile Include="Core\Transport\http_request.cpp" />
     <ClCompile Include="Core\View\Component\component.cpp" />
     <ClCompile Include="Core\View\Window\teacher_course_widget.cpp" />
     <ClCompile Include="Core\View\Window\teacher_interaction_widget.cpp" />
@@ -41,16 +44,19 @@
     <QtMoc Include="Core\View\Component\component.h" />
   </ItemGroup>
   <ItemGroup>
-    <QtMoc Include="Core\Controller\Transport\socket.h">
+    <QtMoc Include="Core\Transport\http_request.h">
       <IncludePath Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCharts;$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtNetwork</IncludePath>
       <IncludePath Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCharts;$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtNetwork</IncludePath>
     </QtMoc>
   </ItemGroup>
   <ItemGroup>
-    <QtMoc Include="Core\Controller\Transport\http_request.h">
+    <QtMoc Include="Core\Controller\controller.h">
       <IncludePath Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCharts;$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtNetwork</IncludePath>
       <IncludePath Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCharts;$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtNetwork</IncludePath>
     </QtMoc>
+    <ClInclude Include="Core\Model\model_base.h" />
+    <ClInclude Include="Core\Model\course.h" />
+    <ClInclude Include="Core\Model\user.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{B12702AD-ABFB-343A-A199-8E24837244A3}</ProjectGuid>
