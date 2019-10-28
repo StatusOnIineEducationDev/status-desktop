@@ -35,9 +35,9 @@ class Ui_TeacherInteractionWidget
 public:
     QGridLayout *gridLayout;
     QGridLayout *gridLayout_2;
-    QPushButton *pushButton_4;
+    QPushButton *begin_lesson_btn;
     QFrame *frame_2;
-    QLabel *label;
+    QLabel *mine_camera_label;
     QFrame *frame_3;
     QHBoxLayout *horizontalLayout;
     QLabel *label_3;
@@ -48,31 +48,29 @@ public:
     QScrollArea *scrollArea;
     QWidget *scrollAreaWidgetContents;
     QGridLayout *gridLayout_8;
-    QCheckBox *checkBox_2;
+    QLabel *label_19;
     QLabel *label_17;
-    QCheckBox *checkBox;
+    QLabel *label_2;
     QLabel *label_11;
-    QLabel *label_12;
+    QLabel *label_15;
+    QSpacerItem *verticalSpacer_6;
+    QLabel *label_5;
+    QLabel *label_16;
+    QSpacerItem *verticalSpacer_7;
+    QLabel *label_4;
+    QLabel *label_18;
     QSpacerItem *verticalSpacer_5;
     QLabel *label_20;
-    QSpacerItem *verticalSpacer_7;
-    QWidget *widget;
-    QCheckBox *checkBox_3;
-    QLabel *label_14;
-    QLabel *label_13;
-    QLabel *label_5;
-    QSpacerItem *verticalSpacer_6;
-    QLabel *label_19;
-    QLabel *label_2;
-    QLabel *label_23;
-    QSpacerItem *horizontalSpacer_3;
-    QLabel *label_16;
-    QLabel *label_22;
-    QLabel *label_4;
-    QLabel *label_15;
     QLabel *label_21;
-    QSpacerItem *horizontalSpacer_2;
-    QLabel *label_18;
+    QCheckBox *checkBox;
+    QLabel *label_23;
+    QCheckBox *checkBox_3;
+    QLabel *label_22;
+    QCheckBox *checkBox_2;
+    QWidget *widget;
+    QLabel *label_14;
+    QLabel *label_12;
+    QLabel *label_13;
     QTabWidget *function_tabWidget;
     QWidget *tab;
     QGridLayout *gridLayout_3;
@@ -108,18 +106,21 @@ public:
     QGridLayout *gridLayout_5;
     QFrame *frame_5;
     QGridLayout *gridLayout_6;
+    QSpacerItem *verticalSpacer_4;
+    QLabel *label_10;
     QPushButton *pushButton_3;
     QPushButton *pushButton_2;
-    QLabel *label_10;
-    QSpacerItem *horizontalSpacer_7;
-    QSpacerItem *verticalSpacer_4;
-    QSpacerItem *horizontalSpacer_8;
-    QComboBox *comboBox;
-    QPushButton *pushButton;
-    QLabel *label_8;
     QSpacerItem *verticalSpacer_3;
     QLabel *label_9;
-    QFrame *frame_6;
+    QLabel *label_8;
+    QSpacerItem *horizontalSpacer_7;
+    QComboBox *comboBox;
+    QSpacerItem *horizontalSpacer_8;
+    QPushButton *pushButton;
+    QScrollArea *scrollArea_2;
+    QWidget *scrollAreaWidgetContents_2;
+    QGridLayout *gridLayout_12;
+    QSpacerItem *verticalSpacer_9;
     QWidget *tab_5;
     QWidget *tab_6;
     QWidget *tab_3;
@@ -172,16 +173,16 @@ public:
         gridLayout_2->setSpacing(0);
         gridLayout_2->setObjectName(QString::fromUtf8("gridLayout_2"));
         gridLayout_2->setContentsMargins(0, 0, -1, 0);
-        pushButton_4 = new QPushButton(TeacherInteractionWidget);
-        pushButton_4->setObjectName(QString::fromUtf8("pushButton_4"));
-        pushButton_4->setMinimumSize(QSize(0, 40));
-        pushButton_4->setMaximumSize(QSize(16777215, 40));
+        begin_lesson_btn = new QPushButton(TeacherInteractionWidget);
+        begin_lesson_btn->setObjectName(QString::fromUtf8("begin_lesson_btn"));
+        begin_lesson_btn->setMinimumSize(QSize(0, 40));
+        begin_lesson_btn->setMaximumSize(QSize(16777215, 40));
         QFont font;
         font.setFamily(QString::fromUtf8("\345\276\256\350\275\257\351\233\205\351\273\221"));
         font.setPointSize(12);
-        pushButton_4->setFont(font);
-        pushButton_4->setCursor(QCursor(Qt::PointingHandCursor));
-        pushButton_4->setStyleSheet(QString::fromUtf8("QPushButton {\n"
+        begin_lesson_btn->setFont(font);
+        begin_lesson_btn->setCursor(QCursor(Qt::PointingHandCursor));
+        begin_lesson_btn->setStyleSheet(QString::fromUtf8("QPushButton {\n"
 "	color: #ffffff;\n"
 "	border: none;\n"
 "	border-left: 1px solid #E8ECEC;\n"
@@ -191,9 +192,9 @@ public:
 "QPushButton:hover {\n"
 "	background-color: #0E71A4;\n"
 "}"));
-        pushButton_4->setCheckable(false);
+        begin_lesson_btn->setCheckable(false);
 
-        gridLayout_2->addWidget(pushButton_4, 0, 0, 1, 1);
+        gridLayout_2->addWidget(begin_lesson_btn, 0, 0, 1, 1);
 
         frame_2 = new QFrame(TeacherInteractionWidget);
         frame_2->setObjectName(QString::fromUtf8("frame_2"));
@@ -202,10 +203,10 @@ public:
         frame_2->setStyleSheet(QString::fromUtf8(""));
         frame_2->setFrameShape(QFrame::StyledPanel);
         frame_2->setFrameShadow(QFrame::Raised);
-        label = new QLabel(frame_2);
-        label->setObjectName(QString::fromUtf8("label"));
-        label->setGeometry(QRect(0, 0, 200, 130));
-        label->setStyleSheet(QString::fromUtf8("QFrame {\n"
+        mine_camera_label = new QLabel(frame_2);
+        mine_camera_label->setObjectName(QString::fromUtf8("mine_camera_label"));
+        mine_camera_label->setGeometry(QRect(0, 0, 200, 130));
+        mine_camera_label->setStyleSheet(QString::fromUtf8("QFrame {\n"
 "	border-left: 1px solid #E8ECEC;\n"
 "	background: blue;\n"
 "}"));
@@ -278,26 +279,26 @@ public:
 "QScrollBar:vertical {\n"
 "    border: none;\n"
 "    background-color: #F3F4F8;\n"
-"    width: 10px;\n"
+"    width: 5px;\n"
 "}\n"
 "\n"
 "QScrollBar:vertical:hover {\n"
 "    border: none;\n"
 "    background-color: rgb(220, 220, 220);\n"
-"    width: 10px;\n"
+"    width: 5px;\n"
 "}\n"
 "\n"
 "\n"
 "/*\346\273\232\345\212\250\346\235\241*/\n"
 "QScrollBar::handle:vertical {\n"
-"	border-radius: 5px;\n"
+"	border-radius: 2px;\n"
 "    background: rgb(220, 220, 220);\n"
 "    min-height: 20px;\n"
 "}\n"
 "\n"
 "/*\346\273\232\345\212\250\346\235\241\357\274\232\346\202\254\346\265\256*/\n"
 "QScrollBar::handle:vertical:hover {\n"
-"	border-radius: 5px;\n"
+"	border-radius: 2px;\n"
 "    background: rgb(200, 200, 200);\n"
 "    min-height: 20px;\n"
 "}\n"
@@ -306,8 +307,8 @@ public:
 "QScrollBar::add-line:vertical {\n"
 "    height: 0;\n"
 "    subcontrol-position: bottom;\n"
-"    subcontr"
-                        "ol-origin: margin;\n"
+"    subcontrol"
+                        "-origin: margin;\n"
 "}\n"
 "\n"
 "/*\344\270\212\347\256\255\345\244\264*/\n"
@@ -325,6 +326,7 @@ public:
         scrollArea = new QScrollArea(frame);
         scrollArea->setObjectName(QString::fromUtf8("scrollArea"));
         scrollArea->setStyleSheet(QString::fromUtf8(""));
+        scrollArea->setVerticalScrollBarPolicy(Qt::ScrollBarAsNeeded);
         scrollArea->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
         scrollArea->setWidgetResizable(true);
         scrollAreaWidgetContents = new QWidget();
@@ -339,35 +341,16 @@ public:
         gridLayout_8 = new QGridLayout(scrollAreaWidgetContents);
         gridLayout_8->setObjectName(QString::fromUtf8("gridLayout_8"));
         gridLayout_8->setContentsMargins(9, 9, -1, -1);
-        checkBox_2 = new QCheckBox(scrollAreaWidgetContents);
-        checkBox_2->setObjectName(QString::fromUtf8("checkBox_2"));
-        QSizePolicy sizePolicy(QSizePolicy::Minimum, QSizePolicy::Fixed);
-        sizePolicy.setHorizontalStretch(0);
-        sizePolicy.setVerticalStretch(0);
-        sizePolicy.setHeightForWidth(checkBox_2->sizePolicy().hasHeightForWidth());
-        checkBox_2->setSizePolicy(sizePolicy);
-        checkBox_2->setMinimumSize(QSize(27, 16));
-        checkBox_2->setMaximumSize(QSize(16777215, 16));
-        checkBox_2->setStyleSheet(QString::fromUtf8("QCheckBox {\n"
-"	padding-left: 30px;\n"
-"}\n"
-"\n"
-"QCheckBox::indicator {\n"
-"    width: 27px;\n"
-"    height: 16px;\n"
+        label_19 = new QLabel(scrollAreaWidgetContents);
+        label_19->setObjectName(QString::fromUtf8("label_19"));
+        label_19->setFont(font1);
+        label_19->setStyleSheet(QString::fromUtf8("QLabel {\n"
+"	border: none;\n"
 "	background: none;\n"
-"}\n"
-"\n"
-"QCheckBox::indicator:unchecked {\n"
-"	image: url(:/button/Resources/material/button/turn_off.png);\n"
-"}\n"
-"\n"
-"QCheckBox::indicator:checked {\n"
-"    image: url(:/button/Resources/material/button/turn_on.png);\n"
+"	color: #999999;\n"
 "}"));
-        checkBox_2->setTristate(false);
 
-        gridLayout_8->addWidget(checkBox_2, 12, 2, 1, 4);
+        gridLayout_8->addWidget(label_19, 1, 2, 1, 6);
 
         label_17 = new QLabel(scrollAreaWidgetContents);
         label_17->setObjectName(QString::fromUtf8("label_17"));
@@ -380,8 +363,125 @@ public:
 
         gridLayout_8->addWidget(label_17, 3, 0, 1, 8);
 
+        label_2 = new QLabel(scrollAreaWidgetContents);
+        label_2->setObjectName(QString::fromUtf8("label_2"));
+        label_2->setFont(font);
+        label_2->setStyleSheet(QString::fromUtf8("QLabel {\n"
+"	border: none;\n"
+"	background: none;\n"
+"	color: #666666;\n"
+"}"));
+
+        gridLayout_8->addWidget(label_2, 0, 0, 1, 8);
+
+        label_11 = new QLabel(scrollAreaWidgetContents);
+        label_11->setObjectName(QString::fromUtf8("label_11"));
+        label_11->setFont(font1);
+        label_11->setStyleSheet(QString::fromUtf8("QLabel {\n"
+"	border: none;\n"
+"	background: none;\n"
+"	color: #999999;\n"
+"}"));
+
+        gridLayout_8->addWidget(label_11, 5, 0, 1, 2);
+
+        label_15 = new QLabel(scrollAreaWidgetContents);
+        label_15->setObjectName(QString::fromUtf8("label_15"));
+        label_15->setFont(font1);
+        label_15->setStyleSheet(QString::fromUtf8("QLabel {\n"
+"	border: none;\n"
+"	background: none;\n"
+"	color: #999999;\n"
+"}"));
+
+        gridLayout_8->addWidget(label_15, 6, 0, 1, 2);
+
+        verticalSpacer_6 = new QSpacerItem(20, 20, QSizePolicy::Minimum, QSizePolicy::Fixed);
+
+        gridLayout_8->addItem(verticalSpacer_6, 2, 0, 1, 8);
+
+        label_5 = new QLabel(scrollAreaWidgetContents);
+        label_5->setObjectName(QString::fromUtf8("label_5"));
+        label_5->setFont(font1);
+        label_5->setStyleSheet(QString::fromUtf8("QLabel {\n"
+"	border: none;\n"
+"	background: none;\n"
+"	color: #999999;\n"
+"}"));
+        label_5->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter);
+
+        gridLayout_8->addWidget(label_5, 4, 2, 1, 4);
+
+        label_16 = new QLabel(scrollAreaWidgetContents);
+        label_16->setObjectName(QString::fromUtf8("label_16"));
+        label_16->setFont(font1);
+        label_16->setStyleSheet(QString::fromUtf8("QLabel {\n"
+"	border: none;\n"
+"	background: none;\n"
+"	color: #999999;\n"
+"}"));
+        label_16->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter);
+
+        gridLayout_8->addWidget(label_16, 6, 2, 1, 5);
+
+        verticalSpacer_7 = new QSpacerItem(20, 20, QSizePolicy::Minimum, QSizePolicy::Fixed);
+
+        gridLayout_8->addItem(verticalSpacer_7, 8, 0, 1, 8);
+
+        label_4 = new QLabel(scrollAreaWidgetContents);
+        label_4->setObjectName(QString::fromUtf8("label_4"));
+        label_4->setFont(font1);
+        label_4->setStyleSheet(QString::fromUtf8("QLabel {\n"
+"	border: none;\n"
+"	background: none;\n"
+"	color: #999999;\n"
+"}"));
+
+        gridLayout_8->addWidget(label_4, 4, 0, 1, 2);
+
+        label_18 = new QLabel(scrollAreaWidgetContents);
+        label_18->setObjectName(QString::fromUtf8("label_18"));
+        label_18->setFont(font1);
+        label_18->setStyleSheet(QString::fromUtf8("QLabel {\n"
+"	border: none;\n"
+"	background: none;\n"
+"	color: #999999;\n"
+"}"));
+        label_18->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter);
+
+        gridLayout_8->addWidget(label_18, 1, 0, 1, 2);
+
+        verticalSpacer_5 = new QSpacerItem(171, 548, QSizePolicy::Minimum, QSizePolicy::Expanding);
+
+        gridLayout_8->addItem(verticalSpacer_5, 14, 0, 1, 8);
+
+        label_20 = new QLabel(scrollAreaWidgetContents);
+        label_20->setObjectName(QString::fromUtf8("label_20"));
+        label_20->setFont(font);
+        label_20->setStyleSheet(QString::fromUtf8("QLabel {\n"
+"	border: none;\n"
+"	background: none;\n"
+"	color: #666666;\n"
+"}"));
+
+        gridLayout_8->addWidget(label_20, 9, 0, 1, 8);
+
+        label_21 = new QLabel(scrollAreaWidgetContents);
+        label_21->setObjectName(QString::fromUtf8("label_21"));
+        label_21->setFont(font1);
+        label_21->setStyleSheet(QString::fromUtf8("QLabel {\n"
+"	border: none;\n"
+"	background: none;\n"
+"	color: #999999;\n"
+"}"));
+
+        gridLayout_8->addWidget(label_21, 10, 0, 1, 2);
+
         checkBox = new QCheckBox(scrollAreaWidgetContents);
         checkBox->setObjectName(QString::fromUtf8("checkBox"));
+        QSizePolicy sizePolicy(QSizePolicy::Minimum, QSizePolicy::Fixed);
+        sizePolicy.setHorizontalStretch(0);
+        sizePolicy.setVerticalStretch(0);
         sizePolicy.setHeightForWidth(checkBox->sizePolicy().hasHeightForWidth());
         checkBox->setSizePolicy(sizePolicy);
         checkBox->setMinimumSize(QSize(27, 16));
@@ -405,56 +505,18 @@ public:
 "}"));
         checkBox->setTristate(false);
 
-        gridLayout_8->addWidget(checkBox, 10, 2, 1, 4);
+        gridLayout_8->addWidget(checkBox, 10, 2, 1, 6);
 
-        label_11 = new QLabel(scrollAreaWidgetContents);
-        label_11->setObjectName(QString::fromUtf8("label_11"));
-        label_11->setFont(font1);
-        label_11->setStyleSheet(QString::fromUtf8("QLabel {\n"
+        label_23 = new QLabel(scrollAreaWidgetContents);
+        label_23->setObjectName(QString::fromUtf8("label_23"));
+        label_23->setFont(font1);
+        label_23->setStyleSheet(QString::fromUtf8("QLabel {\n"
 "	border: none;\n"
 "	background: none;\n"
 "	color: #999999;\n"
 "}"));
 
-        gridLayout_8->addWidget(label_11, 5, 1, 1, 1);
-
-        label_12 = new QLabel(scrollAreaWidgetContents);
-        label_12->setObjectName(QString::fromUtf8("label_12"));
-        label_12->setFont(font1);
-        label_12->setStyleSheet(QString::fromUtf8("QLabel {\n"
-"	border: none;\n"
-"	background: none;\n"
-"	color: #999999;\n"
-"}"));
-        label_12->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter);
-
-        gridLayout_8->addWidget(label_12, 5, 2, 1, 1);
-
-        verticalSpacer_5 = new QSpacerItem(171, 548, QSizePolicy::Minimum, QSizePolicy::Expanding);
-
-        gridLayout_8->addItem(verticalSpacer_5, 14, 0, 1, 8);
-
-        label_20 = new QLabel(scrollAreaWidgetContents);
-        label_20->setObjectName(QString::fromUtf8("label_20"));
-        label_20->setFont(font);
-        label_20->setStyleSheet(QString::fromUtf8("QLabel {\n"
-"	border: none;\n"
-"	background: none;\n"
-"	color: #666666;\n"
-"}"));
-
-        gridLayout_8->addWidget(label_20, 9, 0, 1, 8);
-
-        verticalSpacer_7 = new QSpacerItem(20, 20, QSizePolicy::Minimum, QSizePolicy::Fixed);
-
-        gridLayout_8->addItem(verticalSpacer_7, 8, 0, 1, 8);
-
-        widget = new QWidget(scrollAreaWidgetContents);
-        widget->setObjectName(QString::fromUtf8("widget"));
-        widget->setMinimumSize(QSize(0, 70));
-        widget->setMaximumSize(QSize(16777215, 70));
-
-        gridLayout_8->addWidget(widget, 7, 1, 1, 5);
+        gridLayout_8->addWidget(label_23, 11, 0, 1, 2);
 
         checkBox_3 = new QCheckBox(scrollAreaWidgetContents);
         checkBox_3->setObjectName(QString::fromUtf8("checkBox_3"));
@@ -481,7 +543,52 @@ public:
 "}"));
         checkBox_3->setTristate(false);
 
-        gridLayout_8->addWidget(checkBox_3, 11, 2, 1, 4);
+        gridLayout_8->addWidget(checkBox_3, 11, 2, 1, 6);
+
+        label_22 = new QLabel(scrollAreaWidgetContents);
+        label_22->setObjectName(QString::fromUtf8("label_22"));
+        label_22->setFont(font1);
+        label_22->setStyleSheet(QString::fromUtf8("QLabel {\n"
+"	border: none;\n"
+"	background: none;\n"
+"	color: #999999;\n"
+"}"));
+
+        gridLayout_8->addWidget(label_22, 12, 0, 1, 2);
+
+        checkBox_2 = new QCheckBox(scrollAreaWidgetContents);
+        checkBox_2->setObjectName(QString::fromUtf8("checkBox_2"));
+        sizePolicy.setHeightForWidth(checkBox_2->sizePolicy().hasHeightForWidth());
+        checkBox_2->setSizePolicy(sizePolicy);
+        checkBox_2->setMinimumSize(QSize(27, 16));
+        checkBox_2->setMaximumSize(QSize(16777215, 16));
+        checkBox_2->setStyleSheet(QString::fromUtf8("QCheckBox {\n"
+"	padding-left: 30px;\n"
+"}\n"
+"\n"
+"QCheckBox::indicator {\n"
+"    width: 27px;\n"
+"    height: 16px;\n"
+"	background: none;\n"
+"}\n"
+"\n"
+"QCheckBox::indicator:unchecked {\n"
+"	image: url(:/button/Resources/material/button/turn_off.png);\n"
+"}\n"
+"\n"
+"QCheckBox::indicator:checked {\n"
+"    image: url(:/button/Resources/material/button/turn_on.png);\n"
+"}"));
+        checkBox_2->setTristate(false);
+
+        gridLayout_8->addWidget(checkBox_2, 12, 2, 1, 6);
+
+        widget = new QWidget(scrollAreaWidgetContents);
+        widget->setObjectName(QString::fromUtf8("widget"));
+        widget->setMinimumSize(QSize(0, 70));
+        widget->setMaximumSize(QSize(16777215, 70));
+
+        gridLayout_8->addWidget(widget, 7, 0, 1, 8);
 
         label_14 = new QLabel(scrollAreaWidgetContents);
         label_14->setObjectName(QString::fromUtf8("label_14"));
@@ -493,7 +600,19 @@ public:
 "}"));
         label_14->setAlignment(Qt::AlignCenter);
 
-        gridLayout_8->addWidget(label_14, 5, 3, 1, 1);
+        gridLayout_8->addWidget(label_14, 5, 4, 1, 1);
+
+        label_12 = new QLabel(scrollAreaWidgetContents);
+        label_12->setObjectName(QString::fromUtf8("label_12"));
+        label_12->setFont(font1);
+        label_12->setStyleSheet(QString::fromUtf8("QLabel {\n"
+"	border: none;\n"
+"	background: none;\n"
+"	color: #999999;\n"
+"}"));
+        label_12->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter);
+
+        gridLayout_8->addWidget(label_12, 5, 2, 1, 2);
 
         label_13 = new QLabel(scrollAreaWidgetContents);
         label_13->setObjectName(QString::fromUtf8("label_13"));
@@ -505,132 +624,7 @@ public:
 "}"));
         label_13->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter);
 
-        gridLayout_8->addWidget(label_13, 5, 4, 1, 1);
-
-        label_5 = new QLabel(scrollAreaWidgetContents);
-        label_5->setObjectName(QString::fromUtf8("label_5"));
-        label_5->setFont(font1);
-        label_5->setStyleSheet(QString::fromUtf8("QLabel {\n"
-"	border: none;\n"
-"	background: none;\n"
-"	color: #999999;\n"
-"}"));
-        label_5->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter);
-
-        gridLayout_8->addWidget(label_5, 4, 2, 1, 4);
-
-        verticalSpacer_6 = new QSpacerItem(20, 20, QSizePolicy::Minimum, QSizePolicy::Fixed);
-
-        gridLayout_8->addItem(verticalSpacer_6, 2, 0, 1, 8);
-
-        label_19 = new QLabel(scrollAreaWidgetContents);
-        label_19->setObjectName(QString::fromUtf8("label_19"));
-        label_19->setFont(font1);
-        label_19->setStyleSheet(QString::fromUtf8("QLabel {\n"
-"	border: none;\n"
-"	background: none;\n"
-"	color: #999999;\n"
-"}"));
-
-        gridLayout_8->addWidget(label_19, 1, 2, 1, 3);
-
-        label_2 = new QLabel(scrollAreaWidgetContents);
-        label_2->setObjectName(QString::fromUtf8("label_2"));
-        label_2->setFont(font);
-        label_2->setStyleSheet(QString::fromUtf8("QLabel {\n"
-"	border: none;\n"
-"	background: none;\n"
-"	color: #666666;\n"
-"}"));
-
-        gridLayout_8->addWidget(label_2, 0, 0, 1, 8);
-
-        label_23 = new QLabel(scrollAreaWidgetContents);
-        label_23->setObjectName(QString::fromUtf8("label_23"));
-        label_23->setFont(font1);
-        label_23->setStyleSheet(QString::fromUtf8("QLabel {\n"
-"	border: none;\n"
-"	background: none;\n"
-"	color: #999999;\n"
-"}"));
-
-        gridLayout_8->addWidget(label_23, 11, 1, 1, 1);
-
-        horizontalSpacer_3 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
-
-        gridLayout_8->addItem(horizontalSpacer_3, 1, 6, 1, 1);
-
-        label_16 = new QLabel(scrollAreaWidgetContents);
-        label_16->setObjectName(QString::fromUtf8("label_16"));
-        label_16->setFont(font1);
-        label_16->setStyleSheet(QString::fromUtf8("QLabel {\n"
-"	border: none;\n"
-"	background: none;\n"
-"	color: #999999;\n"
-"}"));
-        label_16->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter);
-
-        gridLayout_8->addWidget(label_16, 6, 2, 1, 5);
-
-        label_22 = new QLabel(scrollAreaWidgetContents);
-        label_22->setObjectName(QString::fromUtf8("label_22"));
-        label_22->setFont(font1);
-        label_22->setStyleSheet(QString::fromUtf8("QLabel {\n"
-"	border: none;\n"
-"	background: none;\n"
-"	color: #999999;\n"
-"}"));
-
-        gridLayout_8->addWidget(label_22, 12, 1, 1, 1);
-
-        label_4 = new QLabel(scrollAreaWidgetContents);
-        label_4->setObjectName(QString::fromUtf8("label_4"));
-        label_4->setFont(font1);
-        label_4->setStyleSheet(QString::fromUtf8("QLabel {\n"
-"	border: none;\n"
-"	background: none;\n"
-"	color: #999999;\n"
-"}"));
-
-        gridLayout_8->addWidget(label_4, 4, 1, 1, 1);
-
-        label_15 = new QLabel(scrollAreaWidgetContents);
-        label_15->setObjectName(QString::fromUtf8("label_15"));
-        label_15->setFont(font1);
-        label_15->setStyleSheet(QString::fromUtf8("QLabel {\n"
-"	border: none;\n"
-"	background: none;\n"
-"	color: #999999;\n"
-"}"));
-
-        gridLayout_8->addWidget(label_15, 6, 1, 1, 1);
-
-        label_21 = new QLabel(scrollAreaWidgetContents);
-        label_21->setObjectName(QString::fromUtf8("label_21"));
-        label_21->setFont(font1);
-        label_21->setStyleSheet(QString::fromUtf8("QLabel {\n"
-"	border: none;\n"
-"	background: none;\n"
-"	color: #999999;\n"
-"}"));
-
-        gridLayout_8->addWidget(label_21, 10, 1, 1, 1);
-
-        horizontalSpacer_2 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
-
-        gridLayout_8->addItem(horizontalSpacer_2, 1, 0, 1, 1);
-
-        label_18 = new QLabel(scrollAreaWidgetContents);
-        label_18->setObjectName(QString::fromUtf8("label_18"));
-        label_18->setFont(font1);
-        label_18->setStyleSheet(QString::fromUtf8("QLabel {\n"
-"	border: none;\n"
-"	background: none;\n"
-"	color: #999999;\n"
-"}"));
-        label_18->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter);
-
-        gridLayout_8->addWidget(label_18, 1, 1, 1, 1);
+        gridLayout_8->addWidget(label_13, 5, 5, 1, 2);
 
         scrollArea->setWidget(scrollAreaWidgetContents);
 
@@ -1251,6 +1245,20 @@ public:
         gridLayout_6->setHorizontalSpacing(0);
         gridLayout_6->setVerticalSpacing(5);
         gridLayout_6->setContentsMargins(10, 0, 10, 0);
+        verticalSpacer_4 = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
+
+        gridLayout_6->addItem(verticalSpacer_4, 0, 0, 1, 8);
+
+        label_10 = new QLabel(frame_5);
+        label_10->setObjectName(QString::fromUtf8("label_10"));
+        label_10->setFont(font1);
+        label_10->setStyleSheet(QString::fromUtf8("QLabel {\n"
+"	background: none;\n"
+"	color: #666666;\n"
+"}"));
+
+        gridLayout_6->addWidget(label_10, 2, 3, 1, 1);
+
         pushButton_3 = new QPushButton(frame_5);
         pushButton_3->setObjectName(QString::fromUtf8("pushButton_3"));
         pushButton_3->setMinimumSize(QSize(80, 25));
@@ -1296,27 +1304,33 @@ public:
 
         gridLayout_6->addWidget(pushButton_2, 2, 5, 1, 1);
 
-        label_10 = new QLabel(frame_5);
-        label_10->setObjectName(QString::fromUtf8("label_10"));
-        label_10->setFont(font1);
-        label_10->setStyleSheet(QString::fromUtf8("QLabel {\n"
+        verticalSpacer_3 = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
+
+        gridLayout_6->addItem(verticalSpacer_3, 3, 0, 1, 8);
+
+        label_9 = new QLabel(frame_5);
+        label_9->setObjectName(QString::fromUtf8("label_9"));
+        label_9->setFont(font1);
+        label_9->setStyleSheet(QString::fromUtf8("QLabel {\n"
 "	background: none;\n"
 "	color: #666666;\n"
 "}"));
 
-        gridLayout_6->addWidget(label_10, 2, 3, 1, 1);
+        gridLayout_6->addWidget(label_9, 2, 0, 1, 1);
+
+        label_8 = new QLabel(frame_5);
+        label_8->setObjectName(QString::fromUtf8("label_8"));
+        label_8->setFont(font);
+        label_8->setStyleSheet(QString::fromUtf8("QLabel {\n"
+"	background: none;\n"
+"	color: #333333;\n"
+"}"));
+
+        gridLayout_6->addWidget(label_8, 1, 0, 1, 1);
 
         horizontalSpacer_7 = new QSpacerItem(20, 20, QSizePolicy::Fixed, QSizePolicy::Minimum);
 
         gridLayout_6->addItem(horizontalSpacer_7, 2, 2, 1, 1);
-
-        verticalSpacer_4 = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
-
-        gridLayout_6->addItem(verticalSpacer_4, 0, 0, 1, 8);
-
-        horizontalSpacer_8 = new QSpacerItem(20, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
-
-        gridLayout_6->addItem(horizontalSpacer_8, 2, 6, 1, 1);
 
         comboBox = new QComboBox(frame_5);
         comboBox->addItem(QString());
@@ -1359,6 +1373,10 @@ public:
 
         gridLayout_6->addWidget(comboBox, 2, 1, 1, 1);
 
+        horizontalSpacer_8 = new QSpacerItem(20, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        gridLayout_6->addItem(horizontalSpacer_8, 2, 6, 1, 1);
+
         pushButton = new QPushButton(frame_5);
         buttonGroup_2->addButton(pushButton);
         pushButton->setObjectName(QString::fromUtf8("pushButton"));
@@ -1385,46 +1403,74 @@ public:
 
         gridLayout_6->addWidget(pushButton, 2, 4, 1, 1);
 
-        label_8 = new QLabel(frame_5);
-        label_8->setObjectName(QString::fromUtf8("label_8"));
-        label_8->setFont(font);
-        label_8->setStyleSheet(QString::fromUtf8("QLabel {\n"
-"	background: none;\n"
-"	color: #333333;\n"
-"}"));
-
-        gridLayout_6->addWidget(label_8, 1, 0, 1, 1);
-
-        verticalSpacer_3 = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
-
-        gridLayout_6->addItem(verticalSpacer_3, 3, 0, 1, 8);
-
-        label_9 = new QLabel(frame_5);
-        label_9->setObjectName(QString::fromUtf8("label_9"));
-        label_9->setFont(font1);
-        label_9->setStyleSheet(QString::fromUtf8("QLabel {\n"
-"	background: none;\n"
-"	color: #666666;\n"
-"}"));
-
-        gridLayout_6->addWidget(label_9, 2, 0, 1, 1);
-
 
         gridLayout_5->addWidget(frame_5, 0, 0, 1, 1);
 
-        frame_6 = new QFrame(tab_4);
-        frame_6->setObjectName(QString::fromUtf8("frame_6"));
-        QFont font3;
-        font3.setPointSize(9);
-        frame_6->setFont(font3);
-        frame_6->setStyleSheet(QString::fromUtf8("QFrame {\n"
+        scrollArea_2 = new QScrollArea(tab_4);
+        scrollArea_2->setObjectName(QString::fromUtf8("scrollArea_2"));
+        scrollArea_2->setStyleSheet(QString::fromUtf8("QScrollArea#scrollArea_2 {\n"
 "	border-top: 1px solid #E8ECEC;\n"
 "	background-color: #ffffff;\n"
+"}\n"
+"\n"
+"/*\346\225\264\344\275\223*/\n"
+"QScrollBar:vertical {\n"
+"    border: none;\n"
+"    background-color: #F3F4F8;\n"
+"    width: 10px;\n"
+"}\n"
+"\n"
+"QScrollBar:vertical:hover {\n"
+"    border: none;\n"
+"    background-color: rgb(220, 220, 220);\n"
+"    width: 10px;\n"
+"}\n"
+"\n"
+"\n"
+"/*\346\273\232\345\212\250\346\235\241*/\n"
+"QScrollBar::handle:vertical {\n"
+"	border-radius: 5px;\n"
+"    background: rgb(220, 220, 220);\n"
+"    min-height: 20px;\n"
+"}\n"
+"\n"
+"/*\346\273\232\345\212\250\346\235\241\357\274\232\346\202\254\346\265\256*/\n"
+"QScrollBar::handle:vertical:hover {\n"
+"	border-radius: 5px;\n"
+"    background: rgb(200, 200, 200);\n"
+"    min-height: 20px;\n"
+"}\n"
+"\n"
+"/*\344\270\213\347\256\255\345\244\264*/\n"
+"QScrollBar::add-line:vertical {\n"
+"    height: 0;\n"
+"    subcontrol-position: bottom;\n"
+"    subcontrol-origin: margin;\n"
+"}\n"
+"\n"
+"/*\344\270\212\347\256\255\345\244\264*/\n"
+""
+                        "QScrollBar::sub-line:vertical {\n"
+"    height: 0px;\n"
+"    subcontrol-position: top;\n"
+"    subcontrol-origin: margin;\n"
 "}"));
-        frame_6->setFrameShape(QFrame::StyledPanel);
-        frame_6->setFrameShadow(QFrame::Raised);
+        scrollArea_2->setWidgetResizable(true);
+        scrollAreaWidgetContents_2 = new QWidget();
+        scrollAreaWidgetContents_2->setObjectName(QString::fromUtf8("scrollAreaWidgetContents_2"));
+        scrollAreaWidgetContents_2->setGeometry(QRect(0, 0, 615, 441));
+        scrollAreaWidgetContents_2->setStyleSheet(QString::fromUtf8("background: #ffffff;"));
+        gridLayout_12 = new QGridLayout(scrollAreaWidgetContents_2);
+        gridLayout_12->setObjectName(QString::fromUtf8("gridLayout_12"));
+        gridLayout_12->setHorizontalSpacing(0);
+        gridLayout_12->setContentsMargins(20, -1, 20, -1);
+        verticalSpacer_9 = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
 
-        gridLayout_5->addWidget(frame_6, 1, 0, 1, 1);
+        gridLayout_12->addItem(verticalSpacer_9, 10, 0, 1, 2);
+
+        scrollArea_2->setWidget(scrollAreaWidgetContents_2);
+
+        gridLayout_5->addWidget(scrollArea_2, 1, 0, 1, 1);
 
         quiz_tabWidget->addTab(tab_4, QString());
         tab_5 = new QWidget();
@@ -1552,10 +1598,10 @@ public:
         label_26->setObjectName(QString::fromUtf8("label_26"));
         label_26->setMinimumSize(QSize(0, 40));
         label_26->setMaximumSize(QSize(16777215, 40));
-        QFont font4;
-        font4.setFamily(QString::fromUtf8("\345\276\256\350\275\257\351\233\205\351\273\221"));
-        font4.setPointSize(20);
-        label_26->setFont(font4);
+        QFont font3;
+        font3.setFamily(QString::fromUtf8("\345\276\256\350\275\257\351\233\205\351\273\221"));
+        font3.setPointSize(20);
+        label_26->setFont(font3);
         label_26->setStyleSheet(QString::fromUtf8("QLabel {\n"
 "	border: none;\n"
 "	background: none;\n"
@@ -1568,7 +1614,7 @@ public:
         label_28->setObjectName(QString::fromUtf8("label_28"));
         label_28->setMinimumSize(QSize(0, 40));
         label_28->setMaximumSize(QSize(16777215, 40));
-        label_28->setFont(font4);
+        label_28->setFont(font3);
         label_28->setStyleSheet(QString::fromUtf8("QLabel {\n"
 "	border: none;\n"
 "	background: none;\n"
@@ -1753,10 +1799,10 @@ public:
 
         retranslateUi(TeacherInteractionWidget);
 
-        function_tabWidget->setCurrentIndex(2);
+        function_tabWidget->setCurrentIndex(0);
         board_tabWidget->setCurrentIndex(-1);
         quiz_tabWidget->setCurrentIndex(0);
-        tabWidget->setCurrentIndex(1);
+        tabWidget->setCurrentIndex(0);
 
 
         QMetaObject::connectSlotsByName(TeacherInteractionWidget);
@@ -1765,29 +1811,29 @@ public:
     void retranslateUi(QWidget *TeacherInteractionWidget)
     {
         TeacherInteractionWidget->setWindowTitle(QCoreApplication::translate("TeacherInteractionWidget", "Form", nullptr));
-        pushButton_4->setText(QCoreApplication::translate("TeacherInteractionWidget", "\345\274\200\345\247\213\344\270\212\350\257\276", nullptr));
-        label->setText(QString());
+        begin_lesson_btn->setText(QCoreApplication::translate("TeacherInteractionWidget", "\345\274\200\345\247\213\344\270\212\350\257\276", nullptr));
+        mine_camera_label->setText(QString());
         label_3->setText(QCoreApplication::translate("TeacherInteractionWidget", "\347\233\264\346\222\255\344\270\255", nullptr));
         pushButton_6->setText(QString());
-        checkBox_2->setText(QString());
+        label_19->setText(QCoreApplication::translate("TeacherInteractionWidget", "-", nullptr));
         label_17->setText(QCoreApplication::translate("TeacherInteractionWidget", "\342\227\217 \350\257\276\345\240\202\346\246\202\345\206\265", nullptr));
-        checkBox->setText(QString());
-        label_11->setText(QCoreApplication::translate("TeacherInteractionWidget", "\345\210\260\350\257\276\344\272\272\346\225\260\357\274\232", nullptr));
-        label_12->setText(QCoreApplication::translate("TeacherInteractionWidget", "1", nullptr));
-        label_20->setText(QCoreApplication::translate("TeacherInteractionWidget", "\342\227\217 \350\257\276\345\240\202\347\256\241\347\220\206", nullptr));
-        checkBox_3->setText(QString());
-        label_14->setText(QCoreApplication::translate("TeacherInteractionWidget", "/", nullptr));
-        label_13->setText(QCoreApplication::translate("TeacherInteractionWidget", "100", nullptr));
+        label_2->setText(QCoreApplication::translate("TeacherInteractionWidget", "-", nullptr));
+        label_11->setText(QCoreApplication::translate("TeacherInteractionWidget", "    \345\210\260\350\257\276\344\272\272\346\225\260\357\274\232", nullptr));
+        label_15->setText(QCoreApplication::translate("TeacherInteractionWidget", "    \344\270\223\346\263\250\345\272\246\357\274\232", nullptr));
         label_5->setText(QCoreApplication::translate("TeacherInteractionWidget", "00:00:00", nullptr));
-        label_19->setText(QCoreApplication::translate("TeacherInteractionWidget", "666886", nullptr));
-        label_2->setText(QCoreApplication::translate("TeacherInteractionWidget", "\346\246\202\347\216\207\350\256\272\344\270\216\346\225\260\347\220\206\347\273\237\350\256\241", nullptr));
-        label_23->setText(QCoreApplication::translate("TeacherInteractionWidget", "\345\217\257\344\270\276\346\211\213", nullptr));
-        label_16->setText(QCoreApplication::translate("TeacherInteractionWidget", "100", nullptr));
-        label_22->setText(QCoreApplication::translate("TeacherInteractionWidget", "\345\217\257\344\270\255\351\200\224\345\212\240\345\205\245", nullptr));
-        label_4->setText(QCoreApplication::translate("TeacherInteractionWidget", "\345\267\262\350\277\233\350\241\214\357\274\232", nullptr));
-        label_15->setText(QCoreApplication::translate("TeacherInteractionWidget", "\345\271\263\345\235\207\344\270\223\346\263\250\345\272\246\357\274\232", nullptr));
-        label_21->setText(QCoreApplication::translate("TeacherInteractionWidget", "\347\224\273\346\235\277\345\220\214\346\255\245", nullptr));
-        label_18->setText(QCoreApplication::translate("TeacherInteractionWidget", "\350\257\276\345\240\202\345\217\267\357\274\232", nullptr));
+        label_16->setText(QCoreApplication::translate("TeacherInteractionWidget", "-", nullptr));
+        label_4->setText(QCoreApplication::translate("TeacherInteractionWidget", "    \345\267\262\350\277\233\350\241\214\357\274\232", nullptr));
+        label_18->setText(QCoreApplication::translate("TeacherInteractionWidget", "    \350\257\276\345\240\202\345\217\267\357\274\232", nullptr));
+        label_20->setText(QCoreApplication::translate("TeacherInteractionWidget", "\342\227\217 \350\257\276\345\240\202\347\256\241\347\220\206", nullptr));
+        label_21->setText(QCoreApplication::translate("TeacherInteractionWidget", "    \347\224\273\346\235\277\345\220\214\346\255\245", nullptr));
+        checkBox->setText(QString());
+        label_23->setText(QCoreApplication::translate("TeacherInteractionWidget", "    \345\217\257\344\270\276\346\211\213", nullptr));
+        checkBox_3->setText(QString());
+        label_22->setText(QCoreApplication::translate("TeacherInteractionWidget", "    \345\217\257\344\270\255\351\200\224\345\212\240\345\205\245", nullptr));
+        checkBox_2->setText(QString());
+        label_14->setText(QCoreApplication::translate("TeacherInteractionWidget", "/", nullptr));
+        label_12->setText(QCoreApplication::translate("TeacherInteractionWidget", "-", nullptr));
+        label_13->setText(QCoreApplication::translate("TeacherInteractionWidget", "-", nullptr));
         label_6->setText(QCoreApplication::translate("TeacherInteractionWidget", "\347\224\273\347\254\224\347\262\227\347\273\206", nullptr));
         pen_width_edit->setText(QString());
         label_7->setText(QCoreApplication::translate("TeacherInteractionWidget", "\346\251\241\347\232\256\346\252\253\347\262\227\347\273\206", nullptr));
@@ -1841,9 +1887,11 @@ public:
 #endif // QT_CONFIG(tooltip)
         rubber_btn->setText(QString());
         function_tabWidget->setTabText(function_tabWidget->indexOf(tab), QCoreApplication::translate("TeacherInteractionWidget", "\347\224\273\346\235\277", nullptr));
+        label_10->setText(QCoreApplication::translate("TeacherInteractionWidget", "\347\261\273\345\236\213  ", nullptr));
         pushButton_3->setText(QCoreApplication::translate("TeacherInteractionWidget", "\345\217\221\350\265\267\346\217\220\351\227\256", nullptr));
         pushButton_2->setText(QCoreApplication::translate("TeacherInteractionWidget", "\345\244\232\351\200\211", nullptr));
-        label_10->setText(QCoreApplication::translate("TeacherInteractionWidget", "\347\261\273\345\236\213  ", nullptr));
+        label_9->setText(QCoreApplication::translate("TeacherInteractionWidget", "        \351\200\211\351\241\271\344\270\252\346\225\260  ", nullptr));
+        label_8->setText(QCoreApplication::translate("TeacherInteractionWidget", "\342\227\217 \346\217\220\351\227\256\350\256\276\347\275\256", nullptr));
         comboBox->setItemText(0, QCoreApplication::translate("TeacherInteractionWidget", "1", nullptr));
         comboBox->setItemText(1, QCoreApplication::translate("TeacherInteractionWidget", "2", nullptr));
         comboBox->setItemText(2, QCoreApplication::translate("TeacherInteractionWidget", "3", nullptr));
@@ -1856,8 +1904,6 @@ public:
         comboBox->setItemText(9, QString());
 
         pushButton->setText(QCoreApplication::translate("TeacherInteractionWidget", "\345\215\225\351\200\211", nullptr));
-        label_8->setText(QCoreApplication::translate("TeacherInteractionWidget", "\342\227\217 \346\217\220\351\227\256\350\256\276\347\275\256", nullptr));
-        label_9->setText(QCoreApplication::translate("TeacherInteractionWidget", "        \351\200\211\351\241\271\344\270\252\346\225\260  ", nullptr));
         quiz_tabWidget->setTabText(quiz_tabWidget->indexOf(tab_4), QCoreApplication::translate("TeacherInteractionWidget", "\351\200\211\346\213\251\351\242\230", nullptr));
         quiz_tabWidget->setTabText(quiz_tabWidget->indexOf(tab_5), QCoreApplication::translate("TeacherInteractionWidget", "\351\227\256\347\255\224\351\242\230", nullptr));
         quiz_tabWidget->setTabText(quiz_tabWidget->indexOf(tab_6), QCoreApplication::translate("TeacherInteractionWidget", "\345\205\266\344\273\226\351\242\230\345\236\213", nullptr));

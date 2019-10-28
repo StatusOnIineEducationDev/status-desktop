@@ -37,18 +37,18 @@ public:
     QGridLayout *gridLayout_2;
     QFrame *course_base_info_area;
     QGridLayout *gridLayout;
+    QPushButton *delete_course_btn;
+    QPushButton *pushButton_16;
     QSpacerItem *verticalSpacer;
     QLabel *course_id_text;
-    QPushButton *pushButton_16;
     QLabel *text;
-    QPushButton *delete_course_btn;
-    QLabel *create_date_text;
-    QLabel *create_time_text_2;
-    QSpacerItem *verticalSpacer_2;
-    QPushButton *pushButton_17;
-    QSpacerItem *horizontalSpacer_12;
-    QSpacerItem *horizontalSpacer;
     QComboBox *courses_comboBox;
+    QLabel *create_datetime_text;
+    QSpacerItem *verticalSpacer_2;
+    QSpacerItem *horizontalSpacer_12;
+    QPushButton *pushButton_17;
+    QSpacerItem *horizontalSpacer;
+    QLabel *label_2;
     QTabWidget *tabWidget;
     QWidget *course_data_tab;
     QGridLayout *gridLayout_22;
@@ -94,65 +94,73 @@ public:
     QGridLayout *gridLayout_6;
     QHBoxLayout *horizontalLayout_2;
     QFrame *emotion_report_chart;
-    QVBoxLayout *verticalLayout_6;
+    QGridLayout *gridLayout_12;
+    QSpacerItem *horizontalSpacer_22;
     QLabel *emotion_report_title_text;
+    QFrame *frame_12;
+    QHBoxLayout *horizontalLayout_8;
+    QLabel *bar_datetime;
+    QSpacerItem *horizontalSpacer_23;
+    QLabel *bar_title;
+    QLabel *bar_value;
+    QtCharts::QChartView *emotion_report_bar_chart_widget;
     QLabel *emotion_report_tips_text;
-    QWidget *emotion_report_line_chart_widget;
     QFrame *emotion_report_percentage_chart;
     QGridLayout *gridLayout_7;
+    QPushButton *neutral_btn;
+    QLabel *angry_times_text;
+    QLabel *surprise_times_text;
+    QLabel *happy_title_text;
+    QLabel *neutral_times_text;
+    QLabel *label_111;
+    QProgressBar *disgust_progressBar;
+    QLabel *happy_percent_text;
+    QLabel *label_88;
+    QProgressBar *angry_progressBar;
+    QPushButton *surprise_btn;
+    QProgressBar *fear_progressBar;
+    QLabel *label_112;
+    QProgressBar *neutral_progressBar;
+    QLabel *label_103;
+    QLabel *disgust_percent_text;
+    QLabel *neutral_percent_text;
+    QLabel *surprise_title_text;
+    QProgressBar *surprise_progressBar;
+    QPushButton *sad_btn;
+    QProgressBar *happy_progressBar;
+    QLabel *label_119;
     QPushButton *disgust_btn;
     QLabel *label_122;
-    QPushButton *neutral_btn;
-    QLabel *label_103;
-    QLabel *label_119;
-    QPushButton *fear_btn;
-    QLabel *label_99;
-    QLabel *label_89;
-    QLabel *neutral_times_text;
-    QLabel *fear_times_text;
-    QLabel *fear_title_text;
-    QProgressBar *fear_progressBar;
-    QProgressBar *happy_progressBar;
-    QLabel *disgust_percent_text;
-    QLabel *sad_times_text;
-    QProgressBar *disgust_progressBar;
-    QLabel *angry_title_text;
-    QLabel *surprise_title_text;
-    QLabel *label_88;
-    QLabel *happy_times_text;
-    QLabel *angry_percent_text;
-    QLabel *disgust_times_text;
-    QLabel *happy_percent_text;
-    QLabel *label_123;
-    QLabel *label_91;
-    QLabel *surprise_percent_text;
-    QProgressBar *neutral_progressBar;
-    QLabel *happy_title_text;
-    QLabel *label_111;
-    QPushButton *surprise_btn;
-    QPushButton *angry_btn;
-    QProgressBar *angry_progressBar;
-    QLabel *sad_percent_text;
-    QLabel *neutral_title_text;
-    QLabel *label_112;
-    QLabel *label_102;
-    QLabel *label_116;
-    QLabel *label_92;
-    QLabel *fear_percent_text;
-    QProgressBar *surprise_progressBar;
-    QLabel *label_106;
-    QSpacerItem *horizontalSpacer_7;
-    QPushButton *happy_btn;
-    QLabel *angry_times_text;
-    QLabel *sad_title_text;
-    QLabel *disgust_title_text;
-    QLabel *label_120;
-    QProgressBar *sad_progressBar;
-    QPushButton *sad_btn;
-    QLabel *surprise_times_text;
-    QLabel *neutral_percent_text;
-    QSpacerItem *verticalSpacer_14;
     QSpacerItem *verticalSpacer_13;
+    QPushButton *fear_btn;
+    QLabel *disgust_times_text;
+    QLabel *disgust_title_text;
+    QLabel *sad_times_text;
+    QLabel *fear_times_text;
+    QLabel *angry_percent_text;
+    QLabel *label_120;
+    QLabel *label_106;
+    QLabel *label_123;
+    QProgressBar *sad_progressBar;
+    QLabel *fear_percent_text;
+    QLabel *label_99;
+    QSpacerItem *horizontalSpacer_7;
+    QLabel *fear_title_text;
+    QLabel *label_91;
+    QLabel *label_92;
+    QLabel *neutral_title_text;
+    QLabel *sad_title_text;
+    QLabel *label_116;
+    QLabel *angry_title_text;
+    QPushButton *angry_btn;
+    QPushButton *happy_btn;
+    QLabel *label_102;
+    QLabel *happy_times_text;
+    QLabel *sad_percent_text;
+    QSpacerItem *verticalSpacer_14;
+    QLabel *surprise_percent_text;
+    QLabel *label_89;
+    QPushButton *all_btn;
     QSpacerItem *verticalSpacer_16;
     QGridLayout *gridLayout_8;
     QFrame *distribution_chart;
@@ -177,15 +185,57 @@ public:
     QSpacerItem *horizontalSpacer_9;
     QSpacerItem *horizontalSpacer_11;
     QFrame *area_chart;
-    QVBoxLayout *verticalLayout_5;
-    QLabel *area_chart_title_text;
+    QGridLayout *gridLayout_5;
     QtCharts::QChartView *area_chart_widget;
+    QLabel *area_chart_title_text;
+    QSpacerItem *horizontalSpacer_6;
+    QFrame *frame_11;
+    QHBoxLayout *horizontalLayout;
+    QLabel *point_datetime;
+    QSpacerItem *horizontalSpacer_5;
+    QLabel *point_title;
+    QLabel *point_concentration;
     QWidget *course_member_tab;
     QGridLayout *gridLayout_16;
     QScrollArea *scrollArea_2;
     QWidget *scrollAreaWidgetContents_2;
     QGridLayout *gridLayout_11;
     QGridLayout *gridLayout_17;
+    QFrame *frame;
+    QGridLayout *gridLayout_18;
+    QSpacerItem *horizontalSpacer_13;
+    QFrame *frame_15;
+    QFrame *frame_16;
+    QLabel *num_of_students_text;
+    QSpacerItem *horizontalSpacer_16;
+    QLabel *label_100;
+    QLabel *label_104;
+    QLabel *label_107;
+    QLabel *label_109;
+    QFrame *frame_17;
+    QFrame *frame_18;
+    QLabel *total_text;
+    QSpacerItem *horizontalSpacer_14;
+    QFrame *frame_13;
+    QFrame *frame_14;
+    QLabel *num_of_teachers_text;
+    QSpacerItem *horizontalSpacer_15;
+    QLabel *area_chart_title_text_2;
+    QSpacerItem *verticalSpacer_18;
+    QSpacerItem *verticalSpacer_17;
+    QVBoxLayout *verticalLayout_8;
+    QFrame *frame_2;
+    QHBoxLayout *horizontalLayout_3;
+    QLabel *area_chart_title_text_3;
+    QSpacerItem *horizontalSpacer_21;
+    QPushButton *pushButton_15;
+    QFrame *frame_4;
+    QGridLayout *gridLayout_24;
+    QTableWidget *member_table;
+    QFrame *frame_10;
+    QVBoxLayout *verticalLayout_12;
+    QLabel *area_chart_title_text_4;
+    QWidget *student_area_chart_widget;
     QGridLayout *gridLayout_21;
     QFrame *frame_3;
     QVBoxLayout *verticalLayout_9;
@@ -218,42 +268,7 @@ public:
     QLabel *member_name_text;
     QLabel *member_id_text;
     QLabel *member_pic;
-    QFrame *frame;
-    QGridLayout *gridLayout_18;
-    QSpacerItem *horizontalSpacer_13;
-    QFrame *frame_15;
-    QFrame *frame_16;
-    QLabel *num_of_student_text;
-    QSpacerItem *horizontalSpacer_16;
-    QLabel *label_100;
-    QLabel *label_104;
-    QLabel *label_107;
-    QLabel *label_109;
-    QFrame *frame_17;
-    QFrame *frame_18;
-    QLabel *total_text;
-    QSpacerItem *horizontalSpacer_14;
-    QFrame *frame_13;
-    QFrame *frame_14;
-    QLabel *num_of_teacher_text;
-    QSpacerItem *horizontalSpacer_15;
-    QLabel *area_chart_title_text_2;
-    QSpacerItem *verticalSpacer_18;
-    QSpacerItem *verticalSpacer_17;
-    QVBoxLayout *verticalLayout_8;
-    QFrame *frame_2;
-    QHBoxLayout *horizontalLayout_3;
-    QLabel *area_chart_title_text_3;
-    QSpacerItem *horizontalSpacer_21;
-    QPushButton *pushButton_15;
-    QFrame *frame_4;
-    QGridLayout *gridLayout_24;
-    QTableWidget *member_table;
-    QFrame *frame_10;
-    QVBoxLayout *verticalLayout_12;
-    QLabel *area_chart_title_text_4;
-    QWidget *student_area_chart_widget;
-    QButtonGroup *buttonGroup;
+    QButtonGroup *emotions_report_botton_group;
 
     void setupUi(QWidget *TeacherCourseWidget)
     {
@@ -283,23 +298,26 @@ public:
         gridLayout->setHorizontalSpacing(0);
         gridLayout->setVerticalSpacing(10);
         gridLayout->setContentsMargins(5, 5, 5, 5);
-        verticalSpacer = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
-
-        gridLayout->addItem(verticalSpacer, 0, 1, 1, 4);
-
-        course_id_text = new QLabel(course_base_info_area);
-        course_id_text->setObjectName(QString::fromUtf8("course_id_text"));
+        delete_course_btn = new QPushButton(course_base_info_area);
+        delete_course_btn->setObjectName(QString::fromUtf8("delete_course_btn"));
+        delete_course_btn->setMinimumSize(QSize(80, 0));
+        delete_course_btn->setMaximumSize(QSize(80, 16777215));
         QFont font;
         font.setFamily(QString::fromUtf8("\345\276\256\350\275\257\351\233\205\351\273\221"));
         font.setPointSize(10);
-        course_id_text->setFont(font);
-        course_id_text->setStyleSheet(QString::fromUtf8("QLabel {\n"
+        delete_course_btn->setFont(font);
+        delete_course_btn->setCursor(QCursor(Qt::PointingHandCursor));
+        delete_course_btn->setStyleSheet(QString::fromUtf8("QPushButton {\n"
+"	border: none;\n"
 "	background: none;\n"
-"	color: #999999;\n"
+"	color: #bbbbbb;\n"
+"}\n"
+"\n"
+"QPushButton::hover {\n"
+"	color: red;\n"
 "}"));
-        course_id_text->setAlignment(Qt::AlignCenter);
 
-        gridLayout->addWidget(course_id_text, 2, 7, 1, 1);
+        gridLayout->addWidget(delete_course_btn, 1, 7, 1, 1, Qt::AlignRight);
 
         pushButton_16 = new QPushButton(course_base_info_area);
         pushButton_16->setObjectName(QString::fromUtf8("pushButton_16"));
@@ -319,6 +337,21 @@ public:
 
         gridLayout->addWidget(pushButton_16, 1, 6, 1, 1);
 
+        verticalSpacer = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
+
+        gridLayout->addItem(verticalSpacer, 0, 1, 1, 4);
+
+        course_id_text = new QLabel(course_base_info_area);
+        course_id_text->setObjectName(QString::fromUtf8("course_id_text"));
+        course_id_text->setFont(font);
+        course_id_text->setStyleSheet(QString::fromUtf8("QLabel {\n"
+"	background: none;\n"
+"	color: #999999;\n"
+"}"));
+        course_id_text->setAlignment(Qt::AlignCenter);
+
+        gridLayout->addWidget(course_id_text, 2, 7, 1, 1);
+
         text = new QLabel(course_base_info_area);
         text->setObjectName(QString::fromUtf8("text"));
         text->setMinimumSize(QSize(50, 0));
@@ -330,77 +363,6 @@ public:
 "}"));
 
         gridLayout->addWidget(text, 2, 0, 1, 1);
-
-        delete_course_btn = new QPushButton(course_base_info_area);
-        delete_course_btn->setObjectName(QString::fromUtf8("delete_course_btn"));
-        delete_course_btn->setMinimumSize(QSize(80, 0));
-        delete_course_btn->setMaximumSize(QSize(80, 16777215));
-        delete_course_btn->setFont(font);
-        delete_course_btn->setCursor(QCursor(Qt::PointingHandCursor));
-        delete_course_btn->setStyleSheet(QString::fromUtf8("QPushButton {\n"
-"	border: none;\n"
-"	background: none;\n"
-"	color: #bbbbbb;\n"
-"}\n"
-"\n"
-"QPushButton::hover {\n"
-"	color: red;\n"
-"}"));
-
-        gridLayout->addWidget(delete_course_btn, 1, 7, 1, 1, Qt::AlignRight);
-
-        create_date_text = new QLabel(course_base_info_area);
-        create_date_text->setObjectName(QString::fromUtf8("create_date_text"));
-        create_date_text->setMinimumSize(QSize(200, 0));
-        create_date_text->setMaximumSize(QSize(200, 16777215));
-        create_date_text->setFont(font);
-        create_date_text->setStyleSheet(QString::fromUtf8("QLabel {\n"
-"	background: none;\n"
-"	color: #999999;\n"
-"}"));
-
-        gridLayout->addWidget(create_date_text, 2, 1, 1, 1);
-
-        create_time_text_2 = new QLabel(course_base_info_area);
-        create_time_text_2->setObjectName(QString::fromUtf8("create_time_text_2"));
-        create_time_text_2->setFont(font);
-        create_time_text_2->setStyleSheet(QString::fromUtf8("QLabel {\n"
-"	background: none;\n"
-"	color: #999999;\n"
-"}"));
-        create_time_text_2->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
-
-        gridLayout->addWidget(create_time_text_2, 2, 6, 1, 1);
-
-        verticalSpacer_2 = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
-
-        gridLayout->addItem(verticalSpacer_2, 3, 1, 1, 4);
-
-        pushButton_17 = new QPushButton(course_base_info_area);
-        pushButton_17->setObjectName(QString::fromUtf8("pushButton_17"));
-        pushButton_17->setMinimumSize(QSize(80, 0));
-        pushButton_17->setMaximumSize(QSize(80, 16777215));
-        pushButton_17->setFont(font);
-        pushButton_17->setCursor(QCursor(Qt::PointingHandCursor));
-        pushButton_17->setStyleSheet(QString::fromUtf8("QPushButton {\n"
-"	border: none;\n"
-"	background: none;\n"
-"	color: #bbbbbb;\n"
-"}\n"
-"\n"
-"QPushButton::hover {\n"
-"	color: #333333;\n"
-"}"));
-
-        gridLayout->addWidget(pushButton_17, 1, 5, 1, 1);
-
-        horizontalSpacer_12 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
-
-        gridLayout->addItem(horizontalSpacer_12, 2, 2, 1, 1);
-
-        horizontalSpacer = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
-
-        gridLayout->addItem(horizontalSpacer, 1, 2, 1, 2);
 
         courses_comboBox = new QComboBox(course_base_info_area);
         courses_comboBox->setObjectName(QString::fromUtf8("courses_comboBox"));
@@ -440,12 +402,66 @@ public:
 
         gridLayout->addWidget(courses_comboBox, 1, 0, 1, 2);
 
+        create_datetime_text = new QLabel(course_base_info_area);
+        create_datetime_text->setObjectName(QString::fromUtf8("create_datetime_text"));
+        create_datetime_text->setMinimumSize(QSize(200, 0));
+        create_datetime_text->setMaximumSize(QSize(200, 16777215));
+        create_datetime_text->setFont(font);
+        create_datetime_text->setStyleSheet(QString::fromUtf8("QLabel {\n"
+"	background: none;\n"
+"	color: #999999;\n"
+"}"));
+
+        gridLayout->addWidget(create_datetime_text, 2, 1, 1, 1);
+
+        verticalSpacer_2 = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
+
+        gridLayout->addItem(verticalSpacer_2, 3, 1, 1, 4);
+
+        horizontalSpacer_12 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        gridLayout->addItem(horizontalSpacer_12, 2, 2, 1, 1);
+
+        pushButton_17 = new QPushButton(course_base_info_area);
+        pushButton_17->setObjectName(QString::fromUtf8("pushButton_17"));
+        pushButton_17->setMinimumSize(QSize(80, 0));
+        pushButton_17->setMaximumSize(QSize(80, 16777215));
+        pushButton_17->setFont(font);
+        pushButton_17->setCursor(QCursor(Qt::PointingHandCursor));
+        pushButton_17->setStyleSheet(QString::fromUtf8("QPushButton {\n"
+"	border: none;\n"
+"	background: none;\n"
+"	color: #bbbbbb;\n"
+"}\n"
+"\n"
+"QPushButton::hover {\n"
+"	color: #333333;\n"
+"}"));
+
+        gridLayout->addWidget(pushButton_17, 1, 5, 1, 1);
+
+        horizontalSpacer = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        gridLayout->addItem(horizontalSpacer, 1, 2, 1, 2);
+
+        label_2 = new QLabel(course_base_info_area);
+        label_2->setObjectName(QString::fromUtf8("label_2"));
+        label_2->setFont(font);
+        label_2->setStyleSheet(QString::fromUtf8("QLabel {\n"
+"	background: none;\n"
+"	color: #999999;\n"
+"}"));
+        label_2->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
+
+        gridLayout->addWidget(label_2, 2, 6, 1, 1);
+
 
         gridLayout_2->addWidget(course_base_info_area, 0, 0, 1, 1);
 
         tabWidget = new QTabWidget(TeacherCourseWidget);
         tabWidget->setObjectName(QString::fromUtf8("tabWidget"));
         tabWidget->setMinimumSize(QSize(819, 527));
+        tabWidget->setMaximumSize(QSize(16777215, 16777215));
         tabWidget->setStyleSheet(QString::fromUtf8("QTabBar::tab {\n"
 "	margin: 10px 20px 10px 20px;\n"
 "	width: 30px;\n"
@@ -462,6 +478,9 @@ public:
 "	alignment:center;\n"
 "}"));
         tabWidget->setIconSize(QSize(30, 30));
+        tabWidget->setUsesScrollButtons(true);
+        tabWidget->setDocumentMode(false);
+        tabWidget->setMovable(false);
         course_data_tab = new QWidget();
         course_data_tab->setObjectName(QString::fromUtf8("course_data_tab"));
         course_data_tab->setStyleSheet(QString::fromUtf8(""));
@@ -815,8 +834,12 @@ public:
 "}"));
         emotion_report_chart->setFrameShape(QFrame::StyledPanel);
         emotion_report_chart->setFrameShadow(QFrame::Raised);
-        verticalLayout_6 = new QVBoxLayout(emotion_report_chart);
-        verticalLayout_6->setObjectName(QString::fromUtf8("verticalLayout_6"));
+        gridLayout_12 = new QGridLayout(emotion_report_chart);
+        gridLayout_12->setObjectName(QString::fromUtf8("gridLayout_12"));
+        horizontalSpacer_22 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        gridLayout_12->addItem(horizontalSpacer_22, 0, 1, 1, 1);
+
         emotion_report_title_text = new QLabel(emotion_report_chart);
         emotion_report_title_text->setObjectName(QString::fromUtf8("emotion_report_title_text"));
         emotion_report_title_text->setMinimumSize(QSize(0, 30));
@@ -830,7 +853,58 @@ public:
 "	color: #6C6FC0;\n"
 "}"));
 
-        verticalLayout_6->addWidget(emotion_report_title_text);
+        gridLayout_12->addWidget(emotion_report_title_text, 0, 0, 1, 1);
+
+        frame_12 = new QFrame(emotion_report_chart);
+        frame_12->setObjectName(QString::fromUtf8("frame_12"));
+        frame_12->setFrameShape(QFrame::StyledPanel);
+        frame_12->setFrameShadow(QFrame::Raised);
+        horizontalLayout_8 = new QHBoxLayout(frame_12);
+        horizontalLayout_8->setObjectName(QString::fromUtf8("horizontalLayout_8"));
+        horizontalLayout_8->setContentsMargins(0, 0, 0, 0);
+        bar_datetime = new QLabel(frame_12);
+        bar_datetime->setObjectName(QString::fromUtf8("bar_datetime"));
+        bar_datetime->setFont(font);
+        bar_datetime->setStyleSheet(QString::fromUtf8("QLabel {\n"
+"	background: none;\n"
+"	color: #999999;\n"
+"}"));
+
+        horizontalLayout_8->addWidget(bar_datetime);
+
+        horizontalSpacer_23 = new QSpacerItem(20, 20, QSizePolicy::Fixed, QSizePolicy::Minimum);
+
+        horizontalLayout_8->addItem(horizontalSpacer_23);
+
+        bar_title = new QLabel(frame_12);
+        bar_title->setObjectName(QString::fromUtf8("bar_title"));
+        bar_title->setFont(font);
+        bar_title->setStyleSheet(QString::fromUtf8("QLabel {\n"
+"	background: none;\n"
+"	color: #999999;\n"
+"}"));
+
+        horizontalLayout_8->addWidget(bar_title);
+
+        bar_value = new QLabel(frame_12);
+        bar_value->setObjectName(QString::fromUtf8("bar_value"));
+        bar_value->setFont(font);
+        bar_value->setStyleSheet(QString::fromUtf8("QLabel {\n"
+"	background: none;\n"
+"}"));
+
+        horizontalLayout_8->addWidget(bar_value);
+
+
+        gridLayout_12->addWidget(frame_12, 0, 2, 1, 1);
+
+        emotion_report_bar_chart_widget = new QtCharts::QChartView(emotion_report_chart);
+        emotion_report_bar_chart_widget->setObjectName(QString::fromUtf8("emotion_report_bar_chart_widget"));
+        emotion_report_bar_chart_widget->setMinimumSize(QSize(0, 270));
+        emotion_report_bar_chart_widget->setMaximumSize(QSize(16777215, 270));
+        emotion_report_bar_chart_widget->setStyleSheet(QString::fromUtf8(""));
+
+        gridLayout_12->addWidget(emotion_report_bar_chart_widget, 2, 0, 1, 3);
 
         emotion_report_tips_text = new QLabel(emotion_report_chart);
         emotion_report_tips_text->setObjectName(QString::fromUtf8("emotion_report_tips_text"));
@@ -840,15 +914,7 @@ public:
 "	color: #999999;\n"
 "}"));
 
-        verticalLayout_6->addWidget(emotion_report_tips_text);
-
-        emotion_report_line_chart_widget = new QWidget(emotion_report_chart);
-        emotion_report_line_chart_widget->setObjectName(QString::fromUtf8("emotion_report_line_chart_widget"));
-        emotion_report_line_chart_widget->setMinimumSize(QSize(0, 270));
-        emotion_report_line_chart_widget->setMaximumSize(QSize(16777215, 270));
-        emotion_report_line_chart_widget->setStyleSheet(QString::fromUtf8(""));
-
-        verticalLayout_6->addWidget(emotion_report_line_chart_widget);
+        gridLayout_12->addWidget(emotion_report_tips_text, 1, 0, 1, 3);
 
 
         horizontalLayout_2->addWidget(emotion_report_chart);
@@ -864,33 +930,10 @@ public:
         emotion_report_percentage_chart->setFrameShadow(QFrame::Raised);
         gridLayout_7 = new QGridLayout(emotion_report_percentage_chart);
         gridLayout_7->setObjectName(QString::fromUtf8("gridLayout_7"));
-        disgust_btn = new QPushButton(emotion_report_percentage_chart);
-        buttonGroup = new QButtonGroup(TeacherCourseWidget);
-        buttonGroup->setObjectName(QString::fromUtf8("buttonGroup"));
-        buttonGroup->addButton(disgust_btn);
-        disgust_btn->setObjectName(QString::fromUtf8("disgust_btn"));
-        disgust_btn->setMinimumSize(QSize(20, 0));
-        disgust_btn->setMaximumSize(QSize(20, 16777215));
-        disgust_btn->setCursor(QCursor(Qt::PointingHandCursor));
-        disgust_btn->setStyleSheet(QString::fromUtf8("QPushButton {\n"
-"	border: none;\n"
-"	background: none;\n"
-"}"));
-        QIcon icon;
-        icon.addFile(QString::fromUtf8(":/button/Resources/material/button/disgust.png"), QSize(), QIcon::Normal, QIcon::Off);
-        disgust_btn->setIcon(icon);
-        disgust_btn->setIconSize(QSize(20, 20));
-        disgust_btn->setCheckable(true);
-
-        gridLayout_7->addWidget(disgust_btn, 4, 0, 1, 1);
-
-        label_122 = new QLabel(emotion_report_percentage_chart);
-        label_122->setObjectName(QString::fromUtf8("label_122"));
-
-        gridLayout_7->addWidget(label_122, 6, 4, 1, 1);
-
         neutral_btn = new QPushButton(emotion_report_percentage_chart);
-        buttonGroup->addButton(neutral_btn);
+        emotions_report_botton_group = new QButtonGroup(TeacherCourseWidget);
+        emotions_report_botton_group->setObjectName(QString::fromUtf8("emotions_report_botton_group"));
+        emotions_report_botton_group->addButton(neutral_btn);
         neutral_btn->setObjectName(QString::fromUtf8("neutral_btn"));
         neutral_btn->setMinimumSize(QSize(20, 0));
         neutral_btn->setMaximumSize(QSize(20, 16777215));
@@ -899,51 +942,35 @@ public:
 "	border: none;\n"
 "	background: none;\n"
 "}"));
-        QIcon icon1;
-        icon1.addFile(QString::fromUtf8(":/button/Resources/material/button/neutral.png"), QSize(), QIcon::Normal, QIcon::Off);
-        neutral_btn->setIcon(icon1);
+        QIcon icon;
+        icon.addFile(QString::fromUtf8(":/button/Resources/material/button/neutral.png"), QSize(), QIcon::Normal, QIcon::Off);
+        neutral_btn->setIcon(icon);
         neutral_btn->setIconSize(QSize(20, 20));
         neutral_btn->setCheckable(true);
 
         gridLayout_7->addWidget(neutral_btn, 14, 0, 1, 1);
 
-        label_103 = new QLabel(emotion_report_percentage_chart);
-        label_103->setObjectName(QString::fromUtf8("label_103"));
+        angry_times_text = new QLabel(emotion_report_percentage_chart);
+        angry_times_text->setObjectName(QString::fromUtf8("angry_times_text"));
+        angry_times_text->setMinimumSize(QSize(25, 0));
+        angry_times_text->setMaximumSize(QSize(25, 16777215));
+        angry_times_text->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
 
-        gridLayout_7->addWidget(label_103, 10, 6, 1, 1);
+        gridLayout_7->addWidget(angry_times_text, 2, 3, 1, 1);
 
-        label_119 = new QLabel(emotion_report_percentage_chart);
-        label_119->setObjectName(QString::fromUtf8("label_119"));
+        surprise_times_text = new QLabel(emotion_report_percentage_chart);
+        surprise_times_text->setObjectName(QString::fromUtf8("surprise_times_text"));
+        surprise_times_text->setMinimumSize(QSize(25, 0));
+        surprise_times_text->setMaximumSize(QSize(25, 16777215));
+        surprise_times_text->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
 
-        gridLayout_7->addWidget(label_119, 2, 4, 1, 1);
+        gridLayout_7->addWidget(surprise_times_text, 12, 3, 1, 1);
 
-        fear_btn = new QPushButton(emotion_report_percentage_chart);
-        buttonGroup->addButton(fear_btn);
-        fear_btn->setObjectName(QString::fromUtf8("fear_btn"));
-        fear_btn->setMinimumSize(QSize(20, 0));
-        fear_btn->setMaximumSize(QSize(20, 16777215));
-        fear_btn->setCursor(QCursor(Qt::PointingHandCursor));
-        fear_btn->setStyleSheet(QString::fromUtf8("QPushButton {\n"
-"	border: none;\n"
-"	background: none;\n"
-"}"));
-        QIcon icon2;
-        icon2.addFile(QString::fromUtf8(":/button/Resources/material/button/fear.png"), QSize(), QIcon::Normal, QIcon::Off);
-        fear_btn->setIcon(icon2);
-        fear_btn->setIconSize(QSize(20, 20));
-        fear_btn->setCheckable(true);
+        happy_title_text = new QLabel(emotion_report_percentage_chart);
+        happy_title_text->setObjectName(QString::fromUtf8("happy_title_text"));
+        happy_title_text->setFont(font);
 
-        gridLayout_7->addWidget(fear_btn, 6, 0, 1, 1);
-
-        label_99 = new QLabel(emotion_report_percentage_chart);
-        label_99->setObjectName(QString::fromUtf8("label_99"));
-
-        gridLayout_7->addWidget(label_99, 12, 6, 1, 1);
-
-        label_89 = new QLabel(emotion_report_percentage_chart);
-        label_89->setObjectName(QString::fromUtf8("label_89"));
-
-        gridLayout_7->addWidget(label_89, 8, 6, 1, 1);
+        gridLayout_7->addWidget(happy_title_text, 8, 1, 1, 1);
 
         neutral_times_text = new QLabel(emotion_report_percentage_chart);
         neutral_times_text->setObjectName(QString::fromUtf8("neutral_times_text"));
@@ -953,77 +980,10 @@ public:
 
         gridLayout_7->addWidget(neutral_times_text, 14, 3, 1, 1);
 
-        fear_times_text = new QLabel(emotion_report_percentage_chart);
-        fear_times_text->setObjectName(QString::fromUtf8("fear_times_text"));
-        fear_times_text->setMinimumSize(QSize(25, 0));
-        fear_times_text->setMaximumSize(QSize(25, 16777215));
-        fear_times_text->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
+        label_111 = new QLabel(emotion_report_percentage_chart);
+        label_111->setObjectName(QString::fromUtf8("label_111"));
 
-        gridLayout_7->addWidget(fear_times_text, 6, 3, 1, 1);
-
-        fear_title_text = new QLabel(emotion_report_percentage_chart);
-        fear_title_text->setObjectName(QString::fromUtf8("fear_title_text"));
-        fear_title_text->setFont(font);
-
-        gridLayout_7->addWidget(fear_title_text, 6, 1, 1, 1);
-
-        fear_progressBar = new QProgressBar(emotion_report_percentage_chart);
-        fear_progressBar->setObjectName(QString::fromUtf8("fear_progressBar"));
-        fear_progressBar->setMinimumSize(QSize(0, 8));
-        fear_progressBar->setMaximumSize(QSize(16777215, 8));
-        fear_progressBar->setStyleSheet(QString::fromUtf8("QProgressBar{\n"
-"        border: none;\n"
-"		border-radius: 4px;\n"
-"        color: black;\n"
-"        text-align: right;\n"
-"        background: #ffffff;\n"
-"}\n"
-"QProgressBar::chunk {\n"
-"        border: none;\n"
-"		border-radius: 4px;\n"
-"        background: #F9D31A;\n"
-"}"));
-        fear_progressBar->setValue(5);
-        fear_progressBar->setTextVisible(false);
-
-        gridLayout_7->addWidget(fear_progressBar, 7, 0, 1, 7);
-
-        happy_progressBar = new QProgressBar(emotion_report_percentage_chart);
-        happy_progressBar->setObjectName(QString::fromUtf8("happy_progressBar"));
-        happy_progressBar->setMinimumSize(QSize(0, 8));
-        happy_progressBar->setMaximumSize(QSize(16777215, 8));
-        happy_progressBar->setStyleSheet(QString::fromUtf8("QProgressBar{\n"
-"        border: none;\n"
-"		border-radius: 4px;\n"
-"        color: black;\n"
-"        text-align: right;\n"
-"        background: #ffffff;\n"
-"}\n"
-"QProgressBar::chunk {\n"
-"        border: none;\n"
-"		border-radius: 4px;\n"
-"        background: #24AD1D;\n"
-"}"));
-        happy_progressBar->setValue(5);
-        happy_progressBar->setTextVisible(false);
-
-        gridLayout_7->addWidget(happy_progressBar, 9, 0, 1, 7);
-
-        disgust_percent_text = new QLabel(emotion_report_percentage_chart);
-        disgust_percent_text->setObjectName(QString::fromUtf8("disgust_percent_text"));
-        disgust_percent_text->setMinimumSize(QSize(20, 0));
-        disgust_percent_text->setMaximumSize(QSize(20, 16777215));
-        disgust_percent_text->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
-
-        gridLayout_7->addWidget(disgust_percent_text, 4, 5, 1, 1);
-
-        sad_times_text = new QLabel(emotion_report_percentage_chart);
-        sad_times_text->setObjectName(QString::fromUtf8("sad_times_text"));
-        sad_times_text->setMinimumSize(QSize(25, 0));
-        sad_times_text->setMaximumSize(QSize(25, 16777215));
-        sad_times_text->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
-
-        gridLayout_7->addWidget(sad_times_text, 10, 3, 1, 1);
+        gridLayout_7->addWidget(label_111, 6, 6, 1, 1);
 
         disgust_progressBar = new QProgressBar(emotion_report_percentage_chart);
         disgust_progressBar->setObjectName(QString::fromUtf8("disgust_progressBar"));
@@ -1041,51 +1001,10 @@ public:
 "		border-radius: 4px;\n"
 "        background: #23B7E5;\n"
 "}"));
-        disgust_progressBar->setValue(5);
+        disgust_progressBar->setValue(4);
         disgust_progressBar->setTextVisible(false);
 
         gridLayout_7->addWidget(disgust_progressBar, 5, 0, 1, 7);
-
-        angry_title_text = new QLabel(emotion_report_percentage_chart);
-        angry_title_text->setObjectName(QString::fromUtf8("angry_title_text"));
-        angry_title_text->setFont(font);
-
-        gridLayout_7->addWidget(angry_title_text, 2, 1, 1, 1);
-
-        surprise_title_text = new QLabel(emotion_report_percentage_chart);
-        surprise_title_text->setObjectName(QString::fromUtf8("surprise_title_text"));
-        surprise_title_text->setFont(font);
-
-        gridLayout_7->addWidget(surprise_title_text, 12, 1, 1, 1);
-
-        label_88 = new QLabel(emotion_report_percentage_chart);
-        label_88->setObjectName(QString::fromUtf8("label_88"));
-
-        gridLayout_7->addWidget(label_88, 10, 4, 1, 1);
-
-        happy_times_text = new QLabel(emotion_report_percentage_chart);
-        happy_times_text->setObjectName(QString::fromUtf8("happy_times_text"));
-        happy_times_text->setMinimumSize(QSize(25, 0));
-        happy_times_text->setMaximumSize(QSize(25, 16777215));
-        happy_times_text->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
-
-        gridLayout_7->addWidget(happy_times_text, 8, 3, 1, 1);
-
-        angry_percent_text = new QLabel(emotion_report_percentage_chart);
-        angry_percent_text->setObjectName(QString::fromUtf8("angry_percent_text"));
-        angry_percent_text->setMinimumSize(QSize(20, 0));
-        angry_percent_text->setMaximumSize(QSize(20, 16777215));
-        angry_percent_text->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
-
-        gridLayout_7->addWidget(angry_percent_text, 2, 5, 1, 1);
-
-        disgust_times_text = new QLabel(emotion_report_percentage_chart);
-        disgust_times_text->setObjectName(QString::fromUtf8("disgust_times_text"));
-        disgust_times_text->setMinimumSize(QSize(25, 0));
-        disgust_times_text->setMaximumSize(QSize(25, 16777215));
-        disgust_times_text->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
-
-        gridLayout_7->addWidget(disgust_times_text, 4, 3, 1, 1);
 
         happy_percent_text = new QLabel(emotion_report_percentage_chart);
         happy_percent_text->setObjectName(QString::fromUtf8("happy_percent_text"));
@@ -1095,96 +1014,10 @@ public:
 
         gridLayout_7->addWidget(happy_percent_text, 8, 5, 1, 1);
 
-        label_123 = new QLabel(emotion_report_percentage_chart);
-        label_123->setObjectName(QString::fromUtf8("label_123"));
-        label_123->setFont(font);
-        label_123->setStyleSheet(QString::fromUtf8("QLabel {\n"
-"	background: none;\n"
-"	color: #999999;\n"
-"}"));
+        label_88 = new QLabel(emotion_report_percentage_chart);
+        label_88->setObjectName(QString::fromUtf8("label_88"));
 
-        gridLayout_7->addWidget(label_123, 1, 0, 1, 4);
-
-        label_91 = new QLabel(emotion_report_percentage_chart);
-        label_91->setObjectName(QString::fromUtf8("label_91"));
-
-        gridLayout_7->addWidget(label_91, 2, 6, 1, 1);
-
-        surprise_percent_text = new QLabel(emotion_report_percentage_chart);
-        surprise_percent_text->setObjectName(QString::fromUtf8("surprise_percent_text"));
-        surprise_percent_text->setMinimumSize(QSize(20, 0));
-        surprise_percent_text->setMaximumSize(QSize(20, 16777215));
-        surprise_percent_text->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
-
-        gridLayout_7->addWidget(surprise_percent_text, 12, 5, 1, 1);
-
-        neutral_progressBar = new QProgressBar(emotion_report_percentage_chart);
-        neutral_progressBar->setObjectName(QString::fromUtf8("neutral_progressBar"));
-        neutral_progressBar->setMinimumSize(QSize(0, 8));
-        neutral_progressBar->setMaximumSize(QSize(16777215, 8));
-        neutral_progressBar->setStyleSheet(QString::fromUtf8("QProgressBar{\n"
-"        border: none;\n"
-"		border-radius: 4px;\n"
-"        color: black;\n"
-"        text-align: right;\n"
-"        background: #ffffff;\n"
-"}\n"
-"QProgressBar::chunk {\n"
-"        border: none;\n"
-"		border-radius: 4px;\n"
-"        background: rgb(0, 160, 230);\n"
-"}"));
-        neutral_progressBar->setValue(5);
-        neutral_progressBar->setTextVisible(false);
-
-        gridLayout_7->addWidget(neutral_progressBar, 15, 0, 1, 7);
-
-        happy_title_text = new QLabel(emotion_report_percentage_chart);
-        happy_title_text->setObjectName(QString::fromUtf8("happy_title_text"));
-        happy_title_text->setFont(font);
-
-        gridLayout_7->addWidget(happy_title_text, 8, 1, 1, 1);
-
-        label_111 = new QLabel(emotion_report_percentage_chart);
-        label_111->setObjectName(QString::fromUtf8("label_111"));
-
-        gridLayout_7->addWidget(label_111, 6, 6, 1, 1);
-
-        surprise_btn = new QPushButton(emotion_report_percentage_chart);
-        buttonGroup->addButton(surprise_btn);
-        surprise_btn->setObjectName(QString::fromUtf8("surprise_btn"));
-        surprise_btn->setMinimumSize(QSize(20, 0));
-        surprise_btn->setMaximumSize(QSize(20, 16777215));
-        surprise_btn->setCursor(QCursor(Qt::PointingHandCursor));
-        surprise_btn->setStyleSheet(QString::fromUtf8("QPushButton {\n"
-"	border: none;\n"
-"	background: none;\n"
-"}"));
-        QIcon icon3;
-        icon3.addFile(QString::fromUtf8(":/button/Resources/material/button/surprise.png"), QSize(), QIcon::Normal, QIcon::Off);
-        surprise_btn->setIcon(icon3);
-        surprise_btn->setIconSize(QSize(20, 20));
-        surprise_btn->setCheckable(true);
-
-        gridLayout_7->addWidget(surprise_btn, 12, 0, 1, 1);
-
-        angry_btn = new QPushButton(emotion_report_percentage_chart);
-        buttonGroup->addButton(angry_btn);
-        angry_btn->setObjectName(QString::fromUtf8("angry_btn"));
-        angry_btn->setMinimumSize(QSize(20, 0));
-        angry_btn->setMaximumSize(QSize(20, 16777215));
-        angry_btn->setCursor(QCursor(Qt::PointingHandCursor));
-        angry_btn->setStyleSheet(QString::fromUtf8("QPushButton {\n"
-"	border: none;\n"
-"	background: none;\n"
-"}"));
-        QIcon icon4;
-        icon4.addFile(QString::fromUtf8(":/button/Resources/material/button/angry.png"), QSize(), QIcon::Normal, QIcon::Off);
-        angry_btn->setIcon(icon4);
-        angry_btn->setIconSize(QSize(20, 20));
-        angry_btn->setCheckable(true);
-
-        gridLayout_7->addWidget(angry_btn, 2, 0, 1, 1);
+        gridLayout_7->addWidget(label_88, 10, 4, 1, 1);
 
         angry_progressBar = new QProgressBar(emotion_report_percentage_chart);
         angry_progressBar->setObjectName(QString::fromUtf8("angry_progressBar"));
@@ -1202,52 +1035,102 @@ public:
 "		border-radius: 4px;\n"
 "        background: #6C6FC0;\n"
 "}"));
-        angry_progressBar->setValue(5);
+        angry_progressBar->setValue(4);
         angry_progressBar->setTextVisible(false);
 
         gridLayout_7->addWidget(angry_progressBar, 3, 0, 1, 7);
 
-        sad_percent_text = new QLabel(emotion_report_percentage_chart);
-        sad_percent_text->setObjectName(QString::fromUtf8("sad_percent_text"));
-        sad_percent_text->setMinimumSize(QSize(20, 0));
-        sad_percent_text->setMaximumSize(QSize(20, 16777215));
-        sad_percent_text->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
+        surprise_btn = new QPushButton(emotion_report_percentage_chart);
+        emotions_report_botton_group->addButton(surprise_btn);
+        surprise_btn->setObjectName(QString::fromUtf8("surprise_btn"));
+        surprise_btn->setMinimumSize(QSize(20, 0));
+        surprise_btn->setMaximumSize(QSize(20, 16777215));
+        surprise_btn->setCursor(QCursor(Qt::PointingHandCursor));
+        surprise_btn->setStyleSheet(QString::fromUtf8("QPushButton {\n"
+"	border: none;\n"
+"	background: none;\n"
+"}"));
+        QIcon icon1;
+        icon1.addFile(QString::fromUtf8(":/button/Resources/material/button/surprise.png"), QSize(), QIcon::Normal, QIcon::Off);
+        surprise_btn->setIcon(icon1);
+        surprise_btn->setIconSize(QSize(20, 20));
+        surprise_btn->setCheckable(true);
 
-        gridLayout_7->addWidget(sad_percent_text, 10, 5, 1, 1);
+        gridLayout_7->addWidget(surprise_btn, 12, 0, 1, 1);
 
-        neutral_title_text = new QLabel(emotion_report_percentage_chart);
-        neutral_title_text->setObjectName(QString::fromUtf8("neutral_title_text"));
-        neutral_title_text->setFont(font);
+        fear_progressBar = new QProgressBar(emotion_report_percentage_chart);
+        fear_progressBar->setObjectName(QString::fromUtf8("fear_progressBar"));
+        fear_progressBar->setMinimumSize(QSize(0, 8));
+        fear_progressBar->setMaximumSize(QSize(16777215, 8));
+        fear_progressBar->setStyleSheet(QString::fromUtf8("QProgressBar{\n"
+"        border: none;\n"
+"		border-radius: 4px;\n"
+"        color: black;\n"
+"        text-align: right;\n"
+"        background: #ffffff;\n"
+"}\n"
+"QProgressBar::chunk {\n"
+"        border: none;\n"
+"		border-radius: 4px;\n"
+"        background: #F9D31A;\n"
+"}"));
+        fear_progressBar->setValue(4);
+        fear_progressBar->setTextVisible(false);
 
-        gridLayout_7->addWidget(neutral_title_text, 14, 1, 1, 1);
+        gridLayout_7->addWidget(fear_progressBar, 7, 0, 1, 7);
 
         label_112 = new QLabel(emotion_report_percentage_chart);
         label_112->setObjectName(QString::fromUtf8("label_112"));
 
         gridLayout_7->addWidget(label_112, 4, 6, 1, 1);
 
-        label_102 = new QLabel(emotion_report_percentage_chart);
-        label_102->setObjectName(QString::fromUtf8("label_102"));
+        neutral_progressBar = new QProgressBar(emotion_report_percentage_chart);
+        neutral_progressBar->setObjectName(QString::fromUtf8("neutral_progressBar"));
+        neutral_progressBar->setMinimumSize(QSize(0, 8));
+        neutral_progressBar->setMaximumSize(QSize(16777215, 8));
+        neutral_progressBar->setStyleSheet(QString::fromUtf8("QProgressBar{\n"
+"        border: none;\n"
+"		border-radius: 4px;\n"
+"        color: black;\n"
+"        text-align: right;\n"
+"        background: #ffffff;\n"
+"}\n"
+"QProgressBar::chunk {\n"
+"        border: none;\n"
+"		border-radius: 4px;\n"
+"        background: rgb(0, 160, 230);\n"
+"}"));
+        neutral_progressBar->setValue(4);
+        neutral_progressBar->setTextVisible(false);
 
-        gridLayout_7->addWidget(label_102, 4, 4, 1, 1);
+        gridLayout_7->addWidget(neutral_progressBar, 15, 0, 1, 7);
 
-        label_116 = new QLabel(emotion_report_percentage_chart);
-        label_116->setObjectName(QString::fromUtf8("label_116"));
+        label_103 = new QLabel(emotion_report_percentage_chart);
+        label_103->setObjectName(QString::fromUtf8("label_103"));
 
-        gridLayout_7->addWidget(label_116, 14, 6, 1, 1);
+        gridLayout_7->addWidget(label_103, 10, 6, 1, 1);
 
-        label_92 = new QLabel(emotion_report_percentage_chart);
-        label_92->setObjectName(QString::fromUtf8("label_92"));
+        disgust_percent_text = new QLabel(emotion_report_percentage_chart);
+        disgust_percent_text->setObjectName(QString::fromUtf8("disgust_percent_text"));
+        disgust_percent_text->setMinimumSize(QSize(20, 0));
+        disgust_percent_text->setMaximumSize(QSize(20, 16777215));
+        disgust_percent_text->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
 
-        gridLayout_7->addWidget(label_92, 14, 4, 1, 1);
+        gridLayout_7->addWidget(disgust_percent_text, 4, 5, 1, 1);
 
-        fear_percent_text = new QLabel(emotion_report_percentage_chart);
-        fear_percent_text->setObjectName(QString::fromUtf8("fear_percent_text"));
-        fear_percent_text->setMinimumSize(QSize(20, 0));
-        fear_percent_text->setMaximumSize(QSize(20, 16777215));
-        fear_percent_text->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
+        neutral_percent_text = new QLabel(emotion_report_percentage_chart);
+        neutral_percent_text->setObjectName(QString::fromUtf8("neutral_percent_text"));
+        neutral_percent_text->setMinimumSize(QSize(20, 0));
+        neutral_percent_text->setMaximumSize(QSize(20, 16777215));
+        neutral_percent_text->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
 
-        gridLayout_7->addWidget(fear_percent_text, 6, 5, 1, 1);
+        gridLayout_7->addWidget(neutral_percent_text, 14, 5, 1, 1);
+
+        surprise_title_text = new QLabel(emotion_report_percentage_chart);
+        surprise_title_text->setObjectName(QString::fromUtf8("surprise_title_text"));
+        surprise_title_text->setFont(font);
+
+        gridLayout_7->addWidget(surprise_title_text, 12, 1, 1, 1);
 
         surprise_progressBar = new QProgressBar(emotion_report_percentage_chart);
         surprise_progressBar->setObjectName(QString::fromUtf8("surprise_progressBar"));
@@ -1265,51 +1148,107 @@ public:
 "		border-radius: 4px;\n"
 "        background: #393E51;\n"
 "}"));
-        surprise_progressBar->setValue(5);
+        surprise_progressBar->setValue(4);
         surprise_progressBar->setTextVisible(false);
 
         gridLayout_7->addWidget(surprise_progressBar, 13, 0, 1, 7);
 
-        label_106 = new QLabel(emotion_report_percentage_chart);
-        label_106->setObjectName(QString::fromUtf8("label_106"));
-
-        gridLayout_7->addWidget(label_106, 12, 4, 1, 1);
-
-        horizontalSpacer_7 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
-
-        gridLayout_7->addItem(horizontalSpacer_7, 2, 2, 1, 1);
-
-        happy_btn = new QPushButton(emotion_report_percentage_chart);
-        buttonGroup->addButton(happy_btn);
-        happy_btn->setObjectName(QString::fromUtf8("happy_btn"));
-        happy_btn->setMinimumSize(QSize(20, 0));
-        happy_btn->setMaximumSize(QSize(20, 16777215));
-        happy_btn->setCursor(QCursor(Qt::PointingHandCursor));
-        happy_btn->setStyleSheet(QString::fromUtf8("QPushButton {\n"
+        sad_btn = new QPushButton(emotion_report_percentage_chart);
+        emotions_report_botton_group->addButton(sad_btn);
+        sad_btn->setObjectName(QString::fromUtf8("sad_btn"));
+        sad_btn->setMinimumSize(QSize(20, 0));
+        sad_btn->setMaximumSize(QSize(20, 16777215));
+        sad_btn->setCursor(QCursor(Qt::PointingHandCursor));
+        sad_btn->setStyleSheet(QString::fromUtf8("QPushButton {\n"
 "	border: none;\n"
 "	background: none;\n"
 "}"));
-        QIcon icon5;
-        icon5.addFile(QString::fromUtf8(":/button/Resources/material/button/happy.png"), QSize(), QIcon::Normal, QIcon::Off);
-        happy_btn->setIcon(icon5);
-        happy_btn->setIconSize(QSize(20, 20));
-        happy_btn->setCheckable(true);
+        QIcon icon2;
+        icon2.addFile(QString::fromUtf8(":/button/Resources/material/button/sad.png"), QSize(), QIcon::Normal, QIcon::Off);
+        sad_btn->setIcon(icon2);
+        sad_btn->setIconSize(QSize(20, 20));
+        sad_btn->setCheckable(true);
 
-        gridLayout_7->addWidget(happy_btn, 8, 0, 1, 1);
+        gridLayout_7->addWidget(sad_btn, 10, 0, 1, 1);
 
-        angry_times_text = new QLabel(emotion_report_percentage_chart);
-        angry_times_text->setObjectName(QString::fromUtf8("angry_times_text"));
-        angry_times_text->setMinimumSize(QSize(25, 0));
-        angry_times_text->setMaximumSize(QSize(25, 16777215));
-        angry_times_text->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
+        happy_progressBar = new QProgressBar(emotion_report_percentage_chart);
+        happy_progressBar->setObjectName(QString::fromUtf8("happy_progressBar"));
+        happy_progressBar->setMinimumSize(QSize(0, 8));
+        happy_progressBar->setMaximumSize(QSize(16777215, 8));
+        happy_progressBar->setStyleSheet(QString::fromUtf8("QProgressBar{\n"
+"        border: none;\n"
+"		border-radius: 4px;\n"
+"        color: black;\n"
+"        text-align: right;\n"
+"        background: #ffffff;\n"
+"}\n"
+"QProgressBar::chunk {\n"
+"        border: none;\n"
+"		border-radius: 4px;\n"
+"        background: #24AD1D;\n"
+"}"));
+        happy_progressBar->setValue(4);
+        happy_progressBar->setTextVisible(false);
 
-        gridLayout_7->addWidget(angry_times_text, 2, 3, 1, 1);
+        gridLayout_7->addWidget(happy_progressBar, 9, 0, 1, 7);
 
-        sad_title_text = new QLabel(emotion_report_percentage_chart);
-        sad_title_text->setObjectName(QString::fromUtf8("sad_title_text"));
-        sad_title_text->setFont(font);
+        label_119 = new QLabel(emotion_report_percentage_chart);
+        label_119->setObjectName(QString::fromUtf8("label_119"));
 
-        gridLayout_7->addWidget(sad_title_text, 10, 1, 1, 1);
+        gridLayout_7->addWidget(label_119, 2, 4, 1, 1);
+
+        disgust_btn = new QPushButton(emotion_report_percentage_chart);
+        emotions_report_botton_group->addButton(disgust_btn);
+        disgust_btn->setObjectName(QString::fromUtf8("disgust_btn"));
+        disgust_btn->setMinimumSize(QSize(20, 0));
+        disgust_btn->setMaximumSize(QSize(20, 16777215));
+        disgust_btn->setCursor(QCursor(Qt::PointingHandCursor));
+        disgust_btn->setStyleSheet(QString::fromUtf8("QPushButton {\n"
+"	border: none;\n"
+"	background: none;\n"
+"}"));
+        QIcon icon3;
+        icon3.addFile(QString::fromUtf8(":/button/Resources/material/button/disgust.png"), QSize(), QIcon::Normal, QIcon::Off);
+        disgust_btn->setIcon(icon3);
+        disgust_btn->setIconSize(QSize(20, 20));
+        disgust_btn->setCheckable(true);
+
+        gridLayout_7->addWidget(disgust_btn, 4, 0, 1, 1);
+
+        label_122 = new QLabel(emotion_report_percentage_chart);
+        label_122->setObjectName(QString::fromUtf8("label_122"));
+
+        gridLayout_7->addWidget(label_122, 6, 4, 1, 1);
+
+        verticalSpacer_13 = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
+
+        gridLayout_7->addItem(verticalSpacer_13, 16, 0, 1, 7);
+
+        fear_btn = new QPushButton(emotion_report_percentage_chart);
+        emotions_report_botton_group->addButton(fear_btn);
+        fear_btn->setObjectName(QString::fromUtf8("fear_btn"));
+        fear_btn->setMinimumSize(QSize(20, 0));
+        fear_btn->setMaximumSize(QSize(20, 16777215));
+        fear_btn->setCursor(QCursor(Qt::PointingHandCursor));
+        fear_btn->setStyleSheet(QString::fromUtf8("QPushButton {\n"
+"	border: none;\n"
+"	background: none;\n"
+"}"));
+        QIcon icon4;
+        icon4.addFile(QString::fromUtf8(":/button/Resources/material/button/fear.png"), QSize(), QIcon::Normal, QIcon::Off);
+        fear_btn->setIcon(icon4);
+        fear_btn->setIconSize(QSize(20, 20));
+        fear_btn->setCheckable(true);
+
+        gridLayout_7->addWidget(fear_btn, 6, 0, 1, 1);
+
+        disgust_times_text = new QLabel(emotion_report_percentage_chart);
+        disgust_times_text->setObjectName(QString::fromUtf8("disgust_times_text"));
+        disgust_times_text->setMinimumSize(QSize(25, 0));
+        disgust_times_text->setMaximumSize(QSize(25, 16777215));
+        disgust_times_text->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
+
+        gridLayout_7->addWidget(disgust_times_text, 4, 3, 1, 1);
 
         disgust_title_text = new QLabel(emotion_report_percentage_chart);
         disgust_title_text->setObjectName(QString::fromUtf8("disgust_title_text"));
@@ -1317,10 +1256,49 @@ public:
 
         gridLayout_7->addWidget(disgust_title_text, 4, 1, 1, 1);
 
+        sad_times_text = new QLabel(emotion_report_percentage_chart);
+        sad_times_text->setObjectName(QString::fromUtf8("sad_times_text"));
+        sad_times_text->setMinimumSize(QSize(25, 0));
+        sad_times_text->setMaximumSize(QSize(25, 16777215));
+        sad_times_text->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
+
+        gridLayout_7->addWidget(sad_times_text, 10, 3, 1, 1);
+
+        fear_times_text = new QLabel(emotion_report_percentage_chart);
+        fear_times_text->setObjectName(QString::fromUtf8("fear_times_text"));
+        fear_times_text->setMinimumSize(QSize(25, 0));
+        fear_times_text->setMaximumSize(QSize(25, 16777215));
+        fear_times_text->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
+
+        gridLayout_7->addWidget(fear_times_text, 6, 3, 1, 1);
+
+        angry_percent_text = new QLabel(emotion_report_percentage_chart);
+        angry_percent_text->setObjectName(QString::fromUtf8("angry_percent_text"));
+        angry_percent_text->setMinimumSize(QSize(20, 0));
+        angry_percent_text->setMaximumSize(QSize(20, 16777215));
+        angry_percent_text->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
+
+        gridLayout_7->addWidget(angry_percent_text, 2, 5, 1, 1);
+
         label_120 = new QLabel(emotion_report_percentage_chart);
         label_120->setObjectName(QString::fromUtf8("label_120"));
 
         gridLayout_7->addWidget(label_120, 8, 4, 1, 1);
+
+        label_106 = new QLabel(emotion_report_percentage_chart);
+        label_106->setObjectName(QString::fromUtf8("label_106"));
+
+        gridLayout_7->addWidget(label_106, 12, 4, 1, 1);
+
+        label_123 = new QLabel(emotion_report_percentage_chart);
+        label_123->setObjectName(QString::fromUtf8("label_123"));
+        label_123->setFont(font);
+        label_123->setStyleSheet(QString::fromUtf8("QLabel {\n"
+"	background: none;\n"
+"	color: #999999;\n"
+"}"));
+
+        gridLayout_7->addWidget(label_123, 1, 0, 1, 4);
 
         sad_progressBar = new QProgressBar(emotion_report_percentage_chart);
         sad_progressBar->setObjectName(QString::fromUtf8("sad_progressBar"));
@@ -1338,52 +1316,156 @@ public:
 "		border-radius: 4px;\n"
 "        background: #F05050;\n"
 "}"));
-        sad_progressBar->setValue(5);
+        sad_progressBar->setValue(4);
         sad_progressBar->setTextVisible(false);
 
         gridLayout_7->addWidget(sad_progressBar, 11, 0, 1, 7);
 
-        sad_btn = new QPushButton(emotion_report_percentage_chart);
-        buttonGroup->addButton(sad_btn);
-        sad_btn->setObjectName(QString::fromUtf8("sad_btn"));
-        sad_btn->setMinimumSize(QSize(20, 0));
-        sad_btn->setMaximumSize(QSize(20, 16777215));
-        sad_btn->setCursor(QCursor(Qt::PointingHandCursor));
-        sad_btn->setStyleSheet(QString::fromUtf8("QPushButton {\n"
+        fear_percent_text = new QLabel(emotion_report_percentage_chart);
+        fear_percent_text->setObjectName(QString::fromUtf8("fear_percent_text"));
+        fear_percent_text->setMinimumSize(QSize(20, 0));
+        fear_percent_text->setMaximumSize(QSize(20, 16777215));
+        fear_percent_text->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
+
+        gridLayout_7->addWidget(fear_percent_text, 6, 5, 1, 1);
+
+        label_99 = new QLabel(emotion_report_percentage_chart);
+        label_99->setObjectName(QString::fromUtf8("label_99"));
+
+        gridLayout_7->addWidget(label_99, 12, 6, 1, 1);
+
+        horizontalSpacer_7 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        gridLayout_7->addItem(horizontalSpacer_7, 2, 2, 1, 1);
+
+        fear_title_text = new QLabel(emotion_report_percentage_chart);
+        fear_title_text->setObjectName(QString::fromUtf8("fear_title_text"));
+        fear_title_text->setFont(font);
+
+        gridLayout_7->addWidget(fear_title_text, 6, 1, 1, 1);
+
+        label_91 = new QLabel(emotion_report_percentage_chart);
+        label_91->setObjectName(QString::fromUtf8("label_91"));
+
+        gridLayout_7->addWidget(label_91, 2, 6, 1, 1);
+
+        label_92 = new QLabel(emotion_report_percentage_chart);
+        label_92->setObjectName(QString::fromUtf8("label_92"));
+
+        gridLayout_7->addWidget(label_92, 14, 4, 1, 1);
+
+        neutral_title_text = new QLabel(emotion_report_percentage_chart);
+        neutral_title_text->setObjectName(QString::fromUtf8("neutral_title_text"));
+        neutral_title_text->setFont(font);
+
+        gridLayout_7->addWidget(neutral_title_text, 14, 1, 1, 1);
+
+        sad_title_text = new QLabel(emotion_report_percentage_chart);
+        sad_title_text->setObjectName(QString::fromUtf8("sad_title_text"));
+        sad_title_text->setFont(font);
+
+        gridLayout_7->addWidget(sad_title_text, 10, 1, 1, 1);
+
+        label_116 = new QLabel(emotion_report_percentage_chart);
+        label_116->setObjectName(QString::fromUtf8("label_116"));
+
+        gridLayout_7->addWidget(label_116, 14, 6, 1, 1);
+
+        angry_title_text = new QLabel(emotion_report_percentage_chart);
+        angry_title_text->setObjectName(QString::fromUtf8("angry_title_text"));
+        angry_title_text->setFont(font);
+
+        gridLayout_7->addWidget(angry_title_text, 2, 1, 1, 1);
+
+        angry_btn = new QPushButton(emotion_report_percentage_chart);
+        emotions_report_botton_group->addButton(angry_btn);
+        angry_btn->setObjectName(QString::fromUtf8("angry_btn"));
+        angry_btn->setMinimumSize(QSize(20, 0));
+        angry_btn->setMaximumSize(QSize(20, 16777215));
+        angry_btn->setCursor(QCursor(Qt::PointingHandCursor));
+        angry_btn->setStyleSheet(QString::fromUtf8("QPushButton {\n"
+"	border: none;\n"
+"	background: none;\n"
+"}"));
+        QIcon icon5;
+        icon5.addFile(QString::fromUtf8(":/button/Resources/material/button/angry.png"), QSize(), QIcon::Normal, QIcon::Off);
+        angry_btn->setIcon(icon5);
+        angry_btn->setIconSize(QSize(20, 20));
+        angry_btn->setCheckable(true);
+
+        gridLayout_7->addWidget(angry_btn, 2, 0, 1, 1);
+
+        happy_btn = new QPushButton(emotion_report_percentage_chart);
+        emotions_report_botton_group->addButton(happy_btn);
+        happy_btn->setObjectName(QString::fromUtf8("happy_btn"));
+        happy_btn->setMinimumSize(QSize(20, 0));
+        happy_btn->setMaximumSize(QSize(20, 16777215));
+        happy_btn->setCursor(QCursor(Qt::PointingHandCursor));
+        happy_btn->setStyleSheet(QString::fromUtf8("QPushButton {\n"
 "	border: none;\n"
 "	background: none;\n"
 "}"));
         QIcon icon6;
-        icon6.addFile(QString::fromUtf8(":/button/Resources/material/button/sad.png"), QSize(), QIcon::Normal, QIcon::Off);
-        sad_btn->setIcon(icon6);
-        sad_btn->setIconSize(QSize(20, 20));
-        sad_btn->setCheckable(true);
+        icon6.addFile(QString::fromUtf8(":/button/Resources/material/button/happy.png"), QSize(), QIcon::Normal, QIcon::Off);
+        happy_btn->setIcon(icon6);
+        happy_btn->setIconSize(QSize(20, 20));
+        happy_btn->setCheckable(true);
 
-        gridLayout_7->addWidget(sad_btn, 10, 0, 1, 1);
+        gridLayout_7->addWidget(happy_btn, 8, 0, 1, 1);
 
-        surprise_times_text = new QLabel(emotion_report_percentage_chart);
-        surprise_times_text->setObjectName(QString::fromUtf8("surprise_times_text"));
-        surprise_times_text->setMinimumSize(QSize(25, 0));
-        surprise_times_text->setMaximumSize(QSize(25, 16777215));
-        surprise_times_text->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
+        label_102 = new QLabel(emotion_report_percentage_chart);
+        label_102->setObjectName(QString::fromUtf8("label_102"));
 
-        gridLayout_7->addWidget(surprise_times_text, 12, 3, 1, 1);
+        gridLayout_7->addWidget(label_102, 4, 4, 1, 1);
 
-        neutral_percent_text = new QLabel(emotion_report_percentage_chart);
-        neutral_percent_text->setObjectName(QString::fromUtf8("neutral_percent_text"));
-        neutral_percent_text->setMinimumSize(QSize(20, 0));
-        neutral_percent_text->setMaximumSize(QSize(20, 16777215));
-        neutral_percent_text->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
+        happy_times_text = new QLabel(emotion_report_percentage_chart);
+        happy_times_text->setObjectName(QString::fromUtf8("happy_times_text"));
+        happy_times_text->setMinimumSize(QSize(25, 0));
+        happy_times_text->setMaximumSize(QSize(25, 16777215));
+        happy_times_text->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
 
-        gridLayout_7->addWidget(neutral_percent_text, 14, 5, 1, 1);
+        gridLayout_7->addWidget(happy_times_text, 8, 3, 1, 1);
+
+        sad_percent_text = new QLabel(emotion_report_percentage_chart);
+        sad_percent_text->setObjectName(QString::fromUtf8("sad_percent_text"));
+        sad_percent_text->setMinimumSize(QSize(20, 0));
+        sad_percent_text->setMaximumSize(QSize(20, 16777215));
+        sad_percent_text->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
+
+        gridLayout_7->addWidget(sad_percent_text, 10, 5, 1, 1);
 
         verticalSpacer_14 = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
 
         gridLayout_7->addItem(verticalSpacer_14, 0, 0, 1, 7);
 
-        verticalSpacer_13 = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
+        surprise_percent_text = new QLabel(emotion_report_percentage_chart);
+        surprise_percent_text->setObjectName(QString::fromUtf8("surprise_percent_text"));
+        surprise_percent_text->setMinimumSize(QSize(20, 0));
+        surprise_percent_text->setMaximumSize(QSize(20, 16777215));
+        surprise_percent_text->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
 
-        gridLayout_7->addItem(verticalSpacer_13, 16, 0, 1, 7);
+        gridLayout_7->addWidget(surprise_percent_text, 12, 5, 1, 1);
+
+        label_89 = new QLabel(emotion_report_percentage_chart);
+        label_89->setObjectName(QString::fromUtf8("label_89"));
+
+        gridLayout_7->addWidget(label_89, 8, 6, 1, 1);
+
+        all_btn = new QPushButton(emotion_report_percentage_chart);
+        emotions_report_botton_group->addButton(all_btn);
+        all_btn->setObjectName(QString::fromUtf8("all_btn"));
+        all_btn->setFont(font);
+        all_btn->setStyleSheet(QString::fromUtf8("QPushButton {\n"
+"	border: none;\n"
+"	background: none;\n"
+"	color: #bbbbbb;\n"
+"}\n"
+"\n"
+"QPushButton::hover {\n"
+"	color: #333333;\n"
+"}"));
+
+        gridLayout_7->addWidget(all_btn, 1, 4, 1, 3);
 
 
         horizontalLayout_2->addWidget(emotion_report_percentage_chart);
@@ -1636,8 +1718,16 @@ public:
 "}"));
         area_chart->setFrameShape(QFrame::StyledPanel);
         area_chart->setFrameShadow(QFrame::Raised);
-        verticalLayout_5 = new QVBoxLayout(area_chart);
-        verticalLayout_5->setObjectName(QString::fromUtf8("verticalLayout_5"));
+        gridLayout_5 = new QGridLayout(area_chart);
+        gridLayout_5->setObjectName(QString::fromUtf8("gridLayout_5"));
+        area_chart_widget = new QtCharts::QChartView(area_chart);
+        area_chart_widget->setObjectName(QString::fromUtf8("area_chart_widget"));
+        area_chart_widget->setMinimumSize(QSize(0, 250));
+        area_chart_widget->setMaximumSize(QSize(16777215, 250));
+        area_chart_widget->setStyleSheet(QString::fromUtf8(""));
+
+        gridLayout_5->addWidget(area_chart_widget, 1, 0, 1, 3);
+
         area_chart_title_text = new QLabel(area_chart);
         area_chart_title_text->setObjectName(QString::fromUtf8("area_chart_title_text"));
         area_chart_title_text->setMinimumSize(QSize(0, 30));
@@ -1648,15 +1738,54 @@ public:
 "	color: #333333;\n"
 "}"));
 
-        verticalLayout_5->addWidget(area_chart_title_text);
+        gridLayout_5->addWidget(area_chart_title_text, 0, 0, 1, 1);
 
-        area_chart_widget = new QtCharts::QChartView(area_chart);
-        area_chart_widget->setObjectName(QString::fromUtf8("area_chart_widget"));
-        area_chart_widget->setMinimumSize(QSize(0, 250));
-        area_chart_widget->setMaximumSize(QSize(16777215, 250));
-        area_chart_widget->setStyleSheet(QString::fromUtf8(""));
+        horizontalSpacer_6 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
 
-        verticalLayout_5->addWidget(area_chart_widget);
+        gridLayout_5->addItem(horizontalSpacer_6, 0, 1, 1, 1);
+
+        frame_11 = new QFrame(area_chart);
+        frame_11->setObjectName(QString::fromUtf8("frame_11"));
+        frame_11->setFrameShape(QFrame::StyledPanel);
+        frame_11->setFrameShadow(QFrame::Raised);
+        horizontalLayout = new QHBoxLayout(frame_11);
+        horizontalLayout->setObjectName(QString::fromUtf8("horizontalLayout"));
+        horizontalLayout->setContentsMargins(0, 0, 0, 0);
+        point_datetime = new QLabel(frame_11);
+        point_datetime->setObjectName(QString::fromUtf8("point_datetime"));
+        point_datetime->setFont(font);
+        point_datetime->setStyleSheet(QString::fromUtf8("QLabel {\n"
+"	background: none;\n"
+"	color: #999999;\n"
+"}"));
+
+        horizontalLayout->addWidget(point_datetime);
+
+        horizontalSpacer_5 = new QSpacerItem(20, 20, QSizePolicy::Fixed, QSizePolicy::Minimum);
+
+        horizontalLayout->addItem(horizontalSpacer_5);
+
+        point_title = new QLabel(frame_11);
+        point_title->setObjectName(QString::fromUtf8("point_title"));
+        point_title->setFont(font);
+        point_title->setStyleSheet(QString::fromUtf8("QLabel {\n"
+"	background: none;\n"
+"	color: #999999;\n"
+"}"));
+
+        horizontalLayout->addWidget(point_title);
+
+        point_concentration = new QLabel(frame_11);
+        point_concentration->setObjectName(QString::fromUtf8("point_concentration"));
+        point_concentration->setFont(font);
+        point_concentration->setStyleSheet(QString::fromUtf8("QLabel {\n"
+"	background: none;\n"
+"}"));
+
+        horizontalLayout->addWidget(point_concentration);
+
+
+        gridLayout_5->addWidget(frame_11, 0, 2, 1, 1);
 
 
         gridLayout_9->addWidget(area_chart, 0, 2, 1, 2);
@@ -1730,7 +1859,7 @@ public:
         scrollArea_2->setWidgetResizable(true);
         scrollAreaWidgetContents_2 = new QWidget();
         scrollAreaWidgetContents_2->setObjectName(QString::fromUtf8("scrollAreaWidgetContents_2"));
-        scrollAreaWidgetContents_2->setGeometry(QRect(0, 0, 802, 802));
+        scrollAreaWidgetContents_2->setGeometry(QRect(0, -58, 802, 808));
         scrollAreaWidgetContents_2->setStyleSheet(QString::fromUtf8("QWidget {\n"
 "	background-color:transparent;\n"
 "}"));
@@ -1742,6 +1871,364 @@ public:
         gridLayout_17->setSpacing(15);
         gridLayout_17->setObjectName(QString::fromUtf8("gridLayout_17"));
         gridLayout_17->setContentsMargins(-1, -1, 0, 0);
+        frame = new QFrame(scrollAreaWidgetContents_2);
+        frame->setObjectName(QString::fromUtf8("frame"));
+        frame->setMinimumSize(QSize(782, 200));
+        frame->setMaximumSize(QSize(16777215, 200));
+        frame->setStyleSheet(QString::fromUtf8("QFrame {\n"
+"	background-color: #ffffff;\n"
+"}"));
+        frame->setFrameShape(QFrame::StyledPanel);
+        frame->setFrameShadow(QFrame::Raised);
+        gridLayout_18 = new QGridLayout(frame);
+        gridLayout_18->setObjectName(QString::fromUtf8("gridLayout_18"));
+        horizontalSpacer_13 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        gridLayout_18->addItem(horizontalSpacer_13, 3, 0, 1, 1);
+
+        frame_15 = new QFrame(frame);
+        frame_15->setObjectName(QString::fromUtf8("frame_15"));
+        frame_15->setMinimumSize(QSize(80, 80));
+        frame_15->setMaximumSize(QSize(80, 80));
+        frame_15->setStyleSheet(QString::fromUtf8("QFrame {\n"
+"	border-radius: 40px;\n"
+"	background-color: #23B7E5;\n"
+"	\n"
+"}"));
+        frame_15->setFrameShape(QFrame::StyledPanel);
+        frame_15->setFrameShadow(QFrame::Raised);
+        frame_16 = new QFrame(frame_15);
+        frame_16->setObjectName(QString::fromUtf8("frame_16"));
+        frame_16->setGeometry(QRect(5, 5, 70, 70));
+        frame_16->setMinimumSize(QSize(70, 70));
+        frame_16->setMaximumSize(QSize(70, 70));
+        frame_16->setStyleSheet(QString::fromUtf8("QFrame {\n"
+"	border-radius: 35px;\n"
+"	background-color: #ffffff;\n"
+"	\n"
+"}"));
+        frame_16->setFrameShape(QFrame::StyledPanel);
+        frame_16->setFrameShadow(QFrame::Raised);
+        num_of_students_text = new QLabel(frame_16);
+        num_of_students_text->setObjectName(QString::fromUtf8("num_of_students_text"));
+        num_of_students_text->setGeometry(QRect(10, 10, 50, 50));
+        num_of_students_text->setFont(font2);
+        num_of_students_text->setAlignment(Qt::AlignCenter);
+
+        gridLayout_18->addWidget(frame_15, 2, 3, 1, 1);
+
+        horizontalSpacer_16 = new QSpacerItem(40, 20, QSizePolicy::Fixed, QSizePolicy::Minimum);
+
+        gridLayout_18->addItem(horizontalSpacer_16, 3, 4, 1, 1);
+
+        label_100 = new QLabel(frame);
+        label_100->setObjectName(QString::fromUtf8("label_100"));
+        label_100->setFont(font);
+        label_100->setStyleSheet(QString::fromUtf8("QLabel {\n"
+"	color: #333333;\n"
+"}"));
+        label_100->setAlignment(Qt::AlignCenter);
+
+        gridLayout_18->addWidget(label_100, 3, 1, 1, 1);
+
+        label_104 = new QLabel(frame);
+        label_104->setObjectName(QString::fromUtf8("label_104"));
+        label_104->setFont(font);
+        label_104->setStyleSheet(QString::fromUtf8("QLabel {\n"
+"	color: #333333;\n"
+"}"));
+        label_104->setAlignment(Qt::AlignCenter);
+
+        gridLayout_18->addWidget(label_104, 3, 3, 1, 1);
+
+        label_107 = new QLabel(frame);
+        label_107->setObjectName(QString::fromUtf8("label_107"));
+        label_107->setFont(font4);
+        label_107->setStyleSheet(QString::fromUtf8("QLabel {\n"
+"	background: none;\n"
+"	color: #999999;\n"
+"}"));
+
+        gridLayout_18->addWidget(label_107, 1, 0, 1, 1);
+
+        label_109 = new QLabel(frame);
+        label_109->setObjectName(QString::fromUtf8("label_109"));
+        label_109->setFont(font);
+        label_109->setStyleSheet(QString::fromUtf8("QLabel {\n"
+"	color: #333333;\n"
+"}"));
+        label_109->setAlignment(Qt::AlignCenter);
+
+        gridLayout_18->addWidget(label_109, 3, 5, 1, 1);
+
+        frame_17 = new QFrame(frame);
+        frame_17->setObjectName(QString::fromUtf8("frame_17"));
+        frame_17->setMinimumSize(QSize(80, 80));
+        frame_17->setMaximumSize(QSize(80, 80));
+        frame_17->setStyleSheet(QString::fromUtf8("QFrame {\n"
+"	border-radius: 40px;\n"
+"	background-color: #E4E9EC;\n"
+"	\n"
+"}"));
+        frame_17->setFrameShape(QFrame::StyledPanel);
+        frame_17->setFrameShadow(QFrame::Raised);
+        frame_18 = new QFrame(frame_17);
+        frame_18->setObjectName(QString::fromUtf8("frame_18"));
+        frame_18->setGeometry(QRect(5, 5, 70, 70));
+        frame_18->setMinimumSize(QSize(70, 70));
+        frame_18->setMaximumSize(QSize(70, 70));
+        frame_18->setStyleSheet(QString::fromUtf8("QFrame {\n"
+"	border-radius: 35px;\n"
+"	background-color: #ffffff;\n"
+"	\n"
+"}"));
+        frame_18->setFrameShape(QFrame::StyledPanel);
+        frame_18->setFrameShadow(QFrame::Raised);
+        total_text = new QLabel(frame_18);
+        total_text->setObjectName(QString::fromUtf8("total_text"));
+        total_text->setGeometry(QRect(10, 10, 50, 50));
+        total_text->setFont(font2);
+        total_text->setAlignment(Qt::AlignCenter);
+
+        gridLayout_18->addWidget(frame_17, 2, 5, 1, 1);
+
+        horizontalSpacer_14 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        gridLayout_18->addItem(horizontalSpacer_14, 3, 6, 1, 1);
+
+        frame_13 = new QFrame(frame);
+        frame_13->setObjectName(QString::fromUtf8("frame_13"));
+        frame_13->setMinimumSize(QSize(80, 80));
+        frame_13->setMaximumSize(QSize(80, 80));
+        frame_13->setStyleSheet(QString::fromUtf8("QFrame {\n"
+"	border-radius: 40px;\n"
+"	background-color: #6C6FC0;\n"
+"	\n"
+"}"));
+        frame_13->setFrameShape(QFrame::StyledPanel);
+        frame_13->setFrameShadow(QFrame::Raised);
+        frame_14 = new QFrame(frame_13);
+        frame_14->setObjectName(QString::fromUtf8("frame_14"));
+        frame_14->setGeometry(QRect(5, 5, 70, 70));
+        frame_14->setMinimumSize(QSize(70, 70));
+        frame_14->setMaximumSize(QSize(70, 70));
+        frame_14->setStyleSheet(QString::fromUtf8("QFrame {\n"
+"	border-radius: 35px;\n"
+"	background-color: #ffffff;\n"
+"	\n"
+"}"));
+        frame_14->setFrameShape(QFrame::StyledPanel);
+        frame_14->setFrameShadow(QFrame::Raised);
+        num_of_teachers_text = new QLabel(frame_14);
+        num_of_teachers_text->setObjectName(QString::fromUtf8("num_of_teachers_text"));
+        num_of_teachers_text->setGeometry(QRect(10, 10, 50, 50));
+        num_of_teachers_text->setFont(font2);
+        num_of_teachers_text->setAlignment(Qt::AlignCenter);
+
+        gridLayout_18->addWidget(frame_13, 2, 1, 1, 1);
+
+        horizontalSpacer_15 = new QSpacerItem(40, 20, QSizePolicy::Fixed, QSizePolicy::Minimum);
+
+        gridLayout_18->addItem(horizontalSpacer_15, 3, 2, 1, 1);
+
+        area_chart_title_text_2 = new QLabel(frame);
+        area_chart_title_text_2->setObjectName(QString::fromUtf8("area_chart_title_text_2"));
+        area_chart_title_text_2->setMinimumSize(QSize(0, 30));
+        area_chart_title_text_2->setMaximumSize(QSize(16777215, 30));
+        area_chart_title_text_2->setFont(font3);
+        area_chart_title_text_2->setStyleSheet(QString::fromUtf8("QLabel {\n"
+"	background: none;\n"
+"	color: #333333;\n"
+"}"));
+
+        gridLayout_18->addWidget(area_chart_title_text_2, 0, 0, 1, 1);
+
+        verticalSpacer_18 = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
+
+        gridLayout_18->addItem(verticalSpacer_18, 0, 1, 2, 5);
+
+        verticalSpacer_17 = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
+
+        gridLayout_18->addItem(verticalSpacer_17, 4, 1, 1, 5);
+
+
+        gridLayout_17->addWidget(frame, 0, 0, 1, 2);
+
+        verticalLayout_8 = new QVBoxLayout();
+        verticalLayout_8->setSpacing(0);
+        verticalLayout_8->setObjectName(QString::fromUtf8("verticalLayout_8"));
+        frame_2 = new QFrame(scrollAreaWidgetContents_2);
+        frame_2->setObjectName(QString::fromUtf8("frame_2"));
+        frame_2->setMinimumSize(QSize(450, 40));
+        frame_2->setMaximumSize(QSize(450, 40));
+        frame_2->setStyleSheet(QString::fromUtf8("QFrame {\n"
+"	background-color: #F6F8F7;\n"
+"	border: 1px solid #E8ECEC;\n"
+"}"));
+        frame_2->setFrameShape(QFrame::StyledPanel);
+        frame_2->setFrameShadow(QFrame::Raised);
+        horizontalLayout_3 = new QHBoxLayout(frame_2);
+        horizontalLayout_3->setSpacing(0);
+        horizontalLayout_3->setObjectName(QString::fromUtf8("horizontalLayout_3"));
+        horizontalLayout_3->setContentsMargins(9, 0, 9, 0);
+        area_chart_title_text_3 = new QLabel(frame_2);
+        area_chart_title_text_3->setObjectName(QString::fromUtf8("area_chart_title_text_3"));
+        area_chart_title_text_3->setMinimumSize(QSize(0, 30));
+        area_chart_title_text_3->setMaximumSize(QSize(16777215, 30));
+        area_chart_title_text_3->setFont(font3);
+        area_chart_title_text_3->setStyleSheet(QString::fromUtf8("QLabel {\n"
+"	background: none;\n"
+"	border: none;\n"
+"	color: #333333;\n"
+"}"));
+
+        horizontalLayout_3->addWidget(area_chart_title_text_3, 0, Qt::AlignVCenter);
+
+        horizontalSpacer_21 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        horizontalLayout_3->addItem(horizontalSpacer_21);
+
+        pushButton_15 = new QPushButton(frame_2);
+        pushButton_15->setObjectName(QString::fromUtf8("pushButton_15"));
+        pushButton_15->setCursor(QCursor(Qt::PointingHandCursor));
+        QIcon icon8;
+        icon8.addFile(QString::fromUtf8(":/button/Resources/material/button/delete.png"), QSize(), QIcon::Normal, QIcon::Off);
+        pushButton_15->setIcon(icon8);
+        pushButton_15->setIconSize(QSize(15, 15));
+
+        horizontalLayout_3->addWidget(pushButton_15);
+
+
+        verticalLayout_8->addWidget(frame_2);
+
+        frame_4 = new QFrame(scrollAreaWidgetContents_2);
+        frame_4->setObjectName(QString::fromUtf8("frame_4"));
+        frame_4->setMinimumSize(QSize(450, 300));
+        frame_4->setMaximumSize(QSize(450, 16777215));
+        frame_4->setStyleSheet(QString::fromUtf8("QFrame {\n"
+"	background-color: #ffffff;\n"
+"	border: 1px solid #E8ECEC;\n"
+"	border-top: none;\n"
+"}\n"
+"\n"
+"/*\346\225\264\344\275\223*/\n"
+"QScrollBar:vertical {\n"
+"    border: none;\n"
+"    background-color: #F3F4F8;\n"
+"    width: 10px;\n"
+"}\n"
+"\n"
+"QScrollBar:vertical:hover {\n"
+"    border: none;\n"
+"    background-color: rgb(220, 220, 220);\n"
+"    width: 10px;\n"
+"}\n"
+"\n"
+"\n"
+"/*\346\273\232\345\212\250\346\235\241*/\n"
+"QScrollBar::handle:vertical {\n"
+"	border-radius: 5px;\n"
+"    background: rgb(220, 220, 220);\n"
+"    min-height: 20px;\n"
+"}\n"
+"\n"
+"/*\346\273\232\345\212\250\346\235\241\357\274\232\346\202\254\346\265\256*/\n"
+"QScrollBar::handle:vertical:hover {\n"
+"	border-radius: 5px;\n"
+"    background: rgb(200, 200, 200);\n"
+"    min-height: 20px;\n"
+"}\n"
+"\n"
+"/*\344\270\213\347\256\255\345\244\264*/\n"
+"QScrollBar::add-line:vertical {\n"
+"    height: 0;\n"
+"    subcontrol-position: bottom;\n"
+"    subcontrol-origin: margin;\n"
+"}\n"
+"\n"
+"/*\344\270\212\347\256\255\345\244\264*/\n"
+""
+                        "QScrollBar::sub-line:vertical {\n"
+"    height: 0px;\n"
+"    subcontrol-position: top;\n"
+"    subcontrol-origin: margin;\n"
+"}"));
+        frame_4->setFrameShape(QFrame::StyledPanel);
+        frame_4->setFrameShadow(QFrame::Raised);
+        gridLayout_24 = new QGridLayout(frame_4);
+        gridLayout_24->setSpacing(0);
+        gridLayout_24->setObjectName(QString::fromUtf8("gridLayout_24"));
+        gridLayout_24->setContentsMargins(0, 0, 0, 0);
+        member_table = new QTableWidget(frame_4);
+        if (member_table->columnCount() < 3)
+            member_table->setColumnCount(3);
+        QTableWidgetItem *__qtablewidgetitem = new QTableWidgetItem();
+        __qtablewidgetitem->setFont(font);
+        member_table->setHorizontalHeaderItem(0, __qtablewidgetitem);
+        QTableWidgetItem *__qtablewidgetitem1 = new QTableWidgetItem();
+        __qtablewidgetitem1->setFont(font);
+        member_table->setHorizontalHeaderItem(1, __qtablewidgetitem1);
+        QTableWidgetItem *__qtablewidgetitem2 = new QTableWidgetItem();
+        __qtablewidgetitem2->setFont(font);
+        member_table->setHorizontalHeaderItem(2, __qtablewidgetitem2);
+        member_table->setObjectName(QString::fromUtf8("member_table"));
+        member_table->setFont(font);
+        member_table->setStyleSheet(QString::fromUtf8("QTableWidget {\n"
+"	border: none;\n"
+"	background-color: rgb(255, 255, 255);\n"
+"	alternate-background-color: rgb(235, 235, 235);\n"
+"}"));
+        member_table->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOn);
+        member_table->setAlternatingRowColors(true);
+        member_table->setSelectionMode(QAbstractItemView::SingleSelection);
+        member_table->setSelectionBehavior(QAbstractItemView::SelectRows);
+        member_table->setIconSize(QSize(30, 30));
+        member_table->setShowGrid(false);
+        member_table->horizontalHeader()->setDefaultSectionSize(146);
+        member_table->verticalHeader()->setVisible(false);
+        member_table->verticalHeader()->setDefaultSectionSize(40);
+
+        gridLayout_24->addWidget(member_table, 0, 0, 1, 1);
+
+
+        verticalLayout_8->addWidget(frame_4);
+
+
+        gridLayout_17->addLayout(verticalLayout_8, 1, 0, 4, 1);
+
+        frame_10 = new QFrame(scrollAreaWidgetContents_2);
+        frame_10->setObjectName(QString::fromUtf8("frame_10"));
+        frame_10->setMinimumSize(QSize(0, 310));
+        frame_10->setStyleSheet(QString::fromUtf8("QFrame {\n"
+"	background-color: #ffffff;\n"
+"}"));
+        frame_10->setFrameShape(QFrame::StyledPanel);
+        frame_10->setFrameShadow(QFrame::Raised);
+        verticalLayout_12 = new QVBoxLayout(frame_10);
+        verticalLayout_12->setObjectName(QString::fromUtf8("verticalLayout_12"));
+        area_chart_title_text_4 = new QLabel(frame_10);
+        area_chart_title_text_4->setObjectName(QString::fromUtf8("area_chart_title_text_4"));
+        area_chart_title_text_4->setMinimumSize(QSize(293, 30));
+        area_chart_title_text_4->setMaximumSize(QSize(16777215, 30));
+        area_chart_title_text_4->setFont(font3);
+        area_chart_title_text_4->setStyleSheet(QString::fromUtf8("QLabel {\n"
+"	background: none;\n"
+"	color: #333333;\n"
+"}"));
+
+        verticalLayout_12->addWidget(area_chart_title_text_4);
+
+        student_area_chart_widget = new QWidget(frame_10);
+        student_area_chart_widget->setObjectName(QString::fromUtf8("student_area_chart_widget"));
+        student_area_chart_widget->setMinimumSize(QSize(293, 250));
+        student_area_chart_widget->setMaximumSize(QSize(16777215, 250));
+        student_area_chart_widget->setStyleSheet(QString::fromUtf8(""));
+
+        verticalLayout_12->addWidget(student_area_chart_widget);
+
+
+        gridLayout_17->addWidget(frame_10, 3, 1, 1, 1, Qt::AlignTop);
+
         gridLayout_21 = new QGridLayout();
         gridLayout_21->setSpacing(0);
         gridLayout_21->setObjectName(QString::fromUtf8("gridLayout_21"));
@@ -2063,306 +2550,6 @@ public:
 
         gridLayout_17->addLayout(gridLayout_21, 1, 1, 2, 1);
 
-        frame = new QFrame(scrollAreaWidgetContents_2);
-        frame->setObjectName(QString::fromUtf8("frame"));
-        frame->setMinimumSize(QSize(782, 200));
-        frame->setMaximumSize(QSize(16777215, 200));
-        frame->setStyleSheet(QString::fromUtf8("QFrame {\n"
-"	background-color: #ffffff;\n"
-"}"));
-        frame->setFrameShape(QFrame::StyledPanel);
-        frame->setFrameShadow(QFrame::Raised);
-        gridLayout_18 = new QGridLayout(frame);
-        gridLayout_18->setObjectName(QString::fromUtf8("gridLayout_18"));
-        horizontalSpacer_13 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
-
-        gridLayout_18->addItem(horizontalSpacer_13, 3, 0, 1, 1);
-
-        frame_15 = new QFrame(frame);
-        frame_15->setObjectName(QString::fromUtf8("frame_15"));
-        frame_15->setMinimumSize(QSize(80, 80));
-        frame_15->setMaximumSize(QSize(80, 80));
-        frame_15->setStyleSheet(QString::fromUtf8("QFrame {\n"
-"	border-radius: 40px;\n"
-"	background-color: #23B7E5;\n"
-"	\n"
-"}"));
-        frame_15->setFrameShape(QFrame::StyledPanel);
-        frame_15->setFrameShadow(QFrame::Raised);
-        frame_16 = new QFrame(frame_15);
-        frame_16->setObjectName(QString::fromUtf8("frame_16"));
-        frame_16->setGeometry(QRect(5, 5, 70, 70));
-        frame_16->setMinimumSize(QSize(70, 70));
-        frame_16->setMaximumSize(QSize(70, 70));
-        frame_16->setStyleSheet(QString::fromUtf8("QFrame {\n"
-"	border-radius: 35px;\n"
-"	background-color: #ffffff;\n"
-"	\n"
-"}"));
-        frame_16->setFrameShape(QFrame::StyledPanel);
-        frame_16->setFrameShadow(QFrame::Raised);
-        num_of_student_text = new QLabel(frame_16);
-        num_of_student_text->setObjectName(QString::fromUtf8("num_of_student_text"));
-        num_of_student_text->setGeometry(QRect(10, 10, 50, 50));
-        num_of_student_text->setFont(font2);
-        num_of_student_text->setAlignment(Qt::AlignCenter);
-
-        gridLayout_18->addWidget(frame_15, 2, 3, 1, 1);
-
-        horizontalSpacer_16 = new QSpacerItem(40, 20, QSizePolicy::Fixed, QSizePolicy::Minimum);
-
-        gridLayout_18->addItem(horizontalSpacer_16, 3, 4, 1, 1);
-
-        label_100 = new QLabel(frame);
-        label_100->setObjectName(QString::fromUtf8("label_100"));
-        label_100->setFont(font);
-        label_100->setStyleSheet(QString::fromUtf8("QLabel {\n"
-"	color: #333333;\n"
-"}"));
-        label_100->setAlignment(Qt::AlignCenter);
-
-        gridLayout_18->addWidget(label_100, 3, 1, 1, 1);
-
-        label_104 = new QLabel(frame);
-        label_104->setObjectName(QString::fromUtf8("label_104"));
-        label_104->setFont(font);
-        label_104->setStyleSheet(QString::fromUtf8("QLabel {\n"
-"	color: #333333;\n"
-"}"));
-        label_104->setAlignment(Qt::AlignCenter);
-
-        gridLayout_18->addWidget(label_104, 3, 3, 1, 1);
-
-        label_107 = new QLabel(frame);
-        label_107->setObjectName(QString::fromUtf8("label_107"));
-        label_107->setFont(font4);
-        label_107->setStyleSheet(QString::fromUtf8("QLabel {\n"
-"	background: none;\n"
-"	color: #999999;\n"
-"}"));
-
-        gridLayout_18->addWidget(label_107, 1, 0, 1, 1);
-
-        label_109 = new QLabel(frame);
-        label_109->setObjectName(QString::fromUtf8("label_109"));
-        label_109->setFont(font);
-        label_109->setStyleSheet(QString::fromUtf8("QLabel {\n"
-"	color: #333333;\n"
-"}"));
-        label_109->setAlignment(Qt::AlignCenter);
-
-        gridLayout_18->addWidget(label_109, 3, 5, 1, 1);
-
-        frame_17 = new QFrame(frame);
-        frame_17->setObjectName(QString::fromUtf8("frame_17"));
-        frame_17->setMinimumSize(QSize(80, 80));
-        frame_17->setMaximumSize(QSize(80, 80));
-        frame_17->setStyleSheet(QString::fromUtf8("QFrame {\n"
-"	border-radius: 40px;\n"
-"	background-color: #E4E9EC;\n"
-"	\n"
-"}"));
-        frame_17->setFrameShape(QFrame::StyledPanel);
-        frame_17->setFrameShadow(QFrame::Raised);
-        frame_18 = new QFrame(frame_17);
-        frame_18->setObjectName(QString::fromUtf8("frame_18"));
-        frame_18->setGeometry(QRect(5, 5, 70, 70));
-        frame_18->setMinimumSize(QSize(70, 70));
-        frame_18->setMaximumSize(QSize(70, 70));
-        frame_18->setStyleSheet(QString::fromUtf8("QFrame {\n"
-"	border-radius: 35px;\n"
-"	background-color: #ffffff;\n"
-"	\n"
-"}"));
-        frame_18->setFrameShape(QFrame::StyledPanel);
-        frame_18->setFrameShadow(QFrame::Raised);
-        total_text = new QLabel(frame_18);
-        total_text->setObjectName(QString::fromUtf8("total_text"));
-        total_text->setGeometry(QRect(10, 10, 50, 50));
-        total_text->setFont(font2);
-        total_text->setAlignment(Qt::AlignCenter);
-
-        gridLayout_18->addWidget(frame_17, 2, 5, 1, 1);
-
-        horizontalSpacer_14 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
-
-        gridLayout_18->addItem(horizontalSpacer_14, 3, 6, 1, 1);
-
-        frame_13 = new QFrame(frame);
-        frame_13->setObjectName(QString::fromUtf8("frame_13"));
-        frame_13->setMinimumSize(QSize(80, 80));
-        frame_13->setMaximumSize(QSize(80, 80));
-        frame_13->setStyleSheet(QString::fromUtf8("QFrame {\n"
-"	border-radius: 40px;\n"
-"	background-color: #6C6FC0;\n"
-"	\n"
-"}"));
-        frame_13->setFrameShape(QFrame::StyledPanel);
-        frame_13->setFrameShadow(QFrame::Raised);
-        frame_14 = new QFrame(frame_13);
-        frame_14->setObjectName(QString::fromUtf8("frame_14"));
-        frame_14->setGeometry(QRect(5, 5, 70, 70));
-        frame_14->setMinimumSize(QSize(70, 70));
-        frame_14->setMaximumSize(QSize(70, 70));
-        frame_14->setStyleSheet(QString::fromUtf8("QFrame {\n"
-"	border-radius: 35px;\n"
-"	background-color: #ffffff;\n"
-"	\n"
-"}"));
-        frame_14->setFrameShape(QFrame::StyledPanel);
-        frame_14->setFrameShadow(QFrame::Raised);
-        num_of_teacher_text = new QLabel(frame_14);
-        num_of_teacher_text->setObjectName(QString::fromUtf8("num_of_teacher_text"));
-        num_of_teacher_text->setGeometry(QRect(10, 10, 50, 50));
-        num_of_teacher_text->setFont(font2);
-        num_of_teacher_text->setAlignment(Qt::AlignCenter);
-
-        gridLayout_18->addWidget(frame_13, 2, 1, 1, 1);
-
-        horizontalSpacer_15 = new QSpacerItem(40, 20, QSizePolicy::Fixed, QSizePolicy::Minimum);
-
-        gridLayout_18->addItem(horizontalSpacer_15, 3, 2, 1, 1);
-
-        area_chart_title_text_2 = new QLabel(frame);
-        area_chart_title_text_2->setObjectName(QString::fromUtf8("area_chart_title_text_2"));
-        area_chart_title_text_2->setMinimumSize(QSize(0, 30));
-        area_chart_title_text_2->setMaximumSize(QSize(16777215, 30));
-        area_chart_title_text_2->setFont(font3);
-        area_chart_title_text_2->setStyleSheet(QString::fromUtf8("QLabel {\n"
-"	background: none;\n"
-"	color: #333333;\n"
-"}"));
-
-        gridLayout_18->addWidget(area_chart_title_text_2, 0, 0, 1, 1);
-
-        verticalSpacer_18 = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
-
-        gridLayout_18->addItem(verticalSpacer_18, 0, 1, 2, 5);
-
-        verticalSpacer_17 = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
-
-        gridLayout_18->addItem(verticalSpacer_17, 4, 1, 1, 5);
-
-
-        gridLayout_17->addWidget(frame, 0, 0, 1, 2);
-
-        verticalLayout_8 = new QVBoxLayout();
-        verticalLayout_8->setSpacing(0);
-        verticalLayout_8->setObjectName(QString::fromUtf8("verticalLayout_8"));
-        frame_2 = new QFrame(scrollAreaWidgetContents_2);
-        frame_2->setObjectName(QString::fromUtf8("frame_2"));
-        frame_2->setMinimumSize(QSize(450, 40));
-        frame_2->setMaximumSize(QSize(450, 40));
-        frame_2->setStyleSheet(QString::fromUtf8("QFrame {\n"
-"	background-color: #F6F8F7;\n"
-"	border: 1px solid #E8ECEC;\n"
-"}"));
-        frame_2->setFrameShape(QFrame::StyledPanel);
-        frame_2->setFrameShadow(QFrame::Raised);
-        horizontalLayout_3 = new QHBoxLayout(frame_2);
-        horizontalLayout_3->setSpacing(0);
-        horizontalLayout_3->setObjectName(QString::fromUtf8("horizontalLayout_3"));
-        horizontalLayout_3->setContentsMargins(9, 0, 9, 0);
-        area_chart_title_text_3 = new QLabel(frame_2);
-        area_chart_title_text_3->setObjectName(QString::fromUtf8("area_chart_title_text_3"));
-        area_chart_title_text_3->setMinimumSize(QSize(0, 30));
-        area_chart_title_text_3->setMaximumSize(QSize(16777215, 30));
-        area_chart_title_text_3->setFont(font3);
-        area_chart_title_text_3->setStyleSheet(QString::fromUtf8("QLabel {\n"
-"	background: none;\n"
-"	border: none;\n"
-"	color: #333333;\n"
-"}"));
-
-        horizontalLayout_3->addWidget(area_chart_title_text_3, 0, Qt::AlignVCenter);
-
-        horizontalSpacer_21 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
-
-        horizontalLayout_3->addItem(horizontalSpacer_21);
-
-        pushButton_15 = new QPushButton(frame_2);
-        pushButton_15->setObjectName(QString::fromUtf8("pushButton_15"));
-        pushButton_15->setCursor(QCursor(Qt::PointingHandCursor));
-        QIcon icon8;
-        icon8.addFile(QString::fromUtf8(":/button/Resources/material/button/delete.png"), QSize(), QIcon::Normal, QIcon::Off);
-        pushButton_15->setIcon(icon8);
-        pushButton_15->setIconSize(QSize(15, 15));
-
-        horizontalLayout_3->addWidget(pushButton_15);
-
-
-        verticalLayout_8->addWidget(frame_2);
-
-        frame_4 = new QFrame(scrollAreaWidgetContents_2);
-        frame_4->setObjectName(QString::fromUtf8("frame_4"));
-        frame_4->setMinimumSize(QSize(450, 300));
-        frame_4->setMaximumSize(QSize(450, 16777215));
-        frame_4->setStyleSheet(QString::fromUtf8("QFrame {\n"
-"	background-color: #ffffff;\n"
-"	border: 1px solid #E8ECEC;\n"
-"	border-top: none;\n"
-"}"));
-        frame_4->setFrameShape(QFrame::StyledPanel);
-        frame_4->setFrameShadow(QFrame::Raised);
-        gridLayout_24 = new QGridLayout(frame_4);
-        gridLayout_24->setSpacing(0);
-        gridLayout_24->setObjectName(QString::fromUtf8("gridLayout_24"));
-        gridLayout_24->setContentsMargins(0, 0, 0, 0);
-        member_table = new QTableWidget(frame_4);
-        if (member_table->columnCount() < 3)
-            member_table->setColumnCount(3);
-        QTableWidgetItem *__qtablewidgetitem = new QTableWidgetItem();
-        member_table->setHorizontalHeaderItem(0, __qtablewidgetitem);
-        QTableWidgetItem *__qtablewidgetitem1 = new QTableWidgetItem();
-        member_table->setHorizontalHeaderItem(1, __qtablewidgetitem1);
-        QTableWidgetItem *__qtablewidgetitem2 = new QTableWidgetItem();
-        member_table->setHorizontalHeaderItem(2, __qtablewidgetitem2);
-        member_table->setObjectName(QString::fromUtf8("member_table"));
-        member_table->setStyleSheet(QString::fromUtf8("QTableWidget {\n"
-"	border: none;\n"
-"}"));
-
-        gridLayout_24->addWidget(member_table, 0, 0, 1, 1);
-
-
-        verticalLayout_8->addWidget(frame_4);
-
-
-        gridLayout_17->addLayout(verticalLayout_8, 1, 0, 4, 1);
-
-        frame_10 = new QFrame(scrollAreaWidgetContents_2);
-        frame_10->setObjectName(QString::fromUtf8("frame_10"));
-        frame_10->setMinimumSize(QSize(0, 310));
-        frame_10->setStyleSheet(QString::fromUtf8("QFrame {\n"
-"	background-color: #ffffff;\n"
-"}"));
-        frame_10->setFrameShape(QFrame::StyledPanel);
-        frame_10->setFrameShadow(QFrame::Raised);
-        verticalLayout_12 = new QVBoxLayout(frame_10);
-        verticalLayout_12->setObjectName(QString::fromUtf8("verticalLayout_12"));
-        area_chart_title_text_4 = new QLabel(frame_10);
-        area_chart_title_text_4->setObjectName(QString::fromUtf8("area_chart_title_text_4"));
-        area_chart_title_text_4->setMinimumSize(QSize(293, 30));
-        area_chart_title_text_4->setMaximumSize(QSize(16777215, 30));
-        area_chart_title_text_4->setFont(font3);
-        area_chart_title_text_4->setStyleSheet(QString::fromUtf8("QLabel {\n"
-"	background: none;\n"
-"	color: #333333;\n"
-"}"));
-
-        verticalLayout_12->addWidget(area_chart_title_text_4);
-
-        student_area_chart_widget = new QWidget(frame_10);
-        student_area_chart_widget->setObjectName(QString::fromUtf8("student_area_chart_widget"));
-        student_area_chart_widget->setMinimumSize(QSize(293, 250));
-        student_area_chart_widget->setMaximumSize(QSize(16777215, 250));
-        student_area_chart_widget->setStyleSheet(QString::fromUtf8(""));
-
-        verticalLayout_12->addWidget(student_area_chart_widget);
-
-
-        gridLayout_17->addWidget(frame_10, 3, 1, 1, 1, Qt::AlignTop);
-
 
         gridLayout_11->addLayout(gridLayout_17, 1, 0, 1, 1);
 
@@ -2389,13 +2576,13 @@ public:
     void retranslateUi(QWidget *TeacherCourseWidget)
     {
         TeacherCourseWidget->setWindowTitle(QCoreApplication::translate("TeacherCourseWidget", "Form", nullptr));
-        course_id_text->setText(QString());
-        pushButton_16->setText(QCoreApplication::translate("TeacherCourseWidget", "\345\210\233\345\273\272\350\257\276\347\250\213", nullptr));
-        text->setText(QCoreApplication::translate("TeacherCourseWidget", " \345\210\233\345\273\272\344\272\216", nullptr));
         delete_course_btn->setText(QCoreApplication::translate("TeacherCourseWidget", " \345\210\240\351\231\244\350\257\276\347\250\213", nullptr));
-        create_date_text->setText(QCoreApplication::translate("TeacherCourseWidget", "2019-08-12", nullptr));
-        create_time_text_2->setText(QCoreApplication::translate("TeacherCourseWidget", "id: ", nullptr));
+        pushButton_16->setText(QCoreApplication::translate("TeacherCourseWidget", "\345\210\233\345\273\272\350\257\276\347\250\213", nullptr));
+        course_id_text->setText(QString());
+        text->setText(QCoreApplication::translate("TeacherCourseWidget", " \345\210\233\345\273\272\344\272\216", nullptr));
+        create_datetime_text->setText(QString());
         pushButton_17->setText(QCoreApplication::translate("TeacherCourseWidget", "\345\212\240\345\205\245\350\257\276\347\250\213", nullptr));
+        label_2->setText(QCoreApplication::translate("TeacherCourseWidget", "id: ", nullptr));
         data_2_text->setText(QCoreApplication::translate("TeacherCourseWidget", "-", nullptr));
         title_2_text->setText(QCoreApplication::translate("TeacherCourseWidget", "\345\267\262\344\270\212\350\257\276\346\254\241\346\225\260", nullptr));
         data_1_text->setText(QCoreApplication::translate("TeacherCourseWidget", "-", nullptr));
@@ -2408,50 +2595,54 @@ public:
         data_4_text->setText(QCoreApplication::translate("TeacherCourseWidget", "-", nullptr));
         title_4_text->setText(QCoreApplication::translate("TeacherCourseWidget", "\347\202\271\350\265\236\346\225\260", nullptr));
         emotion_report_title_text->setText(QCoreApplication::translate("TeacherCourseWidget", "\342\227\217  \345\255\246\347\224\237\350\241\250\346\203\205\346\225\260\346\215\256\346\212\245\345\221\212", nullptr));
+        bar_datetime->setText(QString());
+        bar_title->setText(QString());
+        bar_value->setText(QString());
         emotion_report_tips_text->setText(QCoreApplication::translate("TeacherCourseWidget", "\347\202\271\345\207\273\345\217\263\344\276\247\344\270\215\345\220\214\350\241\250\346\203\205\345\217\257\344\273\245\346\237\245\347\234\213\345\205\266\346\225\260\346\215\256\346\212\245\350\241\250", nullptr));
+        neutral_btn->setText(QString());
+        angry_times_text->setText(QCoreApplication::translate("TeacherCourseWidget", "-", nullptr));
+        surprise_times_text->setText(QCoreApplication::translate("TeacherCourseWidget", "-", nullptr));
+        happy_title_text->setText(QCoreApplication::translate("TeacherCourseWidget", "\351\253\230\345\205\264", nullptr));
+        neutral_times_text->setText(QCoreApplication::translate("TeacherCourseWidget", "-", nullptr));
+        label_111->setText(QCoreApplication::translate("TeacherCourseWidget", "%", nullptr));
+        happy_percent_text->setText(QCoreApplication::translate("TeacherCourseWidget", "-", nullptr));
+        label_88->setText(QCoreApplication::translate("TeacherCourseWidget", "\346\254\241", nullptr));
+        surprise_btn->setText(QString());
+        label_112->setText(QCoreApplication::translate("TeacherCourseWidget", "%", nullptr));
+        label_103->setText(QCoreApplication::translate("TeacherCourseWidget", "%", nullptr));
+        disgust_percent_text->setText(QCoreApplication::translate("TeacherCourseWidget", "-", nullptr));
+        neutral_percent_text->setText(QCoreApplication::translate("TeacherCourseWidget", "-", nullptr));
+        surprise_title_text->setText(QCoreApplication::translate("TeacherCourseWidget", "\346\203\212\350\256\266", nullptr));
+        sad_btn->setText(QString());
+        label_119->setText(QCoreApplication::translate("TeacherCourseWidget", "\346\254\241", nullptr));
         disgust_btn->setText(QString());
         label_122->setText(QCoreApplication::translate("TeacherCourseWidget", "\346\254\241", nullptr));
-        neutral_btn->setText(QString());
-        label_103->setText(QCoreApplication::translate("TeacherCourseWidget", "%", nullptr));
-        label_119->setText(QCoreApplication::translate("TeacherCourseWidget", "\346\254\241", nullptr));
         fear_btn->setText(QString());
-        label_99->setText(QCoreApplication::translate("TeacherCourseWidget", "%", nullptr));
-        label_89->setText(QCoreApplication::translate("TeacherCourseWidget", "%", nullptr));
-        neutral_times_text->setText(QCoreApplication::translate("TeacherCourseWidget", "-", nullptr));
-        fear_times_text->setText(QCoreApplication::translate("TeacherCourseWidget", "-", nullptr));
-        fear_title_text->setText(QCoreApplication::translate("TeacherCourseWidget", "\346\201\220\346\203\247", nullptr));
-        disgust_percent_text->setText(QCoreApplication::translate("TeacherCourseWidget", "-", nullptr));
-        sad_times_text->setText(QCoreApplication::translate("TeacherCourseWidget", "-", nullptr));
-        angry_title_text->setText(QCoreApplication::translate("TeacherCourseWidget", "\347\224\237\346\260\224", nullptr));
-        surprise_title_text->setText(QCoreApplication::translate("TeacherCourseWidget", "\346\203\212\350\256\266", nullptr));
-        label_88->setText(QCoreApplication::translate("TeacherCourseWidget", "\346\254\241", nullptr));
-        happy_times_text->setText(QCoreApplication::translate("TeacherCourseWidget", "-", nullptr));
-        angry_percent_text->setText(QCoreApplication::translate("TeacherCourseWidget", "-", nullptr));
         disgust_times_text->setText(QCoreApplication::translate("TeacherCourseWidget", "-", nullptr));
-        happy_percent_text->setText(QCoreApplication::translate("TeacherCourseWidget", "-", nullptr));
-        label_123->setText(QCoreApplication::translate("TeacherCourseWidget", "\345\220\204\350\241\250\346\203\205\345\207\272\347\216\260\346\257\224\344\276\213\345\217\212\346\254\241\346\225\260", nullptr));
-        label_91->setText(QCoreApplication::translate("TeacherCourseWidget", "%", nullptr));
-        surprise_percent_text->setText(QCoreApplication::translate("TeacherCourseWidget", "-", nullptr));
-        happy_title_text->setText(QCoreApplication::translate("TeacherCourseWidget", "\351\253\230\345\205\264", nullptr));
-        label_111->setText(QCoreApplication::translate("TeacherCourseWidget", "%", nullptr));
-        surprise_btn->setText(QString());
-        angry_btn->setText(QString());
-        sad_percent_text->setText(QCoreApplication::translate("TeacherCourseWidget", "-", nullptr));
-        neutral_title_text->setText(QCoreApplication::translate("TeacherCourseWidget", "\345\271\263\346\267\241", nullptr));
-        label_112->setText(QCoreApplication::translate("TeacherCourseWidget", "%", nullptr));
-        label_102->setText(QCoreApplication::translate("TeacherCourseWidget", "\346\254\241", nullptr));
-        label_116->setText(QCoreApplication::translate("TeacherCourseWidget", "%", nullptr));
-        label_92->setText(QCoreApplication::translate("TeacherCourseWidget", "\346\254\241", nullptr));
-        fear_percent_text->setText(QCoreApplication::translate("TeacherCourseWidget", "-", nullptr));
-        label_106->setText(QCoreApplication::translate("TeacherCourseWidget", "\346\254\241", nullptr));
-        happy_btn->setText(QString());
-        angry_times_text->setText(QCoreApplication::translate("TeacherCourseWidget", "-", nullptr));
-        sad_title_text->setText(QCoreApplication::translate("TeacherCourseWidget", "\344\274\244\345\277\203", nullptr));
         disgust_title_text->setText(QCoreApplication::translate("TeacherCourseWidget", "\345\216\214\346\201\266", nullptr));
+        sad_times_text->setText(QCoreApplication::translate("TeacherCourseWidget", "-", nullptr));
+        fear_times_text->setText(QCoreApplication::translate("TeacherCourseWidget", "-", nullptr));
+        angry_percent_text->setText(QCoreApplication::translate("TeacherCourseWidget", "-", nullptr));
         label_120->setText(QCoreApplication::translate("TeacherCourseWidget", "\346\254\241", nullptr));
-        sad_btn->setText(QString());
-        surprise_times_text->setText(QCoreApplication::translate("TeacherCourseWidget", "-", nullptr));
-        neutral_percent_text->setText(QCoreApplication::translate("TeacherCourseWidget", "-", nullptr));
+        label_106->setText(QCoreApplication::translate("TeacherCourseWidget", "\346\254\241", nullptr));
+        label_123->setText(QCoreApplication::translate("TeacherCourseWidget", "\345\220\204\350\241\250\346\203\205\345\207\272\347\216\260\346\257\224\344\276\213\345\217\212\346\254\241\346\225\260", nullptr));
+        fear_percent_text->setText(QCoreApplication::translate("TeacherCourseWidget", "-", nullptr));
+        label_99->setText(QCoreApplication::translate("TeacherCourseWidget", "%", nullptr));
+        fear_title_text->setText(QCoreApplication::translate("TeacherCourseWidget", "\346\201\220\346\203\247", nullptr));
+        label_91->setText(QCoreApplication::translate("TeacherCourseWidget", "%", nullptr));
+        label_92->setText(QCoreApplication::translate("TeacherCourseWidget", "\346\254\241", nullptr));
+        neutral_title_text->setText(QCoreApplication::translate("TeacherCourseWidget", "\345\271\263\346\267\241", nullptr));
+        sad_title_text->setText(QCoreApplication::translate("TeacherCourseWidget", "\344\274\244\345\277\203", nullptr));
+        label_116->setText(QCoreApplication::translate("TeacherCourseWidget", "%", nullptr));
+        angry_title_text->setText(QCoreApplication::translate("TeacherCourseWidget", "\347\224\237\346\260\224", nullptr));
+        angry_btn->setText(QString());
+        happy_btn->setText(QString());
+        label_102->setText(QCoreApplication::translate("TeacherCourseWidget", "\346\254\241", nullptr));
+        happy_times_text->setText(QCoreApplication::translate("TeacherCourseWidget", "-", nullptr));
+        sad_percent_text->setText(QCoreApplication::translate("TeacherCourseWidget", "-", nullptr));
+        surprise_percent_text->setText(QCoreApplication::translate("TeacherCourseWidget", "-", nullptr));
+        label_89->setText(QCoreApplication::translate("TeacherCourseWidget", "%", nullptr));
+        all_btn->setText(QCoreApplication::translate("TeacherCourseWidget", "\346\237\245\347\234\213\345\205\250\351\203\250", nullptr));
         label->setText(QCoreApplication::translate("TeacherCourseWidget", "\345\210\206\345\270\203\346\233\262\347\272\277", nullptr));
         label_97->setText(QCoreApplication::translate("TeacherCourseWidget", "\342\200\234\345\267\256\345\212\262\342\200\235\344\270\272\345\260\217\344\272\21660", nullptr));
         label_95->setText(QCoreApplication::translate("TeacherCourseWidget", "\342\200\234\344\274\230\347\247\200\342\200\235\344\270\272\345\244\247\344\272\216\347\255\211\344\272\21685", nullptr));
@@ -2462,7 +2653,27 @@ public:
         label_94->setText(QCoreApplication::translate("TeacherCourseWidget", "\345\267\256\345\212\262", nullptr));
         label_98->setText(QCoreApplication::translate("TeacherCourseWidget", "*\346\263\250\357\274\232", nullptr));
         area_chart_title_text->setText(QCoreApplication::translate("TeacherCourseWidget", "\342\227\217  \346\257\217\345\240\202\350\257\276\347\232\204\344\270\223\346\263\250\345\272\246\345\257\271\346\257\224", nullptr));
+        point_datetime->setText(QString());
+        point_title->setText(QString());
+        point_concentration->setText(QString());
         tabWidget->setTabText(tabWidget->indexOf(course_data_tab), QString());
+        num_of_students_text->setText(QCoreApplication::translate("TeacherCourseWidget", "888", nullptr));
+        label_100->setText(QCoreApplication::translate("TeacherCourseWidget", "\346\225\231\345\270\210", nullptr));
+        label_104->setText(QCoreApplication::translate("TeacherCourseWidget", "\345\255\246\347\224\237", nullptr));
+        label_107->setText(QCoreApplication::translate("TeacherCourseWidget", "*\345\215\225\344\275\215\357\274\232\344\272\272", nullptr));
+        label_109->setText(QCoreApplication::translate("TeacherCourseWidget", "\345\220\210\350\256\241", nullptr));
+        total_text->setText(QCoreApplication::translate("TeacherCourseWidget", "890", nullptr));
+        num_of_teachers_text->setText(QCoreApplication::translate("TeacherCourseWidget", "2", nullptr));
+        area_chart_title_text_2->setText(QCoreApplication::translate("TeacherCourseWidget", "\342\227\217  \346\246\202\345\206\265", nullptr));
+        area_chart_title_text_3->setText(QCoreApplication::translate("TeacherCourseWidget", "\342\227\217  \346\210\220\345\221\230\345\210\227\350\241\250", nullptr));
+        pushButton_15->setText(QString());
+        QTableWidgetItem *___qtablewidgetitem = member_table->horizontalHeaderItem(0);
+        ___qtablewidgetitem->setText(QCoreApplication::translate("TeacherCourseWidget", "uid", nullptr));
+        QTableWidgetItem *___qtablewidgetitem1 = member_table->horizontalHeaderItem(1);
+        ___qtablewidgetitem1->setText(QCoreApplication::translate("TeacherCourseWidget", "\347\224\250\346\210\267\345\220\215", nullptr));
+        QTableWidgetItem *___qtablewidgetitem2 = member_table->horizontalHeaderItem(2);
+        ___qtablewidgetitem2->setText(QCoreApplication::translate("TeacherCourseWidget", "\350\247\222\350\211\262", nullptr));
+        area_chart_title_text_4->setText(QCoreApplication::translate("TeacherCourseWidget", "\342\227\217  \346\257\217\345\240\202\350\257\276\347\232\204\344\270\223\346\263\250\345\272\246\345\257\271\346\257\224", nullptr));
         label_5->setText(QString());
         label_4->setText(QCoreApplication::translate("TeacherCourseWidget", "\344\270\223\346\263\250\345\272\246", nullptr));
         concentration_text->setText(QCoreApplication::translate("TeacherCourseWidget", "100", nullptr));
@@ -2478,23 +2689,6 @@ public:
         member_name_text->setText(QCoreApplication::translate("TeacherCourseWidget", "Lan YangBo", nullptr));
         member_id_text->setText(QCoreApplication::translate("TeacherCourseWidget", "20172131100", nullptr));
         member_pic->setText(QString());
-        num_of_student_text->setText(QCoreApplication::translate("TeacherCourseWidget", "888", nullptr));
-        label_100->setText(QCoreApplication::translate("TeacherCourseWidget", "\346\225\231\345\270\210", nullptr));
-        label_104->setText(QCoreApplication::translate("TeacherCourseWidget", "\345\255\246\347\224\237", nullptr));
-        label_107->setText(QCoreApplication::translate("TeacherCourseWidget", "*\345\215\225\344\275\215\357\274\232\344\272\272", nullptr));
-        label_109->setText(QCoreApplication::translate("TeacherCourseWidget", "\345\220\210\350\256\241", nullptr));
-        total_text->setText(QCoreApplication::translate("TeacherCourseWidget", "890", nullptr));
-        num_of_teacher_text->setText(QCoreApplication::translate("TeacherCourseWidget", "2", nullptr));
-        area_chart_title_text_2->setText(QCoreApplication::translate("TeacherCourseWidget", "\342\227\217  \346\246\202\345\206\265", nullptr));
-        area_chart_title_text_3->setText(QCoreApplication::translate("TeacherCourseWidget", "\342\227\217  \346\210\220\345\221\230\345\210\227\350\241\250", nullptr));
-        pushButton_15->setText(QString());
-        QTableWidgetItem *___qtablewidgetitem = member_table->horizontalHeaderItem(0);
-        ___qtablewidgetitem->setText(QCoreApplication::translate("TeacherCourseWidget", "\347\224\250\346\210\267\345\220\215", nullptr));
-        QTableWidgetItem *___qtablewidgetitem1 = member_table->horizontalHeaderItem(1);
-        ___qtablewidgetitem1->setText(QCoreApplication::translate("TeacherCourseWidget", "\347\274\226\345\217\267", nullptr));
-        QTableWidgetItem *___qtablewidgetitem2 = member_table->horizontalHeaderItem(2);
-        ___qtablewidgetitem2->setText(QCoreApplication::translate("TeacherCourseWidget", "\350\247\222\350\211\262", nullptr));
-        area_chart_title_text_4->setText(QCoreApplication::translate("TeacherCourseWidget", "\342\227\217  \346\257\217\345\240\202\350\257\276\347\232\204\344\270\223\346\263\250\345\272\246\345\257\271\346\257\224", nullptr));
         tabWidget->setTabText(tabWidget->indexOf(course_member_tab), QString());
     } // retranslateUi
 

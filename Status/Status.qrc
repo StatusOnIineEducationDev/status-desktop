@@ -53,6 +53,7 @@
     </qresource>
     <qresource prefix="/shadow">
         <file>Resources/material/shadow/980x680_shadow.png</file>
+        <file>Resources/material/shadow/400x250_shadow.png</file>
     </qresource>
     <qresource prefix="/pic">
         <file>Resources/material/pic/student.png</file>
@@ -64,6 +65,10 @@
         <file>Resources/material/pic/time.png</file>
         <file>Resources/material/pic/paper.png</file>
         <file>Resources/material/pic/member.png</file>
+        <file>Resources/material/pic/cant_join_in.png</file>
+        <file>Resources/material/pic/offline.png</file>
+        <file>Resources/material/pic/online.png</file>
+        <file>Resources/material/pic/waiting.png</file>
     </qresource>
     <qresource prefix="/cursor">
         <file>Resources/material/cursor/rubber.png</file>

@@ -85,38 +85,42 @@
       <property name="verticalSpacing">
        <number>10</number>
       </property>
-      <item row="0" column="1" colspan="4">
-       <spacer name="verticalSpacer">
-        <property name="orientation">
-         <enum>Qt::Vertical</enum>
-        </property>
-        <property name="sizeHint" stdset="0">
+      <item row="1" column="7" alignment="Qt::AlignRight">
+       <widget class="QPushButton" name="delete_course_btn">
+        <property name="minimumSize">
          <size>
-          <width>20</width>
-          <height>40</height>
+          <width>80</width>
+          <height>0</height>
          </size>
         </property>
-       </spacer>
-      </item>
-      <item row="2" column="7">
-       <widget class="QLabel" name="course_id_text">
+        <property name="maximumSize">
+         <size>
+          <width>80</width>
+          <height>16777215</height>
+         </size>
+        </property>
         <property name="font">
          <font>
           <family>微软雅黑</family>
           <pointsize>10</pointsize>
          </font>
         </property>
+        <property name="cursor">
+         <cursorShape>PointingHandCursor</cursorShape>
+        </property>
         <property name="styleSheet">
-         <string notr="true">QLabel {
+         <string notr="true">QPushButton {
+	border: none;
 	background: none;
-	color: #999999;
+	color: #bbbbbb;
+}
+
+QPushButton::hover {
+	color: red;
 }</string>
         </property>
         <property name="text">
-         <string/>
-        </property>
-        <property name="alignment">
-         <set>Qt::AlignCenter</set>
+         <string> 删除课程</string>
         </property>
        </widget>
       </item>
@@ -159,6 +163,41 @@ QPushButton::hover {
         </property>
        </widget>
       </item>
+      <item row="0" column="1" colspan="4">
+       <spacer name="verticalSpacer">
+        <property name="orientation">
+         <enum>Qt::Vertical</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>20</width>
+          <height>40</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item row="2" column="7">
+       <widget class="QLabel" name="course_id_text">
+        <property name="font">
+         <font>
+          <family>微软雅黑</family>
+          <pointsize>10</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QLabel {
+	background: none;
+	color: #999999;
+}</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+      </item>
       <item row="2" column="0">
        <widget class="QLabel" name="text">
         <property name="minimumSize">
@@ -189,176 +228,6 @@ QPushButton::hover {
          <string> 创建于</string>
         </property>
        </widget>
-      </item>
-      <item row="1" column="7" alignment="Qt::AlignRight">
-       <widget class="QPushButton" name="delete_course_btn">
-        <property name="minimumSize">
-         <size>
-          <width>80</width>
-          <height>0</height>
-         </size>
-        </property>
-        <property name="maximumSize">
-         <size>
-          <width>80</width>
-          <height>16777215</height>
-         </size>
-        </property>
-        <property name="font">
-         <font>
-          <family>微软雅黑</family>
-          <pointsize>10</pointsize>
-         </font>
-        </property>
-        <property name="cursor">
-         <cursorShape>PointingHandCursor</cursorShape>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">QPushButton {
-	border: none;
-	background: none;
-	color: #bbbbbb;
-}
-
-QPushButton::hover {
-	color: red;
-}</string>
-        </property>
-        <property name="text">
-         <string> 删除课程</string>
-        </property>
-       </widget>
-      </item>
-      <item row="2" column="1">
-       <widget class="QLabel" name="create_date_text">
-        <property name="minimumSize">
-         <size>
-          <width>200</width>
-          <height>0</height>
-         </size>
-        </property>
-        <property name="maximumSize">
-         <size>
-          <width>200</width>
-          <height>16777215</height>
-         </size>
-        </property>
-        <property name="font">
-         <font>
-          <family>微软雅黑</family>
-          <pointsize>10</pointsize>
-         </font>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">QLabel {
-	background: none;
-	color: #999999;
-}</string>
-        </property>
-        <property name="text">
-         <string>2019-08-12</string>
-        </property>
-       </widget>
-      </item>
-      <item row="2" column="6">
-       <widget class="QLabel" name="create_time_text_2">
-        <property name="font">
-         <font>
-          <family>微软雅黑</family>
-          <pointsize>10</pointsize>
-         </font>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">QLabel {
-	background: none;
-	color: #999999;
-}</string>
-        </property>
-        <property name="text">
-         <string>id: </string>
-        </property>
-        <property name="alignment">
-         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-        </property>
-       </widget>
-      </item>
-      <item row="3" column="1" colspan="4">
-       <spacer name="verticalSpacer_2">
-        <property name="orientation">
-         <enum>Qt::Vertical</enum>
-        </property>
-        <property name="sizeHint" stdset="0">
-         <size>
-          <width>20</width>
-          <height>40</height>
-         </size>
-        </property>
-       </spacer>
-      </item>
-      <item row="1" column="5">
-       <widget class="QPushButton" name="pushButton_17">
-        <property name="minimumSize">
-         <size>
-          <width>80</width>
-          <height>0</height>
-         </size>
-        </property>
-        <property name="maximumSize">
-         <size>
-          <width>80</width>
-          <height>16777215</height>
-         </size>
-        </property>
-        <property name="font">
-         <font>
-          <family>微软雅黑</family>
-          <pointsize>10</pointsize>
-         </font>
-        </property>
-        <property name="cursor">
-         <cursorShape>PointingHandCursor</cursorShape>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">QPushButton {
-	border: none;
-	background: none;
-	color: #bbbbbb;
-}
-
-QPushButton::hover {
-	color: #333333;
-}</string>
-        </property>
-        <property name="text">
-         <string>加入课程</string>
-        </property>
-       </widget>
-      </item>
-      <item row="2" column="2">
-       <spacer name="horizontalSpacer_12">
-        <property name="orientation">
-         <enum>Qt::Horizontal</enum>
-        </property>
-        <property name="sizeHint" stdset="0">
-         <size>
-          <width>40</width>
-          <height>20</height>
-         </size>
-        </property>
-       </spacer>
-      </item>
-      <item row="1" column="2" colspan="2">
-       <spacer name="horizontalSpacer">
-        <property name="orientation">
-         <enum>Qt::Horizontal</enum>
-        </property>
-        <property name="sizeHint" stdset="0">
-         <size>
-          <width>40</width>
-          <height>20</height>
-         </size>
-        </property>
-       </spacer>
       </item>
       <item row="1" column="0" colspan="2">
        <widget class="QComboBox" name="courses_comboBox">
@@ -418,6 +287,137 @@ QComboBox QAbstractItemView::item {
         </property>
        </widget>
       </item>
+      <item row="2" column="1">
+       <widget class="QLabel" name="create_datetime_text">
+        <property name="minimumSize">
+         <size>
+          <width>200</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>200</width>
+          <height>16777215</height>
+         </size>
+        </property>
+        <property name="font">
+         <font>
+          <family>微软雅黑</family>
+          <pointsize>10</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QLabel {
+	background: none;
+	color: #999999;
+}</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="1" colspan="4">
+       <spacer name="verticalSpacer_2">
+        <property name="orientation">
+         <enum>Qt::Vertical</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>20</width>
+          <height>40</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item row="2" column="2">
+       <spacer name="horizontalSpacer_12">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item row="1" column="5">
+       <widget class="QPushButton" name="pushButton_17">
+        <property name="minimumSize">
+         <size>
+          <width>80</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>80</width>
+          <height>16777215</height>
+         </size>
+        </property>
+        <property name="font">
+         <font>
+          <family>微软雅黑</family>
+          <pointsize>10</pointsize>
+         </font>
+        </property>
+        <property name="cursor">
+         <cursorShape>PointingHandCursor</cursorShape>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton {
+	border: none;
+	background: none;
+	color: #bbbbbb;
+}
+
+QPushButton::hover {
+	color: #333333;
+}</string>
+        </property>
+        <property name="text">
+         <string>加入课程</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="2" colspan="2">
+       <spacer name="horizontalSpacer">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item row="2" column="6">
+       <widget class="QLabel" name="label_2">
+        <property name="font">
+         <font>
+          <family>微软雅黑</family>
+          <pointsize>10</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QLabel {
+	background: none;
+	color: #999999;
+}</string>
+        </property>
+        <property name="text">
+         <string>id: </string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+        </property>
+       </widget>
+      </item>
      </layout>
     </widget>
    </item>
@@ -427,6 +427,12 @@ QComboBox QAbstractItemView::item {
       <size>
        <width>819</width>
        <height>527</height>
+      </size>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>16777215</width>
+       <height>16777215</height>
       </size>
      </property>
      <property name="styleSheet">
@@ -454,6 +460,15 @@ QTabWidget::tab-bar {
        <width>30</width>
        <height>30</height>
       </size>
+     </property>
+     <property name="usesScrollButtons">
+      <bool>true</bool>
+     </property>
+     <property name="documentMode">
+      <bool>false</bool>
+     </property>
+     <property name="movable">
+      <bool>false</bool>
      </property>
      <widget class="QWidget" name="course_data_tab">
       <property name="styleSheet">
@@ -1262,8 +1277,21 @@ QScrollBar::sub-line:vertical {
                  <property name="frameShadow">
                   <enum>QFrame::Raised</enum>
                  </property>
-                 <layout class="QVBoxLayout" name="verticalLayout_6">
-                  <item>
+                 <layout class="QGridLayout" name="gridLayout_12">
+                  <item row="0" column="1">
+                   <spacer name="horizontalSpacer_22">
+                    <property name="orientation">
+                     <enum>Qt::Horizontal</enum>
+                    </property>
+                    <property name="sizeHint" stdset="0">
+                     <size>
+                      <width>40</width>
+                      <height>20</height>
+                     </size>
+                    </property>
+                   </spacer>
+                  </item>
+                  <item row="0" column="0">
                    <widget class="QLabel" name="emotion_report_title_text">
                     <property name="minimumSize">
                      <size>
@@ -1294,7 +1322,122 @@ QScrollBar::sub-line:vertical {
                     </property>
                    </widget>
                   </item>
-                  <item>
+                  <item row="0" column="2">
+                   <widget class="QFrame" name="frame_12">
+                    <property name="frameShape">
+                     <enum>QFrame::StyledPanel</enum>
+                    </property>
+                    <property name="frameShadow">
+                     <enum>QFrame::Raised</enum>
+                    </property>
+                    <layout class="QHBoxLayout" name="horizontalLayout_8">
+                     <property name="leftMargin">
+                      <number>0</number>
+                     </property>
+                     <property name="topMargin">
+                      <number>0</number>
+                     </property>
+                     <property name="rightMargin">
+                      <number>0</number>
+                     </property>
+                     <property name="bottomMargin">
+                      <number>0</number>
+                     </property>
+                     <item>
+                      <widget class="QLabel" name="bar_datetime">
+                       <property name="font">
+                        <font>
+                         <family>微软雅黑</family>
+                         <pointsize>10</pointsize>
+                        </font>
+                       </property>
+                       <property name="styleSheet">
+                        <string notr="true">QLabel {
+	background: none;
+	color: #999999;
+}</string>
+                       </property>
+                       <property name="text">
+                        <string/>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <spacer name="horizontalSpacer_23">
+                       <property name="orientation">
+                        <enum>Qt::Horizontal</enum>
+                       </property>
+                       <property name="sizeType">
+                        <enum>QSizePolicy::Fixed</enum>
+                       </property>
+                       <property name="sizeHint" stdset="0">
+                        <size>
+                         <width>20</width>
+                         <height>20</height>
+                        </size>
+                       </property>
+                      </spacer>
+                     </item>
+                     <item>
+                      <widget class="QLabel" name="bar_title">
+                       <property name="font">
+                        <font>
+                         <family>微软雅黑</family>
+                         <pointsize>10</pointsize>
+                        </font>
+                       </property>
+                       <property name="styleSheet">
+                        <string notr="true">QLabel {
+	background: none;
+	color: #999999;
+}</string>
+                       </property>
+                       <property name="text">
+                        <string/>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QLabel" name="bar_value">
+                       <property name="font">
+                        <font>
+                         <family>微软雅黑</family>
+                         <pointsize>10</pointsize>
+                        </font>
+                       </property>
+                       <property name="styleSheet">
+                        <string notr="true">QLabel {
+	background: none;
+}</string>
+                       </property>
+                       <property name="text">
+                        <string/>
+                       </property>
+                      </widget>
+                     </item>
+                    </layout>
+                   </widget>
+                  </item>
+                  <item row="2" column="0" colspan="3">
+                   <widget class="QtCharts::QChartView" name="emotion_report_bar_chart_widget" native="true">
+                    <property name="minimumSize">
+                     <size>
+                      <width>0</width>
+                      <height>270</height>
+                     </size>
+                    </property>
+                    <property name="maximumSize">
+                     <size>
+                      <width>16777215</width>
+                      <height>270</height>
+                     </size>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true"/>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="1" column="0" colspan="3">
                    <widget class="QLabel" name="emotion_report_tips_text">
                     <property name="font">
                      <font>
@@ -1310,25 +1453,6 @@ QScrollBar::sub-line:vertical {
                     </property>
                     <property name="text">
                      <string>点击右侧不同表情可以查看其数据报表</string>
-                    </property>
-                   </widget>
-                  </item>
-                  <item>
-                   <widget class="QWidget" name="emotion_report_line_chart_widget" native="true">
-                    <property name="minimumSize">
-                     <size>
-                      <width>0</width>
-                      <height>270</height>
-                     </size>
-                    </property>
-                    <property name="maximumSize">
-                     <size>
-                      <width>16777215</width>
-                      <height>270</height>
-                     </size>
-                    </property>
-                    <property name="styleSheet">
-                     <string notr="true"/>
                     </property>
                    </widget>
                   </item>
@@ -1361,57 +1485,6 @@ QScrollBar::sub-line:vertical {
                   <enum>QFrame::Raised</enum>
                  </property>
                  <layout class="QGridLayout" name="gridLayout_7">
-                  <item row="4" column="0">
-                   <widget class="QPushButton" name="disgust_btn">
-                    <property name="minimumSize">
-                     <size>
-                      <width>20</width>
-                      <height>0</height>
-                     </size>
-                    </property>
-                    <property name="maximumSize">
-                     <size>
-                      <width>20</width>
-                      <height>16777215</height>
-                     </size>
-                    </property>
-                    <property name="cursor">
-                     <cursorShape>PointingHandCursor</cursorShape>
-                    </property>
-                    <property name="styleSheet">
-                     <string notr="true">QPushButton {
-	border: none;
-	background: none;
-}</string>
-                    </property>
-                    <property name="text">
-                     <string/>
-                    </property>
-                    <property name="icon">
-                     <iconset resource="../../Status.qrc">
-                      <normaloff>:/button/Resources/material/button/disgust.png</normaloff>:/button/Resources/material/button/disgust.png</iconset>
-                    </property>
-                    <property name="iconSize">
-                     <size>
-                      <width>20</width>
-                      <height>20</height>
-                     </size>
-                    </property>
-                    <property name="checkable">
-                     <bool>true</bool>
-                    </property>
-                    <attribute name="buttonGroup">
-                     <string notr="true">buttonGroup</string>
-                    </attribute>
-                   </widget>
-                  </item>
-                  <item row="6" column="4">
-                   <widget class="QLabel" name="label_122">
-                    <property name="text">
-                     <string>次</string>
-                    </property>
-                   </widget>
-                  </item>
                   <item row="14" column="0">
                    <widget class="QPushButton" name="neutral_btn">
                     <property name="minimumSize">
@@ -1452,79 +1525,64 @@ QScrollBar::sub-line:vertical {
                      <bool>true</bool>
                     </property>
                     <attribute name="buttonGroup">
-                     <string notr="true">buttonGroup</string>
+                     <string notr="true">emotions_report_botton_group</string>
                     </attribute>
                    </widget>
                   </item>
-                  <item row="10" column="6">
-                   <widget class="QLabel" name="label_103">
-                    <property name="text">
-                     <string>%</string>
-                    </property>
-                   </widget>
-                  </item>
-                  <item row="2" column="4">
-                   <widget class="QLabel" name="label_119">
-                    <property name="text">
-                     <string>次</string>
-                    </property>
-                   </widget>
-                  </item>
-                  <item row="6" column="0">
-                   <widget class="QPushButton" name="fear_btn">
+                  <item row="2" column="3">
+                   <widget class="QLabel" name="angry_times_text">
                     <property name="minimumSize">
                      <size>
-                      <width>20</width>
+                      <width>25</width>
                       <height>0</height>
                      </size>
                     </property>
                     <property name="maximumSize">
                      <size>
-                      <width>20</width>
+                      <width>25</width>
                       <height>16777215</height>
                      </size>
                     </property>
-                    <property name="cursor">
-                     <cursorShape>PointingHandCursor</cursorShape>
-                    </property>
-                    <property name="styleSheet">
-                     <string notr="true">QPushButton {
-	border: none;
-	background: none;
-}</string>
-                    </property>
                     <property name="text">
-                     <string/>
+                     <string>-</string>
                     </property>
-                    <property name="icon">
-                     <iconset resource="../../Status.qrc">
-                      <normaloff>:/button/Resources/material/button/fear.png</normaloff>:/button/Resources/material/button/fear.png</iconset>
+                    <property name="alignment">
+                     <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
                     </property>
-                    <property name="iconSize">
+                   </widget>
+                  </item>
+                  <item row="12" column="3">
+                   <widget class="QLabel" name="surprise_times_text">
+                    <property name="minimumSize">
                      <size>
-                      <width>20</width>
-                      <height>20</height>
+                      <width>25</width>
+                      <height>0</height>
                      </size>
                     </property>
-                    <property name="checkable">
-                     <bool>true</bool>
+                    <property name="maximumSize">
+                     <size>
+                      <width>25</width>
+                      <height>16777215</height>
+                     </size>
                     </property>
-                    <attribute name="buttonGroup">
-                     <string notr="true">buttonGroup</string>
-                    </attribute>
+                    <property name="text">
+                     <string>-</string>
+                    </property>
+                    <property name="alignment">
+                     <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                    </property>
                    </widget>
                   </item>
-                  <item row="12" column="6">
-                   <widget class="QLabel" name="label_99">
-                    <property name="text">
-                     <string>%</string>
+                  <item row="8" column="1">
+                   <widget class="QLabel" name="happy_title_text">
+                    <property name="font">
+                     <font>
+                      <family>微软雅黑</family>
+                      <pointsize>10</pointsize>
+                     </font>
                     </property>
-                   </widget>
-                  </item>
-                  <item row="8" column="6">
-                   <widget class="QLabel" name="label_89">
                     <property name="text">
-                     <string>%</string>
+                     <string>高兴</string>
                     </property>
                    </widget>
                   </item>
@@ -1550,154 +1608,10 @@ QScrollBar::sub-line:vertical {
                     </property>
                    </widget>
                   </item>
-                  <item row="6" column="3">
-                   <widget class="QLabel" name="fear_times_text">
-                    <property name="minimumSize">
-                     <size>
-                      <width>25</width>
-                      <height>0</height>
-                     </size>
-                    </property>
-                    <property name="maximumSize">
-                     <size>
-                      <width>25</width>
-                      <height>16777215</height>
-                     </size>
-                    </property>
+                  <item row="6" column="6">
+                   <widget class="QLabel" name="label_111">
                     <property name="text">
-                     <string>-</string>
-                    </property>
-                    <property name="alignment">
-                     <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-                    </property>
-                   </widget>
-                  </item>
-                  <item row="6" column="1">
-                   <widget class="QLabel" name="fear_title_text">
-                    <property name="font">
-                     <font>
-                      <family>微软雅黑</family>
-                      <pointsize>10</pointsize>
-                     </font>
-                    </property>
-                    <property name="text">
-                     <string>恐惧</string>
-                    </property>
-                   </widget>
-                  </item>
-                  <item row="7" column="0" colspan="7">
-                   <widget class="QProgressBar" name="fear_progressBar">
-                    <property name="minimumSize">
-                     <size>
-                      <width>0</width>
-                      <height>8</height>
-                     </size>
-                    </property>
-                    <property name="maximumSize">
-                     <size>
-                      <width>16777215</width>
-                      <height>8</height>
-                     </size>
-                    </property>
-                    <property name="styleSheet">
-                     <string notr="true">QProgressBar{
-        border: none;
-		border-radius: 4px;
-        color: black;
-        text-align: right;
-        background: #ffffff;
-}
-QProgressBar::chunk {
-        border: none;
-		border-radius: 4px;
-        background: #F9D31A;
-}</string>
-                    </property>
-                    <property name="value">
-                     <number>5</number>
-                    </property>
-                    <property name="textVisible">
-                     <bool>false</bool>
-                    </property>
-                   </widget>
-                  </item>
-                  <item row="9" column="0" colspan="7">
-                   <widget class="QProgressBar" name="happy_progressBar">
-                    <property name="minimumSize">
-                     <size>
-                      <width>0</width>
-                      <height>8</height>
-                     </size>
-                    </property>
-                    <property name="maximumSize">
-                     <size>
-                      <width>16777215</width>
-                      <height>8</height>
-                     </size>
-                    </property>
-                    <property name="styleSheet">
-                     <string notr="true">QProgressBar{
-        border: none;
-		border-radius: 4px;
-        color: black;
-        text-align: right;
-        background: #ffffff;
-}
-QProgressBar::chunk {
-        border: none;
-		border-radius: 4px;
-        background: #24AD1D;
-}</string>
-                    </property>
-                    <property name="value">
-                     <number>5</number>
-                    </property>
-                    <property name="textVisible">
-                     <bool>false</bool>
-                    </property>
-                   </widget>
-                  </item>
-                  <item row="4" column="5">
-                   <widget class="QLabel" name="disgust_percent_text">
-                    <property name="minimumSize">
-                     <size>
-                      <width>20</width>
-                      <height>0</height>
-                     </size>
-                    </property>
-                    <property name="maximumSize">
-                     <size>
-                      <width>20</width>
-                      <height>16777215</height>
-                     </size>
-                    </property>
-                    <property name="text">
-                     <string>-</string>
-                    </property>
-                    <property name="alignment">
-                     <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-                    </property>
-                   </widget>
-                  </item>
-                  <item row="10" column="3">
-                   <widget class="QLabel" name="sad_times_text">
-                    <property name="minimumSize">
-                     <size>
-                      <width>25</width>
-                      <height>0</height>
-                     </size>
-                    </property>
-                    <property name="maximumSize">
-                     <size>
-                      <width>25</width>
-                      <height>16777215</height>
-                     </size>
-                    </property>
-                    <property name="text">
-                     <string>-</string>
-                    </property>
-                    <property name="alignment">
-                     <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                     <string>%</string>
                     </property>
                    </widget>
                   </item>
@@ -1730,109 +1644,10 @@ QProgressBar::chunk {
 }</string>
                     </property>
                     <property name="value">
-                     <number>5</number>
+                     <number>4</number>
                     </property>
                     <property name="textVisible">
                      <bool>false</bool>
-                    </property>
-                   </widget>
-                  </item>
-                  <item row="2" column="1">
-                   <widget class="QLabel" name="angry_title_text">
-                    <property name="font">
-                     <font>
-                      <family>微软雅黑</family>
-                      <pointsize>10</pointsize>
-                     </font>
-                    </property>
-                    <property name="text">
-                     <string>生气</string>
-                    </property>
-                   </widget>
-                  </item>
-                  <item row="12" column="1">
-                   <widget class="QLabel" name="surprise_title_text">
-                    <property name="font">
-                     <font>
-                      <family>微软雅黑</family>
-                      <pointsize>10</pointsize>
-                     </font>
-                    </property>
-                    <property name="text">
-                     <string>惊讶</string>
-                    </property>
-                   </widget>
-                  </item>
-                  <item row="10" column="4">
-                   <widget class="QLabel" name="label_88">
-                    <property name="text">
-                     <string>次</string>
-                    </property>
-                   </widget>
-                  </item>
-                  <item row="8" column="3">
-                   <widget class="QLabel" name="happy_times_text">
-                    <property name="minimumSize">
-                     <size>
-                      <width>25</width>
-                      <height>0</height>
-                     </size>
-                    </property>
-                    <property name="maximumSize">
-                     <size>
-                      <width>25</width>
-                      <height>16777215</height>
-                     </size>
-                    </property>
-                    <property name="text">
-                     <string>-</string>
-                    </property>
-                    <property name="alignment">
-                     <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-                    </property>
-                   </widget>
-                  </item>
-                  <item row="2" column="5">
-                   <widget class="QLabel" name="angry_percent_text">
-                    <property name="minimumSize">
-                     <size>
-                      <width>20</width>
-                      <height>0</height>
-                     </size>
-                    </property>
-                    <property name="maximumSize">
-                     <size>
-                      <width>20</width>
-                      <height>16777215</height>
-                     </size>
-                    </property>
-                    <property name="text">
-                     <string>-</string>
-                    </property>
-                    <property name="alignment">
-                     <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-                    </property>
-                   </widget>
-                  </item>
-                  <item row="4" column="3">
-                   <widget class="QLabel" name="disgust_times_text">
-                    <property name="minimumSize">
-                     <size>
-                      <width>25</width>
-                      <height>0</height>
-                     </size>
-                    </property>
-                    <property name="maximumSize">
-                     <size>
-                      <width>25</width>
-                      <height>16777215</height>
-                     </size>
-                    </property>
-                    <property name="text">
-                     <string>-</string>
-                    </property>
-                    <property name="alignment">
-                     <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
                     </property>
                    </widget>
                   </item>
@@ -1858,56 +1673,15 @@ QProgressBar::chunk {
                     </property>
                    </widget>
                   </item>
-                  <item row="1" column="0" colspan="4">
-                   <widget class="QLabel" name="label_123">
-                    <property name="font">
-                     <font>
-                      <family>微软雅黑</family>
-                      <pointsize>10</pointsize>
-                     </font>
-                    </property>
-                    <property name="styleSheet">
-                     <string notr="true">QLabel {
-	background: none;
-	color: #999999;
-}</string>
-                    </property>
+                  <item row="10" column="4">
+                   <widget class="QLabel" name="label_88">
                     <property name="text">
-                     <string>各表情出现比例及次数</string>
+                     <string>次</string>
                     </property>
                    </widget>
                   </item>
-                  <item row="2" column="6">
-                   <widget class="QLabel" name="label_91">
-                    <property name="text">
-                     <string>%</string>
-                    </property>
-                   </widget>
-                  </item>
-                  <item row="12" column="5">
-                   <widget class="QLabel" name="surprise_percent_text">
-                    <property name="minimumSize">
-                     <size>
-                      <width>20</width>
-                      <height>0</height>
-                     </size>
-                    </property>
-                    <property name="maximumSize">
-                     <size>
-                      <width>20</width>
-                      <height>16777215</height>
-                     </size>
-                    </property>
-                    <property name="text">
-                     <string>-</string>
-                    </property>
-                    <property name="alignment">
-                     <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-                    </property>
-                   </widget>
-                  </item>
-                  <item row="15" column="0" colspan="7">
-                   <widget class="QProgressBar" name="neutral_progressBar">
+                  <item row="3" column="0" colspan="7">
+                   <widget class="QProgressBar" name="angry_progressBar">
                     <property name="minimumSize">
                      <size>
                       <width>0</width>
@@ -1931,34 +1705,14 @@ QProgressBar::chunk {
 QProgressBar::chunk {
         border: none;
 		border-radius: 4px;
-        background: rgb(0, 160, 230);
+        background: #6C6FC0;
 }</string>
                     </property>
                     <property name="value">
-                     <number>5</number>
+                     <number>4</number>
                     </property>
                     <property name="textVisible">
                      <bool>false</bool>
-                    </property>
-                   </widget>
-                  </item>
-                  <item row="8" column="1">
-                   <widget class="QLabel" name="happy_title_text">
-                    <property name="font">
-                     <font>
-                      <family>微软雅黑</family>
-                      <pointsize>10</pointsize>
-                     </font>
-                    </property>
-                    <property name="text">
-                     <string>高兴</string>
-                    </property>
-                   </widget>
-                  </item>
-                  <item row="6" column="6">
-                   <widget class="QLabel" name="label_111">
-                    <property name="text">
-                     <string>%</string>
                     </property>
                    </widget>
                   </item>
@@ -2002,56 +1756,12 @@ QProgressBar::chunk {
                      <bool>true</bool>
                     </property>
                     <attribute name="buttonGroup">
-                     <string notr="true">buttonGroup</string>
+                     <string notr="true">emotions_report_botton_group</string>
                     </attribute>
                    </widget>
                   </item>
-                  <item row="2" column="0">
-                   <widget class="QPushButton" name="angry_btn">
-                    <property name="minimumSize">
-                     <size>
-                      <width>20</width>
-                      <height>0</height>
-                     </size>
-                    </property>
-                    <property name="maximumSize">
-                     <size>
-                      <width>20</width>
-                      <height>16777215</height>
-                     </size>
-                    </property>
-                    <property name="cursor">
-                     <cursorShape>PointingHandCursor</cursorShape>
-                    </property>
-                    <property name="styleSheet">
-                     <string notr="true">QPushButton {
-	border: none;
-	background: none;
-}</string>
-                    </property>
-                    <property name="text">
-                     <string/>
-                    </property>
-                    <property name="icon">
-                     <iconset resource="../../Status.qrc">
-                      <normaloff>:/button/Resources/material/button/angry.png</normaloff>:/button/Resources/material/button/angry.png</iconset>
-                    </property>
-                    <property name="iconSize">
-                     <size>
-                      <width>20</width>
-                      <height>20</height>
-                     </size>
-                    </property>
-                    <property name="checkable">
-                     <bool>true</bool>
-                    </property>
-                    <attribute name="buttonGroup">
-                     <string notr="true">buttonGroup</string>
-                    </attribute>
-                   </widget>
-                  </item>
-                  <item row="3" column="0" colspan="7">
-                   <widget class="QProgressBar" name="angry_progressBar">
+                  <item row="7" column="0" colspan="7">
+                   <widget class="QProgressBar" name="fear_progressBar">
                     <property name="minimumSize">
                      <size>
                       <width>0</width>
@@ -2075,49 +1785,14 @@ QProgressBar::chunk {
 QProgressBar::chunk {
         border: none;
 		border-radius: 4px;
-        background: #6C6FC0;
+        background: #F9D31A;
 }</string>
                     </property>
                     <property name="value">
-                     <number>5</number>
+                     <number>4</number>
                     </property>
                     <property name="textVisible">
                      <bool>false</bool>
-                    </property>
-                   </widget>
-                  </item>
-                  <item row="10" column="5">
-                   <widget class="QLabel" name="sad_percent_text">
-                    <property name="minimumSize">
-                     <size>
-                      <width>20</width>
-                      <height>0</height>
-                     </size>
-                    </property>
-                    <property name="maximumSize">
-                     <size>
-                      <width>20</width>
-                      <height>16777215</height>
-                     </size>
-                    </property>
-                    <property name="text">
-                     <string>-</string>
-                    </property>
-                    <property name="alignment">
-                     <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-                    </property>
-                   </widget>
-                  </item>
-                  <item row="14" column="1">
-                   <widget class="QLabel" name="neutral_title_text">
-                    <property name="font">
-                     <font>
-                      <family>微软雅黑</family>
-                      <pointsize>10</pointsize>
-                     </font>
-                    </property>
-                    <property name="text">
-                     <string>平淡</string>
                     </property>
                    </widget>
                   </item>
@@ -2128,29 +1803,51 @@ QProgressBar::chunk {
                     </property>
                    </widget>
                   </item>
-                  <item row="4" column="4">
-                   <widget class="QLabel" name="label_102">
-                    <property name="text">
-                     <string>次</string>
+                  <item row="15" column="0" colspan="7">
+                   <widget class="QProgressBar" name="neutral_progressBar">
+                    <property name="minimumSize">
+                     <size>
+                      <width>0</width>
+                      <height>8</height>
+                     </size>
+                    </property>
+                    <property name="maximumSize">
+                     <size>
+                      <width>16777215</width>
+                      <height>8</height>
+                     </size>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">QProgressBar{
+        border: none;
+		border-radius: 4px;
+        color: black;
+        text-align: right;
+        background: #ffffff;
+}
+QProgressBar::chunk {
+        border: none;
+		border-radius: 4px;
+        background: rgb(0, 160, 230);
+}</string>
+                    </property>
+                    <property name="value">
+                     <number>4</number>
+                    </property>
+                    <property name="textVisible">
+                     <bool>false</bool>
                     </property>
                    </widget>
                   </item>
-                  <item row="14" column="6">
-                   <widget class="QLabel" name="label_116">
+                  <item row="10" column="6">
+                   <widget class="QLabel" name="label_103">
                     <property name="text">
                      <string>%</string>
                     </property>
                    </widget>
                   </item>
-                  <item row="14" column="4">
-                   <widget class="QLabel" name="label_92">
-                    <property name="text">
-                     <string>次</string>
-                    </property>
-                   </widget>
-                  </item>
-                  <item row="6" column="5">
-                   <widget class="QLabel" name="fear_percent_text">
+                  <item row="4" column="5">
+                   <widget class="QLabel" name="disgust_percent_text">
                     <property name="minimumSize">
                      <size>
                       <width>20</width>
@@ -2168,6 +1865,41 @@ QProgressBar::chunk {
                     </property>
                     <property name="alignment">
                      <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="14" column="5">
+                   <widget class="QLabel" name="neutral_percent_text">
+                    <property name="minimumSize">
+                     <size>
+                      <width>20</width>
+                      <height>0</height>
+                     </size>
+                    </property>
+                    <property name="maximumSize">
+                     <size>
+                      <width>20</width>
+                      <height>16777215</height>
+                     </size>
+                    </property>
+                    <property name="text">
+                     <string>-</string>
+                    </property>
+                    <property name="alignment">
+                     <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="12" column="1">
+                   <widget class="QLabel" name="surprise_title_text">
+                    <property name="font">
+                     <font>
+                      <family>微软雅黑</family>
+                      <pointsize>10</pointsize>
+                     </font>
+                    </property>
+                    <property name="text">
+                     <string>惊讶</string>
                     </property>
                    </widget>
                   </item>
@@ -2200,162 +1932,7 @@ QProgressBar::chunk {
 }</string>
                     </property>
                     <property name="value">
-                     <number>5</number>
-                    </property>
-                    <property name="textVisible">
-                     <bool>false</bool>
-                    </property>
-                   </widget>
-                  </item>
-                  <item row="12" column="4">
-                   <widget class="QLabel" name="label_106">
-                    <property name="text">
-                     <string>次</string>
-                    </property>
-                   </widget>
-                  </item>
-                  <item row="2" column="2">
-                   <spacer name="horizontalSpacer_7">
-                    <property name="orientation">
-                     <enum>Qt::Horizontal</enum>
-                    </property>
-                    <property name="sizeHint" stdset="0">
-                     <size>
-                      <width>40</width>
-                      <height>20</height>
-                     </size>
-                    </property>
-                   </spacer>
-                  </item>
-                  <item row="8" column="0">
-                   <widget class="QPushButton" name="happy_btn">
-                    <property name="minimumSize">
-                     <size>
-                      <width>20</width>
-                      <height>0</height>
-                     </size>
-                    </property>
-                    <property name="maximumSize">
-                     <size>
-                      <width>20</width>
-                      <height>16777215</height>
-                     </size>
-                    </property>
-                    <property name="cursor">
-                     <cursorShape>PointingHandCursor</cursorShape>
-                    </property>
-                    <property name="styleSheet">
-                     <string notr="true">QPushButton {
-	border: none;
-	background: none;
-}</string>
-                    </property>
-                    <property name="text">
-                     <string/>
-                    </property>
-                    <property name="icon">
-                     <iconset resource="../../Status.qrc">
-                      <normaloff>:/button/Resources/material/button/happy.png</normaloff>:/button/Resources/material/button/happy.png</iconset>
-                    </property>
-                    <property name="iconSize">
-                     <size>
-                      <width>20</width>
-                      <height>20</height>
-                     </size>
-                    </property>
-                    <property name="checkable">
-                     <bool>true</bool>
-                    </property>
-                    <attribute name="buttonGroup">
-                     <string notr="true">buttonGroup</string>
-                    </attribute>
-                   </widget>
-                  </item>
-                  <item row="2" column="3">
-                   <widget class="QLabel" name="angry_times_text">
-                    <property name="minimumSize">
-                     <size>
-                      <width>25</width>
-                      <height>0</height>
-                     </size>
-                    </property>
-                    <property name="maximumSize">
-                     <size>
-                      <width>25</width>
-                      <height>16777215</height>
-                     </size>
-                    </property>
-                    <property name="text">
-                     <string>-</string>
-                    </property>
-                    <property name="alignment">
-                     <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-                    </property>
-                   </widget>
-                  </item>
-                  <item row="10" column="1">
-                   <widget class="QLabel" name="sad_title_text">
-                    <property name="font">
-                     <font>
-                      <family>微软雅黑</family>
-                      <pointsize>10</pointsize>
-                     </font>
-                    </property>
-                    <property name="text">
-                     <string>伤心</string>
-                    </property>
-                   </widget>
-                  </item>
-                  <item row="4" column="1">
-                   <widget class="QLabel" name="disgust_title_text">
-                    <property name="font">
-                     <font>
-                      <family>微软雅黑</family>
-                      <pointsize>10</pointsize>
-                     </font>
-                    </property>
-                    <property name="text">
-                     <string>厌恶</string>
-                    </property>
-                   </widget>
-                  </item>
-                  <item row="8" column="4">
-                   <widget class="QLabel" name="label_120">
-                    <property name="text">
-                     <string>次</string>
-                    </property>
-                   </widget>
-                  </item>
-                  <item row="11" column="0" colspan="7">
-                   <widget class="QProgressBar" name="sad_progressBar">
-                    <property name="minimumSize">
-                     <size>
-                      <width>0</width>
-                      <height>8</height>
-                     </size>
-                    </property>
-                    <property name="maximumSize">
-                     <size>
-                      <width>16777215</width>
-                      <height>8</height>
-                     </size>
-                    </property>
-                    <property name="styleSheet">
-                     <string notr="true">QProgressBar{
-        border: none;
-		border-radius: 4px;
-        color: black;
-        text-align: right;
-        background: #ffffff;
-}
-QProgressBar::chunk {
-        border: none;
-		border-radius: 4px;
-        background: #F05050;
-}</string>
-                    </property>
-                    <property name="value">
-                     <number>5</number>
+                     <number>4</number>
                     </property>
                     <property name="textVisible">
                      <bool>false</bool>
@@ -2402,12 +1979,163 @@ QProgressBar::chunk {
                      <bool>true</bool>
                     </property>
                     <attribute name="buttonGroup">
-                     <string notr="true">buttonGroup</string>
+                     <string notr="true">emotions_report_botton_group</string>
                     </attribute>
                    </widget>
                   </item>
-                  <item row="12" column="3">
-                   <widget class="QLabel" name="surprise_times_text">
+                  <item row="9" column="0" colspan="7">
+                   <widget class="QProgressBar" name="happy_progressBar">
+                    <property name="minimumSize">
+                     <size>
+                      <width>0</width>
+                      <height>8</height>
+                     </size>
+                    </property>
+                    <property name="maximumSize">
+                     <size>
+                      <width>16777215</width>
+                      <height>8</height>
+                     </size>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">QProgressBar{
+        border: none;
+		border-radius: 4px;
+        color: black;
+        text-align: right;
+        background: #ffffff;
+}
+QProgressBar::chunk {
+        border: none;
+		border-radius: 4px;
+        background: #24AD1D;
+}</string>
+                    </property>
+                    <property name="value">
+                     <number>4</number>
+                    </property>
+                    <property name="textVisible">
+                     <bool>false</bool>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="2" column="4">
+                   <widget class="QLabel" name="label_119">
+                    <property name="text">
+                     <string>次</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="4" column="0">
+                   <widget class="QPushButton" name="disgust_btn">
+                    <property name="minimumSize">
+                     <size>
+                      <width>20</width>
+                      <height>0</height>
+                     </size>
+                    </property>
+                    <property name="maximumSize">
+                     <size>
+                      <width>20</width>
+                      <height>16777215</height>
+                     </size>
+                    </property>
+                    <property name="cursor">
+                     <cursorShape>PointingHandCursor</cursorShape>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">QPushButton {
+	border: none;
+	background: none;
+}</string>
+                    </property>
+                    <property name="text">
+                     <string/>
+                    </property>
+                    <property name="icon">
+                     <iconset resource="../../Status.qrc">
+                      <normaloff>:/button/Resources/material/button/disgust.png</normaloff>:/button/Resources/material/button/disgust.png</iconset>
+                    </property>
+                    <property name="iconSize">
+                     <size>
+                      <width>20</width>
+                      <height>20</height>
+                     </size>
+                    </property>
+                    <property name="checkable">
+                     <bool>true</bool>
+                    </property>
+                    <attribute name="buttonGroup">
+                     <string notr="true">emotions_report_botton_group</string>
+                    </attribute>
+                   </widget>
+                  </item>
+                  <item row="6" column="4">
+                   <widget class="QLabel" name="label_122">
+                    <property name="text">
+                     <string>次</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="16" column="0" colspan="7">
+                   <spacer name="verticalSpacer_13">
+                    <property name="orientation">
+                     <enum>Qt::Vertical</enum>
+                    </property>
+                    <property name="sizeHint" stdset="0">
+                     <size>
+                      <width>20</width>
+                      <height>40</height>
+                     </size>
+                    </property>
+                   </spacer>
+                  </item>
+                  <item row="6" column="0">
+                   <widget class="QPushButton" name="fear_btn">
+                    <property name="minimumSize">
+                     <size>
+                      <width>20</width>
+                      <height>0</height>
+                     </size>
+                    </property>
+                    <property name="maximumSize">
+                     <size>
+                      <width>20</width>
+                      <height>16777215</height>
+                     </size>
+                    </property>
+                    <property name="cursor">
+                     <cursorShape>PointingHandCursor</cursorShape>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">QPushButton {
+	border: none;
+	background: none;
+}</string>
+                    </property>
+                    <property name="text">
+                     <string/>
+                    </property>
+                    <property name="icon">
+                     <iconset resource="../../Status.qrc">
+                      <normaloff>:/button/Resources/material/button/fear.png</normaloff>:/button/Resources/material/button/fear.png</iconset>
+                    </property>
+                    <property name="iconSize">
+                     <size>
+                      <width>20</width>
+                      <height>20</height>
+                     </size>
+                    </property>
+                    <property name="checkable">
+                     <bool>true</bool>
+                    </property>
+                    <attribute name="buttonGroup">
+                     <string notr="true">emotions_report_botton_group</string>
+                    </attribute>
+                   </widget>
+                  </item>
+                  <item row="4" column="3">
+                   <widget class="QLabel" name="disgust_times_text">
                     <property name="minimumSize">
                      <size>
                       <width>25</width>
@@ -2428,8 +2156,388 @@ QProgressBar::chunk {
                     </property>
                    </widget>
                   </item>
-                  <item row="14" column="5">
-                   <widget class="QLabel" name="neutral_percent_text">
+                  <item row="4" column="1">
+                   <widget class="QLabel" name="disgust_title_text">
+                    <property name="font">
+                     <font>
+                      <family>微软雅黑</family>
+                      <pointsize>10</pointsize>
+                     </font>
+                    </property>
+                    <property name="text">
+                     <string>厌恶</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="10" column="3">
+                   <widget class="QLabel" name="sad_times_text">
+                    <property name="minimumSize">
+                     <size>
+                      <width>25</width>
+                      <height>0</height>
+                     </size>
+                    </property>
+                    <property name="maximumSize">
+                     <size>
+                      <width>25</width>
+                      <height>16777215</height>
+                     </size>
+                    </property>
+                    <property name="text">
+                     <string>-</string>
+                    </property>
+                    <property name="alignment">
+                     <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="6" column="3">
+                   <widget class="QLabel" name="fear_times_text">
+                    <property name="minimumSize">
+                     <size>
+                      <width>25</width>
+                      <height>0</height>
+                     </size>
+                    </property>
+                    <property name="maximumSize">
+                     <size>
+                      <width>25</width>
+                      <height>16777215</height>
+                     </size>
+                    </property>
+                    <property name="text">
+                     <string>-</string>
+                    </property>
+                    <property name="alignment">
+                     <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="2" column="5">
+                   <widget class="QLabel" name="angry_percent_text">
+                    <property name="minimumSize">
+                     <size>
+                      <width>20</width>
+                      <height>0</height>
+                     </size>
+                    </property>
+                    <property name="maximumSize">
+                     <size>
+                      <width>20</width>
+                      <height>16777215</height>
+                     </size>
+                    </property>
+                    <property name="text">
+                     <string>-</string>
+                    </property>
+                    <property name="alignment">
+                     <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="8" column="4">
+                   <widget class="QLabel" name="label_120">
+                    <property name="text">
+                     <string>次</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="12" column="4">
+                   <widget class="QLabel" name="label_106">
+                    <property name="text">
+                     <string>次</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="1" column="0" colspan="4">
+                   <widget class="QLabel" name="label_123">
+                    <property name="font">
+                     <font>
+                      <family>微软雅黑</family>
+                      <pointsize>10</pointsize>
+                     </font>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">QLabel {
+	background: none;
+	color: #999999;
+}</string>
+                    </property>
+                    <property name="text">
+                     <string>各表情出现比例及次数</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="11" column="0" colspan="7">
+                   <widget class="QProgressBar" name="sad_progressBar">
+                    <property name="minimumSize">
+                     <size>
+                      <width>0</width>
+                      <height>8</height>
+                     </size>
+                    </property>
+                    <property name="maximumSize">
+                     <size>
+                      <width>16777215</width>
+                      <height>8</height>
+                     </size>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">QProgressBar{
+        border: none;
+		border-radius: 4px;
+        color: black;
+        text-align: right;
+        background: #ffffff;
+}
+QProgressBar::chunk {
+        border: none;
+		border-radius: 4px;
+        background: #F05050;
+}</string>
+                    </property>
+                    <property name="value">
+                     <number>4</number>
+                    </property>
+                    <property name="textVisible">
+                     <bool>false</bool>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="6" column="5">
+                   <widget class="QLabel" name="fear_percent_text">
+                    <property name="minimumSize">
+                     <size>
+                      <width>20</width>
+                      <height>0</height>
+                     </size>
+                    </property>
+                    <property name="maximumSize">
+                     <size>
+                      <width>20</width>
+                      <height>16777215</height>
+                     </size>
+                    </property>
+                    <property name="text">
+                     <string>-</string>
+                    </property>
+                    <property name="alignment">
+                     <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="12" column="6">
+                   <widget class="QLabel" name="label_99">
+                    <property name="text">
+                     <string>%</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="2" column="2">
+                   <spacer name="horizontalSpacer_7">
+                    <property name="orientation">
+                     <enum>Qt::Horizontal</enum>
+                    </property>
+                    <property name="sizeHint" stdset="0">
+                     <size>
+                      <width>40</width>
+                      <height>20</height>
+                     </size>
+                    </property>
+                   </spacer>
+                  </item>
+                  <item row="6" column="1">
+                   <widget class="QLabel" name="fear_title_text">
+                    <property name="font">
+                     <font>
+                      <family>微软雅黑</family>
+                      <pointsize>10</pointsize>
+                     </font>
+                    </property>
+                    <property name="text">
+                     <string>恐惧</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="2" column="6">
+                   <widget class="QLabel" name="label_91">
+                    <property name="text">
+                     <string>%</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="14" column="4">
+                   <widget class="QLabel" name="label_92">
+                    <property name="text">
+                     <string>次</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="14" column="1">
+                   <widget class="QLabel" name="neutral_title_text">
+                    <property name="font">
+                     <font>
+                      <family>微软雅黑</family>
+                      <pointsize>10</pointsize>
+                     </font>
+                    </property>
+                    <property name="text">
+                     <string>平淡</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="10" column="1">
+                   <widget class="QLabel" name="sad_title_text">
+                    <property name="font">
+                     <font>
+                      <family>微软雅黑</family>
+                      <pointsize>10</pointsize>
+                     </font>
+                    </property>
+                    <property name="text">
+                     <string>伤心</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="14" column="6">
+                   <widget class="QLabel" name="label_116">
+                    <property name="text">
+                     <string>%</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="2" column="1">
+                   <widget class="QLabel" name="angry_title_text">
+                    <property name="font">
+                     <font>
+                      <family>微软雅黑</family>
+                      <pointsize>10</pointsize>
+                     </font>
+                    </property>
+                    <property name="text">
+                     <string>生气</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="2" column="0">
+                   <widget class="QPushButton" name="angry_btn">
+                    <property name="minimumSize">
+                     <size>
+                      <width>20</width>
+                      <height>0</height>
+                     </size>
+                    </property>
+                    <property name="maximumSize">
+                     <size>
+                      <width>20</width>
+                      <height>16777215</height>
+                     </size>
+                    </property>
+                    <property name="cursor">
+                     <cursorShape>PointingHandCursor</cursorShape>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">QPushButton {
+	border: none;
+	background: none;
+}</string>
+                    </property>
+                    <property name="text">
+                     <string/>
+                    </property>
+                    <property name="icon">
+                     <iconset resource="../../Status.qrc">
+                      <normaloff>:/button/Resources/material/button/angry.png</normaloff>:/button/Resources/material/button/angry.png</iconset>
+                    </property>
+                    <property name="iconSize">
+                     <size>
+                      <width>20</width>
+                      <height>20</height>
+                     </size>
+                    </property>
+                    <property name="checkable">
+                     <bool>true</bool>
+                    </property>
+                    <attribute name="buttonGroup">
+                     <string notr="true">emotions_report_botton_group</string>
+                    </attribute>
+                   </widget>
+                  </item>
+                  <item row="8" column="0">
+                   <widget class="QPushButton" name="happy_btn">
+                    <property name="minimumSize">
+                     <size>
+                      <width>20</width>
+                      <height>0</height>
+                     </size>
+                    </property>
+                    <property name="maximumSize">
+                     <size>
+                      <width>20</width>
+                      <height>16777215</height>
+                     </size>
+                    </property>
+                    <property name="cursor">
+                     <cursorShape>PointingHandCursor</cursorShape>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">QPushButton {
+	border: none;
+	background: none;
+}</string>
+                    </property>
+                    <property name="text">
+                     <string/>
+                    </property>
+                    <property name="icon">
+                     <iconset resource="../../Status.qrc">
+                      <normaloff>:/button/Resources/material/button/happy.png</normaloff>:/button/Resources/material/button/happy.png</iconset>
+                    </property>
+                    <property name="iconSize">
+                     <size>
+                      <width>20</width>
+                      <height>20</height>
+                     </size>
+                    </property>
+                    <property name="checkable">
+                     <bool>true</bool>
+                    </property>
+                    <attribute name="buttonGroup">
+                     <string notr="true">emotions_report_botton_group</string>
+                    </attribute>
+                   </widget>
+                  </item>
+                  <item row="4" column="4">
+                   <widget class="QLabel" name="label_102">
+                    <property name="text">
+                     <string>次</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="8" column="3">
+                   <widget class="QLabel" name="happy_times_text">
+                    <property name="minimumSize">
+                     <size>
+                      <width>25</width>
+                      <height>0</height>
+                     </size>
+                    </property>
+                    <property name="maximumSize">
+                     <size>
+                      <width>25</width>
+                      <height>16777215</height>
+                     </size>
+                    </property>
+                    <property name="text">
+                     <string>-</string>
+                    </property>
+                    <property name="alignment">
+                     <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="10" column="5">
+                   <widget class="QLabel" name="sad_percent_text">
                     <property name="minimumSize">
                      <size>
                       <width>20</width>
@@ -2463,18 +2571,61 @@ QProgressBar::chunk {
                     </property>
                    </spacer>
                   </item>
-                  <item row="16" column="0" colspan="7">
-                   <spacer name="verticalSpacer_13">
-                    <property name="orientation">
-                     <enum>Qt::Vertical</enum>
-                    </property>
-                    <property name="sizeHint" stdset="0">
+                  <item row="12" column="5">
+                   <widget class="QLabel" name="surprise_percent_text">
+                    <property name="minimumSize">
                      <size>
                       <width>20</width>
-                      <height>40</height>
+                      <height>0</height>
                      </size>
                     </property>
-                   </spacer>
+                    <property name="maximumSize">
+                     <size>
+                      <width>20</width>
+                      <height>16777215</height>
+                     </size>
+                    </property>
+                    <property name="text">
+                     <string>-</string>
+                    </property>
+                    <property name="alignment">
+                     <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="8" column="6">
+                   <widget class="QLabel" name="label_89">
+                    <property name="text">
+                     <string>%</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="1" column="4" colspan="3">
+                   <widget class="QPushButton" name="all_btn">
+                    <property name="font">
+                     <font>
+                      <family>微软雅黑</family>
+                      <pointsize>10</pointsize>
+                     </font>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">QPushButton {
+	border: none;
+	background: none;
+	color: #bbbbbb;
+}
+
+QPushButton::hover {
+	color: #333333;
+}</string>
+                    </property>
+                    <property name="text">
+                     <string>查看全部</string>
+                    </property>
+                    <attribute name="buttonGroup">
+                     <string notr="true">emotions_report_botton_group</string>
+                    </attribute>
+                   </widget>
                   </item>
                  </layout>
                 </widget>
@@ -3020,8 +3171,27 @@ QProgressBar::chunk {
              <property name="frameShadow">
               <enum>QFrame::Raised</enum>
              </property>
-             <layout class="QVBoxLayout" name="verticalLayout_5">
-              <item>
+             <layout class="QGridLayout" name="gridLayout_5">
+              <item row="1" column="0" colspan="3">
+               <widget class="QtCharts::QChartView" name="area_chart_widget" native="true">
+                <property name="minimumSize">
+                 <size>
+                  <width>0</width>
+                  <height>250</height>
+                 </size>
+                </property>
+                <property name="maximumSize">
+                 <size>
+                  <width>16777215</width>
+                  <height>250</height>
+                 </size>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true"/>
+                </property>
+               </widget>
+              </item>
+              <item row="0" column="0">
                <widget class="QLabel" name="area_chart_title_text">
                 <property name="minimumSize">
                  <size>
@@ -3052,23 +3222,113 @@ QProgressBar::chunk {
                 </property>
                </widget>
               </item>
-              <item>
-               <widget class="QtCharts::QChartView" name="area_chart_widget" native="true">
-                <property name="minimumSize">
+              <item row="0" column="1">
+               <spacer name="horizontalSpacer_6">
+                <property name="orientation">
+                 <enum>Qt::Horizontal</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
                  <size>
-                  <width>0</width>
-                  <height>250</height>
+                  <width>40</width>
+                  <height>20</height>
                  </size>
                 </property>
-                <property name="maximumSize">
-                 <size>
-                  <width>16777215</width>
-                  <height>250</height>
-                 </size>
+               </spacer>
+              </item>
+              <item row="0" column="2">
+               <widget class="QFrame" name="frame_11">
+                <property name="frameShape">
+                 <enum>QFrame::StyledPanel</enum>
                 </property>
-                <property name="styleSheet">
-                 <string notr="true"/>
+                <property name="frameShadow">
+                 <enum>QFrame::Raised</enum>
                 </property>
+                <layout class="QHBoxLayout" name="horizontalLayout">
+                 <property name="leftMargin">
+                  <number>0</number>
+                 </property>
+                 <property name="topMargin">
+                  <number>0</number>
+                 </property>
+                 <property name="rightMargin">
+                  <number>0</number>
+                 </property>
+                 <property name="bottomMargin">
+                  <number>0</number>
+                 </property>
+                 <item>
+                  <widget class="QLabel" name="point_datetime">
+                   <property name="font">
+                    <font>
+                     <family>微软雅黑</family>
+                     <pointsize>10</pointsize>
+                    </font>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">QLabel {
+	background: none;
+	color: #999999;
+}</string>
+                   </property>
+                   <property name="text">
+                    <string/>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <spacer name="horizontalSpacer_5">
+                   <property name="orientation">
+                    <enum>Qt::Horizontal</enum>
+                   </property>
+                   <property name="sizeType">
+                    <enum>QSizePolicy::Fixed</enum>
+                   </property>
+                   <property name="sizeHint" stdset="0">
+                    <size>
+                     <width>20</width>
+                     <height>20</height>
+                    </size>
+                   </property>
+                  </spacer>
+                 </item>
+                 <item>
+                  <widget class="QLabel" name="point_title">
+                   <property name="font">
+                    <font>
+                     <family>微软雅黑</family>
+                     <pointsize>10</pointsize>
+                    </font>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">QLabel {
+	background: none;
+	color: #999999;
+}</string>
+                   </property>
+                   <property name="text">
+                    <string/>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QLabel" name="point_concentration">
+                   <property name="font">
+                    <font>
+                     <family>微软雅黑</family>
+                     <pointsize>10</pointsize>
+                    </font>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">QLabel {
+	background: none;
+}</string>
+                   </property>
+                   <property name="text">
+                    <string/>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
                </widget>
               </item>
              </layout>
@@ -3172,9 +3432,9 @@ QScrollBar::sub-line:vertical {
           <property name="geometry">
            <rect>
             <x>0</x>
-            <y>0</y>
+            <y>-58</y>
             <width>802</width>
-            <height>802</height>
+            <height>808</height>
            </rect>
           </property>
           <property name="styleSheet">
@@ -3209,6 +3469,848 @@ QScrollBar::sub-line:vertical {
              <property name="spacing">
               <number>15</number>
              </property>
+             <item row="0" column="0" colspan="2">
+              <widget class="QFrame" name="frame">
+               <property name="minimumSize">
+                <size>
+                 <width>782</width>
+                 <height>200</height>
+                </size>
+               </property>
+               <property name="maximumSize">
+                <size>
+                 <width>16777215</width>
+                 <height>200</height>
+                </size>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">QFrame {
+	background-color: #ffffff;
+}</string>
+               </property>
+               <property name="frameShape">
+                <enum>QFrame::StyledPanel</enum>
+               </property>
+               <property name="frameShadow">
+                <enum>QFrame::Raised</enum>
+               </property>
+               <layout class="QGridLayout" name="gridLayout_18">
+                <item row="3" column="0">
+                 <spacer name="horizontalSpacer_13">
+                  <property name="orientation">
+                   <enum>Qt::Horizontal</enum>
+                  </property>
+                  <property name="sizeHint" stdset="0">
+                   <size>
+                    <width>40</width>
+                    <height>20</height>
+                   </size>
+                  </property>
+                 </spacer>
+                </item>
+                <item row="2" column="3">
+                 <widget class="QFrame" name="frame_15">
+                  <property name="minimumSize">
+                   <size>
+                    <width>80</width>
+                    <height>80</height>
+                   </size>
+                  </property>
+                  <property name="maximumSize">
+                   <size>
+                    <width>80</width>
+                    <height>80</height>
+                   </size>
+                  </property>
+                  <property name="styleSheet">
+                   <string notr="true">QFrame {
+	border-radius: 40px;
+	background-color: #23B7E5;
+	
+}</string>
+                  </property>
+                  <property name="frameShape">
+                   <enum>QFrame::StyledPanel</enum>
+                  </property>
+                  <property name="frameShadow">
+                   <enum>QFrame::Raised</enum>
+                  </property>
+                  <widget class="QFrame" name="frame_16">
+                   <property name="geometry">
+                    <rect>
+                     <x>5</x>
+                     <y>5</y>
+                     <width>70</width>
+                     <height>70</height>
+                    </rect>
+                   </property>
+                   <property name="minimumSize">
+                    <size>
+                     <width>70</width>
+                     <height>70</height>
+                    </size>
+                   </property>
+                   <property name="maximumSize">
+                    <size>
+                     <width>70</width>
+                     <height>70</height>
+                    </size>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">QFrame {
+	border-radius: 35px;
+	background-color: #ffffff;
+	
+}</string>
+                   </property>
+                   <property name="frameShape">
+                    <enum>QFrame::StyledPanel</enum>
+                   </property>
+                   <property name="frameShadow">
+                    <enum>QFrame::Raised</enum>
+                   </property>
+                   <widget class="QLabel" name="num_of_students_text">
+                    <property name="geometry">
+                     <rect>
+                      <x>10</x>
+                      <y>10</y>
+                      <width>50</width>
+                      <height>50</height>
+                     </rect>
+                    </property>
+                    <property name="font">
+                     <font>
+                      <family>微软雅黑</family>
+                      <pointsize>20</pointsize>
+                     </font>
+                    </property>
+                    <property name="text">
+                     <string>888</string>
+                    </property>
+                    <property name="alignment">
+                     <set>Qt::AlignCenter</set>
+                    </property>
+                   </widget>
+                  </widget>
+                 </widget>
+                </item>
+                <item row="3" column="4">
+                 <spacer name="horizontalSpacer_16">
+                  <property name="orientation">
+                   <enum>Qt::Horizontal</enum>
+                  </property>
+                  <property name="sizeType">
+                   <enum>QSizePolicy::Fixed</enum>
+                  </property>
+                  <property name="sizeHint" stdset="0">
+                   <size>
+                    <width>40</width>
+                    <height>20</height>
+                   </size>
+                  </property>
+                 </spacer>
+                </item>
+                <item row="3" column="1">
+                 <widget class="QLabel" name="label_100">
+                  <property name="font">
+                   <font>
+                    <family>微软雅黑</family>
+                    <pointsize>10</pointsize>
+                   </font>
+                  </property>
+                  <property name="styleSheet">
+                   <string notr="true">QLabel {
+	color: #333333;
+}</string>
+                  </property>
+                  <property name="text">
+                   <string>教师</string>
+                  </property>
+                  <property name="alignment">
+                   <set>Qt::AlignCenter</set>
+                  </property>
+                 </widget>
+                </item>
+                <item row="3" column="3">
+                 <widget class="QLabel" name="label_104">
+                  <property name="font">
+                   <font>
+                    <family>微软雅黑</family>
+                    <pointsize>10</pointsize>
+                   </font>
+                  </property>
+                  <property name="styleSheet">
+                   <string notr="true">QLabel {
+	color: #333333;
+}</string>
+                  </property>
+                  <property name="text">
+                   <string>学生</string>
+                  </property>
+                  <property name="alignment">
+                   <set>Qt::AlignCenter</set>
+                  </property>
+                 </widget>
+                </item>
+                <item row="1" column="0">
+                 <widget class="QLabel" name="label_107">
+                  <property name="font">
+                   <font>
+                    <family>微软雅黑</family>
+                    <pointsize>9</pointsize>
+                   </font>
+                  </property>
+                  <property name="styleSheet">
+                   <string notr="true">QLabel {
+	background: none;
+	color: #999999;
+}</string>
+                  </property>
+                  <property name="text">
+                   <string>*单位：人</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="3" column="5">
+                 <widget class="QLabel" name="label_109">
+                  <property name="font">
+                   <font>
+                    <family>微软雅黑</family>
+                    <pointsize>10</pointsize>
+                   </font>
+                  </property>
+                  <property name="styleSheet">
+                   <string notr="true">QLabel {
+	color: #333333;
+}</string>
+                  </property>
+                  <property name="text">
+                   <string>合计</string>
+                  </property>
+                  <property name="alignment">
+                   <set>Qt::AlignCenter</set>
+                  </property>
+                 </widget>
+                </item>
+                <item row="2" column="5">
+                 <widget class="QFrame" name="frame_17">
+                  <property name="minimumSize">
+                   <size>
+                    <width>80</width>
+                    <height>80</height>
+                   </size>
+                  </property>
+                  <property name="maximumSize">
+                   <size>
+                    <width>80</width>
+                    <height>80</height>
+                   </size>
+                  </property>
+                  <property name="styleSheet">
+                   <string notr="true">QFrame {
+	border-radius: 40px;
+	background-color: #E4E9EC;
+	
+}</string>
+                  </property>
+                  <property name="frameShape">
+                   <enum>QFrame::StyledPanel</enum>
+                  </property>
+                  <property name="frameShadow">
+                   <enum>QFrame::Raised</enum>
+                  </property>
+                  <widget class="QFrame" name="frame_18">
+                   <property name="geometry">
+                    <rect>
+                     <x>5</x>
+                     <y>5</y>
+                     <width>70</width>
+                     <height>70</height>
+                    </rect>
+                   </property>
+                   <property name="minimumSize">
+                    <size>
+                     <width>70</width>
+                     <height>70</height>
+                    </size>
+                   </property>
+                   <property name="maximumSize">
+                    <size>
+                     <width>70</width>
+                     <height>70</height>
+                    </size>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">QFrame {
+	border-radius: 35px;
+	background-color: #ffffff;
+	
+}</string>
+                   </property>
+                   <property name="frameShape">
+                    <enum>QFrame::StyledPanel</enum>
+                   </property>
+                   <property name="frameShadow">
+                    <enum>QFrame::Raised</enum>
+                   </property>
+                   <widget class="QLabel" name="total_text">
+                    <property name="geometry">
+                     <rect>
+                      <x>10</x>
+                      <y>10</y>
+                      <width>50</width>
+                      <height>50</height>
+                     </rect>
+                    </property>
+                    <property name="font">
+                     <font>
+                      <family>微软雅黑</family>
+                      <pointsize>20</pointsize>
+                     </font>
+                    </property>
+                    <property name="text">
+                     <string>890</string>
+                    </property>
+                    <property name="alignment">
+                     <set>Qt::AlignCenter</set>
+                    </property>
+                   </widget>
+                  </widget>
+                 </widget>
+                </item>
+                <item row="3" column="6">
+                 <spacer name="horizontalSpacer_14">
+                  <property name="orientation">
+                   <enum>Qt::Horizontal</enum>
+                  </property>
+                  <property name="sizeHint" stdset="0">
+                   <size>
+                    <width>40</width>
+                    <height>20</height>
+                   </size>
+                  </property>
+                 </spacer>
+                </item>
+                <item row="2" column="1">
+                 <widget class="QFrame" name="frame_13">
+                  <property name="minimumSize">
+                   <size>
+                    <width>80</width>
+                    <height>80</height>
+                   </size>
+                  </property>
+                  <property name="maximumSize">
+                   <size>
+                    <width>80</width>
+                    <height>80</height>
+                   </size>
+                  </property>
+                  <property name="styleSheet">
+                   <string notr="true">QFrame {
+	border-radius: 40px;
+	background-color: #6C6FC0;
+	
+}</string>
+                  </property>
+                  <property name="frameShape">
+                   <enum>QFrame::StyledPanel</enum>
+                  </property>
+                  <property name="frameShadow">
+                   <enum>QFrame::Raised</enum>
+                  </property>
+                  <widget class="QFrame" name="frame_14">
+                   <property name="geometry">
+                    <rect>
+                     <x>5</x>
+                     <y>5</y>
+                     <width>70</width>
+                     <height>70</height>
+                    </rect>
+                   </property>
+                   <property name="minimumSize">
+                    <size>
+                     <width>70</width>
+                     <height>70</height>
+                    </size>
+                   </property>
+                   <property name="maximumSize">
+                    <size>
+                     <width>70</width>
+                     <height>70</height>
+                    </size>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">QFrame {
+	border-radius: 35px;
+	background-color: #ffffff;
+	
+}</string>
+                   </property>
+                   <property name="frameShape">
+                    <enum>QFrame::StyledPanel</enum>
+                   </property>
+                   <property name="frameShadow">
+                    <enum>QFrame::Raised</enum>
+                   </property>
+                   <widget class="QLabel" name="num_of_teachers_text">
+                    <property name="geometry">
+                     <rect>
+                      <x>10</x>
+                      <y>10</y>
+                      <width>50</width>
+                      <height>50</height>
+                     </rect>
+                    </property>
+                    <property name="font">
+                     <font>
+                      <family>微软雅黑</family>
+                      <pointsize>20</pointsize>
+                     </font>
+                    </property>
+                    <property name="text">
+                     <string>2</string>
+                    </property>
+                    <property name="alignment">
+                     <set>Qt::AlignCenter</set>
+                    </property>
+                   </widget>
+                  </widget>
+                 </widget>
+                </item>
+                <item row="3" column="2">
+                 <spacer name="horizontalSpacer_15">
+                  <property name="orientation">
+                   <enum>Qt::Horizontal</enum>
+                  </property>
+                  <property name="sizeType">
+                   <enum>QSizePolicy::Fixed</enum>
+                  </property>
+                  <property name="sizeHint" stdset="0">
+                   <size>
+                    <width>40</width>
+                    <height>20</height>
+                   </size>
+                  </property>
+                 </spacer>
+                </item>
+                <item row="0" column="0">
+                 <widget class="QLabel" name="area_chart_title_text_2">
+                  <property name="minimumSize">
+                   <size>
+                    <width>0</width>
+                    <height>30</height>
+                   </size>
+                  </property>
+                  <property name="maximumSize">
+                   <size>
+                    <width>16777215</width>
+                    <height>30</height>
+                   </size>
+                  </property>
+                  <property name="font">
+                   <font>
+                    <family>微软雅黑</family>
+                    <pointsize>12</pointsize>
+                   </font>
+                  </property>
+                  <property name="styleSheet">
+                   <string notr="true">QLabel {
+	background: none;
+	color: #333333;
+}</string>
+                  </property>
+                  <property name="text">
+                   <string>●  概况</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="0" column="1" rowspan="2" colspan="5">
+                 <spacer name="verticalSpacer_18">
+                  <property name="orientation">
+                   <enum>Qt::Vertical</enum>
+                  </property>
+                  <property name="sizeHint" stdset="0">
+                   <size>
+                    <width>20</width>
+                    <height>40</height>
+                   </size>
+                  </property>
+                 </spacer>
+                </item>
+                <item row="4" column="1" colspan="5">
+                 <spacer name="verticalSpacer_17">
+                  <property name="orientation">
+                   <enum>Qt::Vertical</enum>
+                  </property>
+                  <property name="sizeHint" stdset="0">
+                   <size>
+                    <width>20</width>
+                    <height>40</height>
+                   </size>
+                  </property>
+                 </spacer>
+                </item>
+               </layout>
+              </widget>
+             </item>
+             <item row="1" column="0" rowspan="4">
+              <layout class="QVBoxLayout" name="verticalLayout_8">
+               <property name="spacing">
+                <number>0</number>
+               </property>
+               <item>
+                <widget class="QFrame" name="frame_2">
+                 <property name="minimumSize">
+                  <size>
+                   <width>450</width>
+                   <height>40</height>
+                  </size>
+                 </property>
+                 <property name="maximumSize">
+                  <size>
+                   <width>450</width>
+                   <height>40</height>
+                  </size>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">QFrame {
+	background-color: #F6F8F7;
+	border: 1px solid #E8ECEC;
+}</string>
+                 </property>
+                 <property name="frameShape">
+                  <enum>QFrame::StyledPanel</enum>
+                 </property>
+                 <property name="frameShadow">
+                  <enum>QFrame::Raised</enum>
+                 </property>
+                 <layout class="QHBoxLayout" name="horizontalLayout_3">
+                  <property name="spacing">
+                   <number>0</number>
+                  </property>
+                  <property name="leftMargin">
+                   <number>9</number>
+                  </property>
+                  <property name="topMargin">
+                   <number>0</number>
+                  </property>
+                  <property name="rightMargin">
+                   <number>9</number>
+                  </property>
+                  <property name="bottomMargin">
+                   <number>0</number>
+                  </property>
+                  <item alignment="Qt::AlignVCenter">
+                   <widget class="QLabel" name="area_chart_title_text_3">
+                    <property name="minimumSize">
+                     <size>
+                      <width>0</width>
+                      <height>30</height>
+                     </size>
+                    </property>
+                    <property name="maximumSize">
+                     <size>
+                      <width>16777215</width>
+                      <height>30</height>
+                     </size>
+                    </property>
+                    <property name="font">
+                     <font>
+                      <family>微软雅黑</family>
+                      <pointsize>12</pointsize>
+                     </font>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">QLabel {
+	background: none;
+	border: none;
+	color: #333333;
+}</string>
+                    </property>
+                    <property name="text">
+                     <string>●  成员列表</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <spacer name="horizontalSpacer_21">
+                    <property name="orientation">
+                     <enum>Qt::Horizontal</enum>
+                    </property>
+                    <property name="sizeHint" stdset="0">
+                     <size>
+                      <width>40</width>
+                      <height>20</height>
+                     </size>
+                    </property>
+                   </spacer>
+                  </item>
+                  <item>
+                   <widget class="QPushButton" name="pushButton_15">
+                    <property name="cursor">
+                     <cursorShape>PointingHandCursor</cursorShape>
+                    </property>
+                    <property name="text">
+                     <string/>
+                    </property>
+                    <property name="icon">
+                     <iconset resource="../../Status.qrc">
+                      <normaloff>:/button/Resources/material/button/delete.png</normaloff>:/button/Resources/material/button/delete.png</iconset>
+                    </property>
+                    <property name="iconSize">
+                     <size>
+                      <width>15</width>
+                      <height>15</height>
+                     </size>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </widget>
+               </item>
+               <item>
+                <widget class="QFrame" name="frame_4">
+                 <property name="minimumSize">
+                  <size>
+                   <width>450</width>
+                   <height>300</height>
+                  </size>
+                 </property>
+                 <property name="maximumSize">
+                  <size>
+                   <width>450</width>
+                   <height>16777215</height>
+                  </size>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">QFrame {
+	background-color: #ffffff;
+	border: 1px solid #E8ECEC;
+	border-top: none;
+}
+
+/*整体*/
+QScrollBar:vertical {
+    border: none;
+    background-color: #F3F4F8;
+    width: 10px;
+}
+
+QScrollBar:vertical:hover {
+    border: none;
+    background-color: rgb(220, 220, 220);
+    width: 10px;
+}
+
+
+/*滚动条*/
+QScrollBar::handle:vertical {
+	border-radius: 5px;
+    background: rgb(220, 220, 220);
+    min-height: 20px;
+}
+
+/*滚动条：悬浮*/
+QScrollBar::handle:vertical:hover {
+	border-radius: 5px;
+    background: rgb(200, 200, 200);
+    min-height: 20px;
+}
+
+/*下箭头*/
+QScrollBar::add-line:vertical {
+    height: 0;
+    subcontrol-position: bottom;
+    subcontrol-origin: margin;
+}
+
+/*上箭头*/
+QScrollBar::sub-line:vertical {
+    height: 0px;
+    subcontrol-position: top;
+    subcontrol-origin: margin;
+}</string>
+                 </property>
+                 <property name="frameShape">
+                  <enum>QFrame::StyledPanel</enum>
+                 </property>
+                 <property name="frameShadow">
+                  <enum>QFrame::Raised</enum>
+                 </property>
+                 <layout class="QGridLayout" name="gridLayout_24">
+                  <property name="leftMargin">
+                   <number>0</number>
+                  </property>
+                  <property name="topMargin">
+                   <number>0</number>
+                  </property>
+                  <property name="rightMargin">
+                   <number>0</number>
+                  </property>
+                  <property name="bottomMargin">
+                   <number>0</number>
+                  </property>
+                  <property name="spacing">
+                   <number>0</number>
+                  </property>
+                  <item row="0" column="0">
+                   <widget class="QTableWidget" name="member_table">
+                    <property name="font">
+                     <font>
+                      <family>微软雅黑</family>
+                      <pointsize>10</pointsize>
+                     </font>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">QTableWidget {
+	border: none;
+	background-color: rgb(255, 255, 255);
+	alternate-background-color: rgb(235, 235, 235);
+}</string>
+                    </property>
+                    <property name="verticalScrollBarPolicy">
+                     <enum>Qt::ScrollBarAlwaysOn</enum>
+                    </property>
+                    <property name="alternatingRowColors">
+                     <bool>true</bool>
+                    </property>
+                    <property name="selectionMode">
+                     <enum>QAbstractItemView::SingleSelection</enum>
+                    </property>
+                    <property name="selectionBehavior">
+                     <enum>QAbstractItemView::SelectRows</enum>
+                    </property>
+                    <property name="iconSize">
+                     <size>
+                      <width>30</width>
+                      <height>30</height>
+                     </size>
+                    </property>
+                    <property name="showGrid">
+                     <bool>false</bool>
+                    </property>
+                    <attribute name="horizontalHeaderDefaultSectionSize">
+                     <number>146</number>
+                    </attribute>
+                    <attribute name="verticalHeaderVisible">
+                     <bool>false</bool>
+                    </attribute>
+                    <attribute name="verticalHeaderDefaultSectionSize">
+                     <number>40</number>
+                    </attribute>
+                    <column>
+                     <property name="text">
+                      <string>uid</string>
+                     </property>
+                     <property name="font">
+                      <font>
+                       <family>微软雅黑</family>
+                       <pointsize>10</pointsize>
+                      </font>
+                     </property>
+                    </column>
+                    <column>
+                     <property name="text">
+                      <string>用户名</string>
+                     </property>
+                     <property name="font">
+                      <font>
+                       <family>微软雅黑</family>
+                       <pointsize>10</pointsize>
+                      </font>
+                     </property>
+                    </column>
+                    <column>
+                     <property name="text">
+                      <string>角色</string>
+                     </property>
+                     <property name="font">
+                      <font>
+                       <family>微软雅黑</family>
+                       <pointsize>10</pointsize>
+                      </font>
+                     </property>
+                    </column>
+                   </widget>
+                  </item>
+                 </layout>
+                </widget>
+               </item>
+              </layout>
+             </item>
+             <item row="3" column="1" alignment="Qt::AlignTop">
+              <widget class="QFrame" name="frame_10">
+               <property name="minimumSize">
+                <size>
+                 <width>0</width>
+                 <height>310</height>
+                </size>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">QFrame {
+	background-color: #ffffff;
+}</string>
+               </property>
+               <property name="frameShape">
+                <enum>QFrame::StyledPanel</enum>
+               </property>
+               <property name="frameShadow">
+                <enum>QFrame::Raised</enum>
+               </property>
+               <layout class="QVBoxLayout" name="verticalLayout_12">
+                <item>
+                 <widget class="QLabel" name="area_chart_title_text_4">
+                  <property name="minimumSize">
+                   <size>
+                    <width>293</width>
+                    <height>30</height>
+                   </size>
+                  </property>
+                  <property name="maximumSize">
+                   <size>
+                    <width>16777215</width>
+                    <height>30</height>
+                   </size>
+                  </property>
+                  <property name="font">
+                   <font>
+                    <family>微软雅黑</family>
+                    <pointsize>12</pointsize>
+                   </font>
+                  </property>
+                  <property name="styleSheet">
+                   <string notr="true">QLabel {
+	background: none;
+	color: #333333;
+}</string>
+                  </property>
+                  <property name="text">
+                   <string>●  每堂课的专注度对比</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QWidget" name="student_area_chart_widget" native="true">
+                  <property name="minimumSize">
+                   <size>
+                    <width>293</width>
+                    <height>250</height>
+                   </size>
+                  </property>
+                  <property name="maximumSize">
+                   <size>
+                    <width>16777215</width>
+                    <height>250</height>
+                   </size>
+                  </property>
+                  <property name="styleSheet">
+                   <string notr="true"/>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </widget>
+             </item>
              <item row="1" column="1" rowspan="2">
               <layout class="QGridLayout" name="gridLayout_21">
                <property name="spacing">
@@ -3944,750 +5046,6 @@ QScrollBar::sub-line:vertical {
                </item>
               </layout>
              </item>
-             <item row="0" column="0" colspan="2">
-              <widget class="QFrame" name="frame">
-               <property name="minimumSize">
-                <size>
-                 <width>782</width>
-                 <height>200</height>
-                </size>
-               </property>
-               <property name="maximumSize">
-                <size>
-                 <width>16777215</width>
-                 <height>200</height>
-                </size>
-               </property>
-               <property name="styleSheet">
-                <string notr="true">QFrame {
-	background-color: #ffffff;
-}</string>
-               </property>
-               <property name="frameShape">
-                <enum>QFrame::StyledPanel</enum>
-               </property>
-               <property name="frameShadow">
-                <enum>QFrame::Raised</enum>
-               </property>
-               <layout class="QGridLayout" name="gridLayout_18">
-                <item row="3" column="0">
-                 <spacer name="horizontalSpacer_13">
-                  <property name="orientation">
-                   <enum>Qt::Horizontal</enum>
-                  </property>
-                  <property name="sizeHint" stdset="0">
-                   <size>
-                    <width>40</width>
-                    <height>20</height>
-                   </size>
-                  </property>
-                 </spacer>
-                </item>
-                <item row="2" column="3">
-                 <widget class="QFrame" name="frame_15">
-                  <property name="minimumSize">
-                   <size>
-                    <width>80</width>
-                    <height>80</height>
-                   </size>
-                  </property>
-                  <property name="maximumSize">
-                   <size>
-                    <width>80</width>
-                    <height>80</height>
-                   </size>
-                  </property>
-                  <property name="styleSheet">
-                   <string notr="true">QFrame {
-	border-radius: 40px;
-	background-color: #23B7E5;
-	
-}</string>
-                  </property>
-                  <property name="frameShape">
-                   <enum>QFrame::StyledPanel</enum>
-                  </property>
-                  <property name="frameShadow">
-                   <enum>QFrame::Raised</enum>
-                  </property>
-                  <widget class="QFrame" name="frame_16">
-                   <property name="geometry">
-                    <rect>
-                     <x>5</x>
-                     <y>5</y>
-                     <width>70</width>
-                     <height>70</height>
-                    </rect>
-                   </property>
-                   <property name="minimumSize">
-                    <size>
-                     <width>70</width>
-                     <height>70</height>
-                    </size>
-                   </property>
-                   <property name="maximumSize">
-                    <size>
-                     <width>70</width>
-                     <height>70</height>
-                    </size>
-                   </property>
-                   <property name="styleSheet">
-                    <string notr="true">QFrame {
-	border-radius: 35px;
-	background-color: #ffffff;
-	
-}</string>
-                   </property>
-                   <property name="frameShape">
-                    <enum>QFrame::StyledPanel</enum>
-                   </property>
-                   <property name="frameShadow">
-                    <enum>QFrame::Raised</enum>
-                   </property>
-                   <widget class="QLabel" name="num_of_student_text">
-                    <property name="geometry">
-                     <rect>
-                      <x>10</x>
-                      <y>10</y>
-                      <width>50</width>
-                      <height>50</height>
-                     </rect>
-                    </property>
-                    <property name="font">
-                     <font>
-                      <family>微软雅黑</family>
-                      <pointsize>20</pointsize>
-                     </font>
-                    </property>
-                    <property name="text">
-                     <string>888</string>
-                    </property>
-                    <property name="alignment">
-                     <set>Qt::AlignCenter</set>
-                    </property>
-                   </widget>
-                  </widget>
-                 </widget>
-                </item>
-                <item row="3" column="4">
-                 <spacer name="horizontalSpacer_16">
-                  <property name="orientation">
-                   <enum>Qt::Horizontal</enum>
-                  </property>
-                  <property name="sizeType">
-                   <enum>QSizePolicy::Fixed</enum>
-                  </property>
-                  <property name="sizeHint" stdset="0">
-                   <size>
-                    <width>40</width>
-                    <height>20</height>
-                   </size>
-                  </property>
-                 </spacer>
-                </item>
-                <item row="3" column="1">
-                 <widget class="QLabel" name="label_100">
-                  <property name="font">
-                   <font>
-                    <family>微软雅黑</family>
-                    <pointsize>10</pointsize>
-                   </font>
-                  </property>
-                  <property name="styleSheet">
-                   <string notr="true">QLabel {
-	color: #333333;
-}</string>
-                  </property>
-                  <property name="text">
-                   <string>教师</string>
-                  </property>
-                  <property name="alignment">
-                   <set>Qt::AlignCenter</set>
-                  </property>
-                 </widget>
-                </item>
-                <item row="3" column="3">
-                 <widget class="QLabel" name="label_104">
-                  <property name="font">
-                   <font>
-                    <family>微软雅黑</family>
-                    <pointsize>10</pointsize>
-                   </font>
-                  </property>
-                  <property name="styleSheet">
-                   <string notr="true">QLabel {
-	color: #333333;
-}</string>
-                  </property>
-                  <property name="text">
-                   <string>学生</string>
-                  </property>
-                  <property name="alignment">
-                   <set>Qt::AlignCenter</set>
-                  </property>
-                 </widget>
-                </item>
-                <item row="1" column="0">
-                 <widget class="QLabel" name="label_107">
-                  <property name="font">
-                   <font>
-                    <family>微软雅黑</family>
-                    <pointsize>9</pointsize>
-                   </font>
-                  </property>
-                  <property name="styleSheet">
-                   <string notr="true">QLabel {
-	background: none;
-	color: #999999;
-}</string>
-                  </property>
-                  <property name="text">
-                   <string>*单位：人</string>
-                  </property>
-                 </widget>
-                </item>
-                <item row="3" column="5">
-                 <widget class="QLabel" name="label_109">
-                  <property name="font">
-                   <font>
-                    <family>微软雅黑</family>
-                    <pointsize>10</pointsize>
-                   </font>
-                  </property>
-                  <property name="styleSheet">
-                   <string notr="true">QLabel {
-	color: #333333;
-}</string>
-                  </property>
-                  <property name="text">
-                   <string>合计</string>
-                  </property>
-                  <property name="alignment">
-                   <set>Qt::AlignCenter</set>
-                  </property>
-                 </widget>
-                </item>
-                <item row="2" column="5">
-                 <widget class="QFrame" name="frame_17">
-                  <property name="minimumSize">
-                   <size>
-                    <width>80</width>
-                    <height>80</height>
-                   </size>
-                  </property>
-                  <property name="maximumSize">
-                   <size>
-                    <width>80</width>
-                    <height>80</height>
-                   </size>
-                  </property>
-                  <property name="styleSheet">
-                   <string notr="true">QFrame {
-	border-radius: 40px;
-	background-color: #E4E9EC;
-	
-}</string>
-                  </property>
-                  <property name="frameShape">
-                   <enum>QFrame::StyledPanel</enum>
-                  </property>
-                  <property name="frameShadow">
-                   <enum>QFrame::Raised</enum>
-                  </property>
-                  <widget class="QFrame" name="frame_18">
-                   <property name="geometry">
-                    <rect>
-                     <x>5</x>
-                     <y>5</y>
-                     <width>70</width>
-                     <height>70</height>
-                    </rect>
-                   </property>
-                   <property name="minimumSize">
-                    <size>
-                     <width>70</width>
-                     <height>70</height>
-                    </size>
-                   </property>
-                   <property name="maximumSize">
-                    <size>
-                     <width>70</width>
-                     <height>70</height>
-                    </size>
-                   </property>
-                   <property name="styleSheet">
-                    <string notr="true">QFrame {
-	border-radius: 35px;
-	background-color: #ffffff;
-	
-}</string>
-                   </property>
-                   <property name="frameShape">
-                    <enum>QFrame::StyledPanel</enum>
-                   </property>
-                   <property name="frameShadow">
-                    <enum>QFrame::Raised</enum>
-                   </property>
-                   <widget class="QLabel" name="total_text">
-                    <property name="geometry">
-                     <rect>
-                      <x>10</x>
-                      <y>10</y>
-                      <width>50</width>
-                      <height>50</height>
-                     </rect>
-                    </property>
-                    <property name="font">
-                     <font>
-                      <family>微软雅黑</family>
-                      <pointsize>20</pointsize>
-                     </font>
-                    </property>
-                    <property name="text">
-                     <string>890</string>
-                    </property>
-                    <property name="alignment">
-                     <set>Qt::AlignCenter</set>
-                    </property>
-                   </widget>
-                  </widget>
-                 </widget>
-                </item>
-                <item row="3" column="6">
-                 <spacer name="horizontalSpacer_14">
-                  <property name="orientation">
-                   <enum>Qt::Horizontal</enum>
-                  </property>
-                  <property name="sizeHint" stdset="0">
-                   <size>
-                    <width>40</width>
-                    <height>20</height>
-                   </size>
-                  </property>
-                 </spacer>
-                </item>
-                <item row="2" column="1">
-                 <widget class="QFrame" name="frame_13">
-                  <property name="minimumSize">
-                   <size>
-                    <width>80</width>
-                    <height>80</height>
-                   </size>
-                  </property>
-                  <property name="maximumSize">
-                   <size>
-                    <width>80</width>
-                    <height>80</height>
-                   </size>
-                  </property>
-                  <property name="styleSheet">
-                   <string notr="true">QFrame {
-	border-radius: 40px;
-	background-color: #6C6FC0;
-	
-}</string>
-                  </property>
-                  <property name="frameShape">
-                   <enum>QFrame::StyledPanel</enum>
-                  </property>
-                  <property name="frameShadow">
-                   <enum>QFrame::Raised</enum>
-                  </property>
-                  <widget class="QFrame" name="frame_14">
-                   <property name="geometry">
-                    <rect>
-                     <x>5</x>
-                     <y>5</y>
-                     <width>70</width>
-                     <height>70</height>
-                    </rect>
-                   </property>
-                   <property name="minimumSize">
-                    <size>
-                     <width>70</width>
-                     <height>70</height>
-                    </size>
-                   </property>
-                   <property name="maximumSize">
-                    <size>
-                     <width>70</width>
-                     <height>70</height>
-                    </size>
-                   </property>
-                   <property name="styleSheet">
-                    <string notr="true">QFrame {
-	border-radius: 35px;
-	background-color: #ffffff;
-	
-}</string>
-                   </property>
-                   <property name="frameShape">
-                    <enum>QFrame::StyledPanel</enum>
-                   </property>
-                   <property name="frameShadow">
-                    <enum>QFrame::Raised</enum>
-                   </property>
-                   <widget class="QLabel" name="num_of_teacher_text">
-                    <property name="geometry">
-                     <rect>
-                      <x>10</x>
-                      <y>10</y>
-                      <width>50</width>
-                      <height>50</height>
-                     </rect>
-                    </property>
-                    <property name="font">
-                     <font>
-                      <family>微软雅黑</family>
-                      <pointsize>20</pointsize>
-                     </font>
-                    </property>
-                    <property name="text">
-                     <string>2</string>
-                    </property>
-                    <property name="alignment">
-                     <set>Qt::AlignCenter</set>
-                    </property>
-                   </widget>
-                  </widget>
-                 </widget>
-                </item>
-                <item row="3" column="2">
-                 <spacer name="horizontalSpacer_15">
-                  <property name="orientation">
-                   <enum>Qt::Horizontal</enum>
-                  </property>
-                  <property name="sizeType">
-                   <enum>QSizePolicy::Fixed</enum>
-                  </property>
-                  <property name="sizeHint" stdset="0">
-                   <size>
-                    <width>40</width>
-                    <height>20</height>
-                   </size>
-                  </property>
-                 </spacer>
-                </item>
-                <item row="0" column="0">
-                 <widget class="QLabel" name="area_chart_title_text_2">
-                  <property name="minimumSize">
-                   <size>
-                    <width>0</width>
-                    <height>30</height>
-                   </size>
-                  </property>
-                  <property name="maximumSize">
-                   <size>
-                    <width>16777215</width>
-                    <height>30</height>
-                   </size>
-                  </property>
-                  <property name="font">
-                   <font>
-                    <family>微软雅黑</family>
-                    <pointsize>12</pointsize>
-                   </font>
-                  </property>
-                  <property name="styleSheet">
-                   <string notr="true">QLabel {
-	background: none;
-	color: #333333;
-}</string>
-                  </property>
-                  <property name="text">
-                   <string>●  概况</string>
-                  </property>
-                 </widget>
-                </item>
-                <item row="0" column="1" rowspan="2" colspan="5">
-                 <spacer name="verticalSpacer_18">
-                  <property name="orientation">
-                   <enum>Qt::Vertical</enum>
-                  </property>
-                  <property name="sizeHint" stdset="0">
-                   <size>
-                    <width>20</width>
-                    <height>40</height>
-                   </size>
-                  </property>
-                 </spacer>
-                </item>
-                <item row="4" column="1" colspan="5">
-                 <spacer name="verticalSpacer_17">
-                  <property name="orientation">
-                   <enum>Qt::Vertical</enum>
-                  </property>
-                  <property name="sizeHint" stdset="0">
-                   <size>
-                    <width>20</width>
-                    <height>40</height>
-                   </size>
-                  </property>
-                 </spacer>
-                </item>
-               </layout>
-              </widget>
-             </item>
-             <item row="1" column="0" rowspan="4">
-              <layout class="QVBoxLayout" name="verticalLayout_8">
-               <property name="spacing">
-                <number>0</number>
-               </property>
-               <item>
-                <widget class="QFrame" name="frame_2">
-                 <property name="minimumSize">
-                  <size>
-                   <width>450</width>
-                   <height>40</height>
-                  </size>
-                 </property>
-                 <property name="maximumSize">
-                  <size>
-                   <width>450</width>
-                   <height>40</height>
-                  </size>
-                 </property>
-                 <property name="styleSheet">
-                  <string notr="true">QFrame {
-	background-color: #F6F8F7;
-	border: 1px solid #E8ECEC;
-}</string>
-                 </property>
-                 <property name="frameShape">
-                  <enum>QFrame::StyledPanel</enum>
-                 </property>
-                 <property name="frameShadow">
-                  <enum>QFrame::Raised</enum>
-                 </property>
-                 <layout class="QHBoxLayout" name="horizontalLayout_3">
-                  <property name="spacing">
-                   <number>0</number>
-                  </property>
-                  <property name="leftMargin">
-                   <number>9</number>
-                  </property>
-                  <property name="topMargin">
-                   <number>0</number>
-                  </property>
-                  <property name="rightMargin">
-                   <number>9</number>
-                  </property>
-                  <property name="bottomMargin">
-                   <number>0</number>
-                  </property>
-                  <item alignment="Qt::AlignVCenter">
-                   <widget class="QLabel" name="area_chart_title_text_3">
-                    <property name="minimumSize">
-                     <size>
-                      <width>0</width>
-                      <height>30</height>
-                     </size>
-                    </property>
-                    <property name="maximumSize">
-                     <size>
-                      <width>16777215</width>
-                      <height>30</height>
-                     </size>
-                    </property>
-                    <property name="font">
-                     <font>
-                      <family>微软雅黑</family>
-                      <pointsize>12</pointsize>
-                     </font>
-                    </property>
-                    <property name="styleSheet">
-                     <string notr="true">QLabel {
-	background: none;
-	border: none;
-	color: #333333;
-}</string>
-                    </property>
-                    <property name="text">
-                     <string>●  成员列表</string>
-                    </property>
-                   </widget>
-                  </item>
-                  <item>
-                   <spacer name="horizontalSpacer_21">
-                    <property name="orientation">
-                     <enum>Qt::Horizontal</enum>
-                    </property>
-                    <property name="sizeHint" stdset="0">
-                     <size>
-                      <width>40</width>
-                      <height>20</height>
-                     </size>
-                    </property>
-                   </spacer>
-                  </item>
-                  <item>
-                   <widget class="QPushButton" name="pushButton_15">
-                    <property name="cursor">
-                     <cursorShape>PointingHandCursor</cursorShape>
-                    </property>
-                    <property name="text">
-                     <string/>
-                    </property>
-                    <property name="icon">
-                     <iconset resource="../../Status.qrc">
-                      <normaloff>:/button/Resources/material/button/delete.png</normaloff>:/button/Resources/material/button/delete.png</iconset>
-                    </property>
-                    <property name="iconSize">
-                     <size>
-                      <width>15</width>
-                      <height>15</height>
-                     </size>
-                    </property>
-                   </widget>
-                  </item>
-                 </layout>
-                </widget>
-               </item>
-               <item>
-                <widget class="QFrame" name="frame_4">
-                 <property name="minimumSize">
-                  <size>
-                   <width>450</width>
-                   <height>300</height>
-                  </size>
-                 </property>
-                 <property name="maximumSize">
-                  <size>
-                   <width>450</width>
-                   <height>16777215</height>
-                  </size>
-                 </property>
-                 <property name="styleSheet">
-                  <string notr="true">QFrame {
-	background-color: #ffffff;
-	border: 1px solid #E8ECEC;
-	border-top: none;
-}</string>
-                 </property>
-                 <property name="frameShape">
-                  <enum>QFrame::StyledPanel</enum>
-                 </property>
-                 <property name="frameShadow">
-                  <enum>QFrame::Raised</enum>
-                 </property>
-                 <layout class="QGridLayout" name="gridLayout_24">
-                  <property name="leftMargin">
-                   <number>0</number>
-                  </property>
-                  <property name="topMargin">
-                   <number>0</number>
-                  </property>
-                  <property name="rightMargin">
-                   <number>0</number>
-                  </property>
-                  <property name="bottomMargin">
-                   <number>0</number>
-                  </property>
-                  <property name="spacing">
-                   <number>0</number>
-                  </property>
-                  <item row="0" column="0">
-                   <widget class="QTableWidget" name="member_table">
-                    <property name="styleSheet">
-                     <string notr="true">QTableWidget {
-	border: none;
-}</string>
-                    </property>
-                    <column>
-                     <property name="text">
-                      <string>用户名</string>
-                     </property>
-                    </column>
-                    <column>
-                     <property name="text">
-                      <string>编号</string>
-                     </property>
-                    </column>
-                    <column>
-                     <property name="text">
-                      <string>角色</string>
-                     </property>
-                    </column>
-                   </widget>
-                  </item>
-                 </layout>
-                </widget>
-               </item>
-              </layout>
-             </item>
-             <item row="3" column="1" alignment="Qt::AlignTop">
-              <widget class="QFrame" name="frame_10">
-               <property name="minimumSize">
-                <size>
-                 <width>0</width>
-                 <height>310</height>
-                </size>
-               </property>
-               <property name="styleSheet">
-                <string notr="true">QFrame {
-	background-color: #ffffff;
-}</string>
-               </property>
-               <property name="frameShape">
-                <enum>QFrame::StyledPanel</enum>
-               </property>
-               <property name="frameShadow">
-                <enum>QFrame::Raised</enum>
-               </property>
-               <layout class="QVBoxLayout" name="verticalLayout_12">
-                <item>
-                 <widget class="QLabel" name="area_chart_title_text_4">
-                  <property name="minimumSize">
-                   <size>
-                    <width>293</width>
-                    <height>30</height>
-                   </size>
-                  </property>
-                  <property name="maximumSize">
-                   <size>
-                    <width>16777215</width>
-                    <height>30</height>
-                   </size>
-                  </property>
-                  <property name="font">
-                   <font>
-                    <family>微软雅黑</family>
-                    <pointsize>12</pointsize>
-                   </font>
-                  </property>
-                  <property name="styleSheet">
-                   <string notr="true">QLabel {
-	background: none;
-	color: #333333;
-}</string>
-                  </property>
-                  <property name="text">
-                   <string>●  每堂课的专注度对比</string>
-                  </property>
-                 </widget>
-                </item>
-                <item>
-                 <widget class="QWidget" name="student_area_chart_widget" native="true">
-                  <property name="minimumSize">
-                   <size>
-                    <width>293</width>
-                    <height>250</height>
-                   </size>
-                  </property>
-                  <property name="maximumSize">
-                   <size>
-                    <width>16777215</width>
-                    <height>250</height>
-                   </size>
-                  </property>
-                  <property name="styleSheet">
-                   <string notr="true"/>
-                  </property>
-                 </widget>
-                </item>
-               </layout>
-              </widget>
-             </item>
             </layout>
            </item>
           </layout>
@@ -4713,6 +5071,6 @@ QScrollBar::sub-line:vertical {
  </resources>
  <connections/>
  <buttongroups>
-  <buttongroup name="buttonGroup"/>
+  <buttongroup name="emotions_report_botton_group"/>
  </buttongroups>
 </ui>

@@ -4,17 +4,18 @@
 #include <QList>
 #include <QScrollArea>
 #include <QColorDialog>
-#include "ui_teacher_interaction_widget.h"
+#include "ui_student_interaction_widget.h"
 #include "Core/View/Component/component.h"
 
-class TeacherInteractionWidget : public QWidget {
+class StudentInteractionWidget : public QWidget {
 	Q_OBJECT
 
 public:
-	TeacherInteractionWidget(QWidget *parent = Q_NULLPTR);
-	~TeacherInteractionWidget();
-	const Ui::TeacherInteractionWidget& ui() const { return this->m_ui; };
+	StudentInteractionWidget(QWidget *parent = Q_NULLPTR);
+	~StudentInteractionWidget();
+	const Ui::StudentInteractionWidget& ui() const { return this->m_ui; };
 	PaintWidget* board() const { return this->m_board; }
+
 
 public slots:
 	/*工具栏——调整画笔粗细*/
@@ -57,7 +58,7 @@ public slots:
 	void changeBoard(int index);
 
 private:
-	Ui::TeacherInteractionWidget m_ui;
+	Ui::StudentInteractionWidget m_ui;
 
 	PaintWidget *m_board;  // 当前控制的画板
 	QList<PaintWidget*> m_board_list;  // 已创建的画板

@@ -1,8 +1,9 @@
-#include "teacher_main_window.h"
-#include <QDesktopWidget>
+#include "Core/View/Window/student_main_window.h"
 #include <QApplication>
+#include <QDesktopWidget>
 
-TeacherMainWindow::TeacherMainWindow(QWidget *parent): QMainWindow(parent) {
+StudentMainWindow::StudentMainWindow(QWidget *parent)
+	: QMainWindow(parent) {
 	m_ui.setupUi(this);
 
 	// 初始化
@@ -15,20 +16,23 @@ TeacherMainWindow::TeacherMainWindow(QWidget *parent): QMainWindow(parent) {
 	this->setAttribute(Qt::WA_TranslucentBackground, true);
 
 	// 信号绑定
-	this->connect(this->m_ui.full_or_normal_btn, &QPushButton::clicked, this, &TeacherMainWindow::setWindowFull);
+	this->connect(this->m_ui.full_or_normal_btn, &QPushButton::clicked, this, &StudentMainWindow::setWindowFull);
 }
 
+StudentMainWindow::~StudentMainWindow() {
+
+}
 
 /*
 	最大化窗口
 */
-void TeacherMainWindow::setWindowFull() {
+void StudentMainWindow::setWindowFull() {
 	QRect window = QApplication::desktop()->availableGeometry();
 	this->setGeometry(-5, -5, window.width() + 10, window.height() + 10);
 
 	// 更换槽函数
-	this->disconnect(this->m_ui.full_or_normal_btn, &QPushButton::clicked, this, &TeacherMainWindow::setWindowFull);
-	this->connect(this->m_ui.full_or_normal_btn, &QPushButton::clicked, this, &TeacherMainWindow::setWindowNormal);
+	this->disconnect(this->m_ui.full_or_normal_btn, &QPushButton::clicked, this, &StudentMainWindow::setWindowFull);
+	this->connect(this->m_ui.full_or_normal_btn, &QPushButton::clicked, this, &StudentMainWindow::setWindowNormal);
 
 	// 设置tooltip
 	this->m_ui.full_or_normal_btn->setToolTip(QString::fromLocal8Bit("向下还原"));
@@ -36,11 +40,10 @@ void TeacherMainWindow::setWindowFull() {
 	return;
 }
 
-
 /*
 	还原窗口
 */
-void TeacherMainWindow::setWindowNormal() {
+void StudentMainWindow::setWindowNormal() {
 	QRect window = QApplication::desktop()->availableGeometry();
 	QPoint central_point = QPoint(window.width() / 2, window.height() / 2);
 
@@ -48,8 +51,8 @@ void TeacherMainWindow::setWindowNormal() {
 	this->setGeometry(central_point.x() - (this->baseSize().width() / 2), central_point.y() - (this->baseSize().height() / 2), this->baseSize().width(), this->baseSize().height());
 
 	// 更换槽函数
-	this->disconnect(this->m_ui.full_or_normal_btn, &QPushButton::clicked, this, &TeacherMainWindow::setWindowNormal);
-	this->connect(this->m_ui.full_or_normal_btn, &QPushButton::clicked, this, &TeacherMainWindow::setWindowFull);
+	this->disconnect(this->m_ui.full_or_normal_btn, &QPushButton::clicked, this, &StudentMainWindow::setWindowNormal);
+	this->connect(this->m_ui.full_or_normal_btn, &QPushButton::clicked, this, &StudentMainWindow::setWindowFull);
 
 	// 设置tooltip
 	this->m_ui.full_or_normal_btn->setToolTip(QString::fromLocal8Bit("最大化"));
@@ -61,7 +64,7 @@ void TeacherMainWindow::setWindowNormal() {
 	重写鼠标事件
 	用于窗口拖动、缩放
 */
-void TeacherMainWindow::mouseMoveEvent(QMouseEvent *event) {
+void StudentMainWindow::mouseMoveEvent(QMouseEvent *event) {
 	// 计算鼠标当前位置
 	// 如果鼠标在title bar且左键按下，则执行移动
 	if (this->is_moving) {
@@ -75,7 +78,7 @@ void TeacherMainWindow::mouseMoveEvent(QMouseEvent *event) {
 	return;
 }
 
-void TeacherMainWindow::mousePressEvent(QMouseEvent *event) {
+void StudentMainWindow::mousePressEvent(QMouseEvent *event) {
 	if (event->button() == Qt::LeftButton) {
 		this->is_pressed = true;
 		this->start_pos = QPoint(event->pos().x(), event->pos().y());
@@ -90,7 +93,7 @@ void TeacherMainWindow::mousePressEvent(QMouseEvent *event) {
 	return;
 }
 
-void TeacherMainWindow::mouseReleaseEvent(QMouseEvent *event) {
+void StudentMainWindow::mouseReleaseEvent(QMouseEvent *event) {
 	this->is_pressed = false;
 	this->is_moving = false;
 	this->is_resizing = false;
@@ -98,7 +101,7 @@ void TeacherMainWindow::mouseReleaseEvent(QMouseEvent *event) {
 	return;
 }
 
-void TeacherMainWindow::mouseDoubleClickEvent(QMouseEvent *event) {
+void StudentMainWindow::mouseDoubleClickEvent(QMouseEvent *event) {
 	if (this->start_pos.x() < this->width() && this->start_pos.y() < 40) {
 		// 窗口已经最大化
 		if (m_ui.full_or_normal_btn->isChecked()) {

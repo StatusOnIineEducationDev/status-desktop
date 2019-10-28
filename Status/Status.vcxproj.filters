@@ -35,6 +35,15 @@
     <Filter Include="Core\Controller">
       <UniqueIdentifier>{14856181-329b-4013-8b3b-2fbfbccf3475}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Core\View\Window\student">
+      <UniqueIdentifier>{6a1a251c-7b4a-4f8f-a46a-4f8c791ece7f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\View\Window\teacher">
+      <UniqueIdentifier>{aff09dd6-616f-41e4-b4ec-adc07260fecc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\Tools">
+      <UniqueIdentifier>{65087186-ef13-4ffa-b793-a3dcbf5287ac}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <QtRcc Include="Status.qrc">
@@ -42,9 +51,6 @@
     </QtRcc>
   </ItemGroup>
   <ItemGroup>
-    <QtUic Include="Resources\ui\Status.ui">
-      <Filter>Resource Files\Ui</Filter>
-    </QtUic>
     <QtUic Include="Resources\ui\teacher_course_widget.ui">
       <Filter>Resource Files\Ui</Filter>
     </QtUic>
@@ -54,17 +60,20 @@
     <QtUic Include="Resources\ui\teacher_main_window.ui">
       <Filter>Resource Files\Ui</Filter>
     </QtUic>
+    <QtUic Include="Resources\ui\student_main_window.ui">
+      <Filter>Resource Files\Ui</Filter>
+    </QtUic>
+    <QtUic Include="Resources\ui\student_interaction_widget.ui">
+      <Filter>Resource Files\Ui</Filter>
+    </QtUic>
+    <QtUic Include="Resources\ui\student_interaction_enter_dialog.ui">
+      <Filter>Resource Files\Ui</Filter>
+    </QtUic>
+    <QtUic Include="Resources\ui\teacher_interaction_enter_dialog.ui">
+      <Filter>Resource Files\Ui</Filter>
+    </QtUic>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Core\View\Window\teacher_course_widget.cpp">
-      <Filter>Core\View\Window</Filter>
-    </ClCompile>
-    <ClCompile Include="Core\View\Window\teacher_interaction_widget.cpp">
-      <Filter>Core\View\Window</Filter>
-    </ClCompile>
-    <ClCompile Include="Core\View\Window\teacher_main_window.cpp">
-      <Filter>Core\View\Window</Filter>
-    </ClCompile>
     <ClCompile Include="Core\View\Component\component.cpp">
       <Filter>Core\View\Compoent</Filter>
     </ClCompile>
@@ -75,34 +84,94 @@
     <ClCompile Include="Core\Model\course.cpp">
       <Filter>Core\Model</Filter>
     </ClCompile>
-    <ClCompile Include="Core\Model\model_base.cpp">
-      <Filter>Core\Model</Filter>
-    </ClCompile>
-    <ClCompile Include="Core\Controller\controller.cpp">
-      <Filter>Core\Controller</Filter>
-    </ClCompile>
     <ClCompile Include="Core\Model\user.cpp">
       <Filter>Core\Model</Filter>
     </ClCompile>
+    <ClCompile Include="Core\View\Component\chart.cpp">
+      <Filter>Core\View\Compoent</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\Controller\teacher_controller.cpp">
+      <Filter>Core\Controller</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\Controller\student_controller.cpp">
+      <Filter>Core\Controller</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\View\Window\teacher_main_window.cpp">
+      <Filter>Core\View\Window\teacher</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\View\Window\teacher_interaction_widget.cpp">
+      <Filter>Core\View\Window\teacher</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\View\Window\teacher_course_widget.cpp">
+      <Filter>Core\View\Window\teacher</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\View\Window\student_main_window.cpp">
+      <Filter>Core\View\Window\student</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\View\Window\student_interaction_widget.cpp">
+      <Filter>Core\View\Window\student</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\Transport\image_send.cpp">
+      <Filter>Core\Transport</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\View\Window\student_interaction_enter_dialog.cpp">
+      <Filter>Core\View\Window\student</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\View\Component\camera.cpp">
+      <Filter>Core\View\Compoent</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\View\Window\teacher_interaction_enter_dialog.cpp">
+      <Filter>Core\View\Window\teacher</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\Transport\socket.cpp">
+      <Filter>Core\Transport</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <QtMoc Include="Core\View\Window\teacher_course_widget.h">
-      <Filter>Core\View\Window</Filter>
-    </QtMoc>
-    <QtMoc Include="Core\View\Window\teacher_interaction_widget.h">
-      <Filter>Core\View\Window</Filter>
-    </QtMoc>
-    <QtMoc Include="Core\View\Window\teacher_main_window.h">
-      <Filter>Core\View\Window</Filter>
-    </QtMoc>
     <QtMoc Include="Core\View\Component\component.h">
       <Filter>Core\View\Compoent</Filter>
     </QtMoc>
     <QtMoc Include="Core\Transport\http_request.h">
       <Filter>Core\Transport</Filter>
     </QtMoc>
-    <QtMoc Include="Core\Controller\controller.h">
+    <QtMoc Include="Core\View\Component\chart.h">
+      <Filter>Core\View\Compoent</Filter>
+    </QtMoc>
+    <QtMoc Include="Core\Controller\teacher_controller.h">
       <Filter>Core\Controller</Filter>
+    </QtMoc>
+    <QtMoc Include="Core\View\Window\teacher_main_window.h">
+      <Filter>Core\View\Window\teacher</Filter>
+    </QtMoc>
+    <QtMoc Include="Core\View\Window\teacher_interaction_widget.h">
+      <Filter>Core\View\Window\teacher</Filter>
+    </QtMoc>
+    <QtMoc Include="Core\View\Window\teacher_course_widget.h">
+      <Filter>Core\View\Window\teacher</Filter>
+    </QtMoc>
+    <QtMoc Include="Core\View\Window\student_main_window.h">
+      <Filter>Core\View\Window\student</Filter>
+    </QtMoc>
+    <QtMoc Include="Core\View\Window\student_interaction_widget.h">
+      <Filter>Core\View\Window\student</Filter>
+    </QtMoc>
+    <QtMoc Include="Core\Controller\student_controller.h">
+      <Filter>Core\Controller</Filter>
+    </QtMoc>
+    <QtMoc Include="Core\Transport\image_send.h">
+      <Filter>Core\Transport</Filter>
+    </QtMoc>
+    <QtMoc Include="Core\View\Window\student_interaction_enter_dialog.h">
+      <Filter>Core\View\Window\student</Filter>
+    </QtMoc>
+    <QtMoc Include="Core\View\Component\camera.h">
+      <Filter>Core\View\Compoent</Filter>
+    </QtMoc>
+    <QtMoc Include="Core\View\Window\teacher_interaction_enter_dialog.h">
+      <Filter>Core\View\Window\teacher</Filter>
+    </QtMoc>
+    <QtMoc Include="Core\Transport\socket.h">
+      <Filter>Core\Transport</Filter>
     </QtMoc>
   </ItemGroup>
   <ItemGroup>
@@ -112,8 +181,11 @@
     <ClInclude Include="Core\Model\user.h">
       <Filter>Core\Model</Filter>
     </ClInclude>
-    <ClInclude Include="Core\Model\model_base.h">
-      <Filter>Core\Model</Filter>
+    <ClInclude Include="Core\online_education.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Tools\base64.h">
+      <Filter>Core\Tools</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

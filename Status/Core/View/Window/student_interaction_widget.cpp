@@ -1,33 +1,33 @@
-#include "teacher_interaction_widget.h"
+#include "student_interaction_widget.h"
 
 const int PEN_WIDTH = 3;
 const int RUBBER_WIDTH = 20;
 
-TeacherInteractionWidget::TeacherInteractionWidget(QWidget *parent): QWidget(parent) {
+StudentInteractionWidget::StudentInteractionWidget(QWidget *parent) : QWidget(parent) {
 	m_ui.setupUi(this);
 
 	QScrollArea *scroll_area;
 	QPen pen, rubber;
 
 	// 信号绑定
-	this->connect(this->m_ui.pen_width_slider, &QSlider::valueChanged, this, &TeacherInteractionWidget::setPenWidth);
-	this->connect(this->m_ui.rubber_width_slider, &QSlider::valueChanged, this, &TeacherInteractionWidget::setRubberWidth);
-	this->connect(this->m_ui.pen_width_edit, &QLineEdit::textEdited, this, &TeacherInteractionWidget::setPenSlider);  // 程序改变值时，不触发信号
-	this->connect(this->m_ui.rubber_width_edit, &QLineEdit::textEdited, this, &TeacherInteractionWidget::setRubberSlider);
-	this->connect(this->m_ui.black_pen_btn, &QPushButton::clicked, this, &TeacherInteractionWidget::chooseBlackPen);
-	this->connect(this->m_ui.blue_pen_btn, &QPushButton::clicked, this, &TeacherInteractionWidget::chooseBluePen);
-	this->connect(this->m_ui.red_pen_btn, &QPushButton::clicked, this, &TeacherInteractionWidget::chooseRedPen);
-	this->connect(this->m_ui.color_pen_btn, &QPushButton::clicked, this, &TeacherInteractionWidget::chooseColorPen);
-	this->connect(this->m_ui.text_btn, &QPushButton::clicked, this, &TeacherInteractionWidget::chooseText);
-	this->connect(this->m_ui.rubber_btn, &QPushButton::clicked, this, &TeacherInteractionWidget::chooseRubber);
-	this->connect(this->m_ui.line_btn, &QPushButton::clicked, this, &TeacherInteractionWidget::chooseLine);
-	this->connect(this->m_ui.rect_btn, &QPushButton::clicked, this, &TeacherInteractionWidget::chooseRect);
-	this->connect(this->m_ui.ellipse_btn, &QPushButton::clicked, this, &TeacherInteractionWidget::chooseEllipse);      
-	this->connect(this->m_ui.undo_btn, &QPushButton::clicked, this, &TeacherInteractionWidget::undo);
-	this->connect(this->m_ui.clear_btn, &QPushButton::clicked, this, &TeacherInteractionWidget::clear);
-	this->connect(this->m_ui.add_board_btn, &QPushButton::clicked, this, &TeacherInteractionWidget::addBoard);
-	this->connect(this->m_ui.board_tabWidget, &QTabWidget::tabCloseRequested, this, &TeacherInteractionWidget::deleteBoard);
-	this->connect(this->m_ui.board_tabWidget, &QTabWidget::currentChanged, this, &TeacherInteractionWidget::changeBoard);
+	this->connect(this->m_ui.pen_width_slider, &QSlider::valueChanged, this, &StudentInteractionWidget::setPenWidth);
+	this->connect(this->m_ui.rubber_width_slider, &QSlider::valueChanged, this, &StudentInteractionWidget::setRubberWidth);
+	this->connect(this->m_ui.pen_width_edit, &QLineEdit::textEdited, this, &StudentInteractionWidget::setPenSlider);  // 程序改变值时，不触发信号
+	this->connect(this->m_ui.rubber_width_edit, &QLineEdit::textEdited, this, &StudentInteractionWidget::setRubberSlider);
+	this->connect(this->m_ui.black_pen_btn, &QPushButton::clicked, this, &StudentInteractionWidget::chooseBlackPen);
+	this->connect(this->m_ui.blue_pen_btn, &QPushButton::clicked, this, &StudentInteractionWidget::chooseBluePen);
+	this->connect(this->m_ui.red_pen_btn, &QPushButton::clicked, this, &StudentInteractionWidget::chooseRedPen);
+	this->connect(this->m_ui.color_pen_btn, &QPushButton::clicked, this, &StudentInteractionWidget::chooseColorPen);
+	this->connect(this->m_ui.text_btn, &QPushButton::clicked, this, &StudentInteractionWidget::chooseText);
+	this->connect(this->m_ui.rubber_btn, &QPushButton::clicked, this, &StudentInteractionWidget::chooseRubber);
+	this->connect(this->m_ui.line_btn, &QPushButton::clicked, this, &StudentInteractionWidget::chooseLine);
+	this->connect(this->m_ui.rect_btn, &QPushButton::clicked, this, &StudentInteractionWidget::chooseRect);
+	this->connect(this->m_ui.ellipse_btn, &QPushButton::clicked, this, &StudentInteractionWidget::chooseEllipse);
+	this->connect(this->m_ui.undo_btn, &QPushButton::clicked, this, &StudentInteractionWidget::undo);
+	this->connect(this->m_ui.clear_btn, &QPushButton::clicked, this, &StudentInteractionWidget::clear);
+	this->connect(this->m_ui.add_board_btn, &QPushButton::clicked, this, &StudentInteractionWidget::addBoard);
+	this->connect(this->m_ui.board_tabWidget, &QTabWidget::tabCloseRequested, this, &StudentInteractionWidget::deleteBoard);
+	this->connect(this->m_ui.board_tabWidget, &QTabWidget::currentChanged, this, &StudentInteractionWidget::changeBoard);
 
 	// 初始化
 	scroll_area = new QScrollArea();
@@ -42,7 +42,7 @@ TeacherInteractionWidget::TeacherInteractionWidget(QWidget *parent): QWidget(par
 	this->m_ui.black_pen_btn->click();  // 默认为黑笔，模拟点击
 	// 画笔、橡皮檫默认宽度
 	pen = this->m_board->getPen();
-	pen.setWidth(PEN_WIDTH); 
+	pen.setWidth(PEN_WIDTH);
 	this->m_board->setPen(pen);
 	this->m_ui.pen_width_slider->setValue(PEN_WIDTH);
 	this->m_ui.pen_width_edit->setText(QString::number(PEN_WIDTH));
@@ -54,7 +54,7 @@ TeacherInteractionWidget::TeacherInteractionWidget(QWidget *parent): QWidget(par
 	this->m_ui.rubber_width_edit->setText(QString::number(RUBBER_WIDTH));
 }
 
-TeacherInteractionWidget::~TeacherInteractionWidget() {
+StudentInteractionWidget::~StudentInteractionWidget() {
 	for (int index = 0; index < this->m_board_list.count(); index++) {
 		if (this->m_board_list[index] != nullptr) {
 			delete this->m_board_list[index];
@@ -66,7 +66,7 @@ TeacherInteractionWidget::~TeacherInteractionWidget() {
 	调整画笔粗细
 	value-qslider传回的值
 */
-void TeacherInteractionWidget::setPenWidth(int value) {
+void StudentInteractionWidget::setPenWidth(int value) {
 	QPen pen = this->m_board->getPen();
 
 	this->m_ui.pen_width_edit->setText(QString::number(value));
@@ -79,7 +79,7 @@ void TeacherInteractionWidget::setPenWidth(int value) {
 /*
 	调整pen_slider
 */
-void TeacherInteractionWidget::setPenSlider() {
+void StudentInteractionWidget::setPenSlider() {
 	QString text = this->m_ui.pen_width_edit->text();
 	int value = text.toInt();
 
@@ -100,7 +100,7 @@ void TeacherInteractionWidget::setPenSlider() {
 	调整橡皮檫粗细
 	value-qslider传回的值
 */
-void TeacherInteractionWidget::setRubberWidth(int value) {
+void StudentInteractionWidget::setRubberWidth(int value) {
 	QPen rubber = this->m_board->getRubber();
 
 	this->m_ui.rubber_width_edit->setText(QString::number(value));
@@ -113,7 +113,7 @@ void TeacherInteractionWidget::setRubberWidth(int value) {
 /*
 	调整rubber_slider
 */
-void TeacherInteractionWidget::setRubberSlider() {
+void StudentInteractionWidget::setRubberSlider() {
 	QString text = this->m_ui.rubber_width_edit->text();
 	int value = text.toInt();
 
@@ -133,7 +133,7 @@ void TeacherInteractionWidget::setRubberSlider() {
 /*
 	选择黑色画笔
 */
-void TeacherInteractionWidget::chooseBlackPen() {
+void StudentInteractionWidget::chooseBlackPen() {
 	QPen pen = this->m_board->getPen();
 
 	pen.setBrush(QColor(0, 0, 0));
@@ -147,7 +147,7 @@ void TeacherInteractionWidget::chooseBlackPen() {
 /*
 	选择蓝色画笔
 */
-void TeacherInteractionWidget::chooseBluePen() {
+void StudentInteractionWidget::chooseBluePen() {
 	QPen pen = this->m_board->getPen();
 
 	pen.setBrush(QColor(18, 150, 219));
@@ -161,7 +161,7 @@ void TeacherInteractionWidget::chooseBluePen() {
 /*
 	选择红色画笔
 */
-void TeacherInteractionWidget::chooseRedPen() {
+void StudentInteractionWidget::chooseRedPen() {
 	QPen pen = this->m_board->getPen();
 
 	pen.setBrush(QColor(216, 30, 6));
@@ -175,7 +175,7 @@ void TeacherInteractionWidget::chooseRedPen() {
 /*
 	自定义画笔颜色
 */
-void TeacherInteractionWidget::chooseColorPen() {
+void StudentInteractionWidget::chooseColorPen() {
 	QColorDialog color_dlg; //调出颜色选择器对话框
 	QRgb color = color_dlg.getRgba();
 	QString color_str = QString::number(color, 16); // 这是一个QRgb -> QString
@@ -192,7 +192,7 @@ void TeacherInteractionWidget::chooseColorPen() {
 /*
 	选择添加文本
 */
-void TeacherInteractionWidget::chooseText() {
+void StudentInteractionWidget::chooseText() {
 	this->m_board->setToolType(PaintWidget::TEXT);
 
 	return;
@@ -201,7 +201,7 @@ void TeacherInteractionWidget::chooseText() {
 /*
 	选择橡皮檫
 */
-void TeacherInteractionWidget::chooseRubber() {
+void StudentInteractionWidget::chooseRubber() {
 	this->m_board->setToolType(PaintWidget::RUBBER);
 
 	return;
@@ -210,7 +210,7 @@ void TeacherInteractionWidget::chooseRubber() {
 /*
 	选择直线工具
 */
-void TeacherInteractionWidget::chooseLine() {
+void StudentInteractionWidget::chooseLine() {
 	QPen pen = this->m_board->getPen();
 
 	this->m_board->setPen(pen);
@@ -222,7 +222,7 @@ void TeacherInteractionWidget::chooseLine() {
 /*
 	选择矩形工具
 */
-void TeacherInteractionWidget::chooseRect() {
+void StudentInteractionWidget::chooseRect() {
 	QPen pen = this->m_board->getPen();
 
 	this->m_board->setPen(pen);
@@ -234,7 +234,7 @@ void TeacherInteractionWidget::chooseRect() {
 /*
 	选择椭圆工具
 */
-void TeacherInteractionWidget::chooseEllipse() {
+void StudentInteractionWidget::chooseEllipse() {
 	QPen pen = this->m_board->getPen();
 
 	this->m_board->setPen(pen);
@@ -248,7 +248,7 @@ void TeacherInteractionWidget::chooseEllipse() {
 	为什么不选择直接让槽设为m_board中的undo？
 	因为this->m_board是变化的，clear同理
 */
-void TeacherInteractionWidget::undo() {
+void StudentInteractionWidget::undo() {
 	this->m_board->undo();
 
 	return;
@@ -257,7 +257,7 @@ void TeacherInteractionWidget::undo() {
 /*
 	清空
 */
-void TeacherInteractionWidget::clear() {
+void StudentInteractionWidget::clear() {
 	this->m_board->clear();
 
 	return;
@@ -266,7 +266,7 @@ void TeacherInteractionWidget::clear() {
 /*
 	显示当前颜色
 */
-void TeacherInteractionWidget::showCurrentColor(QString color) {
+void StudentInteractionWidget::showCurrentColor(QString color) {
 
 	this->m_ui.color_pen_btn->setStyleSheet("QPushButton{border: 5px solid " + color + ";background-color: #FCFCFC;}QPushButton:hover{ background - color:#E3E3E3; }QPushButton:checked{ background - color: #CACACA; }");
 
@@ -276,7 +276,7 @@ void TeacherInteractionWidget::showCurrentColor(QString color) {
 /*
 	新建画板
 */
-void TeacherInteractionWidget::addBoard() {
+void StudentInteractionWidget::addBoard() {
 	QScrollArea *scroll_area = new QScrollArea();
 	QPen pen, rubber;
 
@@ -284,7 +284,7 @@ void TeacherInteractionWidget::addBoard() {
 	this->m_board_list.append(this->m_board);  // 加入链表之中
 	scroll_area->setWidget(this->m_board);
 	scroll_area->setStyleSheet("QScrollArea{border:none;background-color:transparent;}QScrollBar:vertical{border:none;background-color:#ffffff;width:10px;}QScrollBar:vertical:hover{border:none;background-color:rgb(220,220,220);width:10px;}QScrollBar::handle:vertical{border-radius:5px;background:rgb(220,220,220);min-height:20px;}QScrollBar::handle:vertical:hover{border-radius:5px;background:rgb(200,200,200);min-height:20px;}QScrollBar::add-line:vertical{height:0;subcontrol-position:bottom;subcontrol-origin:margin;}QScrollBar::sub-line:vertical{height:0px;subcontrol-position:top;subcontrol-origin:margin;}QScrollBar:horizontal{border:none;background-color:#ffffff;height:10px;}QScrollBar:horizontal:hover{border:none;background-color:rgb(220,220,220);height:10px;}QScrollBar::handle:horizontal{border-radius:5px;background:rgb(220,220,220);min-width:20px;}QScrollBar::handle:horizontal:hover{border-radius:5px;background:rgb(200,200,200);min-width:20px;}QScrollBar::add-line:horizontal{width:0;subcontrol-position:bottom;subcontrol-origin:margin;}QScrollBar::sub-line:horizontal{width:0px;subcontrol-position:top;subcontrol-origin:margin;}");
-	this->m_ui.board_tabWidget->addTab(scroll_area, "m_board_" + QString::number(++this->m_board_id));  // 添加一个画板
+	this->m_ui.board_tabWidget->addTab(scroll_area, "board_" + QString::number(++this->m_board_id));  // 添加一个画板
 	this->m_ui.board_tabWidget->setCurrentIndex(this->m_ui.board_tabWidget->count() - 1);  // 切换到最新建的画板
 	this->m_ui.board_tabWidget->setTabsClosable(true);  // 执行添加操作，那画板数量肯定大于1，可以执行删除操作
 	this->m_ui.black_pen_btn->click();  // 默认为黑笔，模拟点击
@@ -308,7 +308,7 @@ void TeacherInteractionWidget::addBoard() {
 	关闭画板
 	index-切换信号传出的tab下标
 */
-void TeacherInteractionWidget::deleteBoard(int index) {
+void StudentInteractionWidget::deleteBoard(int index) {
 	PaintWidget *delete_m_board = this->m_board_list[index];
 
 	this->m_board_list.removeAt(index);
@@ -329,7 +329,7 @@ void TeacherInteractionWidget::deleteBoard(int index) {
 	将m_board（当前工作画板）设置为当前选择的画板
 	index-切换信号传出的tab下标
 */
-void TeacherInteractionWidget::changeBoard(int index) {
+void StudentInteractionWidget::changeBoard(int index) {
 	QPen pen, rubber;
 	QColor color;
 	PaintWidget::ToolType tool_Type;
@@ -378,4 +378,3 @@ void TeacherInteractionWidget::changeBoard(int index) {
 
 	return;
 }
-

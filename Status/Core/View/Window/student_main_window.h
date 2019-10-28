@@ -3,25 +3,25 @@
 #include <QtWidgets/QMainWindow>
 #include <QMouseEvent>
 #include <QPoint>
-#include "ui_teacher_main_window.h"
-#include "teacher_course_widget.h"
-#include "teacher_interaction_widget.h"
+#include "ui_student_main_window.h"
 
-class TeacherMainWindow: public QMainWindow {
+
+class StudentMainWindow : public QMainWindow {
 	Q_OBJECT
 
 public:
-	TeacherMainWindow(QWidget *parent = Q_NULLPTR);
-	virtual ~TeacherMainWindow() {};
-	const Ui::TeacherMainWindow& ui() const { return this->m_ui; };
+	StudentMainWindow(QWidget *parent = Q_NULLPTR);
+	virtual ~StudentMainWindow();
+	const Ui::StudentMainWindow& ui() const { return this->m_ui; };
 
+public slots:
 	/*最大化窗口*/
 	void setWindowFull();
 	/*还原窗口*/
 	void setWindowNormal();
 
 private:
-	Ui::TeacherMainWindow m_ui;
+	Ui::StudentMainWindow m_ui;
 
 	bool is_pressed;  // 鼠标左键是否按下
 	bool is_moving;  // 正在移动
