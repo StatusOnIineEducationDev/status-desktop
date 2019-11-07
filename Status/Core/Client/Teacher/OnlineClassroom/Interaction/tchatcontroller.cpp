@@ -1,21 +1,21 @@
-#include "tonlineclassroomchatcontroller.h"
+#include "tchatcontroller.h"
 
 
-TOnlineClassroomChatController::TOnlineClassroomChatController(TOnlineClassroomWidget *online_classroom_widget, QObject *parent)
+TChatController::TChatController(TOnlineClassroomWidget *online_classroom_widget, QObject *parent)
 	: QObject(parent), m_online_classroom_widget(online_classroom_widget) {
 	Ui::TOnlineClassroomWidget ui = this->m_online_classroom_widget->ui();
 
-	this->connect(ui.flexible_frame_btn, &QPushButton::clicked, this, &TOnlineClassroomChatController::showFlexibleFrame);
-	this->connect(ui.send_btn, &QPushButton::clicked, this, &TOnlineClassroomChatController::sendChatContent);
-	this->connect(ui.chat_ban_btn, &QPushButton::clicked, this, &TOnlineClassroomChatController::chatBan);
-	this->connect(ui.chat_clear_btn, &QPushButton::clicked, this, &TOnlineClassroomChatController::chatClear);
+	this->connect(ui.flexible_frame_btn, &QPushButton::clicked, this, &TChatController::showFlexibleFrame);
+	this->connect(ui.send_btn, &QPushButton::clicked, this, &TChatController::sendChatContent);
+	this->connect(ui.chat_ban_btn, &QPushButton::clicked, this, &TChatController::chatBan);
+	this->connect(ui.chat_clear_btn, &QPushButton::clicked, this, &TChatController::chatClear);
 }
 
-TOnlineClassroomChatController::~TOnlineClassroomChatController() {
+TChatController::~TChatController() {
 
 }
 
-void TOnlineClassroomChatController::handleCommandSendChatContent(QJsonObject &data) {
+void TChatController::handleCommandSendChatContent(QJsonObject &data) {
 	Ui::TOnlineClassroomWidget ui = this->m_online_classroom_widget->ui();
 	QListWidgetItem *chat_item = new QListWidgetItem;
 	CChatItemMineWidget *chat_item_widget = new CChatItemMineWidget(ui.chat_view);
@@ -63,7 +63,7 @@ void TOnlineClassroomChatController::handleCommandSendChatContent(QJsonObject &d
 	return;
 }
 
-void TOnlineClassroomChatController::handleCommandRecvChatContent(QJsonObject &data) {
+void TChatController::handleCommandRecvChatContent(QJsonObject &data) {
 	Ui::TOnlineClassroomWidget ui = this->m_online_classroom_widget->ui();
 	QListWidgetItem *chat_item = new QListWidgetItem;
 	CChatItemOtherWidget *chat_item_widget = new CChatItemOtherWidget(ui.chat_view);
@@ -111,7 +111,7 @@ void TOnlineClassroomChatController::handleCommandRecvChatContent(QJsonObject &d
 	return;
 }
 
-void TOnlineClassroomChatController::handleCommandChatBan(QJsonObject &data) {
+void TChatController::handleCommandChatBan(QJsonObject &data) {
 	Ui::TOnlineClassroomWidget ui = this->m_online_classroom_widget->ui();
 
 	switch (ChatStatus(data["chat_status"].toInt())) {
@@ -126,27 +126,27 @@ void TOnlineClassroomChatController::handleCommandChatBan(QJsonObject &data) {
 	return;
 }
 
-void TOnlineClassroomChatController::showFlexibleFrame() {
+void TChatController::showFlexibleFrame() {
 	Ui::TOnlineClassroomWidget ui = this->m_online_classroom_widget->ui();
 
 	ui.flexible_main_area->show();
-	this->disconnect(ui.flexible_frame_btn, &QPushButton::clicked, this, &TOnlineClassroomChatController::showFlexibleFrame);
-	this->connect(ui.flexible_frame_btn, &QPushButton::clicked, this, &TOnlineClassroomChatController::hideFlexibleFrame);
+	this->disconnect(ui.flexible_frame_btn, &QPushButton::clicked, this, &TChatController::showFlexibleFrame);
+	this->connect(ui.flexible_frame_btn, &QPushButton::clicked, this, &TChatController::hideFlexibleFrame);
 
 	return;
 }
 
-void TOnlineClassroomChatController::hideFlexibleFrame() {
+void TChatController::hideFlexibleFrame() {
 	Ui::TOnlineClassroomWidget ui = this->m_online_classroom_widget->ui();
 
 	ui.flexible_main_area->hide();
-	this->disconnect(ui.flexible_frame_btn, &QPushButton::clicked, this, &TOnlineClassroomChatController::hideFlexibleFrame);
-	this->connect(ui.flexible_frame_btn, &QPushButton::clicked, this, &TOnlineClassroomChatController::showFlexibleFrame);
+	this->disconnect(ui.flexible_frame_btn, &QPushButton::clicked, this, &TChatController::hideFlexibleFrame);
+	this->connect(ui.flexible_frame_btn, &QPushButton::clicked, this, &TChatController::showFlexibleFrame);
 
 	return;
 }
 
-void TOnlineClassroomChatController::sendChatContent() {
+void TChatController::sendChatContent() {
 	Ui::TOnlineClassroomWidget ui = this->m_online_classroom_widget->ui();
 	QJsonObject request_json_obj;
 	Toast *toast;
@@ -169,7 +169,7 @@ void TOnlineClassroomChatController::sendChatContent() {
 	return;
 }
 
-void TOnlineClassroomChatController::chatBan() {
+void TChatController::chatBan() {
 	Ui::TOnlineClassroomWidget ui = this->m_online_classroom_widget->ui();
 	QJsonObject request_json_obj;
 	ChatStatus chat_status = ChatStatus::ChatFree;
@@ -187,7 +187,7 @@ void TOnlineClassroomChatController::chatBan() {
 	return;
 }
 
-void TOnlineClassroomChatController::chatClear() {
+void TChatController::chatClear() {
 	Ui::TOnlineClassroomWidget ui = this->m_online_classroom_widget->ui();
 
 	ui.chat_view->clear();

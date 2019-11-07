@@ -1,15 +1,15 @@
-#include "tonlineclassroomwhiteboardcontroller.h"
+#include "swhiteboardcontroller.h"
 
-TOnlineClassroomWhiteBoardController::TOnlineClassroomWhiteBoardController(TOnlineClassroomWidget *online_classroom_widget, QObject *parent)
+SWhiteBoardController::SWhiteBoardController(SOnlineClassroomWidget *online_classroom_widget, QObject *parent)
 	: QObject(parent), m_online_classroom_widget(online_classroom_widget) {
-	this->connect(this->m_online_classroom_widget->board(), &WhiteBoard::paintCommandReady, this, &TOnlineClassroomWhiteBoardController::sendPaintCommand);
+	this->connect(this->m_online_classroom_widget->board(), &WhiteBoard::paintCommandReady, this, &SWhiteBoardController::sendPaintCommand);
 }
 
-TOnlineClassroomWhiteBoardController::~TOnlineClassroomWhiteBoardController() {
+SWhiteBoardController::~SWhiteBoardController() {
 
 }
 
-void TOnlineClassroomWhiteBoardController::createPaintConnection(QMap<QString, QVariant> &data) {
+void SWhiteBoardController::createPaintConnection(QMap<QString, QVariant> &data) {
 	/*
 		/*
 		|-data(QMap<QString, QVariant>)
@@ -24,9 +24,8 @@ void TOnlineClassroomWhiteBoardController::createPaintConnection(QMap<QString, Q
 	connection_thread->start();
 
 	this->m_paint_connection->connect(ReadConf::G_SOCKET_HOST, ReadConf::G_SOCKET_PORT);
-
 	paint_request_json_obj["command"] = TransportCmd::CreatePaintConnection;
-	paint_request_json_obj["account_type"] = AccountType::Teacher;
+	paint_request_json_obj["account_type"] = AccountType::Student;
 	paint_request_json_obj["course_id"] = data["course_id"].toString();
 	paint_request_json_obj["lesson_id"] = data["lesson_id"].toString();
 	paint_request_json_obj["uid"] = data["uid"].toString();
@@ -36,12 +35,12 @@ void TOnlineClassroomWhiteBoardController::createPaintConnection(QMap<QString, Q
 	this->setPaintConnectionSendBaseInfo(data["uid"].toString(), data["course_id"].toString(), data["lesson_id"].toString());
 
 	// ¡ª¡ªÐÅºÅ°ó¶¨
-	this->connect(this->m_paint_connection, &Connection::bufferReadyRead, this, &TOnlineClassroomWhiteBoardController::handlePaintConnectionRecv);
+	this->connect(this->m_paint_connection, &Connection::bufferReadyRead, this, &SWhiteBoardController::handlePaintConnectionRecv);
 
 	return;
 }
 
-void TOnlineClassroomWhiteBoardController::distroyPaintConnection() {
+void SWhiteBoardController::distroyPaintConnection() {
 	QThread *thread = this->m_paint_connection->thread();
 	delete this->m_paint_connection;
 	this->m_paint_connection = nullptr;
@@ -50,7 +49,7 @@ void TOnlineClassroomWhiteBoardController::distroyPaintConnection() {
 	return;
 }
 
-void TOnlineClassroomWhiteBoardController::handlePaintConnectionRecv() {
+void SWhiteBoardController::handlePaintConnectionRecv() {
 	QJsonObject data = this->m_paint_connection->recv();
 	TransportCmd cmd = TransportCmd(data["command"].toInt());
 
@@ -61,15 +60,15 @@ void TOnlineClassroomWhiteBoardController::handlePaintConnectionRecv() {
 	return;
 }
 
-void TOnlineClassroomWhiteBoardController::handleCommandPaintCommand(QJsonObject &data) {
+void SWhiteBoardController::handleCommandPaintCommand(QJsonObject &data) {
 	this->m_online_classroom_widget->board()->paintByPaintCommand(data);
 
 	return;
 }
 
-void TOnlineClassroomWhiteBoardController::sendPaintCommand(QJsonObject &data) {
+void SWhiteBoardController::sendPaintCommand(QJsonObject &data) {
 	data["command"] = TransportCmd::PaintCommand;
-	data["account_type"] = AccountType::Teacher;
+	data["account_type"] = AccountType::Student;
 	data["course_id"] = this->m_send_base_info["course_id"].toString();
 	data["lesson_id"] = this->m_send_base_info["lesson_id"].toString();
 	data["uid"] = this->m_send_base_info["uid"].toString();
@@ -77,7 +76,7 @@ void TOnlineClassroomWhiteBoardController::sendPaintCommand(QJsonObject &data) {
 	this->m_paint_connection->realSend(data);
 }
 
-void TOnlineClassroomWhiteBoardController::setPaintConnectionSendBaseInfo(QString uid, QString course_id, QString lesson_id) {
+void SWhiteBoardController::setPaintConnectionSendBaseInfo(QString uid, QString course_id, QString lesson_id) {
 	this->m_send_base_info["uid"] = uid;
 	this->m_send_base_info["course_id"] = course_id;
 	this->m_send_base_info["lesson_id"] = lesson_id;

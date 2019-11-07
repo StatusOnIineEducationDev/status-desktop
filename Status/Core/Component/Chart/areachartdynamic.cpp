@@ -40,7 +40,7 @@ AreaChartDynamic::AreaChartDynamic(QColor &color, QObject *parent)
 	this->legend()->setVisible(false);  // 隐藏图例
 }
 
-void AreaChartDynamic::append(double &timestamp, int &value) {
+void AreaChartDynamic::append(int &timestamp, int &value) {
 	// 更新原点
 	if (this->m_origin_x < 0) {
 		this->m_origin_x = timestamp;

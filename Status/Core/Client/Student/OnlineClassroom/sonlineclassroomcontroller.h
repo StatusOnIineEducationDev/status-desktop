@@ -4,9 +4,10 @@
 #include <QList>
 #include "sonlineclassroomwidget.h"
 #include "Core/Client/Student/smainwindow.h"
-#include "Core/Client/Student/OnlineClassroom/Enter/sonlineclassroomentercontroller.h"
-#include "Core/Client/Student/OnlineClassroom/Interaction/sonlineclassroomwhiteboardcontroller.h"
-#include "Core/Client/Student/OnlineClassroom/Interaction/sonlineclassroomchatcontroller.h"
+#include "Core/Client/Student/OnlineClassroom/Enter/sentercontroller.h"
+#include "Core/Client/Student/OnlineClassroom/Interaction/swhiteboardcontroller.h"
+#include "Core/Client/Student/OnlineClassroom/Interaction/schatcontroller.h"
+#include "Core/Client/Student/OnlineClassroom/Concentration/sconcentrationcontroller.h"
 #include "Core/Hardware/camera.h"
 #include "Core/Network/socket.h"
 #include "Core/Tools/base64.h"
@@ -58,9 +59,10 @@ protected:
 	void updateInSpeechLastTime();
 	void endSpeech();
 
-	SOnlineClassroomEnterController *m_online_classroom_enter_controller;
-	SOnlineClassroomWhiteBoardController *m_online_classroom_white_board_controller;
-	SOnlineClassroomChatController *m_online_classroom_chat_controller;
+	SEnterController *m_enter_controller;
+	SWhiteBoardController *m_white_board_controller;
+	SChatController *m_chat_controller;
+	SConcentrationController *m_concentration_controller;
 
 	SOnlineClassroomWidget *m_online_classroom_widget;
 	SInSpeechRemovableWidget *m_in_speech_removeable_widget;

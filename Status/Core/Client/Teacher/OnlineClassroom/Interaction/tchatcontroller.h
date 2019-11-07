@@ -10,15 +10,15 @@
 #include "Core/Client/online_education.h"
 
 
-class TOnlineClassroomChatController : public QObject {
+class TChatController : public QObject {
 	Q_OBJECT
 
 signals:
 	void lessonConnectionDataReady(QJsonObject &data);
 
 public:
-	TOnlineClassroomChatController(TOnlineClassroomWidget *online_classroom_widget, QObject *parent = nullptr);
-	virtual ~TOnlineClassroomChatController();
+	TChatController(TOnlineClassroomWidget *online_classroom_widget, QObject *parent = nullptr);
+	virtual ~TChatController();
 
 	void handleCommandSendChatContent(QJsonObject &data);
 	void handleCommandRecvChatContent(QJsonObject &data);

@@ -91,7 +91,7 @@ QTabWidget#function_tabWidget::tab-bar {
       <enum>QTabWidget::Rounded</enum>
      </property>
      <property name="currentIndex">
-      <number>0</number>
+      <number>1</number>
      </property>
      <property name="iconSize">
       <size>
@@ -1839,7 +1839,7 @@ QScrollBar::sub-line:vertical {
           <property name="geometry">
            <rect>
             <x>0</x>
-            <y>-3</y>
+            <y>-204</y>
             <width>607</width>
             <height>770</height>
            </rect>
@@ -1907,9 +1907,9 @@ QScrollBar::sub-line:vertical {
                <number>0</number>
               </property>
               <item row="0" column="0" rowspan="2">
-               <widget class="QFrame" name="main_info_frame">
+               <widget class="QFrame" name="final_data_frame">
                 <property name="styleSheet">
-                 <string notr="true">QFrame#main_info_frame {
+                 <string notr="true">QFrame#final_data_frame {
 	background: none;
 	border: 2px solid #1296db;
 	border-top: none;
@@ -1953,7 +1953,7 @@ QScrollBar::sub-line:vertical {
                   </widget>
                  </item>
                  <item row="1" column="0">
-                  <widget class="QLabel" name="concentration_main_text">
+                  <widget class="QLabel" name="concentration_value_text">
                    <property name="minimumSize">
                     <size>
                      <width>60</width>
@@ -1978,7 +1978,7 @@ QScrollBar::sub-line:vertical {
                     <string notr="true">color: #333333;</string>
                    </property>
                    <property name="text">
-                    <string>99</string>
+                    <string>-</string>
                    </property>
                    <property name="scaledContents">
                     <bool>true</bool>
@@ -2073,7 +2073,7 @@ QScrollBar::sub-line:vertical {
                   </widget>
                  </item>
                  <item row="3" column="0">
-                  <widget class="QLabel" name="fatigue_main_text">
+                  <widget class="QLabel" name="fatigue_value_text">
                    <property name="minimumSize">
                     <size>
                      <width>60</width>
@@ -2098,7 +2098,7 @@ QScrollBar::sub-line:vertical {
                     <string notr="true">color: #333333;</string>
                    </property>
                    <property name="text">
-                    <string>99</string>
+                    <string>-</string>
                    </property>
                    <property name="scaledContents">
                     <bool>true</bool>
@@ -2109,7 +2109,7 @@ QScrollBar::sub-line:vertical {
                   </widget>
                  </item>
                  <item row="3" column="1">
-                  <widget class="QLabel" name="toward_main_text">
+                  <widget class="QLabel" name="toward_score_text">
                    <property name="minimumSize">
                     <size>
                      <width>60</width>
@@ -2134,7 +2134,7 @@ QScrollBar::sub-line:vertical {
                     <string notr="true">color: #333333;</string>
                    </property>
                    <property name="text">
-                    <string>99</string>
+                    <string>-</string>
                    </property>
                    <property name="scaledContents">
                     <bool>true</bool>
@@ -2145,7 +2145,7 @@ QScrollBar::sub-line:vertical {
                   </widget>
                  </item>
                  <item row="3" column="2">
-                  <widget class="QLabel" name="emotion_main_text">
+                  <widget class="QLabel" name="emotion_score_text">
                    <property name="minimumSize">
                     <size>
                      <width>60</width>
@@ -2170,7 +2170,7 @@ QScrollBar::sub-line:vertical {
                     <string notr="true">color: #333333;</string>
                    </property>
                    <property name="text">
-                    <string>99</string>
+                    <string>-</string>
                    </property>
                    <property name="scaledContents">
                     <bool>true</bool>
@@ -2184,9 +2184,9 @@ QScrollBar::sub-line:vertical {
                </widget>
               </item>
               <item row="2" column="0">
-               <widget class="QFrame" name="base_info_frame">
+               <widget class="QFrame" name="real_time_data_frame">
                 <property name="styleSheet">
-                 <string notr="true">QFrame#base_info_frame {
+                 <string notr="true">QFrame#real_time_data_frame {
 	background: none;
 	border: 2px dashed #1296db;
 	border-top: none;
@@ -2255,7 +2255,7 @@ QScrollBar::sub-line:vertical {
                     <string notr="true">color: #333333;</string>
                    </property>
                    <property name="text">
-                    <string/>
+                    <string>-</string>
                    </property>
                    <property name="scaledContents">
                     <bool>true</bool>
@@ -2319,7 +2319,7 @@ QScrollBar::sub-line:vertical {
                     <string notr="true">color: #333333;</string>
                    </property>
                    <property name="text">
-                    <string>99</string>
+                    <string>-</string>
                    </property>
                    <property name="scaledContents">
                     <bool>true</bool>
@@ -2358,7 +2358,7 @@ QScrollBar::sub-line:vertical {
                   </widget>
                  </item>
                  <item row="2" column="1">
-                  <widget class="QLabel" name="label_35">
+                  <widget class="QLabel" name="highest_concentration_text">
                    <property name="minimumSize">
                     <size>
                      <width>40</width>
@@ -2383,7 +2383,7 @@ QScrollBar::sub-line:vertical {
                     <string notr="true">color: #333333;</string>
                    </property>
                    <property name="text">
-                    <string>99</string>
+                    <string>-</string>
                    </property>
                    <property name="scaledContents">
                     <bool>true</bool>
@@ -2447,7 +2447,7 @@ QScrollBar::sub-line:vertical {
                     <string notr="true">color: #333333;</string>
                    </property>
                    <property name="text">
-                    <string/>
+                    <string>-</string>
                    </property>
                    <property name="scaledContents">
                     <bool>true</bool>
@@ -4645,7 +4645,7 @@ QScrollBar::sub-line:vertical {
              </widget>
             </item>
             <item row="11" column="3" colspan="4">
-             <widget class="QLabel" name="concentration_text">
+             <widget class="QLabel" name="concentration_min_text">
               <property name="font">
                <font>
                 <family>微软雅黑</family>

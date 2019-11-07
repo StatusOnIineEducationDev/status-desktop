@@ -1,7 +1,7 @@
-#include "tonlineclassroomenterdialog.h"
+#include "tenterdialog.h"
 
 
-TOnlineClassroomEnterDialog::TOnlineClassroomEnterDialog(QWidget *parent)
+TEnterDialog::TEnterDialog(QWidget *parent)
 	: QDialog(parent) {
 	m_ui.setupUi(this);
 	// 窗口属性设置
@@ -11,11 +11,11 @@ TOnlineClassroomEnterDialog::TOnlineClassroomEnterDialog(QWidget *parent)
 	// 信号绑定
 }
 
-TOnlineClassroomEnterDialog::~TOnlineClassroomEnterDialog() {
+TEnterDialog::~TEnterDialog() {
 
 }
 
-void TOnlineClassroomEnterDialog::mouseMoveEvent(QMouseEvent *event) {
+void TEnterDialog::mouseMoveEvent(QMouseEvent *event) {
 	// 计算鼠标当前位置
 	// 如果鼠标在title bar且左键按下，则执行移动
 	if (this->is_moving) {
@@ -25,7 +25,7 @@ void TOnlineClassroomEnterDialog::mouseMoveEvent(QMouseEvent *event) {
 	return;
 }
 
-void TOnlineClassroomEnterDialog::mousePressEvent(QMouseEvent *event) {
+void TEnterDialog::mousePressEvent(QMouseEvent *event) {
 	if (event->button() == Qt::LeftButton) {
 		this->is_pressed = true;
 		this->start_pos = QPoint(event->pos().x(), event->pos().y());
@@ -37,7 +37,7 @@ void TOnlineClassroomEnterDialog::mousePressEvent(QMouseEvent *event) {
 	return;
 }
 
-void TOnlineClassroomEnterDialog::mouseReleaseEvent(QMouseEvent *event) {
+void TEnterDialog::mouseReleaseEvent(QMouseEvent *event) {
 	this->is_pressed = false;
 	this->is_moving = false;
 

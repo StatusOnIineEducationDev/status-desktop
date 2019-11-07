@@ -10,7 +10,7 @@ class AreaChartDynamic : public QChart {
 
 public:
 	AreaChartDynamic(QColor &color, QObject *parent);
-	void append(double &timestamp, int &value);
+	void append(int &timestamp, int &value);
 
 protected:
 	int m_range_max;

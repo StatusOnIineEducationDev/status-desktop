@@ -29,7 +29,7 @@ void SOnlineClassroomController::showOnlineClassroomWidget(SMainWindow *parent) 
 	// ——显示
 	parent->ui().widget_layout->addWidget(this->m_online_classroom_widget);
 	this->m_online_classroom_widget->show();
-	this->m_online_classroom_enter_controller->showOnlineClassroomEnterDialog(this->m_online_classroom_widget, course_list);
+	this->m_enter_controller->showEnterDialog(this->m_online_classroom_widget, course_list);
 
 	return;
 }
@@ -77,12 +77,13 @@ void SOnlineClassroomController::initAffiliatedWidget() {
 }
 
 void SOnlineClassroomController::initController() {
-	this->m_online_classroom_enter_controller = new SOnlineClassroomEnterController(this);
-	this->m_online_classroom_white_board_controller = new SOnlineClassroomWhiteBoardController(this->m_online_classroom_widget, this);
-	this->m_online_classroom_chat_controller = new SOnlineClassroomChatController(this->m_online_classroom_widget, this);
+	this->m_enter_controller = new SEnterController(this);
+	this->m_white_board_controller = new SWhiteBoardController(this->m_online_classroom_widget, this);
+	this->m_chat_controller = new SChatController(this->m_online_classroom_widget, this);
+	this->m_concentration_controller = new SConcentrationController(this->m_online_classroom_widget, this);
 
-	this->connect(m_online_classroom_enter_controller, &SOnlineClassroomEnterController::joinInLesson, this, &SOnlineClassroomController::joinInLesson);
-	this->connect(m_online_classroom_chat_controller, &SOnlineClassroomChatController::lessonConnectionDataReady, this, &SOnlineClassroomController::lessonConnectionSend);
+	this->connect(m_enter_controller, &SEnterController::joinInLesson, this, &SOnlineClassroomController::joinInLesson);
+	this->connect(m_chat_controller, &SChatController::lessonConnectionDataReady, this, &SOnlineClassroomController::lessonConnectionSend);
 	
 	return;
 }
@@ -109,12 +110,15 @@ void SOnlineClassroomController::handleLessonConnectionRecv() {
 	case TransportCmd::JoinInLesson: handleCommandJoinInLesson(data); break;
 	case TransportCmd::BeginLesson: handleCommandBeginLesson(data); break;
 	case TransportCmd::EndLesson: handleCommandEndLesson(data); break;
-	case TransportCmd::SendChatContent: this->m_online_classroom_chat_controller->handleCommandSendChatContent(data); break;
-	case TransportCmd::RecvChatContent: this->m_online_classroom_chat_controller->handleCommandRecvChatContent(data); break;
-	case TransportCmd::ChatBan: this->m_online_classroom_chat_controller->handleCommandChatBan(data); break;
+	case TransportCmd::SendChatContent: this->m_chat_controller->handleCommandSendChatContent(data); break;
+	case TransportCmd::RecvChatContent: this->m_chat_controller->handleCommandRecvChatContent(data); break;
+	case TransportCmd::ChatBan: this->m_chat_controller->handleCommandChatBan(data); break;
 	case TransportCmd::RaiseHand: handleCommandRaiseHand(data); break;
 	case TransportCmd::ResultOfRaiseHand: handleCommandResultOfRaiseHand(data); break;
 	case TransportCmd::RemoveMemberFromInSpeech: handleCommandRemoveMemberFromInSpeech(data); break;
+	case TransportCmd::ConcentrationFinalData: this->m_concentration_controller->handleCommandConcentrationFinalData(data); break;
+	case TransportCmd::ConcentrationRealTimeData: this->m_concentration_controller->handleCommandConcentrationRealTimeData(data); break;
+
 	}
 
 	return;
@@ -152,7 +156,7 @@ void SOnlineClassroomController::handleCommandJoinInLesson(QJsonObject &data) {
 
 		this->openCamera();
 		this->updateRoomInfo(data);
-		this->m_online_classroom_enter_controller->hideOnlineClassroomEnterDialog();
+		this->m_enter_controller->hideEnterDialog();
 		this->lessonBegin();
 		break;
 	case CourseStatus::CantJoinIn:
@@ -176,7 +180,7 @@ void SOnlineClassroomController::handleCommandJoinInLesson(QJsonObject &data) {
 
 		this->openCamera();
 		this->updateRoomInfo(data);
-		this->m_online_classroom_enter_controller->hideOnlineClassroomEnterDialog();
+		this->m_enter_controller->hideEnterDialog();
 		break;
 	}
 	toast->setInfoText(text);
@@ -213,7 +217,7 @@ void SOnlineClassroomController::handleCommandEndLesson(QJsonObject &data) {
 	this->m_lesson_connection = nullptr;
 	thread->exit(0);
 
-	this->m_online_classroom_white_board_controller->distroyPaintConnection();
+	this->m_white_board_controller->distroyPaintConnection();
 
 	this->m_user->setUserStatus(UserStatus::Free);
 
@@ -324,7 +328,7 @@ void SOnlineClassroomController::lessonBegin() {
 	data["course_id"] = this->m_room.courseId();
 	data["lesson_id"] = this->m_room.lessonId();
 	data["uid"] = this->m_user->uid();
-	this->m_online_classroom_white_board_controller->createPaintConnection(data);
+	this->m_white_board_controller->createPaintConnection(data);
 
 	ui.lesson_status_btn->setText("正在上课");
 	toast->show();
@@ -469,8 +473,8 @@ void SOnlineClassroomController::updateInSpeechLastTime() {
 		count = 0;
 	}
 
-	ui.time_text->setText(formatTime(count));
 	count++;
+	ui.time_text->setText(formatTime(count));
 
 	return;
 }

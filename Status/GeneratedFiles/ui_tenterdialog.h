@@ -1,13 +1,13 @@
 /********************************************************************************
-** Form generated from reading UI file 'sonlineclassroomenterdialog.ui'
+** Form generated from reading UI file 'tenterdialog.ui'
 **
 ** Created by: Qt User Interface Compiler version 5.13.1
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
 
-#ifndef UI_SONLINECLASSROOMENTERDIALOG_H
-#define UI_SONLINECLASSROOMENTERDIALOG_H
+#ifndef UI_TENTERDIALOG_H
+#define UI_TENTERDIALOG_H
 
 #include <QtCore/QVariant>
 #include <QtGui/QIcon>
@@ -26,7 +26,7 @@
 
 QT_BEGIN_NAMESPACE
 
-class Ui_SOnlineClassroomEnterDialog
+class Ui_TEnterDialog
 {
 public:
     QFrame *layout;
@@ -38,26 +38,24 @@ public:
     QSpacerItem *horizontalSpacer_4;
     QFrame *main_area;
     QGridLayout *gridLayout;
-    QSpacerItem *horizontalSpacer;
     QSpacerItem *verticalSpacer_2;
+    QSpacerItem *horizontalSpacer_3;
+    QSpacerItem *verticalSpacer;
+    QSpacerItem *horizontalSpacer;
     QPushButton *confirm_btn;
     QTabWidget *tabWidget;
     QWidget *mine_courses_tab;
     QGridLayout *gridLayout_3;
     QTableWidget *courses_table;
     QWidget *tab;
-    QSpacerItem *verticalSpacer;
-    QSpacerItem *horizontalSpacer_3;
-    QSpacerItem *horizontalSpacer_2;
-    QPushButton *refresh_btn;
 
-    void setupUi(QDialog *SOnlineClassroomEnterDialog)
+    void setupUi(QDialog *TEnterDialog)
     {
-        if (SOnlineClassroomEnterDialog->objectName().isEmpty())
-            SOnlineClassroomEnterDialog->setObjectName(QString::fromUtf8("SOnlineClassroomEnterDialog"));
-        SOnlineClassroomEnterDialog->resize(410, 260);
-        SOnlineClassroomEnterDialog->setStyleSheet(QString::fromUtf8(""));
-        layout = new QFrame(SOnlineClassroomEnterDialog);
+        if (TEnterDialog->objectName().isEmpty())
+            TEnterDialog->setObjectName(QString::fromUtf8("TEnterDialog"));
+        TEnterDialog->resize(410, 260);
+        TEnterDialog->setStyleSheet(QString::fromUtf8(""));
+        layout = new QFrame(TEnterDialog);
         layout->setObjectName(QString::fromUtf8("layout"));
         layout->setGeometry(QRect(0, 0, 410, 260));
         layout->setStyleSheet(QString::fromUtf8("QFrame#layout {\n"
@@ -142,13 +140,21 @@ public:
         gridLayout->setSpacing(0);
         gridLayout->setObjectName(QString::fromUtf8("gridLayout"));
         gridLayout->setContentsMargins(0, 0, 0, 0);
-        horizontalSpacer = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
-
-        gridLayout->addItem(horizontalSpacer, 2, 2, 1, 1);
-
         verticalSpacer_2 = new QSpacerItem(20, 15, QSizePolicy::Minimum, QSizePolicy::Fixed);
 
-        gridLayout->addItem(verticalSpacer_2, 1, 0, 1, 5);
+        gridLayout->addItem(verticalSpacer_2, 1, 0, 1, 4);
+
+        horizontalSpacer_3 = new QSpacerItem(20, 20, QSizePolicy::Fixed, QSizePolicy::Minimum);
+
+        gridLayout->addItem(horizontalSpacer_3, 2, 3, 1, 1);
+
+        verticalSpacer = new QSpacerItem(20, 15, QSizePolicy::Minimum, QSizePolicy::Fixed);
+
+        gridLayout->addItem(verticalSpacer, 3, 0, 1, 4);
+
+        horizontalSpacer = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        gridLayout->addItem(horizontalSpacer, 2, 1, 1, 1);
 
         confirm_btn = new QPushButton(main_area);
         confirm_btn->setObjectName(QString::fromUtf8("confirm_btn"));
@@ -170,7 +176,7 @@ public:
 "	background-color: #E6E6E6;\n"
 "}"));
 
-        gridLayout->addWidget(confirm_btn, 2, 3, 1, 1);
+        gridLayout->addWidget(confirm_btn, 2, 2, 1, 1);
 
         tabWidget = new QTabWidget(main_area);
         tabWidget->setObjectName(QString::fromUtf8("tabWidget"));
@@ -292,17 +298,14 @@ public:
         gridLayout_3->setObjectName(QString::fromUtf8("gridLayout_3"));
         gridLayout_3->setContentsMargins(0, 0, 0, 0);
         courses_table = new QTableWidget(mine_courses_tab);
-        if (courses_table->columnCount() < 3)
-            courses_table->setColumnCount(3);
+        if (courses_table->columnCount() < 2)
+            courses_table->setColumnCount(2);
         QTableWidgetItem *__qtablewidgetitem = new QTableWidgetItem();
         __qtablewidgetitem->setFont(font1);
         courses_table->setHorizontalHeaderItem(0, __qtablewidgetitem);
         QTableWidgetItem *__qtablewidgetitem1 = new QTableWidgetItem();
         __qtablewidgetitem1->setFont(font1);
         courses_table->setHorizontalHeaderItem(1, __qtablewidgetitem1);
-        QTableWidgetItem *__qtablewidgetitem2 = new QTableWidgetItem();
-        __qtablewidgetitem2->setFont(font1);
-        courses_table->setHorizontalHeaderItem(2, __qtablewidgetitem2);
         courses_table->setObjectName(QString::fromUtf8("courses_table"));
         QFont font2;
         font2.setPointSize(10);
@@ -320,7 +323,7 @@ public:
         courses_table->setSelectionBehavior(QAbstractItemView::SelectRows);
         courses_table->setShowGrid(false);
         courses_table->horizontalHeader()->setVisible(false);
-        courses_table->horizontalHeader()->setDefaultSectionSize(133);
+        courses_table->horizontalHeader()->setDefaultSectionSize(200);
         courses_table->verticalHeader()->setVisible(false);
 
         gridLayout_3->addWidget(courses_table, 0, 0, 1, 1);
@@ -330,81 +333,47 @@ public:
         tab->setObjectName(QString::fromUtf8("tab"));
         tabWidget->addTab(tab, QString());
 
-        gridLayout->addWidget(tabWidget, 0, 0, 1, 5);
-
-        verticalSpacer = new QSpacerItem(20, 15, QSizePolicy::Minimum, QSizePolicy::Fixed);
-
-        gridLayout->addItem(verticalSpacer, 3, 0, 1, 5);
-
-        horizontalSpacer_3 = new QSpacerItem(20, 20, QSizePolicy::Fixed, QSizePolicy::Minimum);
-
-        gridLayout->addItem(horizontalSpacer_3, 2, 4, 1, 1);
-
-        horizontalSpacer_2 = new QSpacerItem(20, 20, QSizePolicy::Fixed, QSizePolicy::Minimum);
-
-        gridLayout->addItem(horizontalSpacer_2, 2, 0, 1, 1);
-
-        refresh_btn = new QPushButton(main_area);
-        refresh_btn->setObjectName(QString::fromUtf8("refresh_btn"));
-        refresh_btn->setMinimumSize(QSize(90, 30));
-        refresh_btn->setMaximumSize(QSize(90, 30));
-        refresh_btn->setFont(font1);
-        refresh_btn->setCursor(QCursor(Qt::PointingHandCursor));
-        refresh_btn->setStyleSheet(QString::fromUtf8("QPushButton {\n"
-"	border-radius: 15px;\n"
-"	border: 1px solid #999999;\n"
-"	color: #999999;\n"
-"	background: none;\n"
-"}\n"
-"\n"
-"QPushButton:hover {\n"
-"	background-color: #E6E6E6;\n"
-"}"));
-
-        gridLayout->addWidget(refresh_btn, 2, 1, 1, 1);
+        gridLayout->addWidget(tabWidget, 0, 0, 1, 4);
 
 
         verticalLayout->addWidget(main_area);
 
 
-        retranslateUi(SOnlineClassroomEnterDialog);
-        QObject::connect(close_btn, SIGNAL(clicked()), SOnlineClassroomEnterDialog, SLOT(close()));
+        retranslateUi(TEnterDialog);
+        QObject::connect(close_btn, SIGNAL(clicked()), TEnterDialog, SLOT(close()));
 
         tabWidget->setCurrentIndex(0);
 
 
-        QMetaObject::connectSlotsByName(SOnlineClassroomEnterDialog);
+        QMetaObject::connectSlotsByName(TEnterDialog);
     } // setupUi
 
-    void retranslateUi(QDialog *SOnlineClassroomEnterDialog)
+    void retranslateUi(QDialog *TEnterDialog)
     {
-        SOnlineClassroomEnterDialog->setWindowTitle(QCoreApplication::translate("SOnlineClassroomEnterDialog", "Dialog", nullptr));
+        TEnterDialog->setWindowTitle(QCoreApplication::translate("TEnterDialog", "Dialog", nullptr));
 #if QT_CONFIG(tooltip)
-        close_btn->setToolTip(QCoreApplication::translate("SOnlineClassroomEnterDialog", "\345\205\263\351\227\255", nullptr));
+        close_btn->setToolTip(QCoreApplication::translate("TEnterDialog", "\345\205\263\351\227\255", nullptr));
 #endif // QT_CONFIG(tooltip)
 #if QT_CONFIG(whatsthis)
         close_btn->setWhatsThis(QString());
 #endif // QT_CONFIG(whatsthis)
         close_btn->setText(QString());
-        title_text->setText(QCoreApplication::translate("SOnlineClassroomEnterDialog", "\350\277\233\345\205\245\350\257\276\345\256\244", nullptr));
-        confirm_btn->setText(QCoreApplication::translate("SOnlineClassroomEnterDialog", "\350\277\233\345\205\245\350\257\276\345\256\244", nullptr));
+        title_text->setText(QCoreApplication::translate("TEnterDialog", "\345\210\233\345\273\272\350\257\276\345\256\244", nullptr));
+        confirm_btn->setText(QCoreApplication::translate("TEnterDialog", "\345\210\233\345\273\272\350\257\276\345\256\244", nullptr));
         QTableWidgetItem *___qtablewidgetitem = courses_table->horizontalHeaderItem(0);
-        ___qtablewidgetitem->setText(QCoreApplication::translate("SOnlineClassroomEnterDialog", "\350\257\276\347\250\213id", nullptr));
+        ___qtablewidgetitem->setText(QCoreApplication::translate("TEnterDialog", "\350\257\276\347\250\213id", nullptr));
         QTableWidgetItem *___qtablewidgetitem1 = courses_table->horizontalHeaderItem(1);
-        ___qtablewidgetitem1->setText(QCoreApplication::translate("SOnlineClassroomEnterDialog", "\350\257\276\347\250\213\345\220\215", nullptr));
-        QTableWidgetItem *___qtablewidgetitem2 = courses_table->horizontalHeaderItem(2);
-        ___qtablewidgetitem2->setText(QCoreApplication::translate("SOnlineClassroomEnterDialog", "\347\212\266\346\200\201", nullptr));
-        tabWidget->setTabText(tabWidget->indexOf(mine_courses_tab), QCoreApplication::translate("SOnlineClassroomEnterDialog", "\346\210\221\347\232\204\350\257\276\347\250\213", nullptr));
-        tabWidget->setTabText(tabWidget->indexOf(tab), QCoreApplication::translate("SOnlineClassroomEnterDialog", "\344\270\264\346\227\266\346\210\277\351\227\264", nullptr));
-        refresh_btn->setText(QCoreApplication::translate("SOnlineClassroomEnterDialog", "\345\210\267\346\226\260\345\210\227\350\241\250", nullptr));
+        ___qtablewidgetitem1->setText(QCoreApplication::translate("TEnterDialog", "\350\257\276\347\250\213\345\220\215", nullptr));
+        tabWidget->setTabText(tabWidget->indexOf(mine_courses_tab), QCoreApplication::translate("TEnterDialog", "\346\210\221\347\232\204\350\257\276\347\250\213", nullptr));
+        tabWidget->setTabText(tabWidget->indexOf(tab), QCoreApplication::translate("TEnterDialog", "\344\270\264\346\227\266\346\210\277\351\227\264", nullptr));
     } // retranslateUi
 
 };
 
 namespace Ui {
-    class SOnlineClassroomEnterDialog: public Ui_SOnlineClassroomEnterDialog {};
+    class TEnterDialog: public Ui_TEnterDialog {};
 } // namespace Ui
 
 QT_END_NAMESPACE
 
-#endif // UI_SONLINECLASSROOMENTERDIALOG_H
+#endif // UI_TENTERDIALOG_H

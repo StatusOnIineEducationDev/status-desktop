@@ -1,19 +1,19 @@
 #pragma once
 #include <QtWidgets/QMainWindow>
 #include <QMouseEvent>
-#include "ui_sonlineclassroomenterdialog.h"
+#include "ui_senterdialog.h"
 
 
-class SOnlineClassroomEnterDialog : public QDialog {
+class SEnterDialog : public QDialog {
 	Q_OBJECT
 
 public:
-	SOnlineClassroomEnterDialog(QWidget *parent = Q_NULLPTR);
-	~SOnlineClassroomEnterDialog();
-	const Ui::SOnlineClassroomEnterDialog& ui() const { return this->m_ui; };
+	SEnterDialog(QWidget *parent = Q_NULLPTR);
+	~SEnterDialog();
+	const Ui::SEnterDialog& ui() const { return this->m_ui; };
 
 private:
-	Ui::SOnlineClassroomEnterDialog m_ui;
+	Ui::SEnterDialog m_ui;
 
 	bool is_pressed;  // 鼠标左键是否按下
 	bool is_moving;  // 正在移动

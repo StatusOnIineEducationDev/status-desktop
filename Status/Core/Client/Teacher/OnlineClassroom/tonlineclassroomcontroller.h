@@ -4,9 +4,9 @@
 #include <QList>
 #include "tonlineclassroomwidget.h"
 #include "Core/Client/Teacher/tmainwindow.h"
-#include "Core/Client/Teacher/OnlineClassroom/Enter/tonlineclassroomentercontroller.h"
-#include "Core/Client/Teacher/OnlineClassroom/Interaction/tonlineclassroomwhiteboardcontroller.h"
-#include "Core/Client/Teacher/OnlineClassroom/Interaction/tonlineclassroomchatcontroller.h"
+#include "Core/Client/Teacher/OnlineClassroom/Enter/tentercontroller.h"
+#include "Core/Client/Teacher/OnlineClassroom/Interaction/twhiteboardcontroller.h"
+#include "Core/Client/Teacher/OnlineClassroom/Interaction/tchatcontroller.h"
 #include "Core/Hardware/camera.h"
 #include "Core/Network/socket.h"
 #include "Core/Client/conf.h"
@@ -52,9 +52,9 @@ protected:
 	void removeMemberFromInSpeech();
 
 
-	TOnlineClassroomEnterController *m_online_classroom_enter_controller;
-	TOnlineClassroomWhiteBoardController *m_online_classroom_white_board_controller;
-	TOnlineClassroomChatController *m_online_classroom_chat_controller;
+	TEnterController *m_enter_controller;
+	TWhiteBoardController *m_white_board_controller;
+	TChatController *m_chat_controller;
 
 	TOnlineClassroomWidget *m_online_classroom_widget;
 	THandleRaiseHandWidget *m_handle_raise_hand_widget;

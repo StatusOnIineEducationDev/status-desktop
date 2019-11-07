@@ -27,7 +27,7 @@ void TOnlineClassroomController::showOnlineClassroomWidget(TMainWindow *parent) 
 	// ¡ª¡ªÏÔÊ¾
 	parent->ui().widget_layout->addWidget(this->m_online_classroom_widget);
 	this->m_online_classroom_widget->show();
-	this->m_online_classroom_enter_controller->showOnlineClassroomEnterDialog(this->m_online_classroom_widget, course_list);
+	this->m_enter_controller->showEnterDialog(this->m_online_classroom_widget, course_list);
 
 	return;
 }
@@ -78,12 +78,12 @@ void TOnlineClassroomController::initAffiliatedWidget() {
 }
 
 void TOnlineClassroomController::initController() {
-	this->m_online_classroom_enter_controller = new TOnlineClassroomEnterController(this);
-	this->m_online_classroom_white_board_controller = new TOnlineClassroomWhiteBoardController(this->m_online_classroom_widget, this);
-	this->m_online_classroom_chat_controller = new TOnlineClassroomChatController(this->m_online_classroom_widget, this);
+	this->m_enter_controller = new TEnterController(this);
+	this->m_white_board_controller = new TWhiteBoardController(this->m_online_classroom_widget, this);
+	this->m_chat_controller = new TChatController(this->m_online_classroom_widget, this);
 
-	this->connect(m_online_classroom_enter_controller, &TOnlineClassroomEnterController::createLesson, this, &TOnlineClassroomController::createLesson);
-	this->connect(m_online_classroom_chat_controller, &TOnlineClassroomChatController::lessonConnectionDataReady, this, &TOnlineClassroomController::lessonConnectionSend);
+	this->connect(m_enter_controller, &TEnterController::createLesson, this, &TOnlineClassroomController::createLesson);
+	this->connect(m_chat_controller, &TChatController::lessonConnectionDataReady, this, &TOnlineClassroomController::lessonConnectionSend);
 
 	return;
 }
@@ -110,9 +110,9 @@ void TOnlineClassroomController::handleLessonConnectionRecv() {
 	case TransportCmd::CreateLesson: handleCommandCreateLesson(data); break;
 	case TransportCmd::BeginLesson: handleCommandBeginLesson(data); break;
 	case TransportCmd::EndLesson: handleCommandEndLesson(data); break;
-	case TransportCmd::SendChatContent: this->m_online_classroom_chat_controller->handleCommandSendChatContent(data); break;
-	case TransportCmd::RecvChatContent: this->m_online_classroom_chat_controller->handleCommandRecvChatContent(data); break;
-	case TransportCmd::ChatBan: this->m_online_classroom_chat_controller->handleCommandChatBan(data); break;
+	case TransportCmd::SendChatContent: this->m_chat_controller->handleCommandSendChatContent(data); break;
+	case TransportCmd::RecvChatContent: this->m_chat_controller->handleCommandRecvChatContent(data); break;
+	case TransportCmd::ChatBan: this->m_chat_controller->handleCommandChatBan(data); break;
 	case TransportCmd::RaiseHand: handleCommandRaiseHand(data); break;
 	case TransportCmd::ResultOfRaiseHand: handleCommandResultOfRaiseHand(data); break;
 	case TransportCmd::RemoveMemberFromInSpeech: handleCommandRemoveMemberFromInSpeech(data); break;
@@ -138,7 +138,7 @@ void TOnlineClassroomController::handleCommandCreateLesson(QJsonObject &data) {
 	this->m_user->setUserStatus(UserStatus::InClass);
 
 	this->openCamera();
-	this->m_online_classroom_enter_controller->hideOnlineClassroomEnterDialog();
+	this->m_enter_controller->hideEnterDialog();
 
 	//     ¡ª¡ªË¢ĞÂui
 	widget_ui.room_name_text->setText(this->m_room.roomName());
@@ -187,7 +187,7 @@ void TOnlineClassroomController::handleCommandEndLesson(QJsonObject &data) {
 	this->m_lesson_connection = nullptr;
 	thread->exit(0);
 
-	this->m_online_classroom_white_board_controller->distroyPaintConnection();
+	this->m_white_board_controller->distroyPaintConnection();
 
 	this->m_user->setUserStatus(UserStatus::Free);
 
@@ -283,7 +283,7 @@ void TOnlineClassroomController::beginLesson() {
 	data["course_id"] = this->m_room.courseId();
 	data["lesson_id"] = this->m_room.lessonId();
 	data["uid"] = this->m_user->uid();
-	this->m_online_classroom_white_board_controller->createPaintConnection(data);
+	this->m_white_board_controller->createPaintConnection(data);
 
 	return;
 }

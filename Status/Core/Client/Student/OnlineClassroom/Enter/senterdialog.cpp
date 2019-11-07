@@ -1,7 +1,7 @@
-#include "sonlineclassroomenterdialog.h"
+#include "senterdialog.h"
 
 
-SOnlineClassroomEnterDialog::SOnlineClassroomEnterDialog(QWidget *parent)
+SEnterDialog::SEnterDialog(QWidget *parent)
 	: QDialog(parent) {
 	m_ui.setupUi(this);
 	// 窗口属性设置
@@ -11,11 +11,11 @@ SOnlineClassroomEnterDialog::SOnlineClassroomEnterDialog(QWidget *parent)
 	// 信号绑定
 }
 
-SOnlineClassroomEnterDialog::~SOnlineClassroomEnterDialog() {
+SEnterDialog::~SEnterDialog() {
 
 }
 
-void SOnlineClassroomEnterDialog::mouseMoveEvent(QMouseEvent *event) {
+void SEnterDialog::mouseMoveEvent(QMouseEvent *event) {
 	// 计算鼠标当前位置
 	// 如果鼠标在title bar且左键按下，则执行移动
 	if (this->is_moving) {
@@ -25,7 +25,7 @@ void SOnlineClassroomEnterDialog::mouseMoveEvent(QMouseEvent *event) {
 	return;
 }
 
-void SOnlineClassroomEnterDialog::mousePressEvent(QMouseEvent *event) {
+void SEnterDialog::mousePressEvent(QMouseEvent *event) {
 	if (event->button() == Qt::LeftButton) {
 		this->is_pressed = true;
 		this->start_pos = QPoint(event->pos().x(), event->pos().y());
@@ -37,7 +37,7 @@ void SOnlineClassroomEnterDialog::mousePressEvent(QMouseEvent *event) {
 	return;
 }
 
-void SOnlineClassroomEnterDialog::mouseReleaseEvent(QMouseEvent *event) {
+void SEnterDialog::mouseReleaseEvent(QMouseEvent *event) {
 	this->is_pressed = false;
 	this->is_moving = false;
 

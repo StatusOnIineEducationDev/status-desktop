@@ -2,12 +2,11 @@
 
 enum TransportCmd {
 	TestCommand = 100,
-	ConcentrationData = 101,
+	ConcentrationFinalData = 101,
 	StudentCameraFrameData = 102,
 	CreateLesson = 103,
 	JoinInLesson = 104,
 	BeginLesson = 105,
-
 	PaintCommand = 106,
 	CreatePaintConnection = 107,
 	CreateCVServerConnection = 108,
@@ -52,4 +51,14 @@ enum AccountType {
 enum RaiseHandError {
 	NoError = 0,
 	InSpeech = 1
+};
+
+enum Emotion {
+	Angry = 0,
+	Disgust = 1,
+	Fear = 2,
+	Happy = 3,
+	Sad = 4,
+	Surprise = 5,
+	Neutral = 6
 };

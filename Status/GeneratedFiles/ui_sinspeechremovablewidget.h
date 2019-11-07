@@ -140,7 +140,7 @@ public:
         end_btn->setToolTip(QCoreApplication::translate("SInSpeechRemovableWidget", "\344\270\255\346\255\242\345\217\221\350\250\200", nullptr));
 #endif // QT_CONFIG(tooltip)
         end_btn->setText(QString());
-        time_text->setText(QCoreApplication::translate("SInSpeechRemovableWidget", "0", nullptr));
+        time_text->setText(QCoreApplication::translate("SInSpeechRemovableWidget", "00:00:00", nullptr));
         label->setText(QCoreApplication::translate("SInSpeechRemovableWidget", "\345\217\221\350\250\200\344\270\255", nullptr));
     } // retranslateUi
 

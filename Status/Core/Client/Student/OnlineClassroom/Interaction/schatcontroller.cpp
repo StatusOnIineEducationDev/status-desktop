@@ -1,20 +1,24 @@
-#include "sonlineclassroomchatcontroller.h"
+#include "schatcontroller.h"
 
 
-SOnlineClassroomChatController::SOnlineClassroomChatController(SOnlineClassroomWidget *online_classroom_widget, QObject *parent)
+SChatController::SChatController(
+	SOnlineClassroomWidget *online_classroom_widget, QObject *parent)
 	: QObject(parent), m_online_classroom_widget(online_classroom_widget) {
 	Ui::SOnlineClassroomWidget ui = this->m_online_classroom_widget->ui();
 
-	this->connect(ui.flexible_frame_btn, &QPushButton::clicked, this, &SOnlineClassroomChatController::showFlexibleFrame);
-	this->connect(ui.send_btn, &QPushButton::clicked, this, &SOnlineClassroomChatController::sendChatContent);
-	this->connect(ui.chat_clear_btn, &QPushButton::clicked, this, &SOnlineClassroomChatController::chatClear);
+	this->connect(ui.flexible_frame_btn, &QPushButton::clicked, 
+		this, &SChatController::showFlexibleFrame);
+	this->connect(ui.send_btn, &QPushButton::clicked, 
+		this, &SChatController::sendChatContent);
+	this->connect(ui.chat_clear_btn, &QPushButton::clicked, 
+		this, &SChatController::chatClear);
 }
 
-SOnlineClassroomChatController::~SOnlineClassroomChatController() {
+SChatController::~SChatController() {
 
 }
 
-void SOnlineClassroomChatController::handleCommandSendChatContent(QJsonObject &data) {
+void SChatController::handleCommandSendChatContent(QJsonObject &data) {
 	Ui::SOnlineClassroomWidget ui = this->m_online_classroom_widget->ui();
 	QListWidgetItem *chat_item = new QListWidgetItem;
 	CChatItemMineWidget *chat_item_widget = new CChatItemMineWidget(ui.chat_view);
@@ -70,7 +74,7 @@ void SOnlineClassroomChatController::handleCommandSendChatContent(QJsonObject &d
 	return;
 }
 
-void SOnlineClassroomChatController::handleCommandRecvChatContent(QJsonObject &data) {
+void SChatController::handleCommandRecvChatContent(QJsonObject &data) {
 	Ui::SOnlineClassroomWidget ui = this->m_online_classroom_widget->ui();
 	QListWidgetItem *chat_item = new QListWidgetItem;
 	CChatItemOtherWidget *chat_item_widget = new CChatItemOtherWidget(ui.chat_view);
@@ -118,7 +122,7 @@ void SOnlineClassroomChatController::handleCommandRecvChatContent(QJsonObject &d
 	return;
 }
 
-void SOnlineClassroomChatController::handleCommandChatBan(QJsonObject &data) {
+void SChatController::handleCommandChatBan(QJsonObject &data) {
 	Ui::SOnlineClassroomWidget ui = this->m_online_classroom_widget->ui();
 
 	switch (ChatStatus(data["chat_status"].toInt())) {
@@ -133,27 +137,27 @@ void SOnlineClassroomChatController::handleCommandChatBan(QJsonObject &data) {
 	return;
 }
 
-void SOnlineClassroomChatController::showFlexibleFrame() {
+void SChatController::showFlexibleFrame() {
 	Ui::SOnlineClassroomWidget ui = this->m_online_classroom_widget->ui();
 
 	ui.flexible_main_area->show();
-	this->disconnect(ui.flexible_frame_btn, &QPushButton::clicked, this, &SOnlineClassroomChatController::showFlexibleFrame);
-	this->connect(ui.flexible_frame_btn, &QPushButton::clicked, this, &SOnlineClassroomChatController::hideFlexibleFrame);
+	this->disconnect(ui.flexible_frame_btn, &QPushButton::clicked, this, &SChatController::showFlexibleFrame);
+	this->connect(ui.flexible_frame_btn, &QPushButton::clicked, this, &SChatController::hideFlexibleFrame);
 
 	return;
 }
 
-void SOnlineClassroomChatController::hideFlexibleFrame() {
+void SChatController::hideFlexibleFrame() {
 	Ui::SOnlineClassroomWidget ui = this->m_online_classroom_widget->ui();
 
 	ui.flexible_main_area->hide();
-	this->disconnect(ui.flexible_frame_btn, &QPushButton::clicked, this, &SOnlineClassroomChatController::hideFlexibleFrame);
-	this->connect(ui.flexible_frame_btn, &QPushButton::clicked, this, &SOnlineClassroomChatController::showFlexibleFrame);
+	this->disconnect(ui.flexible_frame_btn, &QPushButton::clicked, this, &SChatController::hideFlexibleFrame);
+	this->connect(ui.flexible_frame_btn, &QPushButton::clicked, this, &SChatController::showFlexibleFrame);
 
 	return;
 }
 
-void SOnlineClassroomChatController::sendChatContent() {
+void SChatController::sendChatContent() {
 	Ui::SOnlineClassroomWidget ui = this->m_online_classroom_widget->ui();
 	QJsonObject request_json_obj;
 	Toast *toast;
@@ -176,7 +180,7 @@ void SOnlineClassroomChatController::sendChatContent() {
 	return;
 }
 
-void SOnlineClassroomChatController::chatClear() {
+void SChatController::chatClear() {
 	Ui::SOnlineClassroomWidget ui = this->m_online_classroom_widget->ui();
 
 	ui.chat_view->clear();

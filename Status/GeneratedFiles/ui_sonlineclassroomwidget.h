@@ -93,24 +93,24 @@ public:
     QSpacerItem *verticalSpacer_3;
     QFrame *frame_6;
     QGridLayout *gridLayout_6;
-    QFrame *main_info_frame;
+    QFrame *final_data_frame;
     QGridLayout *gridLayout_13;
     QLabel *label_16;
-    QLabel *concentration_main_text;
+    QLabel *concentration_value_text;
     QLabel *label_22;
     QLabel *label_30;
     QLabel *label_29;
-    QLabel *fatigue_main_text;
-    QLabel *toward_main_text;
-    QLabel *emotion_main_text;
-    QFrame *base_info_frame;
+    QLabel *fatigue_value_text;
+    QLabel *toward_score_text;
+    QLabel *emotion_score_text;
+    QFrame *real_time_data_frame;
     QFormLayout *formLayout;
     QLabel *label_25;
     QLabel *emotion_pic;
     QLabel *label_27;
     QLabel *label_28;
     QLabel *label_33;
-    QLabel *label_35;
+    QLabel *highest_concentration_text;
     QLabel *label_34;
     QLabel *emotion_most_pic;
     QFrame *emotion_report_percentage_chart;
@@ -209,7 +209,7 @@ public:
     QGridLayout *gridLayout_8;
     QLabel *label_18;
     QLabel *room_name_text;
-    QLabel *concentration_text;
+    QLabel *concentration_min_text;
     QLabel *label_4;
     QLabel *label_15;
     QLabel *label_21;
@@ -1213,20 +1213,20 @@ public:
         gridLayout_6 = new QGridLayout(frame_6);
         gridLayout_6->setObjectName(QString::fromUtf8("gridLayout_6"));
         gridLayout_6->setContentsMargins(0, 0, 0, 0);
-        main_info_frame = new QFrame(frame_6);
-        main_info_frame->setObjectName(QString::fromUtf8("main_info_frame"));
-        main_info_frame->setStyleSheet(QString::fromUtf8("QFrame#main_info_frame {\n"
+        final_data_frame = new QFrame(frame_6);
+        final_data_frame->setObjectName(QString::fromUtf8("final_data_frame"));
+        final_data_frame->setStyleSheet(QString::fromUtf8("QFrame#final_data_frame {\n"
 "	background: none;\n"
 "	border: 2px solid #1296db;\n"
 "	border-top: none;\n"
 "	border-right: none;\n"
 "	border-bottom: none;\n"
 "}"));
-        main_info_frame->setFrameShape(QFrame::StyledPanel);
-        main_info_frame->setFrameShadow(QFrame::Raised);
-        gridLayout_13 = new QGridLayout(main_info_frame);
+        final_data_frame->setFrameShape(QFrame::StyledPanel);
+        final_data_frame->setFrameShadow(QFrame::Raised);
+        gridLayout_13 = new QGridLayout(final_data_frame);
         gridLayout_13->setObjectName(QString::fromUtf8("gridLayout_13"));
-        label_16 = new QLabel(main_info_frame);
+        label_16 = new QLabel(final_data_frame);
         label_16->setObjectName(QString::fromUtf8("label_16"));
         label_16->setMinimumSize(QSize(60, 0));
         label_16->setMaximumSize(QSize(60, 16777215));
@@ -1235,23 +1235,23 @@ public:
 
         gridLayout_13->addWidget(label_16, 0, 0, 1, 1);
 
-        concentration_main_text = new QLabel(main_info_frame);
-        concentration_main_text->setObjectName(QString::fromUtf8("concentration_main_text"));
-        concentration_main_text->setMinimumSize(QSize(60, 40));
-        concentration_main_text->setMaximumSize(QSize(60, 40));
+        concentration_value_text = new QLabel(final_data_frame);
+        concentration_value_text->setObjectName(QString::fromUtf8("concentration_value_text"));
+        concentration_value_text->setMinimumSize(QSize(60, 40));
+        concentration_value_text->setMaximumSize(QSize(60, 40));
         QFont font3;
         font3.setFamily(QString::fromUtf8("\345\276\256\350\275\257\351\233\205\351\273\221"));
         font3.setPointSize(14);
         font3.setBold(true);
         font3.setWeight(75);
-        concentration_main_text->setFont(font3);
-        concentration_main_text->setStyleSheet(QString::fromUtf8("color: #333333;"));
-        concentration_main_text->setScaledContents(true);
-        concentration_main_text->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter);
+        concentration_value_text->setFont(font3);
+        concentration_value_text->setStyleSheet(QString::fromUtf8("color: #333333;"));
+        concentration_value_text->setScaledContents(true);
+        concentration_value_text->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter);
 
-        gridLayout_13->addWidget(concentration_main_text, 1, 0, 1, 1);
+        gridLayout_13->addWidget(concentration_value_text, 1, 0, 1, 1);
 
-        label_22 = new QLabel(main_info_frame);
+        label_22 = new QLabel(final_data_frame);
         label_22->setObjectName(QString::fromUtf8("label_22"));
         label_22->setMinimumSize(QSize(60, 0));
         label_22->setMaximumSize(QSize(60, 16777215));
@@ -1260,7 +1260,7 @@ public:
 
         gridLayout_13->addWidget(label_22, 2, 0, 1, 1);
 
-        label_30 = new QLabel(main_info_frame);
+        label_30 = new QLabel(final_data_frame);
         label_30->setObjectName(QString::fromUtf8("label_30"));
         label_30->setMinimumSize(QSize(60, 0));
         label_30->setMaximumSize(QSize(60, 16777215));
@@ -1269,7 +1269,7 @@ public:
 
         gridLayout_13->addWidget(label_30, 2, 1, 1, 1);
 
-        label_29 = new QLabel(main_info_frame);
+        label_29 = new QLabel(final_data_frame);
         label_29->setObjectName(QString::fromUtf8("label_29"));
         label_29->setMinimumSize(QSize(60, 0));
         label_29->setMaximumSize(QSize(60, 16777215));
@@ -1278,56 +1278,56 @@ public:
 
         gridLayout_13->addWidget(label_29, 2, 2, 1, 1);
 
-        fatigue_main_text = new QLabel(main_info_frame);
-        fatigue_main_text->setObjectName(QString::fromUtf8("fatigue_main_text"));
-        fatigue_main_text->setMinimumSize(QSize(60, 40));
-        fatigue_main_text->setMaximumSize(QSize(60, 40));
-        fatigue_main_text->setFont(font3);
-        fatigue_main_text->setStyleSheet(QString::fromUtf8("color: #333333;"));
-        fatigue_main_text->setScaledContents(true);
-        fatigue_main_text->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter);
+        fatigue_value_text = new QLabel(final_data_frame);
+        fatigue_value_text->setObjectName(QString::fromUtf8("fatigue_value_text"));
+        fatigue_value_text->setMinimumSize(QSize(60, 40));
+        fatigue_value_text->setMaximumSize(QSize(60, 40));
+        fatigue_value_text->setFont(font3);
+        fatigue_value_text->setStyleSheet(QString::fromUtf8("color: #333333;"));
+        fatigue_value_text->setScaledContents(true);
+        fatigue_value_text->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter);
 
-        gridLayout_13->addWidget(fatigue_main_text, 3, 0, 1, 1);
+        gridLayout_13->addWidget(fatigue_value_text, 3, 0, 1, 1);
 
-        toward_main_text = new QLabel(main_info_frame);
-        toward_main_text->setObjectName(QString::fromUtf8("toward_main_text"));
-        toward_main_text->setMinimumSize(QSize(60, 40));
-        toward_main_text->setMaximumSize(QSize(60, 40));
-        toward_main_text->setFont(font3);
-        toward_main_text->setStyleSheet(QString::fromUtf8("color: #333333;"));
-        toward_main_text->setScaledContents(true);
-        toward_main_text->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter);
+        toward_score_text = new QLabel(final_data_frame);
+        toward_score_text->setObjectName(QString::fromUtf8("toward_score_text"));
+        toward_score_text->setMinimumSize(QSize(60, 40));
+        toward_score_text->setMaximumSize(QSize(60, 40));
+        toward_score_text->setFont(font3);
+        toward_score_text->setStyleSheet(QString::fromUtf8("color: #333333;"));
+        toward_score_text->setScaledContents(true);
+        toward_score_text->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter);
 
-        gridLayout_13->addWidget(toward_main_text, 3, 1, 1, 1);
+        gridLayout_13->addWidget(toward_score_text, 3, 1, 1, 1);
 
-        emotion_main_text = new QLabel(main_info_frame);
-        emotion_main_text->setObjectName(QString::fromUtf8("emotion_main_text"));
-        emotion_main_text->setMinimumSize(QSize(60, 40));
-        emotion_main_text->setMaximumSize(QSize(60, 40));
-        emotion_main_text->setFont(font3);
-        emotion_main_text->setStyleSheet(QString::fromUtf8("color: #333333;"));
-        emotion_main_text->setScaledContents(true);
-        emotion_main_text->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter);
+        emotion_score_text = new QLabel(final_data_frame);
+        emotion_score_text->setObjectName(QString::fromUtf8("emotion_score_text"));
+        emotion_score_text->setMinimumSize(QSize(60, 40));
+        emotion_score_text->setMaximumSize(QSize(60, 40));
+        emotion_score_text->setFont(font3);
+        emotion_score_text->setStyleSheet(QString::fromUtf8("color: #333333;"));
+        emotion_score_text->setScaledContents(true);
+        emotion_score_text->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter);
 
-        gridLayout_13->addWidget(emotion_main_text, 3, 2, 1, 1);
+        gridLayout_13->addWidget(emotion_score_text, 3, 2, 1, 1);
 
 
-        gridLayout_6->addWidget(main_info_frame, 0, 0, 2, 1);
+        gridLayout_6->addWidget(final_data_frame, 0, 0, 2, 1);
 
-        base_info_frame = new QFrame(frame_6);
-        base_info_frame->setObjectName(QString::fromUtf8("base_info_frame"));
-        base_info_frame->setStyleSheet(QString::fromUtf8("QFrame#base_info_frame {\n"
+        real_time_data_frame = new QFrame(frame_6);
+        real_time_data_frame->setObjectName(QString::fromUtf8("real_time_data_frame"));
+        real_time_data_frame->setStyleSheet(QString::fromUtf8("QFrame#real_time_data_frame {\n"
 "	background: none;\n"
 "	border: 2px dashed #1296db;\n"
 "	border-top: none;\n"
 "	border-right: none;\n"
 "	border-bottom: none;\n"
 "}"));
-        base_info_frame->setFrameShape(QFrame::StyledPanel);
-        base_info_frame->setFrameShadow(QFrame::Raised);
-        formLayout = new QFormLayout(base_info_frame);
+        real_time_data_frame->setFrameShape(QFrame::StyledPanel);
+        real_time_data_frame->setFrameShadow(QFrame::Raised);
+        formLayout = new QFormLayout(real_time_data_frame);
         formLayout->setObjectName(QString::fromUtf8("formLayout"));
-        label_25 = new QLabel(base_info_frame);
+        label_25 = new QLabel(real_time_data_frame);
         label_25->setObjectName(QString::fromUtf8("label_25"));
         label_25->setMinimumSize(QSize(100, 40));
         label_25->setMaximumSize(QSize(100, 40));
@@ -1336,7 +1336,7 @@ public:
 
         formLayout->setWidget(0, QFormLayout::LabelRole, label_25);
 
-        emotion_pic = new QLabel(base_info_frame);
+        emotion_pic = new QLabel(real_time_data_frame);
         emotion_pic->setObjectName(QString::fromUtf8("emotion_pic"));
         emotion_pic->setMinimumSize(QSize(40, 40));
         emotion_pic->setMaximumSize(QSize(40, 40));
@@ -1352,7 +1352,7 @@ public:
 
         formLayout->setWidget(0, QFormLayout::FieldRole, emotion_pic);
 
-        label_27 = new QLabel(base_info_frame);
+        label_27 = new QLabel(real_time_data_frame);
         label_27->setObjectName(QString::fromUtf8("label_27"));
         label_27->setMinimumSize(QSize(100, 40));
         label_27->setMaximumSize(QSize(100, 40));
@@ -1361,7 +1361,7 @@ public:
 
         formLayout->setWidget(1, QFormLayout::LabelRole, label_27);
 
-        label_28 = new QLabel(base_info_frame);
+        label_28 = new QLabel(real_time_data_frame);
         label_28->setObjectName(QString::fromUtf8("label_28"));
         label_28->setMinimumSize(QSize(40, 40));
         label_28->setMaximumSize(QSize(40, 40));
@@ -1372,7 +1372,7 @@ public:
 
         formLayout->setWidget(1, QFormLayout::FieldRole, label_28);
 
-        label_33 = new QLabel(base_info_frame);
+        label_33 = new QLabel(real_time_data_frame);
         label_33->setObjectName(QString::fromUtf8("label_33"));
         label_33->setMinimumSize(QSize(100, 40));
         label_33->setMaximumSize(QSize(100, 40));
@@ -1381,18 +1381,18 @@ public:
 
         formLayout->setWidget(2, QFormLayout::LabelRole, label_33);
 
-        label_35 = new QLabel(base_info_frame);
-        label_35->setObjectName(QString::fromUtf8("label_35"));
-        label_35->setMinimumSize(QSize(40, 40));
-        label_35->setMaximumSize(QSize(40, 40));
-        label_35->setFont(font4);
-        label_35->setStyleSheet(QString::fromUtf8("color: #333333;"));
-        label_35->setScaledContents(true);
-        label_35->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter);
+        highest_concentration_text = new QLabel(real_time_data_frame);
+        highest_concentration_text->setObjectName(QString::fromUtf8("highest_concentration_text"));
+        highest_concentration_text->setMinimumSize(QSize(40, 40));
+        highest_concentration_text->setMaximumSize(QSize(40, 40));
+        highest_concentration_text->setFont(font4);
+        highest_concentration_text->setStyleSheet(QString::fromUtf8("color: #333333;"));
+        highest_concentration_text->setScaledContents(true);
+        highest_concentration_text->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter);
 
-        formLayout->setWidget(2, QFormLayout::FieldRole, label_35);
+        formLayout->setWidget(2, QFormLayout::FieldRole, highest_concentration_text);
 
-        label_34 = new QLabel(base_info_frame);
+        label_34 = new QLabel(real_time_data_frame);
         label_34->setObjectName(QString::fromUtf8("label_34"));
         label_34->setMinimumSize(QSize(100, 40));
         label_34->setMaximumSize(QSize(100, 40));
@@ -1401,7 +1401,7 @@ public:
 
         formLayout->setWidget(3, QFormLayout::LabelRole, label_34);
 
-        emotion_most_pic = new QLabel(base_info_frame);
+        emotion_most_pic = new QLabel(real_time_data_frame);
         emotion_most_pic->setObjectName(QString::fromUtf8("emotion_most_pic"));
         emotion_most_pic->setMinimumSize(QSize(40, 40));
         emotion_most_pic->setMaximumSize(QSize(40, 40));
@@ -1413,7 +1413,7 @@ public:
         formLayout->setWidget(3, QFormLayout::FieldRole, emotion_most_pic);
 
 
-        gridLayout_6->addWidget(base_info_frame, 2, 0, 1, 1);
+        gridLayout_6->addWidget(real_time_data_frame, 2, 0, 1, 1);
 
         emotion_report_percentage_chart = new QFrame(frame_6);
         emotion_report_percentage_chart->setObjectName(QString::fromUtf8("emotion_report_percentage_chart"));
@@ -2397,17 +2397,17 @@ public:
 
         gridLayout_8->addWidget(room_name_text, 1, 0, 1, 7);
 
-        concentration_text = new QLabel(scrollAreaWidgetContents);
-        concentration_text->setObjectName(QString::fromUtf8("concentration_text"));
-        concentration_text->setFont(font1);
-        concentration_text->setStyleSheet(QString::fromUtf8("QLabel {\n"
+        concentration_min_text = new QLabel(scrollAreaWidgetContents);
+        concentration_min_text->setObjectName(QString::fromUtf8("concentration_min_text"));
+        concentration_min_text->setFont(font1);
+        concentration_min_text->setStyleSheet(QString::fromUtf8("QLabel {\n"
 "	border: none;\n"
 "	background: none;\n"
 "	color: #999999;\n"
 "}"));
-        concentration_text->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter);
+        concentration_min_text->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter);
 
-        gridLayout_8->addWidget(concentration_text, 11, 3, 1, 4);
+        gridLayout_8->addWidget(concentration_min_text, 11, 3, 1, 4);
 
         label_4 = new QLabel(scrollAreaWidgetContents);
         label_4->setObjectName(QString::fromUtf8("label_4"));
@@ -2758,21 +2758,21 @@ public:
         label_37->setText(QCoreApplication::translate("SOnlineClassroomWidget", "\345\217\221\350\250\200\344\270\255", nullptr));
         function_tabWidget->setTabText(function_tabWidget->indexOf(board_tab), QCoreApplication::translate("SOnlineClassroomWidget", "\347\224\273\346\235\277", nullptr));
         label_16->setText(QCoreApplication::translate("SOnlineClassroomWidget", "\344\270\223\346\263\250\345\272\246", nullptr));
-        concentration_main_text->setText(QCoreApplication::translate("SOnlineClassroomWidget", "99", nullptr));
+        concentration_value_text->setText(QCoreApplication::translate("SOnlineClassroomWidget", "-", nullptr));
         label_22->setText(QCoreApplication::translate("SOnlineClassroomWidget", "\347\226\262\345\212\263\345\272\246", nullptr));
         label_30->setText(QCoreApplication::translate("SOnlineClassroomWidget", "\346\234\235\345\220\221\350\257\204\345\210\206", nullptr));
         label_29->setText(QCoreApplication::translate("SOnlineClassroomWidget", "\350\241\250\346\203\205\350\257\204\345\210\206", nullptr));
-        fatigue_main_text->setText(QCoreApplication::translate("SOnlineClassroomWidget", "99", nullptr));
-        toward_main_text->setText(QCoreApplication::translate("SOnlineClassroomWidget", "99", nullptr));
-        emotion_main_text->setText(QCoreApplication::translate("SOnlineClassroomWidget", "99", nullptr));
+        fatigue_value_text->setText(QCoreApplication::translate("SOnlineClassroomWidget", "-", nullptr));
+        toward_score_text->setText(QCoreApplication::translate("SOnlineClassroomWidget", "-", nullptr));
+        emotion_score_text->setText(QCoreApplication::translate("SOnlineClassroomWidget", "-", nullptr));
         label_25->setText(QCoreApplication::translate("SOnlineClassroomWidget", "\350\241\250\346\203\205:", nullptr));
-        emotion_pic->setText(QString());
+        emotion_pic->setText(QCoreApplication::translate("SOnlineClassroomWidget", "-", nullptr));
         label_27->setText(QCoreApplication::translate("SOnlineClassroomWidget", "\351\235\242\351\203\250\346\234\235\345\220\221:", nullptr));
-        label_28->setText(QCoreApplication::translate("SOnlineClassroomWidget", "99", nullptr));
+        label_28->setText(QCoreApplication::translate("SOnlineClassroomWidget", "-", nullptr));
         label_33->setText(QCoreApplication::translate("SOnlineClassroomWidget", "\346\234\200\351\253\230\344\270\223\346\263\250\345\272\246:", nullptr));
-        label_35->setText(QCoreApplication::translate("SOnlineClassroomWidget", "99", nullptr));
+        highest_concentration_text->setText(QCoreApplication::translate("SOnlineClassroomWidget", "-", nullptr));
         label_34->setText(QCoreApplication::translate("SOnlineClassroomWidget", "\345\207\272\347\216\260\346\234\200\345\244\232\347\232\204\350\241\250\346\203\205:", nullptr));
-        emotion_most_pic->setText(QString());
+        emotion_most_pic->setText(QCoreApplication::translate("SOnlineClassroomWidget", "-", nullptr));
         neutral_percent_text->setText(QCoreApplication::translate("SOnlineClassroomWidget", "-", nullptr));
         fear_title_text->setText(QCoreApplication::translate("SOnlineClassroomWidget", "\346\201\220\346\203\247", nullptr));
         sad_percent_text->setText(QCoreApplication::translate("SOnlineClassroomWidget", "-", nullptr));
@@ -2836,7 +2836,7 @@ public:
         pushButton_7->setText(QString());
         label_18->setText(QCoreApplication::translate("SOnlineClassroomWidget", "    \350\257\276\345\240\202\345\217\267\357\274\232", nullptr));
         room_name_text->setText(QCoreApplication::translate("SOnlineClassroomWidget", "-", nullptr));
-        concentration_text->setText(QCoreApplication::translate("SOnlineClassroomWidget", "-", nullptr));
+        concentration_min_text->setText(QCoreApplication::translate("SOnlineClassroomWidget", "-", nullptr));
         label_4->setText(QCoreApplication::translate("SOnlineClassroomWidget", "    \345\267\262\350\277\233\350\241\214\357\274\232", nullptr));
         label_15->setText(QCoreApplication::translate("SOnlineClassroomWidget", "    \344\270\223\346\263\250\345\272\246\357\274\232", nullptr));
         label_21->setText(QCoreApplication::translate("SOnlineClassroomWidget", "    \346\216\247\345\210\266\347\224\273\346\235\277", nullptr));
