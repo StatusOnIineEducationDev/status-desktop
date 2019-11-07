@@ -25,8 +25,8 @@ RoleBase::RoleBase(const QString &uid, const QString &username, const Gender &ge
 
 }
 
-Concentration::Concentration(const int &value, const QDateTime &datetime) 
-	: m_value(value), m_datetime(datetime) {
+Concentration::Concentration(const int &concentration_value, const QDateTime &datetime)
+	: m_concentration_value(concentration_value), m_datetime(datetime) {
 
 }
 

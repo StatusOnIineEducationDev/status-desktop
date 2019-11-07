@@ -50,10 +50,24 @@
         <file>Resources/material/button/normal.png</file>
         <file>Resources/material/button/turn_off.png</file>
         <file>Resources/material/button/turn_on.png</file>
+        <file>Resources/material/button/left.png</file>
+        <file>Resources/material/button/right.png</file>
+        <file>Resources/material/button/hide.png</file>
+        <file>Resources/material/button/show.png</file>
+        <file>Resources/material/button/send.png</file>
+        <file>Resources/material/button/chat_ban.png</file>
+        <file>Resources/material/button/chat_clear.png</file>
+        <file>Resources/material/button/raise_hand.png</file>
+        <file>Resources/material/button/exit.png</file>
+        <file>Resources/material/button/remove.png</file>
+        <file>Resources/material/button/stop.png</file>
+        <file>Resources/material/button/raise_hand_new.png</file>
     </qresource>
     <qresource prefix="/shadow">
         <file>Resources/material/shadow/980x680_shadow.png</file>
         <file>Resources/material/shadow/400x250_shadow.png</file>
+        <file>Resources/material/shadow/220x270_shadow.png</file>
+        <file>Resources/material/shadow/140x45_shadow.png</file>
     </qresource>
     <qresource prefix="/pic">
         <file>Resources/material/pic/student.png</file>
@@ -69,6 +83,7 @@
         <file>Resources/material/pic/offline.png</file>
         <file>Resources/material/pic/online.png</file>
         <file>Resources/material/pic/waiting.png</file>
+        <file>Resources/material/pic/writing.png</file>
     </qresource>
     <qresource prefix="/cursor">
         <file>Resources/material/cursor/rubber.png</file>

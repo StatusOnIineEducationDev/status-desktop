@@ -5,6 +5,7 @@
 #include <QDatetime>
 #include <QList>
 #include <QVector>
+#include "Core/Client/online_education.h" 
 
 
 class LessonBase {
@@ -68,22 +69,26 @@ protected:
 class Concentration {
 public:
 	Concentration() {};
-	Concentration(const int &value, const QDateTime &datetime);
+	Concentration(const int &concentration_value, const QDateTime &datetime);
 	virtual ~Concentration() {};
-	void setValue(const int &value) { this->m_value = value; return; };
+	void setConcentrationValue(const int &concentration_value) { this->m_concentration_value = concentration_value; return; };
+	void setFatigueValue(const int &fatigue_value) { this->m_fatigue_value = fatigue_value; return; };
 	void setDateTime(const QDateTime &datetime) { this->m_datetime = datetime; return; };
-	const int& value() const { return this->m_value; };
+	const int& concentrationValue() const { return this->m_concentration_value; };
+	const int& fatigueValue() const { return this->m_fatigue_value; };
 	const QDateTime& datetime() const { return this->m_datetime; };
 
 protected:
-	int m_value;  // 专注度数值 
+	int m_concentration_value;  // 专注度数值
+	int m_fatigue_value;  // 疲劳度数值
 	QDateTime m_datetime;  // 记录时间
 };
 
 
 class Lesson : public LessonBase {
 public:
-	Lesson(const QString &lesson_id, const QDateTime &start_datetime, const QDateTime &end_datetime, const RoleBase &teacher, const QList<RoleBase> &students_list, const QList<Concentration> &concentrations_list,
+	Lesson(const QString &lesson_id, const QDateTime &start_datetime, const QDateTime &end_datetime, 
+		const RoleBase &teacher, const QList<RoleBase> &students_list, const QList<Concentration> &concentrations_list,
 		const QMap<QString, int> &emotions_statistic_map);
 	virtual ~Lesson() {};
 	void setTeacher(RoleBase &teacher) { this->m_teacher = teacher; return; };
@@ -138,25 +143,35 @@ protected:
 class Room {
 public:
 	Room() {};
-	Room(const QString &room_name, const QString &course_id, const QString &lesson_id, const QString &teacher_id, const QString &teacher_name);
+	Room(const QString &room_name, const QString &course_id, const QString &lesson_id, 
+		const QString &teacher_id, const QString &teacher_name);
 	~Room();
 	void setRoomName(const QString &room_name) { this->m_room_name = room_name; return; };
-	void setCourseId(const QString &course_id) { this->m_course_id = course_id; };
+	void setCourseId(const QString &course_id) { this->m_course_id = course_id; return; };
 	void setLessonId(const QString &lesson_id) { this->m_lesson_id = lesson_id; return; };
 	void setTeacherId(const QString &teacher_id) { this->m_teacher_id = teacher_id; return; };
 	void setTeacherName(const QString &teacher_name) { this->m_teacher_name = teacher_name; return; };
-	QString& roomName() { return this->m_room_name; };
-	QString& courseId() { return this->m_course_id; };
-	QString& lessonId() { return this->m_lesson_id; };
-	QString& teacherId() { return this->m_teacher_id; };
-	QString& teacherName() { return this->m_teacher_name; };
-
+	void setCreateTime(const QDateTime &create_time) { this->m_create_time = create_time; return; };
+	void setBeginTime(const QDateTime &begin_time) { this->m_begin_time = begin_time; return; };
+	void setStatus(const CourseStatus &course_status) { this->m_course_status = course_status; return; }
+	const QString& roomName() const { return this->m_room_name; };
+	const QString& courseId() const { return this->m_course_id; };
+	const QString& lessonId() const { return this->m_lesson_id; };
+	const QString& teacherId() const { return this->m_teacher_id; };
+	const QString& teacherName() const { return this->m_teacher_name; };
+	const QDateTime& createTime() const { return this->m_create_time; };
+	const QDateTime& beginTime() const { return this->m_begin_time; };
+	const CourseStatus& courseStatus() const { return this->m_course_status; };
+	
 protected:
-	QString m_room_name;
-	QString m_course_id;
-	QString m_lesson_id;
-	QString m_teacher_id;
-	QString m_teacher_name;
+	QString m_room_name;  // 房间名字
+	QString m_course_id;  // 课程id
+	QString m_lesson_id;  // 课堂id
+	QString m_teacher_id;  // 教师id
+	QString m_teacher_name;  // 教师名字
+	QDateTime m_create_time;  // 创建时间
+	QDateTime m_begin_time;  // 开始时间
+	CourseStatus m_course_status;  // 状态
 };
 
 

@@ -1,8 +1,11 @@
 #include <QtWidgets/QApplication>
-#include "Core/View/Window/teacher_main_window.h"
-#include "Core/Controller/teacher_controller.h"
-#include "Core/Controller/student_controller.h"
-#include "Core/View/Component/component.h"
+#include "Core/Client/Teacher/tmainwindow.h"
+#include "Core/Client/Teacher/tmainwindowcontroller.h"
+#include "Core/Client/Student/smainwindow.h"
+#include "Core/Client/Student/smainwindowcontroller.h"
+#include "Core/Component/toast.h"
+#include "Core/Client/online_education.h"
+#include "Core/Client/conf.h"
 #pragma execution_character_set("utf-8")  
 
 int main(int argc, char *argv[]) {
@@ -19,15 +22,16 @@ int main(int argc, char *argv[]) {
 	courses_base_list->append(course_base3);
 	courses_base_list->append(course_base4);
 	courses_base_list->append(course_base5);
-	User *user = new User(QString("10001"), QString("Äã°Ö°Ö"), courses_base_list);
-	User *user_2 = new User(QString("10002"), QString("Äã°Ö°Ö"), courses_base_list);
+	User *user = new User(QString("10001"), QString("Äã°Ö°Ö"), courses_base_list, UserStatus::Free);
+	User *user_2 = new User(QString("10002"), QString("Äã°Ö°Ö"), courses_base_list, UserStatus::Free);
 
-	TeacherMainWindow *t_win = new TeacherMainWindow();
-	StudentMainWindow *s_win = new StudentMainWindow();
-	TeacherController *teacher_controller = new TeacherController(t_win, user);
-	StudentController *student_controller = new StudentController(s_win, user_2);
+	TMainWindow *t_win = new TMainWindow();
+	SMainWindow *s_win = new SMainWindow();
+	TMainWindowController *teacher_controller = new TMainWindowController(t_win, user);
+	SMainWindowController *student_controller = new SMainWindowController(s_win, user_2);
 
-	Toast::setWin(s_win);
+	Toast::setWin(t_win);
+	ReadConf::read();
 
 	return app.exec();
 }

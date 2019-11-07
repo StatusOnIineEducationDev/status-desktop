@@ -470,6 +470,10 @@ public:
 "	background: none;\n"
 "}\n"
 "\n"
+"QTabWidget {\n"
+"	background: #F3F4F8;\n"
+"}\n"
+"\n"
 "QTabWidget::pane {\n"
 "	border: none;\n"
 "}\n"
@@ -1859,7 +1863,7 @@ public:
         scrollArea_2->setWidgetResizable(true);
         scrollAreaWidgetContents_2 = new QWidget();
         scrollAreaWidgetContents_2->setObjectName(QString::fromUtf8("scrollAreaWidgetContents_2"));
-        scrollAreaWidgetContents_2->setGeometry(QRect(0, -58, 802, 808));
+        scrollAreaWidgetContents_2->setGeometry(QRect(0, 0, 802, 808));
         scrollAreaWidgetContents_2->setStyleSheet(QString::fromUtf8("QWidget {\n"
 "	background-color:transparent;\n"
 "}"));
