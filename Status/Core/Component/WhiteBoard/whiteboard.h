@@ -13,7 +13,7 @@
 #include <opencv2/highgui/highgui.hpp>  
 #include <opencv2/imgproc/imgproc.hpp>  
 #include <opencv2/core/core.hpp>  
-#include "lineedit.h"
+#include "lineEdit.h"
 #include "Core/Tools/pic_tools.h"
 
 class WhiteBoard : public QWidget {

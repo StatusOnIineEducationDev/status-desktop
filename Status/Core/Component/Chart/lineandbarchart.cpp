@@ -1,4 +1,4 @@
-#include "lineandbarchart.h"
+#include "lineAndBarChart.h"
 #pragma execution_character_set("utf-8")  
 
 LineAndBarChart::LineAndBarChart(QList<qreal> &values, QString &label, QColor &color, QObject *parent)

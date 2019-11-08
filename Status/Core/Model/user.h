@@ -3,7 +3,7 @@
 #include <QString>
 #include <QList>
 #include "Core/Model/course.h"
-#include "Core/Client/online_education.h"
+#include "Core/Client/onlineEdu.h"
 
 class User {
 public:

@@ -5,7 +5,7 @@
 #include <QDatetime>
 #include <QList>
 #include <QVector>
-#include "Core/Client/online_education.h" 
+#include "Core/Client/onlineEdu.h" 
 
 
 class LessonBase {

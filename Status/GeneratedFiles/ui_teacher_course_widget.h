@@ -268,6 +268,8 @@ public:
     QLabel *member_name_text;
     QLabel *member_id_text;
     QLabel *member_pic;
+    QWidget *tab;
+    QWidget *tab_2;
     QButtonGroup *emotions_report_botton_group;
 
     void setupUi(QWidget *TeacherCourseWidget)
@@ -288,7 +290,7 @@ public:
         course_base_info_area->setMinimumSize(QSize(819, 100));
         course_base_info_area->setMaximumSize(QSize(16777215, 100));
         course_base_info_area->setStyleSheet(QString::fromUtf8("QFrame {\n"
-"	background-color: #F6F8F7;\n"
+"	background-color: #f0f0f0;\n"
 "	border-bottom: 1px solid #E8ECEC;\n"
 "}"));
         course_base_info_area->setFrameShape(QFrame::StyledPanel);
@@ -376,7 +378,7 @@ public:
         courses_comboBox->setStyleSheet(QString::fromUtf8("QComboBox {\n"
 "	color: #333333;\n"
 "	border: none;\n"
-"	background-color: #F6F8F7;\n"
+"	background-color: #f0f0f0;\n"
 "}\n"
 "\n"
 "QComboBox::down-arrow {\n"
@@ -462,24 +464,37 @@ public:
         tabWidget->setObjectName(QString::fromUtf8("tabWidget"));
         tabWidget->setMinimumSize(QSize(819, 527));
         tabWidget->setMaximumSize(QSize(16777215, 16777215));
+        QFont font2;
+        font2.setFamily(QString::fromUtf8("\345\276\256\350\275\257\351\233\205\351\273\221"));
+        font2.setPointSize(11);
+        tabWidget->setFont(font2);
         tabWidget->setStyleSheet(QString::fromUtf8("QTabBar::tab {\n"
-"	margin: 10px 20px 10px 20px;\n"
-"	width: 30px;\n"
-"	height: 30px;\n"
+"	padding-top: 0px;\n"
+"	color: #999999;\n"
 "	border: none;\n"
+"	height: 30px;\n"
+"	width: 70px;\n"
 "	background: none;\n"
 "}\n"
 "\n"
 "QTabWidget {\n"
-"	background: #F3F4F8;\n"
+"	background: #ffffff;\n"
 "}\n"
 "\n"
-"QTabWidget::pane {\n"
-"	border: none;\n"
+"QTabBar::tab:hover {\n"
+"	background-color: #E6E6E6;\n"
 "}\n"
 "\n"
-"QTabWidget::tab-bar {\n"
-"	alignment:center;\n"
+"QTabBar::tab:selected {\n"
+"	color: #1296db;\n"
+"}\n"
+"\n"
+"QTabWidget#tabWidget::pane {\n"
+"	border-top: 1px solid #E8ECEC;\n"
+"}\n"
+"\n"
+"QTabWidget#tabWidget::tab-bar {\n"
+"	alignment:left;\n"
 "}"));
         tabWidget->setIconSize(QSize(30, 30));
         tabWidget->setUsesScrollButtons(true);
@@ -586,10 +601,10 @@ public:
 
         data_2_text = new QLabel(data_2_area);
         data_2_text->setObjectName(QString::fromUtf8("data_2_text"));
-        QFont font2;
-        font2.setFamily(QString::fromUtf8("\345\276\256\350\275\257\351\233\205\351\273\221"));
-        font2.setPointSize(20);
-        data_2_text->setFont(font2);
+        QFont font3;
+        font3.setFamily(QString::fromUtf8("\345\276\256\350\275\257\351\233\205\351\273\221"));
+        font3.setPointSize(20);
+        data_2_text->setFont(font3);
         data_2_text->setStyleSheet(QString::fromUtf8("QLabel {\n"
 "	background: none;\n"
 "	color: #ffffff;\n"
@@ -635,7 +650,7 @@ public:
 
         data_1_text = new QLabel(data_1_area);
         data_1_text->setObjectName(QString::fromUtf8("data_1_text"));
-        data_1_text->setFont(font2);
+        data_1_text->setFont(font3);
         data_1_text->setStyleSheet(QString::fromUtf8("QLabel {\n"
 "	background: none;\n"
 "	color: #23B7E5;\n"
@@ -681,7 +696,7 @@ public:
 
         data_3_text = new QLabel(data_3_area);
         data_3_text->setObjectName(QString::fromUtf8("data_3_text"));
-        data_3_text->setFont(font2);
+        data_3_text->setFont(font3);
         data_3_text->setStyleSheet(QString::fromUtf8("QLabel {\n"
 "	background: none;\n"
 "	color: #ffffff;\n"
@@ -748,7 +763,7 @@ public:
 
         course_key_text = new QLabel(course_key_area);
         course_key_text->setObjectName(QString::fromUtf8("course_key_text"));
-        course_key_text->setFont(font2);
+        course_key_text->setFont(font3);
         course_key_text->setStyleSheet(QString::fromUtf8("QLabel {\n"
 "	background: none;\n"
 "	color: #6C6FC0;\n"
@@ -791,7 +806,7 @@ public:
 
         data_4_text = new QLabel(data_4_area);
         data_4_text->setObjectName(QString::fromUtf8("data_4_text"));
-        data_4_text->setFont(font2);
+        data_4_text->setFont(font3);
         data_4_text->setStyleSheet(QString::fromUtf8("QLabel {\n"
 "	background: none;\n"
 "	color: #23B7E5;\n"
@@ -848,10 +863,10 @@ public:
         emotion_report_title_text->setObjectName(QString::fromUtf8("emotion_report_title_text"));
         emotion_report_title_text->setMinimumSize(QSize(0, 30));
         emotion_report_title_text->setMaximumSize(QSize(16777215, 30));
-        QFont font3;
-        font3.setFamily(QString::fromUtf8("\345\276\256\350\275\257\351\233\205\351\273\221"));
-        font3.setPointSize(12);
-        emotion_report_title_text->setFont(font3);
+        QFont font4;
+        font4.setFamily(QString::fromUtf8("\345\276\256\350\275\257\351\233\205\351\273\221"));
+        font4.setPointSize(12);
+        emotion_report_title_text->setFont(font4);
         emotion_report_title_text->setStyleSheet(QString::fromUtf8("QLabel {\n"
 "	background: none;\n"
 "	color: #6C6FC0;\n"
@@ -1534,10 +1549,10 @@ public:
         gridLayout_10->setObjectName(QString::fromUtf8("gridLayout_10"));
         label_97 = new QLabel(distribution_chart_progressBar);
         label_97->setObjectName(QString::fromUtf8("label_97"));
-        QFont font4;
-        font4.setFamily(QString::fromUtf8("\345\276\256\350\275\257\351\233\205\351\273\221"));
-        font4.setPointSize(9);
-        label_97->setFont(font4);
+        QFont font5;
+        font5.setFamily(QString::fromUtf8("\345\276\256\350\275\257\351\233\205\351\273\221"));
+        font5.setPointSize(9);
+        label_97->setFont(font5);
         label_97->setStyleSheet(QString::fromUtf8("QLabel {\n"
 "	background: none;\n"
 "	color: #999999;\n"
@@ -1547,7 +1562,7 @@ public:
 
         label_95 = new QLabel(distribution_chart_progressBar);
         label_95->setObjectName(QString::fromUtf8("label_95"));
-        label_95->setFont(font4);
+        label_95->setFont(font5);
         label_95->setStyleSheet(QString::fromUtf8("QLabel {\n"
 "	background: none;\n"
 "	color: #999999;\n"
@@ -1570,7 +1585,7 @@ public:
         progressBar_17->setObjectName(QString::fromUtf8("progressBar_17"));
         progressBar_17->setMinimumSize(QSize(50, 100));
         progressBar_17->setMaximumSize(QSize(50, 100));
-        progressBar_17->setFont(font3);
+        progressBar_17->setFont(font4);
         progressBar_17->setStyleSheet(QString::fromUtf8("QProgressBar{\n"
 "        border: none;\n"
 "        color: #666666;\n"
@@ -1593,7 +1608,7 @@ public:
         excellent_progressBar->setObjectName(QString::fromUtf8("excellent_progressBar"));
         excellent_progressBar->setMinimumSize(QSize(50, 100));
         excellent_progressBar->setMaximumSize(QSize(50, 100));
-        excellent_progressBar->setFont(font3);
+        excellent_progressBar->setFont(font4);
         excellent_progressBar->setStyleSheet(QString::fromUtf8("QProgressBar{\n"
 "        border: none;\n"
 "        color: #666666;\n"
@@ -1616,7 +1631,7 @@ public:
         distribution_chart_title_text->setObjectName(QString::fromUtf8("distribution_chart_title_text"));
         distribution_chart_title_text->setMinimumSize(QSize(0, 30));
         distribution_chart_title_text->setMaximumSize(QSize(16777215, 30));
-        distribution_chart_title_text->setFont(font3);
+        distribution_chart_title_text->setFont(font4);
         distribution_chart_title_text->setStyleSheet(QString::fromUtf8("QLabel {\n"
 "	background: none;\n"
 "	color: #333333;\n"
@@ -1643,7 +1658,7 @@ public:
         bad_progressBar->setObjectName(QString::fromUtf8("bad_progressBar"));
         bad_progressBar->setMinimumSize(QSize(50, 100));
         bad_progressBar->setMaximumSize(QSize(50, 100));
-        bad_progressBar->setFont(font3);
+        bad_progressBar->setFont(font4);
         bad_progressBar->setStyleSheet(QString::fromUtf8("QProgressBar{\n"
 "        border: none;\n"
 "        color: #666666;\n"
@@ -1666,7 +1681,7 @@ public:
 
         label_96 = new QLabel(distribution_chart_progressBar);
         label_96->setObjectName(QString::fromUtf8("label_96"));
-        label_96->setFont(font4);
+        label_96->setFont(font5);
         label_96->setStyleSheet(QString::fromUtf8("QLabel {\n"
 "	background: none;\n"
 "	color: #999999;\n"
@@ -1687,7 +1702,7 @@ public:
 
         label_98 = new QLabel(distribution_chart_progressBar);
         label_98->setObjectName(QString::fromUtf8("label_98"));
-        label_98->setFont(font4);
+        label_98->setFont(font5);
         label_98->setStyleSheet(QString::fromUtf8("QLabel {\n"
 "	background: none;\n"
 "	color: #999999;\n"
@@ -1736,7 +1751,7 @@ public:
         area_chart_title_text->setObjectName(QString::fromUtf8("area_chart_title_text"));
         area_chart_title_text->setMinimumSize(QSize(0, 30));
         area_chart_title_text->setMaximumSize(QSize(16777215, 30));
-        area_chart_title_text->setFont(font3);
+        area_chart_title_text->setFont(font4);
         area_chart_title_text->setStyleSheet(QString::fromUtf8("QLabel {\n"
 "	background: none;\n"
 "	color: #333333;\n"
@@ -1798,10 +1813,7 @@ public:
 
         gridLayout_22->addWidget(scrollArea, 0, 0, 1, 1);
 
-        QIcon icon7;
-        icon7.addFile(QString::fromUtf8(":/button/Resources/material/button/statistic.png"), QSize(), QIcon::Active, QIcon::Off);
-        icon7.addFile(QString::fromUtf8(":/button/Resources/material/button/statistic_checked.png"), QSize(), QIcon::Active, QIcon::On);
-        tabWidget->addTab(course_data_tab, icon7, QString());
+        tabWidget->addTab(course_data_tab, QString());
         course_member_tab = new QWidget();
         course_member_tab->setObjectName(QString::fromUtf8("course_member_tab"));
         course_member_tab->setStyleSheet(QString::fromUtf8(""));
@@ -1916,7 +1928,7 @@ public:
         num_of_students_text = new QLabel(frame_16);
         num_of_students_text->setObjectName(QString::fromUtf8("num_of_students_text"));
         num_of_students_text->setGeometry(QRect(10, 10, 50, 50));
-        num_of_students_text->setFont(font2);
+        num_of_students_text->setFont(font3);
         num_of_students_text->setAlignment(Qt::AlignCenter);
 
         gridLayout_18->addWidget(frame_15, 2, 3, 1, 1);
@@ -1947,7 +1959,7 @@ public:
 
         label_107 = new QLabel(frame);
         label_107->setObjectName(QString::fromUtf8("label_107"));
-        label_107->setFont(font4);
+        label_107->setFont(font5);
         label_107->setStyleSheet(QString::fromUtf8("QLabel {\n"
 "	background: none;\n"
 "	color: #999999;\n"
@@ -1991,7 +2003,7 @@ public:
         total_text = new QLabel(frame_18);
         total_text->setObjectName(QString::fromUtf8("total_text"));
         total_text->setGeometry(QRect(10, 10, 50, 50));
-        total_text->setFont(font2);
+        total_text->setFont(font3);
         total_text->setAlignment(Qt::AlignCenter);
 
         gridLayout_18->addWidget(frame_17, 2, 5, 1, 1);
@@ -2026,7 +2038,7 @@ public:
         num_of_teachers_text = new QLabel(frame_14);
         num_of_teachers_text->setObjectName(QString::fromUtf8("num_of_teachers_text"));
         num_of_teachers_text->setGeometry(QRect(10, 10, 50, 50));
-        num_of_teachers_text->setFont(font2);
+        num_of_teachers_text->setFont(font3);
         num_of_teachers_text->setAlignment(Qt::AlignCenter);
 
         gridLayout_18->addWidget(frame_13, 2, 1, 1, 1);
@@ -2039,7 +2051,7 @@ public:
         area_chart_title_text_2->setObjectName(QString::fromUtf8("area_chart_title_text_2"));
         area_chart_title_text_2->setMinimumSize(QSize(0, 30));
         area_chart_title_text_2->setMaximumSize(QSize(16777215, 30));
-        area_chart_title_text_2->setFont(font3);
+        area_chart_title_text_2->setFont(font4);
         area_chart_title_text_2->setStyleSheet(QString::fromUtf8("QLabel {\n"
 "	background: none;\n"
 "	color: #333333;\n"
@@ -2079,7 +2091,7 @@ public:
         area_chart_title_text_3->setObjectName(QString::fromUtf8("area_chart_title_text_3"));
         area_chart_title_text_3->setMinimumSize(QSize(0, 30));
         area_chart_title_text_3->setMaximumSize(QSize(16777215, 30));
-        area_chart_title_text_3->setFont(font3);
+        area_chart_title_text_3->setFont(font4);
         area_chart_title_text_3->setStyleSheet(QString::fromUtf8("QLabel {\n"
 "	background: none;\n"
 "	border: none;\n"
@@ -2095,9 +2107,9 @@ public:
         pushButton_15 = new QPushButton(frame_2);
         pushButton_15->setObjectName(QString::fromUtf8("pushButton_15"));
         pushButton_15->setCursor(QCursor(Qt::PointingHandCursor));
-        QIcon icon8;
-        icon8.addFile(QString::fromUtf8(":/button/Resources/material/button/delete.png"), QSize(), QIcon::Normal, QIcon::Off);
-        pushButton_15->setIcon(icon8);
+        QIcon icon7;
+        icon7.addFile(QString::fromUtf8(":/button/Resources/material/button/delete.png"), QSize(), QIcon::Normal, QIcon::Off);
+        pushButton_15->setIcon(icon7);
         pushButton_15->setIconSize(QSize(15, 15));
 
         horizontalLayout_3->addWidget(pushButton_15);
@@ -2214,7 +2226,7 @@ public:
         area_chart_title_text_4->setObjectName(QString::fromUtf8("area_chart_title_text_4"));
         area_chart_title_text_4->setMinimumSize(QSize(293, 30));
         area_chart_title_text_4->setMaximumSize(QSize(16777215, 30));
-        area_chart_title_text_4->setFont(font3);
+        area_chart_title_text_4->setFont(font4);
         area_chart_title_text_4->setStyleSheet(QString::fromUtf8("QLabel {\n"
 "	background: none;\n"
 "	color: #333333;\n"
@@ -2509,10 +2521,10 @@ public:
         member_name_text = new QLabel(frame_5);
         member_name_text->setObjectName(QString::fromUtf8("member_name_text"));
         member_name_text->setMinimumSize(QSize(0, 0));
-        QFont font5;
-        font5.setFamily(QString::fromUtf8("\345\276\256\350\275\257\351\233\205\351\273\221"));
-        font5.setPointSize(14);
-        member_name_text->setFont(font5);
+        QFont font6;
+        font6.setFamily(QString::fromUtf8("\345\276\256\350\275\257\351\233\205\351\273\221"));
+        font6.setPointSize(14);
+        member_name_text->setFont(font6);
         member_name_text->setStyleSheet(QString::fromUtf8("QLabel {\n"
 "	border: none;\n"
 "	background: none;\n"
@@ -2561,10 +2573,13 @@ public:
 
         gridLayout_16->addWidget(scrollArea_2, 0, 0, 1, 1);
 
-        QIcon icon9;
-        icon9.addFile(QString::fromUtf8(":/button/Resources/material/button/member.png"), QSize(), QIcon::Active, QIcon::Off);
-        icon9.addFile(QString::fromUtf8(":/button/Resources/material/button/member_checked.png"), QSize(), QIcon::Active, QIcon::On);
-        tabWidget->addTab(course_member_tab, icon9, QString());
+        tabWidget->addTab(course_member_tab, QString());
+        tab = new QWidget();
+        tab->setObjectName(QString::fromUtf8("tab"));
+        tabWidget->addTab(tab, QString());
+        tab_2 = new QWidget();
+        tab_2->setObjectName(QString::fromUtf8("tab_2"));
+        tabWidget->addTab(tab_2, QString());
 
         gridLayout_2->addWidget(tabWidget, 1, 0, 1, 1);
 
@@ -2660,7 +2675,7 @@ public:
         point_datetime->setText(QString());
         point_title->setText(QString());
         point_concentration->setText(QString());
-        tabWidget->setTabText(tabWidget->indexOf(course_data_tab), QString());
+        tabWidget->setTabText(tabWidget->indexOf(course_data_tab), QCoreApplication::translate("TeacherCourseWidget", "\346\246\202\345\206\265", nullptr));
         num_of_students_text->setText(QCoreApplication::translate("TeacherCourseWidget", "888", nullptr));
         label_100->setText(QCoreApplication::translate("TeacherCourseWidget", "\346\225\231\345\270\210", nullptr));
         label_104->setText(QCoreApplication::translate("TeacherCourseWidget", "\345\255\246\347\224\237", nullptr));
@@ -2693,7 +2708,9 @@ public:
         member_name_text->setText(QCoreApplication::translate("TeacherCourseWidget", "Lan YangBo", nullptr));
         member_id_text->setText(QCoreApplication::translate("TeacherCourseWidget", "20172131100", nullptr));
         member_pic->setText(QString());
-        tabWidget->setTabText(tabWidget->indexOf(course_member_tab), QString());
+        tabWidget->setTabText(tabWidget->indexOf(course_member_tab), QCoreApplication::translate("TeacherCourseWidget", "\346\210\220\345\221\230", nullptr));
+        tabWidget->setTabText(tabWidget->indexOf(tab), QCoreApplication::translate("TeacherCourseWidget", "\350\257\276\344\273\266", nullptr));
+        tabWidget->setTabText(tabWidget->indexOf(tab_2), QCoreApplication::translate("TeacherCourseWidget", "\350\256\276\347\275\256", nullptr));
     } // retranslateUi
 
 };

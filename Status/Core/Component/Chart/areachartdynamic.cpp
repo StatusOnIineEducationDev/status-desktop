@@ -1,4 +1,4 @@
-#include "areachartdynamic.h"
+#include "areaChartDynamic.h"
 
 AreaChartDynamic::AreaChartDynamic(QColor &color, QObject *parent)
 	: m_range_max(60), m_origin_x(-1) {

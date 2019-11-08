@@ -1,10 +1,10 @@
 #include <QtWidgets/QApplication>
-#include "Core/Client/Teacher/tmainwindow.h"
-#include "Core/Client/Teacher/tmainwindowcontroller.h"
-#include "Core/Client/Student/smainwindow.h"
-#include "Core/Client/Student/smainwindowcontroller.h"
+#include "Core/Client/Teacher/t_mainWindow.h"
+#include "Core/Client/Teacher/t_mainWindowController.h"
+#include "Core/Client/Student/s_mainWindow.h"
+#include "Core/Client/Student/s_mainWindowController.h"
 #include "Core/Component/toast.h"
-#include "Core/Client/online_education.h"
+#include "Core/Client/onlineEdu.h"
 #include "Core/Client/conf.h"
 #pragma execution_character_set("utf-8")  
 

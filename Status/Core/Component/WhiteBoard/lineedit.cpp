@@ -1,4 +1,4 @@
-#include "lineedit.h"
+#include "lineEdit.h"
 
 LineEdit::LineEdit(QLineEdit *parent) {
 	this->is_pressed = false;
