@@ -1,15 +1,15 @@
 #include "s_whiteBoardController.h"
 
-s_whiteBoardController::s_whiteBoardController(SOnlineClassroomWidget *online_classroom_widget, QObject *parent)
+SWhiteBoardController::SWhiteBoardController(SOnlineClassroomWidget *online_classroom_widget, QObject *parent)
 	: QObject(parent), m_online_classroom_widget(online_classroom_widget) {
-	this->connect(this->m_online_classroom_widget->board(), &WhiteBoard::paintCommandReady, this, &s_whiteBoardController::sendPaintCommand);
+	this->connect(this->m_online_classroom_widget->board(), &WhiteBoard::paintCommandReady, this, &SWhiteBoardController::sendPaintCommand);
 }
 
-s_whiteBoardController::~s_whiteBoardController() {
+SWhiteBoardController::~SWhiteBoardController() {
 
 }
 
-void s_whiteBoardController::createPaintConnection(QMap<QString, QVariant> &data) {
+void SWhiteBoardController::createPaintConnection(QMap<QString, QVariant> &data) {
 	/*
 		/*
 		|-data(QMap<QString, QVariant>)
@@ -35,12 +35,12 @@ void s_whiteBoardController::createPaintConnection(QMap<QString, QVariant> &data
 	this->setPaintConnectionSendBaseInfo(data["uid"].toString(), data["course_id"].toString(), data["lesson_id"].toString());
 
 	// ¡ª¡ªÐÅºÅ°ó¶¨
-	this->connect(this->m_paint_connection, &Connection::bufferReadyRead, this, &s_whiteBoardController::handlePaintConnectionRecv);
+	this->connect(this->m_paint_connection, &Connection::bufferReadyRead, this, &SWhiteBoardController::handlePaintConnectionRecv);
 
 	return;
 }
 
-void s_whiteBoardController::distroyPaintConnection() {
+void SWhiteBoardController::distroyPaintConnection() {
 	QThread *thread = this->m_paint_connection->thread();
 	delete this->m_paint_connection;
 	this->m_paint_connection = nullptr;
@@ -49,7 +49,7 @@ void s_whiteBoardController::distroyPaintConnection() {
 	return;
 }
 
-void s_whiteBoardController::handlePaintConnectionRecv() {
+void SWhiteBoardController::handlePaintConnectionRecv() {
 	QJsonObject data = this->m_paint_connection->recv();
 	TransportCmd cmd = TransportCmd(data["command"].toInt());
 
@@ -60,13 +60,13 @@ void s_whiteBoardController::handlePaintConnectionRecv() {
 	return;
 }
 
-void s_whiteBoardController::handleCommandPaintCommand(QJsonObject &data) {
+void SWhiteBoardController::handleCommandPaintCommand(QJsonObject &data) {
 	this->m_online_classroom_widget->board()->paintByPaintCommand(data);
 
 	return;
 }
 
-void s_whiteBoardController::sendPaintCommand(QJsonObject &data) {
+void SWhiteBoardController::sendPaintCommand(QJsonObject &data) {
 	data["command"] = TransportCmd::PaintCommand;
 	data["account_type"] = AccountType::Student;
 	data["course_id"] = this->m_send_base_info["course_id"].toString();
@@ -76,7 +76,7 @@ void s_whiteBoardController::sendPaintCommand(QJsonObject &data) {
 	this->m_paint_connection->realSend(data);
 }
 
-void s_whiteBoardController::setPaintConnectionSendBaseInfo(QString uid, QString course_id, QString lesson_id) {
+void SWhiteBoardController::setPaintConnectionSendBaseInfo(QString uid, QString course_id, QString lesson_id) {
 	this->m_send_base_info["uid"] = uid;
 	this->m_send_base_info["course_id"] = course_id;
 	this->m_send_base_info["lesson_id"] = lesson_id;

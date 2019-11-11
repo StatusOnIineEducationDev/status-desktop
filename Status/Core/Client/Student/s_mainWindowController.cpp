@@ -2,11 +2,13 @@
 
 
 SMainWindowController::SMainWindowController(SMainWindow *win, User *user)
-	: m_win(win), m_user(user), m_online_classroom_controller(nullptr) {
+	: m_win(win), m_user(user), m_online_classroom_controller(nullptr),
+	m_course_management_controller(nullptr){
 	Ui::SMainWindow ui = this->m_win->ui();
 
 	this->m_win->show();
 
+	this->connect(ui.course_btn, &QPushButton::clicked, this, &SMainWindowController::showCourseManagementWidget);
 	this->connect(ui.interaction_btn, &QPushButton::clicked, this, &SMainWindowController::showOnlineClassroomWidget);
 	this->connect(ui.buttonGroup, static_cast<void (QButtonGroup::*)(QAbstractButton*)>(&QButtonGroup::buttonPressed), this, &SMainWindowController::buttonPush);
 	this->connect(ui.undo_btn, &QPushButton::clicked, this, &SMainWindowController::undo);
@@ -32,15 +34,31 @@ SMainWindowController::~SMainWindowController() {
 }
 
 void SMainWindowController::clearWidget() {
-	// 实时互动
+	// ——课堂管理
+	if (this->m_course_management_controller != nullptr) {
+		this->m_win->ui().widget_layout->removeWidget(this->m_course_management_controller->courseManagementWidget());
+		
+		delete this->m_course_management_controller;
+		this->m_course_management_controller = nullptr;
+		}
+	// ——在线教室
 	if (this->m_online_classroom_controller != nullptr) {
+		this->m_win->ui().widget_layout->removeWidget(this->m_online_classroom_controller->onlineClassroomWidget());
+		
 		if (this->m_user->userStatus() != UserStatus::InClass) {
 			delete this->m_online_classroom_controller;
 			this->m_online_classroom_controller = nullptr;
 		}
-		else {
-			this->m_win->ui().widget_layout->removeWidget(this->m_online_classroom_controller->onlineClassroomWidget());
-		}
+	}
+
+	return;
+}
+
+void SMainWindowController::showCourseManagementWidget() {
+	this->clearWidget();  // 先清除主窗中当前显示的子窗
+	if (this->m_course_management_controller == nullptr) {
+		this->m_course_management_controller = new SCourseManagementController(this->m_user, this);  // 动态创建子窗
+		this->m_course_management_controller->showCourseManagementWidget(this->m_win);
 	}
 
 	return;

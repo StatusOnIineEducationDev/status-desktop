@@ -5,6 +5,7 @@
 #include "Core/Model/user.h"
 #include "Core/Model/course.h"
 #include "Core/Client/Student/OnlineClassroom/s_onlineClassroomController.h"
+#include "Core/Client/Student/CourseManagement/s_courseManagementController.h"
 #include "Core/Component/toast.h"
 
 
@@ -17,12 +18,14 @@ public:
 	void undo();  // 窗口返回
 	void redo();  // 窗口前进
 
+	void showCourseManagementWidget();
 	void showOnlineClassroomWidget();
 	void buttonPush(QAbstractButton *button);
 
 protected:
 	SMainWindow *m_win;
 	User *m_user;
+	SCourseManagementController *m_course_management_controller;
 	SOnlineClassroomController *m_online_classroom_controller;
 	QStack<QAbstractButton*> m_child_widget_undo_stack;  // 切换子窗的返回栈
 	QStack<QAbstractButton*> m_child_widget_redo_stack;  // 切换子窗的前加栈

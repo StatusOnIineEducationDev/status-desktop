@@ -231,6 +231,9 @@
     <ClCompile Include="Core\Component\WhiteBoard\whiteBoard.cpp">
       <Filter>Core\Component\WhiteBoard</Filter>
     </ClCompile>
+    <ClCompile Include="Core\Client\Student\CourseManagement\s_courseManagementController.cpp">
+      <Filter>Core\Client\Student\CourseManagement</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="Core\Network\socket.h">
@@ -314,6 +317,12 @@
     <QtMoc Include="Core\Component\WhiteBoard\whiteBoard.h">
       <Filter>Core\Component\WhiteBoard</Filter>
     </QtMoc>
+    <QtMoc Include="Core\Client\Student\CourseManagement\s_courseManagementWidget.h">
+      <Filter>Core\Client\Student\CourseManagement</Filter>
+    </QtMoc>
+    <QtMoc Include="Core\Client\Student\CourseManagement\s_courseManagementController.h">
+      <Filter>Core\Client\Student\CourseManagement</Filter>
+    </QtMoc>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Core\Model\course.h">
@@ -336,9 +345,6 @@
     </ClInclude>
     <ClInclude Include="Core\Client\onlineEdu.h">
       <Filter>Core\Client</Filter>
-    </ClInclude>
-    <ClInclude Include="Core\Client\Student\CourseManagement\s_courseManagementWidget.h">
-      <Filter>Core\Client\Student\CourseManagement</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

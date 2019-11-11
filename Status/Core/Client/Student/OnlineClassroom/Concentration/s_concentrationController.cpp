@@ -5,7 +5,7 @@ SConcentrationController::SConcentrationController(
 	SOnlineClassroomWidget *online_classroom_widget, QObject *parent)
 	: QObject(parent), m_online_classroom_widget(online_classroom_widget) {
 	Ui::SOnlineClassroomWidget ui = this->m_online_classroom_widget->ui();
-	QThread *chart_thread = new QThread;
+	QThread *chart_thread = new QThread(this->m_online_classroom_widget);
 
 	/*
 		把两张chart放入一个新的线程中
@@ -25,9 +25,7 @@ SConcentrationController::SConcentrationController(
 }
 
 SConcentrationController::~SConcentrationController() {
-	QThread *chart_thread = this->m_concentration_area_chart->thread();
 
-	chart_thread->deleteLater();
 }
 
 void SConcentrationController::handleCommandConcentrationFinalData(QJsonObject &data) {

@@ -8,7 +8,7 @@ SOnlineClassroomController::SOnlineClassroomController(User *user, QObject *pare
 }
 
 SOnlineClassroomController::~SOnlineClassroomController() {
-
+	delete this->m_online_classroom_widget;
 }
 
 void SOnlineClassroomController::showOnlineClassroomWidget(SMainWindow *parent) {
@@ -78,7 +78,7 @@ void SOnlineClassroomController::initAffiliatedWidget() {
 
 void SOnlineClassroomController::initController() {
 	this->m_enter_controller = new SEnterController(this);
-	this->m_white_board_controller = new s_whiteBoardController(this->m_online_classroom_widget, this);
+	this->m_white_board_controller = new SWhiteBoardController(this->m_online_classroom_widget, this);
 	this->m_chat_controller = new SChatController(this->m_online_classroom_widget, this);
 	this->m_concentration_controller = new SConcentrationController(this->m_online_classroom_widget, this);
 

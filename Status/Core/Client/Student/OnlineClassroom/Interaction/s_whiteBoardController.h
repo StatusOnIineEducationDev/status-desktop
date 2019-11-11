@@ -7,12 +7,12 @@
 #include "Core/Client/conf.h"
 
 
-class s_whiteBoardController : public QObject {
+class SWhiteBoardController : public QObject {
 	Q_OBJECT
 
 public:
-	s_whiteBoardController(SOnlineClassroomWidget *online_classroom_widget, QObject *parent = nullptr);
-	virtual ~s_whiteBoardController();
+	SWhiteBoardController(SOnlineClassroomWidget *online_classroom_widget, QObject *parent = nullptr);
+	virtual ~SWhiteBoardController();
 
 	void createPaintConnection(QMap<QString, QVariant> &data);
 	void distroyPaintConnection();

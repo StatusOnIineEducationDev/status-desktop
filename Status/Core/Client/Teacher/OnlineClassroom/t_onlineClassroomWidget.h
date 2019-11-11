@@ -13,6 +13,9 @@
 class TOnlineClassroomWidget : public QWidget {
 	Q_OBJECT
 
+signals:
+	void windowResized();
+
 public:
 	TOnlineClassroomWidget(TMainWindow *parent = Q_NULLPTR);
 	~TOnlineClassroomWidget();
@@ -21,9 +24,6 @@ public:
 	WhiteBoard* board() const { return this->m_board; }
 
 	void handleWindowResized() { emit this->windowResized(); };
-
-signals:
-	void windowResized();
 
 public slots:
 	/*工具栏——调整画笔粗细*/

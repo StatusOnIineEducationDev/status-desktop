@@ -60,7 +60,7 @@ protected:
 	void endSpeech();
 
 	SEnterController *m_enter_controller;
-	s_whiteBoardController *m_white_board_controller;
+	SWhiteBoardController *m_white_board_controller;
 	SChatController *m_chat_controller;
 	SConcentrationController *m_concentration_controller;
 

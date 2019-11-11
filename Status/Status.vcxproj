@@ -32,6 +32,7 @@
   <ItemGroup>
     <ClCompile Include="Core\Client\Common\c_listWidgetItem.cpp" />
     <ClCompile Include="Core\Client\conf.cpp" />
+    <ClCompile Include="Core\Client\Student\CourseManagement\s_courseManagementController.cpp" />
     <ClCompile Include="Core\Client\Student\CourseManagement\s_courseManagementWidget.cpp" />
     <ClCompile Include="Core\Client\Student\OnlineClassroom\Concentration\s_concentrationController.cpp" />
     <ClCompile Include="Core\Client\Student\OnlineClassroom\Enter\s_enterController.cpp" />
@@ -177,7 +178,8 @@
       <IncludePath Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCharts;$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtNetwork;$(QTDIR)\include\QtMultimedia;$(QTDIR)\include\QtMultimediaWidgets</IncludePath>
       <IncludePath Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCharts;$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtNetwork;$(QTDIR)\include\QtMultimedia;$(QTDIR)\include\QtMultimediaWidgets</IncludePath>
     </QtMoc>
-    <ClInclude Include="Core\Client\Student\CourseManagement\s_courseManagementWidget.h" />
+    <QtMoc Include="Core\Client\Student\CourseManagement\s_courseManagementWidget.h" />
+    <QtMoc Include="Core\Client\Student\CourseManagement\s_courseManagementController.h" />
     <ClInclude Include="Core\Tools\base64.h" />
     <ClInclude Include="Core\Tools\pic_tools.h" />
     <ClInclude Include="Core\Tools\tools.h" />
