@@ -14,11 +14,14 @@ public:
 	SCourseManagementWidget *courseManagementWidget() const { return this->m_course_management_widget; };
 
 	void showCourseManagementWidget(SMainWindow *parent);
+	void hideCourseManagementWidget(SMainWindow *parent);
 
 protected:
 	void initCourseManagementWidget(SMainWindow *parent);
 	//void initAffiliatedWidget();
 	//void initController();
+
+	void updateCourseComboBox();
 
 	SCourseManagementWidget *m_course_management_widget;
 

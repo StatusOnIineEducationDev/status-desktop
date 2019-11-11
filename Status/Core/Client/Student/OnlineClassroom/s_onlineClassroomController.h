@@ -25,6 +25,7 @@ public:
 	SOnlineClassroomWidget *onlineClassroomWidget() const { return this->m_online_classroom_widget; };
 
 	void showOnlineClassroomWidget(SMainWindow *parent);
+	void hideOnlineClassroomWidget(SMainWindow *parent);
 	void lessonConnectionSend(QJsonObject &data);
 
 protected:
@@ -33,6 +34,7 @@ protected:
 	void initController();
 
 	void createLessonConnection();
+	void distroyLessonConnection();
 	void handleLessonConnectionRecv();
 	void handleCommandJoinInLesson(QJsonObject &data);
 	void handleCommandBeginLesson(QJsonObject &data);

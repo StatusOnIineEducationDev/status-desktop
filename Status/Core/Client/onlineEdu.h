@@ -43,6 +43,12 @@ enum ApplicationStatus {
 	HungUp = 2
 };
 
+enum SpeechStatus {
+	SpeechFree = 0,
+	InSpeech = 1,
+	Applying = 2
+};
+
 enum AccountType {
 	Teacher = 0,
 	Student = 1
@@ -50,7 +56,8 @@ enum AccountType {
 
 enum RaiseHandError {
 	NoError = 0,
-	InSpeech = 1
+	InSpeechError = 1,
+	ApplyingError = 2
 };
 
 enum Emotion {

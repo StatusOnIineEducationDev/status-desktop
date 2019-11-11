@@ -9,7 +9,7 @@ class AreaChartDynamic : public QChart {
 	Q_OBJECT
 
 public:
-	AreaChartDynamic(QColor &color, QObject *parent);
+	AreaChartDynamic(QColor &color, QObject *parent = nullptr);
 	void append(int &timestamp, int &value);
 
 protected:

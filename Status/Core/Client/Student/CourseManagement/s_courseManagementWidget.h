@@ -1,5 +1,6 @@
 #pragma once
 #include <QtWidgets/QMainWindow>
+#include <QListView>
 #include "ui_s_courseManagementWidget.h"
 #include "Core/Client/Student/s_mainWindow.h"
 

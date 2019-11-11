@@ -2,7 +2,10 @@
 
 
 SOnlineClassroomController::SOnlineClassroomController(User *user, QObject *parent)
-	:QObject(parent), m_user(user), m_camera(nullptr), m_lesson_connection(nullptr) {
+	:QObject(parent), m_enter_controller(nullptr), m_white_board_controller(nullptr),
+	m_chat_controller(nullptr), m_concentration_controller(nullptr), 
+	m_online_classroom_widget(nullptr),m_in_speech_removeable_widget(nullptr), 
+	m_user(user), m_camera(nullptr), m_lesson_connection(nullptr) {
 	this->connect(&this->m_lesson_timer, &QTimer::timeout, this, &SOnlineClassroomController::updateLastTime);
 	this->connect(&this->m_lesson_timer, &QTimer::timeout, this, &SOnlineClassroomController::sendMineCameraFrame);
 }
@@ -16,21 +19,33 @@ void SOnlineClassroomController::showOnlineClassroomWidget(SMainWindow *parent) 
 	QList<QMap<QString, QVariant>> course_list;
 	QList<CourseBase> *course_base_list = this->m_user->coursesBaseList();
 
-	this->initOnlineClassroomWidget(parent);
-	this->initController();
+	if (this->m_online_classroom_widget == nullptr) {
+		this->initOnlineClassroomWidget(parent);
+		this->initController();
 
-	// ——加载数据
-	for (int index = 0; index < course_base_list->count(); index++) {
-		course = new QMap<QString, QVariant>;
-		course->insert("course_id", course_base_list->at(index).courseId());
-		course->insert("course_name", course_base_list->at(index).courseName());
-		course_list.append(*course);
+		// ——加载数据
+		for (int index = 0; index < course_base_list->count(); index++) {
+			course = new QMap<QString, QVariant>;
+			course->insert("course_id", course_base_list->at(index).courseId());
+			course->insert("course_name", course_base_list->at(index).courseName());
+			course_list.append(*course);
+		}
+		// ——显示
+		this->m_enter_controller->showEnterDialog(this->m_online_classroom_widget, course_list);
 	}
+
 	// ——显示
 	parent->ui().widget_layout->addWidget(this->m_online_classroom_widget);
 	this->m_online_classroom_widget->show();
-	this->m_enter_controller->showEnterDialog(this->m_online_classroom_widget, course_list);
 
+	return;
+}
+
+void SOnlineClassroomController::hideOnlineClassroomWidget(SMainWindow *parent) {
+	// ——显示
+	parent->ui().widget_layout->removeWidget(this->m_online_classroom_widget);
+	this->m_online_classroom_widget->hide();
+	
 	return;
 }
 
@@ -102,6 +117,20 @@ void SOnlineClassroomController::createLessonConnection() {
 	return;
 }
 
+void SOnlineClassroomController::distroyLessonConnection() {
+	QThread *thread;
+	
+	if (this->m_lesson_connection != nullptr) {
+		thread = this->m_lesson_connection->thread();
+		delete this->m_lesson_connection;
+		this->m_lesson_connection = nullptr;
+		thread->exit(0);
+		this->connect(thread, &QThread::finished, thread, &QThread::deleteLater);
+	}
+	
+	return;
+}
+
 void SOnlineClassroomController::handleLessonConnectionRecv() {
 	QJsonObject data = this->m_lesson_connection->recv();
 	TransportCmd cmd = TransportCmd(data["command"].toInt());
@@ -135,9 +164,7 @@ void SOnlineClassroomController::handleCommandJoinInLesson(QJsonObject &data) {
 	switch (course_status) {
 	case CourseStatus::OffLine:
 		text = "课程未开始";
-		thread = this->m_lesson_connection->thread();
-		delete this->m_lesson_connection;
-		thread->exit(0);
+		this->distroyLessonConnection();
 		break;
 	case CourseStatus::OnLine:
 		text = "进入成功";
@@ -161,9 +188,7 @@ void SOnlineClassroomController::handleCommandJoinInLesson(QJsonObject &data) {
 		break;
 	case CourseStatus::CantJoinIn:
 		text = "该课堂不允许中途加入";
-		thread = this->m_lesson_connection->thread();
-		delete this->m_lesson_connection;
-		thread->exit(0);
+		this->distroyLessonConnection();
 		break;
 	case CourseStatus::Waiting:
 		text = "进入成功";
@@ -209,14 +234,8 @@ void SOnlineClassroomController::handleCommandEndLesson(QJsonObject &data) {
 
 	// ——结束成功
 	this->m_camera->deleteLater();
-
 	this->m_lesson_timer.stop();
-
-	thread = this->m_lesson_connection->thread();
-	delete this->m_lesson_connection;
-	this->m_lesson_connection = nullptr;
-	thread->exit(0);
-
+	this->distroyLessonConnection();
 	this->m_white_board_controller->distroyPaintConnection();
 
 	this->m_user->setUserStatus(UserStatus::Free);
@@ -237,8 +256,13 @@ void SOnlineClassroomController::handleCommandRaiseHand(QJsonObject &data) {
 		toast->show();
 		this->connect(toast, &Toast::complete, toast, &Toast::deleteLater);
 		break;
-	case RaiseHandError::InSpeech:
+	case RaiseHandError::InSpeechError:
 		toast->setInfoText("您已在发言状态中");
+		toast->show();
+		this->connect(toast, &Toast::complete, toast, &Toast::deleteLater);
+		break;
+	case RaiseHandError::ApplyingError:
+		toast->setInfoText("您已发送申请，请耐心等候教师回应");
 		toast->show();
 		this->connect(toast, &Toast::complete, toast, &Toast::deleteLater);
 		break;
