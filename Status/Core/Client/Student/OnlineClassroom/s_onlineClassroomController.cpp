@@ -348,10 +348,8 @@ void SOnlineClassroomController::lessonBegin() {
 	ui.begin_time_text->setText(this->m_room.beginTime().toString("hh:mm:ss"));
 
 	// ——建立画板连接
-	data["course_id"] = this->m_room.courseId();
-	data["lesson_id"] = this->m_room.lessonId();
-	data["uid"] = this->m_user->uid();
-	this->m_white_board_controller->createPaintConnection(data);
+	this->m_white_board_controller->createPaintConnection(this->m_room.courseId(), 
+		this->m_room.lessonId(), this->m_user->uid());
 
 	ui.lesson_status_btn->setText("正在上课");
 	toast->show();
