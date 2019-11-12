@@ -2598,7 +2598,6 @@ public:
         horizontalLayout_4->setContentsMargins(10, 0, 10, 0);
         label_26 = new QLabel(function_btn_frame);
         label_26->setObjectName(QString::fromUtf8("label_26"));
-        label_26->setMinimumSize(QSize(400, 0));
         label_26->setFont(font1);
         label_26->setStyleSheet(QString::fromUtf8("QFrame {\n"
 "	color: #666666;\n"

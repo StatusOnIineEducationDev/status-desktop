@@ -93,7 +93,6 @@ void SWhiteBoardController::setPaintConnectionSendBaseInfo(QString course_id, QS
 
 void SWhiteBoardController::initWhiteBoardArea() {
 	Ui::SOnlineClassroomWidget ui = this->m_online_classroom_widget->ui();
-	QScrollArea *scroll_area = new QScrollArea(this->m_online_classroom_widget);
 
 	this->createInteractiveWhiteBoard();
 
