@@ -284,6 +284,7 @@ void SOnlineClassroomController::handleCommandResultOfRaiseHand(QJsonObject &dat
 		// ——处理自己的请求被接受
 		if (data["student_id"].toString() == this->m_user->uid()) {
 			this->showInSpeechRemovableWidget();
+			this->m_white_board_controller->setInteractiveWhiteBoardDisabled(false);  // 释放画板控制
 		}
 	}
 
@@ -310,6 +311,9 @@ void SOnlineClassroomController::handleCommandRemoveMemberFromInSpeech(QJsonObje
 		toast->setInfoText("发言已结束");
 		toast->show();
 		this->connect(toast, &Toast::complete, toast, &Toast::deleteLater);
+
+		this->m_white_board_controller->setInteractiveWhiteBoardDisabled(true);  // 白板不可用
+
 	}
 	
 	return;

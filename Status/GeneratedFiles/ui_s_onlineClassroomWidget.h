@@ -239,7 +239,7 @@ public:
             SOnlineClassroomWidget->setObjectName(QString::fromUtf8("SOnlineClassroomWidget"));
         SOnlineClassroomWidget->resize(819, 627);
         SOnlineClassroomWidget->setMinimumSize(QSize(819, 627));
-        SOnlineClassroomWidget->setStyleSheet(QString::fromUtf8("QWidget#StudentInteractionWidget {\n"
+        SOnlineClassroomWidget->setStyleSheet(QString::fromUtf8("QWidget#SOnlineClassroomWidget {\n"
 "	background: #ffffff;\n"
 "}"));
         gridLayout = new QGridLayout(SOnlineClassroomWidget);
@@ -809,9 +809,18 @@ public:
 "    image: url(:/button/Resources/material/button/close_mini.png);\n"
 "	border-radius: 8px;\n"
 "	background-color: red;\n"
-"}"));
+"}\n"
+"\n"
+"\n"
+"\n"
+"QScrollArea {border:none;background-color:transparent;}\n"
+"QScrollBar:vertic"
+                        "al {border:none;background-color:#ffffff;width:10px;}\n"
+"QScrollBar:vertical:hover {border:none;background-color:rgb(220,220,220);width:10px;}\n"
+"QScrollBar::handle:vertical{border-radius:5px;background:rgb(220,220,220);min-height:20px;}QScrollBar::handle:vertical:hover{border-radius:5px;background:rgb(200,200,200);min-height:20px;}QScrollBar::add-line:vertical{height:0;subcontrol-position:bottom;subcontrol-origin:margin;}QScrollBar::sub-line:vertical{height:0px;subcontrol-position:top;subcontrol-origin:margin;}QScrollBar:horizontal{border:none;background-color:#ffffff;height:10px;}QScrollBar:horizontal:hover{border:none;background-color:rgb(220,220,220);height:10px;}QScrollBar::handle:horizontal{border-radius:5px;background:rgb(220,220,220);min-width:20px;}QScrollBar::handle:horizontal:hover{border-radius:5px;background:rgb(200,200,200);min-width:20px;}QScrollBar::add-line:horizontal{width:0;subcontrol-position:bottom;subcontrol-origin:margin;}QScrollBar::sub-line:horizontal{width:0px;subcontrol-position:to"
+                        "p;subcontrol-origin:margin;}"));
         board_tabWidget->setTabShape(QTabWidget::Rounded);
-        board_tabWidget->setTabsClosable(false);
+        board_tabWidget->setTabsClosable(true);
 
         gridLayout_3->addWidget(board_tabWidget, 1, 1, 1, 1);
 
@@ -2589,6 +2598,7 @@ public:
         horizontalLayout_4->setContentsMargins(10, 0, 10, 0);
         label_26 = new QLabel(function_btn_frame);
         label_26->setObjectName(QString::fromUtf8("label_26"));
+        label_26->setMinimumSize(QSize(400, 0));
         label_26->setFont(font1);
         label_26->setStyleSheet(QString::fromUtf8("QFrame {\n"
 "	color: #666666;\n"

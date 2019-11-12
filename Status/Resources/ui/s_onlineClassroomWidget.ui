@@ -20,7 +20,7 @@
    <string>Form</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">QWidget#StudentInteractionWidget {
+   <string notr="true">QWidget#SOnlineClassroomWidget {
 	background: #ffffff;
 }</string>
   </property>
@@ -1140,7 +1140,14 @@ QTabBar::close-button:hover {
     image: url(:/button/Resources/material/button/close_mini.png);
 	border-radius: 8px;
 	background-color: red;
-}</string>
+}
+
+
+
+QScrollArea {border:none;background-color:transparent;}
+QScrollBar:vertical {border:none;background-color:#ffffff;width:10px;}
+QScrollBar:vertical:hover {border:none;background-color:rgb(220,220,220);width:10px;}
+QScrollBar::handle:vertical{border-radius:5px;background:rgb(220,220,220);min-height:20px;}QScrollBar::handle:vertical:hover{border-radius:5px;background:rgb(200,200,200);min-height:20px;}QScrollBar::add-line:vertical{height:0;subcontrol-position:bottom;subcontrol-origin:margin;}QScrollBar::sub-line:vertical{height:0px;subcontrol-position:top;subcontrol-origin:margin;}QScrollBar:horizontal{border:none;background-color:#ffffff;height:10px;}QScrollBar:horizontal:hover{border:none;background-color:rgb(220,220,220);height:10px;}QScrollBar::handle:horizontal{border-radius:5px;background:rgb(220,220,220);min-width:20px;}QScrollBar::handle:horizontal:hover{border-radius:5px;background:rgb(200,200,200);min-width:20px;}QScrollBar::add-line:horizontal{width:0;subcontrol-position:bottom;subcontrol-origin:margin;}QScrollBar::sub-line:horizontal{width:0px;subcontrol-position:top;subcontrol-origin:margin;}</string>
          </property>
          <property name="tabShape">
           <enum>QTabWidget::Rounded</enum>
@@ -1149,7 +1156,7 @@ QTabBar::close-button:hover {
           <number>-1</number>
          </property>
          <property name="tabsClosable">
-          <bool>false</bool>
+          <bool>true</bool>
          </property>
         </widget>
        </item>
@@ -4999,6 +5006,12 @@ QCheckBox::indicator:checked {
       </property>
       <item>
        <widget class="QLabel" name="label_26">
+        <property name="minimumSize">
+         <size>
+          <width>400</width>
+          <height>0</height>
+         </size>
+        </property>
         <property name="font">
          <font>
           <family>微软雅黑</family>

@@ -19,16 +19,21 @@
 class WhiteBoard : public QWidget {
 	Q_OBJECT
 
+signals:
+	void paintCommandReady(QJsonObject &data);
+
 public:
 	WhiteBoard(QWidget *parent = Q_NULLPTR);
 	enum ToolType { PEN, RUBBER, LINE, RECT, ELLIPSE, TEXT };
 	enum PaintType { Image, Paint, Clear, Undo, Push };
 	enum PaintWay { Command, Mouse };
 
+	bool getBoardDisabled() { return this->m_board_disabled; };
 	QPixmap& getBoardImage() { return this->m_board_image; };
 	QPen getPen() { return this->m_mouse_pen; };
 	QPen getRubber() { return this->m_mouse_rubber; };
 	ToolType getToolType() { return this->m_mouse_tool_type; };
+	void setBoardDisabled(bool board_disabled) { this->m_board_disabled = board_disabled; return; };
 	void setBoardImage(QPixmap &board_image) { this->m_board_image = board_image; this->update(); return; };
 	void setPen(QPen pen) { this->m_mouse_pen = pen; return; };
 	void setRubber(QPen rubber);
@@ -38,9 +43,6 @@ public:
 	void mouseUndo();
 	void endEdit();
 	void paintByPaintCommand(QJsonObject &paint_command);
-
-signals:
-	void paintCommandReady(QJsonObject &data);
 
 private:
 	QJsonObject createPaintCommand(PaintType paint_type);
@@ -55,6 +57,7 @@ private:
 	void mouseMoveEvent(QMouseEvent *event);
 	void mouseReleaseEvent(QMouseEvent *event);
 
+	bool m_board_disabled;
 	QStack<QPixmap> m_image_stack; // ÒÑ×ö²Ù×÷Õ»
 	QPixmap m_board_image;  // »­°å
 	QPixmap m_temp_image; // »º³å»­°å

@@ -5,8 +5,8 @@ const int PEN_WIDTH = 3;
 const int RUBBER_WIDTH = 20;
 
 SWhiteBoardController::SWhiteBoardController(SOnlineClassroomWidget *online_classroom_widget, QObject *parent)
-	: QObject(parent), m_online_classroom_widget(online_classroom_widget) {
-	this->initWhiteBoard();
+	: QObject(parent), m_online_classroom_widget(online_classroom_widget), m_board_id(1){
+	this->initWhiteBoardArea();
 }
 
 SWhiteBoardController::~SWhiteBoardController() {
@@ -49,6 +49,13 @@ void SWhiteBoardController::distroyPaintConnection() {
 	return;
 }
 
+void SWhiteBoardController::setInteractiveWhiteBoardDisabled(bool flag) {
+	this->m_board_list[0]->setBoardDisabled(flag);
+	this->setToolBarDisabled(flag);
+
+	return;
+}
+
 void SWhiteBoardController::handlePaintConnectionRecv() {
 	QJsonObject data = this->m_paint_connection->recv();
 	TransportCmd cmd = TransportCmd(data["command"].toInt());
@@ -84,24 +91,27 @@ void SWhiteBoardController::setPaintConnectionSendBaseInfo(QString course_id, QS
 	return;
 }
 
-void SWhiteBoardController::initWhiteBoard() {
+void SWhiteBoardController::initWhiteBoardArea() {
 	Ui::SOnlineClassroomWidget ui = this->m_online_classroom_widget->ui();
-	QScrollArea *scroll_area;
-	QPen pen, rubber;
+	QScrollArea *scroll_area = new QScrollArea(this->m_online_classroom_widget);
+
+	this->createInteractiveWhiteBoard();
 
 	// ——工具栏信号绑定
 	this->toolBarSignalConnect();
+}
 
-	// ——初始化
-	scroll_area = new QScrollArea();
+void SWhiteBoardController::createInteractiveWhiteBoard() {
+	Ui::SOnlineClassroomWidget ui = this->m_online_classroom_widget->ui();
+	QScrollArea *scroll_area = new QScrollArea(ui.board_tabWidget);
+	QPen pen, rubber;
 
-	this->m_board_id = 1;
-
-	this->m_board = new WhiteBoard(this->m_online_classroom_widget);  // 先创建一个画板
+	this->m_board = new WhiteBoard(scroll_area);  // 先创建一个画板
 	this->m_board_list.append(this->m_board);  // 加入链表之中
+	this->setInteractiveWhiteBoardDisabled(true);  // 学生端该画板默认不可用
+
 	scroll_area->setWidget(this->m_board);
-	scroll_area->setStyleSheet("QScrollArea{border:none;background-color:transparent;}QScrollBar:vertical{border:none;background-color:#ffffff;width:10px;}QScrollBar:vertical:hover{border:none;background-color:rgb(220,220,220);width:10px;}QScrollBar::handle:vertical{border-radius:5px;background:rgb(220,220,220);min-height:20px;}QScrollBar::handle:vertical:hover{border-radius:5px;background:rgb(200,200,200);min-height:20px;}QScrollBar::add-line:vertical{height:0;subcontrol-position:bottom;subcontrol-origin:margin;}QScrollBar::sub-line:vertical{height:0px;subcontrol-position:top;subcontrol-origin:margin;}QScrollBar:horizontal{border:none;background-color:#ffffff;height:10px;}QScrollBar:horizontal:hover{border:none;background-color:rgb(220,220,220);height:10px;}QScrollBar::handle:horizontal{border-radius:5px;background:rgb(220,220,220);min-width:20px;}QScrollBar::handle:horizontal:hover{border-radius:5px;background:rgb(200,200,200);min-width:20px;}QScrollBar::add-line:horizontal{width:0;subcontrol-position:bottom;subcontrol-origin:margin;}QScrollBar::sub-line:horizontal{width:0px;subcontrol-position:top;subcontrol-origin:margin;}");
-	ui.board_tabWidget->addTab(scroll_area, "board_1");  // 添加一个画板
+	ui.board_tabWidget->addTab(scroll_area, "互动画板");  // 添加一个画板
 	ui.black_pen_btn->click();  // 默认为黑笔，模拟点击
 	// ——画笔、橡皮檫默认宽度
 	pen = this->m_board->getPen();
@@ -115,11 +125,17 @@ void SWhiteBoardController::initWhiteBoard() {
 	this->m_board->setRubber(rubber);
 	ui.rubber_width_slider->setValue(RUBBER_WIDTH);
 	ui.rubber_width_edit->setText(QString::number(RUBBER_WIDTH));
+
+	// ——设置该画板不可关闭
+	this->m_online_classroom_widget->ui().board_tabWidget->tabBar()->setTabButton(0, QTabBar::RightSide, nullptr);
+
+
+	return;
 }
 
 void SWhiteBoardController::toolBarSignalConnect() {
 	Ui::SOnlineClassroomWidget ui = this->m_online_classroom_widget->ui();
-
+	
 	// 工具栏按钮信号绑定
 	this->connect(ui.pen_width_slider, &QSlider::valueChanged, this, &SWhiteBoardController::setPenWidth);
 	this->connect(ui.rubber_width_slider, &QSlider::valueChanged, this, &SWhiteBoardController::setRubberWidth);
@@ -139,6 +155,29 @@ void SWhiteBoardController::toolBarSignalConnect() {
 	this->connect(ui.add_board_btn, &QPushButton::clicked, this, &SWhiteBoardController::addBoard);
 	this->connect(ui.board_tabWidget, &QTabWidget::tabCloseRequested, this, &SWhiteBoardController::deleteBoard);
 	this->connect(ui.board_tabWidget, &QTabWidget::currentChanged, this, &SWhiteBoardController::changeBoard);
+
+	return;
+}
+
+void SWhiteBoardController::setToolBarDisabled(bool flag) {
+	Ui::SOnlineClassroomWidget ui = this->m_online_classroom_widget->ui();
+
+	ui.pen_width_edit->setDisabled(flag);
+	ui.rubber_width_edit->setDisabled(flag);
+	ui.pen_width_slider->setDisabled(flag);
+	ui.rubber_width_slider->setDisabled(flag);
+	ui.pen_width_edit->setDisabled(flag);
+	ui.black_pen_btn->setDisabled(flag);
+	ui.blue_pen_btn->setDisabled(flag);
+	ui.red_pen_btn->setDisabled(flag);
+	ui.color_pen_btn->setDisabled(flag);
+	ui.text_btn->setDisabled(flag);
+	ui.rubber_btn->setDisabled(flag);
+	ui.line_btn->setDisabled(flag);
+	ui.rect_btn->setDisabled(flag);
+	ui.ellipse_btn->setDisabled(flag);
+	ui.undo_btn->setDisabled(flag);
+	ui.clear_btn->setDisabled(flag);
 
 	return;
 }
@@ -303,29 +342,28 @@ void SWhiteBoardController::showCurrentColor(QString color) {
 }
 
 void SWhiteBoardController::addBoard() {
-	QScrollArea *scroll_area = new QScrollArea();
+	Ui::SOnlineClassroomWidget ui = this->m_online_classroom_widget->ui();
+	QScrollArea *scroll_area = new QScrollArea(ui.board_tabWidget);
 	QPen pen, rubber;
 
-	this->m_board = new WhiteBoard();  // 先创建一个画板
+	this->m_board = new WhiteBoard(scroll_area);  // 先创建一个画板
 	this->m_board_list.append(this->m_board);  // 加入链表之中
 	scroll_area->setWidget(this->m_board);
-	scroll_area->setStyleSheet("QScrollArea{border:none;background-color:transparent;}QScrollBar:vertical{border:none;background-color:#ffffff;width:10px;}QScrollBar:vertical:hover{border:none;background-color:rgb(220,220,220);width:10px;}QScrollBar::handle:vertical{border-radius:5px;background:rgb(220,220,220);min-height:20px;}QScrollBar::handle:vertical:hover{border-radius:5px;background:rgb(200,200,200);min-height:20px;}QScrollBar::add-line:vertical{height:0;subcontrol-position:bottom;subcontrol-origin:margin;}QScrollBar::sub-line:vertical{height:0px;subcontrol-position:top;subcontrol-origin:margin;}QScrollBar:horizontal{border:none;background-color:#ffffff;height:10px;}QScrollBar:horizontal:hover{border:none;background-color:rgb(220,220,220);height:10px;}QScrollBar::handle:horizontal{border-radius:5px;background:rgb(220,220,220);min-width:20px;}QScrollBar::handle:horizontal:hover{border-radius:5px;background:rgb(200,200,200);min-width:20px;}QScrollBar::add-line:horizontal{width:0;subcontrol-position:bottom;subcontrol-origin:margin;}QScrollBar::sub-line:horizontal{width:0px;subcontrol-position:top;subcontrol-origin:margin;}");
-	this->m_online_classroom_widget->ui().board_tabWidget->addTab(scroll_area, "board_" + QString::number(++this->m_board_id));  // 添加一个画板
-	this->m_online_classroom_widget->ui().board_tabWidget->setCurrentIndex(this->m_online_classroom_widget->ui().board_tabWidget->count() - 1);  // 切换到最新建的画板
-	this->m_online_classroom_widget->ui().board_tabWidget->setTabsClosable(true);  // 执行添加操作，那画板数量肯定大于1，可以执行删除操作
-	this->m_online_classroom_widget->ui().black_pen_btn->click();  // 默认为黑笔，模拟点击
+	ui.board_tabWidget->addTab(scroll_area, "画板_" + QString::number(++this->m_board_id));  // 添加一个画板
+	ui.board_tabWidget->setCurrentIndex(ui.board_tabWidget->count() - 1);  // 切换到最新建的画板
+	ui.black_pen_btn->click();  // 默认为黑笔，模拟点击
 	// 画笔、橡皮檫默认宽度
 	pen = this->m_board->getPen();
 	pen.setWidth(PEN_WIDTH);
 	this->m_board->setPen(pen);
-	this->m_online_classroom_widget->ui().pen_width_slider->setValue(PEN_WIDTH);
-	this->m_online_classroom_widget->ui().pen_width_edit->setText(QString::number(PEN_WIDTH));
+	ui.pen_width_slider->setValue(PEN_WIDTH);
+	ui.pen_width_edit->setText(QString::number(PEN_WIDTH));
 
 	rubber = this->m_board->getRubber();
 	rubber.setWidth(RUBBER_WIDTH);
 	this->m_board->setRubber(rubber);
-	this->m_online_classroom_widget->ui().rubber_width_slider->setValue(RUBBER_WIDTH);
-	this->m_online_classroom_widget->ui().rubber_width_edit->setText(QString::number(RUBBER_WIDTH));
+	ui.rubber_width_slider->setValue(RUBBER_WIDTH);
+	ui.rubber_width_edit->setText(QString::number(RUBBER_WIDTH));
 
 	return;
 }
@@ -338,11 +376,6 @@ void SWhiteBoardController::deleteBoard(int index) {
 
 	this->m_online_classroom_widget->ui().board_tabWidget->removeTab(index);
 
-	// 如果仅剩一个画板，无法关闭
-	if (this->m_online_classroom_widget->ui().board_tabWidget->count() == 1) {
-		this->m_online_classroom_widget->ui().board_tabWidget->setTabsClosable(false);
-	}
-
 	return;
 }
 
@@ -352,6 +385,8 @@ void SWhiteBoardController::changeBoard(int index) {
 	WhiteBoard::ToolType tool_Type;
 
 	this->m_board = this->m_board_list[index];  // 切换工作画板
+	this->setToolBarDisabled(this->m_board->getBoardDisabled()); // 工具栏可用设置
+
 	pen = this->m_board->getPen();  // 获取当前画板的笔
 	color = pen.color();  // 获取当前画板的笔颜色
 	rubber = this->m_board->getRubber();  // 获取当前画板的橡皮檫

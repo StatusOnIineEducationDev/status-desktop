@@ -20,6 +20,7 @@ public:
 
 	void createPaintConnection(QString course_id, QString lesson_id, QString uid);
 	void distroyPaintConnection();
+	void setInteractiveWhiteBoardDisabled(bool flag);
 
 protected:
 	void handlePaintConnectionRecv();
@@ -28,8 +29,10 @@ protected:
 
 	void setPaintConnectionSendBaseInfo(QString course_id, QString lesson_id, QString uid);
 	
-	void initWhiteBoard();
+	void initWhiteBoardArea();
+	void createInteractiveWhiteBoard();
 	void toolBarSignalConnect();
+	void setToolBarDisabled(bool flag);
 	void setPenWidth(int value);
 	void setRubberWidth(int value);
 	void setPenSlider();

@@ -190,8 +190,8 @@ public:
     QLabel *label_18;
     QLabel *label_32;
     QLabel *teacher_name_text;
-    QButtonGroup *buttonGroup_2;
     QButtonGroup *buttonGroup;
+    QButtonGroup *buttonGroup_2;
 
     void setupUi(QWidget *TOnlineClassroomWidget)
     {
@@ -199,7 +199,7 @@ public:
             TOnlineClassroomWidget->setObjectName(QString::fromUtf8("TOnlineClassroomWidget"));
         TOnlineClassroomWidget->resize(819, 627);
         TOnlineClassroomWidget->setMinimumSize(QSize(819, 627));
-        TOnlineClassroomWidget->setStyleSheet(QString::fromUtf8("QWidget#TeacherInteractionWidget {\n"
+        TOnlineClassroomWidget->setStyleSheet(QString::fromUtf8("QWidget#TOnlineClassroomWidget {\n"
 "	background: #ffffff;\n"
 "}"));
         gridLayout = new QGridLayout(TOnlineClassroomWidget);
@@ -250,6 +250,9 @@ public:
         function_tabWidget->setTabBarAutoHide(false);
         board_tab = new QWidget();
         board_tab->setObjectName(QString::fromUtf8("board_tab"));
+        board_tab->setStyleSheet(QString::fromUtf8("QWidget {\n"
+"	background: #F3F4F8;\n"
+"}"));
         gridLayout_3 = new QGridLayout(board_tab);
         gridLayout_3->setSpacing(5);
         gridLayout_3->setObjectName(QString::fromUtf8("gridLayout_3"));
@@ -766,9 +769,17 @@ public:
 "    image: url(:/button/Resources/material/button/close_mini.png);\n"
 "	border-radius: 8px;\n"
 "	background-color: red;\n"
-"}"));
+"}\n"
+"\n"
+"\n"
+"QScrollArea {border:none;background-color:transparent;}\n"
+"QScrollBar:vertical {b"
+                        "order:none;background-color:#ffffff;width:10px;}\n"
+"QScrollBar:vertical:hover {border:none;background-color:rgb(220,220,220);width:10px;}\n"
+"QScrollBar::handle:vertical{border-radius:5px;background:rgb(220,220,220);min-height:20px;}QScrollBar::handle:vertical:hover{border-radius:5px;background:rgb(200,200,200);min-height:20px;}QScrollBar::add-line:vertical{height:0;subcontrol-position:bottom;subcontrol-origin:margin;}QScrollBar::sub-line:vertical{height:0px;subcontrol-position:top;subcontrol-origin:margin;}QScrollBar:horizontal{border:none;background-color:#ffffff;height:10px;}QScrollBar:horizontal:hover{border:none;background-color:rgb(220,220,220);height:10px;}QScrollBar::handle:horizontal{border-radius:5px;background:rgb(220,220,220);min-width:20px;}QScrollBar::handle:horizontal:hover{border-radius:5px;background:rgb(200,200,200);min-width:20px;}QScrollBar::add-line:horizontal{width:0;subcontrol-position:bottom;subcontrol-origin:margin;}QScrollBar::sub-line:horizontal{width:0px;subcontrol-position:top;sub"
+                        "control-origin:margin;}"));
         board_tabWidget->setTabShape(QTabWidget::Rounded);
-        board_tabWidget->setTabsClosable(false);
+        board_tabWidget->setTabsClosable(true);
 
         gridLayout_3->addWidget(board_tabWidget, 1, 1, 1, 1);
 

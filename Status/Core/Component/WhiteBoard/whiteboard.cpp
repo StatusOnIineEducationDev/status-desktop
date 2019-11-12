@@ -1,6 +1,7 @@
 #include "WhiteBoard.h"
 
-WhiteBoard::WhiteBoard(QWidget *parent) : QWidget(parent) {
+WhiteBoard::WhiteBoard(QWidget *parent) 
+	: QWidget(parent), m_board_disabled(false){
 	// 初始化
 	this->m_is_typing = false;
 
@@ -300,6 +301,10 @@ void WhiteBoard::paintEvent(QPaintEvent *event) {
 }
 
 void WhiteBoard::mousePressEvent(QMouseEvent *event) {
+	if (this->m_board_disabled) {
+		return;
+	}
+
 	this->m_image_stack.push(this->m_board_image);  // 当前画板进栈，撤销备用
 	emit paintCommandReady(this->createPaintCommand(PaintType::Push));
 
@@ -328,7 +333,11 @@ void WhiteBoard::mousePressEvent(QMouseEvent *event) {
 }
 
 void WhiteBoard::mouseMoveEvent(QMouseEvent *event) {
-	if (event->buttons() & Qt::LeftButton) {  // 鼠标按下左键并移动
+	if (this->m_board_disabled) {
+		return;
+	}
+
+	if (event->buttons() && Qt::LeftButton) {  // 鼠标按下左键并移动
 		this->m_mouse_end_point = event->pos();  // 鼠标每移动一次都刷新终点
 		this->m_temp_image = this->m_board_image;
 
@@ -347,6 +356,10 @@ void WhiteBoard::mouseMoveEvent(QMouseEvent *event) {
 }
 
 void WhiteBoard::mouseReleaseEvent(QMouseEvent *event) {
+	if (this->m_board_disabled) {
+		return;
+	}
+
 	this->m_mouse_is_drawing = false; // 绘图完毕
 	this->mousePaint(this->m_board_image); // 把最后一点画在image画布上
 
