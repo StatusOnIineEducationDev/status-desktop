@@ -2,7 +2,6 @@
 
 TWhiteBoardController::TWhiteBoardController(TOnlineClassroomWidget *online_classroom_widget, QObject *parent)
 	: QObject(parent), m_online_classroom_widget(online_classroom_widget) {
-	this->connect(this->m_online_classroom_widget->board(), &WhiteBoard::paintCommandReady, this, &TWhiteBoardController::sendPaintCommand);
 }
 
 TWhiteBoardController::~TWhiteBoardController() {
@@ -36,6 +35,7 @@ void TWhiteBoardController::createPaintConnection(QMap<QString, QVariant> &data)
 	this->setPaintConnectionSendBaseInfo(data["uid"].toString(), data["course_id"].toString(), data["lesson_id"].toString());
 
 	// ¡ª¡ªÐÅºÅ°ó¶¨
+	this->connect(this->m_online_classroom_widget->board(), &WhiteBoard::paintCommandReady, this, &TWhiteBoardController::sendPaintCommand);
 	this->connect(this->m_paint_connection, &Connection::bufferReadyRead, this, &TWhiteBoardController::handlePaintConnectionRecv);
 
 	return;
@@ -43,6 +43,8 @@ void TWhiteBoardController::createPaintConnection(QMap<QString, QVariant> &data)
 
 void TWhiteBoardController::distroyPaintConnection() {
 	QThread *thread = this->m_paint_connection->thread();
+
+	this->disconnect(this->m_online_classroom_widget->board(), &WhiteBoard::paintCommandReady, this, &TWhiteBoardController::sendPaintCommand);
 	delete this->m_paint_connection;
 	this->m_paint_connection = nullptr;
 	thread->exit(0);

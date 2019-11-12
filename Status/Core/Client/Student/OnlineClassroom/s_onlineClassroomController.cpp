@@ -340,7 +340,6 @@ void SOnlineClassroomController::joinInLesson(QMap<QString, QVariant> &data) {
 void SOnlineClassroomController::lessonBegin() {
 	Ui::SOnlineClassroomWidget ui = this->m_online_classroom_widget->ui();
 	QJsonObject paint_request_json_obj;
-	QMap<QString, QVariant> data;
 	Toast *toast = new Toast("开始上课");
 
 	this->m_lesson_timer.start(1000);  // 开启定时器
