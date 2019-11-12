@@ -280,10 +280,8 @@ void TOnlineClassroomController::beginLesson() {
 	this->lessonConnectionSend(request_json_obj);
 
 	// ——建立画板连接
-	data["course_id"] = this->m_room.courseId();
-	data["lesson_id"] = this->m_room.lessonId();
-	data["uid"] = this->m_user->uid();
-	this->m_white_board_controller->createPaintConnection(data);
+	this->m_white_board_controller->createPaintConnection(this->m_room.courseId(),
+		this->m_room.lessonId(), this->m_user->uid());
 
 	return;
 }

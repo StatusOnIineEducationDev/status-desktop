@@ -3,6 +3,7 @@
 #include <QThread>
 #include <QTextBrowser>
 #include <QDateTime>
+#include <QJsonObject>
 #include "Core/Client/Student/OnlineClassroom/s_onlineclassroomWidget.h"
 #include "Core/Client/Common/c_listWidgetItem.h"
 #include "Core/Component/toast.h"
