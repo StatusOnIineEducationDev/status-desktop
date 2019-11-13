@@ -8,7 +8,7 @@ TOnlineClassroomController::TOnlineClassroomController(User *user, QObject *pare
 }
 
 TOnlineClassroomController::~TOnlineClassroomController() {
-
+	delete this->m_online_classroom_widget;
 }
 
 void TOnlineClassroomController::showOnlineClassroomWidget(TMainWindow *parent) {
