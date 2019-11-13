@@ -15,6 +15,7 @@ SMainWindowController::SMainWindowController(SMainWindow *win, User *user)
 	this->connect(ui.redo_btn, &QPushButton::clicked, this, &SMainWindowController::redo);
 
 	// ——默认首页
+	this->showCourseManagementWidget();
 
 	// ——默认设置
 	ui.undo_btn->setEnabled(false);
@@ -63,7 +64,6 @@ void SMainWindowController::showCourseManagementWidget() {
 }
 
 void SMainWindowController::showOnlineClassroomWidget() {
-
 	this->clearWidget();  // 先清除主窗中当前显示的子窗
 	if (this->m_online_classroom_controller == nullptr) {
 		this->m_online_classroom_controller = new SOnlineClassroomController(this->m_user);  // 动态创建子窗

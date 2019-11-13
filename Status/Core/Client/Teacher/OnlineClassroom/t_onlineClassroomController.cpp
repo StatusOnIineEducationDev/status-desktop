@@ -2,7 +2,9 @@
 
 
 TOnlineClassroomController::TOnlineClassroomController(User *user, QObject *parent)
-	:QObject(parent), m_user(user), m_camera(nullptr), m_lesson_connection(nullptr) {
+	:QObject(parent), m_enter_controller(nullptr), m_white_board_controller(nullptr),
+	m_chat_controller(nullptr), m_online_classroom_widget(nullptr),m_user(user), 
+	m_camera(nullptr), m_lesson_connection(nullptr) {
 }
 
 TOnlineClassroomController::~TOnlineClassroomController() {
@@ -14,20 +16,32 @@ void TOnlineClassroomController::showOnlineClassroomWidget(TMainWindow *parent) 
 	QList<QMap<QString, QVariant>> course_list;
 	QList<CourseBase> *course_base_list = this->m_user->coursesBaseList();
 
-	this->initOnlineClassroomWidget(parent);
-	this->initController();
+	if (this->m_online_classroom_widget == nullptr) {
+		this->initOnlineClassroomWidget(parent);
+		this->initController();
 
-	// ——加载数据
-	for (int index = 0; index < course_base_list->count(); index++) {
-		course = new QMap<QString, QVariant>;
-		course->insert("course_id", course_base_list->at(index).courseId());
-		course->insert("course_name", course_base_list->at(index).courseName());
-		course_list.append(*course);
+		// ——加载数据
+		for (int index = 0; index < course_base_list->count(); index++) {
+			course = new QMap<QString, QVariant>;
+			course->insert("course_id", course_base_list->at(index).courseId());
+			course->insert("course_name", course_base_list->at(index).courseName());
+			course_list.append(*course);
+		}
+		// ——显示
+		this->m_enter_controller->showEnterDialog(this->m_online_classroom_widget, course_list);
 	}
+
 	// ——显示
 	parent->ui().widget_layout->addWidget(this->m_online_classroom_widget);
 	this->m_online_classroom_widget->show();
-	this->m_enter_controller->showEnterDialog(this->m_online_classroom_widget, course_list);
+
+	return;
+}
+
+void TOnlineClassroomController::hideOnlineClassroomWidget(TMainWindow *parent) {
+	// ——显示
+	parent->ui().widget_layout->removeWidget(this->m_online_classroom_widget);
+	this->m_online_classroom_widget->hide();
 
 	return;
 }

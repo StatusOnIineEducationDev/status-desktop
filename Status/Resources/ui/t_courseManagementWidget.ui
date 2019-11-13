@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>SCourseManagementWidget</class>
- <widget class="QWidget" name="SCourseManagementWidget">
+ <class>TCourseManagementWidget</class>
+ <widget class="QWidget" name="TCourseManagementWidget">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -194,6 +194,64 @@ QPushButton:hover {
         <property name="icon">
          <iconset resource="../../Status.qrc">
           <normaloff>:/button/Resources/material/button/join_in.png</normaloff>:/button/Resources/material/button/join_in.png</iconset>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>15</width>
+          <height>15</height>
+         </size>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="raise_hand_btn_2">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>25</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>16777215</width>
+          <height>25</height>
+         </size>
+        </property>
+        <property name="font">
+         <font>
+          <family>微软雅黑</family>
+          <pointsize>10</pointsize>
+         </font>
+        </property>
+        <property name="cursor">
+         <cursorShape>PointingHandCursor</cursorShape>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton {
+	color: #666666;
+	background: none;
+	border: none;
+	border-radius: 5px;
+	padding-left: 5px;
+	padding-right: 5px;
+}
+
+QPushButton:hover {
+	background-color: #dedede;
+}</string>
+        </property>
+        <property name="text">
+         <string>创建课程</string>
+        </property>
+        <property name="icon">
+         <iconset resource="../../Status.qrc">
+          <normaloff>:/button/Resources/material/button/create.png</normaloff>:/button/Resources/material/button/create.png</iconset>
         </property>
         <property name="iconSize">
          <size>
@@ -426,7 +484,7 @@ QPushButton::hover {
 }</string>
         </property>
         <property name="text">
-         <string>退出课程</string>
+         <string>删除课程</string>
         </property>
        </widget>
       </item>

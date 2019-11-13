@@ -22,6 +22,7 @@ public:
 	TOnlineClassroomWidget *onlineClassroomWidget() const { return this->m_online_classroom_widget; };
 
 	void showOnlineClassroomWidget(TMainWindow *parent);
+	void hideOnlineClassroomWidget(TMainWindow *parent);
 	void lessonConnectionSend(QJsonObject &data);
 
 protected:

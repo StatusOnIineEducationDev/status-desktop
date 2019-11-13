@@ -63,6 +63,8 @@
         <file>Resources/material/button/stop.png</file>
         <file>Resources/material/button/raise_hand_new.png</file>
         <file>Resources/material/button/mini_program.png</file>
+        <file>Resources/material/button/create.png</file>
+        <file>Resources/material/button/join_in.png</file>
     </qresource>
     <qresource prefix="/shadow">
         <file>Resources/material/shadow/980x680_shadow.png</file>

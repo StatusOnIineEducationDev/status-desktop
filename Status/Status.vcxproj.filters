@@ -84,9 +84,6 @@
     </QtRcc>
   </ItemGroup>
   <ItemGroup>
-    <QtUic Include="Resources\ui\teacher_course_widget.ui">
-      <Filter>Resource Files\Ui</Filter>
-    </QtUic>
     <QtUic Include="Resources\ui\c_chatItemMineWidget.ui">
       <Filter>Resource Files\Ui</Filter>
     </QtUic>
@@ -124,6 +121,9 @@
       <Filter>Resource Files\Ui</Filter>
     </QtUic>
     <QtUic Include="Resources\ui\t_onlineClassroomWidget.ui">
+      <Filter>Resource Files\Ui</Filter>
+    </QtUic>
+    <QtUic Include="Resources\ui\t_courseManagementWidget.ui">
       <Filter>Resource Files\Ui</Filter>
     </QtUic>
   </ItemGroup>
@@ -234,6 +234,12 @@
     <ClCompile Include="Core\Client\Student\CourseManagement\s_courseManagementController.cpp">
       <Filter>Core\Client\Student\CourseManagement</Filter>
     </ClCompile>
+    <ClCompile Include="Core\Client\Teacher\CourseManagement\t_courseManagementController.cpp">
+      <Filter>Core\Client\Teacher\CourseManagement</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\Client\Teacher\CourseManagement\t_courseManagementWidget.cpp">
+      <Filter>Core\Client\Teacher\CourseManagement</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="Core\Network\socket.h">
@@ -322,6 +328,12 @@
     </QtMoc>
     <QtMoc Include="Core\Client\Student\CourseManagement\s_courseManagementController.h">
       <Filter>Core\Client\Student\CourseManagement</Filter>
+    </QtMoc>
+    <QtMoc Include="Core\Client\Teacher\CourseManagement\t_courseManagementController.h">
+      <Filter>Core\Client\Teacher\CourseManagement</Filter>
+    </QtMoc>
+    <QtMoc Include="Core\Client\Teacher\CourseManagement\t_courseManagementWidget.h">
+      <Filter>Core\Client\Teacher\CourseManagement</Filter>
     </QtMoc>
   </ItemGroup>
   <ItemGroup>

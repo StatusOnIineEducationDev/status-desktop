@@ -23,7 +23,7 @@
     <QtUic Include="Resources\ui\s_enterDialog.ui" />
     <QtUic Include="Resources\ui\s_onlineClassroomWidget.ui" />
     <QtUic Include="Resources\ui\s_mainWindow.ui" />
-    <QtUic Include="Resources\ui\teacher_course_widget.ui" />
+    <QtUic Include="Resources\ui\t_courseManagementWidget.ui" />
     <QtUic Include="Resources\ui\t_handleRaiseHandWidget.ui" />
     <QtUic Include="Resources\ui\t_enterDialog.ui" />
     <QtUic Include="Resources\ui\t_onlineClassroomWidget.ui" />
@@ -43,6 +43,8 @@
     <ClCompile Include="Core\Client\Student\OnlineClassroom\s_onlineClassroomWidget.cpp" />
     <ClCompile Include="Core\Client\Student\s_mainWindow.cpp" />
     <ClCompile Include="Core\Client\Student\s_mainWindowController.cpp" />
+    <ClCompile Include="Core\Client\Teacher\CourseManagement\t_courseManagementController.cpp" />
+    <ClCompile Include="Core\Client\Teacher\CourseManagement\t_courseManagementWidget.cpp" />
     <ClCompile Include="Core\Client\Teacher\OnlineClassroom\Enter\t_enterController.cpp" />
     <ClCompile Include="Core\Client\Teacher\OnlineClassroom\Enter\t_enterDialog.cpp" />
     <ClCompile Include="Core\Client\Teacher\OnlineClassroom\Interaction\t_chatController.cpp" />
@@ -180,6 +182,14 @@
     </QtMoc>
     <QtMoc Include="Core\Client\Student\CourseManagement\s_courseManagementWidget.h" />
     <QtMoc Include="Core\Client\Student\CourseManagement\s_courseManagementController.h" />
+    <QtMoc Include="Core\Client\Teacher\CourseManagement\t_courseManagementController.h">
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCharts;$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtNetwork;$(QTDIR)\include\QtMultimedia;$(QTDIR)\include\QtMultimediaWidgets</IncludePath>
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCharts;$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtNetwork;$(QTDIR)\include\QtMultimedia;$(QTDIR)\include\QtMultimediaWidgets</IncludePath>
+    </QtMoc>
+    <QtMoc Include="Core\Client\Teacher\CourseManagement\t_courseManagementWidget.h">
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCharts;$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtNetwork;$(QTDIR)\include\QtMultimedia;$(QTDIR)\include\QtMultimediaWidgets</IncludePath>
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCharts;$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtNetwork;$(QTDIR)\include\QtMultimedia;$(QTDIR)\include\QtMultimediaWidgets</IncludePath>
+    </QtMoc>
     <ClInclude Include="Core\Tools\base64.h" />
     <ClInclude Include="Core\Tools\pic_tools.h" />
     <ClInclude Include="Core\Tools\tools.h" />

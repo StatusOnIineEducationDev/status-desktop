@@ -2,19 +2,20 @@
 
 
 TMainWindowController::TMainWindowController(TMainWindow *win, User *user)
-	: m_win(win), m_user(user), m_online_classroom_controller(nullptr) {
+	: m_win(win), m_user(user), m_course_management_controller(nullptr), 
+	m_online_classroom_controller(nullptr) {
 	Ui::TMainWindow ui = this->m_win->ui();
 
 	this->m_win->show();
 
-	this->connect(ui.course_btn, &QPushButton::clicked, this, &TMainWindowController::showTeacherCourseWidget);
+	this->connect(ui.course_btn, &QPushButton::clicked, this, &TMainWindowController::showCourseManagementWidget);
 	this->connect(ui.interaction_btn, &QPushButton::clicked, this, &TMainWindowController::showOnlineClassroomWidget);
 	this->connect(ui.buttonGroup, static_cast<void (QButtonGroup::*)(QAbstractButton*)>(&QButtonGroup::buttonPressed), this, &TMainWindowController::buttonPush);
 	this->connect(ui.undo_btn, &QPushButton::clicked, this, &TMainWindowController::undo);
 	this->connect(ui.redo_btn, &QPushButton::clicked, this, &TMainWindowController::redo);
 
 	// ——默认首页
-	this->showTeacherCourseWidget();
+	this->showCourseManagementWidget();
 
 	// ——默认设置
 	ui.undo_btn->setEnabled(false);
@@ -34,23 +35,30 @@ TMainWindowController::~TMainWindowController() {
 }
 
 void TMainWindowController::clearWidget() {
-	// 实时互动
+	// ——课堂管理
+	if (this->m_course_management_controller != nullptr) {
+		this->m_course_management_controller->hideCourseManagementWidget(this->m_win);
+		delete this->m_course_management_controller;
+		this->m_course_management_controller = nullptr;
+	}
+	// ——在线教室
 	if (this->m_online_classroom_controller != nullptr) {
+		this->m_online_classroom_controller->hideOnlineClassroomWidget(this->m_win);
 		if (this->m_user->userStatus() != UserStatus::InClass) {
 			delete this->m_online_classroom_controller;
 			this->m_online_classroom_controller = nullptr;
-		}
-		else {
-			this->m_win->ui().widget_layout->removeWidget(this->m_online_classroom_controller->onlineClassroomWidget());
 		}
 	}
 
 	return;
 }
 
-void TMainWindowController::showTeacherCourseWidget() {
+void TMainWindowController::showCourseManagementWidget() {
 	this->clearWidget();  // 先清除主窗中当前显示的子窗
-	//this->m_teacher_course_widget_controller = new TeacherCourseWidgetController(this->m_win, this->m_user);  // 动态创建子窗
+	if (this->m_course_management_controller == nullptr) {
+		this->m_course_management_controller = new TCourseManagementController(this->m_user, this);  // 动态创建子窗
+	}
+	this->m_course_management_controller->showCourseManagementWidget(this->m_win);
 
 	return;
 }
@@ -58,9 +66,9 @@ void TMainWindowController::showTeacherCourseWidget() {
 void TMainWindowController::showOnlineClassroomWidget() {
 	this->clearWidget();  // 先清除主窗中当前显示的子窗
 	if (this->m_online_classroom_controller == nullptr) {
-		this->m_online_classroom_controller = new TOnlineClassroomController(this->m_user, this);  // 动态创建子窗
-		this->m_online_classroom_controller->showOnlineClassroomWidget(this->m_win);
+		this->m_online_classroom_controller = new TOnlineClassroomController(this->m_user);  // 动态创建子窗
 	}
+	this->m_online_classroom_controller->showOnlineClassroomWidget(this->m_win);
 
 	return;
 }

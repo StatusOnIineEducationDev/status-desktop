@@ -39,13 +39,3 @@ void THandleRaiseHandWidget::updataPos() {
 
 	return;
 }
-
-bool THandleRaiseHandWidget::event(QEvent *event) {
-	if (event->type() == QEvent::ActivationChange) {
-		if (QApplication::activeWindow() != this) {
-			this->hide();
-		}
-	}
-
-	return QWidget::event(event);
-}

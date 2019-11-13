@@ -2,6 +2,7 @@
 
 #include <QtWidgets/QMainWindow>
 #include <QEvent>
+#include <qDebug>
 #include "ui_t_onlineClassroomWidget.h"
 #include "ui_t_handleRaiseHandWidget.h"
 #include "Core/Client/Teacher/t_mainWindow.h"
@@ -37,8 +38,6 @@ public:
 	void updataPos();
 
 private:
-	bool event(QEvent *event);
-
 	Ui::THandleRaiseHandWidget m_ui;
 	TOnlineClassroomWidget *m_parent;
 };

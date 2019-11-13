@@ -1,13 +1,13 @@
 /********************************************************************************
-** Form generated from reading UI file 's_courseManagementWidget.ui'
+** Form generated from reading UI file 't_courseManagementWidget.ui'
 **
 ** Created by: Qt User Interface Compiler version 5.13.1
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
 
-#ifndef UI_S_COURSEMANAGEMENTWIDGET_H
-#define UI_S_COURSEMANAGEMENTWIDGET_H
+#ifndef UI_T_COURSEMANAGEMENTWIDGET_H
+#define UI_T_COURSEMANAGEMENTWIDGET_H
 
 #include <QtCore/QVariant>
 #include <QtGui/QIcon>
@@ -23,7 +23,7 @@
 
 QT_BEGIN_NAMESPACE
 
-class Ui_SCourseManagementWidget
+class Ui_TCourseManagementWidget
 {
 public:
     QGridLayout *gridLayout_2;
@@ -33,6 +33,7 @@ public:
     QSpacerItem *horizontalSpacer_8;
     QPushButton *mini_program_btn;
     QPushButton *raise_hand_btn;
+    QPushButton *raise_hand_btn_2;
     QSpacerItem *verticalSpacer_3;
     QFrame *course_base_frame;
     QGridLayout *gridLayout;
@@ -47,16 +48,16 @@ public:
     QSpacerItem *horizontalSpacer_3;
     QSpacerItem *horizontalSpacer;
 
-    void setupUi(QWidget *SCourseManagementWidget)
+    void setupUi(QWidget *TCourseManagementWidget)
     {
-        if (SCourseManagementWidget->objectName().isEmpty())
-            SCourseManagementWidget->setObjectName(QString::fromUtf8("SCourseManagementWidget"));
-        SCourseManagementWidget->resize(819, 627);
-        gridLayout_2 = new QGridLayout(SCourseManagementWidget);
+        if (TCourseManagementWidget->objectName().isEmpty())
+            TCourseManagementWidget->setObjectName(QString::fromUtf8("TCourseManagementWidget"));
+        TCourseManagementWidget->resize(819, 627);
+        gridLayout_2 = new QGridLayout(TCourseManagementWidget);
         gridLayout_2->setSpacing(0);
         gridLayout_2->setObjectName(QString::fromUtf8("gridLayout_2"));
         gridLayout_2->setContentsMargins(0, 0, 0, 0);
-        function_btn_frame = new QFrame(SCourseManagementWidget);
+        function_btn_frame = new QFrame(TCourseManagementWidget);
         function_btn_frame->setObjectName(QString::fromUtf8("function_btn_frame"));
         function_btn_frame->setMinimumSize(QSize(0, 30));
         function_btn_frame->setStyleSheet(QString::fromUtf8("QFrame {\n"
@@ -142,6 +143,33 @@ public:
 
         horizontalLayout_4->addWidget(raise_hand_btn);
 
+        raise_hand_btn_2 = new QPushButton(function_btn_frame);
+        raise_hand_btn_2->setObjectName(QString::fromUtf8("raise_hand_btn_2"));
+        sizePolicy.setHeightForWidth(raise_hand_btn_2->sizePolicy().hasHeightForWidth());
+        raise_hand_btn_2->setSizePolicy(sizePolicy);
+        raise_hand_btn_2->setMinimumSize(QSize(0, 25));
+        raise_hand_btn_2->setMaximumSize(QSize(16777215, 25));
+        raise_hand_btn_2->setFont(font);
+        raise_hand_btn_2->setCursor(QCursor(Qt::PointingHandCursor));
+        raise_hand_btn_2->setStyleSheet(QString::fromUtf8("QPushButton {\n"
+"	color: #666666;\n"
+"	background: none;\n"
+"	border: none;\n"
+"	border-radius: 5px;\n"
+"	padding-left: 5px;\n"
+"	padding-right: 5px;\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"	background-color: #dedede;\n"
+"}"));
+        QIcon icon2;
+        icon2.addFile(QString::fromUtf8(":/button/Resources/material/button/create.png"), QSize(), QIcon::Normal, QIcon::Off);
+        raise_hand_btn_2->setIcon(icon2);
+        raise_hand_btn_2->setIconSize(QSize(15, 15));
+
+        horizontalLayout_4->addWidget(raise_hand_btn_2);
+
 
         gridLayout_2->addWidget(function_btn_frame, 1, 0, 1, 1);
 
@@ -149,7 +177,7 @@ public:
 
         gridLayout_2->addItem(verticalSpacer_3, 3, 0, 1, 1);
 
-        course_base_frame = new QFrame(SCourseManagementWidget);
+        course_base_frame = new QFrame(TCourseManagementWidget);
         course_base_frame->setObjectName(QString::fromUtf8("course_base_frame"));
         course_base_frame->setMinimumSize(QSize(819, 100));
         course_base_frame->setMaximumSize(QSize(16777215, 100));
@@ -297,30 +325,31 @@ public:
         gridLayout_2->addWidget(course_base_frame, 2, 0, 1, 1);
 
 
-        retranslateUi(SCourseManagementWidget);
+        retranslateUi(TCourseManagementWidget);
 
-        QMetaObject::connectSlotsByName(SCourseManagementWidget);
+        QMetaObject::connectSlotsByName(TCourseManagementWidget);
     } // setupUi
 
-    void retranslateUi(QWidget *SCourseManagementWidget)
+    void retranslateUi(QWidget *TCourseManagementWidget)
     {
-        SCourseManagementWidget->setWindowTitle(QCoreApplication::translate("SCourseManagementWidget", "Form", nullptr));
-        label_26->setText(QCoreApplication::translate("SCourseManagementWidget", "\350\257\276\347\250\213\347\256\241\347\220\206", nullptr));
-        mini_program_btn->setText(QCoreApplication::translate("SCourseManagementWidget", "\345\260\217\347\250\213\345\272\217", nullptr));
-        raise_hand_btn->setText(QCoreApplication::translate("SCourseManagementWidget", "\345\212\240\345\205\245\350\257\276\347\250\213", nullptr));
+        TCourseManagementWidget->setWindowTitle(QCoreApplication::translate("TCourseManagementWidget", "Form", nullptr));
+        label_26->setText(QCoreApplication::translate("TCourseManagementWidget", "\350\257\276\347\250\213\347\256\241\347\220\206", nullptr));
+        mini_program_btn->setText(QCoreApplication::translate("TCourseManagementWidget", "\345\260\217\347\250\213\345\272\217", nullptr));
+        raise_hand_btn->setText(QCoreApplication::translate("TCourseManagementWidget", "\345\212\240\345\205\245\350\257\276\347\250\213", nullptr));
+        raise_hand_btn_2->setText(QCoreApplication::translate("TCourseManagementWidget", "\345\210\233\345\273\272\350\257\276\347\250\213", nullptr));
         create_time_text->setText(QString());
-        delete_course_btn->setText(QCoreApplication::translate("SCourseManagementWidget", "\351\200\200\345\207\272\350\257\276\347\250\213", nullptr));
+        delete_course_btn->setText(QCoreApplication::translate("TCourseManagementWidget", "\345\210\240\351\231\244\350\257\276\347\250\213", nullptr));
         course_id_text->setText(QString());
-        label_2->setText(QCoreApplication::translate("SCourseManagementWidget", "id: ", nullptr));
-        text->setText(QCoreApplication::translate("SCourseManagementWidget", "\345\210\233\345\273\272\344\272\216", nullptr));
+        label_2->setText(QCoreApplication::translate("TCourseManagementWidget", "id: ", nullptr));
+        text->setText(QCoreApplication::translate("TCourseManagementWidget", "\345\210\233\345\273\272\344\272\216", nullptr));
     } // retranslateUi
 
 };
 
 namespace Ui {
-    class SCourseManagementWidget: public Ui_SCourseManagementWidget {};
+    class TCourseManagementWidget: public Ui_TCourseManagementWidget {};
 } // namespace Ui
 
 QT_END_NAMESPACE
 
-#endif // UI_S_COURSEMANAGEMENTWIDGET_H
+#endif // UI_T_COURSEMANAGEMENTWIDGET_H
