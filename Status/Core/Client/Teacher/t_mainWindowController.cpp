@@ -44,7 +44,7 @@ void TMainWindowController::clearWidget() {
 	// ¡ª¡ªÔÚÏß½ÌÊÒ
 	if (this->m_online_classroom_controller != nullptr) {
 		this->m_online_classroom_controller->hideOnlineClassroomWidget(this->m_win);
-		if (this->m_user->userStatus() != UserStatus::InClass) {
+		if (this->m_user->userStatus() == UserStatus::Free) {
 			delete this->m_online_classroom_controller;
 			this->m_online_classroom_controller = nullptr;
 		}

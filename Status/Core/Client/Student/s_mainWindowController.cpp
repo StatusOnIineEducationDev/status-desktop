@@ -44,7 +44,7 @@ void SMainWindowController::clearWidget() {
 	// ——在线教室
 	if (this->m_online_classroom_controller != nullptr) {
 		this->m_online_classroom_controller->hideOnlineClassroomWidget(this->m_win);
-		if (this->m_user->userStatus() != UserStatus::InClass) {
+		if (this->m_user->userStatus() == UserStatus::Free) {
 			delete this->m_online_classroom_controller;
 			this->m_online_classroom_controller = nullptr;
 		}
@@ -67,6 +67,8 @@ void SMainWindowController::showOnlineClassroomWidget() {
 	this->clearWidget();  // 先清除主窗中当前显示的子窗
 	if (this->m_online_classroom_controller == nullptr) {
 		this->m_online_classroom_controller = new SOnlineClassroomController(this->m_user);  // 动态创建子窗
+		this->connect(this->m_online_classroom_controller, &SOnlineClassroomController::quitLessonSuccess,
+			this, &SMainWindowController::showOnlineClassroomWidget);
 	}
 	this->m_online_classroom_controller->showOnlineClassroomWidget(this->m_win);
 

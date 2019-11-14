@@ -72,6 +72,7 @@ void SOnlineClassroomController::initOnlineClassroomWidget(SMainWindow *parent) 
 	// ——信号绑定
 	this->connect(parent, &SMainWindow::windowResized, this->m_online_classroom_widget, &SOnlineClassroomWidget::handleWindowResized);
 	this->connect(ui.raise_hand_btn, &QPushButton::clicked, this, &SOnlineClassroomController::raiseHand);
+	this->connect(ui.quit_lesson_btn, &QPushButton::clicked, this, &SOnlineClassroomController::quitLesson);
 
 	// ——其他设置
 	ui.flexible_main_area->hide();  // flexible_main_area默认隐藏
@@ -118,15 +119,17 @@ void SOnlineClassroomController::createLessonConnection() {
 }
 
 void SOnlineClassroomController::distroyLessonConnection() {
+	if (this->m_lesson_connection == nullptr) {
+		return;
+	}
+
 	QThread *thread;
 	
-	if (this->m_lesson_connection != nullptr) {
-		thread = this->m_lesson_connection->thread();
-		delete this->m_lesson_connection;
-		this->m_lesson_connection = nullptr;
-		thread->exit(0);
-		this->connect(thread, &QThread::finished, thread, &QThread::deleteLater);
-	}
+	thread = this->m_lesson_connection->thread();
+	delete this->m_lesson_connection;
+	this->m_lesson_connection = nullptr;
+	thread->exit(0);
+	this->connect(thread, &QThread::finished, thread, &QThread::deleteLater);
 	
 	return;
 }
@@ -147,7 +150,7 @@ void SOnlineClassroomController::handleLessonConnectionRecv() {
 	case TransportCmd::RemoveMemberFromInSpeech: handleCommandRemoveMemberFromInSpeech(data); break;
 	case TransportCmd::ConcentrationFinalData: this->m_concentration_controller->handleCommandConcentrationFinalData(data); break;
 	case TransportCmd::ConcentrationRealTimeData: this->m_concentration_controller->handleCommandConcentrationRealTimeData(data); break;
-
+	case TransportCmd::QuitLesson: this->handleCommandQuitLesson(data); break;
 	}
 
 	return;
@@ -201,7 +204,7 @@ void SOnlineClassroomController::handleCommandJoinInLesson(QJsonObject &data) {
 		this->m_room.setTeacherName(data["teacher_name"].toString());
 		this->m_room.setStatus(course_status);
 
-		this->m_user->setUserStatus(UserStatus::InClass);
+		this->m_user->setUserStatus(UserStatus::InRoom);
 
 		this->openCamera();
 		this->updateRoomInfo(data);
@@ -230,15 +233,12 @@ void SOnlineClassroomController::handleCommandConcentrationData(QJsonObject &dat
 void SOnlineClassroomController::handleCommandEndLesson(QJsonObject &data) {
 	Ui::SOnlineClassroomWidget ui = this->m_online_classroom_widget->ui();
 	Toast *toast = new Toast;
-	QThread *thread;
 
 	// ——结束成功
-	this->m_camera->deleteLater();
 	this->m_lesson_timer.stop();
-	this->distroyLessonConnection();
-	this->m_white_board_controller->distroyPaintConnection();
+	this->releaseResources();
 
-	this->m_user->setUserStatus(UserStatus::Free);
+	this->m_user->setUserStatus(UserStatus::InRoom);
 
 	toast->setInfoText(QString("课堂已结束"));
 	toast->show();
@@ -319,6 +319,15 @@ void SOnlineClassroomController::handleCommandRemoveMemberFromInSpeech(QJsonObje
 	return;
 }
 
+void SOnlineClassroomController::handleCommandQuitLesson(QJsonObject &data) {
+	this->m_lesson_timer.stop();
+	this->releaseResources();
+	this->m_user->setUserStatus(UserStatus::Free);
+	emit this->quitLessonSuccess();
+
+	return;
+}
+
 void SOnlineClassroomController::joinInLesson(QMap<QString, QVariant> &data) {
 	/*
 		|-data(QMap<QString, QVariant>)
@@ -346,6 +355,8 @@ void SOnlineClassroomController::lessonBegin() {
 	QJsonObject paint_request_json_obj;
 	Toast *toast = new Toast("开始上课");
 
+	this->m_user->setUserStatus(UserStatus::InClass);
+
 	this->m_lesson_timer.start(1000);  // 开启定时器
 
 	// ——刷新ui
@@ -362,12 +373,42 @@ void SOnlineClassroomController::lessonBegin() {
 	return;
 }
 
+void SOnlineClassroomController::quitLesson() {
+	QJsonObject request_json_obj;
+
+	// ——请求数据
+	request_json_obj["command"] = TransportCmd::QuitLesson;
+
+	this->lessonConnectionSend(request_json_obj);
+
+	return;
+}
+
+void SOnlineClassroomController::releaseResources() {
+	this->distroyCamera();
+	this->distroyLessonConnection();
+	this->m_white_board_controller->distroyPaintConnection();
+
+	return;
+}
+
 void SOnlineClassroomController::openCamera() {
 	this->m_camera = new Camera(this->m_online_classroom_widget);
 
 	this->connect(this->m_camera, &Camera::readyRead, this, &SOnlineClassroomController::mineCameraDisplay);
 
 	this->m_camera->open();
+
+	return;
+}
+
+void SOnlineClassroomController::distroyCamera() {
+	if (this->m_camera == nullptr) {
+		return;
+	}
+
+	this->disconnect(this->m_camera, &Camera::readyRead, this, &SOnlineClassroomController::mineCameraDisplay);
+	delete this->m_camera;
 
 	return;
 }
@@ -441,7 +482,6 @@ void SOnlineClassroomController::updateLastTime() {
 void SOnlineClassroomController::raiseHand() {
 	Ui::SOnlineClassroomWidget ui = this->m_online_classroom_widget->ui();
 	QJsonObject request_json_obj;
-	Toast *toast;
 
 	// ——请求数据
 	request_json_obj["command"] = TransportCmd::RaiseHand;

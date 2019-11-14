@@ -145,7 +145,7 @@ public:
     QLabel *label_35;
     QSpacerItem *horizontalSpacer_11;
     QPushButton *raise_hand_btn;
-    QPushButton *exit_lesson_btn;
+    QPushButton *quit_lesson_btn;
     QGridLayout *gridLayout_2;
     QFrame *frame_2;
     QLabel *mine_camera_label;
@@ -1368,7 +1368,7 @@ public:
         scrollArea_2->setWidgetResizable(true);
         scrollAreaWidgetContents_2 = new QWidget();
         scrollAreaWidgetContents_2->setObjectName(QString::fromUtf8("scrollAreaWidgetContents_2"));
-        scrollAreaWidgetContents_2->setGeometry(QRect(0, 0, 615, 421));
+        scrollAreaWidgetContents_2->setGeometry(QRect(0, 0, 98, 28));
         scrollAreaWidgetContents_2->setStyleSheet(QString::fromUtf8("background: #ffffff;"));
         gridLayout_12 = new QGridLayout(scrollAreaWidgetContents_2);
         gridLayout_12->setObjectName(QString::fromUtf8("gridLayout_12"));
@@ -1717,7 +1717,7 @@ public:
         function_btn_frame->setFrameShape(QFrame::StyledPanel);
         function_btn_frame->setFrameShadow(QFrame::Raised);
         horizontalLayout_4 = new QHBoxLayout(function_btn_frame);
-        horizontalLayout_4->setSpacing(5);
+        horizontalLayout_4->setSpacing(20);
         horizontalLayout_4->setObjectName(QString::fromUtf8("horizontalLayout_4"));
         horizontalLayout_4->setContentsMargins(10, 0, 10, 0);
         label_35 = new QLabel(function_btn_frame);
@@ -1765,15 +1765,15 @@ public:
 
         horizontalLayout_4->addWidget(raise_hand_btn);
 
-        exit_lesson_btn = new QPushButton(function_btn_frame);
-        exit_lesson_btn->setObjectName(QString::fromUtf8("exit_lesson_btn"));
-        sizePolicy3.setHeightForWidth(exit_lesson_btn->sizePolicy().hasHeightForWidth());
-        exit_lesson_btn->setSizePolicy(sizePolicy3);
-        exit_lesson_btn->setMinimumSize(QSize(0, 25));
-        exit_lesson_btn->setMaximumSize(QSize(16777215, 25));
-        exit_lesson_btn->setFont(font1);
-        exit_lesson_btn->setCursor(QCursor(Qt::PointingHandCursor));
-        exit_lesson_btn->setStyleSheet(QString::fromUtf8("QPushButton {\n"
+        quit_lesson_btn = new QPushButton(function_btn_frame);
+        quit_lesson_btn->setObjectName(QString::fromUtf8("quit_lesson_btn"));
+        sizePolicy3.setHeightForWidth(quit_lesson_btn->sizePolicy().hasHeightForWidth());
+        quit_lesson_btn->setSizePolicy(sizePolicy3);
+        quit_lesson_btn->setMinimumSize(QSize(0, 25));
+        quit_lesson_btn->setMaximumSize(QSize(16777215, 25));
+        quit_lesson_btn->setFont(font1);
+        quit_lesson_btn->setCursor(QCursor(Qt::PointingHandCursor));
+        quit_lesson_btn->setStyleSheet(QString::fromUtf8("QPushButton {\n"
 "	color: #666666;\n"
 "	background: none;\n"
 "	border: none;\n"
@@ -1787,10 +1787,10 @@ public:
 "}"));
         QIcon icon18;
         icon18.addFile(QString::fromUtf8(":/button/Resources/material/button/exit.png"), QSize(), QIcon::Normal, QIcon::Off);
-        exit_lesson_btn->setIcon(icon18);
-        exit_lesson_btn->setIconSize(QSize(15, 15));
+        quit_lesson_btn->setIcon(icon18);
+        quit_lesson_btn->setIconSize(QSize(15, 15));
 
-        horizontalLayout_4->addWidget(exit_lesson_btn);
+        horizontalLayout_4->addWidget(quit_lesson_btn);
 
 
         gridLayout->addWidget(function_btn_frame, 0, 0, 1, 1);
@@ -2454,7 +2454,7 @@ public:
         function_tabWidget->setTabText(function_tabWidget->indexOf(tab_3), QCoreApplication::translate("TOnlineClassroomWidget", "\350\257\276\345\240\202", nullptr));
         label_35->setText(QCoreApplication::translate("TOnlineClassroomWidget", "\345\234\250\347\272\277\346\225\231\345\256\244", nullptr));
         raise_hand_btn->setText(QCoreApplication::translate("TOnlineClassroomWidget", "\344\270\276\346\211\213", nullptr));
-        exit_lesson_btn->setText(QCoreApplication::translate("TOnlineClassroomWidget", "\351\200\200\345\207\272", nullptr));
+        quit_lesson_btn->setText(QCoreApplication::translate("TOnlineClassroomWidget", "\351\200\200\345\207\272", nullptr));
         mine_camera_label->setText(QString());
         label_3->setText(QCoreApplication::translate("TOnlineClassroomWidget", "\347\233\264\346\222\255\344\270\255", nullptr));
         pushButton_6->setText(QString());

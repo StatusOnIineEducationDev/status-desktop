@@ -15,6 +15,7 @@ class SMainWindowController : public QObject {
 public:
 	SMainWindowController(SMainWindow *win, User* user);
 	virtual ~SMainWindowController();
+
 	void undo();  // 窗口返回
 	void redo();  // 窗口前进
 

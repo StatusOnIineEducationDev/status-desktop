@@ -116,6 +116,22 @@ void TOnlineClassroomController::createLessonConnection() {
 	return;
 }
 
+void TOnlineClassroomController::distroyLessonConnection() {
+	if (this->m_lesson_connection == nullptr) {
+		return;
+	}
+
+	QThread *thread;
+
+	thread = this->m_lesson_connection->thread();
+	delete this->m_lesson_connection;
+	this->m_lesson_connection = nullptr;
+	thread->exit(0);
+	this->connect(thread, &QThread::finished, thread, &QThread::deleteLater);
+
+	return;
+}
+
 void TOnlineClassroomController::handleLessonConnectionRecv() {
 	QJsonObject data = this->m_lesson_connection->recv();
 	TransportCmd cmd = TransportCmd(data["command"].toInt());
@@ -191,19 +207,11 @@ void TOnlineClassroomController::handleCommandBeginLesson(QJsonObject &data) {
 void TOnlineClassroomController::handleCommandEndLesson(QJsonObject &data) {
 	Ui::TOnlineClassroomWidget ui = this->m_online_classroom_widget->ui();
 	Toast *toast = new Toast;
-	QThread *thread;
 
 	// ——结束成功
-	this->m_camera->deleteLater();
+	this->releaseResources();
 
-	thread = this->m_lesson_connection->thread();
-	delete this->m_lesson_connection;
-	this->m_lesson_connection = nullptr;
-	thread->exit(0);
-
-	this->m_white_board_controller->distroyPaintConnection();
-
-	this->m_user->setUserStatus(UserStatus::Free);
+	this->m_user->setUserStatus(UserStatus::InRoom);
 
 	toast->setInfoText(QString("课堂已结束"));
 	toast->show();
@@ -309,12 +317,31 @@ void TOnlineClassroomController::endLesson() {
 	return;
 }
 
+void TOnlineClassroomController::releaseResources() {
+	this->distroyCamera();
+	this->distroyLessonConnection();
+	this->m_white_board_controller->distroyPaintConnection();
+
+	return;
+}
+
 void TOnlineClassroomController::openCamera() {
 	this->m_camera = new Camera(this->m_online_classroom_widget);
 
 	this->connect(this->m_camera, &Camera::readyRead, this, &TOnlineClassroomController::mineCameraDisplay);
 
 	this->m_camera->open();
+
+	return;
+}
+
+void TOnlineClassroomController::distroyCamera() {
+	if (this->m_camera == nullptr) {
+		return;
+	}
+
+	this->disconnect(this->m_camera, &Camera::readyRead, this, &TOnlineClassroomController::mineCameraDisplay);
+	delete this->m_camera;
 
 	return;
 }
@@ -341,8 +368,9 @@ void TOnlineClassroomController::showHandleRaiseHandWidget() {
 		widget_height = this->m_handle_raise_hand_widget->height(),
 		widget_x = btn_x - widget_width + btn_width,
 		widget_y = btn_y + btn_height;
+	QPoint pos = this->m_online_classroom_widget->mapToGlobal(QPoint(widget_x, widget_y));
 
-	this->m_handle_raise_hand_widget->setGeometry(widget_x, widget_y, widget_width, widget_height);
+	this->m_handle_raise_hand_widget->setGeometry(pos.x(), pos.y(), widget_width, widget_height);
 	this->m_handle_raise_hand_widget->show();
 
 	return;

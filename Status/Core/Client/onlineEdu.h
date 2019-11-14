@@ -17,7 +17,8 @@ enum TransportCmd {
 	RaiseHand = 113,
 	ResultOfRaiseHand = 114,
 	RemoveMemberFromInSpeech = 115,
-	ConcentrationRealTimeData = 116
+	ConcentrationRealTimeData = 116,
+	QuitLesson = 117
 };
 
 enum CourseStatus {
@@ -34,7 +35,8 @@ enum ChatStatus {
 
 enum UserStatus {
 	Free = 0,
-	InClass = 1
+	InRoom = 1,
+	InClass = 2
 };
 
 enum ApplicationStatus {

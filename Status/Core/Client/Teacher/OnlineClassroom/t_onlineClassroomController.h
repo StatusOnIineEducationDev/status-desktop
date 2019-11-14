@@ -31,6 +31,7 @@ protected:
 	void initController();
 
 	void createLessonConnection();
+	void distroyLessonConnection();
 	void handleLessonConnectionRecv();
 	void handleCommandCreateLesson(QJsonObject &data);
 	void handleCommandBeginLesson(QJsonObject &data);
@@ -42,7 +43,10 @@ protected:
 	void createLesson(QMap<QString, QVariant> &data);
 	void beginLesson();
 	void endLesson();
+	void releaseResources();
+
 	void openCamera();
+	void distroyCamera();
 	void mineCameraDisplay(QImage &frame);
 
 	void showHandleRaiseHandWidget();

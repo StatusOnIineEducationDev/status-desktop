@@ -4990,7 +4990,7 @@ QCheckBox::indicator:checked {
      </property>
      <layout class="QHBoxLayout" name="horizontalLayout_4">
       <property name="spacing">
-       <number>5</number>
+       <number>20</number>
       </property>
       <property name="leftMargin">
        <number>10</number>
@@ -5096,7 +5096,7 @@ QPushButton:hover {
        </widget>
       </item>
       <item>
-       <widget class="QPushButton" name="exit_lesson_btn">
+       <widget class="QPushButton" name="quit_lesson_btn">
         <property name="sizePolicy">
          <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
           <horstretch>0</horstretch>

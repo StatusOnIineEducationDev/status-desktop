@@ -5,7 +5,8 @@ const int PEN_WIDTH = 3;
 const int RUBBER_WIDTH = 20;
 
 TWhiteBoardController::TWhiteBoardController(TOnlineClassroomWidget *online_classroom_widget, QObject *parent)
-	: QObject(parent), m_online_classroom_widget(online_classroom_widget), m_board_id(1) {
+	: QObject(parent), m_online_classroom_widget(online_classroom_widget), 
+	m_paint_connection(nullptr), m_board_id(1) {
 	Ui::TOnlineClassroomWidget ui = this->m_online_classroom_widget->ui();
 	this->initWhiteBoardArea();
 }
@@ -41,6 +42,10 @@ void TWhiteBoardController::createPaintConnection(QString course_id, QString les
 }
 
 void TWhiteBoardController::distroyPaintConnection() {
+	if (this->m_paint_connection == nullptr) {
+		return;
+	}
+
 	QThread *thread = this->m_paint_connection->thread();
 
 	this->disconnect(this->m_board, &WhiteBoard::paintCommandReady, this, &TWhiteBoardController::sendPaintCommand);

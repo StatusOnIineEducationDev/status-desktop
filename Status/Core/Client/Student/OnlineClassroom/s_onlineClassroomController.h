@@ -18,6 +18,9 @@
 class SOnlineClassroomController : public QObject {
 	Q_OBJECT
 
+signals:
+	void quitLessonSuccess();
+
 public:
 	SOnlineClassroomController(User *user, QObject *parent = nullptr);
 	virtual ~SOnlineClassroomController();
@@ -43,12 +46,15 @@ protected:
 	void handleCommandRaiseHand(QJsonObject &data);
 	void handleCommandResultOfRaiseHand(QJsonObject &data);
 	void handleCommandRemoveMemberFromInSpeech(QJsonObject &data);
-
+	void handleCommandQuitLesson(QJsonObject &data);
 
 	void joinInLesson(QMap<QString, QVariant> &data);
 	void lessonBegin();
+	void quitLesson();
+	void releaseResources();
 
 	void openCamera();
+	void distroyCamera();
 	void mineCameraDisplay(QImage &frame);
 	void sendMineCameraFrame();
 

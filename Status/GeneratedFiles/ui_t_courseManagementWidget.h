@@ -68,7 +68,7 @@ public:
         function_btn_frame->setFrameShape(QFrame::StyledPanel);
         function_btn_frame->setFrameShadow(QFrame::Raised);
         horizontalLayout_4 = new QHBoxLayout(function_btn_frame);
-        horizontalLayout_4->setSpacing(5);
+        horizontalLayout_4->setSpacing(20);
         horizontalLayout_4->setObjectName(QString::fromUtf8("horizontalLayout_4"));
         horizontalLayout_4->setContentsMargins(10, 0, 10, 0);
         label_26 = new QLabel(function_btn_frame);

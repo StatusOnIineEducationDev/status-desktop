@@ -12,11 +12,13 @@ TOnlineClassroomWidget::~TOnlineClassroomWidget() {
 }
 
 
-
-
 THandleRaiseHandWidget::THandleRaiseHandWidget(TOnlineClassroomWidget *parent)
 	: QWidget(parent), m_parent(parent) {
 	m_ui.setupUi(this);
+
+	this->setAutoFillBackground(false);
+	this->setAttribute(Qt::WA_TranslucentBackground, true);
+	this->setWindowFlags(Qt::FramelessWindowHint | Qt::NoDropShadowWindowHint | Qt::Popup);
 
 	this->connect(parent, &TOnlineClassroomWidget::windowResized, this, &THandleRaiseHandWidget::updataPos);
 }
@@ -34,8 +36,10 @@ void THandleRaiseHandWidget::updataPos() {
 
 		x = btn_x - this->width() + btn_width,
 		y = btn_y + btn_height;
+	QPoint pos = this->mapToGlobal(QPoint(x, y));
 
-	this->setGeometry(x, y, this->width(), this->height());
+	this->setGeometry(pos.x(), pos.y(), this->width(), this->height());
 
 	return;
 }
+

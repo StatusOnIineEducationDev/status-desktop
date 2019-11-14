@@ -230,7 +230,7 @@ public:
     QLabel *label_26;
     QSpacerItem *horizontalSpacer_8;
     QPushButton *raise_hand_btn;
-    QPushButton *exit_lesson_btn;
+    QPushButton *quit_lesson_btn;
     QButtonGroup *buttonGroup;
 
     void setupUi(QWidget *SOnlineClassroomWidget)
@@ -2593,7 +2593,7 @@ public:
         function_btn_frame->setFrameShape(QFrame::StyledPanel);
         function_btn_frame->setFrameShadow(QFrame::Raised);
         horizontalLayout_4 = new QHBoxLayout(function_btn_frame);
-        horizontalLayout_4->setSpacing(5);
+        horizontalLayout_4->setSpacing(20);
         horizontalLayout_4->setObjectName(QString::fromUtf8("horizontalLayout_4"));
         horizontalLayout_4->setContentsMargins(10, 0, 10, 0);
         label_26 = new QLabel(function_btn_frame);
@@ -2638,15 +2638,15 @@ public:
 
         horizontalLayout_4->addWidget(raise_hand_btn);
 
-        exit_lesson_btn = new QPushButton(function_btn_frame);
-        exit_lesson_btn->setObjectName(QString::fromUtf8("exit_lesson_btn"));
-        sizePolicy3.setHeightForWidth(exit_lesson_btn->sizePolicy().hasHeightForWidth());
-        exit_lesson_btn->setSizePolicy(sizePolicy3);
-        exit_lesson_btn->setMinimumSize(QSize(0, 25));
-        exit_lesson_btn->setMaximumSize(QSize(16777215, 25));
-        exit_lesson_btn->setFont(font1);
-        exit_lesson_btn->setCursor(QCursor(Qt::PointingHandCursor));
-        exit_lesson_btn->setStyleSheet(QString::fromUtf8("QPushButton {\n"
+        quit_lesson_btn = new QPushButton(function_btn_frame);
+        quit_lesson_btn->setObjectName(QString::fromUtf8("quit_lesson_btn"));
+        sizePolicy3.setHeightForWidth(quit_lesson_btn->sizePolicy().hasHeightForWidth());
+        quit_lesson_btn->setSizePolicy(sizePolicy3);
+        quit_lesson_btn->setMinimumSize(QSize(0, 25));
+        quit_lesson_btn->setMaximumSize(QSize(16777215, 25));
+        quit_lesson_btn->setFont(font1);
+        quit_lesson_btn->setCursor(QCursor(Qt::PointingHandCursor));
+        quit_lesson_btn->setStyleSheet(QString::fromUtf8("QPushButton {\n"
 "	color: #666666;\n"
 "	background: none;\n"
 "	border: none;\n"
@@ -2660,10 +2660,10 @@ public:
 "}"));
         QIcon icon24;
         icon24.addFile(QString::fromUtf8(":/button/Resources/material/button/exit.png"), QSize(), QIcon::Normal, QIcon::Off);
-        exit_lesson_btn->setIcon(icon24);
-        exit_lesson_btn->setIconSize(QSize(15, 15));
+        quit_lesson_btn->setIcon(icon24);
+        quit_lesson_btn->setIconSize(QSize(15, 15));
 
-        horizontalLayout_4->addWidget(exit_lesson_btn);
+        horizontalLayout_4->addWidget(quit_lesson_btn);
 
 
         gridLayout->addWidget(function_btn_frame, 0, 0, 1, 1);
@@ -2845,7 +2845,7 @@ public:
         label_21->setText(QCoreApplication::translate("SOnlineClassroomWidget", "    \346\216\247\345\210\266\347\224\273\346\235\277", nullptr));
         label_26->setText(QCoreApplication::translate("SOnlineClassroomWidget", "\345\234\250\347\272\277\346\225\231\345\256\244", nullptr));
         raise_hand_btn->setText(QCoreApplication::translate("SOnlineClassroomWidget", "\344\270\276\346\211\213", nullptr));
-        exit_lesson_btn->setText(QCoreApplication::translate("SOnlineClassroomWidget", "\351\200\200\345\207\272", nullptr));
+        quit_lesson_btn->setText(QCoreApplication::translate("SOnlineClassroomWidget", "\351\200\200\345\207\272", nullptr));
     } // retranslateUi
 
 };

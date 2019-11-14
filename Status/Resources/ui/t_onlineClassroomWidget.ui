@@ -2350,8 +2350,8 @@ QScrollBar::sub-line:vertical {
                <rect>
                 <x>0</x>
                 <y>0</y>
-                <width>615</width>
-                <height>421</height>
+                <width>98</width>
+                <height>28</height>
                </rect>
               </property>
               <property name="styleSheet">
@@ -3061,7 +3061,7 @@ QTabWidget#tabWidget::pane {
      </property>
      <layout class="QHBoxLayout" name="horizontalLayout_4">
       <property name="spacing">
-       <number>5</number>
+       <number>20</number>
       </property>
       <property name="leftMargin">
        <number>10</number>
@@ -3167,7 +3167,7 @@ QPushButton:hover {
        </widget>
       </item>
       <item>
-       <widget class="QPushButton" name="exit_lesson_btn">
+       <widget class="QPushButton" name="quit_lesson_btn">
         <property name="sizePolicy">
          <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
           <horstretch>0</horstretch>
