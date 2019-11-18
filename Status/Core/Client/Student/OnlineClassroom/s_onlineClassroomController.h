@@ -2,6 +2,7 @@
 #pragma execution_character_set("utf-8")
 #include <QJsonArray>
 #include <QList>
+#include <QtConcurrent>
 #include "s_onlineclassroomWidget.h"
 #include "Core/Client/Student/s_mainWindow.h"
 #include "Core/Client/Student/OnlineClassroom/Enter/s_enterController.h"
@@ -26,7 +27,6 @@ public:
 	virtual ~SOnlineClassroomController();
 
 	SOnlineClassroomWidget *onlineClassroomWidget() const { return this->m_online_classroom_widget; };
-
 	void showOnlineClassroomWidget(SMainWindow *parent);
 	void hideOnlineClassroomWidget(SMainWindow *parent);
 	void lessonConnectionSend(QJsonObject &data);

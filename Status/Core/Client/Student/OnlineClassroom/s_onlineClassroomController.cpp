@@ -11,6 +11,7 @@ SOnlineClassroomController::SOnlineClassroomController(User *user, QObject *pare
 }
 
 SOnlineClassroomController::~SOnlineClassroomController() {
+	this->distroyLessonConnection();
 	delete this->m_online_classroom_widget;
 }
 
@@ -184,7 +185,7 @@ void SOnlineClassroomController::handleCommandJoinInLesson(QJsonObject &data) {
 
 		ui.lesson_status_btn->setText("正在上课");
 
-		this->openCamera();
+		QtConcurrent::run(this, &SOnlineClassroomController::openCamera);
 		this->updateRoomInfo(data);
 		this->m_enter_controller->hideEnterDialog();
 		this->lessonBegin();
@@ -206,7 +207,7 @@ void SOnlineClassroomController::handleCommandJoinInLesson(QJsonObject &data) {
 
 		this->m_user->setUserStatus(UserStatus::InRoom);
 
-		this->openCamera();
+		QtConcurrent::run(this, &SOnlineClassroomController::openCamera);
 		this->updateRoomInfo(data);
 		this->m_enter_controller->hideEnterDialog();
 		break;
@@ -238,7 +239,7 @@ void SOnlineClassroomController::handleCommandEndLesson(QJsonObject &data) {
 	this->m_lesson_timer.stop();
 	this->releaseResources();
 
-	this->m_user->setUserStatus(UserStatus::InRoom);
+	this->m_user->setUserStatus(UserStatus::Free);
 
 	toast->setInfoText(QString("课堂已结束"));
 	toast->show();
@@ -376,17 +377,23 @@ void SOnlineClassroomController::lessonBegin() {
 void SOnlineClassroomController::quitLesson() {
 	QJsonObject request_json_obj;
 
-	// ——请求数据
-	request_json_obj["command"] = TransportCmd::QuitLesson;
-
-	this->lessonConnectionSend(request_json_obj);
+	switch (this->m_user->userStatus()) {
+	case UserStatus::InClass:
+	case UserStatus::InRoom:
+		request_json_obj["command"] = TransportCmd::QuitLesson;
+		this->lessonConnectionSend(request_json_obj);
+		break;
+	case UserStatus::Free:
+		emit this->quitLessonSuccess();
+		break;
+	}
+	
 
 	return;
 }
 
 void SOnlineClassroomController::releaseResources() {
 	this->distroyCamera();
-	this->distroyLessonConnection();
 	this->m_white_board_controller->distroyPaintConnection();
 
 	return;
@@ -422,6 +429,10 @@ void SOnlineClassroomController::mineCameraDisplay(QImage &frame) {
 }
 
 void SOnlineClassroomController::sendMineCameraFrame() {
+	if (!this->m_camera->isOpened()) {
+		return;
+	}
+
 	cv::Mat frame_mat = this->m_camera->getFrameMat();
 	QJsonObject json_obj;
 

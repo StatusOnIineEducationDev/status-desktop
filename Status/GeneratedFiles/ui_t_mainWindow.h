@@ -606,7 +606,7 @@ public:
         logo->setText(QString());
         client_type_text->setText(QCoreApplication::translate("TMainWindow", "\346\225\231\345\270\210\347\253\257", nullptr));
         user_pic->setText(QString());
-        username_text->setText(QCoreApplication::translate("TMainWindow", "\346\210\221\346\230\257\344\275\240\347\210\270\347\210\270", nullptr));
+        username_text->setText(QCoreApplication::translate("TMainWindow", "\350\200\201\345\270\210", nullptr));
         logout_btn->setText(QString());
         function_navigation_text->setText(QCoreApplication::translate("TMainWindow", "   \345\212\237\350\203\275\350\217\234\345\215\225", nullptr));
         course_btn->setText(QCoreApplication::translate("TMainWindow", " \350\257\276\347\250\213\347\256\241\347\220\206", nullptr));

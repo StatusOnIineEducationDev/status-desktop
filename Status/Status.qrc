@@ -65,12 +65,14 @@
         <file>Resources/material/button/mini_program.png</file>
         <file>Resources/material/button/create.png</file>
         <file>Resources/material/button/join_in.png</file>
+        <file>Resources/material/button/upload_pic.png</file>
     </qresource>
     <qresource prefix="/shadow">
         <file>Resources/material/shadow/980x680_shadow.png</file>
         <file>Resources/material/shadow/400x250_shadow.png</file>
         <file>Resources/material/shadow/220x270_shadow.png</file>
         <file>Resources/material/shadow/140x45_shadow.png</file>
+        <file>Resources/material/shadow/440x540_shadow.png</file>
     </qresource>
     <qresource prefix="/pic">
         <file>Resources/material/pic/student.png</file>

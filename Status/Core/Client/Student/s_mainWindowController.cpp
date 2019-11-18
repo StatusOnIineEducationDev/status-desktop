@@ -59,7 +59,7 @@ void SMainWindowController::showCourseManagementWidget() {
 		this->m_course_management_controller = new SCourseManagementController(this->m_user, this);  // 动态创建子窗
 	}
 	this->m_course_management_controller->showCourseManagementWidget(this->m_win);
-
+	
 	return;
 }
 

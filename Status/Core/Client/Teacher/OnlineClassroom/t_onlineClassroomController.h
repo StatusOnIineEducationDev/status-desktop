@@ -2,6 +2,7 @@
 #pragma execution_character_set("utf-8")
 #include <QJsonArray>
 #include <QList>
+#include <QtConcurrent>
 #include "t_onlineClassroomController.h"
 #include "Core/Client/Teacher/t_mainWindow.h"
 #include "Core/Client/Teacher/OnlineClassroom/Enter/t_enterController.h"
@@ -10,6 +11,7 @@
 #include "Core/Hardware/camera.h"
 #include "Core/Network/socket.h"
 #include "Core/Client/conf.h"
+#include "Core/Tools/tools.h"
 
 
 class TOnlineClassroomController : public QObject{
@@ -49,13 +51,14 @@ protected:
 	void distroyCamera();
 	void mineCameraDisplay(QImage &frame);
 
+	void updateLastTime();
+
 	void showHandleRaiseHandWidget();
 	void updateHandleRaiseHandWidgetInfo(int row = -1);
 	void updateInSpeechWidgetInfo();
 	void acceptRaiseHand();
 	void refuseRaiseHand();
 	void removeMemberFromInSpeech();
-
 
 	TEnterController *m_enter_controller;
 	TWhiteBoardController *m_white_board_controller;
@@ -65,6 +68,7 @@ protected:
 	THandleRaiseHandWidget *m_handle_raise_hand_widget;
 	User *m_user;
 	Camera *m_camera;  // 摄像头对象
+	QTimer m_lesson_timer;  // 1秒定时器
 	Connection *m_lesson_connection;  // 该堂课的Tcp连接
 	Room m_room;  // 当前的房间信息
 	/*

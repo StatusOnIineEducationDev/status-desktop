@@ -8,6 +8,7 @@ TOnlineClassroomController::TOnlineClassroomController(User *user, QObject *pare
 }
 
 TOnlineClassroomController::~TOnlineClassroomController() {
+	this->distroyLessonConnection();
 	delete this->m_online_classroom_widget;
 }
 
@@ -167,7 +168,7 @@ void TOnlineClassroomController::handleCommandCreateLesson(QJsonObject &data) {
 
 	this->m_user->setUserStatus(UserStatus::InClass);
 
-	this->openCamera();
+	QtConcurrent::run(this, &TOnlineClassroomController::openCamera);
 	this->m_enter_controller->hideEnterDialog();
 
 	//     ——刷新ui
@@ -188,6 +189,7 @@ void TOnlineClassroomController::handleCommandBeginLesson(QJsonObject &data) {
 	Toast *toast = new Toast("开始上课");
 
 	// ——开启成功
+	this->m_lesson_timer.start(1000);  // 开启定时器
 	this->m_room.setBeginTime(QDateTime::fromTime_t(data["begin_timestamp"].toDouble()));
 
 	toast->show();
@@ -211,7 +213,7 @@ void TOnlineClassroomController::handleCommandEndLesson(QJsonObject &data) {
 	// ——结束成功
 	this->releaseResources();
 
-	this->m_user->setUserStatus(UserStatus::InRoom);
+	this->m_user->setUserStatus(UserStatus::Free);
 
 	toast->setInfoText(QString("课堂已结束"));
 	toast->show();
@@ -319,7 +321,6 @@ void TOnlineClassroomController::endLesson() {
 
 void TOnlineClassroomController::releaseResources() {
 	this->distroyCamera();
-	this->distroyLessonConnection();
 	this->m_white_board_controller->distroyPaintConnection();
 
 	return;
@@ -350,6 +351,20 @@ void TOnlineClassroomController::mineCameraDisplay(QImage &frame) {
 	Ui::TOnlineClassroomWidget ui = this->m_online_classroom_widget->ui();
 
 	ui.mine_camera_label->setPixmap(QPixmap::fromImage(frame));
+
+	return;
+}
+
+void TOnlineClassroomController::updateLastTime() {
+	Ui::TOnlineClassroomWidget ui = this->m_online_classroom_widget->ui();
+	int now_timestamp = QDateTime::currentDateTime().toTime_t(),
+		begin_timestamp = this->m_room.beginTime().toTime_t();
+
+	/*
+		这里需要准确计时
+		采用时间戳相减计算时间
+	*/
+	ui.last_time_text->setText(formatTime(now_timestamp - begin_timestamp));
 
 	return;
 }

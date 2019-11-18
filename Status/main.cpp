@@ -22,8 +22,8 @@ int main(int argc, char *argv[]) {
 	courses_base_list->append(course_base3);
 	courses_base_list->append(course_base4);
 	courses_base_list->append(course_base5);
-	User *user = new User(QString("10001"), QString("你爸爸"), courses_base_list, UserStatus::Free);
-	User *user_2 = new User(QString("10002"), QString("你爸爸"), courses_base_list, UserStatus::Free);
+	User *user = new User(QString("10001"), QString("教师"), courses_base_list, UserStatus::Free);
+	User *user_2 = new User(QString("10002"), QString("学生"), courses_base_list, UserStatus::Free);
 
 	TMainWindow *t_win = new TMainWindow();
 	SMainWindow *s_win = new SMainWindow();

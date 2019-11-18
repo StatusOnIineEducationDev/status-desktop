@@ -15,6 +15,7 @@ public:
 	virtual ~Camera();
 	void open() { this->m_cap.open(0); this->start(); return; };
 	void close() { this->m_cap.release(); return; };
+	bool isOpened() { return this->m_had_opened; };
 	void run();
 	void stop() { this->m_running_flag = false; return; };
 	const QImage& getFrameImage() { return this->m_frame_img; };
