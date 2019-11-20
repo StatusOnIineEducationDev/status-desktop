@@ -17,7 +17,7 @@
 
 QT_BEGIN_NAMESPACE
 
-class Ui_CInSpeechMemberItemWidget
+class Ui_InSpeechMemberItemWidget
 {
 public:
     QGridLayout *gridLayout;
@@ -26,17 +26,17 @@ public:
     QLabel *writing_pic;
     QLabel *user_pic;
 
-    void setupUi(QWidget *CInSpeechMemberItemWidget)
+    void setupUi(QWidget *InSpeechMemberItemWidget)
     {
-        if (CInSpeechMemberItemWidget->objectName().isEmpty())
-            CInSpeechMemberItemWidget->setObjectName(QString::fromUtf8("CInSpeechMemberItemWidget"));
-        CInSpeechMemberItemWidget->resize(224, 30);
-        gridLayout = new QGridLayout(CInSpeechMemberItemWidget);
+        if (InSpeechMemberItemWidget->objectName().isEmpty())
+            InSpeechMemberItemWidget->setObjectName(QString::fromUtf8("InSpeechMemberItemWidget"));
+        InSpeechMemberItemWidget->resize(224, 30);
+        gridLayout = new QGridLayout(InSpeechMemberItemWidget);
         gridLayout->setObjectName(QString::fromUtf8("gridLayout"));
         gridLayout->setHorizontalSpacing(10);
         gridLayout->setVerticalSpacing(0);
         gridLayout->setContentsMargins(5, 5, 5, 5);
-        account_type_label = new QLabel(CInSpeechMemberItemWidget);
+        account_type_label = new QLabel(InSpeechMemberItemWidget);
         account_type_label->setObjectName(QString::fromUtf8("account_type_label"));
         account_type_label->setMinimumSize(QSize(50, 15));
         account_type_label->setMaximumSize(QSize(50, 11));
@@ -56,7 +56,7 @@ public:
 
         gridLayout->addWidget(account_type_label, 0, 2, 1, 1);
 
-        username_text = new QLabel(CInSpeechMemberItemWidget);
+        username_text = new QLabel(InSpeechMemberItemWidget);
         username_text->setObjectName(QString::fromUtf8("username_text"));
         QFont font1;
         font1.setFamily(QString::fromUtf8("\345\276\256\350\275\257\351\233\205\351\273\221"));
@@ -70,7 +70,7 @@ public:
 
         gridLayout->addWidget(username_text, 0, 3, 1, 1);
 
-        writing_pic = new QLabel(CInSpeechMemberItemWidget);
+        writing_pic = new QLabel(InSpeechMemberItemWidget);
         writing_pic->setObjectName(QString::fromUtf8("writing_pic"));
         writing_pic->setMinimumSize(QSize(12, 12));
         writing_pic->setMaximumSize(QSize(12, 12));
@@ -82,35 +82,36 @@ public:
 
         gridLayout->addWidget(writing_pic, 0, 0, 1, 1);
 
-        user_pic = new QLabel(CInSpeechMemberItemWidget);
+        user_pic = new QLabel(InSpeechMemberItemWidget);
         user_pic->setObjectName(QString::fromUtf8("user_pic"));
         user_pic->setMinimumSize(QSize(20, 20));
         user_pic->setMaximumSize(QSize(20, 20));
+        user_pic->setFont(font1);
         user_pic->setStyleSheet(QString::fromUtf8("background: none;"));
-        user_pic->setPixmap(QPixmap(QString::fromUtf8(":/pic/Resources/material/pic/student.png")));
         user_pic->setScaledContents(true);
+        user_pic->setAlignment(Qt::AlignCenter);
 
         gridLayout->addWidget(user_pic, 0, 1, 1, 1);
 
 
-        retranslateUi(CInSpeechMemberItemWidget);
+        retranslateUi(InSpeechMemberItemWidget);
 
-        QMetaObject::connectSlotsByName(CInSpeechMemberItemWidget);
+        QMetaObject::connectSlotsByName(InSpeechMemberItemWidget);
     } // setupUi
 
-    void retranslateUi(QWidget *CInSpeechMemberItemWidget)
+    void retranslateUi(QWidget *InSpeechMemberItemWidget)
     {
-        CInSpeechMemberItemWidget->setWindowTitle(QCoreApplication::translate("CInSpeechMemberItemWidget", "Form", nullptr));
-        account_type_label->setText(QCoreApplication::translate("CInSpeechMemberItemWidget", "\345\255\246\347\224\237", nullptr));
-        username_text->setText(QCoreApplication::translate("CInSpeechMemberItemWidget", "username", nullptr));
+        InSpeechMemberItemWidget->setWindowTitle(QCoreApplication::translate("InSpeechMemberItemWidget", "Form", nullptr));
+        account_type_label->setText(QCoreApplication::translate("InSpeechMemberItemWidget", "\345\255\246\347\224\237", nullptr));
+        username_text->setText(QCoreApplication::translate("InSpeechMemberItemWidget", "username", nullptr));
         writing_pic->setText(QString());
-        user_pic->setText(QString());
+        user_pic->setText(QCoreApplication::translate("InSpeechMemberItemWidget", "pic", nullptr));
     } // retranslateUi
 
 };
 
 namespace Ui {
-    class CInSpeechMemberItemWidget: public Ui_CInSpeechMemberItemWidget {};
+    class InSpeechMemberItemWidget: public Ui_InSpeechMemberItemWidget {};
 } // namespace Ui
 
 QT_END_NAMESPACE

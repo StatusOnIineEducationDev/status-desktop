@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>CChatItemMineWidget</class>
- <widget class="QWidget" name="CChatItemMineWidget">
+ <class>ChatItemMineWidget</class>
+ <widget class="QWidget" name="ChatItemMineWidget">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -137,17 +137,23 @@ background: none;</string>
           <height>30</height>
          </size>
         </property>
+        <property name="font">
+         <font>
+          <family>微软雅黑</family>
+          <pointsize>10</pointsize>
+         </font>
+        </property>
         <property name="styleSheet">
          <string notr="true">background: none;</string>
         </property>
         <property name="text">
-         <string/>
-        </property>
-        <property name="pixmap">
-         <pixmap resource="../../Status.qrc">:/pic/Resources/material/pic/teacher.png</pixmap>
+         <string>pic</string>
         </property>
         <property name="scaledContents">
          <bool>true</bool>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
         </property>
        </widget>
       </item>

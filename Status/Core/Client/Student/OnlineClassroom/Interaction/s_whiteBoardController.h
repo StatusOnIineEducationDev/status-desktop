@@ -33,6 +33,7 @@ protected:
 	void createInteractiveWhiteBoard();
 	void toolBarSignalConnect();
 	void setToolBarDisabled(bool flag);
+
 	void setPenWidth(int value);
 	void setRubberWidth(int value);
 	void setPenSlider();

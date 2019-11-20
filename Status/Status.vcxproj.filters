@@ -77,6 +77,9 @@
     <Filter Include="Core\Client\Student\CourseManagement">
       <UniqueIdentifier>{771a82be-d7eb-4a61-9247-a36e6bf4716f}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Core\Component\ChatAndInSpeech">
+      <UniqueIdentifier>{63fa9581-a7e6-4496-926b-98d38e196dee}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <QtRcc Include="Status.qrc">
@@ -124,6 +127,12 @@
       <Filter>Resource Files\Ui</Filter>
     </QtUic>
     <QtUic Include="Resources\ui\t_courseManagementWidget.ui">
+      <Filter>Resource Files\Ui</Filter>
+    </QtUic>
+    <QtUic Include="Resources\ui\c_chatAndInSpeechWidget.ui">
+      <Filter>Resource Files\Ui</Filter>
+    </QtUic>
+    <QtUic Include="Resources\ui\c_whiteBoardWidget.ui">
       <Filter>Resource Files\Ui</Filter>
     </QtUic>
   </ItemGroup>
@@ -240,6 +249,18 @@
     <ClCompile Include="Core\Client\Teacher\CourseManagement\t_courseManagementWidget.cpp">
       <Filter>Core\Client\Teacher\CourseManagement</Filter>
     </ClCompile>
+    <ClCompile Include="Core\Component\ChatAndInSpeech\chatAndInSpeechWidget.cpp">
+      <Filter>Core\Component\ChatAndInSpeech</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\Component\ChatAndInSpeech\chatItemWidget.cpp">
+      <Filter>Core\Component\ChatAndInSpeech</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\Component\ChatAndInSpeech\inSpeechMemberItemWidget.cpp">
+      <Filter>Core\Component\ChatAndInSpeech</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\Component\WhiteBoard\whiteBoardWidget.cpp">
+      <Filter>Core\Component\WhiteBoard</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="Core\Network\socket.h">
@@ -335,6 +356,15 @@
     <QtMoc Include="Core\Client\Teacher\CourseManagement\t_courseManagementWidget.h">
       <Filter>Core\Client\Teacher\CourseManagement</Filter>
     </QtMoc>
+    <QtMoc Include="Core\Component\ChatAndInSpeech\chatAndInSpeechWidget.h">
+      <Filter>Core\Component\ChatAndInSpeech</Filter>
+    </QtMoc>
+    <QtMoc Include="Core\Component\ChatAndInSpeech\inSpeechMemberItemWidget.h">
+      <Filter>Core\Component\ChatAndInSpeech</Filter>
+    </QtMoc>
+    <QtMoc Include="Core\Component\WhiteBoard\whiteBoardWidget.h">
+      <Filter>Core\Component\WhiteBoard</Filter>
+    </QtMoc>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Core\Model\course.h">
@@ -357,6 +387,9 @@
     </ClInclude>
     <ClInclude Include="Core\Client\onlineEdu.h">
       <Filter>Core\Client</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Component\ChatAndInSpeech\chatItemWidget.h">
+      <Filter>Core\Component\ChatAndInSpeech</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
