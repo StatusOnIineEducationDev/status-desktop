@@ -32,9 +32,6 @@
     <Filter Include="Core\Component\Chart">
       <UniqueIdentifier>{22f0cbd2-caac-4ed4-8353-3c8efccc5c99}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Core\Component\WhiteBoard">
-      <UniqueIdentifier>{788add6b-af5e-4507-b353-25184d229357}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Core\Client">
       <UniqueIdentifier>{273738ba-11e9-4c47-b8cd-075f1366d503}</UniqueIdentifier>
     </Filter>
@@ -77,8 +74,17 @@
     <Filter Include="Core\Client\Student\CourseManagement">
       <UniqueIdentifier>{771a82be-d7eb-4a61-9247-a36e6bf4716f}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Core\Component\ChatAndInSpeech">
+    <Filter Include="Core\Component\MainWindow">
+      <UniqueIdentifier>{c1a89f64-7f3b-4f2d-b097-b62ae6224855}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\Component\Interaction">
+      <UniqueIdentifier>{b0c9cdd7-7c76-4389-bb25-020a143f5e4a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\Component\Interaction\ChatAndInSpeech">
       <UniqueIdentifier>{63fa9581-a7e6-4496-926b-98d38e196dee}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\Component\Interaction\WhiteBoard">
+      <UniqueIdentifier>{788add6b-af5e-4507-b353-25184d229357}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -133,6 +139,12 @@
       <Filter>Resource Files\Ui</Filter>
     </QtUic>
     <QtUic Include="Resources\ui\c_whiteBoardWidget.ui">
+      <Filter>Resource Files\Ui</Filter>
+    </QtUic>
+    <QtUic Include="Resources\ui\c_mainWindow.ui">
+      <Filter>Resource Files\Ui</Filter>
+    </QtUic>
+    <QtUic Include="Resources\ui\c_interactionWidget.ui">
       <Filter>Resource Files\Ui</Filter>
     </QtUic>
   </ItemGroup>
@@ -234,12 +246,6 @@
     <ClCompile Include="Core\Component\Chart\lineAndBarChart.cpp">
       <Filter>Core\Component\Chart</Filter>
     </ClCompile>
-    <ClCompile Include="Core\Component\WhiteBoard\lineEdit.cpp">
-      <Filter>Core\Component\WhiteBoard</Filter>
-    </ClCompile>
-    <ClCompile Include="Core\Component\WhiteBoard\whiteBoard.cpp">
-      <Filter>Core\Component\WhiteBoard</Filter>
-    </ClCompile>
     <ClCompile Include="Core\Client\Student\CourseManagement\s_courseManagementController.cpp">
       <Filter>Core\Client\Student\CourseManagement</Filter>
     </ClCompile>
@@ -249,17 +255,29 @@
     <ClCompile Include="Core\Client\Teacher\CourseManagement\t_courseManagementWidget.cpp">
       <Filter>Core\Client\Teacher\CourseManagement</Filter>
     </ClCompile>
-    <ClCompile Include="Core\Component\ChatAndInSpeech\chatAndInSpeechWidget.cpp">
-      <Filter>Core\Component\ChatAndInSpeech</Filter>
+    <ClCompile Include="Core\Component\MainWindow\mainWindow.cpp">
+      <Filter>Core\Component\MainWindow</Filter>
     </ClCompile>
-    <ClCompile Include="Core\Component\ChatAndInSpeech\chatItemWidget.cpp">
-      <Filter>Core\Component\ChatAndInSpeech</Filter>
+    <ClCompile Include="Core\Component\Interaction\ChatAndInSpeech\chatAndInSpeechWidget.cpp">
+      <Filter>Core\Component\Interaction\ChatAndInSpeech</Filter>
     </ClCompile>
-    <ClCompile Include="Core\Component\ChatAndInSpeech\inSpeechMemberItemWidget.cpp">
-      <Filter>Core\Component\ChatAndInSpeech</Filter>
+    <ClCompile Include="Core\Component\Interaction\ChatAndInSpeech\chatItemWidget.cpp">
+      <Filter>Core\Component\Interaction\ChatAndInSpeech</Filter>
     </ClCompile>
-    <ClCompile Include="Core\Component\WhiteBoard\whiteBoardWidget.cpp">
-      <Filter>Core\Component\WhiteBoard</Filter>
+    <ClCompile Include="Core\Component\Interaction\ChatAndInSpeech\inSpeechMemberItemWidget.cpp">
+      <Filter>Core\Component\Interaction\ChatAndInSpeech</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\Component\Interaction\WhiteBoard\lineedit.cpp">
+      <Filter>Core\Component\Interaction\WhiteBoard</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\Component\Interaction\WhiteBoard\whiteboard.cpp">
+      <Filter>Core\Component\Interaction\WhiteBoard</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\Component\Interaction\WhiteBoard\whiteBoardWidget.cpp">
+      <Filter>Core\Component\Interaction\WhiteBoard</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\Component\MainWindow\interactionWidget.cpp">
+      <Filter>Core\Component\Interaction</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -338,12 +356,6 @@
     <QtMoc Include="Core\Component\Chart\lineAndBarChart.h">
       <Filter>Core\Component\Chart</Filter>
     </QtMoc>
-    <QtMoc Include="Core\Component\WhiteBoard\lineEdit.h">
-      <Filter>Core\Component\WhiteBoard</Filter>
-    </QtMoc>
-    <QtMoc Include="Core\Component\WhiteBoard\whiteBoard.h">
-      <Filter>Core\Component\WhiteBoard</Filter>
-    </QtMoc>
     <QtMoc Include="Core\Client\Student\CourseManagement\s_courseManagementWidget.h">
       <Filter>Core\Client\Student\CourseManagement</Filter>
     </QtMoc>
@@ -356,14 +368,26 @@
     <QtMoc Include="Core\Client\Teacher\CourseManagement\t_courseManagementWidget.h">
       <Filter>Core\Client\Teacher\CourseManagement</Filter>
     </QtMoc>
-    <QtMoc Include="Core\Component\ChatAndInSpeech\chatAndInSpeechWidget.h">
-      <Filter>Core\Component\ChatAndInSpeech</Filter>
+    <QtMoc Include="Core\Component\MainWindow\mainWindow.h">
+      <Filter>Core\Component\MainWindow</Filter>
     </QtMoc>
-    <QtMoc Include="Core\Component\ChatAndInSpeech\inSpeechMemberItemWidget.h">
-      <Filter>Core\Component\ChatAndInSpeech</Filter>
+    <QtMoc Include="Core\Component\Interaction\ChatAndInSpeech\chatAndInSpeechWidget.h">
+      <Filter>Core\Component\Interaction\ChatAndInSpeech</Filter>
     </QtMoc>
-    <QtMoc Include="Core\Component\WhiteBoard\whiteBoardWidget.h">
-      <Filter>Core\Component\WhiteBoard</Filter>
+    <QtMoc Include="Core\Component\Interaction\ChatAndInSpeech\inSpeechMemberItemWidget.h">
+      <Filter>Core\Component\Interaction\ChatAndInSpeech</Filter>
+    </QtMoc>
+    <QtMoc Include="Core\Component\Interaction\WhiteBoard\lineEdit.h">
+      <Filter>Core\Component\Interaction\WhiteBoard</Filter>
+    </QtMoc>
+    <QtMoc Include="Core\Component\Interaction\WhiteBoard\whiteboard.h">
+      <Filter>Core\Component\Interaction\WhiteBoard</Filter>
+    </QtMoc>
+    <QtMoc Include="Core\Component\Interaction\WhiteBoard\whiteBoardWidget.h">
+      <Filter>Core\Component\Interaction\WhiteBoard</Filter>
+    </QtMoc>
+    <QtMoc Include="Core\Component\MainWindow\interactionWidget.h">
+      <Filter>Core\Component\Interaction</Filter>
     </QtMoc>
   </ItemGroup>
   <ItemGroup>
@@ -388,8 +412,8 @@
     <ClInclude Include="Core\Client\onlineEdu.h">
       <Filter>Core\Client</Filter>
     </ClInclude>
-    <ClInclude Include="Core\Component\ChatAndInSpeech\chatItemWidget.h">
-      <Filter>Core\Component\ChatAndInSpeech</Filter>
+    <ClInclude Include="Core\Component\Interaction\ChatAndInSpeech\chatItemWidget.h">
+      <Filter>Core\Component\Interaction\ChatAndInSpeech</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

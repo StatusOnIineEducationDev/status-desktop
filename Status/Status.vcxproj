@@ -18,6 +18,8 @@
     <QtUic Include="Resources\ui\c_chatItemMineWidget.ui" />
     <QtUic Include="Resources\ui\c_chatItemOtherWidget.ui" />
     <QtUic Include="Resources\ui\c_inSpeechMemberItemWidget.ui" />
+    <QtUic Include="Resources\ui\c_interactionWidget.ui" />
+    <QtUic Include="Resources\ui\c_mainWindow.ui" />
     <QtUic Include="Resources\ui\c_raiseHandItemWidget.ui" />
     <QtUic Include="Resources\ui\c_whiteBoardWidget.ui" />
     <QtUic Include="Resources\ui\s_courseManagementWidget.ui" />
@@ -58,13 +60,15 @@
     <ClCompile Include="Core\Component\Chart\areaChart.cpp" />
     <ClCompile Include="Core\Component\Chart\areaChartDynamic.cpp" />
     <ClCompile Include="Core\Component\Chart\lineAndBarChart.cpp" />
-    <ClCompile Include="Core\Component\ChatAndInSpeech\chatAndInSpeechWidget.cpp" />
-    <ClCompile Include="Core\Component\ChatAndInSpeech\chatItemWidget.cpp" />
-    <ClCompile Include="Core\Component\ChatAndInSpeech\inSpeechMemberItemWidget.cpp" />
+    <ClCompile Include="Core\Component\Interaction\ChatAndInSpeech\chatAndInSpeechWidget.cpp" />
+    <ClCompile Include="Core\Component\Interaction\ChatAndInSpeech\chatItemWidget.cpp" />
+    <ClCompile Include="Core\Component\Interaction\ChatAndInSpeech\inSpeechMemberItemWidget.cpp" />
+    <ClCompile Include="Core\Component\Interaction\WhiteBoard\lineedit.cpp" />
+    <ClCompile Include="Core\Component\Interaction\WhiteBoard\whiteboard.cpp" />
+    <ClCompile Include="Core\Component\Interaction\WhiteBoard\whiteBoardWidget.cpp" />
+    <ClCompile Include="Core\Component\MainWindow\interactionWidget.cpp" />
+    <ClCompile Include="Core\Component\MainWindow\mainWindow.cpp" />
     <ClCompile Include="Core\Component\toast.cpp" />
-    <ClCompile Include="Core\Component\WhiteBoard\lineEdit.cpp" />
-    <ClCompile Include="Core\Component\WhiteBoard\whiteBoard.cpp" />
-    <ClCompile Include="Core\Component\WhiteBoard\whiteBoardWidget.cpp" />
     <ClCompile Include="Core\Hardware\camera.cpp" />
     <ClCompile Include="Core\Model\course.cpp" />
     <ClCompile Include="Core\Model\user.cpp" />
@@ -97,14 +101,6 @@
       <IncludePath Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCharts;$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtNetwork;$(QTDIR)\include\QtMultimedia;$(QTDIR)\include\QtMultimediaWidgets</IncludePath>
     </QtMoc>
     <QtMoc Include="Core\Component\Chart\areaChartDynamic.h">
-      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCharts;$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtNetwork;$(QTDIR)\include\QtMultimedia;$(QTDIR)\include\QtMultimediaWidgets</IncludePath>
-      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCharts;$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtNetwork;$(QTDIR)\include\QtMultimedia;$(QTDIR)\include\QtMultimediaWidgets</IncludePath>
-    </QtMoc>
-    <QtMoc Include="Core\Component\WhiteBoard\whiteBoard.h">
-      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCharts;$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtNetwork;$(QTDIR)\include\QtMultimedia;$(QTDIR)\include\QtMultimediaWidgets</IncludePath>
-      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCharts;$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtNetwork;$(QTDIR)\include\QtMultimedia;$(QTDIR)\include\QtMultimediaWidgets</IncludePath>
-    </QtMoc>
-    <QtMoc Include="Core\Component\WhiteBoard\lineEdit.h">
       <IncludePath Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCharts;$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtNetwork;$(QTDIR)\include\QtMultimedia;$(QTDIR)\include\QtMultimediaWidgets</IncludePath>
       <IncludePath Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCharts;$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtNetwork;$(QTDIR)\include\QtMultimedia;$(QTDIR)\include\QtMultimediaWidgets</IncludePath>
     </QtMoc>
@@ -196,19 +192,32 @@
       <IncludePath Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCharts;$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtNetwork;$(QTDIR)\include\QtMultimedia;$(QTDIR)\include\QtMultimediaWidgets</IncludePath>
       <IncludePath Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCharts;$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtNetwork;$(QTDIR)\include\QtMultimedia;$(QTDIR)\include\QtMultimediaWidgets</IncludePath>
     </QtMoc>
-    <QtMoc Include="Core\Component\ChatAndInSpeech\chatAndInSpeechWidget.h">
+    <QtMoc Include="Core\Component\MainWindow\mainWindow.h">
       <IncludePath Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCharts;$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtNetwork;$(QTDIR)\include\QtMultimedia;$(QTDIR)\include\QtMultimediaWidgets;$(QTDIR)\include\QtConcurrent</IncludePath>
       <IncludePath Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCharts;$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtNetwork;$(QTDIR)\include\QtMultimedia;$(QTDIR)\include\QtMultimediaWidgets;$(QTDIR)\include\QtConcurrent</IncludePath>
     </QtMoc>
-    <ClInclude Include="Core\Component\ChatAndInSpeech\chatItemWidget.h">
-      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCharts;$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtNetwork;$(QTDIR)\include\QtMultimedia;$(QTDIR)\include\QtMultimediaWidgets;$(QTDIR)\include\QtConcurrent</IncludePath>
-      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCharts;$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtNetwork;$(QTDIR)\include\QtMultimedia;$(QTDIR)\include\QtMultimediaWidgets;$(QTDIR)\include\QtConcurrent</IncludePath>
-    </ClInclude>
-    <QtMoc Include="Core\Component\ChatAndInSpeech\inSpeechMemberItemWidget.h">
+    <QtMoc Include="Core\Component\Interaction\ChatAndInSpeech\chatAndInSpeechWidget.h">
       <IncludePath Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCharts;$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtNetwork;$(QTDIR)\include\QtMultimedia;$(QTDIR)\include\QtMultimediaWidgets;$(QTDIR)\include\QtConcurrent</IncludePath>
       <IncludePath Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCharts;$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtNetwork;$(QTDIR)\include\QtMultimedia;$(QTDIR)\include\QtMultimediaWidgets;$(QTDIR)\include\QtConcurrent</IncludePath>
     </QtMoc>
-    <QtMoc Include="Core\Component\WhiteBoard\whiteBoardWidget.h">
+    <ClInclude Include="Core\Component\Interaction\ChatAndInSpeech\chatItemWidget.h" />
+    <QtMoc Include="Core\Component\Interaction\ChatAndInSpeech\inSpeechMemberItemWidget.h">
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCharts;$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtNetwork;$(QTDIR)\include\QtMultimedia;$(QTDIR)\include\QtMultimediaWidgets;$(QTDIR)\include\QtConcurrent</IncludePath>
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCharts;$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtNetwork;$(QTDIR)\include\QtMultimedia;$(QTDIR)\include\QtMultimediaWidgets;$(QTDIR)\include\QtConcurrent</IncludePath>
+    </QtMoc>
+    <QtMoc Include="Core\Component\Interaction\WhiteBoard\lineEdit.h">
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCharts;$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtNetwork;$(QTDIR)\include\QtMultimedia;$(QTDIR)\include\QtMultimediaWidgets;$(QTDIR)\include\QtConcurrent</IncludePath>
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCharts;$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtNetwork;$(QTDIR)\include\QtMultimedia;$(QTDIR)\include\QtMultimediaWidgets;$(QTDIR)\include\QtConcurrent</IncludePath>
+    </QtMoc>
+    <QtMoc Include="Core\Component\Interaction\WhiteBoard\whiteboard.h">
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCharts;$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtNetwork;$(QTDIR)\include\QtMultimedia;$(QTDIR)\include\QtMultimediaWidgets;$(QTDIR)\include\QtConcurrent</IncludePath>
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCharts;$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtNetwork;$(QTDIR)\include\QtMultimedia;$(QTDIR)\include\QtMultimediaWidgets;$(QTDIR)\include\QtConcurrent</IncludePath>
+    </QtMoc>
+    <QtMoc Include="Core\Component\Interaction\WhiteBoard\whiteBoardWidget.h">
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCharts;$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtNetwork;$(QTDIR)\include\QtMultimedia;$(QTDIR)\include\QtMultimediaWidgets;$(QTDIR)\include\QtConcurrent</IncludePath>
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCharts;$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtNetwork;$(QTDIR)\include\QtMultimedia;$(QTDIR)\include\QtMultimediaWidgets;$(QTDIR)\include\QtConcurrent</IncludePath>
+    </QtMoc>
+    <QtMoc Include="Core\Component\MainWindow\interactionWidget.h">
       <IncludePath Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCharts;$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtNetwork;$(QTDIR)\include\QtMultimedia;$(QTDIR)\include\QtMultimediaWidgets;$(QTDIR)\include\QtConcurrent</IncludePath>
       <IncludePath Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCharts;$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtNetwork;$(QTDIR)\include\QtMultimedia;$(QTDIR)\include\QtMultimediaWidgets;$(QTDIR)\include\QtConcurrent</IncludePath>
     </QtMoc>

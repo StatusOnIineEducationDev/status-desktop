@@ -7,8 +7,6 @@
 
 template <typename Widget>
 class ChatItemWidget : public QWidget {
-	//Q_OBJECT
-
 public:
 	ChatItemWidget(const QPixmap &user_pic, const QString &username,
 		const QString &content, const int &timestamp, QWidget *parent = nullptr);

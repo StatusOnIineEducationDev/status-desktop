@@ -36,6 +36,145 @@
     <property name="spacing">
      <number>0</number>
     </property>
+    <item row="0" column="0">
+     <widget class="QFrame" name="logo_bar_frame">
+      <property name="minimumSize">
+       <size>
+        <width>155</width>
+        <height>40</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>155</width>
+        <height>40</height>
+       </size>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QFrame {
+	background-color: #1D2B36;
+	border-bottom: 1px solid #131D24;
+}</string>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <layout class="QHBoxLayout" name="horizontalLayout">
+       <property name="spacing">
+        <number>0</number>
+       </property>
+       <property name="leftMargin">
+        <number>0</number>
+       </property>
+       <property name="topMargin">
+        <number>0</number>
+       </property>
+       <property name="rightMargin">
+        <number>0</number>
+       </property>
+       <property name="bottomMargin">
+        <number>0</number>
+       </property>
+       <item>
+        <spacer name="horizontalSpacer">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>40</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item>
+        <widget class="QLabel" name="logo">
+         <property name="minimumSize">
+          <size>
+           <width>42</width>
+           <height>20</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>42</width>
+           <height>20</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QLabel {
+	background: none;
+}</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+         <property name="pixmap">
+          <pixmap resource="../../Status.qrc">:/logo/Resources/material/logo/logo.png</pixmap>
+         </property>
+         <property name="scaledContents">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <spacer name="horizontalSpacer_3">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeType">
+          <enum>QSizePolicy::Fixed</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>5</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item>
+        <widget class="QLabel" name="client_type_text">
+         <property name="font">
+          <font>
+           <family>微软雅黑</family>
+           <pointsize>10</pointsize>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QLabel {
+	background: none;
+	color: #ffffff;
+}</string>
+         </property>
+         <property name="text">
+          <string>Client Type</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <spacer name="horizontalSpacer_2">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>40</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+      </layout>
+     </widget>
+    </item>
     <item row="0" column="1">
      <widget class="QFrame" name="title_bar_frame">
       <property name="minimumSize">
@@ -318,7 +457,131 @@ QPushButton:hover {
       </layout>
      </widget>
     </item>
-    <item row="1" column="0">
+    <item row="1" column="1">
+     <layout class="QGridLayout" name="widget_layout">
+      <property name="spacing">
+       <number>0</number>
+      </property>
+     </layout>
+    </item>
+    <item row="2" column="1">
+     <widget class="QFrame" name="status_bar">
+      <property name="minimumSize">
+       <size>
+        <width>0</width>
+        <height>15</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>16777215</width>
+        <height>15</height>
+       </size>
+      </property>
+      <property name="font">
+       <font>
+        <family>微软雅黑</family>
+        <pointsize>10</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QFrame {
+	border-top: 1px solid #E8ECEC;
+	background-color: #ffffff;
+}</string>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <layout class="QHBoxLayout" name="horizontalLayout_3">
+       <property name="spacing">
+        <number>0</number>
+       </property>
+       <property name="leftMargin">
+        <number>0</number>
+       </property>
+       <property name="topMargin">
+        <number>0</number>
+       </property>
+       <property name="rightMargin">
+        <number>0</number>
+       </property>
+       <property name="bottomMargin">
+        <number>0</number>
+       </property>
+       <item>
+        <widget class="QLabel" name="version_text">
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>10</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>16777215</width>
+           <height>10</height>
+          </size>
+         </property>
+         <property name="font">
+          <font>
+           <family>微软雅黑</family>
+           <pointsize>8</pointsize>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QLabel {
+	border: none;
+}</string>
+         </property>
+         <property name="text">
+          <string>Version 1.0.0</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="resize_icon">
+         <property name="minimumSize">
+          <size>
+           <width>10</width>
+           <height>10</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>10</width>
+           <height>10</height>
+          </size>
+         </property>
+         <property name="cursor">
+          <cursorShape>SizeFDiagCursor</cursorShape>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QLabel {
+	border: none;
+}</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+         <property name="pixmap">
+          <pixmap resource="../../Status.qrc">:/button/Resources/material/button/resize.png</pixmap>
+         </property>
+         <property name="scaledContents">
+          <bool>true</bool>
+         </property>
+         <property name="margin">
+          <number>0</number>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item row="1" column="0" rowspan="2">
      <widget class="QFrame" name="nav_bar_frame">
       <property name="sizePolicy">
        <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
@@ -396,19 +659,26 @@ QPushButton:checked {
            <height>90</height>
           </size>
          </property>
+         <property name="font">
+          <font>
+           <family>微软雅黑</family>
+           <pointsize>10</pointsize>
+          </font>
+         </property>
          <property name="styleSheet">
           <string notr="true">QLabel {
 	background: none;
+	color: white;
 }</string>
          </property>
          <property name="text">
-          <string/>
-         </property>
-         <property name="pixmap">
-          <pixmap resource="../../Status.qrc">:/pic/Resources/material/pic/student.png</pixmap>
+          <string>pic</string>
          </property>
          <property name="scaledContents">
           <bool>true</bool>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
          </property>
         </widget>
        </item>
@@ -569,6 +839,9 @@ QPushButton:checked {
          <property name="checked">
           <bool>true</bool>
          </property>
+         <attribute name="buttonGroup">
+          <string notr="true">list_buttonGroup</string>
+         </attribute>
         </widget>
        </item>
        <item>
@@ -613,6 +886,9 @@ QPushButton:checked {
          <property name="checkable">
           <bool>true</bool>
          </property>
+         <attribute name="buttonGroup">
+          <string notr="true">list_buttonGroup</string>
+         </attribute>
         </widget>
        </item>
        <item>
@@ -657,6 +933,9 @@ QPushButton:checked {
          <property name="checkable">
           <bool>true</bool>
          </property>
+         <attribute name="buttonGroup">
+          <string notr="true">list_buttonGroup</string>
+         </attribute>
         </widget>
        </item>
        <item>
@@ -741,6 +1020,9 @@ QPushButton:checked {
          <property name="checkable">
           <bool>true</bool>
          </property>
+         <attribute name="buttonGroup">
+          <string notr="true">list_buttonGroup</string>
+         </attribute>
         </widget>
        </item>
        <item>
@@ -785,6 +1067,9 @@ QPushButton:checked {
          <property name="checkable">
           <bool>true</bool>
          </property>
+         <attribute name="buttonGroup">
+          <string notr="true">list_buttonGroup</string>
+         </attribute>
         </widget>
        </item>
        <item>
@@ -803,148 +1088,6 @@ QPushButton:checked {
       </layout>
      </widget>
     </item>
-    <item row="0" column="0">
-     <widget class="QFrame" name="logo_bar_frame">
-      <property name="minimumSize">
-       <size>
-        <width>155</width>
-        <height>40</height>
-       </size>
-      </property>
-      <property name="maximumSize">
-       <size>
-        <width>155</width>
-        <height>40</height>
-       </size>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">QFrame {
-	background-color: #1D2B36;
-	border-bottom: 1px solid #131D24;
-}</string>
-      </property>
-      <property name="frameShape">
-       <enum>QFrame::StyledPanel</enum>
-      </property>
-      <property name="frameShadow">
-       <enum>QFrame::Raised</enum>
-      </property>
-      <layout class="QHBoxLayout" name="horizontalLayout">
-       <property name="spacing">
-        <number>0</number>
-       </property>
-       <property name="leftMargin">
-        <number>0</number>
-       </property>
-       <property name="topMargin">
-        <number>0</number>
-       </property>
-       <property name="rightMargin">
-        <number>0</number>
-       </property>
-       <property name="bottomMargin">
-        <number>0</number>
-       </property>
-       <item>
-        <spacer name="horizontalSpacer">
-         <property name="orientation">
-          <enum>Qt::Horizontal</enum>
-         </property>
-         <property name="sizeHint" stdset="0">
-          <size>
-           <width>40</width>
-           <height>20</height>
-          </size>
-         </property>
-        </spacer>
-       </item>
-       <item>
-        <widget class="QLabel" name="logo">
-         <property name="minimumSize">
-          <size>
-           <width>42</width>
-           <height>20</height>
-          </size>
-         </property>
-         <property name="maximumSize">
-          <size>
-           <width>42</width>
-           <height>20</height>
-          </size>
-         </property>
-         <property name="styleSheet">
-          <string notr="true">QLabel {
-	background: none;
-}</string>
-         </property>
-         <property name="text">
-          <string/>
-         </property>
-         <property name="pixmap">
-          <pixmap resource="../../Status.qrc">:/logo/Resources/material/logo/logo.png</pixmap>
-         </property>
-         <property name="scaledContents">
-          <bool>true</bool>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <spacer name="horizontalSpacer_3">
-         <property name="orientation">
-          <enum>Qt::Horizontal</enum>
-         </property>
-         <property name="sizeType">
-          <enum>QSizePolicy::Fixed</enum>
-         </property>
-         <property name="sizeHint" stdset="0">
-          <size>
-           <width>5</width>
-           <height>20</height>
-          </size>
-         </property>
-        </spacer>
-       </item>
-       <item>
-        <widget class="QLabel" name="client_type_text">
-         <property name="font">
-          <font>
-           <family>微软雅黑</family>
-           <pointsize>10</pointsize>
-          </font>
-         </property>
-         <property name="styleSheet">
-          <string notr="true">QLabel {
-	background: none;
-	color: #ffffff;
-}</string>
-         </property>
-         <property name="text">
-          <string>学生端</string>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignCenter</set>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <spacer name="horizontalSpacer_2">
-         <property name="orientation">
-          <enum>Qt::Horizontal</enum>
-         </property>
-         <property name="sizeHint" stdset="0">
-          <size>
-           <width>40</width>
-           <height>20</height>
-          </size>
-         </property>
-        </spacer>
-       </item>
-      </layout>
-     </widget>
-    </item>
-    <item row="1" column="1">
-     <layout class="QGridLayout" name="widget_layout"/>
-    </item>
    </layout>
   </widget>
  </widget>
@@ -952,4 +1095,7 @@ QPushButton:checked {
   <include location="../../Status.qrc"/>
  </resources>
  <connections/>
+ <buttongroups>
+  <buttongroup name="list_buttonGroup"/>
+ </buttongroups>
 </ui>
