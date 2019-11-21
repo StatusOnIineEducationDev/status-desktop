@@ -1,11 +1,9 @@
 #pragma once
 
 #include <QWidget>
-#include <QScrollArea>
-#include <QTabBar>
-#include <QColorDialog>
 #include "ui_c_interactionWidget.h"
-#include "../Interaction/WhiteBoard/whiteBoardWidget.h"
+#include "../WhiteBoard/whiteBoardWidget.h"
+#include "../ChatAndInSpeech/chatAndInSpeechWidget.h"
 
 
 class InteractionWidget : public QWidget {
@@ -17,5 +15,10 @@ public:
 	const Ui::InteractionWidget& ui() const { return this->m_ui; };
 
 protected:
+	void showChatAndInSpeechWidget();
+	void hideChatAndInSpeechWidget();
+
 	Ui::InteractionWidget m_ui;
+	WhiteBoardWidget *m_white_board_widget;
+	ChatAndInSpeechWidget *m_chat_and_in_speech_widget;
 };

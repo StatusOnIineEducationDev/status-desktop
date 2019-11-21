@@ -4,6 +4,10 @@
 ChatAndInSpeechWidget::ChatAndInSpeechWidget(QWidget *parent = nullptr)
 	: QWidget(parent) {
 	m_ui.setupUi(this);
+
+	this->connect(this->m_ui.send_btn, &QPushButton::clicked, this, &ChatAndInSpeechWidget::sendChatContent);
+	this->connect(this->m_ui.chat_ban_btn, &QPushButton::clicked, this, &ChatAndInSpeechWidget::chatBan);
+	this->connect(this->m_ui.chat_clear_btn, &QPushButton::clicked, this, &ChatAndInSpeechWidget::chatClear);
 }
 
 ChatAndInSpeechWidget::~ChatAndInSpeechWidget() {
