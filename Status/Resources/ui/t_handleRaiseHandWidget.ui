@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>THandleRaiseHandWidget</class>
- <widget class="QWidget" name="THandleRaiseHandWidget">
+ <class>TeacherHandleRaiseHandWidget</class>
+ <widget class="QWidget" name="TeacherHandleRaiseHandWidget">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -364,7 +364,7 @@ QPushButton:hover {
   <connection>
    <sender>close_btn</sender>
    <signal>clicked()</signal>
-   <receiver>THandleRaiseHandWidget</receiver>
+   <receiver>TeacherHandleRaiseHandWidget</receiver>
    <slot>hide()</slot>
    <hints>
     <hint type="sourcelabel">

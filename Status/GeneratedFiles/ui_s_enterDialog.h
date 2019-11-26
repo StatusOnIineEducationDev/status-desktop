@@ -26,7 +26,7 @@
 
 QT_BEGIN_NAMESPACE
 
-class Ui_SEnterDialog
+class Ui_StudentEnterDialog
 {
 public:
     QFrame *layout;
@@ -51,13 +51,13 @@ public:
     QSpacerItem *horizontalSpacer_2;
     QPushButton *refresh_btn;
 
-    void setupUi(QDialog *SEnterDialog)
+    void setupUi(QDialog *StudentEnterDialog)
     {
-        if (SEnterDialog->objectName().isEmpty())
-            SEnterDialog->setObjectName(QString::fromUtf8("SEnterDialog"));
-        SEnterDialog->resize(410, 260);
-        SEnterDialog->setStyleSheet(QString::fromUtf8(""));
-        layout = new QFrame(SEnterDialog);
+        if (StudentEnterDialog->objectName().isEmpty())
+            StudentEnterDialog->setObjectName(QString::fromUtf8("StudentEnterDialog"));
+        StudentEnterDialog->resize(410, 260);
+        StudentEnterDialog->setStyleSheet(QString::fromUtf8(""));
+        layout = new QFrame(StudentEnterDialog);
         layout->setObjectName(QString::fromUtf8("layout"));
         layout->setGeometry(QRect(0, 0, 410, 260));
         layout->setStyleSheet(QString::fromUtf8("QFrame#layout {\n"
@@ -367,42 +367,42 @@ public:
         verticalLayout->addWidget(main_area);
 
 
-        retranslateUi(SEnterDialog);
-        QObject::connect(close_btn, SIGNAL(clicked()), SEnterDialog, SLOT(close()));
+        retranslateUi(StudentEnterDialog);
+        QObject::connect(close_btn, SIGNAL(clicked()), StudentEnterDialog, SLOT(close()));
 
         tabWidget->setCurrentIndex(0);
 
 
-        QMetaObject::connectSlotsByName(SEnterDialog);
+        QMetaObject::connectSlotsByName(StudentEnterDialog);
     } // setupUi
 
-    void retranslateUi(QDialog *SEnterDialog)
+    void retranslateUi(QDialog *StudentEnterDialog)
     {
-        SEnterDialog->setWindowTitle(QCoreApplication::translate("SEnterDialog", "Dialog", nullptr));
+        StudentEnterDialog->setWindowTitle(QCoreApplication::translate("StudentEnterDialog", "Dialog", nullptr));
 #if QT_CONFIG(tooltip)
-        close_btn->setToolTip(QCoreApplication::translate("SEnterDialog", "\345\205\263\351\227\255", nullptr));
+        close_btn->setToolTip(QCoreApplication::translate("StudentEnterDialog", "\345\205\263\351\227\255", nullptr));
 #endif // QT_CONFIG(tooltip)
 #if QT_CONFIG(whatsthis)
         close_btn->setWhatsThis(QString());
 #endif // QT_CONFIG(whatsthis)
         close_btn->setText(QString());
-        title_text->setText(QCoreApplication::translate("SEnterDialog", "\350\277\233\345\205\245\350\257\276\345\256\244", nullptr));
-        confirm_btn->setText(QCoreApplication::translate("SEnterDialog", "\350\277\233\345\205\245\350\257\276\345\256\244", nullptr));
+        title_text->setText(QCoreApplication::translate("StudentEnterDialog", "\350\277\233\345\205\245\350\257\276\345\256\244", nullptr));
+        confirm_btn->setText(QCoreApplication::translate("StudentEnterDialog", "\350\277\233\345\205\245\350\257\276\345\256\244", nullptr));
         QTableWidgetItem *___qtablewidgetitem = courses_table->horizontalHeaderItem(0);
-        ___qtablewidgetitem->setText(QCoreApplication::translate("SEnterDialog", "\350\257\276\347\250\213id", nullptr));
+        ___qtablewidgetitem->setText(QCoreApplication::translate("StudentEnterDialog", "\350\257\276\347\250\213id", nullptr));
         QTableWidgetItem *___qtablewidgetitem1 = courses_table->horizontalHeaderItem(1);
-        ___qtablewidgetitem1->setText(QCoreApplication::translate("SEnterDialog", "\350\257\276\347\250\213\345\220\215", nullptr));
+        ___qtablewidgetitem1->setText(QCoreApplication::translate("StudentEnterDialog", "\350\257\276\347\250\213\345\220\215", nullptr));
         QTableWidgetItem *___qtablewidgetitem2 = courses_table->horizontalHeaderItem(2);
-        ___qtablewidgetitem2->setText(QCoreApplication::translate("SEnterDialog", "\347\212\266\346\200\201", nullptr));
-        tabWidget->setTabText(tabWidget->indexOf(mine_courses_tab), QCoreApplication::translate("SEnterDialog", "\346\210\221\347\232\204\350\257\276\347\250\213", nullptr));
-        tabWidget->setTabText(tabWidget->indexOf(tab), QCoreApplication::translate("SEnterDialog", "\344\270\264\346\227\266\346\210\277\351\227\264", nullptr));
-        refresh_btn->setText(QCoreApplication::translate("SEnterDialog", "\345\210\267\346\226\260\345\210\227\350\241\250", nullptr));
+        ___qtablewidgetitem2->setText(QCoreApplication::translate("StudentEnterDialog", "\347\212\266\346\200\201", nullptr));
+        tabWidget->setTabText(tabWidget->indexOf(mine_courses_tab), QCoreApplication::translate("StudentEnterDialog", "\346\210\221\347\232\204\350\257\276\347\250\213", nullptr));
+        tabWidget->setTabText(tabWidget->indexOf(tab), QCoreApplication::translate("StudentEnterDialog", "\344\270\264\346\227\266\346\210\277\351\227\264", nullptr));
+        refresh_btn->setText(QCoreApplication::translate("StudentEnterDialog", "\345\210\267\346\226\260\345\210\227\350\241\250", nullptr));
     } // retranslateUi
 
 };
 
 namespace Ui {
-    class SEnterDialog: public Ui_SEnterDialog {};
+    class StudentEnterDialog: public Ui_StudentEnterDialog {};
 } // namespace Ui
 
 QT_END_NAMESPACE

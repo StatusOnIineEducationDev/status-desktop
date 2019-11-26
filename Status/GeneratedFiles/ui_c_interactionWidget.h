@@ -24,7 +24,7 @@ public:
     QGridLayout *gridLayout;
     QGridLayout *white_board_widget_layout;
     QPushButton *flexible_frame_btn;
-    QGridLayout *chat_and_in_speech_layout;
+    QGridLayout *chat_and_in_speech_widget_layout;
 
     void setupUi(QWidget *InteractionWidget)
     {
@@ -76,11 +76,11 @@ public:
 
         gridLayout->addWidget(flexible_frame_btn, 0, 1, 1, 1);
 
-        chat_and_in_speech_layout = new QGridLayout();
-        chat_and_in_speech_layout->setSpacing(0);
-        chat_and_in_speech_layout->setObjectName(QString::fromUtf8("chat_and_in_speech_layout"));
+        chat_and_in_speech_widget_layout = new QGridLayout();
+        chat_and_in_speech_widget_layout->setSpacing(0);
+        chat_and_in_speech_widget_layout->setObjectName(QString::fromUtf8("chat_and_in_speech_widget_layout"));
 
-        gridLayout->addLayout(chat_and_in_speech_layout, 0, 2, 1, 1);
+        gridLayout->addLayout(chat_and_in_speech_widget_layout, 0, 2, 1, 1);
 
 
         retranslateUi(InteractionWidget);

@@ -1,43 +1,64 @@
 #pragma once
 
-#include <QtWidgets/QMainWindow>
-#include <QEvent>
-#include <qDebug>
-#include "ui_t_onlineClassroomWidget.h"
-#include "ui_t_handleRaiseHandWidget.h"
-#include "Core/Client/Teacher/t_mainWindow.h"
+#include <QWidget>
+#include "t_onlineClassroomFunctionButtonWidget.h"
+#include "../../Common/OnlineClassroom/onlineClassroomWidget.h"
+#include "Interaction/t_interactionWidget.h"
+#include "Enter/t_enterDialog.h"
+#include "HandleRaiseHand/t_handleRaiseHandWidget.h"
 
 
-class TOnlineClassroomWidget : public QWidget {
-	Q_OBJECT
-
-signals:
-	void windowResized();
-
-public:
-	TOnlineClassroomWidget(TMainWindow *parent = Q_NULLPTR);
-	~TOnlineClassroomWidget();
-	
-	const Ui::TOnlineClassroomWidget& ui() const { return this->m_ui; };
-
-	void handleWindowResized() { emit this->windowResized(); };
-
-private:
-	Ui::TOnlineClassroomWidget m_ui;
-};
-
-
-class THandleRaiseHandWidget : public QWidget {
+class TeacherOnlineClassroomWidget : public OnlineClassroomWidget {
 	Q_OBJECT
 
 public:
-	THandleRaiseHandWidget(TOnlineClassroomWidget *parent = Q_NULLPTR);
-	~THandleRaiseHandWidget();
-	const Ui::THandleRaiseHandWidget& ui() const { return this->m_ui; };
+	TeacherOnlineClassroomWidget(QWidget *parent = nullptr);
+	~TeacherOnlineClassroomWidget();
+	TeacherOnlineClassroomFunctionButtonWidget* functionButtonWidget()
+	{ return this->m_function_button_widget; };
+	TeacherHandleRaiseHandWidget* handleRaiseHnadWidget()
+	{ return this->m_handle_raise_hand_widget; };
+	TeacherEnterDialog* enterDialog()
+	{ return this->m_enter_dialog; };
+	TeacherInteractionWidget* interactionWidget()
+	{ return this->m_interaction_widget; };
 
-	void updataPos();
+protected:
+	void init();
 
-private:
-	Ui::THandleRaiseHandWidget m_ui;
-	TOnlineClassroomWidget *m_parent;
+	void loadEnterDialog();
+	void loadFunctionButtonWidget();
+	void loadFunctionPageWidget();
+
+	void loadInteractionPageWidget();
+
+	void handleLessonConnectionRecv() override;
+
+	void handleCommandCreateLesson(QJsonObject &data);
+	void handleCommandBeginLesson(QJsonObject &data);
+	void handleCommandEndLesson(QJsonObject &data);
+	void handleCommandRaiseHand(QJsonObject &data);
+	void handleCommandResultOfRaiseHand(QJsonObject &data);
+	void handleCommandRemoveMemberFromInSpeech(QJsonObject &data);
+
+	void createLesson(QString &course_id, QString &course_name);
+	void beginLesson();
+	void endLesson();
+
+	void showHandleRaiseHandWidget();
+	void acceptRaiseHand();
+	void refuseRaiseHand();
+
+	TeacherOnlineClassroomFunctionButtonWidget *m_function_button_widget;
+	TeacherHandleRaiseHandWidget *m_handle_raise_hand_widget;
+	TeacherEnterDialog *m_enter_dialog;
+	TeacherInteractionWidget *m_interaction_widget;
+
+	/*
+		|-info(m_rasie_hand_info_list)
+			|-student_id(QString)
+			|-username(QString)
+			|-timestamp(int)
+	*/
+	QList<QMap<QString, QVariant>> m_rasie_hand_info_list;  // 举手信息
 };

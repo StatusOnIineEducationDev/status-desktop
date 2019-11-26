@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>TEnterDialog</class>
- <widget class="QDialog" name="TEnterDialog">
+ <class>TeacherEnterDialog</class>
+ <widget class="QDialog" name="TeacherEnterDialog">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -556,7 +556,7 @@ QScrollBar::sub-line:horizontal {
   <connection>
    <sender>close_btn</sender>
    <signal>clicked()</signal>
-   <receiver>TEnterDialog</receiver>
+   <receiver>TeacherEnterDialog</receiver>
    <slot>close()</slot>
    <hints>
     <hint type="sourcelabel">

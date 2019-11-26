@@ -1,53 +1,59 @@
 #pragma once
 
-#include <QtWidgets/QMainWindow>
-#include "ui_s_onlineClassroomWidget.h"
-#include "ui_s_inSpeechRemovableWidget.h"
-#include "Core/Client/Student/s_mainWindow.h"
+#include <QWidget>
+#include "s_onlineClassroomFunctionButtonWidget.h"
+#include "s_inSpeechRemovableWidget.h"
+#include "../../Common/OnlineClassroom/onlineClassroomWidget.h"
+#include "Interaction/s_interactionWidget.h"
+#include "Enter/s_enterDialog.h"
 
 
-class SOnlineClassroomWidget : public QWidget {
+class StudentOnlineClassroomWidget : public OnlineClassroomWidget {
 	Q_OBJECT
 
 public:
-	SOnlineClassroomWidget(SMainWindow *parent = Q_NULLPTR);
-	~SOnlineClassroomWidget();
+	StudentOnlineClassroomWidget(QWidget *parent = nullptr);
+	~StudentOnlineClassroomWidget();
+	StudentOnlineClassroomFunctionButtonWidget* functionButtonWidget() 
+	{ return this->m_function_button_widget; };
+	StudentInSpeechRemovableWidget* inSpeechRemovableWidget()
+	{ return this->m_in_speech_removeable_widget; };
+	StudentEnterDialog* enterDialog()
+	{ return this->m_enter_dialog; };
+	StudentInteractionWidget* interactionWidget()
+	{ return this->m_interaction_widget; };
 
-	const Ui::SOnlineClassroomWidget& ui() const { return this->m_ui; };
+protected:
+	void init();
 
-	void handleWindowResized() { emit this->windowResized(); };
+	void loadEnterDialog();
+	void loadFunctionButtonWidget();
+	void loadFunctionPageWidget();
 
-signals:
-	void windowResized();
+	void loadInteractionPageWidget();
 
-private:
-	Ui::SOnlineClassroomWidget m_ui;
+	void handleLessonConnectionRecv() override;
+
+	void handleCommandJoinInLesson(QJsonObject &data);
+	void handleCommandBeginLesson(QJsonObject &data);
+	void handleCommandConcentrationData(QJsonObject &data);
+	void handleCommandEndLesson(QJsonObject &data);
+	void handleCommandRaiseHand(QJsonObject &data);
+	void handleCommandResultOfRaiseHand(QJsonObject &data);
+	void handleCommandRemoveMemberFromInSpeech(QJsonObject &data);
+	void handleCommandQuitLesson(QJsonObject &data);
+
+	void joinInLesson(QString &course_id, QString &course_name);
+	void lessonBegin();
+	void quitLesson();
+
+	void raiseHand();
+	void showInSpeechRemovableWidget();
+	void endSpeech();
+
+	StudentOnlineClassroomFunctionButtonWidget *m_function_button_widget;
+	StudentInSpeechRemovableWidget *m_in_speech_removeable_widget;
+	StudentEnterDialog *m_enter_dialog;
+	StudentInteractionWidget *m_interaction_widget;
 };
 
-
-class SInSpeechRemovableWidget : public QWidget {
-	Q_OBJECT
-
-public:
-	SInSpeechRemovableWidget(SOnlineClassroomWidget *parent = Q_NULLPTR);
-	~SInSpeechRemovableWidget();
-
-	const Ui::SInSpeechRemovableWidget& ui() const { return this->m_ui; };
-
-	void handleWindowResized() { emit this->windowResized(); };
-
-signals:
-	void windowResized();
-
-private:
-	void mouseMoveEvent(QMouseEvent *event);
-	void mousePressEvent(QMouseEvent *event);
-	void mouseReleaseEvent(QMouseEvent *event);
-
-	void updatePos();
-
-	Ui::SInSpeechRemovableWidget m_ui;
-
-	bool is_pressed;  // 鼠标左键是否按下
-	QPoint start_pos;  // 鼠标左键点下时的坐标
-};

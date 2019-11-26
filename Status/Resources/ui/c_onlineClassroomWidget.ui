@@ -10,6 +10,12 @@
     <height>625</height>
    </rect>
   </property>
+  <property name="minimumSize">
+   <size>
+    <width>825</width>
+    <height>625</height>
+   </size>
+  </property>
   <property name="windowTitle">
    <string>Form</string>
   </property>
@@ -77,195 +83,6 @@ QPushButton:hover {
      </property>
     </widget>
    </item>
-   <item row="0" column="0" colspan="2">
-    <widget class="QFrame" name="function_btn_frame">
-     <property name="minimumSize">
-      <size>
-       <width>0</width>
-       <height>30</height>
-      </size>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">QFrame {
-	background: #f0f0f0;
-	border: none;
-	border-bottom: 1px solid #E8ECEC;
-}</string>
-     </property>
-     <property name="frameShape">
-      <enum>QFrame::StyledPanel</enum>
-     </property>
-     <property name="frameShadow">
-      <enum>QFrame::Raised</enum>
-     </property>
-     <layout class="QHBoxLayout" name="horizontalLayout_4">
-      <property name="spacing">
-       <number>20</number>
-      </property>
-      <property name="leftMargin">
-       <number>10</number>
-      </property>
-      <property name="topMargin">
-       <number>0</number>
-      </property>
-      <property name="rightMargin">
-       <number>10</number>
-      </property>
-      <property name="bottomMargin">
-       <number>0</number>
-      </property>
-      <item>
-       <widget class="QLabel" name="label_35">
-        <property name="font">
-         <font>
-          <family>微软雅黑</family>
-          <pointsize>10</pointsize>
-         </font>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">QFrame {
-	color: #666666;
-	background: none;
-	border: none;
-}</string>
-        </property>
-        <property name="text">
-         <string>在线教室</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <spacer name="horizontalSpacer_11">
-        <property name="orientation">
-         <enum>Qt::Horizontal</enum>
-        </property>
-        <property name="sizeHint" stdset="0">
-         <size>
-          <width>40</width>
-          <height>20</height>
-         </size>
-        </property>
-       </spacer>
-      </item>
-      <item>
-       <widget class="QPushButton" name="raise_hand_btn">
-        <property name="sizePolicy">
-         <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
-          <horstretch>0</horstretch>
-          <verstretch>0</verstretch>
-         </sizepolicy>
-        </property>
-        <property name="minimumSize">
-         <size>
-          <width>0</width>
-          <height>25</height>
-         </size>
-        </property>
-        <property name="maximumSize">
-         <size>
-          <width>16777215</width>
-          <height>25</height>
-         </size>
-        </property>
-        <property name="font">
-         <font>
-          <family>微软雅黑</family>
-          <pointsize>10</pointsize>
-         </font>
-        </property>
-        <property name="cursor">
-         <cursorShape>PointingHandCursor</cursorShape>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">QPushButton {
-	color: #666666;
-	background: none;
-	border: none;
-	border-radius: 5px;
-	padding-left: 5px;
-	padding-right: 5px;
-}
-
-QPushButton:hover {
-	background-color: #dedede;
-}</string>
-        </property>
-        <property name="text">
-         <string>举手</string>
-        </property>
-        <property name="icon">
-         <iconset resource="../../Status.qrc">
-          <normaloff>:/button/Resources/material/button/raise_hand.png</normaloff>:/button/Resources/material/button/raise_hand.png</iconset>
-        </property>
-        <property name="iconSize">
-         <size>
-          <width>15</width>
-          <height>15</height>
-         </size>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QPushButton" name="quit_lesson_btn">
-        <property name="sizePolicy">
-         <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
-          <horstretch>0</horstretch>
-          <verstretch>0</verstretch>
-         </sizepolicy>
-        </property>
-        <property name="minimumSize">
-         <size>
-          <width>0</width>
-          <height>25</height>
-         </size>
-        </property>
-        <property name="maximumSize">
-         <size>
-          <width>16777215</width>
-          <height>25</height>
-         </size>
-        </property>
-        <property name="font">
-         <font>
-          <family>微软雅黑</family>
-          <pointsize>10</pointsize>
-         </font>
-        </property>
-        <property name="cursor">
-         <cursorShape>PointingHandCursor</cursorShape>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">QPushButton {
-	color: #666666;
-	background: none;
-	border: none;
-	border-radius: 5px;
-	padding-left: 5px;
-	padding-right: 5px;
-}
-
-QPushButton:hover {
-	background-color: #dedede;
-}</string>
-        </property>
-        <property name="text">
-         <string>退出</string>
-        </property>
-        <property name="icon">
-         <iconset resource="../../Status.qrc">
-          <normaloff>:/button/Resources/material/button/exit.png</normaloff>:/button/Resources/material/button/exit.png</iconset>
-        </property>
-        <property name="iconSize">
-         <size>
-          <width>15</width>
-          <height>15</height>
-         </size>
-        </property>
-       </widget>
-      </item>
-     </layout>
-    </widget>
-   </item>
    <item row="2" column="1">
     <widget class="QFrame" name="frame">
      <property name="minimumSize">
@@ -283,7 +100,7 @@ QPushButton:hover {
      <property name="styleSheet">
       <string notr="true">QFrame {
 	border-left: 1px solid #E8ECEC;
-	background-color: #ffffff;
+	background: #ffffff;
 }
 
 QScrollArea#scrollArea {
@@ -356,7 +173,7 @@ QScrollBar::sub-line:vertical {
        <number>0</number>
       </property>
       <item row="2" column="5">
-       <widget class="QFrame" name="camera_frame">
+       <widget class="QFrame" name="camera_widget_frame">
         <property name="minimumSize">
          <size>
           <width>200</width>
@@ -368,6 +185,9 @@ QScrollBar::sub-line:vertical {
           <width>130</width>
           <height>16777215</height>
          </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border: none;</string>
         </property>
         <property name="frameShape">
          <enum>QFrame::StyledPanel</enum>
@@ -429,7 +249,7 @@ QScrollBar::sub-line:vertical {
            <x>0</x>
            <y>0</y>
            <width>198</width>
-           <height>433</height>
+           <height>461</height>
           </rect>
          </property>
          <property name="minimumSize">
@@ -914,13 +734,19 @@ QScrollBar::sub-line:vertical {
    </item>
    <item row="1" column="0" rowspan="2">
     <widget class="QTabWidget" name="function_tabWidget">
+     <property name="font">
+      <font>
+       <family>微软雅黑</family>
+       <pointsize>10</pointsize>
+      </font>
+     </property>
      <property name="styleSheet">
       <string notr="true">QTabBar::tab {
 	padding-top: 0px;
 	color: #999999;
-	border: none;
 	height: 30px;
 	width: 70px;
+	border: none;
 	background: none;
 }
 
@@ -948,6 +774,13 @@ QTabWidget#function_tabWidget::tab-bar {
       <number>-1</number>
      </property>
     </widget>
+   </item>
+   <item row="0" column="0" colspan="2">
+    <layout class="QGridLayout" name="online_classroom_function_btn_widget_layout">
+     <property name="spacing">
+      <number>0</number>
+     </property>
+    </layout>
    </item>
   </layout>
  </widget>

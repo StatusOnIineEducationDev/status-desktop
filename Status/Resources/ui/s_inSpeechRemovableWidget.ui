@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>SInSpeechRemovableWidget</class>
- <widget class="QWidget" name="SInSpeechRemovableWidget">
+ <class>StudentInSpeechRemovableWidget</class>
+ <widget class="QWidget" name="StudentInSpeechRemovableWidget">
   <property name="geometry">
    <rect>
     <x>0</x>

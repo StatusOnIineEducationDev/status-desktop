@@ -12,6 +12,7 @@
 #include <QtCore/QVariant>
 #include <QtGui/QIcon>
 #include <QtWidgets/QApplication>
+#include <QtWidgets/QButtonGroup>
 #include <QtWidgets/QFrame>
 #include <QtWidgets/QGridLayout>
 #include <QtWidgets/QHBoxLayout>
@@ -56,13 +57,15 @@ public:
     QLabel *label_7;
     QSlider *rubber_width_slider;
     QLineEdit *rubber_width_edit;
+    QSpacerItem *horizontalSpacer;
+    QButtonGroup *buttonGroup;
 
     void setupUi(QWidget *WhiteBoardWidget)
     {
         if (WhiteBoardWidget->objectName().isEmpty())
             WhiteBoardWidget->setObjectName(QString::fromUtf8("WhiteBoardWidget"));
-        WhiteBoardWidget->resize(625, 580);
-        WhiteBoardWidget->setMinimumSize(QSize(625, 580));
+        WhiteBoardWidget->resize(615, 565);
+        WhiteBoardWidget->setMinimumSize(QSize(0, 0));
         gridLayout = new QGridLayout(WhiteBoardWidget);
         gridLayout->setSpacing(5);
         gridLayout->setObjectName(QString::fromUtf8("gridLayout"));
@@ -95,6 +98,9 @@ public:
         verticalLayout->addItem(verticalSpacer_2);
 
         black_pen_btn = new QPushButton(btn_tool_bar_frame);
+        buttonGroup = new QButtonGroup(WhiteBoardWidget);
+        buttonGroup->setObjectName(QString::fromUtf8("buttonGroup"));
+        buttonGroup->addButton(black_pen_btn);
         black_pen_btn->setObjectName(QString::fromUtf8("black_pen_btn"));
         black_pen_btn->setMinimumSize(QSize(40, 40));
         black_pen_btn->setMaximumSize(QSize(40, 40));
@@ -123,6 +129,7 @@ public:
         verticalLayout->addWidget(black_pen_btn);
 
         red_pen_btn = new QPushButton(btn_tool_bar_frame);
+        buttonGroup->addButton(red_pen_btn);
         red_pen_btn->setObjectName(QString::fromUtf8("red_pen_btn"));
         red_pen_btn->setMinimumSize(QSize(40, 40));
         red_pen_btn->setMaximumSize(QSize(40, 40));
@@ -149,6 +156,7 @@ public:
         verticalLayout->addWidget(red_pen_btn);
 
         blue_pen_btn = new QPushButton(btn_tool_bar_frame);
+        buttonGroup->addButton(blue_pen_btn);
         blue_pen_btn->setObjectName(QString::fromUtf8("blue_pen_btn"));
         blue_pen_btn->setMinimumSize(QSize(40, 40));
         blue_pen_btn->setMaximumSize(QSize(40, 40));
@@ -175,6 +183,7 @@ public:
         verticalLayout->addWidget(blue_pen_btn);
 
         color_pen_btn = new QPushButton(btn_tool_bar_frame);
+        buttonGroup->addButton(color_pen_btn);
         color_pen_btn->setObjectName(QString::fromUtf8("color_pen_btn"));
         color_pen_btn->setMinimumSize(QSize(40, 40));
         color_pen_btn->setMaximumSize(QSize(40, 40));
@@ -200,6 +209,7 @@ public:
         verticalLayout->addWidget(color_pen_btn);
 
         text_btn = new QPushButton(btn_tool_bar_frame);
+        buttonGroup->addButton(text_btn);
         text_btn->setObjectName(QString::fromUtf8("text_btn"));
         text_btn->setMinimumSize(QSize(40, 40));
         text_btn->setMaximumSize(QSize(40, 40));
@@ -226,6 +236,7 @@ public:
         verticalLayout->addWidget(text_btn);
 
         line_btn = new QPushButton(btn_tool_bar_frame);
+        buttonGroup->addButton(line_btn);
         line_btn->setObjectName(QString::fromUtf8("line_btn"));
         line_btn->setMinimumSize(QSize(40, 40));
         line_btn->setMaximumSize(QSize(40, 40));
@@ -252,6 +263,7 @@ public:
         verticalLayout->addWidget(line_btn);
 
         rect_btn = new QPushButton(btn_tool_bar_frame);
+        buttonGroup->addButton(rect_btn);
         rect_btn->setObjectName(QString::fromUtf8("rect_btn"));
         rect_btn->setMinimumSize(QSize(40, 40));
         rect_btn->setMaximumSize(QSize(40, 40));
@@ -278,6 +290,7 @@ public:
         verticalLayout->addWidget(rect_btn);
 
         ellipse_btn = new QPushButton(btn_tool_bar_frame);
+        buttonGroup->addButton(ellipse_btn);
         ellipse_btn->setObjectName(QString::fromUtf8("ellipse_btn"));
         ellipse_btn->setMinimumSize(QSize(40, 40));
         ellipse_btn->setMaximumSize(QSize(40, 40));
@@ -356,6 +369,7 @@ public:
         verticalLayout->addWidget(undo_btn);
 
         rubber_btn = new QPushButton(btn_tool_bar_frame);
+        buttonGroup->addButton(rubber_btn);
         rubber_btn->setObjectName(QString::fromUtf8("rubber_btn"));
         rubber_btn->setMinimumSize(QSize(40, 40));
         rubber_btn->setMaximumSize(QSize(40, 40));
@@ -399,6 +413,7 @@ public:
         board_tabWidget->setStyleSheet(QString::fromUtf8("QTabBar::tab {\n"
 "	padding-top: 0px;\n"
 "	color: #999999;\n"
+"	border: 1px solid #E8ECEC;\n"
 "	border-top-left-radius: 3px;\n"
 "	border-top-right-radius: 3px;\n"
 "	height: 20px;\n"
@@ -436,9 +451,9 @@ public:
 "\n"
 "\n"
 "QScrollArea {border:none;background-color:transparent;}\n"
-"QScrollBar:vertical {border:none;background-color:#ffffff;width:10px;}\n"
-"QScro"
-                        "llBar:vertical:hover {border:none;background-color:rgb(220,220,220);width:10px;}\n"
+"QScrollBar:vertical {border:none;background-colo"
+                        "r:#ffffff;width:10px;}\n"
+"QScrollBar:vertical:hover {border:none;background-color:rgb(220,220,220);width:10px;}\n"
 "QScrollBar::handle:vertical{border-radius:5px;background:rgb(220,220,220);min-height:20px;}QScrollBar::handle:vertical:hover{border-radius:5px;background:rgb(200,200,200);min-height:20px;}QScrollBar::add-line:vertical{height:0;subcontrol-position:bottom;subcontrol-origin:margin;}QScrollBar::sub-line:vertical{height:0px;subcontrol-position:top;subcontrol-origin:margin;}QScrollBar:horizontal{border:none;background-color:#ffffff;height:10px;}QScrollBar:horizontal:hover{border:none;background-color:rgb(220,220,220);height:10px;}QScrollBar::handle:horizontal{border-radius:5px;background:rgb(220,220,220);min-width:20px;}QScrollBar::handle:horizontal:hover{border-radius:5px;background:rgb(200,200,200);min-width:20px;}QScrollBar::add-line:horizontal{width:0;subcontrol-position:bottom;subcontrol-origin:margin;}QScrollBar::sub-line:horizontal{width:0px;subcontrol-position:top;subcontrol-origin:margin;}"));
         board_tabWidget->setTabShape(QTabWidget::Rounded);
         board_tabWidget->setTabsClosable(true);
@@ -447,11 +462,11 @@ public:
 
         slider_tool_bar_frame = new QFrame(WhiteBoardWidget);
         slider_tool_bar_frame->setObjectName(QString::fromUtf8("slider_tool_bar_frame"));
-        slider_tool_bar_frame->setMinimumSize(QSize(0, 42));
+        slider_tool_bar_frame->setMinimumSize(QSize(0, 25));
         slider_tool_bar_frame->setFrameShape(QFrame::StyledPanel);
         slider_tool_bar_frame->setFrameShadow(QFrame::Raised);
         horizontalLayout = new QHBoxLayout(slider_tool_bar_frame);
-        horizontalLayout->setSpacing(0);
+        horizontalLayout->setSpacing(10);
         horizontalLayout->setObjectName(QString::fromUtf8("horizontalLayout"));
         horizontalLayout->setContentsMargins(0, 0, 0, 0);
         label_6 = new QLabel(slider_tool_bar_frame);
@@ -583,6 +598,10 @@ public:
 "}"));
 
         horizontalLayout->addWidget(rubber_width_edit);
+
+        horizontalSpacer = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        horizontalLayout->addItem(horizontalSpacer);
 
 
         gridLayout->addWidget(slider_tool_bar_frame, 0, 1, 1, 1);

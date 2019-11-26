@@ -1,6 +1,7 @@
 #include "Core/Model/user.h"
 
-User::User(QString &uid, QString &username, QList<CourseBase> *courses_base_list, UserStatus user_status)
-	: m_uid(uid), m_username(username), m_courses_base_list(courses_base_list), m_user_status(user_status) {
-
-}
+QString User::G_UID = "";
+QString User::G_USERNAME = "";
+QList<CourseBase> *User::G_COURSES_BASE_LIST = nullptr;
+AccountType User::G_ACCOUNT_TYPE = AccountType::Teacher;
+UserStatus User::G_USER_STATUS = UserStatus::Free;

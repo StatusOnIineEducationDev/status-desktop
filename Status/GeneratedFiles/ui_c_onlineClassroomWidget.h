@@ -10,11 +10,9 @@
 #define UI_C_ONLINECLASSROOMWIDGET_H
 
 #include <QtCore/QVariant>
-#include <QtGui/QIcon>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QFrame>
 #include <QtWidgets/QGridLayout>
-#include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QScrollArea>
@@ -30,15 +28,9 @@ class Ui_OnlineClassroomWidget
 public:
     QGridLayout *gridLayout;
     QPushButton *begin_lesson_btn;
-    QFrame *function_btn_frame;
-    QHBoxLayout *horizontalLayout_4;
-    QLabel *label_35;
-    QSpacerItem *horizontalSpacer_11;
-    QPushButton *raise_hand_btn;
-    QPushButton *quit_lesson_btn;
     QFrame *frame;
     QGridLayout *gridLayout_7;
-    QFrame *camera_frame;
+    QFrame *camera_widget_frame;
     QGridLayout *gridLayout_18;
     QGridLayout *camera_widget_layout;
     QScrollArea *scrollArea;
@@ -67,12 +59,14 @@ public:
     QLabel *room_name_text;
     QSpacerItem *verticalSpacer_5;
     QTabWidget *function_tabWidget;
+    QGridLayout *online_classroom_function_btn_widget_layout;
 
     void setupUi(QWidget *OnlineClassroomWidget)
     {
         if (OnlineClassroomWidget->objectName().isEmpty())
             OnlineClassroomWidget->setObjectName(QString::fromUtf8("OnlineClassroomWidget"));
         OnlineClassroomWidget->resize(825, 625);
+        OnlineClassroomWidget->setMinimumSize(QSize(825, 625));
         OnlineClassroomWidget->setStyleSheet(QString::fromUtf8("QWidget#OnlineClassroomWidget {\n"
 "	background: #ffffff;\n"
 "}"));
@@ -103,105 +97,13 @@ public:
 
         gridLayout->addWidget(begin_lesson_btn, 1, 1, 1, 1);
 
-        function_btn_frame = new QFrame(OnlineClassroomWidget);
-        function_btn_frame->setObjectName(QString::fromUtf8("function_btn_frame"));
-        function_btn_frame->setMinimumSize(QSize(0, 30));
-        function_btn_frame->setStyleSheet(QString::fromUtf8("QFrame {\n"
-"	background: #f0f0f0;\n"
-"	border: none;\n"
-"	border-bottom: 1px solid #E8ECEC;\n"
-"}"));
-        function_btn_frame->setFrameShape(QFrame::StyledPanel);
-        function_btn_frame->setFrameShadow(QFrame::Raised);
-        horizontalLayout_4 = new QHBoxLayout(function_btn_frame);
-        horizontalLayout_4->setSpacing(20);
-        horizontalLayout_4->setObjectName(QString::fromUtf8("horizontalLayout_4"));
-        horizontalLayout_4->setContentsMargins(10, 0, 10, 0);
-        label_35 = new QLabel(function_btn_frame);
-        label_35->setObjectName(QString::fromUtf8("label_35"));
-        QFont font1;
-        font1.setFamily(QString::fromUtf8("\345\276\256\350\275\257\351\233\205\351\273\221"));
-        font1.setPointSize(10);
-        label_35->setFont(font1);
-        label_35->setStyleSheet(QString::fromUtf8("QFrame {\n"
-"	color: #666666;\n"
-"	background: none;\n"
-"	border: none;\n"
-"}"));
-
-        horizontalLayout_4->addWidget(label_35);
-
-        horizontalSpacer_11 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
-
-        horizontalLayout_4->addItem(horizontalSpacer_11);
-
-        raise_hand_btn = new QPushButton(function_btn_frame);
-        raise_hand_btn->setObjectName(QString::fromUtf8("raise_hand_btn"));
-        QSizePolicy sizePolicy(QSizePolicy::Minimum, QSizePolicy::Fixed);
-        sizePolicy.setHorizontalStretch(0);
-        sizePolicy.setVerticalStretch(0);
-        sizePolicy.setHeightForWidth(raise_hand_btn->sizePolicy().hasHeightForWidth());
-        raise_hand_btn->setSizePolicy(sizePolicy);
-        raise_hand_btn->setMinimumSize(QSize(0, 25));
-        raise_hand_btn->setMaximumSize(QSize(16777215, 25));
-        raise_hand_btn->setFont(font1);
-        raise_hand_btn->setCursor(QCursor(Qt::PointingHandCursor));
-        raise_hand_btn->setStyleSheet(QString::fromUtf8("QPushButton {\n"
-"	color: #666666;\n"
-"	background: none;\n"
-"	border: none;\n"
-"	border-radius: 5px;\n"
-"	padding-left: 5px;\n"
-"	padding-right: 5px;\n"
-"}\n"
-"\n"
-"QPushButton:hover {\n"
-"	background-color: #dedede;\n"
-"}"));
-        QIcon icon;
-        icon.addFile(QString::fromUtf8(":/button/Resources/material/button/raise_hand.png"), QSize(), QIcon::Normal, QIcon::Off);
-        raise_hand_btn->setIcon(icon);
-        raise_hand_btn->setIconSize(QSize(15, 15));
-
-        horizontalLayout_4->addWidget(raise_hand_btn);
-
-        quit_lesson_btn = new QPushButton(function_btn_frame);
-        quit_lesson_btn->setObjectName(QString::fromUtf8("quit_lesson_btn"));
-        sizePolicy.setHeightForWidth(quit_lesson_btn->sizePolicy().hasHeightForWidth());
-        quit_lesson_btn->setSizePolicy(sizePolicy);
-        quit_lesson_btn->setMinimumSize(QSize(0, 25));
-        quit_lesson_btn->setMaximumSize(QSize(16777215, 25));
-        quit_lesson_btn->setFont(font1);
-        quit_lesson_btn->setCursor(QCursor(Qt::PointingHandCursor));
-        quit_lesson_btn->setStyleSheet(QString::fromUtf8("QPushButton {\n"
-"	color: #666666;\n"
-"	background: none;\n"
-"	border: none;\n"
-"	border-radius: 5px;\n"
-"	padding-left: 5px;\n"
-"	padding-right: 5px;\n"
-"}\n"
-"\n"
-"QPushButton:hover {\n"
-"	background-color: #dedede;\n"
-"}"));
-        QIcon icon1;
-        icon1.addFile(QString::fromUtf8(":/button/Resources/material/button/exit.png"), QSize(), QIcon::Normal, QIcon::Off);
-        quit_lesson_btn->setIcon(icon1);
-        quit_lesson_btn->setIconSize(QSize(15, 15));
-
-        horizontalLayout_4->addWidget(quit_lesson_btn);
-
-
-        gridLayout->addWidget(function_btn_frame, 0, 0, 1, 2);
-
         frame = new QFrame(OnlineClassroomWidget);
         frame->setObjectName(QString::fromUtf8("frame"));
         frame->setMinimumSize(QSize(200, 325));
         frame->setMaximumSize(QSize(200, 16777215));
         frame->setStyleSheet(QString::fromUtf8("QFrame {\n"
 "	border-left: 1px solid #E8ECEC;\n"
-"	background-color: #ffffff;\n"
+"	background: #ffffff;\n"
 "}\n"
 "\n"
 "QScrollArea#scrollArea {\n"
@@ -241,8 +143,8 @@ public:
 "QScrollBar::add-line:vertical {\n"
 "    height: 0;\n"
 "    subcontrol-position: bottom;\n"
-"    subcontrol"
-                        "-origin: margin;\n"
+"    subcontrol-origi"
+                        "n: margin;\n"
 "}\n"
 "\n"
 "/*\344\270\212\347\256\255\345\244\264*/\n"
@@ -257,13 +159,14 @@ public:
         gridLayout_7->setSpacing(0);
         gridLayout_7->setObjectName(QString::fromUtf8("gridLayout_7"));
         gridLayout_7->setContentsMargins(0, 0, 0, 0);
-        camera_frame = new QFrame(frame);
-        camera_frame->setObjectName(QString::fromUtf8("camera_frame"));
-        camera_frame->setMinimumSize(QSize(200, 130));
-        camera_frame->setMaximumSize(QSize(130, 16777215));
-        camera_frame->setFrameShape(QFrame::StyledPanel);
-        camera_frame->setFrameShadow(QFrame::Raised);
-        gridLayout_18 = new QGridLayout(camera_frame);
+        camera_widget_frame = new QFrame(frame);
+        camera_widget_frame->setObjectName(QString::fromUtf8("camera_widget_frame"));
+        camera_widget_frame->setMinimumSize(QSize(200, 130));
+        camera_widget_frame->setMaximumSize(QSize(130, 16777215));
+        camera_widget_frame->setStyleSheet(QString::fromUtf8("border: none;"));
+        camera_widget_frame->setFrameShape(QFrame::StyledPanel);
+        camera_widget_frame->setFrameShadow(QFrame::Raised);
+        gridLayout_18 = new QGridLayout(camera_widget_frame);
         gridLayout_18->setSpacing(0);
         gridLayout_18->setObjectName(QString::fromUtf8("gridLayout_18"));
         gridLayout_18->setContentsMargins(0, 0, 0, 0);
@@ -273,7 +176,7 @@ public:
         gridLayout_18->addLayout(camera_widget_layout, 0, 0, 1, 1);
 
 
-        gridLayout_7->addWidget(camera_frame, 2, 5, 1, 1);
+        gridLayout_7->addWidget(camera_widget_frame, 2, 5, 1, 1);
 
         scrollArea = new QScrollArea(frame);
         scrollArea->setObjectName(QString::fromUtf8("scrollArea"));
@@ -285,7 +188,7 @@ public:
         scrollArea->setWidgetResizable(true);
         scrollAreaWidgetContents = new QWidget();
         scrollAreaWidgetContents->setObjectName(QString::fromUtf8("scrollAreaWidgetContents"));
-        scrollAreaWidgetContents->setGeometry(QRect(0, 0, 198, 433));
+        scrollAreaWidgetContents->setGeometry(QRect(0, 0, 198, 461));
         scrollAreaWidgetContents->setMinimumSize(QSize(198, 0));
         scrollAreaWidgetContents->setMaximumSize(QSize(198, 16777215));
         scrollAreaWidgetContents->setStyleSheet(QString::fromUtf8("QWidget {\n"
@@ -297,6 +200,9 @@ public:
         gridLayout_8->setContentsMargins(9, 9, -1, -1);
         begin_time_text = new QLabel(scrollAreaWidgetContents);
         begin_time_text->setObjectName(QString::fromUtf8("begin_time_text"));
+        QFont font1;
+        font1.setFamily(QString::fromUtf8("\345\276\256\350\275\257\351\233\205\351\273\221"));
+        font1.setPointSize(10);
         begin_time_text->setFont(font1);
         begin_time_text->setStyleSheet(QString::fromUtf8("QLabel {\n"
 "	border: none;\n"
@@ -534,12 +440,13 @@ public:
 
         function_tabWidget = new QTabWidget(OnlineClassroomWidget);
         function_tabWidget->setObjectName(QString::fromUtf8("function_tabWidget"));
+        function_tabWidget->setFont(font1);
         function_tabWidget->setStyleSheet(QString::fromUtf8("QTabBar::tab {\n"
 "	padding-top: 0px;\n"
 "	color: #999999;\n"
-"	border: none;\n"
 "	height: 30px;\n"
 "	width: 70px;\n"
+"	border: none;\n"
 "	background: none;\n"
 "}\n"
 "\n"
@@ -565,6 +472,12 @@ public:
 
         gridLayout->addWidget(function_tabWidget, 1, 0, 2, 1);
 
+        online_classroom_function_btn_widget_layout = new QGridLayout();
+        online_classroom_function_btn_widget_layout->setSpacing(0);
+        online_classroom_function_btn_widget_layout->setObjectName(QString::fromUtf8("online_classroom_function_btn_widget_layout"));
+
+        gridLayout->addLayout(online_classroom_function_btn_widget_layout, 0, 0, 1, 2);
+
 
         retranslateUi(OnlineClassroomWidget);
 
@@ -578,9 +491,6 @@ public:
     {
         OnlineClassroomWidget->setWindowTitle(QCoreApplication::translate("OnlineClassroomWidget", "Form", nullptr));
         begin_lesson_btn->setText(QCoreApplication::translate("OnlineClassroomWidget", "Variable Button", nullptr));
-        label_35->setText(QCoreApplication::translate("OnlineClassroomWidget", "\345\234\250\347\272\277\346\225\231\345\256\244", nullptr));
-        raise_hand_btn->setText(QCoreApplication::translate("OnlineClassroomWidget", "\344\270\276\346\211\213", nullptr));
-        quit_lesson_btn->setText(QCoreApplication::translate("OnlineClassroomWidget", "\351\200\200\345\207\272", nullptr));
         begin_time_text->setText(QCoreApplication::translate("OnlineClassroomWidget", "-", nullptr));
         label_13->setText(QCoreApplication::translate("OnlineClassroomWidget", "-", nullptr));
         label_19->setText(QCoreApplication::translate("OnlineClassroomWidget", "    \345\210\233\345\273\272\346\227\266\351\227\264\357\274\232", nullptr));

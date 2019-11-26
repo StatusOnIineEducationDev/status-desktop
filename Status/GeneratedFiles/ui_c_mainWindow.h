@@ -57,14 +57,7 @@ public:
     QLabel *username_text;
     QPushButton *logout_btn;
     QFrame *line;
-    QLabel *function_navigation_text;
-    QPushButton *course_btn;
-    QPushButton *interaction_btn;
-    QPushButton *history_btn;
-    QFrame *line_2;
-    QLabel *other_navigation_text;
-    QPushButton *setting_btn;
-    QPushButton *document_btn;
+    QGridLayout *function_button_widget_layout;
     QSpacerItem *verticalSpacer;
     QButtonGroup *list_buttonGroup;
 
@@ -406,119 +399,10 @@ public:
 
         verticalLayout->addWidget(line);
 
-        function_navigation_text = new QLabel(nav_bar_frame);
-        function_navigation_text->setObjectName(QString::fromUtf8("function_navigation_text"));
-        function_navigation_text->setMinimumSize(QSize(155, 30));
-        function_navigation_text->setMaximumSize(QSize(155, 30));
-        function_navigation_text->setFont(font);
-        function_navigation_text->setStyleSheet(QString::fromUtf8("QLabel {\n"
-"	color: #5b788c;\n"
-"}"));
-        function_navigation_text->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter);
+        function_button_widget_layout = new QGridLayout();
+        function_button_widget_layout->setObjectName(QString::fromUtf8("function_button_widget_layout"));
 
-        verticalLayout->addWidget(function_navigation_text);
-
-        course_btn = new QPushButton(nav_bar_frame);
-        list_buttonGroup = new QButtonGroup(MainWindow);
-        list_buttonGroup->setObjectName(QString::fromUtf8("list_buttonGroup"));
-        list_buttonGroup->addButton(course_btn);
-        course_btn->setObjectName(QString::fromUtf8("course_btn"));
-        course_btn->setMinimumSize(QSize(155, 30));
-        course_btn->setMaximumSize(QSize(155, 30));
-        course_btn->setFont(font);
-        course_btn->setCursor(QCursor(Qt::PointingHandCursor));
-        course_btn->setStyleSheet(QString::fromUtf8(""));
-        QIcon icon6;
-        icon6.addFile(QString::fromUtf8(":/button/Resources/material/button/course.png"), QSize(), QIcon::Normal, QIcon::Off);
-        course_btn->setIcon(icon6);
-        course_btn->setIconSize(QSize(18, 18));
-        course_btn->setCheckable(true);
-        course_btn->setChecked(true);
-
-        verticalLayout->addWidget(course_btn);
-
-        interaction_btn = new QPushButton(nav_bar_frame);
-        list_buttonGroup->addButton(interaction_btn);
-        interaction_btn->setObjectName(QString::fromUtf8("interaction_btn"));
-        interaction_btn->setMinimumSize(QSize(155, 30));
-        interaction_btn->setMaximumSize(QSize(155, 30));
-        interaction_btn->setFont(font);
-        interaction_btn->setCursor(QCursor(Qt::PointingHandCursor));
-        interaction_btn->setStyleSheet(QString::fromUtf8(""));
-        QIcon icon7;
-        icon7.addFile(QString::fromUtf8(":/button/Resources/material/button/interaction.png"), QSize(), QIcon::Normal, QIcon::Off);
-        interaction_btn->setIcon(icon7);
-        interaction_btn->setIconSize(QSize(18, 18));
-        interaction_btn->setCheckable(true);
-
-        verticalLayout->addWidget(interaction_btn);
-
-        history_btn = new QPushButton(nav_bar_frame);
-        list_buttonGroup->addButton(history_btn);
-        history_btn->setObjectName(QString::fromUtf8("history_btn"));
-        history_btn->setMinimumSize(QSize(155, 30));
-        history_btn->setMaximumSize(QSize(155, 30));
-        history_btn->setFont(font);
-        history_btn->setCursor(QCursor(Qt::PointingHandCursor));
-        history_btn->setStyleSheet(QString::fromUtf8(""));
-        QIcon icon8;
-        icon8.addFile(QString::fromUtf8(":/button/Resources/material/button/history.png"), QSize(), QIcon::Normal, QIcon::Off);
-        history_btn->setIcon(icon8);
-        history_btn->setIconSize(QSize(18, 18));
-        history_btn->setCheckable(true);
-
-        verticalLayout->addWidget(history_btn);
-
-        line_2 = new QFrame(nav_bar_frame);
-        line_2->setObjectName(QString::fromUtf8("line_2"));
-        line_2->setFrameShape(QFrame::HLine);
-        line_2->setFrameShadow(QFrame::Sunken);
-
-        verticalLayout->addWidget(line_2);
-
-        other_navigation_text = new QLabel(nav_bar_frame);
-        other_navigation_text->setObjectName(QString::fromUtf8("other_navigation_text"));
-        other_navigation_text->setMinimumSize(QSize(155, 30));
-        other_navigation_text->setMaximumSize(QSize(155, 30));
-        other_navigation_text->setFont(font);
-        other_navigation_text->setStyleSheet(QString::fromUtf8("QLabel {\n"
-"	color: #5b788c;\n"
-"}"));
-        other_navigation_text->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter);
-
-        verticalLayout->addWidget(other_navigation_text);
-
-        setting_btn = new QPushButton(nav_bar_frame);
-        list_buttonGroup->addButton(setting_btn);
-        setting_btn->setObjectName(QString::fromUtf8("setting_btn"));
-        setting_btn->setMinimumSize(QSize(155, 30));
-        setting_btn->setMaximumSize(QSize(155, 30));
-        setting_btn->setFont(font);
-        setting_btn->setCursor(QCursor(Qt::PointingHandCursor));
-        setting_btn->setStyleSheet(QString::fromUtf8(""));
-        QIcon icon9;
-        icon9.addFile(QString::fromUtf8(":/button/Resources/material/button/setting.png"), QSize(), QIcon::Normal, QIcon::Off);
-        setting_btn->setIcon(icon9);
-        setting_btn->setIconSize(QSize(18, 18));
-        setting_btn->setCheckable(true);
-
-        verticalLayout->addWidget(setting_btn);
-
-        document_btn = new QPushButton(nav_bar_frame);
-        list_buttonGroup->addButton(document_btn);
-        document_btn->setObjectName(QString::fromUtf8("document_btn"));
-        document_btn->setMinimumSize(QSize(155, 30));
-        document_btn->setMaximumSize(QSize(155, 30));
-        document_btn->setFont(font);
-        document_btn->setCursor(QCursor(Qt::PointingHandCursor));
-        document_btn->setStyleSheet(QString::fromUtf8(""));
-        QIcon icon10;
-        icon10.addFile(QString::fromUtf8(":/button/Resources/material/button/document.png"), QSize(), QIcon::Normal, QIcon::Off);
-        document_btn->setIcon(icon10);
-        document_btn->setIconSize(QSize(18, 18));
-        document_btn->setCheckable(true);
-
-        verticalLayout->addWidget(document_btn);
+        verticalLayout->addLayout(function_button_widget_layout);
 
         verticalSpacer = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
 
@@ -567,13 +451,6 @@ public:
         user_pic->setText(QCoreApplication::translate("MainWindow", "pic", nullptr));
         username_text->setText(QCoreApplication::translate("MainWindow", "Username", nullptr));
         logout_btn->setText(QString());
-        function_navigation_text->setText(QCoreApplication::translate("MainWindow", "   \345\212\237\350\203\275\350\217\234\345\215\225", nullptr));
-        course_btn->setText(QCoreApplication::translate("MainWindow", " \350\257\276\347\250\213\347\256\241\347\220\206", nullptr));
-        interaction_btn->setText(QCoreApplication::translate("MainWindow", " \345\234\250\347\272\277\346\225\231\345\256\244", nullptr));
-        history_btn->setText(QCoreApplication::translate("MainWindow", " \345\216\206\345\217\262\350\256\260\345\275\225", nullptr));
-        other_navigation_text->setText(QCoreApplication::translate("MainWindow", "   \345\205\266\344\273\226", nullptr));
-        setting_btn->setText(QCoreApplication::translate("MainWindow", " \350\256\276\347\275\256", nullptr));
-        document_btn->setText(QCoreApplication::translate("MainWindow", " \344\275\277\347\224\250\345\270\256\345\212\251", nullptr));
     } // retranslateUi
 
 };

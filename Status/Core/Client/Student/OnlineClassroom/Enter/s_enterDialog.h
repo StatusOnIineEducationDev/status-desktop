@@ -2,24 +2,32 @@
 #include <QtWidgets/QMainWindow>
 #include <QMouseEvent>
 #include "ui_s_enterDialog.h"
+#include "Core/Component/toast.h"
 
 
-class SEnterDialog : public QDialog {
+class StudentEnterDialog : public QDialog {
 	Q_OBJECT
 
+signals:
+	void joinInLesson(QString &course_id, QString &course_name);
+
 public:
-	SEnterDialog(QWidget *parent = Q_NULLPTR);
-	~SEnterDialog();
-	const Ui::SEnterDialog& ui() const { return this->m_ui; };
+	StudentEnterDialog(QWidget *parent = nullptr);
+	~StudentEnterDialog();
+	const Ui::StudentEnterDialog& ui() const { return this->m_ui; };
 
-private:
-	Ui::SEnterDialog m_ui;
+	void loadData(QList<QMap<QString, QVariant>> &data_list);
 
-	bool is_pressed;  // 鼠标左键是否按下
-	bool is_moving;  // 正在移动
-	QPoint start_pos;  // 鼠标左键点下时的坐标
+protected:
+	void emitSignalJoinInLesson();
 
 	void mouseMoveEvent(QMouseEvent *event);
 	void mousePressEvent(QMouseEvent *event);
 	void mouseReleaseEvent(QMouseEvent *event);
+
+	Ui::StudentEnterDialog m_ui;
+
+	bool is_pressed;  // 鼠标左键是否按下
+	bool is_moving;  // 正在移动
+	QPoint start_pos;  // 鼠标左键点下时的坐标
 };

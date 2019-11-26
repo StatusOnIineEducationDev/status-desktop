@@ -26,7 +26,7 @@
 
 QT_BEGIN_NAMESPACE
 
-class Ui_TEnterDialog
+class Ui_TeacherEnterDialog
 {
 public:
     QFrame *layout;
@@ -49,13 +49,13 @@ public:
     QTableWidget *courses_table;
     QWidget *tab;
 
-    void setupUi(QDialog *TEnterDialog)
+    void setupUi(QDialog *TeacherEnterDialog)
     {
-        if (TEnterDialog->objectName().isEmpty())
-            TEnterDialog->setObjectName(QString::fromUtf8("TEnterDialog"));
-        TEnterDialog->resize(410, 260);
-        TEnterDialog->setStyleSheet(QString::fromUtf8(""));
-        layout = new QFrame(TEnterDialog);
+        if (TeacherEnterDialog->objectName().isEmpty())
+            TeacherEnterDialog->setObjectName(QString::fromUtf8("TeacherEnterDialog"));
+        TeacherEnterDialog->resize(410, 260);
+        TeacherEnterDialog->setStyleSheet(QString::fromUtf8(""));
+        layout = new QFrame(TeacherEnterDialog);
         layout->setObjectName(QString::fromUtf8("layout"));
         layout->setGeometry(QRect(0, 0, 410, 260));
         layout->setStyleSheet(QString::fromUtf8("QFrame#layout {\n"
@@ -339,39 +339,39 @@ public:
         verticalLayout->addWidget(main_area);
 
 
-        retranslateUi(TEnterDialog);
-        QObject::connect(close_btn, SIGNAL(clicked()), TEnterDialog, SLOT(close()));
+        retranslateUi(TeacherEnterDialog);
+        QObject::connect(close_btn, SIGNAL(clicked()), TeacherEnterDialog, SLOT(close()));
 
         tabWidget->setCurrentIndex(0);
 
 
-        QMetaObject::connectSlotsByName(TEnterDialog);
+        QMetaObject::connectSlotsByName(TeacherEnterDialog);
     } // setupUi
 
-    void retranslateUi(QDialog *TEnterDialog)
+    void retranslateUi(QDialog *TeacherEnterDialog)
     {
-        TEnterDialog->setWindowTitle(QCoreApplication::translate("TEnterDialog", "Dialog", nullptr));
+        TeacherEnterDialog->setWindowTitle(QCoreApplication::translate("TeacherEnterDialog", "Dialog", nullptr));
 #if QT_CONFIG(tooltip)
-        close_btn->setToolTip(QCoreApplication::translate("TEnterDialog", "\345\205\263\351\227\255", nullptr));
+        close_btn->setToolTip(QCoreApplication::translate("TeacherEnterDialog", "\345\205\263\351\227\255", nullptr));
 #endif // QT_CONFIG(tooltip)
 #if QT_CONFIG(whatsthis)
         close_btn->setWhatsThis(QString());
 #endif // QT_CONFIG(whatsthis)
         close_btn->setText(QString());
-        title_text->setText(QCoreApplication::translate("TEnterDialog", "\345\210\233\345\273\272\350\257\276\345\256\244", nullptr));
-        confirm_btn->setText(QCoreApplication::translate("TEnterDialog", "\345\210\233\345\273\272\350\257\276\345\256\244", nullptr));
+        title_text->setText(QCoreApplication::translate("TeacherEnterDialog", "\345\210\233\345\273\272\350\257\276\345\256\244", nullptr));
+        confirm_btn->setText(QCoreApplication::translate("TeacherEnterDialog", "\345\210\233\345\273\272\350\257\276\345\256\244", nullptr));
         QTableWidgetItem *___qtablewidgetitem = courses_table->horizontalHeaderItem(0);
-        ___qtablewidgetitem->setText(QCoreApplication::translate("TEnterDialog", "\350\257\276\347\250\213id", nullptr));
+        ___qtablewidgetitem->setText(QCoreApplication::translate("TeacherEnterDialog", "\350\257\276\347\250\213id", nullptr));
         QTableWidgetItem *___qtablewidgetitem1 = courses_table->horizontalHeaderItem(1);
-        ___qtablewidgetitem1->setText(QCoreApplication::translate("TEnterDialog", "\350\257\276\347\250\213\345\220\215", nullptr));
-        tabWidget->setTabText(tabWidget->indexOf(mine_courses_tab), QCoreApplication::translate("TEnterDialog", "\346\210\221\347\232\204\350\257\276\347\250\213", nullptr));
-        tabWidget->setTabText(tabWidget->indexOf(tab), QCoreApplication::translate("TEnterDialog", "\344\270\264\346\227\266\346\210\277\351\227\264", nullptr));
+        ___qtablewidgetitem1->setText(QCoreApplication::translate("TeacherEnterDialog", "\350\257\276\347\250\213\345\220\215", nullptr));
+        tabWidget->setTabText(tabWidget->indexOf(mine_courses_tab), QCoreApplication::translate("TeacherEnterDialog", "\346\210\221\347\232\204\350\257\276\347\250\213", nullptr));
+        tabWidget->setTabText(tabWidget->indexOf(tab), QCoreApplication::translate("TeacherEnterDialog", "\344\270\264\346\227\266\346\210\277\351\227\264", nullptr));
     } // retranslateUi
 
 };
 
 namespace Ui {
-    class TEnterDialog: public Ui_TEnterDialog {};
+    class TeacherEnterDialog: public Ui_TeacherEnterDialog {};
 } // namespace Ui
 
 QT_END_NAMESPACE

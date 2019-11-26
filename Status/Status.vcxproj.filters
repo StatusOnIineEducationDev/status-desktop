@@ -38,23 +38,8 @@
     <Filter Include="Core\Client\Student">
       <UniqueIdentifier>{a43b9e99-5531-41cb-a445-e75b6ea0c008}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Core\Client\Teacher">
-      <UniqueIdentifier>{5aa458c2-0c08-4e2e-a2bc-63461d618a55}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Core\Client\Common">
       <UniqueIdentifier>{70712fa1-744e-4ca6-898c-11d6d623b266}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Core\Client\Teacher\CourseManagement">
-      <UniqueIdentifier>{b0ffd6e4-7524-43a9-8b4e-6567d511ae8e}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Core\Client\Teacher\OnlineClassroom">
-      <UniqueIdentifier>{fce01af3-8e9a-4106-9508-d3bd52a19e7f}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Core\Client\Teacher\OnlineClassroom\Interaction">
-      <UniqueIdentifier>{4e992456-30da-40bb-b090-6ccd7cec5e2f}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Core\Client\Teacher\OnlineClassroom\Enter">
-      <UniqueIdentifier>{2a2a8363-6c86-436e-86c6-885919272e48}</UniqueIdentifier>
     </Filter>
     <Filter Include="Core\Client\Student\OnlineClassroom">
       <UniqueIdentifier>{5abb34dc-79ad-47e4-8da3-12fd9f069448}</UniqueIdentifier>
@@ -68,26 +53,41 @@
     <Filter Include="Core\Hardware">
       <UniqueIdentifier>{ba32e57c-e4f7-4ff5-8e29-54f07481c8f3}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Core\Client\Student\OnlineClassroom\Concentration">
-      <UniqueIdentifier>{1359f49d-72c8-48b9-99ba-275d1497f44d}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Core\Client\Student\CourseManagement">
-      <UniqueIdentifier>{771a82be-d7eb-4a61-9247-a36e6bf4716f}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Core\Component\MainWindow">
+    <Filter Include="Core\Client\Common\MainWindow">
       <UniqueIdentifier>{c1a89f64-7f3b-4f2d-b097-b62ae6224855}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Core\Component\OnlineClassroom">
-      <UniqueIdentifier>{7f4514d1-2eab-4bb0-941c-336c015519b0}</UniqueIdentifier>
+    <Filter Include="Core\Client\Student\MainWindow">
+      <UniqueIdentifier>{e02bbd93-935a-4c64-98c9-cf4bb13178be}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Core\Component\Interaction">
-      <UniqueIdentifier>{b0c9cdd7-7c76-4389-bb25-020a143f5e4a}</UniqueIdentifier>
+    <Filter Include="Core\Client\Common\Interaction">
+      <UniqueIdentifier>{8796094a-5ae2-4ac7-b236-bc1b1a0f9976}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Core\Component\ChatAndInSpeech">
-      <UniqueIdentifier>{63fa9581-a7e6-4496-926b-98d38e196dee}</UniqueIdentifier>
+    <Filter Include="Core\Client\Common\Interaction\WhiteBoard">
+      <UniqueIdentifier>{808b61ce-7524-40ab-b94b-3915feae5181}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Core\Component\WhiteBoard">
-      <UniqueIdentifier>{788add6b-af5e-4507-b353-25184d229357}</UniqueIdentifier>
+    <Filter Include="Core\Client\Common\Interaction\ChatAndInSpeech">
+      <UniqueIdentifier>{56b32b77-edc7-4e0d-947f-d43fa9898904}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\Client\Common\OnlineClassroom">
+      <UniqueIdentifier>{07be0fa3-c5f8-4c2c-859d-38f9866ef29c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\Client\Teacher">
+      <UniqueIdentifier>{0f98040a-a29b-4b31-b6d1-14fae932074a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\Client\Teacher\MainWindow">
+      <UniqueIdentifier>{b586418c-e032-4bbb-a728-a4e2bf926c61}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\Client\Teacher\OnlineClassroom">
+      <UniqueIdentifier>{49d97768-7454-4512-be15-b0d7b1f3d07a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\Client\Teacher\OnlineClassroom\Enter">
+      <UniqueIdentifier>{79bd8735-093c-4076-9dea-fb999783d9c6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\Client\Teacher\OnlineClassroom\Interaction">
+      <UniqueIdentifier>{d33d2af7-b34a-4c94-89ba-2a6c0ed8f54d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\Client\Teacher\OnlineClassroom\HandleRaiseHand">
+      <UniqueIdentifier>{ec96f35a-d736-4f0d-a414-2289d57f6e2e}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -103,9 +103,6 @@
       <Filter>Resource Files\Ui</Filter>
     </QtUic>
     <QtUic Include="Resources\ui\c_inSpeechMemberItemWidget.ui">
-      <Filter>Resource Files\Ui</Filter>
-    </QtUic>
-    <QtUic Include="Resources\ui\c_raiseHandItemWidget.ui">
       <Filter>Resource Files\Ui</Filter>
     </QtUic>
     <QtUic Include="Resources\ui\s_courseManagementWidget.ui">
@@ -153,6 +150,21 @@
     <QtUic Include="Resources\ui\c_onlineClassroomWidget.ui">
       <Filter>Resource Files\Ui</Filter>
     </QtUic>
+    <QtUic Include="Resources\ui\s_functionButtonWidget.ui">
+      <Filter>Resource Files\Ui</Filter>
+    </QtUic>
+    <QtUic Include="Resources\ui\t_functionButtonWidget.ui">
+      <Filter>Resource Files\Ui</Filter>
+    </QtUic>
+    <QtUic Include="Resources\ui\s_onlineClassroomFunctionButtonWidget.ui">
+      <Filter>Resource Files\Ui</Filter>
+    </QtUic>
+    <QtUic Include="Resources\ui\t_onlineClassroomFunctionButtonWidget.ui">
+      <Filter>Resource Files\Ui</Filter>
+    </QtUic>
+    <QtUic Include="Resources\ui\t_raiseHandItemWidget.ui">
+      <Filter>Resource Files\Ui</Filter>
+    </QtUic>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
@@ -186,62 +198,11 @@
     <ClCompile Include="Core\Network\httpRequest.cpp">
       <Filter>Core\Network</Filter>
     </ClCompile>
-    <ClCompile Include="Core\Client\Common\c_listWidgetItem.cpp">
-      <Filter>Core\Client\Common</Filter>
-    </ClCompile>
-    <ClCompile Include="Core\Client\Student\CourseManagement\s_courseManagementWidget.cpp">
-      <Filter>Core\Client\Student\CourseManagement</Filter>
-    </ClCompile>
-    <ClCompile Include="Core\Client\Student\OnlineClassroom\Concentration\s_concentrationController.cpp">
-      <Filter>Core\Client\Student\OnlineClassroom\Concentration</Filter>
-    </ClCompile>
-    <ClCompile Include="Core\Client\Student\OnlineClassroom\Enter\s_enterController.cpp">
-      <Filter>Core\Client\Student\OnlineClassroom\Enter</Filter>
-    </ClCompile>
     <ClCompile Include="Core\Client\Student\OnlineClassroom\Enter\s_enterDialog.cpp">
       <Filter>Core\Client\Student\OnlineClassroom\Enter</Filter>
     </ClCompile>
-    <ClCompile Include="Core\Client\Student\OnlineClassroom\Interaction\s_chatController.cpp">
-      <Filter>Core\Client\Student\OnlineClassroom\Interaction</Filter>
-    </ClCompile>
-    <ClCompile Include="Core\Client\Student\OnlineClassroom\Interaction\s_whiteBoardController.cpp">
-      <Filter>Core\Client\Student\OnlineClassroom\Interaction</Filter>
-    </ClCompile>
-    <ClCompile Include="Core\Client\Student\OnlineClassroom\s_onlineClassroomController.cpp">
-      <Filter>Core\Client\Student\OnlineClassroom</Filter>
-    </ClCompile>
     <ClCompile Include="Core\Client\Student\OnlineClassroom\s_onlineClassroomWidget.cpp">
       <Filter>Core\Client\Student\OnlineClassroom</Filter>
-    </ClCompile>
-    <ClCompile Include="Core\Client\Student\s_mainWindow.cpp">
-      <Filter>Core\Client\Student</Filter>
-    </ClCompile>
-    <ClCompile Include="Core\Client\Student\s_mainWindowController.cpp">
-      <Filter>Core\Client\Student</Filter>
-    </ClCompile>
-    <ClCompile Include="Core\Client\Teacher\OnlineClassroom\Enter\t_enterController.cpp">
-      <Filter>Core\Client\Teacher\OnlineClassroom\Enter</Filter>
-    </ClCompile>
-    <ClCompile Include="Core\Client\Teacher\OnlineClassroom\Enter\t_enterDialog.cpp">
-      <Filter>Core\Client\Teacher\OnlineClassroom\Enter</Filter>
-    </ClCompile>
-    <ClCompile Include="Core\Client\Teacher\OnlineClassroom\Interaction\t_chatController.cpp">
-      <Filter>Core\Client\Teacher\OnlineClassroom\Interaction</Filter>
-    </ClCompile>
-    <ClCompile Include="Core\Client\Teacher\OnlineClassroom\Interaction\t_whiteBoardController.cpp">
-      <Filter>Core\Client\Teacher\OnlineClassroom\Interaction</Filter>
-    </ClCompile>
-    <ClCompile Include="Core\Client\Teacher\OnlineClassroom\t_onlineClassroomController.cpp">
-      <Filter>Core\Client\Teacher\OnlineClassroom</Filter>
-    </ClCompile>
-    <ClCompile Include="Core\Client\Teacher\OnlineClassroom\t_onlineClassroomWidget.cpp">
-      <Filter>Core\Client\Teacher\OnlineClassroom</Filter>
-    </ClCompile>
-    <ClCompile Include="Core\Client\Teacher\t_mainWindow.cpp">
-      <Filter>Core\Client\Teacher</Filter>
-    </ClCompile>
-    <ClCompile Include="Core\Client\Teacher\t_mainWindowController.cpp">
-      <Filter>Core\Client\Teacher</Filter>
     </ClCompile>
     <ClCompile Include="Core\Component\Chart\areaChart.cpp">
       <Filter>Core\Component\Chart</Filter>
@@ -252,41 +213,71 @@
     <ClCompile Include="Core\Component\Chart\lineAndBarChart.cpp">
       <Filter>Core\Component\Chart</Filter>
     </ClCompile>
-    <ClCompile Include="Core\Client\Student\CourseManagement\s_courseManagementController.cpp">
-      <Filter>Core\Client\Student\CourseManagement</Filter>
+    <ClCompile Include="Core\Client\Common\MainWindow\mainWindow.cpp">
+      <Filter>Core\Client\Common\MainWindow</Filter>
     </ClCompile>
-    <ClCompile Include="Core\Client\Teacher\CourseManagement\t_courseManagementController.cpp">
-      <Filter>Core\Client\Teacher\CourseManagement</Filter>
+    <ClCompile Include="Core\Client\Student\MainWindow\s_mainWindow.cpp">
+      <Filter>Core\Client\Student\MainWindow</Filter>
     </ClCompile>
-    <ClCompile Include="Core\Client\Teacher\CourseManagement\t_courseManagementWidget.cpp">
-      <Filter>Core\Client\Teacher\CourseManagement</Filter>
+    <ClCompile Include="Core\Client\Student\MainWindow\s_functionButtonWidget.cpp">
+      <Filter>Core\Client\Student\MainWindow</Filter>
     </ClCompile>
-    <ClCompile Include="Core\Component\MainWindow\mainWindow.cpp">
-      <Filter>Core\Component\MainWindow</Filter>
+    <ClCompile Include="Core\Client\Common\Interaction\interactionWidget.cpp">
+      <Filter>Core\Client\Common\Interaction</Filter>
     </ClCompile>
-    <ClCompile Include="Core\Component\OnlineClassroom\onlineClassroomWidget.cpp">
-      <Filter>Core\Component\OnlineClassroom</Filter>
+    <ClCompile Include="Core\Client\Common\Interaction\ChatAndInSpeech\chatAndInSpeechWidget.cpp">
+      <Filter>Core\Client\Common\Interaction\ChatAndInSpeech</Filter>
     </ClCompile>
-    <ClCompile Include="Core\Component\ChatAndInSpeech\chatAndInSpeechWidget.cpp">
-      <Filter>Core\Component\ChatAndInSpeech</Filter>
+    <ClCompile Include="Core\Client\Common\Interaction\ChatAndInSpeech\chatItemWidget.cpp">
+      <Filter>Core\Client\Common\Interaction\ChatAndInSpeech</Filter>
     </ClCompile>
-    <ClCompile Include="Core\Component\ChatAndInSpeech\chatItemWidget.cpp">
-      <Filter>Core\Component\ChatAndInSpeech</Filter>
+    <ClCompile Include="Core\Client\Common\Interaction\ChatAndInSpeech\inSpeechMemberItemWidget.cpp">
+      <Filter>Core\Client\Common\Interaction\ChatAndInSpeech</Filter>
     </ClCompile>
-    <ClCompile Include="Core\Component\ChatAndInSpeech\inSpeechMemberItemWidget.cpp">
-      <Filter>Core\Component\ChatAndInSpeech</Filter>
+    <ClCompile Include="Core\Client\Common\Interaction\WhiteBoard\lineedit.cpp">
+      <Filter>Core\Client\Common\Interaction\WhiteBoard</Filter>
     </ClCompile>
-    <ClCompile Include="Core\Component\Interaction\interactionWidget.cpp">
-      <Filter>Core\Component\Interaction</Filter>
+    <ClCompile Include="Core\Client\Common\Interaction\WhiteBoard\whiteboard.cpp">
+      <Filter>Core\Client\Common\Interaction\WhiteBoard</Filter>
     </ClCompile>
-    <ClCompile Include="Core\Component\WhiteBoard\lineedit.cpp">
-      <Filter>Core\Component\WhiteBoard</Filter>
+    <ClCompile Include="Core\Client\Common\Interaction\WhiteBoard\whiteBoardWidget.cpp">
+      <Filter>Core\Client\Common\Interaction\WhiteBoard</Filter>
     </ClCompile>
-    <ClCompile Include="Core\Component\WhiteBoard\whiteboard.cpp">
-      <Filter>Core\Component\WhiteBoard</Filter>
+    <ClCompile Include="Core\Client\Common\OnlineClassroom\onlineClassroomWidget.cpp">
+      <Filter>Core\Client\Common\OnlineClassroom</Filter>
     </ClCompile>
-    <ClCompile Include="Core\Component\WhiteBoard\whiteBoardWidget.cpp">
-      <Filter>Core\Component\WhiteBoard</Filter>
+    <ClCompile Include="Core\Client\Student\OnlineClassroom\s_onlineClassroomFunctionButtonWidget.cpp">
+      <Filter>Core\Client\Student\OnlineClassroom</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\Client\Student\OnlineClassroom\s_inSpeechRemovableWidget.cpp">
+      <Filter>Core\Client\Student\OnlineClassroom</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\Client\Student\OnlineClassroom\Interaction\s_interactionWidget.cpp">
+      <Filter>Core\Client\Student\OnlineClassroom\Interaction</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\Client\Teacher\MainWindow\t_functionButtonWidget.cpp">
+      <Filter>Core\Client\Teacher\MainWindow</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\Client\Teacher\MainWindow\t_mainWindow.cpp">
+      <Filter>Core\Client\Teacher\MainWindow</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\Client\Teacher\OnlineClassroom\Enter\t_enterDialog.cpp">
+      <Filter>Core\Client\Teacher\OnlineClassroom\Enter</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\Client\Teacher\OnlineClassroom\Interaction\t_interactionWidget.cpp">
+      <Filter>Core\Client\Teacher\OnlineClassroom\Interaction</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\Client\Teacher\OnlineClassroom\t_onlineClassroomWidget.cpp">
+      <Filter>Core\Client\Teacher\OnlineClassroom</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\Client\Teacher\OnlineClassroom\t_onlineClassroomFunctionButtonWidget.cpp">
+      <Filter>Core\Client\Teacher\OnlineClassroom</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\Client\Teacher\OnlineClassroom\HandleRaiseHand\t_handleRaiseHandWidge.cpp">
+      <Filter>Core\Client\Teacher\OnlineClassroom\HandleRaiseHand</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\Client\Teacher\OnlineClassroom\HandleRaiseHand\t_raiseHandItemWidget.cpp">
+      <Filter>Core\Client\Teacher\OnlineClassroom\HandleRaiseHand</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -302,59 +293,11 @@
     <QtMoc Include="Core\Network\httpRequest.h">
       <Filter>Core\Network</Filter>
     </QtMoc>
-    <QtMoc Include="Core\Client\Common\c_listWidgetItem.h">
-      <Filter>Core\Client\Common</Filter>
-    </QtMoc>
-    <QtMoc Include="Core\Client\Student\OnlineClassroom\Concentration\s_concentrationController.h">
-      <Filter>Core\Client\Student\OnlineClassroom\Concentration</Filter>
-    </QtMoc>
-    <QtMoc Include="Core\Client\Student\OnlineClassroom\Enter\s_enterController.h">
-      <Filter>Core\Client\Student\OnlineClassroom\Enter</Filter>
-    </QtMoc>
     <QtMoc Include="Core\Client\Student\OnlineClassroom\Enter\s_enterDialog.h">
       <Filter>Core\Client\Student\OnlineClassroom\Enter</Filter>
     </QtMoc>
-    <QtMoc Include="Core\Client\Student\OnlineClassroom\Interaction\s_chatController.h">
-      <Filter>Core\Client\Student\OnlineClassroom\Interaction</Filter>
-    </QtMoc>
-    <QtMoc Include="Core\Client\Student\OnlineClassroom\Interaction\s_whiteBoardController.h">
-      <Filter>Core\Client\Student\OnlineClassroom\Interaction</Filter>
-    </QtMoc>
-    <QtMoc Include="Core\Client\Student\OnlineClassroom\s_onlineClassroomController.h">
-      <Filter>Core\Client\Student\OnlineClassroom</Filter>
-    </QtMoc>
     <QtMoc Include="Core\Client\Student\OnlineClassroom\s_onlineClassroomWidget.h">
       <Filter>Core\Client\Student\OnlineClassroom</Filter>
-    </QtMoc>
-    <QtMoc Include="Core\Client\Student\s_mainWindow.h">
-      <Filter>Core\Client\Student</Filter>
-    </QtMoc>
-    <QtMoc Include="Core\Client\Student\s_mainWindowController.h">
-      <Filter>Core\Client\Student</Filter>
-    </QtMoc>
-    <QtMoc Include="Core\Client\Teacher\OnlineClassroom\Enter\t_enterController.h">
-      <Filter>Core\Client\Teacher\OnlineClassroom\Enter</Filter>
-    </QtMoc>
-    <QtMoc Include="Core\Client\Teacher\OnlineClassroom\Enter\t_enterDialog.h">
-      <Filter>Core\Client\Teacher\OnlineClassroom\Enter</Filter>
-    </QtMoc>
-    <QtMoc Include="Core\Client\Teacher\OnlineClassroom\Interaction\t_chatController.h">
-      <Filter>Core\Client\Teacher\OnlineClassroom\Interaction</Filter>
-    </QtMoc>
-    <QtMoc Include="Core\Client\Teacher\OnlineClassroom\Interaction\t_whiteBoardController.h">
-      <Filter>Core\Client\Teacher\OnlineClassroom\Interaction</Filter>
-    </QtMoc>
-    <QtMoc Include="Core\Client\Teacher\OnlineClassroom\t_onlineClassroomController.h">
-      <Filter>Core\Client\Teacher\OnlineClassroom</Filter>
-    </QtMoc>
-    <QtMoc Include="Core\Client\Teacher\OnlineClassroom\t_onlineClassroomWidget.h">
-      <Filter>Core\Client\Teacher\OnlineClassroom</Filter>
-    </QtMoc>
-    <QtMoc Include="Core\Client\Teacher\t_mainWindow.h">
-      <Filter>Core\Client\Teacher</Filter>
-    </QtMoc>
-    <QtMoc Include="Core\Client\Teacher\t_mainWindowController.h">
-      <Filter>Core\Client\Teacher</Filter>
     </QtMoc>
     <QtMoc Include="Core\Component\Chart\areaChart.h">
       <Filter>Core\Component\Chart</Filter>
@@ -365,41 +308,68 @@
     <QtMoc Include="Core\Component\Chart\lineAndBarChart.h">
       <Filter>Core\Component\Chart</Filter>
     </QtMoc>
-    <QtMoc Include="Core\Client\Student\CourseManagement\s_courseManagementWidget.h">
-      <Filter>Core\Client\Student\CourseManagement</Filter>
+    <QtMoc Include="Core\Client\Common\MainWindow\mainWindow.h">
+      <Filter>Core\Client\Common\MainWindow</Filter>
     </QtMoc>
-    <QtMoc Include="Core\Client\Student\CourseManagement\s_courseManagementController.h">
-      <Filter>Core\Client\Student\CourseManagement</Filter>
+    <QtMoc Include="Core\Client\Student\MainWindow\s_mainWindow.h">
+      <Filter>Core\Client\Student\MainWindow</Filter>
     </QtMoc>
-    <QtMoc Include="Core\Client\Teacher\CourseManagement\t_courseManagementController.h">
-      <Filter>Core\Client\Teacher\CourseManagement</Filter>
+    <QtMoc Include="Core\Client\Student\MainWindow\s_functionButtonWidget.h">
+      <Filter>Core\Client\Student\MainWindow</Filter>
     </QtMoc>
-    <QtMoc Include="Core\Client\Teacher\CourseManagement\t_courseManagementWidget.h">
-      <Filter>Core\Client\Teacher\CourseManagement</Filter>
+    <QtMoc Include="Core\Client\Common\Interaction\interactionWidget.h">
+      <Filter>Core\Client\Common\Interaction</Filter>
     </QtMoc>
-    <QtMoc Include="Core\Component\MainWindow\mainWindow.h">
-      <Filter>Core\Component\MainWindow</Filter>
+    <QtMoc Include="Core\Client\Common\Interaction\ChatAndInSpeech\chatAndInSpeechWidget.h">
+      <Filter>Core\Client\Common\Interaction\ChatAndInSpeech</Filter>
     </QtMoc>
-    <QtMoc Include="Core\Component\ChatAndInSpeech\chatAndInSpeechWidget.h">
-      <Filter>Core\Component\ChatAndInSpeech</Filter>
+    <QtMoc Include="Core\Client\Common\Interaction\ChatAndInSpeech\inSpeechMemberItemWidget.h">
+      <Filter>Core\Client\Common\Interaction\ChatAndInSpeech</Filter>
     </QtMoc>
-    <QtMoc Include="Core\Component\ChatAndInSpeech\inSpeechMemberItemWidget.h">
-      <Filter>Core\Component\ChatAndInSpeech</Filter>
+    <QtMoc Include="Core\Client\Common\Interaction\WhiteBoard\lineEdit.h">
+      <Filter>Core\Client\Common\Interaction\WhiteBoard</Filter>
     </QtMoc>
-    <QtMoc Include="Core\Component\Interaction\interactionWidget.h">
-      <Filter>Core\Component\Interaction</Filter>
+    <QtMoc Include="Core\Client\Common\Interaction\WhiteBoard\whiteboard.h">
+      <Filter>Core\Client\Common\Interaction\WhiteBoard</Filter>
     </QtMoc>
-    <QtMoc Include="Core\Component\WhiteBoard\lineEdit.h">
-      <Filter>Core\Component\WhiteBoard</Filter>
+    <QtMoc Include="Core\Client\Common\Interaction\WhiteBoard\whiteBoardWidget.h">
+      <Filter>Core\Client\Common\Interaction\WhiteBoard</Filter>
     </QtMoc>
-    <QtMoc Include="Core\Component\WhiteBoard\whiteboard.h">
-      <Filter>Core\Component\WhiteBoard</Filter>
+    <QtMoc Include="Core\Client\Common\OnlineClassroom\onlineClassroomWidget.h">
+      <Filter>Core\Client\Common\OnlineClassroom</Filter>
     </QtMoc>
-    <QtMoc Include="Core\Component\WhiteBoard\whiteBoardWidget.h">
-      <Filter>Core\Component\WhiteBoard</Filter>
+    <QtMoc Include="Core\Client\Student\OnlineClassroom\s_onlineClassroomFunctionButtonWidget.h">
+      <Filter>Core\Client\Student\OnlineClassroom</Filter>
     </QtMoc>
-    <QtMoc Include="Core\Component\OnlineClassroom\onlineClassroomWidget.h">
-      <Filter>Core\Component\OnlineClassroom</Filter>
+    <QtMoc Include="Core\Client\Student\OnlineClassroom\s_inSpeechRemovableWidget.h">
+      <Filter>Core\Client\Student\OnlineClassroom</Filter>
+    </QtMoc>
+    <QtMoc Include="Core\Client\Student\OnlineClassroom\Interaction\s_interactionWidget.h">
+      <Filter>Core\Client\Student\OnlineClassroom\Interaction</Filter>
+    </QtMoc>
+    <QtMoc Include="Core\Client\Teacher\MainWindow\t_functionButtonWidget.h">
+      <Filter>Core\Client\Teacher\MainWindow</Filter>
+    </QtMoc>
+    <QtMoc Include="Core\Client\Teacher\MainWindow\t_mainWindow.h">
+      <Filter>Core\Client\Teacher\MainWindow</Filter>
+    </QtMoc>
+    <QtMoc Include="Core\Client\Teacher\OnlineClassroom\t_onlineClassroomWidget.h">
+      <Filter>Core\Client\Teacher\OnlineClassroom</Filter>
+    </QtMoc>
+    <QtMoc Include="Core\Client\Teacher\OnlineClassroom\t_onlineClassroomFunctionButtonWidget.h">
+      <Filter>Core\Client\Teacher\OnlineClassroom</Filter>
+    </QtMoc>
+    <QtMoc Include="Core\Client\Teacher\OnlineClassroom\HandleRaiseHand\t_raiseHandItemWidget.h">
+      <Filter>Core\Client\Teacher\OnlineClassroom\HandleRaiseHand</Filter>
+    </QtMoc>
+    <QtMoc Include="Core\Client\Teacher\OnlineClassroom\HandleRaiseHand\t_handleRaiseHandWidget.h">
+      <Filter>Core\Client\Teacher\OnlineClassroom\HandleRaiseHand</Filter>
+    </QtMoc>
+    <QtMoc Include="Core\Client\Teacher\OnlineClassroom\Interaction\t_interactionWidget.h">
+      <Filter>Core\Client\Teacher\OnlineClassroom\Interaction</Filter>
+    </QtMoc>
+    <QtMoc Include="Core\Client\Teacher\OnlineClassroom\Enter\t_enterDialog.h">
+      <Filter>Core\Client\Teacher\OnlineClassroom\Enter</Filter>
     </QtMoc>
   </ItemGroup>
   <ItemGroup>
@@ -424,8 +394,8 @@
     <ClInclude Include="Core\Client\onlineEdu.h">
       <Filter>Core\Client</Filter>
     </ClInclude>
-    <ClInclude Include="Core\Component\ChatAndInSpeech\chatItemWidget.h">
-      <Filter>Core\Component\ChatAndInSpeech</Filter>
+    <ClInclude Include="Core\Client\Common\Interaction\ChatAndInSpeech\chatItemWidget.h">
+      <Filter>Core\Client\Common\Interaction\ChatAndInSpeech</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

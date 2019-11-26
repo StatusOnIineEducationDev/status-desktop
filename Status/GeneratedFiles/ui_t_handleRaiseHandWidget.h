@@ -21,7 +21,7 @@
 
 QT_BEGIN_NAMESPACE
 
-class Ui_THandleRaiseHandWidget
+class Ui_TeacherHandleRaiseHandWidget
 {
 public:
     QGridLayout *gridLayout;
@@ -37,17 +37,17 @@ public:
     QPushButton *refuse_btn;
     QPushButton *accept_btn;
 
-    void setupUi(QWidget *THandleRaiseHandWidget)
+    void setupUi(QWidget *TeacherHandleRaiseHandWidget)
     {
-        if (THandleRaiseHandWidget->objectName().isEmpty())
-            THandleRaiseHandWidget->setObjectName(QString::fromUtf8("THandleRaiseHandWidget"));
-        THandleRaiseHandWidget->resize(230, 280);
-        THandleRaiseHandWidget->setStyleSheet(QString::fromUtf8(""));
-        gridLayout = new QGridLayout(THandleRaiseHandWidget);
+        if (TeacherHandleRaiseHandWidget->objectName().isEmpty())
+            TeacherHandleRaiseHandWidget->setObjectName(QString::fromUtf8("TeacherHandleRaiseHandWidget"));
+        TeacherHandleRaiseHandWidget->resize(230, 280);
+        TeacherHandleRaiseHandWidget->setStyleSheet(QString::fromUtf8(""));
+        gridLayout = new QGridLayout(TeacherHandleRaiseHandWidget);
         gridLayout->setSpacing(0);
         gridLayout->setObjectName(QString::fromUtf8("gridLayout"));
         gridLayout->setContentsMargins(0, 0, 0, 0);
-        shadow_frame = new QFrame(THandleRaiseHandWidget);
+        shadow_frame = new QFrame(TeacherHandleRaiseHandWidget);
         shadow_frame->setObjectName(QString::fromUtf8("shadow_frame"));
         shadow_frame->setStyleSheet(QString::fromUtf8("QFrame#shadow_frame {\n"
 "	/*border-image\345\217\257\344\273\245\345\271\263\351\223\272\357\274\210\345\215\263\345\217\257\346\213\211\344\274\270\357\274\211*/\n"
@@ -232,25 +232,25 @@ public:
         gridLayout->addWidget(shadow_frame, 0, 0, 1, 1);
 
 
-        retranslateUi(THandleRaiseHandWidget);
-        QObject::connect(close_btn, SIGNAL(clicked()), THandleRaiseHandWidget, SLOT(hide()));
+        retranslateUi(TeacherHandleRaiseHandWidget);
+        QObject::connect(close_btn, SIGNAL(clicked()), TeacherHandleRaiseHandWidget, SLOT(hide()));
 
-        QMetaObject::connectSlotsByName(THandleRaiseHandWidget);
+        QMetaObject::connectSlotsByName(TeacherHandleRaiseHandWidget);
     } // setupUi
 
-    void retranslateUi(QWidget *THandleRaiseHandWidget)
+    void retranslateUi(QWidget *TeacherHandleRaiseHandWidget)
     {
-        THandleRaiseHandWidget->setWindowTitle(QCoreApplication::translate("THandleRaiseHandWidget", "Form", nullptr));
-        title_text->setText(QCoreApplication::translate("THandleRaiseHandWidget", "\344\270\276\346\211\213", nullptr));
+        TeacherHandleRaiseHandWidget->setWindowTitle(QCoreApplication::translate("TeacherHandleRaiseHandWidget", "Form", nullptr));
+        title_text->setText(QCoreApplication::translate("TeacherHandleRaiseHandWidget", "\344\270\276\346\211\213", nullptr));
         close_btn->setText(QString());
-        refuse_btn->setText(QCoreApplication::translate("THandleRaiseHandWidget", "\346\213\222\347\273\235", nullptr));
-        accept_btn->setText(QCoreApplication::translate("THandleRaiseHandWidget", "\346\216\245\345\217\227", nullptr));
+        refuse_btn->setText(QCoreApplication::translate("TeacherHandleRaiseHandWidget", "\346\213\222\347\273\235", nullptr));
+        accept_btn->setText(QCoreApplication::translate("TeacherHandleRaiseHandWidget", "\346\216\245\345\217\227", nullptr));
     } // retranslateUi
 
 };
 
 namespace Ui {
-    class THandleRaiseHandWidget: public Ui_THandleRaiseHandWidget {};
+    class TeacherHandleRaiseHandWidget: public Ui_TeacherHandleRaiseHandWidget {};
 } // namespace Ui
 
 QT_END_NAMESPACE

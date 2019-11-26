@@ -20,7 +20,7 @@
 
 QT_BEGIN_NAMESPACE
 
-class Ui_SInSpeechRemovableWidget
+class Ui_StudentInSpeechRemovableWidget
 {
 public:
     QGridLayout *gridLayout;
@@ -32,16 +32,16 @@ public:
     QLabel *time_text;
     QLabel *label;
 
-    void setupUi(QWidget *SInSpeechRemovableWidget)
+    void setupUi(QWidget *StudentInSpeechRemovableWidget)
     {
-        if (SInSpeechRemovableWidget->objectName().isEmpty())
-            SInSpeechRemovableWidget->setObjectName(QString::fromUtf8("SInSpeechRemovableWidget"));
-        SInSpeechRemovableWidget->resize(150, 55);
-        gridLayout = new QGridLayout(SInSpeechRemovableWidget);
+        if (StudentInSpeechRemovableWidget->objectName().isEmpty())
+            StudentInSpeechRemovableWidget->setObjectName(QString::fromUtf8("StudentInSpeechRemovableWidget"));
+        StudentInSpeechRemovableWidget->resize(150, 55);
+        gridLayout = new QGridLayout(StudentInSpeechRemovableWidget);
         gridLayout->setSpacing(0);
         gridLayout->setObjectName(QString::fromUtf8("gridLayout"));
         gridLayout->setContentsMargins(0, 0, 0, 0);
-        shadow_frame = new QFrame(SInSpeechRemovableWidget);
+        shadow_frame = new QFrame(StudentInSpeechRemovableWidget);
         shadow_frame->setObjectName(QString::fromUtf8("shadow_frame"));
         shadow_frame->setStyleSheet(QString::fromUtf8("QFrame#shadow_frame {\n"
 "	/*border-image\345\217\257\344\273\245\345\271\263\351\223\272\357\274\210\345\215\263\345\217\257\346\213\211\344\274\270\357\274\211*/\n"
@@ -128,26 +128,26 @@ public:
         gridLayout->addWidget(shadow_frame, 0, 0, 1, 1);
 
 
-        retranslateUi(SInSpeechRemovableWidget);
+        retranslateUi(StudentInSpeechRemovableWidget);
 
-        QMetaObject::connectSlotsByName(SInSpeechRemovableWidget);
+        QMetaObject::connectSlotsByName(StudentInSpeechRemovableWidget);
     } // setupUi
 
-    void retranslateUi(QWidget *SInSpeechRemovableWidget)
+    void retranslateUi(QWidget *StudentInSpeechRemovableWidget)
     {
-        SInSpeechRemovableWidget->setWindowTitle(QCoreApplication::translate("SInSpeechRemovableWidget", "Form", nullptr));
+        StudentInSpeechRemovableWidget->setWindowTitle(QCoreApplication::translate("StudentInSpeechRemovableWidget", "Form", nullptr));
 #if QT_CONFIG(tooltip)
-        end_btn->setToolTip(QCoreApplication::translate("SInSpeechRemovableWidget", "\344\270\255\346\255\242\345\217\221\350\250\200", nullptr));
+        end_btn->setToolTip(QCoreApplication::translate("StudentInSpeechRemovableWidget", "\344\270\255\346\255\242\345\217\221\350\250\200", nullptr));
 #endif // QT_CONFIG(tooltip)
         end_btn->setText(QString());
-        time_text->setText(QCoreApplication::translate("SInSpeechRemovableWidget", "00:00:00", nullptr));
-        label->setText(QCoreApplication::translate("SInSpeechRemovableWidget", "\345\217\221\350\250\200\344\270\255", nullptr));
+        time_text->setText(QCoreApplication::translate("StudentInSpeechRemovableWidget", "00:00:00", nullptr));
+        label->setText(QCoreApplication::translate("StudentInSpeechRemovableWidget", "\345\217\221\350\250\200\344\270\255", nullptr));
     } // retranslateUi
 
 };
 
 namespace Ui {
-    class SInSpeechRemovableWidget: public Ui_SInSpeechRemovableWidget {};
+    class StudentInSpeechRemovableWidget: public Ui_StudentInSpeechRemovableWidget {};
 } // namespace Ui
 
 QT_END_NAMESPACE
