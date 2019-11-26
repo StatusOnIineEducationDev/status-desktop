@@ -132,12 +132,12 @@ void ChatAndInSpeechWidget::handleCommandRecvChatContent(QJsonObject &data) {
 		user_pic = QPixmap(":/pic/Resources/material/pic/teacher.png"); break;
 	case AccountType::Student:
 		user_pic = QPixmap(":/pic/Resources/material/pic/student.png");  break;
-
-		this->addOtherContentToChatWiget(user_pic, data["username"].toString(),
-			data["text"].toString(), data["chat_timestamp"].toInt());
-
-		return;
 	}
+
+	this->addOtherContentToChatWiget(user_pic, data["username"].toString(),
+		data["text"].toString(), data["chat_timestamp"].toInt());
+
+	return;
 }
 
 void ChatAndInSpeechWidget::handleCommandChatBan(QJsonObject &data) {

@@ -23,14 +23,14 @@ int main(int argc, char *argv[]) {
 	courses_base_list->append(course_base4);
 	courses_base_list->append(course_base5);
 	
-	/*User::createUser(QString("10001"), QString("教师"), courses_base_list, AccountType::Teacher, UserStatus::Free);
+	User::createUser(QString("10001"), QString("教师"), courses_base_list, AccountType::Teacher, UserStatus::Free);
 	TeacherMainWindow *t_win = new TeacherMainWindow;
 	t_win->show();
-	Toast::setWin(t_win);*/
-	User::createUser(QString("10002"), QString("学生"), courses_base_list, AccountType::Student, UserStatus::Free);
-	StudentMainWindow *s_win = new StudentMainWindow;
-	s_win->show();
-	Toast::setWin(s_win);
+	Toast::setWin(t_win);
+	//User::createUser(QString("10002"), QString("学生"), courses_base_list, AccountType::Student, UserStatus::Free);
+	//StudentMainWindow *s_win = new StudentMainWindow;
+	//s_win->show();
+	//Toast::setWin(s_win);
 
 	ReadConf::read();
 
