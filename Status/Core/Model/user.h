@@ -12,7 +12,7 @@ public:
 		QList<CourseBase> *courses_base_list, AccountType account_type,
 		UserStatus user_status) {
 
-		G_USER_PIC = user_pic
+		G_USER_PIC = user_pic;
 		G_UID = uid;
 		G_USERNAME = username;
 		G_COURSES_BASE_LIST = courses_base_list;
