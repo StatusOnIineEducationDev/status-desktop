@@ -4,6 +4,8 @@
 MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent) {
 	m_ui.setupUi(this);
 
+	this->updateUserInfo();
+
 	// 初始化
 	this->is_pressed = false;
 	this->is_moving = false;
@@ -15,6 +17,13 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent) {
 
 	// 信号绑定
 	this->connect(this->m_ui.full_or_normal_btn, &QPushButton::clicked, this, &MainWindow::setWindowFull);
+}
+
+void MainWindow::updateUserInfo() {
+	this->m_ui.username_text->setText(User::G_USERNAME);
+	this->m_ui.user_pic->setPixmap(User::G_USER_PIC);
+
+	return;
 }
 
 void MainWindow::setWindowFull() {

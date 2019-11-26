@@ -18,6 +18,8 @@ public:
 	void switchOnlineClassroomWidget();
 
 protected:
+	void loadFunctionButtonWidget();
+
 	TeacherFunctionButtonWidget *m_function_button_widget;
 	TeacherOnlineClassroomWidget *m_online_classroom_widget;
 };

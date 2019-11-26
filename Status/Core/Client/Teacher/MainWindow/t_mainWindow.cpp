@@ -2,15 +2,12 @@
 
 
 TeacherMainWindow::TeacherMainWindow(QWidget *QWidget)
-	: MainWindow(QWidget), m_function_button_widget(nullptr),
+	: MainWindow(QWidget), m_function_button_widget(nullptr), 
 	m_online_classroom_widget(nullptr) {
-	this->m_function_button_widget = new TeacherFunctionButtonWidget(this);
-	this->m_ui.function_button_widget_layout->
-		addWidget(this->m_function_button_widget);
+	
+	this->m_ui.client_type_text->setText("教师端");
 
-	Ui::TeacherFunctionButtonWidget button_ui = this->m_function_button_widget->ui();
-	this->connect(button_ui.online_classroom_btn, &QPushButton::clicked,
-		this, &TeacherMainWindow::switchOnlineClassroomWidget);
+	this->loadFunctionButtonWidget();
 }
 
 TeacherMainWindow::~TeacherMainWindow() {
@@ -37,6 +34,21 @@ void TeacherMainWindow::switchOnlineClassroomWidget() {
 		this->m_ui.widget_layout->addWidget(this->m_online_classroom_widget);
 	}
 	this->m_online_classroom_widget->show();
+
+	return;
+}
+
+void TeacherMainWindow::loadFunctionButtonWidget() {
+	// ——加载功能条
+	this->m_function_button_widget = new TeacherFunctionButtonWidget(this);
+	this->m_ui.function_button_widget_layout->
+		addWidget(this->m_function_button_widget);
+
+	// ——信号连接
+	Ui::TeacherFunctionButtonWidget button_ui = this->m_function_button_widget->ui();
+
+	this->connect(button_ui.online_classroom_btn, &QPushButton::clicked,
+		this, &TeacherMainWindow::switchOnlineClassroomWidget);
 
 	return;
 }

@@ -6,6 +6,7 @@
 #include <QApplication>
 #include <QStack>
 #include "ui_c_mainWindow.h"
+#include "Core/Model/user.h"
 
 
 class MainWindow : public QMainWindow {
@@ -20,6 +21,8 @@ public:
 	const Ui::MainWindow& ui() const { return this->m_ui; };
 
 	virtual void clearWidget() {};
+
+	void updateUserInfo();
 
 protected: 
 	void setWindowFull();
