@@ -5,9 +5,8 @@ StudentInSpeechRemovableWidget::StudentInSpeechRemovableWidget(QWidget *parent)
 	: QWidget(parent) {
 	m_ui.setupUi(this);
 
-	int x = parent->width() - this->width() - parent->width(),
-		y = 30;
-	this->setGeometry(x, y, this->width(), this->height());
+	this->hide();
+	this->setGeometry(this->x(), 30, this->width(), this->height());
 }
 
 StudentInSpeechRemovableWidget::~StudentInSpeechRemovableWidget() {
@@ -39,7 +38,7 @@ void StudentInSpeechRemovableWidget::mouseMoveEvent(QMouseEvent *event) {
 	int max_x = this->parentWidget()->width() - this->width(),
 		max_y = this->parentWidget()->height() - this->height();
 
-	if (pos.x() >= 0 && pos.y() >= 0 && pos.x() <= max_x && pos.y() <= max_y) {
+	if (pos.x() >= 0 && pos.y() >= 30 && pos.x() <= max_x && pos.y() <= max_y) {
 		this->move(pos);
 	}
 
@@ -70,8 +69,8 @@ void StudentInSpeechRemovableWidget::updatePos() {
 	if (this->pos().x() < 0) {
 		x = 0;
 	}
-	if (this->pos().y() < 0) {
-		y = 0;
+	if (this->pos().y() < 30) {
+		y = 30;
 	}
 	if (this->pos().x() > max_x) {
 		x = max_x;

@@ -82,7 +82,7 @@ void WhiteBoardWidget::sendPaintCommand(QJsonObject &data) {
 	data["account_type"] = AccountType::Student;
 	data["course_id"] = this->m_send_base_info["course_id"].toString();
 	data["lesson_id"] = this->m_send_base_info["lesson_id"].toString();
-	data["uid"] = this->m_send_base_info["uid"].toString();
+	data["uid"] = User::G_UID;
 
 	this->m_paint_connection->realSend(data);
 

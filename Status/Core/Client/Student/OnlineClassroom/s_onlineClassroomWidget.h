@@ -29,8 +29,8 @@ protected:
 	void loadEnterDialog();
 	void loadFunctionButtonWidget();
 	void loadFunctionPageWidget();
-
 	void loadInteractionPageWidget();
+	void loadInSpeechRemovableWidget();
 
 	void handleLessonConnectionRecv() override;
 

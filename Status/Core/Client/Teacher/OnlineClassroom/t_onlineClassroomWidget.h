@@ -29,36 +29,23 @@ protected:
 	void loadEnterDialog();
 	void loadFunctionButtonWidget();
 	void loadFunctionPageWidget();
-
 	void loadInteractionPageWidget();
+	void loadHandleRaiseHandWidget();
 
 	void handleLessonConnectionRecv() override;
 
 	void handleCommandCreateLesson(QJsonObject &data);
 	void handleCommandBeginLesson(QJsonObject &data);
 	void handleCommandEndLesson(QJsonObject &data);
-	void handleCommandRaiseHand(QJsonObject &data);
-	void handleCommandResultOfRaiseHand(QJsonObject &data);
-	void handleCommandRemoveMemberFromInSpeech(QJsonObject &data);
 
 	void createLesson(QString &course_id, QString &course_name);
 	void beginLesson();
 	void endLesson();
 
 	void showHandleRaiseHandWidget();
-	void acceptRaiseHand();
-	void refuseRaiseHand();
 
 	TeacherOnlineClassroomFunctionButtonWidget *m_function_button_widget;
 	TeacherHandleRaiseHandWidget *m_handle_raise_hand_widget;
 	TeacherEnterDialog *m_enter_dialog;
 	TeacherInteractionWidget *m_interaction_widget;
-
-	/*
-		|-info(m_rasie_hand_info_list)
-			|-student_id(QString)
-			|-username(QString)
-			|-timestamp(int)
-	*/
-	QList<QMap<QString, QVariant>> m_rasie_hand_info_list;  // 举手信息
 };

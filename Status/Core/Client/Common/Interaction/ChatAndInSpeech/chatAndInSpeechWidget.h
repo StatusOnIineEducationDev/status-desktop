@@ -24,14 +24,18 @@ public:
 	virtual ~ChatAndInSpeechWidget();
 	const Ui::ChatAndInSpeechWidget& ui() const { return this->m_ui; };
 
-	void addMemberToSpeechWidget(const QPixmap &user_pic, const QString &username);
-	void removeMemberFromSpeechWidget(const int row);
+	void addMemberToInSpeech(QMap<QString, QVariant> &info);
+	void removeMemberFromInSpeech();
+	void handleCommandRemoveMemberFromInSpeech(QJsonObject &data);
 
 	void handleCommandSendChatContent(QJsonObject &data);
 	void handleCommandRecvChatContent(QJsonObject &data);
 	void handleCommandChatBan(QJsonObject &data);
 
 protected:
+	void addMemberToSpeechWidget(const QPixmap &user_pic, const QString &username);
+	void removeMemberFromSpeechWidget(const int row);
+
 	void addOtherContentToChatWiget(const QPixmap &user_pic, const QString &username,
 		const QString &content, const int &timestamp);
 	void addMyContentToChatWiget(const QPixmap &user_pic, const QString &username,
@@ -44,4 +48,11 @@ protected:
 	void handleChatError(ChatError chat_error);
 
 	Ui::ChatAndInSpeechWidget m_ui;
+
+	/*
+		|-info(m_in_speech_list)
+			|-student_id(QString)
+			|-username(QString)
+	*/
+	QList<QMap<QString, QVariant>> m_in_speech_list;  // 发言中信息
 };

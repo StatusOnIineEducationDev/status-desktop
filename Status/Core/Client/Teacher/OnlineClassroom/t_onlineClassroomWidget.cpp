@@ -10,6 +10,7 @@ TeacherOnlineClassroomWidget::TeacherOnlineClassroomWidget(QWidget *parent)
 	this->loadEnterDialog();
 	this->loadFunctionButtonWidget();
 	this->loadFunctionPageWidget();
+	this->loadHandleRaiseHandWidget();
 }
 
 TeacherOnlineClassroomWidget::~TeacherOnlineClassroomWidget() {
@@ -17,7 +18,7 @@ TeacherOnlineClassroomWidget::~TeacherOnlineClassroomWidget() {
 }
 
 void TeacherOnlineClassroomWidget::init() {
-	this->m_handle_raise_hand_widget = new TeacherHandleRaiseHandWidget(this);
+	this->m_ui.begin_lesson_btn->setText("开始上课");
 
 	// ——信号绑定
 	this->connect(this->m_ui.begin_lesson_btn, &QPushButton::clicked,
@@ -80,6 +81,26 @@ void TeacherOnlineClassroomWidget::loadInteractionPageWidget() {
 	return;
 }
 
+void TeacherOnlineClassroomWidget::loadHandleRaiseHandWidget() {
+	this->m_handle_raise_hand_widget = new TeacherHandleRaiseHandWidget(this);
+
+	// ——信号绑定
+	this->connect(this->m_handle_raise_hand_widget,
+		&TeacherHandleRaiseHandWidget::lessonConnectionDataReady,
+		this, &TeacherOnlineClassroomWidget::lessonConnectionSend);
+
+	this->connect(this->m_handle_raise_hand_widget, 
+		&TeacherHandleRaiseHandWidget::rasieHandInfoListChange,
+		this->m_function_button_widget, 
+		&TeacherOnlineClassroomFunctionButtonWidget::updateRaiseHandButton);
+	this->connect(this->m_handle_raise_hand_widget,
+		&TeacherHandleRaiseHandWidget::raiseHandAccepted,
+		this->m_interaction_widget->chatAndInSpeechWidget(),
+		&ChatAndInSpeechWidget::addMemberToInSpeech);
+
+	return;
+}
+
 void TeacherOnlineClassroomWidget::handleLessonConnectionRecv() {
 	QJsonObject data = this->m_lesson_connection->recv();
 	TransportCmd cmd = TransportCmd(data["command"].toInt());
@@ -91,13 +112,15 @@ void TeacherOnlineClassroomWidget::handleLessonConnectionRecv() {
 		this->handleCommandBeginLesson(data); break;
 	case TransportCmd::EndLesson: 
 		this->handleCommandEndLesson(data); break;
-	case TransportCmd::RaiseHand:
-		handleCommandRaiseHand(data); break;
-	case TransportCmd::ResultOfRaiseHand:
-		handleCommandResultOfRaiseHand(data); break;
-	case TransportCmd::RemoveMemberFromInSpeech:
-		handleCommandRemoveMemberFromInSpeech(data); break;
 
+	case TransportCmd::RaiseHand:
+		this->m_handle_raise_hand_widget->handleCommandRaiseHand(data); break;
+	case TransportCmd::ResultOfRaiseHand:
+		this->m_handle_raise_hand_widget->handleCommandResultOfRaiseHand(data); break;
+
+	case TransportCmd::RemoveMemberFromInSpeech:
+		this->m_interaction_widget->chatAndInSpeechWidget()->
+			handleCommandRemoveMemberFromInSpeech(data); break;
 	case TransportCmd::SendChatContent: 
 		this->m_interaction_widget->chatAndInSpeechWidget()->
 			handleCommandSendChatContent(data); break;
@@ -181,58 +204,6 @@ void TeacherOnlineClassroomWidget::handleCommandEndLesson(QJsonObject &data) {
 	return;
 }
 
-void TeacherOnlineClassroomWidget::handleCommandRaiseHand(QJsonObject &data) {
-	QMap<QString, QVariant> info;
-	QPixmap user_pic = QPixmap(":/pic/Resources/material/pic/student.png");
-
-	info["student_id"] = data["uid"].toString();
-	info["username"] = data["username"].toString();
-	info["timestamp"] = data["timestamp"].toInt();
-
-	this->m_rasie_hand_info_list.append(info);
-	this->m_handle_raise_hand_widget->addMemberInHandleRaiseHandWidget(user_pic, 
-		data["username"].toString(), data["timestamp"].toInt());
-
-	return;
-}
-
-void TeacherOnlineClassroomWidget::handleCommandResultOfRaiseHand(QJsonObject &data) {
-	QMap<QString, QVariant> info;
-
-	if (ApplicationStatus(data["application_status"].toInt()) == ApplicationStatus::Accepted) {
-		info["student_id"] = data["student_id"].toString();
-		info["username"] = data["username"].toString();
-
-		this->m_in_speech_list.append(info);
-		this->m_interaction_widget->chatAndInSpeechWidget()->
-			addMemberToSpeechWidget(QPixmap(":/pic/Resources/material/pic/student.png"),
-				data["username"].toString());
-	}
-
-	// ——处理handle_raise_hand_widget
-	for (int index = 0; index < this->m_rasie_hand_info_list.count(); index++) {
-		if (this->m_rasie_hand_info_list[index]["student_id"].toString() == data["student_id"].toString()) {
-			this->m_rasie_hand_info_list.removeAt(index);
-			this->m_handle_raise_hand_widget->removeMemberFromSpeechWidget(index);
-			break;
-		}
-	}
-
-	return;
-}
-
-void TeacherOnlineClassroomWidget::handleCommandRemoveMemberFromInSpeech(QJsonObject &data) {
-	for (int index = 0; index < this->m_in_speech_list.count(); index++) {
-		if (this->m_in_speech_list[index]["student_id"].toString() == data["student_id"].toString()) {
-			this->m_in_speech_list.removeAt(index);
-			this->m_handle_raise_hand_widget->removeMemberFromSpeechWidget(index);
-			break;
-		}
-	}
-
-	return;
-}
-
 void TeacherOnlineClassroomWidget::createLesson(QString &course_id, QString &course_name) {
 	QJsonObject request_json_obj;
 
@@ -298,32 +269,3 @@ void TeacherOnlineClassroomWidget::showHandleRaiseHandWidget() {
 	return;
 }
 
-void TeacherOnlineClassroomWidget::acceptRaiseHand() {
-	QJsonObject request_json_obj;
-	int row = this->m_handle_raise_hand_widget->ui().raise_hand_view->currentRow();
-
-	if (row != -1) {
-		request_json_obj["command"] = TransportCmd::ResultOfRaiseHand;
-		request_json_obj["application_status"] = ApplicationStatus::Accepted;
-		request_json_obj["student_id"] = 
-			m_rasie_hand_info_list[row]["student_id"].toString();
-		this->lessonConnectionSend(request_json_obj);
-	}
-
-	return;
-}
-
-void TeacherOnlineClassroomWidget::refuseRaiseHand() {
-	QJsonObject request_json_obj;
-	int row = this->m_handle_raise_hand_widget->ui().raise_hand_view->currentRow();
-
-	if (row != -1) {
-		request_json_obj["command"] = TransportCmd::ResultOfRaiseHand;
-		request_json_obj["application_status"] = ApplicationStatus::Refused;
-		request_json_obj["student_id"] = 
-			m_rasie_hand_info_list[row]["student_id"].toString();
-		this->lessonConnectionSend(request_json_obj);
-	}
-
-	return;
-}

@@ -5,13 +5,90 @@ ChatAndInSpeechWidget::ChatAndInSpeechWidget(QWidget *parent)
 	: QWidget(parent) {
 	m_ui.setupUi(this);
 
-	this->connect(this->m_ui.send_btn, &QPushButton::clicked, this, &ChatAndInSpeechWidget::sendChatContent);
-	this->connect(this->m_ui.chat_ban_btn, &QPushButton::clicked, this, &ChatAndInSpeechWidget::chatBan);
-	this->connect(this->m_ui.chat_clear_btn, &QPushButton::clicked, this, &ChatAndInSpeechWidget::chatClear);
+	this->connect(this->m_ui.remove_btn, &QPushButton::clicked,
+		this, &ChatAndInSpeechWidget::removeMemberFromInSpeech);
+
+	this->connect(this->m_ui.send_btn, &QPushButton::clicked, 
+		this, &ChatAndInSpeechWidget::sendChatContent);
+	this->connect(this->m_ui.chat_ban_btn, &QPushButton::clicked, 
+		this, &ChatAndInSpeechWidget::chatBan);
+	this->connect(this->m_ui.chat_clear_btn, &QPushButton::clicked, 
+		this, &ChatAndInSpeechWidget::chatClear);
 }
 
 ChatAndInSpeechWidget::~ChatAndInSpeechWidget() {
 
+}
+
+void ChatAndInSpeechWidget::addMemberToInSpeech(QMap<QString, QVariant> &info) {
+	this->m_in_speech_list.append(info);
+	this->addMemberToSpeechWidget(QPixmap(":/pic/Resources/material/pic/student.png"),
+			info["username"].toString());
+
+	return;
+}
+
+void ChatAndInSpeechWidget::removeMemberFromInSpeech() {
+	QJsonObject request_json_obj;
+	int row = this->m_ui.in_speech_member_view->currentRow();
+
+	if (row != -1) {
+		request_json_obj["command"] = TransportCmd::RemoveMemberFromInSpeech;
+		request_json_obj["student_id"] = m_in_speech_list[row]["student_id"].toString();
+		this->lessonConnectionDataReady(request_json_obj);
+	}
+
+	return;
+}
+
+void ChatAndInSpeechWidget::handleCommandRemoveMemberFromInSpeech(QJsonObject &data) {
+	for (int index = 0; index < this->m_in_speech_list.count(); index++) {
+		if (this->m_in_speech_list[index]["student_id"].toString() == data["student_id"].toString()) {
+			this->m_in_speech_list.removeAt(index);
+			this->removeMemberFromSpeechWidget(index);
+			break;
+		}
+	}
+
+	return;
+}
+
+void ChatAndInSpeechWidget::handleCommandSendChatContent(QJsonObject &data) {
+	QPixmap user_pic = QPixmap(":/pic/Resources/material/pic/student.png");
+
+	this->addMyContentToChatWiget(user_pic, data["username"].toString(),
+		data["text"].toString(), data["chat_timestamp"].toInt());
+
+	return;
+}
+
+void ChatAndInSpeechWidget::handleCommandRecvChatContent(QJsonObject &data) {
+	QPixmap user_pic;
+
+	switch (AccountType(data["account_type"].toInt())) {
+	case AccountType::Teacher:
+		user_pic = QPixmap(":/pic/Resources/material/pic/teacher.png"); break;
+	case AccountType::Student:
+		user_pic = QPixmap(":/pic/Resources/material/pic/student.png");  break;
+	}
+
+	this->addOtherContentToChatWiget(user_pic, data["username"].toString(),
+		data["text"].toString(), data["chat_timestamp"].toInt());
+
+	return;
+}
+
+void ChatAndInSpeechWidget::handleCommandChatBan(QJsonObject &data) {
+	switch (ChatStatus(data["chat_status"].toInt())) {
+	case ChatStatus::ChatFree:
+		this->m_ui.tips_text->setText("");
+		break;
+	case ChatStatus::ChatBaned:
+		this->m_ui.tips_text->setText("全员禁言中");
+		break;
+	}
+
+	return;
 }
 
 void ChatAndInSpeechWidget::addMemberToSpeechWidget(const QPixmap &user_pic,
@@ -20,6 +97,7 @@ void ChatAndInSpeechWidget::addMemberToSpeechWidget(const QPixmap &user_pic,
 	InSpeechMemberItemWidget *item_widget = new InSpeechMemberItemWidget(user_pic, 
 		username, this->m_ui.in_speech_member_view);
 
+	item->setSizeHint(QSize(item_widget->width(), item_widget->height()));
 	this->m_ui.in_speech_member_view->addItem(item);
 	this->m_ui.in_speech_member_view->setItemWidget(item, item_widget);
 
@@ -113,42 +191,4 @@ void ChatAndInSpeechWidget::handleChatError(ChatError chat_error) {
 		this->connect(toast, &Toast::complete, toast, &Toast::deleteLater);
 		break;
 	}
-}
-
-void ChatAndInSpeechWidget::handleCommandSendChatContent(QJsonObject &data) {
-	QPixmap user_pic = QPixmap(":/pic/Resources/material/pic/student.png");
-
-	this->addMyContentToChatWiget(user_pic, data["username"].toString(), 
-		data["text"].toString(), data["chat_timestamp"].toInt());
-
-	return;
-}
-
-void ChatAndInSpeechWidget::handleCommandRecvChatContent(QJsonObject &data) {
-	QPixmap user_pic;
-
-	switch (AccountType(data["account_type"].toInt())) {
-	case AccountType::Teacher:
-		user_pic = QPixmap(":/pic/Resources/material/pic/teacher.png"); break;
-	case AccountType::Student:
-		user_pic = QPixmap(":/pic/Resources/material/pic/student.png");  break;
-	}
-
-	this->addOtherContentToChatWiget(user_pic, data["username"].toString(),
-		data["text"].toString(), data["chat_timestamp"].toInt());
-
-	return;
-}
-
-void ChatAndInSpeechWidget::handleCommandChatBan(QJsonObject &data) {
-	switch (ChatStatus(data["chat_status"].toInt())) {
-	case ChatStatus::ChatFree:
-		this->m_ui.tips_text->setText("");
-		break;
-	case ChatStatus::ChatBaned:
-		this->m_ui.tips_text->setText("全员禁言中");
-		break;
-	}
-
-	return;
 }

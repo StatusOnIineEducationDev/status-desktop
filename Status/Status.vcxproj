@@ -23,20 +23,14 @@
     <QtUic Include="Resources\ui\c_onlineClassroomWidget.ui" />
     <QtUic Include="Resources\ui\t_raiseHandItemWidget.ui" />
     <QtUic Include="Resources\ui\c_whiteBoardWidget.ui" />
-    <QtUic Include="Resources\ui\s_courseManagementWidget.ui" />
     <QtUic Include="Resources\ui\s_functionButtonWidget.ui" />
     <QtUic Include="Resources\ui\s_inSpeechRemovableWidget.ui" />
     <QtUic Include="Resources\ui\s_enterDialog.ui" />
     <QtUic Include="Resources\ui\s_onlineClassroomFunctionButtonWidget.ui" />
-    <QtUic Include="Resources\ui\s_onlineClassroomWidget.ui" />
-    <QtUic Include="Resources\ui\s_mainWindow.ui" />
-    <QtUic Include="Resources\ui\t_courseManagementWidget.ui" />
     <QtUic Include="Resources\ui\t_functionButtonWidget.ui" />
     <QtUic Include="Resources\ui\t_handleRaiseHandWidget.ui" />
     <QtUic Include="Resources\ui\t_enterDialog.ui" />
     <QtUic Include="Resources\ui\t_onlineClassroomFunctionButtonWidget.ui" />
-    <QtUic Include="Resources\ui\t_onlineClassroomWidget.ui" />
-    <QtUic Include="Resources\ui\t_mainWindow.ui" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Core\Client\Common\Interaction\ChatAndInSpeech\chatAndInSpeechWidget.cpp" />

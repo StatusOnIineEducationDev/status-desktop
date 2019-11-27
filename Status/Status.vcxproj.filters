@@ -105,34 +105,16 @@
     <QtUic Include="Resources\ui\c_inSpeechMemberItemWidget.ui">
       <Filter>Resource Files\Ui</Filter>
     </QtUic>
-    <QtUic Include="Resources\ui\s_courseManagementWidget.ui">
-      <Filter>Resource Files\Ui</Filter>
-    </QtUic>
     <QtUic Include="Resources\ui\s_inSpeechRemovableWidget.ui">
-      <Filter>Resource Files\Ui</Filter>
-    </QtUic>
-    <QtUic Include="Resources\ui\s_mainWindow.ui">
       <Filter>Resource Files\Ui</Filter>
     </QtUic>
     <QtUic Include="Resources\ui\s_enterDialog.ui">
       <Filter>Resource Files\Ui</Filter>
     </QtUic>
-    <QtUic Include="Resources\ui\s_onlineClassroomWidget.ui">
-      <Filter>Resource Files\Ui</Filter>
-    </QtUic>
     <QtUic Include="Resources\ui\t_handleRaiseHandWidget.ui">
       <Filter>Resource Files\Ui</Filter>
     </QtUic>
-    <QtUic Include="Resources\ui\t_mainWindow.ui">
-      <Filter>Resource Files\Ui</Filter>
-    </QtUic>
     <QtUic Include="Resources\ui\t_enterDialog.ui">
-      <Filter>Resource Files\Ui</Filter>
-    </QtUic>
-    <QtUic Include="Resources\ui\t_onlineClassroomWidget.ui">
-      <Filter>Resource Files\Ui</Filter>
-    </QtUic>
-    <QtUic Include="Resources\ui\t_courseManagementWidget.ui">
       <Filter>Resource Files\Ui</Filter>
     </QtUic>
     <QtUic Include="Resources\ui\c_chatAndInSpeechWidget.ui">

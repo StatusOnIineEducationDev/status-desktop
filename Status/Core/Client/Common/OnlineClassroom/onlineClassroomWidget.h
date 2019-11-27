@@ -59,10 +59,4 @@ protected:
 			|-course_status(CourseStatus)
 	*/
 	QMap<QString, QVariant> m_room;  // 当前的房间信息
-	/*
-		|-info(m_in_speech_list)
-			|-student_id(QString)
-			|-username(QString)
-	*/
-	QList<QMap<QString, QVariant>> m_in_speech_list;  // 发言中信息
 };

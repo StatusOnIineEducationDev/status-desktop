@@ -10,6 +10,7 @@ StudentOnlineClassroomWidget::StudentOnlineClassroomWidget(QWidget *parent)
 	this->loadEnterDialog();
 	this->loadFunctionButtonWidget();
 	this->loadFunctionPageWidget();
+	this->loadInSpeechRemovableWidget();
 }
 
 StudentOnlineClassroomWidget::~StudentOnlineClassroomWidget() {
@@ -17,7 +18,8 @@ StudentOnlineClassroomWidget::~StudentOnlineClassroomWidget() {
 }
 
 void StudentOnlineClassroomWidget::init() {
-
+	this->m_ui.begin_lesson_btn->setDisabled(true);
+	this->m_ui.begin_lesson_btn->setText("未开始");
 }
 
 void StudentOnlineClassroomWidget::loadEnterDialog() {
@@ -47,6 +49,14 @@ void StudentOnlineClassroomWidget::loadFunctionButtonWidget() {
 	this->m_ui.online_classroom_function_btn_widget_layout->
 		addWidget(this->m_function_button_widget);
 
+	// ——信号连接
+	Ui::StudentOnlineClassroomFunctionButtonWidget btn_ui =
+		this->m_function_button_widget->ui();
+	this->connect(btn_ui.raise_hand_btn, &QPushButton::clicked,
+		this, &StudentOnlineClassroomWidget::raiseHand);
+
+	return;
+
 	return;
 }
 
@@ -62,10 +72,25 @@ void StudentOnlineClassroomWidget::loadInteractionPageWidget() {
 	this->m_interaction_widget = new StudentInteractionWidget(this);
 	this->m_ui.function_tabWidget->addTab(this->m_interaction_widget, "互动");
 
+	this->m_interaction_widget->whiteBoardWidget()->
+		setInteractiveWhiteBoardDisabled(true);
+
 	// ——信号绑定
 	this->connect(this->m_interaction_widget->chatAndInSpeechWidget(),
 		&ChatAndInSpeechWidget::lessonConnectionDataReady,
 		this, &StudentOnlineClassroomWidget::lessonConnectionSend);
+
+	return;
+}
+
+void StudentOnlineClassroomWidget::loadInSpeechRemovableWidget() {
+	this->m_in_speech_removeable_widget = new StudentInSpeechRemovableWidget(this);
+	
+	// ——信号绑定
+	Ui::StudentInSpeechRemovableWidget ui = 
+		this->m_in_speech_removeable_widget->ui();
+	this->connect(ui.end_btn, &QPushButton::clicked,
+		this, &StudentOnlineClassroomWidget::endSpeech);
 
 	return;
 }
@@ -86,7 +111,9 @@ void StudentOnlineClassroomWidget::handleLessonConnectionRecv() {
 	case TransportCmd::ResultOfRaiseHand: 
 		this->handleCommandResultOfRaiseHand(data); break;
 	case TransportCmd::RemoveMemberFromInSpeech: 
-		this->handleCommandRemoveMemberFromInSpeech(data); break;
+		this->handleCommandRemoveMemberFromInSpeech(data); 
+		this->m_interaction_widget->chatAndInSpeechWidget()->
+			handleCommandRemoveMemberFromInSpeech(data); break;
 	case TransportCmd::QuitLesson: 
 		this->handleCommandQuitLesson(data); break;
 
@@ -194,6 +221,8 @@ void StudentOnlineClassroomWidget::handleCommandEndLesson(QJsonObject &data) {
 	// ——结束成功
 	this->m_lesson_timer.stop();
 
+	this->m_ui.begin_lesson_btn->setText("已结束");
+
 	User::G_USER_STATUS = UserStatus::Free;
 
 	toast->setInfoText(QString("课堂已结束"));
@@ -234,10 +263,8 @@ void StudentOnlineClassroomWidget::handleCommandResultOfRaiseHand(QJsonObject &d
 		info["student_id"] = data["student_id"].toString();
 		info["username"] = data["username"].toString();
 
-		this->m_in_speech_list.append(info);
 		this->m_interaction_widget->chatAndInSpeechWidget()->
-			addMemberToSpeechWidget(QPixmap(":/pic/Resources/material/pic/student.png"),
-				data["username"].toString());
+			addMemberToInSpeech(info);
 
 		// ——处理自己的请求被接受
 		if (data["student_id"].toString() == User::G_UID) {
@@ -252,15 +279,6 @@ void StudentOnlineClassroomWidget::handleCommandResultOfRaiseHand(QJsonObject &d
 
 void StudentOnlineClassroomWidget::handleCommandRemoveMemberFromInSpeech(QJsonObject &data) {
 	Toast *toast = new Toast;
-
-	for (int index = 0; index < this->m_in_speech_list.count(); index++) {
-		if (this->m_in_speech_list[index]["student_id"].toString() == data["student_id"].toString()) {
-			this->m_in_speech_list.removeAt(index);
-			this->m_interaction_widget->chatAndInSpeechWidget()->
-				removeMemberFromSpeechWidget(index);
-			break;
-		}
-	}
 
 	// ——处理关于自己的请求
 	if (data["student_id"].toString() == User::G_UID) {
