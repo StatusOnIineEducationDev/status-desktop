@@ -5,7 +5,14 @@ OnlineClassroomWidget::OnlineClassroomWidget(QWidget *parent)
 	: QWidget(parent) {
 	m_ui.setupUi(this);
 
+	this->loadCameraDisplayWidget();
+	this->loadConcentrationAreaChart();
+
 	this->m_ui.function_tabWidget->setAttribute(Qt::WA_StyledBackground);  // tab栏显示背景色
+
+	// ——信号绑定
+	this->connect(&this->m_lesson_timer, &QTimer::timeout,
+		this, &OnlineClassroomWidget::updateLastTime);
 }
 
 OnlineClassroomWidget::~OnlineClassroomWidget() {
@@ -25,6 +32,31 @@ void OnlineClassroomWidget::lessonConnectionSend(QJsonObject &data) {
 	this->m_lesson_connection->realSend(data);
 }
 
+void OnlineClassroomWidget::loadCameraDisplayWidget() {
+	this->m_camera_display_widget = new CameraDisplayWidget(this);
+	this->m_ui.camera_display_widget_layout->addWidget(this->m_camera_display_widget);
+
+	// ——设置用户名
+	this->m_camera_display_widget->ui().username_text->setText(User::G_USERNAME);
+
+	return;
+}
+
+void OnlineClassroomWidget::loadConcentrationAreaChart() {
+	QThread *chart_thread = new QThread(this);
+
+	// ——加载专注度面积图（缩略）
+	this->m_concentration_area_chart = new AreaChartDynamic(QColor(18, 150, 219), this);
+	this->m_ui.concentration_area_chart_min_widget->
+		setChart(this->m_concentration_area_chart);
+	this->m_ui.concentration_area_chart_min_widget->
+		setRenderHint(QPainter::Antialiasing);
+
+	this->m_concentration_area_chart->moveToThread(chart_thread);
+
+	return;
+}
+
 void OnlineClassroomWidget::createLessonConnection() {
 	this->m_lesson_connection = new Connection;
 	QThread *connection_thread = new QThread(this);
@@ -34,7 +66,7 @@ void OnlineClassroomWidget::createLessonConnection() {
 	this->m_lesson_connection->connect(ReadConf::G_SOCKET_HOST, ReadConf::G_SOCKET_PORT);
 
 	// ——信号绑定
-	this->connect(this->m_lesson_connection, &Connection::bufferReadyRead, 
+	this->connect(this->m_lesson_connection, &Connection::bufferReadyRead,
 		this, &OnlineClassroomWidget::handleLessonConnectionRecv);
 
 	return;
@@ -60,6 +92,10 @@ void OnlineClassroomWidget::openCamera() {
 	this->m_camera = new Camera(this);
 
 	this->m_camera->open();
+
+	// ——信号连接
+	this->connect(this->m_camera, &Camera::readyRead,
+		this->m_camera_display_widget, &CameraDisplayWidget::mineCameraDisplay);
 
 	return;
 }
@@ -95,7 +131,7 @@ void OnlineClassroomWidget::sendMineCameraFrame() {
 
 	json_obj["command"] = TransportCmd::StudentCameraFrameData;
 	json_obj["frame_mat"] = base64_str;
-	json_obj["frame_timestamp"] = (int)QDateTime::currentDateTime().toTime_t();
+	json_obj["concentration_timestamp"] = (int)QDateTime::currentDateTime().toTime_t();
 	this->lessonConnectionSend(json_obj);
 
 	return;
@@ -140,12 +176,14 @@ void OnlineClassroomWidget::updateBeginTime(int begin_timestamp) {
 	return;
 }
 
-void OnlineClassroomWidget::updateLastTime(int begin_timestamp, int now_timestamp) {
+void OnlineClassroomWidget::updateLastTime() {
 	/*
 		这里需要准确计时
 		采用时间戳相减计算时间
 	*/
-	this->m_ui.last_time_text->setText(formatTime(now_timestamp - begin_timestamp));
+	this->m_ui.last_time_text->
+		setText(formatTime((int)QDateTime::currentDateTime().toTime_t() 
+			- this->m_room["begin_timestamp"].toInt()));
 
 	return;
 }
@@ -153,6 +191,15 @@ void OnlineClassroomWidget::updateLastTime(int begin_timestamp, int now_timestam
 void OnlineClassroomWidget::updateCourseStatus(CourseStatus &course_status) {
 	// ——更新map
 	this->m_room["course_status"] = course_status;
+
+	return;
+}
+
+void OnlineClassroomWidget::updateDynamicAreaChat(
+	int concentration_timestamp, int concentration_value) {
+	// ——更新专注度图
+	this->m_ui.concentration_text->setText(QString::number(concentration_value));
+	this->m_concentration_area_chart->append(concentration_timestamp, concentration_value);
 
 	return;
 }

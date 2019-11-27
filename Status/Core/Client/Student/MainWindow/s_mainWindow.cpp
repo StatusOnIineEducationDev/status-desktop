@@ -32,6 +32,12 @@ void StudentMainWindow::switchOnlineClassroomWidget() {
 	if (this->m_online_classroom_widget == nullptr) {
 		this->m_online_classroom_widget = new StudentOnlineClassroomWidget(this);  // 动态创建子窗
 		this->m_ui.widget_layout->addWidget(this->m_online_classroom_widget);
+
+		// ——信号绑定
+		this->connect(this->m_online_classroom_widget, 
+			&StudentOnlineClassroomWidget::quitLessonSuccess,
+			this,
+			&StudentMainWindow::switchOnlineClassroomWidget);
 	}
 	this->m_online_classroom_widget->show();
 

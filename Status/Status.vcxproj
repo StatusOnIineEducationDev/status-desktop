@@ -14,6 +14,7 @@
     <QtRcc Include="Status.qrc" />
   </ItemGroup>
   <ItemGroup>
+    <QtUic Include="Resources\ui\c_cameraDisplayWidget.ui" />
     <QtUic Include="Resources\ui\c_chatAndInSpeechWidget.ui" />
     <QtUic Include="Resources\ui\c_chatItemMineWidget.ui" />
     <QtUic Include="Resources\ui\c_chatItemOtherWidget.ui" />
@@ -33,6 +34,7 @@
     <QtUic Include="Resources\ui\t_onlineClassroomFunctionButtonWidget.ui" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Core\Client\Common\CameraDisplay\cameraDisplayWidget.cpp" />
     <ClCompile Include="Core\Client\Common\Interaction\ChatAndInSpeech\chatAndInSpeechWidget.cpp" />
     <ClCompile Include="Core\Client\Common\Interaction\ChatAndInSpeech\chatItemWidget.cpp" />
     <ClCompile Include="Core\Client\Common\Interaction\ChatAndInSpeech\inSpeechMemberItemWidget.cpp" />
@@ -121,6 +123,7 @@
       <IncludePath Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCharts;$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtNetwork;$(QTDIR)\include\QtMultimedia;$(QTDIR)\include\QtMultimediaWidgets;$(QTDIR)\include\QtConcurrent</IncludePath>
       <IncludePath Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCharts;$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtNetwork;$(QTDIR)\include\QtMultimedia;$(QTDIR)\include\QtMultimediaWidgets;$(QTDIR)\include\QtConcurrent</IncludePath>
     </QtMoc>
+    <QtMoc Include="Core\Client\Common\CameraDisplay\cameraDisplayWidget.h" />
     <ClInclude Include="Core\Client\Common\Interaction\ChatAndInSpeech\chatItemWidget.h" />
     <QtMoc Include="Core\Client\Common\Interaction\ChatAndInSpeech\inSpeechMemberItemWidget.h">
       <IncludePath Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCharts;$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtNetwork;$(QTDIR)\include\QtMultimedia;$(QTDIR)\include\QtMultimediaWidgets;$(QTDIR)\include\QtConcurrent</IncludePath>

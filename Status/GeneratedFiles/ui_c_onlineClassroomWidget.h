@@ -30,9 +30,7 @@ public:
     QPushButton *begin_lesson_btn;
     QFrame *frame;
     QGridLayout *gridLayout_7;
-    QFrame *camera_widget_frame;
-    QGridLayout *gridLayout_18;
-    QGridLayout *camera_widget_layout;
+    QGridLayout *camera_display_widget_layout;
     QScrollArea *scrollArea;
     QWidget *scrollAreaWidgetContents;
     QGridLayout *gridLayout_8;
@@ -159,24 +157,10 @@ public:
         gridLayout_7->setSpacing(0);
         gridLayout_7->setObjectName(QString::fromUtf8("gridLayout_7"));
         gridLayout_7->setContentsMargins(0, 0, 0, 0);
-        camera_widget_frame = new QFrame(frame);
-        camera_widget_frame->setObjectName(QString::fromUtf8("camera_widget_frame"));
-        camera_widget_frame->setMinimumSize(QSize(200, 130));
-        camera_widget_frame->setMaximumSize(QSize(130, 16777215));
-        camera_widget_frame->setStyleSheet(QString::fromUtf8("border: none;"));
-        camera_widget_frame->setFrameShape(QFrame::StyledPanel);
-        camera_widget_frame->setFrameShadow(QFrame::Raised);
-        gridLayout_18 = new QGridLayout(camera_widget_frame);
-        gridLayout_18->setSpacing(0);
-        gridLayout_18->setObjectName(QString::fromUtf8("gridLayout_18"));
-        gridLayout_18->setContentsMargins(0, 0, 0, 0);
-        camera_widget_layout = new QGridLayout();
-        camera_widget_layout->setObjectName(QString::fromUtf8("camera_widget_layout"));
+        camera_display_widget_layout = new QGridLayout();
+        camera_display_widget_layout->setObjectName(QString::fromUtf8("camera_display_widget_layout"));
 
-        gridLayout_18->addLayout(camera_widget_layout, 0, 0, 1, 1);
-
-
-        gridLayout_7->addWidget(camera_widget_frame, 2, 5, 1, 1);
+        gridLayout_7->addLayout(camera_display_widget_layout, 2, 5, 1, 1);
 
         scrollArea = new QScrollArea(frame);
         scrollArea->setObjectName(QString::fromUtf8("scrollArea"));
@@ -188,7 +172,7 @@ public:
         scrollArea->setWidgetResizable(true);
         scrollAreaWidgetContents = new QWidget();
         scrollAreaWidgetContents->setObjectName(QString::fromUtf8("scrollAreaWidgetContents"));
-        scrollAreaWidgetContents->setGeometry(QRect(0, 0, 198, 461));
+        scrollAreaWidgetContents->setGeometry(QRect(0, 0, 198, 589));
         scrollAreaWidgetContents->setMinimumSize(QSize(198, 0));
         scrollAreaWidgetContents->setMaximumSize(QSize(198, 16777215));
         scrollAreaWidgetContents->setStyleSheet(QString::fromUtf8("QWidget {\n"

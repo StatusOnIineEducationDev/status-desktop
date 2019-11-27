@@ -89,6 +89,9 @@
     <Filter Include="Core\Client\Teacher\OnlineClassroom\HandleRaiseHand">
       <UniqueIdentifier>{ec96f35a-d736-4f0d-a414-2289d57f6e2e}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Core\Client\Common\CameraDisplay">
+      <UniqueIdentifier>{65393905-1442-47e4-af9a-05a6595c319c}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <QtRcc Include="Status.qrc">
@@ -145,6 +148,9 @@
       <Filter>Resource Files\Ui</Filter>
     </QtUic>
     <QtUic Include="Resources\ui\t_raiseHandItemWidget.ui">
+      <Filter>Resource Files\Ui</Filter>
+    </QtUic>
+    <QtUic Include="Resources\ui\c_cameraDisplayWidget.ui">
       <Filter>Resource Files\Ui</Filter>
     </QtUic>
   </ItemGroup>
@@ -261,6 +267,9 @@
     <ClCompile Include="Core\Client\Teacher\OnlineClassroom\HandleRaiseHand\t_raiseHandItemWidget.cpp">
       <Filter>Core\Client\Teacher\OnlineClassroom\HandleRaiseHand</Filter>
     </ClCompile>
+    <ClCompile Include="Core\Client\Common\CameraDisplay\cameraDisplayWidget.cpp">
+      <Filter>Core\Client\Common\CameraDisplay</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="Core\Network\socket.h">
@@ -352,6 +361,9 @@
     </QtMoc>
     <QtMoc Include="Core\Client\Teacher\OnlineClassroom\Enter\t_enterDialog.h">
       <Filter>Core\Client\Teacher\OnlineClassroom\Enter</Filter>
+    </QtMoc>
+    <QtMoc Include="Core\Client\Common\CameraDisplay\cameraDisplayWidget.h">
+      <Filter>Core\Client\Common\CameraDisplay</Filter>
     </QtMoc>
   </ItemGroup>
   <ItemGroup>

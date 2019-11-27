@@ -38,10 +38,11 @@ protected:
 	void handleCommandBeginLesson(QJsonObject &data);
 	void handleCommandConcentrationData(QJsonObject &data);
 	void handleCommandEndLesson(QJsonObject &data);
+	void handleCommandQuitLesson(QJsonObject &data);
 	void handleCommandRaiseHand(QJsonObject &data);
 	void handleCommandResultOfRaiseHand(QJsonObject &data);
 	void handleCommandRemoveMemberFromInSpeech(QJsonObject &data);
-	void handleCommandQuitLesson(QJsonObject &data);
+	void handleCommandConcentrationFinalData(QJsonObject &data);
 
 	void joinInLesson(QString &course_id, QString &course_name);
 	void lessonBegin();

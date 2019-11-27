@@ -5,6 +5,8 @@
 #include <QTimer>
 #include <QJsonObject>
 #include "ui_c_onlineClassroomWidget.h"
+#include "../CameraDisplay/cameraDisplayWidget.h"
+#include "Core/Component/Chart/areaChartDynamic.h"
 #include "Core/Tools/tools.h"
 #include "Core/Tools/base64.h"
 #include "Core/Hardware/camera.h"
@@ -27,6 +29,9 @@ public:
 	void lessonConnectionSend(QJsonObject &data);
 
 protected:
+	void loadCameraDisplayWidget();
+	void loadConcentrationAreaChart();
+
 	void createLessonConnection();
 	void distroyLessonConnection();
 	virtual void handleLessonConnectionRecv() {};
@@ -39,10 +44,14 @@ protected:
 		QString &lesson_id, QString &teacher_name, QString &teacher_id, 
 		CourseStatus &course_status, int create_timestamp, int begin_timestamp = -1);
 	void updateBeginTime(int begin_timestamp);
-	void updateLastTime(int begin_timestamp, int now_timestamp);
+	void updateLastTime();
 	void updateCourseStatus(CourseStatus &course_status);
+	void updateDynamicAreaChat(int concentration_timestamp, int concentration_value);
 
 	Ui::OnlineClassroomWidget m_ui;
+
+	CameraDisplayWidget *m_camera_display_widget;
+	AreaChartDynamic *m_concentration_area_chart;  // 专注度面积图（缩略）
 
 	Camera *m_camera;  // 摄像头对象
 	QTimer m_lesson_timer;  // 1秒定时器
@@ -59,4 +68,13 @@ protected:
 			|-course_status(CourseStatus)
 	*/
 	QMap<QString, QVariant> m_room;  // 当前的房间信息
+		/*
+		|-info(m_final_data_list)
+			|-concentration_value(int)
+			|-fatigue_value(int)
+			|-toward_score(int)
+			|-emotion_score(int)
+			|-concentration_timestamp(int)
+	*/
+	QList<QMap<QString, QVariant>> m_final_data_list;  // 专注度数据
 };

@@ -20,6 +20,10 @@ StudentOnlineClassroomWidget::~StudentOnlineClassroomWidget() {
 void StudentOnlineClassroomWidget::init() {
 	this->m_ui.begin_lesson_btn->setDisabled(true);
 	this->m_ui.begin_lesson_btn->setText("未开始");
+
+	// ——信号绑定
+	this->connect(&this->m_lesson_timer, &QTimer::timeout, 
+		this, &StudentOnlineClassroomWidget::sendMineCameraFrame);
 }
 
 void StudentOnlineClassroomWidget::loadEnterDialog() {
@@ -38,6 +42,7 @@ void StudentOnlineClassroomWidget::loadEnterDialog() {
 		course_list.append(*course);
 	}
 	this->m_enter_dialog->loadData(course_list);
+	this->m_enter_dialog->setModal(true);  // 模态（这里与直接用exec()有区别）
 	this->m_enter_dialog->show();
 
 	return;
@@ -52,10 +57,10 @@ void StudentOnlineClassroomWidget::loadFunctionButtonWidget() {
 	// ——信号连接
 	Ui::StudentOnlineClassroomFunctionButtonWidget btn_ui =
 		this->m_function_button_widget->ui();
+	this->connect(btn_ui.quit_lesson_btn, &QPushButton::clicked,
+		this, &StudentOnlineClassroomWidget::quitLesson);
 	this->connect(btn_ui.raise_hand_btn, &QPushButton::clicked,
 		this, &StudentOnlineClassroomWidget::raiseHand);
-
-	return;
 
 	return;
 }
@@ -106,6 +111,8 @@ void StudentOnlineClassroomWidget::handleLessonConnectionRecv() {
 		this->handleCommandBeginLesson(data); break;
 	case TransportCmd::EndLesson: 
 		this->handleCommandEndLesson(data); break;
+	case TransportCmd::QuitLesson:
+		this->handleCommandQuitLesson(data); break;
 	case TransportCmd::RaiseHand: 
 		this->handleCommandRaiseHand(data); break;
 	case TransportCmd::ResultOfRaiseHand: 
@@ -114,8 +121,8 @@ void StudentOnlineClassroomWidget::handleLessonConnectionRecv() {
 		this->handleCommandRemoveMemberFromInSpeech(data); 
 		this->m_interaction_widget->chatAndInSpeechWidget()->
 			handleCommandRemoveMemberFromInSpeech(data); break;
-	case TransportCmd::QuitLesson: 
-		this->handleCommandQuitLesson(data); break;
+	case TransportCmd::ConcentrationFinalData:
+		this->handleCommandConcentrationFinalData(data); break;
 
 	case TransportCmd::SendChatContent: 
 		this->m_interaction_widget->chatAndInSpeechWidget()->
@@ -126,10 +133,6 @@ void StudentOnlineClassroomWidget::handleLessonConnectionRecv() {
 	case TransportCmd::ChatBan: 
 		this->m_interaction_widget->chatAndInSpeechWidget()->
 			handleCommandChatBan(data); break;
-	
-	/*case TransportCmd::ConcentrationFinalData: this->m_concentration_controller->handleCommandConcentrationFinalData(data); break;
-	case TransportCmd::ConcentrationRealTimeData: this->m_concentration_controller->handleCommandConcentrationRealTimeData(data); break;*/
-
 	}
 
 	return;
@@ -158,8 +161,8 @@ void StudentOnlineClassroomWidget::handleCommandJoinInLesson(QJsonObject &data) 
 			data["teacher_name"].toString(),
 			data["teacher_id"].toString(), 
 			course_status, 
-			data["create_timestamp"].toInt(),
-			data["begin_timestamp"].toInt());
+			(int)data["create_timestamp"].toDouble(),
+			(int)data["begin_timestamp"].toDouble());
 
 		User::G_USER_STATUS = UserStatus::InClass;
 
@@ -232,6 +235,14 @@ void StudentOnlineClassroomWidget::handleCommandEndLesson(QJsonObject &data) {
 	return;
 }
 
+void StudentOnlineClassroomWidget::handleCommandQuitLesson(QJsonObject &data) {
+	User::G_USER_STATUS = UserStatus::Free;
+
+	emit this->quitLessonSuccess();
+
+	return;
+}
+
 void StudentOnlineClassroomWidget::handleCommandRaiseHand(QJsonObject &data) {
 	Toast *toast = new Toast;
 
@@ -300,10 +311,18 @@ void StudentOnlineClassroomWidget::handleCommandRemoveMemberFromInSpeech(QJsonOb
 	return;
 }
 
-void StudentOnlineClassroomWidget::handleCommandQuitLesson(QJsonObject &data) {
-	this->m_lesson_timer.stop();
-	User::G_USER_STATUS = UserStatus::Free;
-	emit this->quitLessonSuccess();
+void StudentOnlineClassroomWidget::handleCommandConcentrationFinalData(QJsonObject &data) {
+	QMap<QString, QVariant> info;
+
+	info["concentration_value"] = data["concentration_value"].toInt();
+	info["fatigue_value"] = data["fatigue_value"].toInt();
+	info["toward_score"] = data["toward_score"].toInt();
+	info["emotion_score"] = data["emotion_score"].toInt();
+	info["concentration_timestamp"] = data["concentration_timestamp"].toInt();
+	this->m_final_data_list.append(info);
+
+	this->updateDynamicAreaChat(data["concentration_timestamp"].toInt(), 
+		data["concentration_value"].toInt());
 
 	return;
 }
@@ -358,7 +377,6 @@ void StudentOnlineClassroomWidget::quitLesson() {
 		emit this->quitLessonSuccess();
 		break;
 	}
-
 
 	return;
 }

@@ -41,6 +41,7 @@ void TeacherOnlineClassroomWidget::loadEnterDialog() {
 		course_list.append(*course);
 	}
 	this->m_enter_dialog->loadData(course_list);
+	this->m_enter_dialog->setModal(true);  // 模态（这里与直接用exec()有区别）
 	this->m_enter_dialog->show();
 
 	return;
@@ -148,8 +149,7 @@ void TeacherOnlineClassroomWidget::handleCommandCreateLesson(QJsonObject &data) 
 		data["teacher_name"].toString(),
 		data["teacher_id"].toString(), 
 		course_status, 
-		data["create_timestamp"].toInt(),
-		data["begin_timestamp"].toInt());
+		(int)data["create_timestamp"].toDouble());
 
 	User::G_USER_STATUS = UserStatus::InClass;
 

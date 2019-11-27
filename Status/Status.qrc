@@ -89,6 +89,7 @@
         <file>Resources/material/pic/online.png</file>
         <file>Resources/material/pic/waiting.png</file>
         <file>Resources/material/pic/writing.png</file>
+        <file>Resources/material/pic/no_camera.png</file>
     </qresource>
     <qresource prefix="/cursor">
         <file>Resources/material/cursor/rubber.png</file>
