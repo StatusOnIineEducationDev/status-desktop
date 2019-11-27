@@ -5,7 +5,10 @@ TMainWindowController::TMainWindowController(TMainWindow *win, User *user)
 	: m_win(win), m_user(user), m_course_management_controller(nullptr), 
 	m_online_classroom_controller(nullptr) {
 	Ui::TMainWindow ui = this->m_win->ui();
-
+	ui.course_btn->hide();
+	ui.history_btn->hide();
+	ui.document_btn->hide();
+	ui.setting_btn->hide();
 	this->m_win->show();
 
 	this->connect(ui.course_btn, &QPushButton::clicked, this, &TMainWindowController::showCourseManagementWidget);

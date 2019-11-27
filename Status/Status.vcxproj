@@ -17,6 +17,7 @@
     <QtUic Include="Resources\ui\c_chatItemMineWidget.ui" />
     <QtUic Include="Resources\ui\c_chatItemOtherWidget.ui" />
     <QtUic Include="Resources\ui\c_inSpeechMemberItemWidget.ui" />
+    <QtUic Include="Resources\ui\c_loginWindow.ui" />
     <QtUic Include="Resources\ui\c_raiseHandItemWidget.ui" />
     <QtUic Include="Resources\ui\s_courseManagementWidget.ui" />
     <QtUic Include="Resources\ui\s_inSpeechRemovableWidget.ui" />
@@ -31,6 +32,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Core\Client\Common\c_listWidgetItem.cpp" />
+    <ClCompile Include="Core\Client\Common\login.cpp" />
     <ClCompile Include="Core\Client\conf.cpp" />
     <ClCompile Include="Core\Client\Student\CourseManagement\s_courseManagementController.cpp" />
     <ClCompile Include="Core\Client\Student\CourseManagement\s_courseManagementWidget.cpp" />
@@ -174,6 +176,7 @@
       <IncludePath Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCharts;$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtNetwork;$(QTDIR)\include\QtMultimedia;$(QTDIR)\include\QtMultimediaWidgets</IncludePath>
       <IncludePath Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCharts;$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtNetwork;$(QTDIR)\include\QtMultimedia;$(QTDIR)\include\QtMultimediaWidgets</IncludePath>
     </QtMoc>
+    <QtMoc Include="Core\Client\Common\login.h" />
     <ClInclude Include="Core\Client\conf.h" />
     <ClInclude Include="Core\Client\onlineEdu.h" />
     <QtMoc Include="Core\Client\Student\OnlineClassroom\Concentration\s_concentrationController.h">

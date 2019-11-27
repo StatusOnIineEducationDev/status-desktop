@@ -6,6 +6,11 @@ SMainWindowController::SMainWindowController(SMainWindow *win, User *user)
 	m_course_management_controller(nullptr){
 	Ui::SMainWindow ui = this->m_win->ui();
 
+	ui.course_btn->hide();
+	ui.history_btn->hide();
+	ui.document_btn->hide();
+	ui.setting_btn->hide();
+
 	this->m_win->show();
 
 	this->connect(ui.course_btn, &QPushButton::clicked, this, &SMainWindowController::showCourseManagementWidget);

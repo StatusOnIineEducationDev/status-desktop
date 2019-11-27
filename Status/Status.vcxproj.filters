@@ -126,6 +126,9 @@
     <QtUic Include="Resources\ui\t_courseManagementWidget.ui">
       <Filter>Resource Files\Ui</Filter>
     </QtUic>
+    <QtUic Include="Resources\ui\c_loginWindow.ui">
+      <Filter>Resource Files\Ui</Filter>
+    </QtUic>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
@@ -240,6 +243,9 @@
     <ClCompile Include="Core\Client\Teacher\CourseManagement\t_courseManagementWidget.cpp">
       <Filter>Core\Client\Teacher\CourseManagement</Filter>
     </ClCompile>
+    <ClCompile Include="Core\Client\Common\login.cpp">
+      <Filter>Core\Client\Common</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="Core\Network\socket.h">
@@ -334,6 +340,9 @@
     </QtMoc>
     <QtMoc Include="Core\Client\Teacher\CourseManagement\t_courseManagementWidget.h">
       <Filter>Core\Client\Teacher\CourseManagement</Filter>
+    </QtMoc>
+    <QtMoc Include="Core\Client\Common\login.h">
+      <Filter>Core\Client\Common</Filter>
     </QtMoc>
   </ItemGroup>
   <ItemGroup>
