@@ -92,6 +92,15 @@
     <Filter Include="Core\Client\Common\CameraDisplay">
       <UniqueIdentifier>{65393905-1442-47e4-af9a-05a6595c319c}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Core\Client\Common\CourseManagement">
+      <UniqueIdentifier>{0a426a67-fd15-402f-aea6-52446e3303b0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\Client\Student\CourseManagement">
+      <UniqueIdentifier>{48f150d3-98dc-4524-89ed-5a90f0530966}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\Client\Teacher\CourseMangement">
+      <UniqueIdentifier>{80d7c6c1-14c4-4859-b362-ec0e0e6fe87a}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <QtRcc Include="Status.qrc">
@@ -151,6 +160,18 @@
       <Filter>Resource Files\Ui</Filter>
     </QtUic>
     <QtUic Include="Resources\ui\c_cameraDisplayWidget.ui">
+      <Filter>Resource Files\Ui</Filter>
+    </QtUic>
+    <QtUic Include="Resources\ui\c_courseManagementWidget.ui">
+      <Filter>Resource Files\Ui</Filter>
+    </QtUic>
+    <QtUic Include="Resources\ui\s_courseManagementFunctionButtonWidget.ui">
+      <Filter>Resource Files\Ui</Filter>
+    </QtUic>
+    <QtUic Include="Resources\ui\t_courseManagementFunctionButtonWidget.ui">
+      <Filter>Resource Files\Ui</Filter>
+    </QtUic>
+    <QtUic Include="Resources\ui\c_courseBaseWidget.ui">
       <Filter>Resource Files\Ui</Filter>
     </QtUic>
   </ItemGroup>
@@ -270,6 +291,24 @@
     <ClCompile Include="Core\Client\Common\CameraDisplay\cameraDisplayWidget.cpp">
       <Filter>Core\Client\Common\CameraDisplay</Filter>
     </ClCompile>
+    <ClCompile Include="Core\Client\Common\CourseManagement\courseBaseWidget.cpp">
+      <Filter>Core\Client\Common\CourseManagement</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\Client\Common\CourseManagement\courseManagementWidget.cpp">
+      <Filter>Core\Client\Common\CourseManagement</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\Client\Student\CourseManagement\s_courseManagementWidget.cpp">
+      <Filter>Core\Client\Student\CourseManagement</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\Client\Teacher\CourseManagement\t_courseManagementWidget.cpp">
+      <Filter>Core\Client\Teacher\CourseMangement</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\Client\Student\CourseManagement\s_courseManagementFunctionButtonWidget.cpp">
+      <Filter>Core\Client\Student\CourseManagement</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\Client\Teacher\CourseManagement\t_courseManagementFunctionButtonWidget.cpp">
+      <Filter>Core\Client\Teacher\CourseMangement</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="Core\Network\socket.h">
@@ -364,6 +403,24 @@
     </QtMoc>
     <QtMoc Include="Core\Client\Common\CameraDisplay\cameraDisplayWidget.h">
       <Filter>Core\Client\Common\CameraDisplay</Filter>
+    </QtMoc>
+    <QtMoc Include="Core\Client\Common\CourseManagement\courseBaseWidget.h">
+      <Filter>Core\Client\Common\CourseManagement</Filter>
+    </QtMoc>
+    <QtMoc Include="Core\Client\Common\CourseManagement\courseManagementWidget.h">
+      <Filter>Core\Client\Common\CourseManagement</Filter>
+    </QtMoc>
+    <QtMoc Include="Core\Client\Student\CourseManagement\s_courseManagementWidget.h">
+      <Filter>Core\Client\Student\CourseManagement</Filter>
+    </QtMoc>
+    <QtMoc Include="Core\Client\Teacher\CourseManagement\t_courseManagementWidget.h">
+      <Filter>Core\Client\Teacher\CourseMangement</Filter>
+    </QtMoc>
+    <QtMoc Include="Core\Client\Student\CourseManagement\s_courseManagementFunctionButtonWidget.h">
+      <Filter>Core\Client\Student\CourseManagement</Filter>
+    </QtMoc>
+    <QtMoc Include="Core\Client\Teacher\CourseManagement\t_courseManagementFunctionButtonWidget.h">
+      <Filter>Core\Client\Teacher\CourseMangement</Filter>
     </QtMoc>
   </ItemGroup>
   <ItemGroup>

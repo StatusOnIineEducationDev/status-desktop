@@ -57,7 +57,7 @@ public:
     QLabel *room_name_text;
     QSpacerItem *verticalSpacer_5;
     QTabWidget *function_tabWidget;
-    QGridLayout *online_classroom_function_btn_widget_layout;
+    QGridLayout *function_btn_widget_layout;
 
     void setupUi(QWidget *OnlineClassroomWidget)
     {
@@ -456,11 +456,11 @@ public:
 
         gridLayout->addWidget(function_tabWidget, 1, 0, 2, 1);
 
-        online_classroom_function_btn_widget_layout = new QGridLayout();
-        online_classroom_function_btn_widget_layout->setSpacing(0);
-        online_classroom_function_btn_widget_layout->setObjectName(QString::fromUtf8("online_classroom_function_btn_widget_layout"));
+        function_btn_widget_layout = new QGridLayout();
+        function_btn_widget_layout->setSpacing(0);
+        function_btn_widget_layout->setObjectName(QString::fromUtf8("function_btn_widget_layout"));
 
-        gridLayout->addLayout(online_classroom_function_btn_widget_layout, 0, 0, 1, 2);
+        gridLayout->addLayout(function_btn_widget_layout, 0, 0, 1, 2);
 
 
         retranslateUi(OnlineClassroomWidget);

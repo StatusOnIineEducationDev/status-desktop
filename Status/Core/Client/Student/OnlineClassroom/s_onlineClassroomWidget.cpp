@@ -51,7 +51,7 @@ void StudentOnlineClassroomWidget::loadEnterDialog() {
 void StudentOnlineClassroomWidget::loadFunctionButtonWidget() {
 	// ——加载功能条
 	this->m_function_button_widget = new StudentOnlineClassroomFunctionButtonWidget(this);
-	this->m_ui.online_classroom_function_btn_widget_layout->
+	this->m_ui.function_btn_widget_layout->
 		addWidget(this->m_function_button_widget);
 
 	// ——信号连接

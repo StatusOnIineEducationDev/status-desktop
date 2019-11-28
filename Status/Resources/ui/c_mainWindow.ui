@@ -786,8 +786,38 @@ QPushButton:checked {
  <resources>
   <include location="../../Status.qrc"/>
  </resources>
- <connections/>
- <buttongroups>
-  <buttongroup name="list_buttonGroup"/>
- </buttongroups>
+ <connections>
+  <connection>
+   <sender>close_btn</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>964</x>
+     <y>23</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>994</x>
+     <y>53</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>minus_btn</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>showMinimized()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>874</x>
+     <y>34</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>994</x>
+     <y>111</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
 </ui>

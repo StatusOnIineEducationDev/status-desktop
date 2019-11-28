@@ -1,23 +1,18 @@
 #pragma once
-#include <QtWidgets/QMainWindow>
-#include <QListView>
-#include "ui_s_courseManagementWidget.h"
-#include "Core/Client/Student/s_mainWindow.h"
+#include <QWidget>
+#include "../../Common/CourseManagement/courseManagementWidget.h"
+#include "s_courseManagementFunctionButtonWidget.h"
 
 
-class SCourseManagementWidget : public QWidget {
+class StudentCourseManagementWidget : public CourseManagementWidget {
 	Q_OBJECT
 
-signals:
-	void windowResized();
-
 public:
-	SCourseManagementWidget(SMainWindow *parent = Q_NULLPTR);
-	virtual ~SCourseManagementWidget();
-	const Ui::SCourseManagementWidget& ui() const { return this->m_ui; };
+	StudentCourseManagementWidget(QWidget *parent = nullptr);
+	virtual ~StudentCourseManagementWidget();
 
-	void handleWindowResized() { emit this->windowResized(); };
+protected:
+	void loadFunctionButtonWidget();
 
-private:
-	Ui::SCourseManagementWidget m_ui;
+	StudentCourseManagementFunctionButtonWidget *m_function_button_widget;
 };

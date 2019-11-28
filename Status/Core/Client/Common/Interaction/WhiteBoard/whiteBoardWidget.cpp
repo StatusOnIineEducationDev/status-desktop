@@ -5,7 +5,8 @@ const int PEN_WIDTH = 3;
 const int RUBBER_WIDTH = 20;
 
 WhiteBoardWidget::WhiteBoardWidget(QWidget *parent) 
-	: QWidget(parent), m_board(nullptr), m_interactive_board(nullptr), m_board_id(1) {
+	: QWidget(parent), m_paint_connection(nullptr), m_board(nullptr), 
+	m_interactive_board(nullptr), m_board_id(1) {
 	m_ui.setupUi(this);
 
 	this->initWhiteBoardArea();

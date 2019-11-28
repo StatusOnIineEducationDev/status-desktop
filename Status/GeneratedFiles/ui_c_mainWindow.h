@@ -12,7 +12,6 @@
 #include <QtCore/QVariant>
 #include <QtGui/QIcon>
 #include <QtWidgets/QApplication>
-#include <QtWidgets/QButtonGroup>
 #include <QtWidgets/QFrame>
 #include <QtWidgets/QGridLayout>
 #include <QtWidgets/QHBoxLayout>
@@ -59,7 +58,6 @@ public:
     QFrame *line;
     QGridLayout *function_button_widget_layout;
     QSpacerItem *verticalSpacer;
-    QButtonGroup *list_buttonGroup;
 
     void setupUi(QMainWindow *MainWindow)
     {
@@ -414,6 +412,8 @@ public:
         MainWindow->setCentralWidget(centralwidget);
 
         retranslateUi(MainWindow);
+        QObject::connect(close_btn, SIGNAL(clicked()), MainWindow, SLOT(close()));
+        QObject::connect(minus_btn, SIGNAL(clicked()), MainWindow, SLOT(showMinimized()));
 
         QMetaObject::connectSlotsByName(MainWindow);
     } // setupUi

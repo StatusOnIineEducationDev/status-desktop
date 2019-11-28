@@ -2,7 +2,8 @@
 
 
 OnlineClassroomWidget::OnlineClassroomWidget(QWidget *parent)
-	: QWidget(parent) {
+	: QWidget(parent), m_camera_display_widget(nullptr), 
+	m_concentration_area_chart(nullptr), m_camera(nullptr), m_lesson_connection(nullptr) {
 	m_ui.setupUi(this);
 
 	this->loadCameraDisplayWidget();

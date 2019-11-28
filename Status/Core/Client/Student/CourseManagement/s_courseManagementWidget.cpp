@@ -1,13 +1,21 @@
 #include "s_courseManagementWidget.h"
 
-SCourseManagementWidget::SCourseManagementWidget(SMainWindow *parent) : QWidget(parent) {
-	m_ui.setupUi(this);
-
-	m_ui.courses_comboBox->setView(new QListView());  // 这个应该是有关comboBox的样式
-
-	this->connect(parent, &SMainWindow::windowResized, this, &SCourseManagementWidget::handleWindowResized);
+StudentCourseManagementWidget::StudentCourseManagementWidget(QWidget *parent)
+	: CourseManagementWidget(parent) {
+	this->loadFunctionButtonWidget();
 }
 
-SCourseManagementWidget::~SCourseManagementWidget() {
+StudentCourseManagementWidget::~StudentCourseManagementWidget() {
 
+}
+
+void StudentCourseManagementWidget::loadFunctionButtonWidget() {
+	// ——加载功能条
+	this->m_function_button_widget = new StudentCourseManagementFunctionButtonWidget(this);
+	this->m_ui.function_btn_widget_layout->
+		addWidget(this->m_function_button_widget);
+
+	// ——信号连接
+
+	return;
 }

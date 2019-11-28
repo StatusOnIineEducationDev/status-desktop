@@ -734,7 +734,7 @@ QTabWidget#function_tabWidget::tab-bar {
     </widget>
    </item>
    <item row="0" column="0" colspan="2">
-    <layout class="QGridLayout" name="online_classroom_function_btn_widget_layout">
+    <layout class="QGridLayout" name="function_btn_widget_layout">
      <property name="spacing">
       <number>0</number>
      </property>

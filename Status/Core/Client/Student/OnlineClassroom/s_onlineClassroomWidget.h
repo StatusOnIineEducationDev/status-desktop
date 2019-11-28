@@ -53,6 +53,7 @@ protected:
 	void endSpeech();
 
 	StudentOnlineClassroomFunctionButtonWidget *m_function_button_widget;
+
 	StudentInSpeechRemovableWidget *m_in_speech_removeable_widget;
 	StudentEnterDialog *m_enter_dialog;
 	StudentInteractionWidget *m_interaction_widget;
