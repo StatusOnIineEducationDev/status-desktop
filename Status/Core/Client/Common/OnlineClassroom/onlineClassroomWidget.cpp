@@ -16,7 +16,8 @@ OnlineClassroomWidget::OnlineClassroomWidget(QWidget *parent)
 }
 
 OnlineClassroomWidget::~OnlineClassroomWidget() {
-
+	this->distroyCamera();
+	this->distroyLessonConnection();
 }
 
 void OnlineClassroomWidget::lessonConnectionSend(QJsonObject &data) {
@@ -43,16 +44,12 @@ void OnlineClassroomWidget::loadCameraDisplayWidget() {
 }
 
 void OnlineClassroomWidget::loadConcentrationAreaChart() {
-	QThread *chart_thread = new QThread(this);
-
 	// ——加载专注度面积图（缩略）
 	this->m_concentration_area_chart = new AreaChartDynamic(QColor(18, 150, 219), this);
 	this->m_ui.concentration_area_chart_min_widget->
 		setChart(this->m_concentration_area_chart);
 	this->m_ui.concentration_area_chart_min_widget->
 		setRenderHint(QPainter::Antialiasing);
-
-	this->m_concentration_area_chart->moveToThread(chart_thread);
 
 	return;
 }

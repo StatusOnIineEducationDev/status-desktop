@@ -12,7 +12,7 @@ WhiteBoardWidget::WhiteBoardWidget(QWidget *parent)
 }
 
 WhiteBoardWidget::~WhiteBoardWidget() {
-	
+	this->distroyPaintConnection();
 }
 
 void WhiteBoardWidget::createPaintConnection(QString &course_id, QString &lesson_id) {
