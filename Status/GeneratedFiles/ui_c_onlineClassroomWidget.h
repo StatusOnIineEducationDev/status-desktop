@@ -56,8 +56,8 @@ public:
     QLabel *last_time_text;
     QLabel *room_name_text;
     QSpacerItem *verticalSpacer_5;
-    QTabWidget *function_tabWidget;
     QGridLayout *function_btn_widget_layout;
+    QTabWidget *function_tabWidget;
 
     void setupUi(QWidget *OnlineClassroomWidget)
     {
@@ -66,7 +66,7 @@ public:
         OnlineClassroomWidget->resize(825, 625);
         OnlineClassroomWidget->setMinimumSize(QSize(825, 625));
         OnlineClassroomWidget->setStyleSheet(QString::fromUtf8("QWidget#OnlineClassroomWidget {\n"
-"	background: #ffffff;\n"
+"	background: #fafafa;\n"
 "}"));
         gridLayout = new QGridLayout(OnlineClassroomWidget);
         gridLayout->setSpacing(0);
@@ -177,7 +177,7 @@ public:
         scrollAreaWidgetContents->setMaximumSize(QSize(198, 16777215));
         scrollAreaWidgetContents->setStyleSheet(QString::fromUtf8("QWidget {\n"
 "	border: none;\n"
-"	background-color: #ffffff;\n"
+"	background-color: #fafafa;\n"
 "}"));
         gridLayout_8 = new QGridLayout(scrollAreaWidgetContents);
         gridLayout_8->setObjectName(QString::fromUtf8("gridLayout_8"));
@@ -422,6 +422,12 @@ public:
 
         gridLayout->addWidget(frame, 2, 1, 1, 1);
 
+        function_btn_widget_layout = new QGridLayout();
+        function_btn_widget_layout->setSpacing(0);
+        function_btn_widget_layout->setObjectName(QString::fromUtf8("function_btn_widget_layout"));
+
+        gridLayout->addLayout(function_btn_widget_layout, 0, 0, 1, 2);
+
         function_tabWidget = new QTabWidget(OnlineClassroomWidget);
         function_tabWidget->setObjectName(QString::fromUtf8("function_tabWidget"));
         function_tabWidget->setFont(font1);
@@ -435,7 +441,7 @@ public:
 "}\n"
 "\n"
 "QTabWidget {\n"
-"	background: #ffffff;\n"
+"	background: #fafafa;\n"
 "}\n"
 "\n"
 "QTabBar::tab:hover {\n"
@@ -455,12 +461,6 @@ public:
 "}"));
 
         gridLayout->addWidget(function_tabWidget, 1, 0, 2, 1);
-
-        function_btn_widget_layout = new QGridLayout();
-        function_btn_widget_layout->setSpacing(0);
-        function_btn_widget_layout->setObjectName(QString::fromUtf8("function_btn_widget_layout"));
-
-        gridLayout->addLayout(function_btn_widget_layout, 0, 0, 1, 2);
 
 
         retranslateUi(OnlineClassroomWidget);

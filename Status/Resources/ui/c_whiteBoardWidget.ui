@@ -136,7 +136,7 @@
 	border-bottom: none;
 	border-top-left-radius: 5px;
 	border-top-right-radius: 5px;
-	background-color: #FCFCFC;
+	background: #ffffff;
 }
 
 QPushButton:hover {
@@ -192,7 +192,7 @@ QPushButton:checked {
          <string notr="true">QPushButton {
 	border: 1px solid #E8ECEC;
 	border-bottom: none;
-	background-color: #FCFCFC;
+	background: #ffffff;
 }
 
 QPushButton:hover {
@@ -248,7 +248,7 @@ QPushButton:checked {
          <string notr="true">QPushButton {
 	border: 1px solid #E8ECEC;
 	border-bottom: none;
-	background-color: #FCFCFC;
+	background: #ffffff;
 }
 
 QPushButton:hover {
@@ -303,7 +303,7 @@ QPushButton:checked {
         <property name="styleSheet">
          <string notr="true">QPushButton {
 	border: 5px solid #E8ECEC;
-	background-color: #FCFCFC;
+	background: #ffffff;
 }
 
 QPushButton:hover {
@@ -359,7 +359,7 @@ QPushButton:checked {
          <string notr="true">QPushButton {
 	border: 1px solid #E8ECEC;
 	border-bottom: none;
-	background-color: #FCFCFC;
+	background: #ffffff;
 }
 
 QPushButton:hover {
@@ -415,7 +415,7 @@ QPushButton:checked {
          <string notr="true">QPushButton {
 	border: 1px solid #E8ECEC;
 	border-bottom: none;
-	background-color: #FCFCFC;
+	background: #ffffff;
 }
 
 QPushButton:hover {
@@ -471,7 +471,7 @@ QPushButton:checked {
          <string notr="true">QPushButton {
 	border: 1px solid #E8ECEC;
 	border-bottom: none;
-	background-color: #FCFCFC;
+	background: #ffffff;
 }
 
 QPushButton:hover {
@@ -527,7 +527,7 @@ QPushButton:checked {
          <string notr="true">QPushButton {
 	border: 1px solid #E8ECEC;
 	border-bottom: none;
-	background-color: #FCFCFC;
+	background: #ffffff;
 }
 
 QPushButton:hover {
@@ -583,7 +583,7 @@ QPushButton:checked {
          <string notr="true">QPushButton {
 	border: 1px solid #E8ECEC;
 	border-bottom: none;
-	background-color: #FCFCFC;
+	background: #ffffff;
 }
 
 QPushButton:hover {
@@ -636,7 +636,7 @@ QPushButton:pressed {
          <string notr="true">QPushButton {
 	border: 1px solid #E8ECEC;
 	border-bottom: none;
-	background-color: #FCFCFC;
+	background: #ffffff;
 }
 
 QPushButton:hover {
@@ -690,7 +690,7 @@ QPushButton:pressed {
 	border: 1px solid #E8ECEC;
 	border-bottom-left-radius: 5px;
 	border-bottom-right-radius: 5px;
-	background-color: #FCFCFC;
+	background: #ffffff;
 }
 
 QPushButton:hover {
@@ -947,6 +947,7 @@ QSlider::sub-page:horizontal {
         </property>
         <property name="styleSheet">
          <string notr="true">QLineEdit {
+	background: #ffffff;
 	border: 1px solid #E8ECEC;
 }</string>
         </property>
@@ -1076,6 +1077,7 @@ QSlider::sub-page:horizontal {
         </property>
         <property name="styleSheet">
          <string notr="true">QLineEdit {
+	background: #ffffff;
 	border: 1px solid #E8ECEC;
 }</string>
         </property>

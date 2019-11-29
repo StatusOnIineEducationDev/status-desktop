@@ -54,7 +54,7 @@ public:
         course_base_frame->setMinimumSize(QSize(0, 0));
         course_base_frame->setMaximumSize(QSize(16777215, 100));
         course_base_frame->setStyleSheet(QString::fromUtf8("QFrame {\n"
-"	background-color: #ffffff;\n"
+"	background: #fafafa;\n"
 "	border-bottom: 1px solid #E8ECEC;\n"
 "}"));
         course_base_frame->setFrameShape(QFrame::StyledPanel);
@@ -81,7 +81,7 @@ public:
         courses_comboBox->setStyleSheet(QString::fromUtf8("QComboBox {\n"
 "	color: #333333;\n"
 "	border: none;\n"
-"	background-color: #ffffff;\n"
+"	background: #fafafa;\n"
 "}\n"
 "\n"
 "QComboBox::down-arrow {\n"

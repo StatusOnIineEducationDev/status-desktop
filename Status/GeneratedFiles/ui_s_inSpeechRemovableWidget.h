@@ -59,7 +59,7 @@ public:
         main_area->setStyleSheet(QString::fromUtf8("QFrame#main_area {\n"
 "	border: none;\n"
 "	border-radius: 22px;\n"
-"	background: #ffffff;\n"
+"	background: #fafafa;\n"
 "}"));
         main_area->setFrameShape(QFrame::StyledPanel);
         main_area->setFrameShadow(QFrame::Raised);

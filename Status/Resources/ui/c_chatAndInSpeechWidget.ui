@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>238</width>
-    <height>559</height>
+    <width>240</width>
+    <height>565</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -45,7 +45,7 @@
      </property>
      <property name="styleSheet">
       <string notr="true">QFrame {
-	background-color: #f0f0f0;
+	background: #fafafa;
 }
 
 /*整体*/
@@ -189,9 +189,8 @@ QPushButton:hover {
           <widget class="QListWidget" name="chat_view">
            <property name="styleSheet">
             <string notr="true">QListWidget {
-	border: none;
-	border-bottom: 1px solid #E8ECEC;
-	background-color: #F8F8F8;
+	border: 1px solid #E8ECEC;
+	background: #ffffff;
 }
 
 </string>
@@ -250,8 +249,8 @@ QPushButton:hover {
            </property>
            <property name="styleSheet">
             <string notr="true">QLineEdit {
-	border: none;
-	background-color: #F8F8F8;
+	border: 1px solid #E8ECEC;
+	background: #ffffff;
 }</string>
            </property>
            <property name="placeholderText">
@@ -269,8 +268,10 @@ QPushButton:hover {
            </property>
            <property name="styleSheet">
             <string notr="true">QFrame {
-	border: none;
-	background-color: #F8F8F8;
+	border: 1px solid #E8ECEC;
+	border-top: none;
+	border-bottom: none;
+	background: #ffffff;
 }</string>
            </property>
            <property name="frameShape">
@@ -353,7 +354,8 @@ QPushButton:checked {
                </font>
               </property>
               <property name="styleSheet">
-               <string notr="true">color: red;</string>
+               <string notr="true">color: red;
+border: none;</string>
               </property>
               <property name="text">
                <string/>
@@ -475,9 +477,8 @@ QPushButton:checked {
           <widget class="QListWidget" name="in_speech_member_view">
            <property name="styleSheet">
             <string notr="true">QListWidget {
-	border: none;
-	border-bottom: 1px solid #E8ECEC;
-	background-color: #F8F8F8;
+	border: 1px solid #E8ECEC;
+	background: #ffffff;
 }</string>
            </property>
            <property name="horizontalScrollBarPolicy">
@@ -495,8 +496,9 @@ QPushButton:checked {
            </property>
            <property name="styleSheet">
             <string notr="true">QFrame {
-	border: none;
-	background-color: #F8F8F8;
+	border: 1px solid #E8ECEC;
+	border-top: none;
+	background: #ffffff;
 }</string>
            </property>
            <property name="frameShape">

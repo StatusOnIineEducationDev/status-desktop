@@ -4,7 +4,9 @@
 CourseManagementWidget::CourseManagementWidget(QWidget *parent)
 	: QWidget(parent) {
 	m_ui.setupUi(this);
-	
+
+	this->m_ui.function_tabWidget->setAttribute(Qt::WA_StyledBackground);  // tabÀ¸ÏÔÊ¾±³¾°É«
+
 	this->loadCourseBaseWidget();
 }
 

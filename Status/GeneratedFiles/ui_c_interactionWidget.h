@@ -31,7 +31,7 @@ public:
         if (InteractionWidget->objectName().isEmpty())
             InteractionWidget->setObjectName(QString::fromUtf8("InteractionWidget"));
         InteractionWidget->resize(625, 565);
-        InteractionWidget->setMinimumSize(QSize(625, 565));
+        InteractionWidget->setMinimumSize(QSize(0, 0));
         gridLayout = new QGridLayout(InteractionWidget);
         gridLayout->setSpacing(0);
         gridLayout->setObjectName(QString::fromUtf8("gridLayout"));

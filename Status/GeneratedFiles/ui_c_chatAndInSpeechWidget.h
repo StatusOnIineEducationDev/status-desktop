@@ -53,7 +53,7 @@ public:
     {
         if (ChatAndInSpeechWidget->objectName().isEmpty())
             ChatAndInSpeechWidget->setObjectName(QString::fromUtf8("ChatAndInSpeechWidget"));
-        ChatAndInSpeechWidget->resize(238, 559);
+        ChatAndInSpeechWidget->resize(240, 565);
         gridLayout = new QGridLayout(ChatAndInSpeechWidget);
         gridLayout->setSpacing(0);
         gridLayout->setObjectName(QString::fromUtf8("gridLayout"));
@@ -63,7 +63,7 @@ public:
         flexible_main_area->setMinimumSize(QSize(238, 0));
         flexible_main_area->setMaximumSize(QSize(238, 16777215));
         flexible_main_area->setStyleSheet(QString::fromUtf8("QFrame {\n"
-"	background-color: #f0f0f0;\n"
+"	background: #fafafa;\n"
 "}\n"
 "\n"
 "/*\346\225\264\344\275\223*/\n"
@@ -104,8 +104,8 @@ public:
 "/*\344\270\212\347\256\255\345\244\264*/\n"
 "QScrollBar::sub-line:vertical {\n"
 "    height: 0px;\n"
-""
-                        "    subcontrol-position: top;\n"
+"   "
+                        " subcontrol-position: top;\n"
 "    subcontrol-origin: margin;\n"
 "}"));
         flexible_main_area->setFrameShape(QFrame::StyledPanel);
@@ -146,9 +146,8 @@ public:
         chat_view = new QListWidget(chat_frame);
         chat_view->setObjectName(QString::fromUtf8("chat_view"));
         chat_view->setStyleSheet(QString::fromUtf8("QListWidget {\n"
-"	border: none;\n"
-"	border-bottom: 1px solid #E8ECEC;\n"
-"	background-color: #F8F8F8;\n"
+"	border: 1px solid #E8ECEC;\n"
+"	background: #ffffff;\n"
 "}\n"
 "\n"
 ""));
@@ -174,8 +173,8 @@ public:
         font.setPointSize(10);
         chat_text_edit->setFont(font);
         chat_text_edit->setStyleSheet(QString::fromUtf8("QLineEdit {\n"
-"	border: none;\n"
-"	background-color: #F8F8F8;\n"
+"	border: 1px solid #E8ECEC;\n"
+"	background: #ffffff;\n"
 "}"));
 
         gridLayout_16->addWidget(chat_text_edit, 2, 0, 1, 1);
@@ -184,8 +183,10 @@ public:
         chat_tool_frame->setObjectName(QString::fromUtf8("chat_tool_frame"));
         chat_tool_frame->setMinimumSize(QSize(0, 30));
         chat_tool_frame->setStyleSheet(QString::fromUtf8("QFrame {\n"
-"	border: none;\n"
-"	background-color: #F8F8F8;\n"
+"	border: 1px solid #E8ECEC;\n"
+"	border-top: none;\n"
+"	border-bottom: none;\n"
+"	background: #ffffff;\n"
 "}"));
         chat_tool_frame->setFrameShape(QFrame::StyledPanel);
         chat_tool_frame->setFrameShadow(QFrame::Raised);
@@ -218,7 +219,8 @@ public:
         tips_text = new QLabel(chat_tool_frame);
         tips_text->setObjectName(QString::fromUtf8("tips_text"));
         tips_text->setFont(font);
-        tips_text->setStyleSheet(QString::fromUtf8("color: red;"));
+        tips_text->setStyleSheet(QString::fromUtf8("color: red;\n"
+"border: none;"));
         tips_text->setAlignment(Qt::AlignCenter);
 
         gridLayout_18->addWidget(tips_text, 0, 1, 1, 1);
@@ -275,9 +277,8 @@ public:
         in_speech_member_view = new QListWidget(in_speech_member_frame);
         in_speech_member_view->setObjectName(QString::fromUtf8("in_speech_member_view"));
         in_speech_member_view->setStyleSheet(QString::fromUtf8("QListWidget {\n"
-"	border: none;\n"
-"	border-bottom: 1px solid #E8ECEC;\n"
-"	background-color: #F8F8F8;\n"
+"	border: 1px solid #E8ECEC;\n"
+"	background: #ffffff;\n"
 "}"));
         in_speech_member_view->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
 
@@ -287,8 +288,9 @@ public:
         in_speech_tool_frame->setObjectName(QString::fromUtf8("in_speech_tool_frame"));
         in_speech_tool_frame->setMinimumSize(QSize(0, 30));
         in_speech_tool_frame->setStyleSheet(QString::fromUtf8("QFrame {\n"
-"	border: none;\n"
-"	background-color: #F8F8F8;\n"
+"	border: 1px solid #E8ECEC;\n"
+"	border-top: none;\n"
+"	background: #ffffff;\n"
 "}"));
         in_speech_tool_frame->setFrameShape(QFrame::StyledPanel);
         in_speech_tool_frame->setFrameShadow(QFrame::Raised);

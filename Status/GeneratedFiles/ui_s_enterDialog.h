@@ -132,7 +132,7 @@ public:
         main_area->setStyleSheet(QString::fromUtf8("QFrame {\n"
 "	border-bottom-left-radius: 4px;\n"
 "	border-bottom-right-radius: 4px;\n"
-"	background-color: #F3F4F8;\n"
+"	background-color: #fafafa;\n"
 "}\n"
 "\n"
 ""));

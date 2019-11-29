@@ -3,6 +3,7 @@
 TeacherCourseManagementWidget::TeacherCourseManagementWidget(QWidget *parent)
 	: CourseManagementWidget(parent) {
 	this->loadFunctionButtonWidget();
+	this->loadCourseOverviewWidget();
 }
 
 TeacherCourseManagementWidget::~TeacherCourseManagementWidget() {
@@ -16,6 +17,16 @@ void TeacherCourseManagementWidget::loadFunctionButtonWidget() {
 		addWidget(this->m_function_button_widget);
 
 	// ——信号连接
+
+	return;
+}
+
+void TeacherCourseManagementWidget::loadCourseOverviewWidget() {
+	// ——加载课程概况页
+	this->m_course_overview_widget = new TeacherCourseOverviewWidget(this);
+	this->m_ui.function_tabWidget->addTab(this->m_course_overview_widget, "课程概况");
+
+	// ——信号绑定
 
 	return;
 }

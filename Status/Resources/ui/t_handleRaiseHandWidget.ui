@@ -69,7 +69,7 @@
          <string notr="true">QFrame#main_area {
 	border: none;
 	border-radius: 5px;
-	background: #ffffff;
+	background: #fafafa;
 }
 
 /*整体*/
@@ -251,7 +251,7 @@ QScrollBar::sub-line:vertical {
            <property name="styleSheet">
             <string notr="true">QListWidget {
 	border: none;
-	background: #ffffff;
+	background: #fafafa;
 }</string>
            </property>
            <property name="horizontalScrollBarPolicy">
@@ -293,7 +293,7 @@ QScrollBar::sub-line:vertical {
 	border-bottom-right-radius: 5px;
 	border-top: 1px solid #E6E6E6;
 	color: #666666;
-	background: #ffffff;
+	background: #fafafa;
 }
 
 QPushButton:hover {
@@ -337,7 +337,7 @@ QPushButton:hover {
 	border-top: 1px solid #E6E6E6;
 	border-right: 1px solid #E6E6E6;
 	color: #0E71A4;
-	background: #ffffff;
+	background: #fafafa;
 }
 
 QPushButton:hover {

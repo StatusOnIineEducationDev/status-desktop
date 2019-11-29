@@ -20,8 +20,8 @@
    <string>Form</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">QWidget#CourseManagementmWidget {
-	background: #ffffff;
+   <string notr="true">QWidget#CourseManagementWidget {
+	background: #fafafa;
 }</string>
   </property>
   <layout class="QGridLayout" name="gridLayout_2">
@@ -40,27 +40,63 @@
    <property name="spacing">
     <number>0</number>
    </property>
-   <item row="1" column="0">
-    <layout class="QGridLayout" name="course_base_widget_layout"/>
-   </item>
-   <item row="2" column="0">
-    <layout class="QGridLayout" name="gridLayout_5"/>
-   </item>
    <item row="0" column="0">
     <layout class="QGridLayout" name="function_btn_widget_layout"/>
    </item>
-   <item row="3" column="0">
-    <spacer name="verticalSpacer">
-     <property name="orientation">
-      <enum>Qt::Vertical</enum>
-     </property>
-     <property name="sizeHint" stdset="0">
+   <item row="2" column="0">
+    <widget class="QTabWidget" name="function_tabWidget">
+     <property name="minimumSize">
       <size>
-       <width>20</width>
-       <height>40</height>
+       <width>0</width>
+       <height>0</height>
       </size>
      </property>
-    </spacer>
+     <property name="font">
+      <font>
+       <family>微软雅黑</family>
+       <pointsize>10</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QTabBar::tab {
+	padding-top: 0px;
+	margin-left: 10px;
+	margin-right: 10px;
+	color: #999999;
+	height: 40px;
+	width: 70px;
+	border: none;
+	background: none;
+}
+
+QTabWidget {
+	background: #fafafa;
+}
+
+QTabBar::tab:hover {
+	border-bottom: 2px solid #999999;
+}
+
+QTabBar::tab:selected {
+	color: #1296db;
+	border-bottom: 2px solid #1296db;
+}
+
+QTabWidget#function_tabWidget::pane {
+	border-top: 1px solid #E8ECEC;
+}
+
+QTabWidget#function_tabWidget::tab-bar {
+	alignment:center;
+}</string>
+     </property>
+     <property name="currentIndex">
+      <number>-1</number>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="0">
+    <layout class="QGridLayout" name="course_base_widget_layout"/>
    </item>
   </layout>
  </widget>

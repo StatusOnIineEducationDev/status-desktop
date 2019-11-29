@@ -66,6 +66,7 @@
         <file>Resources/material/button/create.png</file>
         <file>Resources/material/button/join_in.png</file>
         <file>Resources/material/button/upload_pic.png</file>
+        <file>Resources/material/button/edit.png</file>
     </qresource>
     <qresource prefix="/shadow">
         <file>Resources/material/shadow/980x680_shadow.png</file>

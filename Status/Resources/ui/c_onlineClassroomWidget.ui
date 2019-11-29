@@ -21,7 +21,7 @@
   </property>
   <property name="styleSheet">
    <string notr="true">QWidget#OnlineClassroomWidget {
-	background: #ffffff;
+	background: #fafafa;
 }</string>
   </property>
   <layout class="QGridLayout" name="gridLayout">
@@ -225,7 +225,7 @@ QScrollBar::sub-line:vertical {
          <property name="styleSheet">
           <string notr="true">QWidget {
 	border: none;
-	background-color: #ffffff;
+	background-color: #fafafa;
 }</string>
          </property>
          <layout class="QGridLayout" name="gridLayout_8">
@@ -690,6 +690,13 @@ QScrollBar::sub-line:vertical {
      </layout>
     </widget>
    </item>
+   <item row="0" column="0" colspan="2">
+    <layout class="QGridLayout" name="function_btn_widget_layout">
+     <property name="spacing">
+      <number>0</number>
+     </property>
+    </layout>
+   </item>
    <item row="1" column="0" rowspan="2">
     <widget class="QTabWidget" name="function_tabWidget">
      <property name="font">
@@ -709,7 +716,7 @@ QScrollBar::sub-line:vertical {
 }
 
 QTabWidget {
-	background: #ffffff;
+	background: #fafafa;
 }
 
 QTabBar::tab:hover {
@@ -732,13 +739,6 @@ QTabWidget#function_tabWidget::tab-bar {
       <number>-1</number>
      </property>
     </widget>
-   </item>
-   <item row="0" column="0" colspan="2">
-    <layout class="QGridLayout" name="function_btn_widget_layout">
-     <property name="spacing">
-      <number>0</number>
-     </property>
-    </layout>
    </item>
   </layout>
  </widget>

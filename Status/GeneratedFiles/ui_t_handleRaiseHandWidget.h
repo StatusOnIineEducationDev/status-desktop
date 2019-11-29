@@ -65,7 +65,7 @@ public:
         main_area->setStyleSheet(QString::fromUtf8("QFrame#main_area {\n"
 "	border: none;\n"
 "	border-radius: 5px;\n"
-"	background: #ffffff;\n"
+"	background: #fafafa;\n"
 "}\n"
 "\n"
 "/*\346\225\264\344\275\223*/\n"
@@ -172,7 +172,7 @@ public:
         raise_hand_view->setObjectName(QString::fromUtf8("raise_hand_view"));
         raise_hand_view->setStyleSheet(QString::fromUtf8("QListWidget {\n"
 "	border: none;\n"
-"	background: #ffffff;\n"
+"	background: #fafafa;\n"
 "}"));
         raise_hand_view->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
         raise_hand_view->setVerticalScrollMode(QAbstractItemView::ScrollPerPixel);
@@ -195,7 +195,7 @@ public:
 "	border-bottom-right-radius: 5px;\n"
 "	border-top: 1px solid #E6E6E6;\n"
 "	color: #666666;\n"
-"	background: #ffffff;\n"
+"	background: #fafafa;\n"
 "}\n"
 "\n"
 "QPushButton:hover {\n"
@@ -216,7 +216,7 @@ public:
 "	border-top: 1px solid #E6E6E6;\n"
 "	border-right: 1px solid #E6E6E6;\n"
 "	color: #0E71A4;\n"
-"	background: #ffffff;\n"
+"	background: #fafafa;\n"
 "}\n"
 "\n"
 "QPushButton:hover {\n"

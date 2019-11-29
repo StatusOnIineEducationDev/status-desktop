@@ -1,5 +1,4 @@
 #pragma once
-
 #include <QWidget>
 #include "ui_c_courseManagementWidget.h"
 #include "courseBaseWidget.h"
