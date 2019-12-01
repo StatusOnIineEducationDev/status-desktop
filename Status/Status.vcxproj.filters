@@ -183,6 +183,9 @@
     <QtUic Include="Resources\ui\c_courseOverviewWidget.ui">
       <Filter>Resource Files\Ui</Filter>
     </QtUic>
+    <QtUic Include="Resources\ui\c_textInfoCardWidget.ui">
+      <Filter>Resource Files\Ui</Filter>
+    </QtUic>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
@@ -324,6 +327,9 @@
     <ClCompile Include="Core\Client\Teacher\CourseManagement\CourseOverview\t_courseOverviewWidget.cpp">
       <Filter>Core\Client\Teacher\CourseMangement\CourseOverview</Filter>
     </ClCompile>
+    <ClCompile Include="Core\Client\Common\CourseOverview\textInfoCardWidget.cpp">
+      <Filter>Core\Client\Common\CourseOverview</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="Core\Network\socket.h">
@@ -442,6 +448,9 @@
     </QtMoc>
     <QtMoc Include="Core\Client\Teacher\CourseManagement\CourseOverview\t_courseOverviewWidget.h">
       <Filter>Core\Client\Teacher\CourseMangement\CourseOverview</Filter>
+    </QtMoc>
+    <QtMoc Include="Core\Client\Common\CourseOverview\textInfoCardWidget.h">
+      <Filter>Core\Client\Common\CourseOverview</Filter>
     </QtMoc>
   </ItemGroup>
   <ItemGroup>

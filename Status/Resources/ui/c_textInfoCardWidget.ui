@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>Form</class>
- <widget class="QWidget" name="Form">
+ <class>TextInfoCardWidget</class>
+ <widget class="QWidget" name="TextInfoCardWidget">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -86,6 +86,9 @@ border-bottom-right-radius: 5px;</string>
      <layout class="QGridLayout" name="gridLayout_9">
       <item row="0" column="5">
        <widget class="QPushButton" name="confirm_btn">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
         <property name="sizePolicy">
          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
           <horstretch>0</horstretch>
@@ -98,17 +101,24 @@ border-bottom-right-radius: 5px;</string>
           <pointsize>10</pointsize>
          </font>
         </property>
+        <property name="cursor">
+         <cursorShape>PointingHandCursor</cursorShape>
+        </property>
         <property name="styleSheet">
          <string notr="true">QPushButton {
 	padding: 5px 20px 5px 20px;
 	color: #ffffff;
 	border: none;
 	border-radius: 5px;
-	background-color: #1296db;
+	background: #1296db;
 }
 
 QPushButton:hover {
-	background-color: #0E71A4;
+	background: #0E71A4;
+}
+
+QPushButton:disabled {
+	background-color: #818181;
 }</string>
         </property>
         <property name="text">
@@ -233,12 +243,7 @@ QPushButton:hover {
 	color: #666666;
 	background: #fafafa;
 }
-
-QPlainTextEdit::focus {
-	border: 1px solid #E8ECEC;
-	background: #ffffff;
-	color: #333333;
-}</string>
+</string>
      </property>
      <property name="readOnly">
       <bool>true</bool>

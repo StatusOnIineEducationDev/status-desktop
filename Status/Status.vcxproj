@@ -25,6 +25,7 @@
     <QtUic Include="Resources\ui\c_interactionWidget.ui" />
     <QtUic Include="Resources\ui\c_mainWindow.ui" />
     <QtUic Include="Resources\ui\c_onlineClassroomWidget.ui" />
+    <QtUic Include="Resources\ui\c_textInfoCardWidget.ui" />
     <QtUic Include="Resources\ui\s_courseManagementFunctionButtonWidget.ui" />
     <QtUic Include="Resources\ui\t_courseManagementFunctionButtonWidget.ui" />
     <QtUic Include="Resources\ui\t_raiseHandItemWidget.ui" />
@@ -43,6 +44,7 @@
     <ClCompile Include="Core\Client\Common\CourseManagement\courseBaseWidget.cpp" />
     <ClCompile Include="Core\Client\Common\CourseManagement\courseManagementWidget.cpp" />
     <ClCompile Include="Core\Client\Common\CourseOverview\courseOverviewWidget.cpp" />
+    <ClCompile Include="Core\Client\Common\CourseOverview\textInfoCardWidget.cpp" />
     <ClCompile Include="Core\Client\Common\Interaction\ChatAndInSpeech\chatAndInSpeechWidget.cpp" />
     <ClCompile Include="Core\Client\Common\Interaction\ChatAndInSpeech\chatItemWidget.cpp" />
     <ClCompile Include="Core\Client\Common\Interaction\ChatAndInSpeech\inSpeechMemberItemWidget.cpp" />
@@ -140,6 +142,10 @@
     <QtMoc Include="Core\Client\Common\CourseManagement\courseBaseWidget.h" />
     <QtMoc Include="Core\Client\Common\CourseManagement\courseManagementWidget.h" />
     <QtMoc Include="Core\Client\Common\CourseOverview\courseOverviewWidget.h">
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCharts;$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtNetwork;$(QTDIR)\include\QtMultimedia;$(QTDIR)\include\QtMultimediaWidgets;$(QTDIR)\include\QtConcurrent</IncludePath>
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCharts;$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtNetwork;$(QTDIR)\include\QtMultimedia;$(QTDIR)\include\QtMultimediaWidgets;$(QTDIR)\include\QtConcurrent</IncludePath>
+    </QtMoc>
+    <QtMoc Include="Core\Client\Common\CourseOverview\textInfoCardWidget.h">
       <IncludePath Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCharts;$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtNetwork;$(QTDIR)\include\QtMultimedia;$(QTDIR)\include\QtMultimediaWidgets;$(QTDIR)\include\QtConcurrent</IncludePath>
       <IncludePath Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCharts;$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtNetwork;$(QTDIR)\include\QtMultimedia;$(QTDIR)\include\QtMultimediaWidgets;$(QTDIR)\include\QtConcurrent</IncludePath>
     </QtMoc>

@@ -8,6 +8,7 @@
 #include "Core/Client/onlineEdu.h"
 #include "Core/Client/conf.h"
 
+
 int main(int argc, char *argv[]) {
 	QApplication app(argc, argv);
 
@@ -49,3 +50,15 @@ int main(int argc, char *argv[]) {
 
 	return app.exec();
 }
+
+//#pragma execution_character_set("utf-8")  
+//#include <QtWidgets/QApplication>
+//#include "Core/Client/Common/CourseOverview/textInfoCardWidget.h"
+//int main(int argc, char *argv[]) {
+//	QApplication app(argc, argv);
+//
+//	TextInfoCardWidget* widget = new TextInfoCardWidget;
+//	widget->show();
+//
+//	return app.exec();
+//}
