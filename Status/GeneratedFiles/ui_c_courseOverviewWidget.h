@@ -99,7 +99,7 @@ public:
         scrollAreaWidgetContents->setMinimumSize(QSize(0, 0));
         scrollAreaWidgetContents->setMaximumSize(QSize(1200, 16777215));
         scrollAreaWidgetContents->setStyleSheet(QString::fromUtf8("border: none;\n"
-"background-color: #fafafa;"));
+"background: #ffffff;"));
         gridLayout_2 = new QGridLayout(scrollAreaWidgetContents);
         gridLayout_2->setObjectName(QString::fromUtf8("gridLayout_2"));
         widget_layout = new QVBoxLayout();

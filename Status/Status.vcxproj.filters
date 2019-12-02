@@ -107,6 +107,12 @@
     <Filter Include="Core\Client\Teacher\CourseMangement\CourseOverview">
       <UniqueIdentifier>{f721d7e7-8dd9-4c88-b386-47e47160b6f4}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Core\Client\Common\CourseResource">
+      <UniqueIdentifier>{371b5d43-f4ee-4c03-a4a9-96ac42f2d563}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\Client\Teacher\CourseMangement\CourseResource">
+      <UniqueIdentifier>{ff6d19db-0a49-487d-8b71-76b778b2fd12}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <QtRcc Include="Status.qrc">
@@ -184,6 +190,12 @@
       <Filter>Resource Files\Ui</Filter>
     </QtUic>
     <QtUic Include="Resources\ui\c_textInfoCardWidget.ui">
+      <Filter>Resource Files\Ui</Filter>
+    </QtUic>
+    <QtUic Include="Resources\ui\c_courseResourceWidget.ui">
+      <Filter>Resource Files\Ui</Filter>
+    </QtUic>
+    <QtUic Include="Resources\ui\c_fileItemWidget.ui">
       <Filter>Resource Files\Ui</Filter>
     </QtUic>
   </ItemGroup>
@@ -330,6 +342,15 @@
     <ClCompile Include="Core\Client\Common\CourseOverview\textInfoCardWidget.cpp">
       <Filter>Core\Client\Common\CourseOverview</Filter>
     </ClCompile>
+    <ClCompile Include="Core\Client\Common\CourseResource\courseResourceWidget.cpp">
+      <Filter>Core\Client\Common\CourseResource</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\Client\Teacher\CourseManagement\CourseResource\t_courseResourceWidget.cpp">
+      <Filter>Core\Client\Teacher\CourseMangement\CourseResource</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\Client\Common\CourseResource\fileItemWidget.cpp">
+      <Filter>Core\Client\Common\CourseResource</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="Core\Network\socket.h">
@@ -451,6 +472,15 @@
     </QtMoc>
     <QtMoc Include="Core\Client\Common\CourseOverview\textInfoCardWidget.h">
       <Filter>Core\Client\Common\CourseOverview</Filter>
+    </QtMoc>
+    <QtMoc Include="Core\Client\Common\CourseResource\courseResourceWidget.h">
+      <Filter>Core\Client\Common\CourseResource</Filter>
+    </QtMoc>
+    <QtMoc Include="Core\Client\Teacher\CourseManagement\CourseResource\t_courseResourceWidget.h">
+      <Filter>Core\Client\Teacher\CourseMangement\CourseResource</Filter>
+    </QtMoc>
+    <QtMoc Include="Core\Client\Common\CourseResource\fileItemWidget.h">
+      <Filter>Core\Client\Common\CourseResource</Filter>
     </QtMoc>
   </ItemGroup>
   <ItemGroup>

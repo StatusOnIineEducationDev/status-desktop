@@ -121,7 +121,7 @@ QScrollBar::sub-line:vertical {
       </property>
       <property name="styleSheet">
        <string notr="true">border: none;
-background-color: #fafafa;</string>
+background: #ffffff;</string>
       </property>
       <layout class="QGridLayout" name="gridLayout_2">
        <item row="1" column="0">

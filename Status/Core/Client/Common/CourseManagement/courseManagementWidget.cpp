@@ -17,18 +17,5 @@ void CourseManagementWidget::loadCourseBaseWidget() {
 	this->m_course_base_widget = new CourseBaseWidget(this);
 	this->m_ui.course_base_widget_layout->addWidget(this->m_course_base_widget);
 
-	// ¡ª¡ªÐÅºÅÁ¬½Ó
-	QComboBox *comboBox = this->m_course_base_widget->ui().courses_comboBox;
-	this->connect(comboBox, static_cast<void(QComboBox::*)(int)>(&QComboBox::currentIndexChanged),
-		this, &CourseManagementWidget::emitSignalCourseSwitched);
-
-	return;
-}
-
-void CourseManagementWidget::emitSignalCourseSwitched(const int index) {
-	QString course_id = User::G_COURSES_BASE_LIST->at(index).courseId();
-
-	emit this->courseSwitched(course_id);
-
 	return;
 }

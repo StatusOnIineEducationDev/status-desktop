@@ -6,18 +6,14 @@
 class CourseManagementWidget : public QWidget {
 	Q_OBJECT
 
-signals:
-	void courseSwitched(const QString &course_id);
-
 public:
 	CourseManagementWidget(QWidget *parent = nullptr);
 	~CourseManagementWidget();
 	const Ui::CourseManagementWidget& ui() const { return this->m_ui; };
+	const CourseBaseWidget* courseBaseWidget() const { return this->m_course_base_widget; };
 
 protected:
 	void loadCourseBaseWidget();
-	
-	void emitSignalCourseSwitched(const int index);
 
 	Ui::CourseManagementWidget m_ui;
 

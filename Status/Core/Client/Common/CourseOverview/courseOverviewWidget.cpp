@@ -5,10 +5,18 @@ CourseOverviewWidget::CourseOverviewWidget(QWidget *parent)
 	: QWidget(parent) {
 	m_ui.setupUi(this);
 
+
+	QGraphicsDropShadowEffect *shadow_effect = new QGraphicsDropShadowEffect(this);
+	shadow_effect->setOffset(0, 0);
+	shadow_effect->setColor(Qt::gray);
+	shadow_effect->setBlurRadius(20);
+	this->m_ui.scrollAreaWidgetContents->setGraphicsEffect(shadow_effect);
+
 	qRegisterMetaType<QJsonObject>("QJsonObject&");  //注册QJsonObject&类型
 
 	this->loadIntroductionCardWidget();
 	this->loadNoticeCardWidget();
+	this->m_ui.widget_layout->addStretch();  // 在末尾加个垂直弹簧
 }
 
 CourseOverviewWidget::~CourseOverviewWidget() {
@@ -16,8 +24,8 @@ CourseOverviewWidget::~CourseOverviewWidget() {
 }
 
 void CourseOverviewWidget::updateAllData(const QString &course_id) {
-	this->getIntroductionRequest(course_id);
-	this->getNoticeRequest(course_id);
+	this->getCourseIntroductionRequest(course_id);
+	this->getCourseNoticeRequest(course_id);
 
 	return;
 }
@@ -36,7 +44,7 @@ void CourseOverviewWidget::loadNoticeCardWidget() {
 	this->m_ui.widget_layout->addWidget(this->m_notice_card_widget);
 }
 
-void CourseOverviewWidget::getIntroductionRequest(const QString &course_id) {
+void CourseOverviewWidget::getCourseIntroductionRequest(const QString &course_id) {
 	// ——不变
 	QJsonObject request_json_obj;
 	QString url = "http://" + ReadConf::G_HTTP_HOST + ":"
@@ -54,7 +62,7 @@ void CourseOverviewWidget::getIntroductionRequest(const QString &course_id) {
 	request_json_obj["course_id"] = course_id;
 	request_obj->request(QUrl(url + "/getCourseIntroduction"), request_json_obj);
 	this->connect(request_obj, &HttpRequest::success,
-		this, &CourseOverviewWidget::getIntroductionSuccess);
+		this, &CourseOverviewWidget::getCourseIntroductionSuccess);
 
 	// ——不变
 	this->connect(request_obj, &HttpRequest::complete, request_thread, &QThread::quit);
@@ -65,14 +73,14 @@ void CourseOverviewWidget::getIntroductionRequest(const QString &course_id) {
 	return;
 }
 
-void CourseOverviewWidget::getIntroductionSuccess(QJsonObject &data) {
+void CourseOverviewWidget::getCourseIntroductionSuccess(const QJsonObject &data) {
 	this->m_introduction_card_widget->
 		setContentText(data["introduction_text"].toString());
-	qDebug() << data["introduction_text"].toString();
+
 	return;
 }
 
-void CourseOverviewWidget::getNoticeRequest(const QString &course_id) {
+void CourseOverviewWidget::getCourseNoticeRequest(const QString &course_id) {
 	// ——不变
 	QJsonObject request_json_obj;
 	QString url = "http://" + ReadConf::G_HTTP_HOST + ":"
@@ -90,7 +98,7 @@ void CourseOverviewWidget::getNoticeRequest(const QString &course_id) {
 	request_json_obj["course_id"] = course_id;
 	request_obj->request(QUrl(url + "/getCourseNotice"), request_json_obj);
 	this->connect(request_obj, &HttpRequest::success,
-		this, &CourseOverviewWidget::getNoticeSuccess);
+		this, &CourseOverviewWidget::getCourseNoticeSuccess);
 
 	// ——不变
 	this->connect(request_obj, &HttpRequest::complete, request_thread, &QThread::quit);
@@ -101,9 +109,9 @@ void CourseOverviewWidget::getNoticeRequest(const QString &course_id) {
 	return;
 }
 
-void CourseOverviewWidget::getNoticeSuccess(QJsonObject &data) {
+void CourseOverviewWidget::getCourseNoticeSuccess(const QJsonObject &data) {
 	this->m_notice_card_widget->
 		setContentText(data["notice_text"].toString());
-	qDebug() << data["notice_text"].toString();
+
 	return;
 }

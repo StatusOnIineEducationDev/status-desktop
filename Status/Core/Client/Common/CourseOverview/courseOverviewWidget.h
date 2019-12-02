@@ -2,6 +2,7 @@
 #pragma execution_character_set("utf-8")  
 #include <QWidget>
 #include <QJsonObject>
+#include <QGraphicsDropShadowEffect>
 #include <QMetaType>
 #include "ui_c_courseOverviewWidget.h"
 #include "Core/Network/httpRequest.h"
@@ -24,10 +25,10 @@ protected:
 	void loadIntroductionCardWidget();
 	void loadNoticeCardWidget();
 
-	void getIntroductionRequest(const QString &course_id);
-	void getIntroductionSuccess(QJsonObject &data);
-	void getNoticeRequest(const QString &course_id);
-	void getNoticeSuccess(QJsonObject &data);
+	void getCourseIntroductionRequest(const QString &course_id);
+	void getCourseIntroductionSuccess(const QJsonObject &data);
+	void getCourseNoticeRequest(const QString &course_id);
+	void getCourseNoticeSuccess(const QJsonObject &data);
 
 	Ui::CourseOverviewWidget m_ui;
 

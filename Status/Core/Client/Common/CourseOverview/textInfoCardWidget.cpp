@@ -59,26 +59,26 @@ void TextInfoCardWidget::setContentText(const QString &content_text) {
 }
 
 void TextInfoCardWidget::switchReadOnlyStyleSheet() {
-	this->m_ui.content_TextEdit->setStyleSheet(
-		"QPlainTextEdit {\
-			border: 1px solid #fafafa;\
+	this->m_ui.content_frame->setStyleSheet(
+		"QFrame {\
+			border: 1px solid #ffffff;\
 			border-top-left-radius: 5px;\
 			border-top-right-radius: 5px;\
 			color: #666666;\
-			background: #fafafa;\
+			background: #ffffff;\
 		}");
 
 	return;
 }
 
 void TextInfoCardWidget::switchEditStyleSheet() {
-	this->m_ui.content_TextEdit->setStyleSheet(
-		"QPlainTextEdit {\
+	this->m_ui.content_frame->setStyleSheet(
+		"QFrame {\
 			border: 1px solid #E8ECEC;\
 			border-top-left-radius: 5px;\
 			border-top-right-radius: 5px;\
 			color: #333333;\
-			background: #ffffff;\
+			background: #fafafa;\
 		}");
 
 	return;

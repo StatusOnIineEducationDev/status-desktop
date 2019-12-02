@@ -34,12 +34,14 @@ public:
     QLabel *now_count_text;
     QSpacerItem *horizontalSpacer;
     QSpacerItem *horizontalSpacer_2;
-    QPlainTextEdit *content_TextEdit;
+    QSpacerItem *verticalSpacer;
     QFrame *title_frame;
     QGridLayout *gridLayout_4;
     QLabel *title_text;
     QPushButton *edit_btn;
-    QSpacerItem *verticalSpacer;
+    QFrame *content_frame;
+    QGridLayout *gridLayout_2;
+    QPlainTextEdit *content_TextEdit;
 
     void setupUi(QWidget *TextInfoCardWidget)
     {
@@ -50,7 +52,7 @@ public:
         TextInfoCardWidget->setMaximumSize(QSize(16777215, 220));
         TextInfoCardWidget->setStyleSheet(QString::fromUtf8("QWidget {\n"
 "	border: none;\n"
-"	background-color: #fafafa;\n"
+"	background: #ffffff;\n"
 "}\n"
 "\n"
 "/*\346\225\264\344\275\223*/\n"
@@ -89,8 +91,8 @@ public:
 "\n"
 "/*\344\270\212\347\256\255\345\244\264*/\n"
 "QScrollBar::sub-line:vertical {\n"
-" "
-                        "   height: 0px;\n"
+"    hei"
+                        "ght: 0px;\n"
 "    subcontrol-position: top;\n"
 "    subcontrol-origin: margin;\n"
 "}"));
@@ -175,31 +177,9 @@ public:
 
         gridLayout->addWidget(edit_tool_frame, 3, 0, 1, 1);
 
-        content_TextEdit = new QPlainTextEdit(TextInfoCardWidget);
-        content_TextEdit->setObjectName(QString::fromUtf8("content_TextEdit"));
-        QSizePolicy sizePolicy2(QSizePolicy::Expanding, QSizePolicy::Expanding);
-        sizePolicy2.setHorizontalStretch(0);
-        sizePolicy2.setVerticalStretch(0);
-        sizePolicy2.setHeightForWidth(content_TextEdit->sizePolicy().hasHeightForWidth());
-        content_TextEdit->setSizePolicy(sizePolicy2);
-        content_TextEdit->setMinimumSize(QSize(0, 100));
-        content_TextEdit->setMaximumSize(QSize(16777215, 16777215));
-        QFont font1;
-        font1.setFamily(QString::fromUtf8("\345\276\256\350\275\257\351\233\205\351\273\221"));
-        font1.setPointSize(11);
-        content_TextEdit->setFont(font1);
-        content_TextEdit->setStyleSheet(QString::fromUtf8("QPlainTextEdit {\n"
-"	border: 1px solid #fafafa;\n"
-"	border-top-left-radius: 5px;\n"
-"	border-top-right-radius: 5px;\n"
-"	color: #666666;\n"
-"	background: #fafafa;\n"
-"}\n"
-""));
-        content_TextEdit->setReadOnly(true);
-        content_TextEdit->setTextInteractionFlags(Qt::NoTextInteraction);
+        verticalSpacer = new QSpacerItem(20, 10, QSizePolicy::Minimum, QSizePolicy::Fixed);
 
-        gridLayout->addWidget(content_TextEdit, 2, 0, 1, 1);
+        gridLayout->addItem(verticalSpacer, 1, 0, 1, 1);
 
         title_frame = new QFrame(TextInfoCardWidget);
         title_frame->setObjectName(QString::fromUtf8("title_frame"));
@@ -207,22 +187,23 @@ public:
         title_frame->setSizePolicy(sizePolicy);
         title_frame->setMinimumSize(QSize(0, 0));
         title_frame->setStyleSheet(QString::fromUtf8("QFrame {\n"
-"	border-bottom: 1px solid #E8ECEC;\n"
+"	background: #fafafa;\n"
+"	border-radius: 5px;\n"
 "}"));
         title_frame->setFrameShape(QFrame::StyledPanel);
         title_frame->setFrameShadow(QFrame::Raised);
         gridLayout_4 = new QGridLayout(title_frame);
         gridLayout_4->setObjectName(QString::fromUtf8("gridLayout_4"));
-        gridLayout_4->setContentsMargins(0, -1, 0, -1);
+        gridLayout_4->setContentsMargins(15, -1, 15, -1);
         title_text = new QLabel(title_frame);
         title_text->setObjectName(QString::fromUtf8("title_text"));
         title_text->setMinimumSize(QSize(0, 25));
-        QFont font2;
-        font2.setFamily(QString::fromUtf8("\345\276\256\350\275\257\351\233\205\351\273\221"));
-        font2.setPointSize(12);
-        font2.setBold(false);
-        font2.setWeight(50);
-        title_text->setFont(font2);
+        QFont font1;
+        font1.setFamily(QString::fromUtf8("\345\276\256\350\275\257\351\233\205\351\273\221"));
+        font1.setPointSize(12);
+        font1.setBold(false);
+        font1.setWeight(50);
+        title_text->setFont(font1);
         title_text->setStyleSheet(QString::fromUtf8("QLabel {\n"
 "	color: #333333;\n"
 "	background: none;\n"
@@ -261,9 +242,43 @@ public:
 
         gridLayout->addWidget(title_frame, 0, 0, 1, 1);
 
-        verticalSpacer = new QSpacerItem(20, 10, QSizePolicy::Minimum, QSizePolicy::Fixed);
+        content_frame = new QFrame(TextInfoCardWidget);
+        content_frame->setObjectName(QString::fromUtf8("content_frame"));
+        content_frame->setStyleSheet(QString::fromUtf8("QFrame {\n"
+"	border: 1px solid #ffffff;\n"
+"	border-top-left-radius: 5px;\n"
+"	border-top-right-radius: 5px;\n"
+"	color: #666666;\n"
+"	background: #ffffff;\n"
+"}\n"
+""));
+        content_frame->setFrameShape(QFrame::StyledPanel);
+        content_frame->setFrameShadow(QFrame::Raised);
+        gridLayout_2 = new QGridLayout(content_frame);
+        gridLayout_2->setObjectName(QString::fromUtf8("gridLayout_2"));
+        gridLayout_2->setContentsMargins(15, 0, 15, 0);
+        content_TextEdit = new QPlainTextEdit(content_frame);
+        content_TextEdit->setObjectName(QString::fromUtf8("content_TextEdit"));
+        QSizePolicy sizePolicy2(QSizePolicy::Expanding, QSizePolicy::Expanding);
+        sizePolicy2.setHorizontalStretch(0);
+        sizePolicy2.setVerticalStretch(0);
+        sizePolicy2.setHeightForWidth(content_TextEdit->sizePolicy().hasHeightForWidth());
+        content_TextEdit->setSizePolicy(sizePolicy2);
+        content_TextEdit->setMinimumSize(QSize(0, 100));
+        content_TextEdit->setMaximumSize(QSize(16777215, 16777215));
+        QFont font2;
+        font2.setFamily(QString::fromUtf8("\345\276\256\350\275\257\351\233\205\351\273\221"));
+        font2.setPointSize(11);
+        content_TextEdit->setFont(font2);
+        content_TextEdit->setStyleSheet(QString::fromUtf8("border: none;\n"
+"background: transparent;"));
+        content_TextEdit->setReadOnly(true);
+        content_TextEdit->setTextInteractionFlags(Qt::NoTextInteraction);
 
-        gridLayout->addItem(verticalSpacer, 1, 0, 1, 1);
+        gridLayout_2->addWidget(content_TextEdit, 0, 0, 1, 1);
+
+
+        gridLayout->addWidget(content_frame, 2, 0, 1, 1);
 
 
         retranslateUi(TextInfoCardWidget);
@@ -278,9 +293,9 @@ public:
         max_count_text->setText(QCoreApplication::translate("TextInfoCardWidget", "200", nullptr));
         label->setText(QCoreApplication::translate("TextInfoCardWidget", "/", nullptr));
         now_count_text->setText(QCoreApplication::translate("TextInfoCardWidget", "now_count", nullptr));
-        content_TextEdit->setPlainText(QString());
         title_text->setText(QString());
         edit_btn->setText(QCoreApplication::translate("TextInfoCardWidget", "\347\274\226\350\276\221", nullptr));
+        content_TextEdit->setPlainText(QString());
     } // retranslateUi
 
 };

@@ -19,7 +19,7 @@ public slots:
 	void finished(QNetworkReply *reply);
 
 signals:
-	void success(QJsonObject &data);
+	void success(const QJsonObject &data);
 	void fail(QNetworkReply::NetworkError error);
 	void complete();
 
