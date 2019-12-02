@@ -12,6 +12,8 @@
 int main(int argc, char *argv[]) {
 	QApplication app(argc, argv);
 
+	ReadConf::read();
+
 	CourseBase course_base1(QString("101"), QString("数据结构"));
 	CourseBase course_base2(QString("102"), QString("概率论与数理统计"));
 	CourseBase course_base3(QString("103"), QString("计算机网络"));
@@ -45,8 +47,6 @@ int main(int argc, char *argv[]) {
 	//StudentMainWindow *s_win = new StudentMainWindow;
 	//s_win->show();
 	//Toast::setWin(s_win);
-
-	ReadConf::read();
 
 	return app.exec();
 }

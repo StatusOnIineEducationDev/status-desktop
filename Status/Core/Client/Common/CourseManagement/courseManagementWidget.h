@@ -6,6 +6,9 @@
 class CourseManagementWidget : public QWidget {
 	Q_OBJECT
 
+signals:
+	void courseSwitched(const QString &course_id);
+
 public:
 	CourseManagementWidget(QWidget *parent = nullptr);
 	~CourseManagementWidget();
@@ -13,6 +16,8 @@ public:
 
 protected:
 	void loadCourseBaseWidget();
+	
+	void emitSignalCourseSwitched(const int index);
 
 	Ui::CourseManagementWidget m_ui;
 

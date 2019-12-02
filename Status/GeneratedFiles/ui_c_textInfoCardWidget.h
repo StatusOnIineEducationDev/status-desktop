@@ -46,6 +46,8 @@ public:
         if (TextInfoCardWidget->objectName().isEmpty())
             TextInfoCardWidget->setObjectName(QString::fromUtf8("TextInfoCardWidget"));
         TextInfoCardWidget->resize(800, 220);
+        TextInfoCardWidget->setMinimumSize(QSize(0, 220));
+        TextInfoCardWidget->setMaximumSize(QSize(16777215, 220));
         TextInfoCardWidget->setStyleSheet(QString::fromUtf8("QWidget {\n"
 "	border: none;\n"
 "	background-color: #fafafa;\n"
@@ -111,7 +113,7 @@ public:
         gridLayout_9->setObjectName(QString::fromUtf8("gridLayout_9"));
         confirm_btn = new QPushButton(edit_tool_frame);
         confirm_btn->setObjectName(QString::fromUtf8("confirm_btn"));
-        confirm_btn->setEnabled(false);
+        confirm_btn->setEnabled(true);
         QSizePolicy sizePolicy1(QSizePolicy::Fixed, QSizePolicy::Fixed);
         sizePolicy1.setHorizontalStretch(0);
         sizePolicy1.setVerticalStretch(0);
@@ -276,8 +278,8 @@ public:
         max_count_text->setText(QCoreApplication::translate("TextInfoCardWidget", "200", nullptr));
         label->setText(QCoreApplication::translate("TextInfoCardWidget", "/", nullptr));
         now_count_text->setText(QCoreApplication::translate("TextInfoCardWidget", "now_count", nullptr));
-        content_TextEdit->setPlainText(QCoreApplication::translate("TextInfoCardWidget", "Content", nullptr));
-        title_text->setText(QCoreApplication::translate("TextInfoCardWidget", "Title", nullptr));
+        content_TextEdit->setPlainText(QString());
+        title_text->setText(QString());
         edit_btn->setText(QCoreApplication::translate("TextInfoCardWidget", "\347\274\226\350\276\221", nullptr));
     } // retranslateUi
 

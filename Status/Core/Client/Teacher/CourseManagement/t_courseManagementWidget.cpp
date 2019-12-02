@@ -25,8 +25,10 @@ void TeacherCourseManagementWidget::loadCourseOverviewWidget() {
 	// ——加载课程概况页
 	this->m_course_overview_widget = new TeacherCourseOverviewWidget(this);
 	this->m_ui.function_tabWidget->addTab(this->m_course_overview_widget, "课程概况");
-
+	this->m_course_overview_widget->updateAllData("111");
 	// ——信号绑定
+	this->connect(this, &TeacherCourseManagementWidget::courseSwitched,
+		this->m_course_overview_widget, &TeacherCourseOverviewWidget::updateAllData);
 
 	return;
 }

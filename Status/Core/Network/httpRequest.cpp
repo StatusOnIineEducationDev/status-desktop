@@ -1,10 +1,16 @@
 #include "httpRequest.h"
 
 
-QNetworkAccessManager *HttpRequest::manager = new QNetworkAccessManager();
+HttpRequest::HttpRequest()
+	: manager(nullptr) {
+	this->manager = new QNetworkAccessManager;
 
-HttpRequest::HttpRequest() {
-	this->connect(this->manager, &QNetworkAccessManager::finished, this, &HttpRequest::finished);
+	this->connect(this->manager, &QNetworkAccessManager::finished, 
+		this, &HttpRequest::finished);
+}
+
+HttpRequest::~HttpRequest() {
+
 }
 
 void HttpRequest::request(QUrl &url, QJsonObject &data) {
@@ -32,6 +38,7 @@ void HttpRequest::finished(QNetworkReply *reply) {
 
 	emit this->complete();
 	reply->deleteLater();
+	this->manager->deleteLater();
 
 	return;
 }
