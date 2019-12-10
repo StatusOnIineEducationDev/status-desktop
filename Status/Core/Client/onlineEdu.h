@@ -21,6 +21,15 @@ enum TransportCmd {
 	QuitLesson = 117
 };
 
+enum ErrorCode {
+	NoError = 0,
+	InSpeechError = 1,
+	ApplyingError = 2,
+	AccountTypeError = 3,
+	AccountNotFoundError = 4,
+	PasswordError = 5,
+};
+
 enum CourseStatus {
 	OffLine = 0,
 	OnLine = 1,
@@ -54,12 +63,6 @@ enum SpeechStatus {
 enum AccountType {
 	Teacher = 0,
 	Student = 1
-};
-
-enum RaiseHandError {
-	NoError = 0,
-	InSpeechError = 1,
-	ApplyingError = 2
 };
 
 enum Emotion {

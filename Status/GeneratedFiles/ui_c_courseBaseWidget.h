@@ -21,7 +21,7 @@
 
 QT_BEGIN_NAMESPACE
 
-class Ui_CourseBaseWidget
+class Ui_CourseBasicWidget
 {
 public:
     QGridLayout *gridLayout_2;
@@ -38,18 +38,18 @@ public:
     QSpacerItem *horizontalSpacer_3;
     QSpacerItem *horizontalSpacer;
 
-    void setupUi(QWidget *CourseBaseWidget)
+    void setupUi(QWidget *CourseBasicWidget)
     {
-        if (CourseBaseWidget->objectName().isEmpty())
-            CourseBaseWidget->setObjectName(QString::fromUtf8("CourseBaseWidget"));
-        CourseBaseWidget->resize(825, 100);
-        CourseBaseWidget->setMinimumSize(QSize(0, 100));
-        CourseBaseWidget->setMaximumSize(QSize(16777215, 100));
-        gridLayout_2 = new QGridLayout(CourseBaseWidget);
+        if (CourseBasicWidget->objectName().isEmpty())
+            CourseBasicWidget->setObjectName(QString::fromUtf8("CourseBasicWidget"));
+        CourseBasicWidget->resize(825, 100);
+        CourseBasicWidget->setMinimumSize(QSize(0, 100));
+        CourseBasicWidget->setMaximumSize(QSize(16777215, 100));
+        gridLayout_2 = new QGridLayout(CourseBasicWidget);
         gridLayout_2->setSpacing(0);
         gridLayout_2->setObjectName(QString::fromUtf8("gridLayout_2"));
         gridLayout_2->setContentsMargins(0, 0, 0, 0);
-        course_base_frame = new QFrame(CourseBaseWidget);
+        course_base_frame = new QFrame(CourseBasicWidget);
         course_base_frame->setObjectName(QString::fromUtf8("course_base_frame"));
         course_base_frame->setMinimumSize(QSize(0, 0));
         course_base_frame->setMaximumSize(QSize(16777215, 100));
@@ -200,25 +200,25 @@ public:
         gridLayout_2->addWidget(course_base_frame, 0, 0, 1, 1);
 
 
-        retranslateUi(CourseBaseWidget);
+        retranslateUi(CourseBasicWidget);
 
-        QMetaObject::connectSlotsByName(CourseBaseWidget);
+        QMetaObject::connectSlotsByName(CourseBasicWidget);
     } // setupUi
 
-    void retranslateUi(QWidget *CourseBaseWidget)
+    void retranslateUi(QWidget *CourseBasicWidget)
     {
-        CourseBaseWidget->setWindowTitle(QCoreApplication::translate("CourseBaseWidget", "Form", nullptr));
+        CourseBasicWidget->setWindowTitle(QCoreApplication::translate("CourseBasicWidget", "Form", nullptr));
         create_time_text->setText(QString());
-        delete_course_btn->setText(QCoreApplication::translate("CourseBaseWidget", "\351\200\200\345\207\272\350\257\276\347\250\213", nullptr));
+        delete_course_btn->setText(QCoreApplication::translate("CourseBasicWidget", "\351\200\200\345\207\272\350\257\276\347\250\213", nullptr));
         course_id_text->setText(QString());
-        label_2->setText(QCoreApplication::translate("CourseBaseWidget", "id: ", nullptr));
-        text->setText(QCoreApplication::translate("CourseBaseWidget", "\345\210\233\345\273\272\344\272\216", nullptr));
+        label_2->setText(QCoreApplication::translate("CourseBasicWidget", "id: ", nullptr));
+        text->setText(QCoreApplication::translate("CourseBasicWidget", "\345\210\233\345\273\272\344\272\216", nullptr));
     } // retranslateUi
 
 };
 
 namespace Ui {
-    class CourseBaseWidget: public Ui_CourseBaseWidget {};
+    class CourseBasicWidget: public Ui_CourseBasicWidget {};
 } // namespace Ui
 
 QT_END_NAMESPACE

@@ -29,15 +29,15 @@ void TeacherOnlineClassroomWidget::loadEnterDialog() {
 	// ——加载进入对话框
 	QMap<QString, QVariant> *course;
 	QList<QMap<QString, QVariant>> course_list;
-	QList<CourseBase> *course_base_list = User::G_COURSES_BASE_LIST;
+	QList<CourseBasic> course_basic_list = user->getCourseList();
 	this->m_enter_dialog = new TeacherEnterDialog(this);
 	this->connect(this->m_enter_dialog, &TeacherEnterDialog::createLesson,
 		this, &TeacherOnlineClassroomWidget::createLesson);
 	// ——加载数据
-	for (int index = 0; index < course_base_list->count(); index++) {
+	for (int index = 0; index < course_basic_list.count(); index++) {
 		course = new QMap<QString, QVariant>;
-		course->insert("course_id", course_base_list->at(index).courseId());
-		course->insert("course_name", course_base_list->at(index).courseName());
+		course->insert("course_id", course_basic_list.at(index).courseId());
+		course->insert("course_name", course_basic_list.at(index).courseName());
 		course_list.append(*course);
 	}
 	this->m_enter_dialog->loadData(course_list);
@@ -151,7 +151,7 @@ void TeacherOnlineClassroomWidget::handleCommandCreateLesson(QJsonObject &data) 
 		course_status, 
 		(int)data["create_timestamp"].toDouble());
 
-	User::G_USER_STATUS = UserStatus::InClass;
+	user->setUserStatus(UserStatus::InClass);
 
 	this->openCamera();
 	//QtConcurrent::run(this, &TOnlineClassroomController::openCamera);
@@ -213,8 +213,8 @@ void TeacherOnlineClassroomWidget::createLesson(QString &course_id, QString &cou
 	request_json_obj["account_type"] = AccountType::Teacher;
 	request_json_obj["course_id"] = course_id;
 	request_json_obj["course_name"] = course_name;
-	request_json_obj["uid"] = User::G_UID;
-	request_json_obj["username"] = User::G_USERNAME;
+	request_json_obj["uid"] = user->getUid();
+	request_json_obj["username"] = user->getUsername();
 
 	this->m_lesson_connection->realSend(request_json_obj);
 

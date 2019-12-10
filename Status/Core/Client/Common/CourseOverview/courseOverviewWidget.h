@@ -26,9 +26,9 @@ protected:
 	void loadNoticeCardWidget();
 
 	void getCourseIntroductionRequest(const QString &course_id);
-	void getCourseIntroductionSuccess(const QJsonObject &data);
+	void getCourseIntroductionRequestSuccess(const QJsonObject &data);
 	void getCourseNoticeRequest(const QString &course_id);
-	void getCourseNoticeSuccess(const QJsonObject &data);
+	void getCourseNoticeRequestSuccess(const QJsonObject &data);
 
 	Ui::CourseOverviewWidget m_ui;
 

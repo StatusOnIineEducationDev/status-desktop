@@ -10,7 +10,7 @@ LessonBase::LessonBase(const QString &lesson_id, const QDateTime &start_datetime
 //**************************************************************************************************
 
 
-CourseBase::CourseBase(const QString &course_id, const QString &course_name) 
+CourseBasic::CourseBasic(const QString &course_id, const QString &course_name) 
 	: m_course_id(course_id), m_course_name(course_name) {
 
 }
@@ -47,7 +47,7 @@ Lesson::Lesson(const QString &lesson_id, const QDateTime &start_datetime, const 
 
 Course::Course(const QString &course_id, const QString &course_name, const QList<RoleBase> &teachers_list, const QList<RoleBase> &students_list,
 	const QList<LessonBase> &lessons_list, const QDateTime &creation_datetime, const QString &course_key, const int &concentration_avg, const int &num_of_like)
-	: CourseBase(course_id, course_name), m_teachers_list(teachers_list), m_students_list(students_list), m_lessons_list(lessons_list), 
+	: CourseBasic(course_id, course_name), m_teachers_list(teachers_list), m_students_list(students_list), m_lessons_list(lessons_list), 
 	m_creation_datetime(creation_datetime), m_course_key(course_key), m_concentration_avg(concentration_avg), m_num_of_like(num_of_like) {
 
 }

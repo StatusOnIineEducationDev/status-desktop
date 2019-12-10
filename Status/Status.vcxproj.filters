@@ -113,6 +113,9 @@
     <Filter Include="Core\Client\Teacher\CourseMangement\CourseResource">
       <UniqueIdentifier>{ff6d19db-0a49-487d-8b71-76b778b2fd12}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Core\Client\Common\Login">
+      <UniqueIdentifier>{573ddb65-c1b3-402d-bbd5-4cbd7431d20c}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <QtRcc Include="Status.qrc">
@@ -183,19 +186,25 @@
     <QtUic Include="Resources\ui\t_courseManagementFunctionButtonWidget.ui">
       <Filter>Resource Files\Ui</Filter>
     </QtUic>
-    <QtUic Include="Resources\ui\c_courseBaseWidget.ui">
-      <Filter>Resource Files\Ui</Filter>
-    </QtUic>
     <QtUic Include="Resources\ui\c_courseOverviewWidget.ui">
       <Filter>Resource Files\Ui</Filter>
     </QtUic>
     <QtUic Include="Resources\ui\c_textInfoCardWidget.ui">
       <Filter>Resource Files\Ui</Filter>
     </QtUic>
+    <QtUic Include="Resources\ui\c_fileItemWidget.ui">
+      <Filter>Resource Files\Ui</Filter>
+    </QtUic>
     <QtUic Include="Resources\ui\c_courseResourceWidget.ui">
       <Filter>Resource Files\Ui</Filter>
     </QtUic>
-    <QtUic Include="Resources\ui\c_fileItemWidget.ui">
+    <QtUic Include="Resources\ui\c_uploadFileDialog.ui">
+      <Filter>Resource Files\Ui</Filter>
+    </QtUic>
+    <QtUic Include="Resources\ui\c_loginWindow.ui">
+      <Filter>Resource Files\Ui</Filter>
+    </QtUic>
+    <QtUic Include="Resources\ui\c_courseBasicWidget.ui">
       <Filter>Resource Files\Ui</Filter>
     </QtUic>
   </ItemGroup>
@@ -315,9 +324,6 @@
     <ClCompile Include="Core\Client\Common\CameraDisplay\cameraDisplayWidget.cpp">
       <Filter>Core\Client\Common\CameraDisplay</Filter>
     </ClCompile>
-    <ClCompile Include="Core\Client\Common\CourseManagement\courseBaseWidget.cpp">
-      <Filter>Core\Client\Common\CourseManagement</Filter>
-    </ClCompile>
     <ClCompile Include="Core\Client\Common\CourseManagement\courseManagementWidget.cpp">
       <Filter>Core\Client\Common\CourseManagement</Filter>
     </ClCompile>
@@ -350,6 +356,15 @@
     </ClCompile>
     <ClCompile Include="Core\Client\Common\CourseResource\fileItemWidget.cpp">
       <Filter>Core\Client\Common\CourseResource</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\Client\Common\CourseResource\uploadFileDialog.cpp">
+      <Filter>Core\Client\Common\CourseResource</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\Client\Common\Login\loginWindow.cpp">
+      <Filter>Core\Client\Common\Login</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\Client\Common\CourseManagement\courseBasicWidget.cpp">
+      <Filter>Core\Client\Common\CourseManagement</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -446,9 +461,6 @@
     <QtMoc Include="Core\Client\Common\CameraDisplay\cameraDisplayWidget.h">
       <Filter>Core\Client\Common\CameraDisplay</Filter>
     </QtMoc>
-    <QtMoc Include="Core\Client\Common\CourseManagement\courseBaseWidget.h">
-      <Filter>Core\Client\Common\CourseManagement</Filter>
-    </QtMoc>
     <QtMoc Include="Core\Client\Common\CourseManagement\courseManagementWidget.h">
       <Filter>Core\Client\Common\CourseManagement</Filter>
     </QtMoc>
@@ -481,6 +493,15 @@
     </QtMoc>
     <QtMoc Include="Core\Client\Common\CourseResource\fileItemWidget.h">
       <Filter>Core\Client\Common\CourseResource</Filter>
+    </QtMoc>
+    <QtMoc Include="Core\Client\Common\CourseResource\uploadFileDialog.h">
+      <Filter>Core\Client\Common\CourseResource</Filter>
+    </QtMoc>
+    <QtMoc Include="Core\Client\Common\Login\loginWindow.h">
+      <Filter>Core\Client\Common\Login</Filter>
+    </QtMoc>
+    <QtMoc Include="Core\Client\Common\CourseManagement\courseBasicWidget.h">
+      <Filter>Core\Client\Common\CourseManagement</Filter>
     </QtMoc>
   </ItemGroup>
   <ItemGroup>

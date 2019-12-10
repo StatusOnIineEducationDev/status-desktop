@@ -1,5 +1,5 @@
 #pragma once
-#include <QtWidgets/QMainWindow>
+#include <QMainWindow>
 #include <QMouseEvent>
 #include <QPoint>
 #include <QDesktopWidget>

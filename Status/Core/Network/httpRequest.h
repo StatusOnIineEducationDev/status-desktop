@@ -3,8 +3,12 @@
 #include <QNetworkReply>
 #include <QNetworkRequest>
 #include <QNetworkAccessManager>
+#include <QHttpMultiPart>
 #include <QJsonObject>
 #include <QJsonDocument>
+#include <QFile>
+#include <QFileInfo>
+#include <QDataStream>
 
 
 class HttpRequest: public QObject {
@@ -13,7 +17,8 @@ class HttpRequest: public QObject {
 public:
 	HttpRequest();
 	virtual ~HttpRequest();
-	void request(QUrl &url, QJsonObject &data);
+	void request(QUrl &url, QJsonObject &json_data);
+	void request(QUrl &url, QJsonObject &json_data, QFile &file_data);
 
 public slots:
 	void finished(QNetworkReply *reply);

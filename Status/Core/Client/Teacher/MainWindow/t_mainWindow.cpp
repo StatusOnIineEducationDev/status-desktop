@@ -26,7 +26,7 @@ void TeacherMainWindow::clearWidget() {
 	// ¡ª¡ªÔÚÏß½ÌÊÒ
 	if (this->m_online_classroom_widget != nullptr) {
 		this->m_online_classroom_widget->hide();
-		if (User::G_USER_STATUS == UserStatus::Free) {
+		if (user->getUserStatus() == UserStatus::Free) {
 			delete this->m_online_classroom_widget;
 			this->m_online_classroom_widget = nullptr;
 		}

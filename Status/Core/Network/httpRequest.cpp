@@ -13,12 +13,44 @@ HttpRequest::~HttpRequest() {
 
 }
 
-void HttpRequest::request(QUrl &url, QJsonObject &data) {
+void HttpRequest::request(QUrl &url, QJsonObject &json_data) {
 	QNetworkRequest request_obj(url);
-	QByteArray data_byte_arr = QJsonDocument(data).toJson(QJsonDocument::Compact);
+	QHttpMultiPart *multiPart = new QHttpMultiPart(QHttpMultiPart::FormDataType);
+	QHttpPart json_part;
 
-	request_obj.setHeader(QNetworkRequest::ContentTypeHeader, "application/json");
-	this->reply = this->manager->post(request_obj, data_byte_arr);
+	// ——JSON部分
+	json_part.setHeader(QNetworkRequest::ContentTypeHeader, "multipart/form-data");
+	json_part.setHeader(QNetworkRequest::ContentDispositionHeader, "form-data; name=\"json\"");
+	json_part.setBody(QJsonDocument(json_data).toJson(QJsonDocument::Compact));
+	
+	multiPart->append(json_part);
+	this->reply = this->manager->post(request_obj, multiPart);
+	multiPart->setParent(reply);
+
+	return;
+}
+
+void HttpRequest::request(QUrl &url, QJsonObject &json_data, QFile &file_data) {
+	QFileInfo file_info(file_data.fileName());
+	QNetworkRequest request_obj(url);
+	QHttpMultiPart *multiPart = new QHttpMultiPart(QHttpMultiPart::FormDataType);
+	QHttpPart json_part, file_part;
+
+	// ——JSON部分
+	json_part.setHeader(QNetworkRequest::ContentTypeHeader, "multipart/form-data");
+	json_part.setHeader(QNetworkRequest::ContentDispositionHeader, "form-data; name=\"json\"");
+	json_part.setBody(QJsonDocument(json_data).toJson(QJsonDocument::Compact));
+
+	// ——文件部分
+	file_data.open(QIODevice::ReadOnly);
+	file_part.setHeader(QNetworkRequest::ContentTypeHeader, "multipart/form-data");
+	file_part.setHeader(QNetworkRequest::ContentDispositionHeader, "form-data; name=\"file\"; filename=\"" + file_info.fileName() + "\"");
+	file_part.setBodyDevice(&file_data);
+
+	multiPart->append(json_part);
+	multiPart->append(file_part);
+	this->reply = this->manager->post(request_obj, multiPart);
+	multiPart->setParent(reply);
 
 	return;
 }

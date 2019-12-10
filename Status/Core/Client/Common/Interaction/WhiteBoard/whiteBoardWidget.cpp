@@ -28,7 +28,7 @@ void WhiteBoardWidget::createPaintConnection(QString &course_id, QString &lesson
 	paint_request_json_obj["account_type"] = AccountType::Student;
 	paint_request_json_obj["course_id"] = course_id;
 	paint_request_json_obj["lesson_id"] = lesson_id;
-	paint_request_json_obj["uid"] = User::G_UID;
+	paint_request_json_obj["uid"] = user->getUid();
 
 	this->m_paint_connection->send(paint_request_json_obj);
 
@@ -83,7 +83,7 @@ void WhiteBoardWidget::sendPaintCommand(QJsonObject &data) {
 	data["account_type"] = AccountType::Student;
 	data["course_id"] = this->m_send_base_info["course_id"].toString();
 	data["lesson_id"] = this->m_send_base_info["lesson_id"].toString();
-	data["uid"] = User::G_UID;
+	data["uid"] = user->getUid();
 
 	this->m_paint_connection->realSend(data);
 

@@ -23,12 +23,12 @@ OnlineClassroomWidget::~OnlineClassroomWidget() {
 
 void OnlineClassroomWidget::lessonConnectionSend(QJsonObject &data) {
 	// ——请求数据
-	data["account_type"] = User::G_ACCOUNT_TYPE;
+	data["account_type"] = user->getAccountType();
 	data["timestamp"] = (int)QDateTime::currentDateTime().toTime_t();
 	data["course_id"] = this->m_room["course_id"].toString();
 	data["lesson_id"] = this->m_room["lesson_id"].toString();
-	data["uid"] = User::G_UID;
-	data["username"] = User::G_USERNAME;
+	data["uid"] = user->getUid();
+	data["username"] = user->getUsername();
 
 	// ——这里不用send，否则会报跨线程错误
 	this->m_lesson_connection->realSend(data);
@@ -39,7 +39,7 @@ void OnlineClassroomWidget::loadCameraDisplayWidget() {
 	this->m_ui.camera_display_widget_layout->addWidget(this->m_camera_display_widget);
 
 	// ——设置用户名
-	this->m_camera_display_widget->ui().username_text->setText(User::G_USERNAME);
+	this->m_camera_display_widget->ui().username_text->setText(user->getUsername());
 
 	return;
 }

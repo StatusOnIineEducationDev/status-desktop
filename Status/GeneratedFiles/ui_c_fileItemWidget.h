@@ -40,7 +40,7 @@ public:
         gridLayout = new QGridLayout(FileItemWidget);
         gridLayout->setSpacing(0);
         gridLayout->setObjectName(QString::fromUtf8("gridLayout"));
-        gridLayout->setContentsMargins(10, 5, 10, 5);
+        gridLayout->setContentsMargins(25, 5, 25, 5);
         file_size_text = new QLabel(FileItemWidget);
         file_size_text->setObjectName(QString::fromUtf8("file_size_text"));
         file_size_text->setMinimumSize(QSize(70, 0));
@@ -50,7 +50,7 @@ public:
         font.setPointSize(10);
         file_size_text->setFont(font);
         file_size_text->setStyleSheet(QString::fromUtf8("color: #999999;"));
-        file_size_text->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
+        file_size_text->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter);
 
         gridLayout->addWidget(file_size_text, 0, 6, 1, 1);
 

@@ -79,6 +79,7 @@
         <file>Resources/material/shadow/220x270_shadow.png</file>
         <file>Resources/material/shadow/140x45_shadow.png</file>
         <file>Resources/material/shadow/440x540_shadow.png</file>
+        <file>Resources/material/shadow/600x400_shadow.png</file>
     </qresource>
     <qresource prefix="/pic">
         <file>Resources/material/pic/student.png</file>
@@ -96,6 +97,9 @@
         <file>Resources/material/pic/waiting.png</file>
         <file>Resources/material/pic/writing.png</file>
         <file>Resources/material/pic/no_camera.png</file>
+        <file>Resources/material/pic/scan.png</file>
+        <file>Resources/material/pic/account.png</file>
+        <file>Resources/material/pic/password.png</file>
     </qresource>
     <qresource prefix="/cursor">
         <file>Resources/material/cursor/rubber.png</file>

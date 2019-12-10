@@ -40,7 +40,9 @@ public:
     QLabel *file_count_text;
     QLabel *label_5;
     QSpacerItem *horizontalSpacer_3;
-    QPushButton *pushButton_2;
+    QLabel *loading_tips_text;
+    QSpacerItem *horizontalSpacer_4;
+    QPushButton *refresh_btn;
     QFrame *function_frame;
     QHBoxLayout *horizontalLayout;
     QPushButton *upload_btn;
@@ -131,7 +133,7 @@ public:
         horizontalLayout_2 = new QHBoxLayout(item_title_frame);
         horizontalLayout_2->setSpacing(0);
         horizontalLayout_2->setObjectName(QString::fromUtf8("horizontalLayout_2"));
-        horizontalLayout_2->setContentsMargins(10, 0, 10, 0);
+        horizontalLayout_2->setContentsMargins(25, 0, 25, 0);
         label = new QLabel(item_title_frame);
         label->setObjectName(QString::fromUtf8("label"));
         QFont font1;
@@ -221,18 +223,33 @@ public:
 
         horizontalLayout_3->addItem(horizontalSpacer_3);
 
-        pushButton_2 = new QPushButton(other_info_frame);
-        pushButton_2->setObjectName(QString::fromUtf8("pushButton_2"));
-        pushButton_2->setCursor(QCursor(Qt::PointingHandCursor));
-        pushButton_2->setStyleSheet(QString::fromUtf8("QPushButton {\n"
+        loading_tips_text = new QLabel(other_info_frame);
+        loading_tips_text->setObjectName(QString::fromUtf8("loading_tips_text"));
+        loading_tips_text->setFont(font1);
+        loading_tips_text->setStyleSheet(QString::fromUtf8("QLabel {\n"
+"	background: none;\n"
+"	border: none;\n"
+"	color: #999999;\n"
+"}"));
+
+        horizontalLayout_3->addWidget(loading_tips_text);
+
+        horizontalSpacer_4 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        horizontalLayout_3->addItem(horizontalSpacer_4);
+
+        refresh_btn = new QPushButton(other_info_frame);
+        refresh_btn->setObjectName(QString::fromUtf8("refresh_btn"));
+        refresh_btn->setCursor(QCursor(Qt::PointingHandCursor));
+        refresh_btn->setStyleSheet(QString::fromUtf8("QPushButton {\n"
 "	background: none;\n"
 "	border: none;\n"
 "}"));
         QIcon icon;
         icon.addFile(QString::fromUtf8(":/button/Resources/material/button/refresh.png"), QSize(), QIcon::Normal, QIcon::Off);
-        pushButton_2->setIcon(icon);
+        refresh_btn->setIcon(icon);
 
-        horizontalLayout_3->addWidget(pushButton_2);
+        horizontalLayout_3->addWidget(refresh_btn);
 
 
         gridLayout->addWidget(other_info_frame, 3, 0, 1, 1);
@@ -432,6 +449,8 @@ public:
         file_listWidget->setObjectName(QString::fromUtf8("file_listWidget"));
         file_listWidget->setStyleSheet(QString::fromUtf8("background: none;\n"
 "border: none;"));
+        file_listWidget->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+        file_listWidget->setVerticalScrollMode(QAbstractItemView::ScrollPerPixel);
 
         gridLayout_3->addWidget(file_listWidget, 0, 0, 1, 1);
 
@@ -453,10 +472,11 @@ public:
         label_4->setText(QCoreApplication::translate("CourseResourceWidget", "\345\244\247\345\260\217", nullptr));
         file_count_text->setText(QCoreApplication::translate("CourseResourceWidget", "0", nullptr));
         label_5->setText(QCoreApplication::translate("CourseResourceWidget", "\351\241\271", nullptr));
+        loading_tips_text->setText(QCoreApplication::translate("CourseResourceWidget", "\345\212\240\350\275\275\344\270\255...", nullptr));
 #if QT_CONFIG(tooltip)
-        pushButton_2->setToolTip(QCoreApplication::translate("CourseResourceWidget", "\345\210\267\346\226\260", nullptr));
+        refresh_btn->setToolTip(QCoreApplication::translate("CourseResourceWidget", "\345\210\267\346\226\260", nullptr));
 #endif // QT_CONFIG(tooltip)
-        pushButton_2->setText(QString());
+        refresh_btn->setText(QString());
         upload_btn->setText(QCoreApplication::translate("CourseResourceWidget", "\344\270\212\344\274\240", nullptr));
         download_btn->setText(QCoreApplication::translate("CourseResourceWidget", "\344\270\213\350\275\275", nullptr));
         delete_btn->setText(QCoreApplication::translate("CourseResourceWidget", "\345\210\240\351\231\244", nullptr));

@@ -26,7 +26,7 @@ void StudentMainWindow::clearWidget() {
 	// ——在线教室
 	if (this->m_online_classroom_widget != nullptr) {
 		this->m_online_classroom_widget->hide();
-		if (User::G_USER_STATUS == UserStatus::Free) {
+		if (user->getUserStatus() == UserStatus::Free) {
 			delete this->m_online_classroom_widget;
 			this->m_online_classroom_widget = nullptr;
 		}
@@ -54,7 +54,7 @@ void StudentMainWindow::switchOnlineClassroomWidget() {
 
 		// ——信号绑定
 		this->connect(this->m_online_classroom_widget, 
-			&StudentOnlineClassroomWidget::quitLessonSuccess,
+			&StudentOnlineClassroomWidget::quitLessonRequestSuccess,
 			this,
 			&StudentMainWindow::switchOnlineClassroomWidget);
 	}

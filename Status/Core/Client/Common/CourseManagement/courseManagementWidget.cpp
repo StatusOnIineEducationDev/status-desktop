@@ -6,16 +6,16 @@ CourseManagementWidget::CourseManagementWidget(QWidget *parent)
 	m_ui.setupUi(this);
 	this->m_ui.function_tabWidget->setAttribute(Qt::WA_StyledBackground);  // tabÀ¸ÏÔÊ¾±³¾°É«
 
-	this->loadCourseBaseWidget();
+	this->loadCourseBasicWidget();
 }
 
 CourseManagementWidget::~CourseManagementWidget() {
 
 }
 
-void CourseManagementWidget::loadCourseBaseWidget() {
-	this->m_course_base_widget = new CourseBaseWidget(this);
-	this->m_ui.course_base_widget_layout->addWidget(this->m_course_base_widget);
+void CourseManagementWidget::loadCourseBasicWidget() {
+	this->m_course_basic_widget = new CourseBasicWidget(this);
+	this->m_ui.course_base_widget_layout->addWidget(this->m_course_basic_widget);
 
 	return;
 }

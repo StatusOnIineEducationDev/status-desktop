@@ -30,15 +30,15 @@ void StudentOnlineClassroomWidget::loadEnterDialog() {
 	// ——加载进入对话框
 	QMap<QString, QVariant> *course;
 	QList<QMap<QString, QVariant>> course_list;
-	QList<CourseBase> *course_base_list = User::G_COURSES_BASE_LIST;
+	QList<CourseBasic> course_basic_list = user->getCourseList();
 	this->m_enter_dialog = new StudentEnterDialog(this);
 	this->connect(this->m_enter_dialog, &StudentEnterDialog::joinInLesson,
 		this, &StudentOnlineClassroomWidget::joinInLesson);
 	// ——加载数据
-	for (int index = 0; index < course_base_list->count(); index++) {
+	for (int index = 0; index < course_basic_list.count(); index++) {
 		course = new QMap<QString, QVariant>;
-		course->insert("course_id", course_base_list->at(index).courseId());
-		course->insert("course_name", course_base_list->at(index).courseName());
+		course->insert("course_id", course_basic_list.at(index).courseId());
+		course->insert("course_name", course_basic_list.at(index).courseName());
 		course_list.append(*course);
 	}
 	this->m_enter_dialog->loadData(course_list);
@@ -141,7 +141,7 @@ void StudentOnlineClassroomWidget::handleLessonConnectionRecv() {
 void StudentOnlineClassroomWidget::handleCommandJoinInLesson(QJsonObject &data) {
 	CourseStatus course_status = CourseStatus(data["course_status"].toInt());
 	Toast *toast = new Toast;
-	const CourseBase *course;
+	const CourseBasic *course;
 	QString text;
 	QThread *thread;
 
@@ -164,7 +164,7 @@ void StudentOnlineClassroomWidget::handleCommandJoinInLesson(QJsonObject &data) 
 			(int)data["create_timestamp"].toDouble(),
 			(int)data["begin_timestamp"].toDouble());
 
-		User::G_USER_STATUS = UserStatus::InClass;
+		user->setUserStatus(UserStatus::InClass);
 
 		this->m_ui.begin_lesson_btn->setText("正在上课");
 
@@ -191,7 +191,7 @@ void StudentOnlineClassroomWidget::handleCommandJoinInLesson(QJsonObject &data) 
 			course_status,
 			data["create_timestamp"].toInt());
 
-		User::G_USER_STATUS = UserStatus::InRoom;
+		user->setUserStatus(UserStatus::InRoom);
 
 		this->openCamera();
 		//QtConcurrent::run(this, &StudentOnlineClassroomWidget::openCamera);
@@ -226,7 +226,7 @@ void StudentOnlineClassroomWidget::handleCommandEndLesson(QJsonObject &data) {
 
 	this->m_ui.begin_lesson_btn->setText("已结束");
 
-	User::G_USER_STATUS = UserStatus::Free;
+	user->setUserStatus(UserStatus::Free);
 
 	toast->setInfoText(QString("课堂已结束"));
 	toast->show();
@@ -236,9 +236,9 @@ void StudentOnlineClassroomWidget::handleCommandEndLesson(QJsonObject &data) {
 }
 
 void StudentOnlineClassroomWidget::handleCommandQuitLesson(QJsonObject &data) {
-	User::G_USER_STATUS = UserStatus::Free;
+	user->setUserStatus(UserStatus::Free);
 
-	emit this->quitLessonSuccess();
+	emit this->quitLessonRequestSuccess();
 
 	return;
 }
@@ -246,18 +246,18 @@ void StudentOnlineClassroomWidget::handleCommandQuitLesson(QJsonObject &data) {
 void StudentOnlineClassroomWidget::handleCommandRaiseHand(QJsonObject &data) {
 	Toast *toast = new Toast;
 
-	switch (RaiseHandError(data["raise_hand_err"].toInt())) {
-	case RaiseHandError::NoError:
+	switch (ErrorCode(data["raise_hand_err"].toInt())) {
+	case ErrorCode::NoError:
 		toast->setInfoText("申请已发送");
 		toast->show();
 		this->connect(toast, &Toast::complete, toast, &Toast::deleteLater);
 		break;
-	case RaiseHandError::InSpeechError:
+	case ErrorCode::InSpeechError:
 		toast->setInfoText("您已在发言状态中");
 		toast->show();
 		this->connect(toast, &Toast::complete, toast, &Toast::deleteLater);
 		break;
-	case RaiseHandError::ApplyingError:
+	case ErrorCode::ApplyingError:
 		toast->setInfoText("您已发送申请，请耐心等候教师回应");
 		toast->show();
 		this->connect(toast, &Toast::complete, toast, &Toast::deleteLater);
@@ -278,7 +278,7 @@ void StudentOnlineClassroomWidget::handleCommandResultOfRaiseHand(QJsonObject &d
 			addMemberToInSpeech(info);
 
 		// ——处理自己的请求被接受
-		if (data["student_id"].toString() == User::G_UID) {
+		if (data["student_id"].toString() == user->getUid()) {
 			this->showInSpeechRemovableWidget();
 			this->m_interaction_widget->whiteBoardWidget()->
 				setInteractiveWhiteBoardDisabled(false);  // 释放画板控制
@@ -292,7 +292,7 @@ void StudentOnlineClassroomWidget::handleCommandRemoveMemberFromInSpeech(QJsonOb
 	Toast *toast = new Toast;
 
 	// ——处理关于自己的请求
-	if (data["student_id"].toString() == User::G_UID) {
+	if (data["student_id"].toString() == user->getUid()) {
 		this->disconnect(&this->m_lesson_timer, &QTimer::timeout, 
 			this->m_in_speech_removeable_widget, 
 			&StudentInSpeechRemovableWidget::updateInSpeechLastTime);
@@ -336,8 +336,8 @@ void StudentOnlineClassroomWidget::joinInLesson(QString &course_id, QString &cou
 	request_json_obj["account_type"] = AccountType::Student;
 	request_json_obj["course_id"] = course_id;
 	request_json_obj["course_name"] = course_name;
-	request_json_obj["uid"] = User::G_UID;
-	request_json_obj["username"] = User::G_USERNAME;
+	request_json_obj["uid"] = user->getUid();
+	request_json_obj["username"] = user->getUsername();
 
 	this->m_lesson_connection->realSend(request_json_obj);
 
@@ -348,7 +348,7 @@ void StudentOnlineClassroomWidget::lessonBegin() {
 	QJsonObject paint_request_json_obj;
 	Toast *toast = new Toast("开始上课");
 
-	User::G_USER_STATUS = UserStatus::InClass;
+	user->setUserStatus(UserStatus::InClass);
 
 	this->m_lesson_timer.start(1000);  // 开启定时器
 
@@ -367,14 +367,14 @@ void StudentOnlineClassroomWidget::lessonBegin() {
 void StudentOnlineClassroomWidget::quitLesson() {
 	QJsonObject request_json_obj;
 
-	switch (User::G_USER_STATUS) {
+	switch (user->getUserStatus()) {
 	case UserStatus::InClass:
 	case UserStatus::InRoom:
 		request_json_obj["command"] = TransportCmd::QuitLesson;
 		this->lessonConnectionSend(request_json_obj);
 		break;
 	case UserStatus::Free:
-		emit this->quitLessonSuccess();
+		emit this->quitLessonRequestSuccess();
 		break;
 	}
 
@@ -407,7 +407,7 @@ void StudentOnlineClassroomWidget::endSpeech() {
 	QJsonObject request_json_obj;
 
 	request_json_obj["command"] = TransportCmd::RemoveMemberFromInSpeech;
-	request_json_obj["student_id"] = User::G_UID;
+	request_json_obj["student_id"] = user->getUid();
 	this->lessonConnectionSend(request_json_obj);
 
 	return;

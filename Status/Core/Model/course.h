@@ -26,11 +26,11 @@ protected:
 };
 
 
-class CourseBase {
+class CourseBasic {
 public:
-	CourseBase() {};
-	CourseBase(const QString &course_id, const QString &course_name);
-	virtual ~CourseBase() {};
+	CourseBasic() {};
+	CourseBasic(const QString &course_id, const QString &course_name);
+	virtual ~CourseBasic() {};
 	void setCourseId(const QString &course_id) { this->m_course_id = course_id; return; };
 	void setCourseNmae(const QString &course_name) { this->m_course_name = course_name; return; };
 	const QString& courseId() const { return this->m_course_id; };
@@ -108,7 +108,7 @@ protected:
 };
 
 
-class Course : public CourseBase{
+class Course : public CourseBasic{
 public:
 	Course(const QString &course_id, const QString &course_name, const QList<RoleBase> &teachers_list, const QList<RoleBase> &students_list,
 		const QList<LessonBase> &lessons_list, const QDateTime &creation_datetime, const QString &course_key, const int &concentration_avg, const int &num_of_like);

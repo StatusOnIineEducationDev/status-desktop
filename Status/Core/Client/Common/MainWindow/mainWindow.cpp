@@ -20,8 +20,8 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent) {
 }
 
 void MainWindow::updateUserInfo() {
-	this->m_ui.username_text->setText(User::G_USERNAME);
-	this->m_ui.user_pic->setPixmap(User::G_USER_PIC);
+	this->m_ui.username_text->setText(user->getUsername());
+	this->m_ui.user_pic->setPixmap(user->getUserPic());
 
 	return;
 }

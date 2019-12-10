@@ -117,13 +117,13 @@ QScrollBar::sub-line:vertical {
        <number>0</number>
       </property>
       <property name="leftMargin">
-       <number>10</number>
+       <number>25</number>
       </property>
       <property name="topMargin">
        <number>0</number>
       </property>
       <property name="rightMargin">
-       <number>10</number>
+       <number>25</number>
       </property>
       <property name="bottomMargin">
        <number>0</number>
@@ -349,7 +349,40 @@ background: none;</string>
        </spacer>
       </item>
       <item>
-       <widget class="QPushButton" name="pushButton_2">
+       <widget class="QLabel" name="loading_tips_text">
+        <property name="font">
+         <font>
+          <family>微软雅黑</family>
+          <pointsize>10</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QLabel {
+	background: none;
+	border: none;
+	color: #999999;
+}</string>
+        </property>
+        <property name="text">
+         <string>加载中...</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <spacer name="horizontalSpacer_4">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <widget class="QPushButton" name="refresh_btn">
         <property name="cursor">
          <cursorShape>PointingHandCursor</cursorShape>
         </property>
@@ -722,6 +755,12 @@ QScrollBar::sub-line:vertical {
         <property name="styleSheet">
          <string notr="true">background: none;
 border: none;</string>
+        </property>
+        <property name="horizontalScrollBarPolicy">
+         <enum>Qt::ScrollBarAlwaysOff</enum>
+        </property>
+        <property name="verticalScrollMode">
+         <enum>QAbstractItemView::ScrollPerPixel</enum>
         </property>
        </widget>
       </item>

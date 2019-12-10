@@ -19,7 +19,7 @@ class OnlineClassroomWidget : public QWidget {
 	Q_OBJECT
 
 signals:
-	void quitLessonSuccess();
+	void quitLessonRequestSuccess();
 
 public:
 	OnlineClassroomWidget(QWidget *parent = nullptr);

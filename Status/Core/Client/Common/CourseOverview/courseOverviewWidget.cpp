@@ -55,14 +55,14 @@ void CourseOverviewWidget::getCourseIntroductionRequest(const QString &course_id
 
 	// ——可变
 	//     ——固定数据
-	request_json_obj["account_type"] = User::G_ACCOUNT_TYPE;
-	request_json_obj["uid"] = User::G_UID;
-	request_json_obj["username"] = User::G_USERNAME;
+	request_json_obj["account_type"] = user->getAccountType();
+	request_json_obj["uid"] = user->getUid();
+	request_json_obj["username"] = user->getUsername();
 	//     ——可变数据
 	request_json_obj["course_id"] = course_id;
 	request_obj->request(QUrl(url + "/getCourseIntroduction"), request_json_obj);
 	this->connect(request_obj, &HttpRequest::success,
-		this, &CourseOverviewWidget::getCourseIntroductionSuccess);
+		this, &CourseOverviewWidget::getCourseIntroductionRequestSuccess);
 
 	// ——不变
 	this->connect(request_obj, &HttpRequest::complete, request_thread, &QThread::quit);
@@ -73,7 +73,7 @@ void CourseOverviewWidget::getCourseIntroductionRequest(const QString &course_id
 	return;
 }
 
-void CourseOverviewWidget::getCourseIntroductionSuccess(const QJsonObject &data) {
+void CourseOverviewWidget::getCourseIntroductionRequestSuccess(const QJsonObject &data) {
 	this->m_introduction_card_widget->
 		setContentText(data["introduction_text"].toString());
 
@@ -91,14 +91,14 @@ void CourseOverviewWidget::getCourseNoticeRequest(const QString &course_id) {
 
 	// ——可变
 	//     ——固定数据
-	request_json_obj["account_type"] = User::G_ACCOUNT_TYPE;
-	request_json_obj["uid"] = User::G_UID;
-	request_json_obj["username"] = User::G_USERNAME;
+	request_json_obj["account_type"] = user->getAccountType();
+	request_json_obj["uid"] = user->getUid();
+	request_json_obj["username"] = user->getUsername();
 	//     ——可变数据
 	request_json_obj["course_id"] = course_id;
 	request_obj->request(QUrl(url + "/getCourseNotice"), request_json_obj);
 	this->connect(request_obj, &HttpRequest::success,
-		this, &CourseOverviewWidget::getCourseNoticeSuccess);
+		this, &CourseOverviewWidget::getCourseNoticeRequestSuccess);
 
 	// ——不变
 	this->connect(request_obj, &HttpRequest::complete, request_thread, &QThread::quit);
@@ -109,7 +109,7 @@ void CourseOverviewWidget::getCourseNoticeRequest(const QString &course_id) {
 	return;
 }
 
-void CourseOverviewWidget::getCourseNoticeSuccess(const QJsonObject &data) {
+void CourseOverviewWidget::getCourseNoticeRequestSuccess(const QJsonObject &data) {
 	this->m_notice_card_widget->
 		setContentText(data["notice_text"].toString());
 
