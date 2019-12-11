@@ -523,6 +523,11 @@ public:
         point_3->setStyleSheet(QString::fromUtf8("color: white;\n"
 "background: none;"));
         point_3->setAlignment(Qt::AlignCenter);
+        point_2->raise();
+        point_3->raise();
+        point_1->raise();
+        main_frame->raise();
+        logo_pic->raise();
 
         gridLayout->addWidget(background_frame, 1, 0, 1, 1);
 
@@ -588,6 +593,16 @@ public:
         gridLayout->addWidget(title_bar_frame, 0, 0, 1, 1);
 
         LoginWindow->setCentralWidget(centralwidget);
+        QWidget::setTabOrder(account_edit, password_edit);
+        QWidget::setTabOrder(password_edit, student_checkBox);
+        QWidget::setTabOrder(student_checkBox, teacher_checkBox);
+        QWidget::setTabOrder(teacher_checkBox, confirm_btn);
+        QWidget::setTabOrder(confirm_btn, register_btn);
+        QWidget::setTabOrder(register_btn, forget_password_btn);
+        QWidget::setTabOrder(forget_password_btn, teacher_btn);
+        QWidget::setTabOrder(teacher_btn, student_btn);
+        QWidget::setTabOrder(student_btn, minus_btn);
+        QWidget::setTabOrder(minus_btn, close_btn);
 
         retranslateUi(LoginWindow);
         QObject::connect(close_btn, SIGNAL(clicked()), LoginWindow, SLOT(close()));
@@ -604,7 +619,7 @@ public:
         label_3->setText(QCoreApplication::translate("LoginWindow", "\346\211\253\344\270\200\346\211\253\344\275\223\351\252\214\345\260\217\347\250\213\345\272\217", nullptr));
         forget_password_btn->setText(QCoreApplication::translate("LoginWindow", "\345\277\230\350\256\260\345\257\206\347\240\201\357\274\237", nullptr));
         label_4->setText(QString());
-        password_edit->setText(QString());
+        password_edit->setText(QCoreApplication::translate("LoginWindow", "test", nullptr));
         password_edit->setPlaceholderText(QCoreApplication::translate("LoginWindow", "\345\257\206\347\240\201", nullptr));
         confirm_btn->setText(QCoreApplication::translate("LoginWindow", "\347\231\273\345\275\225", nullptr));
 #if QT_CONFIG(shortcut)
@@ -615,7 +630,7 @@ public:
         student_checkBox->setText(QCoreApplication::translate("LoginWindow", "\350\256\260\344\275\217\345\257\206\347\240\201", nullptr));
         teacher_checkBox->setText(QCoreApplication::translate("LoginWindow", "\350\207\252\345\212\250\347\231\273\345\275\225", nullptr));
         label->setText(QString());
-        account_edit->setText(QString());
+        account_edit->setText(QCoreApplication::translate("LoginWindow", "test", nullptr));
         account_edit->setPlaceholderText(QCoreApplication::translate("LoginWindow", "\350\264\246\345\217\267", nullptr));
         register_btn->setText(QCoreApplication::translate("LoginWindow", "\346\263\250\345\206\214\350\264\246\345\217\267", nullptr));
         warn_text->setText(QString());

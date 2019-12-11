@@ -26,7 +26,7 @@ protected:
 	void login();
 	void loginRequest();
 	void loginRequestSuccess(const QJsonObject &data);
-	
+
 	void loadLoginData(const QJsonObject &data);
 	void loadTeacherClient();
 	void loadStudentClient();

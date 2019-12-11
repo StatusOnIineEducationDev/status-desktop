@@ -73,9 +73,17 @@ void CourseBasicWidget::getCourseBasicInfoRequest(const QString &course_id) {
 }
 
 void CourseBasicWidget::getCourseBasicInfoRequestSuccess(const QJsonObject &data) {
-	this->m_ui.create_time_text->setText(
-		QDateTime::fromTime_t(data["create_timestamp"].toInt()).toString("yyyy-MM-dd"));
-	this->m_ui.course_id_text->setText(data["course_id"].toString());
+	ErrorCode err = ErrorCode(data["error_code"].toInt());
+
+	switch (err) {
+	case NoError:
+		this->m_ui.create_time_text->setText(
+			QDateTime::fromTime_t(data["create_timestamp"].toInt()).toString("yyyy-MM-dd"));
+		this->m_ui.course_id_text->setText(data["course_id"].toString());
+		break;
+	case CourseNotFoundError:
+		break;
+	}
 
 	return;
 }

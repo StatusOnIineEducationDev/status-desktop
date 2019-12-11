@@ -23,7 +23,7 @@ public:
 	const AccountType &getAccountType() const { return this->m_account_type; };
 	const UserStatus &getUserStatus() const { return this->m_user_status; };
 	void setUserPic(const QPixmap &user_pic) { this->m_user_pic = user_pic; return; };
-	void setUid(const QString &uid) { this->m_uid = uid; return; };
+	void setUid(const int &uid) { this->m_uid = uid; return; };
 	void setUsername(const QString &username) { this->m_username = username; return; };
 	void setCourseList(const QList<CourseBasic> &course_list) { this->m_course_list = course_list; return; };
 	void setAccountType(const AccountType &account_type) { this->m_account_type = account_type; return; };

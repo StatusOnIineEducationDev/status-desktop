@@ -111,17 +111,17 @@ void LoginWindow::loginRunningAnimation() {
 	logo_animation->setEasingCurve(QEasingCurve::OutQuart);
 
 	point_1_animation = new QPropertyAnimation(this->m_ui.point_1, "pos", this);
-	point_1_animation->setDuration(1000);
+	point_1_animation->setDuration(2000);
 	point_1_animation->setStartValue(QPoint(0, 115));
 	point_1_animation->setEndValue(QPoint(610, 115));
 	point_1_animation->setEasingCurve(QEasingCurve::OutInCubic);
 	point_2_animation = new QPropertyAnimation(this->m_ui.point_2, "pos", this);
-	point_2_animation->setDuration(1000);
+	point_2_animation->setDuration(2500);
 	point_2_animation->setStartValue(QPoint(-50, 115));
 	point_2_animation->setEndValue(QPoint(610, 115));
 	point_2_animation->setEasingCurve(QEasingCurve::OutInCubic);
 	point_3_animation = new QPropertyAnimation(this->m_ui.point_3, "pos", this);
-	point_3_animation->setDuration(1000);
+	point_3_animation->setDuration(3000);
 	point_3_animation->setStartValue(QPoint(-100, 115));
 	point_3_animation->setEndValue(QPoint(610, 115));
 	point_3_animation->setEasingCurve(QEasingCurve::OutInCubic);
@@ -187,7 +187,15 @@ void LoginWindow::loadLoginData(const QJsonObject &data) {
 void LoginWindow::loadTeacherClient() {
 	TeacherMainWindow *win = new TeacherMainWindow;
 
+	// ——信号绑定
+	this->connect(win, &TeacherMainWindow::close,
+		this, &LoginWindow::close);
+	this->connect(win->ui().logout_btn, &QPushButton::clicked,
+		this, &LoginWindow::show);
+
+	// ——其他
 	Toast::setWin(win);
+	this->hide();
 	win->show();
 	
 	return;
@@ -196,7 +204,15 @@ void LoginWindow::loadTeacherClient() {
 void LoginWindow::loadStudentClient() {
 	StudentMainWindow *win = new StudentMainWindow;
 
+	// ——信号绑定
+	this->connect(win, &StudentMainWindow::close,
+		this, &LoginWindow::close);
+	this->connect(win->ui().logout_btn, &QPushButton::clicked,
+		this, &LoginWindow::show);
+
+	// ——其他
 	Toast::setWin(win);
+	this->hide();
 	win->show();
 
 	return;

@@ -392,7 +392,7 @@ background: none;</string>
 color: #666666;</string>
                 </property>
                 <property name="text">
-                 <string/>
+                 <string>test</string>
                 </property>
                 <property name="echoMode">
                  <enum>QLineEdit::Password</enum>
@@ -817,7 +817,7 @@ background: none;</string>
 color: #666666;</string>
                 </property>
                 <property name="text">
-                 <string/>
+                 <string>test</string>
                 </property>
                 <property name="placeholderText">
                  <string>账号</string>
@@ -1002,6 +1002,11 @@ background: none;</string>
         <set>Qt::AlignCenter</set>
        </property>
       </widget>
+      <zorder>point_2</zorder>
+      <zorder>point_3</zorder>
+      <zorder>point_1</zorder>
+      <zorder>main_frame</zorder>
+      <zorder>logo_pic</zorder>
      </widget>
     </item>
     <item row="0" column="0">
@@ -1155,9 +1160,22 @@ QPushButton:hover {
    </layout>
   </widget>
  </widget>
+ <tabstops>
+  <tabstop>account_edit</tabstop>
+  <tabstop>password_edit</tabstop>
+  <tabstop>student_checkBox</tabstop>
+  <tabstop>teacher_checkBox</tabstop>
+  <tabstop>confirm_btn</tabstop>
+  <tabstop>register_btn</tabstop>
+  <tabstop>forget_password_btn</tabstop>
+  <tabstop>teacher_btn</tabstop>
+  <tabstop>student_btn</tabstop>
+  <tabstop>minus_btn</tabstop>
+  <tabstop>close_btn</tabstop>
+ </tabstops>
  <resources>
   <include location="../../Status.qrc"/>
-  <include location="../../../../VisualStudioProjects/Status/Status/Status.qrc"/>
+  <include location="../../Status.qrc"/>
  </resources>
  <connections>
   <connection>

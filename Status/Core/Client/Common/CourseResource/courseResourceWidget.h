@@ -10,6 +10,7 @@
 #include "Core/Network/httpRequest.h"
 #include "Core/Model/user.h"
 #include "Core/Client/conf.h"
+#include "Core/Component/toast.h"
 
 
 class CourseResourceWidget : public QWidget {
@@ -37,6 +38,14 @@ protected:
 	void getFileInfoListRequest();
 	void getFileInfoListRequestSuccess(const QJsonObject &data);
 
+	void deleteCourseResource();
+	void deleteCourseResourceRequest(const QString &file_id);
+	void deleteCourseResourceRequestSuccess(const QJsonObject &data);
+
+	void downloadCourseResource();
+	void downloadCourseResourceRequest(const QString &file_id, QString &filename);
+	void downloadCourseResourceSuccess(const QByteArray &data, const QString &filename);
+
 	Ui::CourseResourceWidget m_ui;
 
 	UploadFileDialog *m_upload_file_dialog;
@@ -46,6 +55,7 @@ protected:
 		|-info(m_file_info_list)
 			|-course_id(QString)
 			|-file_id(QString)
+			|-resource_title(QString)
 			|-filename(QString)
 			|-upload_timestamp(int)
 			|-uploader(QString)

@@ -28,6 +28,9 @@ enum ErrorCode {
 	AccountTypeError = 3,
 	AccountNotFoundError = 4,
 	PasswordError = 5,
+	CourseResourceTitleDuplicateError = 6,
+	CourseResourceNotFoundError = 7,
+	CourseNotFoundError = 8
 };
 
 enum CourseStatus {

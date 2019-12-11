@@ -1,4 +1,5 @@
 #pragma once
+#pragma execution_character_set("utf-8")  
 #include <QDialog>
 #include <QMouseEvent>
 #include <QFileInfo>
@@ -12,6 +13,9 @@
 class UploadFileDialog : public QDialog {
 	Q_OBJECT
 
+signals:
+	void uploadSuccess();
+
 public:
 	UploadFileDialog(const QFileInfo &info, const QString &course_id,
 		QWidget *parent = nullptr);
@@ -21,8 +25,9 @@ public:
 	void setCourseId(const QString &course_id) { this->m_course_id = course_id; return; }
 
 protected:
+	void upload();
 	void uploadCourseResourceRequest();
-	void uploadCourseResourceRequestSuccess();
+	void uploadCourseResourceRequestSuccess(const QJsonObject &data);
 
 	void mouseMoveEvent(QMouseEvent *event);
 	void mousePressEvent(QMouseEvent *event);

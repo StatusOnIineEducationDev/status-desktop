@@ -14,18 +14,25 @@ UploadFileDialog::UploadFileDialog(const QFileInfo &info, const QString &course_
 	QString file_type = info.fileName().mid(info.fileName().lastIndexOf(".") + 1);
 	this->m_ui.file_type_pic->
 		setPixmap(QPixmap(":/file_type/Resources/material/file_type/" + file_type + ".png"));
+	this->m_ui.resource_title_edit->setText(info.fileName());
 	this->m_ui.filename_text->setText(info.fileName());
 	this->m_ui.file_size_text->setText(formatSize(info.size()));
 
-	this->uploadCourseResourceRequest();
-
 	// ——绑定信号
 	this->connect(this->m_ui.confirm_btn, &QPushButton::clicked,
-		this, &UploadFileDialog::deleteLater);
+		this, &UploadFileDialog::upload);
 }
 
 UploadFileDialog::~UploadFileDialog() {
 
+}
+
+void UploadFileDialog::upload() {
+	this->m_ui.confirm_btn->setDisabled(true);
+	this->m_ui.resource_title_edit->setDisabled(true);
+	this->uploadCourseResourceRequest();
+
+	return;
 }
 
 void UploadFileDialog::uploadCourseResourceRequest() {
@@ -33,7 +40,7 @@ void UploadFileDialog::uploadCourseResourceRequest() {
 	QJsonObject request_json_obj;
 	QString url = "http://" + ReadConf::G_HTTP_HOST + ":"
 		+ QString::number(ReadConf::G_HTTP_PORT);
-	HttpRequest *request_obj = new HttpRequest;
+	FileUpload *request_obj = new FileUpload;
 	QThread *request_thread = new QThread;
 	request_obj->moveToThread(request_thread);
 
@@ -44,23 +51,45 @@ void UploadFileDialog::uploadCourseResourceRequest() {
 	request_json_obj["username"] = user->getUsername();
 	//     ——可变数据
 	request_json_obj["course_id"] = this->m_course_id;
+	request_json_obj["resource_title"] = this->m_ui.resource_title_edit->text();
+	request_json_obj["filename"] = this->m_info.fileName();
+	request_json_obj["file_size"] = this->m_info.size();
 	QFile *file = new QFile(this->m_info.filePath(), this);
-	request_obj->request(QUrl(url + "/uploadCourseResource"), request_json_obj, *file);
-	this->connect(request_obj, &HttpRequest::success,
+	request_obj->request(QUrl(url + "/courseResource/uploadCourseResource"), request_json_obj, *file);
+	this->connect(request_obj, &FileUpload::success,
 		this, &UploadFileDialog::uploadCourseResourceRequestSuccess);
 
 	// ——不变
-	this->connect(request_obj, &HttpRequest::complete, request_thread, &QThread::quit);
-	this->connect(request_obj, &HttpRequest::complete, request_thread, &QThread::deleteLater);
-	this->connect(request_obj, &HttpRequest::complete, request_obj, &HttpRequest::deleteLater);
+	this->connect(request_obj, &FileUpload::complete, request_thread, &QThread::quit);
+	this->connect(request_obj, &FileUpload::complete, request_thread, &QThread::deleteLater);
+	this->connect(request_obj, &FileUpload::complete, request_obj, &FileUpload::deleteLater);
 	request_thread->start();
 
 	return;
 }
 
-void UploadFileDialog::uploadCourseResourceRequestSuccess() {
+void UploadFileDialog::uploadCourseResourceRequestSuccess(const QJsonObject &data) {
+	ErrorCode err = ErrorCode(data["error_code"].toInt());
+
 	this->m_ui.confirm_btn->setDisabled(false);
-	this->m_ui.progressBar->setValue(100);
+
+	switch (err) {
+	case NoError:
+		this->disconnect(this->m_ui.confirm_btn, &QPushButton::clicked,
+			this, &UploadFileDialog::upload);
+		this->connect(this->m_ui.confirm_btn, &QPushButton::clicked,
+			this, &UploadFileDialog::close);
+		this->m_ui.progressBar->setValue(100);
+		this->m_ui.confirm_btn->setText("完成");
+		emit this->uploadSuccess();
+		break;
+	case CourseResourceTitleDuplicateError:
+		this->m_ui.resource_title_edit->setDisabled(false);
+		this->m_ui.warn_text->setText("资源标题重复");
+		break;
+	}
+
+	
 
 	return;
 }

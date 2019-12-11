@@ -12,6 +12,8 @@ public:
 		G_SOCKET_HOST = m_conf->value("socket_server/host").toString();
 		G_SOCKET_PORT = m_conf->value("socket_server/port").toInt();
 
+		G_FILE_STORAGE_PATH = m_conf->value("user_config/file_storage_path").toString();
+
 		delete m_conf;
 
 		return;
@@ -21,4 +23,6 @@ public:
 	static quint16 G_HTTP_PORT;
 	static QString G_SOCKET_HOST;
 	static quint16 G_SOCKET_PORT;
+
+	static QString G_FILE_STORAGE_PATH;
 };
