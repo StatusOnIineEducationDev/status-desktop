@@ -31,8 +31,8 @@ public:
     QLabel *label_35;
     QSpacerItem *horizontalSpacer_11;
     QPushButton *mini_program_btn;
-    QPushButton *raise_hand_btn_2;
-    QPushButton *raise_hand_btn_3;
+    QPushButton *join_course_btn;
+    QPushButton *create_course_btn;
 
     void setupUi(QWidget *TeacherCourseManagementFunctionButtonWidget)
     {
@@ -99,18 +99,18 @@ public:
 
         horizontalLayout_4->addWidget(mini_program_btn);
 
-        raise_hand_btn_2 = new QPushButton(function_btn_frame);
-        raise_hand_btn_2->setObjectName(QString::fromUtf8("raise_hand_btn_2"));
+        join_course_btn = new QPushButton(function_btn_frame);
+        join_course_btn->setObjectName(QString::fromUtf8("join_course_btn"));
         QSizePolicy sizePolicy(QSizePolicy::Minimum, QSizePolicy::Fixed);
         sizePolicy.setHorizontalStretch(0);
         sizePolicy.setVerticalStretch(0);
-        sizePolicy.setHeightForWidth(raise_hand_btn_2->sizePolicy().hasHeightForWidth());
-        raise_hand_btn_2->setSizePolicy(sizePolicy);
-        raise_hand_btn_2->setMinimumSize(QSize(0, 25));
-        raise_hand_btn_2->setMaximumSize(QSize(16777215, 25));
-        raise_hand_btn_2->setFont(font);
-        raise_hand_btn_2->setCursor(QCursor(Qt::PointingHandCursor));
-        raise_hand_btn_2->setStyleSheet(QString::fromUtf8("QPushButton {\n"
+        sizePolicy.setHeightForWidth(join_course_btn->sizePolicy().hasHeightForWidth());
+        join_course_btn->setSizePolicy(sizePolicy);
+        join_course_btn->setMinimumSize(QSize(0, 25));
+        join_course_btn->setMaximumSize(QSize(16777215, 25));
+        join_course_btn->setFont(font);
+        join_course_btn->setCursor(QCursor(Qt::PointingHandCursor));
+        join_course_btn->setStyleSheet(QString::fromUtf8("QPushButton {\n"
 "	color: #666666;\n"
 "	background: none;\n"
 "	border: none;\n"
@@ -124,20 +124,20 @@ public:
 "}"));
         QIcon icon1;
         icon1.addFile(QString::fromUtf8(":/button/Resources/material/button/join_in.png"), QSize(), QIcon::Normal, QIcon::Off);
-        raise_hand_btn_2->setIcon(icon1);
-        raise_hand_btn_2->setIconSize(QSize(15, 15));
+        join_course_btn->setIcon(icon1);
+        join_course_btn->setIconSize(QSize(15, 15));
 
-        horizontalLayout_4->addWidget(raise_hand_btn_2);
+        horizontalLayout_4->addWidget(join_course_btn);
 
-        raise_hand_btn_3 = new QPushButton(function_btn_frame);
-        raise_hand_btn_3->setObjectName(QString::fromUtf8("raise_hand_btn_3"));
-        sizePolicy.setHeightForWidth(raise_hand_btn_3->sizePolicy().hasHeightForWidth());
-        raise_hand_btn_3->setSizePolicy(sizePolicy);
-        raise_hand_btn_3->setMinimumSize(QSize(0, 25));
-        raise_hand_btn_3->setMaximumSize(QSize(16777215, 25));
-        raise_hand_btn_3->setFont(font);
-        raise_hand_btn_3->setCursor(QCursor(Qt::PointingHandCursor));
-        raise_hand_btn_3->setStyleSheet(QString::fromUtf8("QPushButton {\n"
+        create_course_btn = new QPushButton(function_btn_frame);
+        create_course_btn->setObjectName(QString::fromUtf8("create_course_btn"));
+        sizePolicy.setHeightForWidth(create_course_btn->sizePolicy().hasHeightForWidth());
+        create_course_btn->setSizePolicy(sizePolicy);
+        create_course_btn->setMinimumSize(QSize(0, 25));
+        create_course_btn->setMaximumSize(QSize(16777215, 25));
+        create_course_btn->setFont(font);
+        create_course_btn->setCursor(QCursor(Qt::PointingHandCursor));
+        create_course_btn->setStyleSheet(QString::fromUtf8("QPushButton {\n"
 "	color: #666666;\n"
 "	background: none;\n"
 "	border: none;\n"
@@ -151,10 +151,10 @@ public:
 "}"));
         QIcon icon2;
         icon2.addFile(QString::fromUtf8(":/button/Resources/material/button/create.png"), QSize(), QIcon::Normal, QIcon::Off);
-        raise_hand_btn_3->setIcon(icon2);
-        raise_hand_btn_3->setIconSize(QSize(15, 15));
+        create_course_btn->setIcon(icon2);
+        create_course_btn->setIconSize(QSize(15, 15));
 
-        horizontalLayout_4->addWidget(raise_hand_btn_3);
+        horizontalLayout_4->addWidget(create_course_btn);
 
 
         gridLayout->addWidget(function_btn_frame, 0, 0, 1, 1);
@@ -170,8 +170,8 @@ public:
         TeacherCourseManagementFunctionButtonWidget->setWindowTitle(QCoreApplication::translate("TeacherCourseManagementFunctionButtonWidget", "Form", nullptr));
         label_35->setText(QCoreApplication::translate("TeacherCourseManagementFunctionButtonWidget", "\350\257\276\347\250\213\347\256\241\347\220\206", nullptr));
         mini_program_btn->setText(QCoreApplication::translate("TeacherCourseManagementFunctionButtonWidget", "\345\260\217\347\250\213\345\272\217", nullptr));
-        raise_hand_btn_2->setText(QCoreApplication::translate("TeacherCourseManagementFunctionButtonWidget", "\345\212\240\345\205\245\350\257\276\347\250\213", nullptr));
-        raise_hand_btn_3->setText(QCoreApplication::translate("TeacherCourseManagementFunctionButtonWidget", "\345\210\233\345\273\272\350\257\276\347\250\213", nullptr));
+        join_course_btn->setText(QCoreApplication::translate("TeacherCourseManagementFunctionButtonWidget", "\345\212\240\345\205\245\350\257\276\347\250\213", nullptr));
+        create_course_btn->setText(QCoreApplication::translate("TeacherCourseManagementFunctionButtonWidget", "\345\210\233\345\273\272\350\257\276\347\250\213", nullptr));
     } // retranslateUi
 
 };

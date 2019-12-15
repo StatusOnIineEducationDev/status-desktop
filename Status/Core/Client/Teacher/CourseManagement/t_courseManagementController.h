@@ -1,7 +1,7 @@
 #pragma once
 #include "t_courseManagementWidget.h"
 #include "Core/Model/user.h"
-#include "Core/Component/toast.h"
+#include "Core/Component/Toast/toast.h"
 
 
 class TCourseManagementController : public QObject {

@@ -5,6 +5,7 @@
 #include "t_courseManagementFunctionButtonWidget.h"
 #include "CourseOverview/t_courseOverviewWidget.h"
 #include "CourseResource/t_courseResourceWidget.h"
+#include "CreateCourse/t_createCourseDialog.h"
 
 
 class TeacherCourseManagementWidget : public CourseManagementWidget {
@@ -19,7 +20,11 @@ protected:
 	void loadCourseOverviewWidget();
 	void loadCourseResourceWidget();
 
+	void loadCreateCourseDialog();
+
 	TeacherCourseManagementFunctionButtonWidget *m_function_button_widget;
 	TeacherCourseOverviewWidget *m_course_overview_widget;
 	TeacherCourseResourceWidget *m_course_resource_widget;
+
+	TeacherCreateCourseDialog *m_create_course_dialog;
 };

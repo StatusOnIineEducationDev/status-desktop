@@ -10,7 +10,8 @@
 #include "Core/Network/httpRequest.h"
 #include "Core/Model/user.h"
 #include "Core/Client/conf.h"
-#include "Core/Component/toast.h"
+#include "Core/Component/Toast/toast.h"
+#include "Core/Component/Loading/loading.h"
 
 
 class CourseResourceWidget : public QWidget {

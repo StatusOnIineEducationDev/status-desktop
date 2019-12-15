@@ -116,6 +116,18 @@
     <Filter Include="Core\Client\Common\Login">
       <UniqueIdentifier>{573ddb65-c1b3-402d-bbd5-4cbd7431d20c}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Core\Client\Teacher\CourseMangement\CreateCourse">
+      <UniqueIdentifier>{02a8c06e-059c-4611-9471-7822b2479c87}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\Component\Toast">
+      <UniqueIdentifier>{1feac219-a40c-4585-ade5-b5fc462282dd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\Component\Loading">
+      <UniqueIdentifier>{7cfefae0-f7dd-494e-bbd0-6932b17e7e1d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\Client\Student\CourseManagement\CourseResource">
+      <UniqueIdentifier>{6b6a4131-5476-4f63-ba5a-eb5ed1a0d2d3}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <QtRcc Include="Status.qrc">
@@ -207,6 +219,15 @@
     <QtUic Include="Resources\ui\c_courseBasicWidget.ui">
       <Filter>Resource Files\Ui</Filter>
     </QtUic>
+    <QtUic Include="Resources\ui\t_createCourseDialog.ui">
+      <Filter>Resource Files\Ui</Filter>
+    </QtUic>
+    <QtUic Include="Resources\ui\c_loadingMask.ui">
+      <Filter>Resource Files\Ui</Filter>
+    </QtUic>
+    <QtUic Include="Resources\ui\c_loadingWidget.ui">
+      <Filter>Resource Files\Ui</Filter>
+    </QtUic>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
@@ -227,9 +248,6 @@
     </ClCompile>
     <ClCompile Include="Core\Network\socket.cpp">
       <Filter>Core\Network</Filter>
-    </ClCompile>
-    <ClCompile Include="Core\Component\toast.cpp">
-      <Filter>Core\Component</Filter>
     </ClCompile>
     <ClCompile Include="Core\Hardware\camera.cpp">
       <Filter>Core\Hardware</Filter>
@@ -366,13 +384,22 @@
     <ClCompile Include="Core\Client\Common\CourseManagement\courseBasicWidget.cpp">
       <Filter>Core\Client\Common\CourseManagement</Filter>
     </ClCompile>
+    <ClCompile Include="Core\Client\Teacher\CourseManagement\CreateCourse\t_createCourseDialog.cpp">
+      <Filter>Core\Client\Teacher\CourseMangement\CreateCourse</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\Component\Toast\toast.cpp">
+      <Filter>Core\Component\Toast</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\Component\Loading\loading.cpp">
+      <Filter>Core\Component\Loading</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\Client\Student\CourseManagement\CourseResource\s_courseResourceWidget.cpp">
+      <Filter>Core\Client\Student\CourseManagement\CourseResource</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="Core\Network\socket.h">
       <Filter>Core\Network</Filter>
-    </QtMoc>
-    <QtMoc Include="Core\Component\toast.h">
-      <Filter>Core\Component</Filter>
     </QtMoc>
     <QtMoc Include="Core\Hardware\camera.h">
       <Filter>Core\Hardware</Filter>
@@ -502,6 +529,18 @@
     </QtMoc>
     <QtMoc Include="Core\Client\Common\CourseManagement\courseBasicWidget.h">
       <Filter>Core\Client\Common\CourseManagement</Filter>
+    </QtMoc>
+    <QtMoc Include="Core\Client\Teacher\CourseManagement\CreateCourse\t_createCourseDialog.h">
+      <Filter>Core\Client\Teacher\CourseMangement\CreateCourse</Filter>
+    </QtMoc>
+    <QtMoc Include="Core\Component\Toast\toast.h">
+      <Filter>Core\Component\Toast</Filter>
+    </QtMoc>
+    <QtMoc Include="Core\Component\Loading\loading.h">
+      <Filter>Core\Component\Loading</Filter>
+    </QtMoc>
+    <QtMoc Include="Core\Client\Student\CourseManagement\CourseResource\s_courseResourceWidget.h">
+      <Filter>Core\Client\Student\CourseManagement\CourseResource</Filter>
     </QtMoc>
   </ItemGroup>
   <ItemGroup>

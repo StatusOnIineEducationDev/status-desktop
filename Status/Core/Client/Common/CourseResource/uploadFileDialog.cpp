@@ -89,8 +89,6 @@ void UploadFileDialog::uploadCourseResourceRequestSuccess(const QJsonObject &dat
 		break;
 	}
 
-	
-
 	return;
 }
 

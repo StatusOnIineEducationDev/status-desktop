@@ -6,7 +6,7 @@
 #include <QJsonObject>
 #include "Core/Client/Student/OnlineClassroom/s_onlineclassroomWidget.h"
 #include "Core/Client/Common/c_listWidgetItem.h"
-#include "Core/Component/toast.h"
+#include "Core/Component/Toast/toast.h"
 #include "Core/Network/socket.h"
 #include "Core/Client/onlineEdu.h"
 

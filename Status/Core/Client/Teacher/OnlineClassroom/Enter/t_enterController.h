@@ -1,7 +1,7 @@
 #pragma once
 #include "t_enterDialog.h"
 #include "Core/Model/user.h"
-#include "Core/Component/toast.h"
+#include "Core/Component/Toast/toast.h"
 
 class TEnterController : public QObject {
 	Q_OBJECT

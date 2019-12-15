@@ -3,7 +3,7 @@
 #include <QListView>
 #include <QJsonObject>
 #include "ui_c_chatAndInSpeechWidget.h"
-#include "Core/Component/toast.h"
+#include "Core/Component/Toast/toast.h"
 #include "Core/Client/onlineEdu.h"
 #include "inSpeechMemberItemWidget.h"
 #include "chatItemWidget.h"

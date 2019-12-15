@@ -2,7 +2,7 @@
 #include <QtWidgets/QMainWindow>
 #include <QMouseEvent>
 #include "ui_s_enterDialog.h"
-#include "Core/Component/toast.h"
+#include "Core/Component/Toast/toast.h"
 
 
 class StudentEnterDialog : public QDialog {

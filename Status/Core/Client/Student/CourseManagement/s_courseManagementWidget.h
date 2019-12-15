@@ -2,6 +2,7 @@
 #include <QWidget>
 #include "../../Common/CourseManagement/courseManagementWidget.h"
 #include "s_courseManagementFunctionButtonWidget.h"
+#include "CourseResource/s_courseResourceWidget.h"
 
 
 class StudentCourseManagementWidget : public CourseManagementWidget {
@@ -13,6 +14,8 @@ public:
 
 protected:
 	void loadFunctionButtonWidget();
+	void loadCourseResourceWidget();
 
 	StudentCourseManagementFunctionButtonWidget *m_function_button_widget;
+	StudentCourseResourceWidget *m_course_resource_widget;
 };

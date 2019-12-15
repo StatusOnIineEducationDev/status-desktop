@@ -130,6 +130,9 @@ void CourseResourceWidget::openFileDialog() {
 }
 
 void CourseResourceWidget::getFileInfoListRequest() {
+	this->m_file_info_list.clear();
+	this->m_ui.file_listWidget->clear();
+
 	// ——不变
 	QJsonObject request_json_obj;
 	QString url = "http://" + ReadConf::G_HTTP_HOST + ":"
@@ -154,6 +157,12 @@ void CourseResourceWidget::getFileInfoListRequest() {
 	this->connect(request_obj, &HttpRequest::complete, request_thread, &QThread::deleteLater);
 	this->connect(request_obj, &HttpRequest::complete, request_obj, &HttpRequest::deleteLater);
 	request_thread->start();
+
+	// ——等待动画
+	LoadingWidget *loading_widget = new LoadingWidget(this->m_ui.file_listWidget);
+	this->connect(request_obj, &HttpRequest::complete, loading_widget, &LoadingWidget::deleteLater);
+	loading_widget->setTipsText("加载中...");
+	loading_widget->show();
 
 	return;
 }
@@ -293,6 +302,7 @@ void CourseResourceWidget::downloadCourseResourceSuccess(const QByteArray &data,
 	Toast *toast;
 	QString toast_text;
 	QFile file(ReadConf::G_FILE_STORAGE_PATH + filename);
+
 	if (file.open(QIODevice::WriteOnly | QIODevice::Append)) {
 		file.write(data);
 	}

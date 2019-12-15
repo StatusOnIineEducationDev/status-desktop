@@ -19,6 +19,9 @@ void TeacherCourseManagementWidget::loadFunctionButtonWidget() {
 		addWidget(this->m_function_button_widget);
 
 	// ——信号连接
+	Ui::TeacherCourseManagementFunctionButtonWidget ui = this->m_function_button_widget->ui();
+	this->connect(ui.create_course_btn, &QPushButton::clicked,
+		this, &TeacherCourseManagementWidget::loadCreateCourseDialog);
 
 	return;
 }
@@ -51,6 +54,19 @@ void TeacherCourseManagementWidget::loadCourseResourceWidget() {
 	// ——信号绑定
 	this->connect(this->courseBasicWidget(), &CourseBasicWidget::courseSwitched,
 		this->m_course_resource_widget, &TeacherCourseResourceWidget::updateAllData);
+
+	return;
+}
+
+void TeacherCourseManagementWidget::loadCreateCourseDialog() {
+	// ——加载创建课程窗口
+	this->m_create_course_dialog = new TeacherCreateCourseDialog(this);
+	this->m_create_course_dialog->setModal(true);  // 模态（这里与直接用exec()有区别）
+	this->m_create_course_dialog->show();
+
+	// ——信号绑定
+	this->connect(this->m_create_course_dialog, &TeacherCreateCourseDialog::createCourseSuccess,
+		this, &TeacherCourseManagementWidget::getCourseListRequest);
 
 	return;
 }

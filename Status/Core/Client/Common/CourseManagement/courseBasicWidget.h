@@ -20,9 +20,9 @@ public:
 	const Ui::CourseBasicWidget& ui() const { return this->m_ui; };
 
 	void updateAllData(const QString &course_id);
+	void updateCourseComboBox();
 
 protected:
-	void updateCourseComboBox();
 	void emitSignalCourseSwitched(const int index);
 
 	void getCourseBasicInfoRequest(const QString &course_id);

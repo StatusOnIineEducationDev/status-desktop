@@ -100,6 +100,12 @@
         <file>Resources/material/pic/scan.png</file>
         <file>Resources/material/pic/account.png</file>
         <file>Resources/material/pic/password.png</file>
+        <file>Resources/material/pic/basic.png</file>
+        <file>Resources/material/pic/complete.png</file>
+        <file>Resources/material/pic/introduction.png</file>
+        <file>Resources/material/pic/introduction_on.png</file>
+        <file>Resources/material/pic/none.png</file>
+        <file>Resources/material/pic/complete_on.png</file>
     </qresource>
     <qresource prefix="/cursor">
         <file>Resources/material/cursor/rubber.png</file>

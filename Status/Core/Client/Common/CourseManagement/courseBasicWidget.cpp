@@ -27,15 +27,21 @@ void CourseBasicWidget::updateAllData(const QString &course_id) {
 }
 
 void CourseBasicWidget::updateCourseComboBox() {
+	QComboBox *comboBox = this->m_ui.courses_comboBox;
+
+	this->m_ui.courses_comboBox->clear();
 	for (int index = 0; index < user->getCourseList().count(); index++) {
-		this->m_ui.courses_comboBox->
-			addItem(user->getCourseList().at(index).courseName());
+		comboBox->addItem(user->getCourseList().at(index).courseName());
 	}
 
 	return;
 }
 
 void CourseBasicWidget::emitSignalCourseSwitched(const int index) {
+	if (index == -1) {
+		return;
+	}
+
 	QString course_id = user->getCourseList().at(index).courseId();
 
 	emit this->courseSwitched(course_id);

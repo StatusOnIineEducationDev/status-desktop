@@ -6,7 +6,7 @@
 #include "Core/Model/course.h"
 #include "Core/Client/Student/CourseManagement/s_courseManagementController.h"
 #include "Core/Client/Student/OnlineClassroom/s_onlineClassroomController.h"
-#include "Core/Component/toast.h"
+#include "Core/Component/Toast/toast.h"
 
 
 class SMainWindowController : public QObject {
