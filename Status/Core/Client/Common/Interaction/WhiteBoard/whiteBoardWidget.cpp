@@ -25,7 +25,7 @@ void WhiteBoardWidget::createPaintConnection(QString &course_id, QString &lesson
 
 	this->m_paint_connection->connect(ReadConf::G_SOCKET_HOST, ReadConf::G_SOCKET_PORT);
 	paint_request_json_obj["command"] = TransportCmd::CreatePaintConnection;
-	paint_request_json_obj["account_type"] = AccountType::Student;
+	paint_request_json_obj["account_type"] = user->getAccountType();
 	paint_request_json_obj["course_id"] = course_id;
 	paint_request_json_obj["lesson_id"] = lesson_id;
 	paint_request_json_obj["uid"] = user->getUid();
