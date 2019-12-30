@@ -49,6 +49,7 @@
 	background: none;
 	/*background-color:rgba(0,0,0,150);*/
 	border-radius:5px;
+	border: none;
 }</string>
      </property>
      <property name="frameShape">
@@ -74,7 +75,8 @@
       <item row="2" column="0">
        <widget class="QFrame" name="square_frame">
         <property name="styleSheet">
-         <string notr="true">background: none;</string>
+         <string notr="true">background: none;
+border: none;</string>
         </property>
         <property name="frameShape">
          <enum>QFrame::StyledPanel</enum>
@@ -212,7 +214,8 @@
         </property>
         <property name="styleSheet">
          <string notr="true">color: #999999;
-background: none;</string>
+background: none;
+border: none;</string>
         </property>
         <property name="text">
          <string>Loading...</string>

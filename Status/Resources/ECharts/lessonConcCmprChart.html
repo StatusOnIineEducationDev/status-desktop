@@ -1,0 +1,158 @@
+﻿<!DOCTYPE html>
+<html style="height: 100%">
+<head>
+    <meta charset="utf-8">
+</head>
+<body style="height: 100%; margin: 0">
+    <div id="container" style="height: 100%"></div>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts/dist/echarts.min.js"></script>
+    <script type="text/javascript">
+        var dom = document.getElementById("container");
+        var myChart = echarts.init(dom);
+        var app = {};
+        option = null;
+        function init(data) {
+            option = {
+                tooltip: {
+                    trigger: 'axis',
+                    axisPointer: {
+                        lineStyle: {
+                            color: {
+                                type: 'linear',
+                                x: 0,
+                                y: 0,
+                                x2: 0,
+                                y2: 1,
+                                colorStops: [{
+                                    offset: 0,
+                                    color: 'rgba(197,164,255,0)' // 0% 处的颜色
+                                }, {
+                                    offset: 0.5,
+                                    color: 'rgba(197,164,255,1)' // 100% 处的颜色
+                                }, {
+                                    offset: 1,
+                                    color: 'rgba(197,164,255,0)' // 100% 处的颜色
+                                }],
+                                global: false // 缺省为 false
+                            }
+                        },
+                    },
+
+                },
+                grid: {
+                    top: '40',
+                    left: '30',
+                    right: '30',
+                    bottom: '40',
+                },
+                xAxis: [{
+                    type: 'category',
+                    boundaryGap: false,
+                    axisLine: { //坐标轴轴线相关设置。数学上的x轴
+                        show: false,
+                        lineStyle: {
+                            color: '#999999'
+                        },
+                    },
+                    axisLabel: {
+                        interval: 0,
+                        color: '#999999',
+                        margin: 10,
+                        textStyle: {
+                            fontSize: 14
+                        }
+                    },
+                    axisTick: {
+                        show: false,
+                    },
+                    data: data["x_label"]
+                }],
+                yAxis: [{
+                    type: 'value',
+                    min: 0,
+                    // max: 140,
+                    splitNumber: 4,
+                    splitLine: {
+                        show: false,
+                        lineStyle: {
+                            color: '#999999'
+                        }
+                    },
+                    axisLine: {
+                        show: false,
+                    },
+                    axisLabel: {
+                        show: false,
+                        margin: 20,
+                        textStyle: {
+                            color: '#999999',
+
+                        },
+                    },
+                    axisTick: {
+                        show: false,
+                    },
+                }],
+                series: [{
+                    type: 'line',
+                    // smooth: true, //是否平滑曲线显示
+                    // 			symbol:'circle',  // 默认是空心圆（中间是白色的），改成实心圆
+                    showAllSymbol: true,
+                    // symbol: 'image://./static/images/guang-circle.png',
+                    symbolSize: 8,
+                    lineStyle: {
+                        normal: {
+                            color: "#c5a4ff", // 线条颜色
+                        },
+                        borderColor: '#f0f'
+                    },
+                    smooth: 'true',
+                    label: {
+                        show: true,
+                        position: 'top',
+                        textStyle: {
+                            color: '#999999',
+                        }
+                    },
+                    itemStyle: {
+                        normal: {
+                            color: "#999999",
+                        }
+                    },
+                    tooltip: {
+                        show: false
+                    },
+                    areaStyle: { //区域填充样式
+                        normal: {
+                            //线性渐变，前4个参数分别是x0,y0,x2,y2(范围0~1);相当于图形包围盒中的百分比。如果最后一个参数是‘true’，则该四个值是绝对像素位置。
+                            color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+                                offset: 0,
+                                color: 'rgba(197,164,255,0.3)'
+                            },
+                            {
+                                offset: 1,
+                                color: 'rgba(197,164,255,0)'
+                            }
+                            ], false),
+                            shadowColor: 'rgba(53,142,215,0.9)', //阴影颜色
+                            shadowBlur: 20 //shadowBlur设图形阴影的模糊大小。配合shadowColor,shadowOffsetX/Y, 设置图形的阴影效果。
+                        }
+                    },
+                    data: data["value"]
+                }]
+            };
+            if (option && typeof option === "object") {
+                myChart.setOption(option, true);
+                resize(data);
+            }
+        }
+
+        function resize(data) {
+            var dom = document.getElementById('container');
+            dom.style.width = data["width"] + "px";
+            dom.style.height = data["height"] + "px";
+            myChart.resize();
+        }
+    </script>
+</body>
+</html>

@@ -5,6 +5,7 @@
 #include "t_courseManagementFunctionButtonWidget.h"
 #include "CourseOverview/t_courseOverviewWidget.h"
 #include "CourseResource/t_courseResourceWidget.h"
+#include "CourseAnalysis/t_courseAnalysisWidget.h"
 #include "CreateCourse/t_createCourseDialog.h"
 
 
@@ -19,12 +20,14 @@ protected:
 	void loadFunctionButtonWidget();
 	void loadCourseOverviewWidget();
 	void loadCourseResourceWidget();
+	void loadCourseAnalysisWidget();
 
 	void loadCreateCourseDialog();
 
 	TeacherCourseManagementFunctionButtonWidget *m_function_button_widget;
 	TeacherCourseOverviewWidget *m_course_overview_widget;
 	TeacherCourseResourceWidget *m_course_resource_widget;
+	TeacherCourseAnalysisWidget *m_course_analysis_widget;
 
 	TeacherCreateCourseDialog *m_create_course_dialog;
 };

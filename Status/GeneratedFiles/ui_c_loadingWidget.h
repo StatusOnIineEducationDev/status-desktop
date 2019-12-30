@@ -55,6 +55,7 @@ public:
 "	background: none;\n"
 "	/*background-color:rgba(0,0,0,150);*/\n"
 "	border-radius:5px;\n"
+"	border: none;\n"
 "}"));
         main_area->setFrameShape(QFrame::StyledPanel);
         main_area->setFrameShadow(QFrame::Raised);
@@ -66,7 +67,8 @@ public:
 
         square_frame = new QFrame(main_area);
         square_frame->setObjectName(QString::fromUtf8("square_frame"));
-        square_frame->setStyleSheet(QString::fromUtf8("background: none;"));
+        square_frame->setStyleSheet(QString::fromUtf8("background: none;\n"
+"border: none;"));
         square_frame->setFrameShape(QFrame::StyledPanel);
         square_frame->setFrameShadow(QFrame::Raised);
         horizontalLayout = new QHBoxLayout(square_frame);
@@ -121,7 +123,8 @@ public:
         font.setPointSize(10);
         tips_text->setFont(font);
         tips_text->setStyleSheet(QString::fromUtf8("color: #999999;\n"
-"background: none;"));
+"background: none;\n"
+"border: none;"));
         tips_text->setAlignment(Qt::AlignCenter);
 
         gridLayout_3->addWidget(tips_text, 1, 0, 1, 1);

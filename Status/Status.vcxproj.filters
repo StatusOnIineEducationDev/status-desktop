@@ -6,16 +6,8 @@
       <Extensions>qrc;*</Extensions>
       <ParseFiles>false</ParseFiles>
     </Filter>
-    <Filter Include="Resource Files">
-      <UniqueIdentifier>{D9D6E242-F8AF-46E4-B9FD-80ECBC20BA3E}</UniqueIdentifier>
-      <Extensions>qrc;*</Extensions>
-      <ParseFiles>false</ParseFiles>
-    </Filter>
     <Filter Include="Core">
       <UniqueIdentifier>{40a22ff7-cedf-4c10-8acc-9c6de6d97afb}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Resource Files\Ui">
-      <UniqueIdentifier>{e980361d-d650-40d6-b728-f5a6738e3ed3}</UniqueIdentifier>
     </Filter>
     <Filter Include="Core\Model">
       <UniqueIdentifier>{4a33d344-dcac-40b2-9e82-2eb09a1f5d7c}</UniqueIdentifier>
@@ -119,114 +111,145 @@
     <Filter Include="Core\Client\Teacher\CourseMangement\CreateCourse">
       <UniqueIdentifier>{02a8c06e-059c-4611-9471-7822b2479c87}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Core\Component\Toast">
-      <UniqueIdentifier>{1feac219-a40c-4585-ade5-b5fc462282dd}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Core\Component\Loading">
       <UniqueIdentifier>{7cfefae0-f7dd-494e-bbd0-6932b17e7e1d}</UniqueIdentifier>
     </Filter>
     <Filter Include="Core\Client\Student\CourseManagement\CourseResource">
       <UniqueIdentifier>{6b6a4131-5476-4f63-ba5a-eb5ed1a0d2d3}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Core\Component\Toast">
+      <UniqueIdentifier>{1feac219-a40c-4585-ade5-b5fc462282dd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\Client\Common\CourseAnalysis">
+      <UniqueIdentifier>{607583e7-b41c-45b3-a86c-be61d2cd6383}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\Client\Teacher\CourseMangement\CourseAnalysis">
+      <UniqueIdentifier>{2ef94fe9-39f9-4c69-9930-eb9a4cd21bb9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource">
+      <UniqueIdentifier>{D9D6E242-F8AF-46E4-B9FD-80ECBC20BA3E}</UniqueIdentifier>
+      <Extensions>qrc;*</Extensions>
+      <ParseFiles>false</ParseFiles>
+    </Filter>
+    <Filter Include="Resource\Ui">
+      <UniqueIdentifier>{e980361d-d650-40d6-b728-f5a6738e3ed3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource\ECharts">
+      <UniqueIdentifier>{5612999c-c115-4d40-b54c-2c84e0f4b0c2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+      <ParseFiles>true</ParseFiles>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <QtRcc Include="Status.qrc">
-      <Filter>Resource Files</Filter>
+      <Filter>Resource</Filter>
+    </QtRcc>
+    <QtRcc Include="EChartsHtml.qrc">
+      <Filter>Resource</Filter>
     </QtRcc>
   </ItemGroup>
   <ItemGroup>
     <QtUic Include="Resources\ui\c_chatItemMineWidget.ui">
-      <Filter>Resource Files\Ui</Filter>
+      <Filter>Resource\Ui</Filter>
     </QtUic>
     <QtUic Include="Resources\ui\c_chatItemOtherWidget.ui">
-      <Filter>Resource Files\Ui</Filter>
+      <Filter>Resource\Ui</Filter>
     </QtUic>
     <QtUic Include="Resources\ui\c_inSpeechMemberItemWidget.ui">
-      <Filter>Resource Files\Ui</Filter>
+      <Filter>Resource\Ui</Filter>
     </QtUic>
     <QtUic Include="Resources\ui\s_inSpeechRemovableWidget.ui">
-      <Filter>Resource Files\Ui</Filter>
+      <Filter>Resource\Ui</Filter>
     </QtUic>
     <QtUic Include="Resources\ui\s_enterDialog.ui">
-      <Filter>Resource Files\Ui</Filter>
+      <Filter>Resource\Ui</Filter>
     </QtUic>
     <QtUic Include="Resources\ui\t_handleRaiseHandWidget.ui">
-      <Filter>Resource Files\Ui</Filter>
+      <Filter>Resource\Ui</Filter>
     </QtUic>
     <QtUic Include="Resources\ui\t_enterDialog.ui">
-      <Filter>Resource Files\Ui</Filter>
+      <Filter>Resource\Ui</Filter>
     </QtUic>
     <QtUic Include="Resources\ui\c_chatAndInSpeechWidget.ui">
-      <Filter>Resource Files\Ui</Filter>
+      <Filter>Resource\Ui</Filter>
     </QtUic>
     <QtUic Include="Resources\ui\c_whiteBoardWidget.ui">
-      <Filter>Resource Files\Ui</Filter>
+      <Filter>Resource\Ui</Filter>
     </QtUic>
     <QtUic Include="Resources\ui\c_mainWindow.ui">
-      <Filter>Resource Files\Ui</Filter>
+      <Filter>Resource\Ui</Filter>
     </QtUic>
     <QtUic Include="Resources\ui\c_interactionWidget.ui">
-      <Filter>Resource Files\Ui</Filter>
+      <Filter>Resource\Ui</Filter>
     </QtUic>
     <QtUic Include="Resources\ui\c_onlineClassroomWidget.ui">
-      <Filter>Resource Files\Ui</Filter>
+      <Filter>Resource\Ui</Filter>
     </QtUic>
     <QtUic Include="Resources\ui\s_functionButtonWidget.ui">
-      <Filter>Resource Files\Ui</Filter>
+      <Filter>Resource\Ui</Filter>
     </QtUic>
     <QtUic Include="Resources\ui\t_functionButtonWidget.ui">
-      <Filter>Resource Files\Ui</Filter>
+      <Filter>Resource\Ui</Filter>
     </QtUic>
     <QtUic Include="Resources\ui\s_onlineClassroomFunctionButtonWidget.ui">
-      <Filter>Resource Files\Ui</Filter>
+      <Filter>Resource\Ui</Filter>
     </QtUic>
     <QtUic Include="Resources\ui\t_onlineClassroomFunctionButtonWidget.ui">
-      <Filter>Resource Files\Ui</Filter>
+      <Filter>Resource\Ui</Filter>
     </QtUic>
     <QtUic Include="Resources\ui\t_raiseHandItemWidget.ui">
-      <Filter>Resource Files\Ui</Filter>
+      <Filter>Resource\Ui</Filter>
     </QtUic>
     <QtUic Include="Resources\ui\c_cameraDisplayWidget.ui">
-      <Filter>Resource Files\Ui</Filter>
+      <Filter>Resource\Ui</Filter>
     </QtUic>
     <QtUic Include="Resources\ui\c_courseManagementWidget.ui">
-      <Filter>Resource Files\Ui</Filter>
+      <Filter>Resource\Ui</Filter>
     </QtUic>
     <QtUic Include="Resources\ui\s_courseManagementFunctionButtonWidget.ui">
-      <Filter>Resource Files\Ui</Filter>
+      <Filter>Resource\Ui</Filter>
     </QtUic>
     <QtUic Include="Resources\ui\t_courseManagementFunctionButtonWidget.ui">
-      <Filter>Resource Files\Ui</Filter>
+      <Filter>Resource\Ui</Filter>
     </QtUic>
     <QtUic Include="Resources\ui\c_courseOverviewWidget.ui">
-      <Filter>Resource Files\Ui</Filter>
+      <Filter>Resource\Ui</Filter>
     </QtUic>
     <QtUic Include="Resources\ui\c_textInfoCardWidget.ui">
-      <Filter>Resource Files\Ui</Filter>
+      <Filter>Resource\Ui</Filter>
     </QtUic>
     <QtUic Include="Resources\ui\c_fileItemWidget.ui">
-      <Filter>Resource Files\Ui</Filter>
+      <Filter>Resource\Ui</Filter>
     </QtUic>
     <QtUic Include="Resources\ui\c_courseResourceWidget.ui">
-      <Filter>Resource Files\Ui</Filter>
+      <Filter>Resource\Ui</Filter>
     </QtUic>
     <QtUic Include="Resources\ui\c_uploadFileDialog.ui">
-      <Filter>Resource Files\Ui</Filter>
+      <Filter>Resource\Ui</Filter>
     </QtUic>
     <QtUic Include="Resources\ui\c_loginWindow.ui">
-      <Filter>Resource Files\Ui</Filter>
+      <Filter>Resource\Ui</Filter>
     </QtUic>
     <QtUic Include="Resources\ui\c_courseBasicWidget.ui">
-      <Filter>Resource Files\Ui</Filter>
+      <Filter>Resource\Ui</Filter>
     </QtUic>
     <QtUic Include="Resources\ui\t_createCourseDialog.ui">
-      <Filter>Resource Files\Ui</Filter>
+      <Filter>Resource\Ui</Filter>
     </QtUic>
     <QtUic Include="Resources\ui\c_loadingMask.ui">
-      <Filter>Resource Files\Ui</Filter>
+      <Filter>Resource\Ui</Filter>
     </QtUic>
     <QtUic Include="Resources\ui\c_loadingWidget.ui">
-      <Filter>Resource Files\Ui</Filter>
+      <Filter>Resource\Ui</Filter>
+    </QtUic>
+    <QtUic Include="Resources\ui\c_courseAnalysisWidget.ui">
+      <Filter>Resource\Ui</Filter>
+    </QtUic>
+    <QtUic Include="Resources\ui\c_courseAnalysisRankItemWidget.ui">
+      <Filter>Resource\Ui</Filter>
     </QtUic>
   </ItemGroup>
   <ItemGroup>
@@ -396,6 +419,15 @@
     <ClCompile Include="Core\Client\Student\CourseManagement\CourseResource\s_courseResourceWidget.cpp">
       <Filter>Core\Client\Student\CourseManagement\CourseResource</Filter>
     </ClCompile>
+    <ClCompile Include="Core\Client\Common\CourseAnalysis\courseAnalysisWidget.cpp">
+      <Filter>Core\Client\Common\CourseAnalysis</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\Client\Teacher\CourseManagement\CourseAnalysis\t_courseAnalysisWidget.cpp">
+      <Filter>Core\Client\Teacher\CourseMangement\CourseAnalysis</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\Client\Common\CourseAnalysis\courseAnalysisRankItemWidget.cpp">
+      <Filter>Core\Client\Common\CourseAnalysis</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="Core\Network\socket.h">
@@ -542,6 +574,15 @@
     <QtMoc Include="Core\Client\Student\CourseManagement\CourseResource\s_courseResourceWidget.h">
       <Filter>Core\Client\Student\CourseManagement\CourseResource</Filter>
     </QtMoc>
+    <QtMoc Include="Core\Client\Common\CourseAnalysis\courseAnalysisWidget.h">
+      <Filter>Core\Client\Common\CourseAnalysis</Filter>
+    </QtMoc>
+    <QtMoc Include="Core\Client\Teacher\CourseManagement\CourseAnalysis\t_courseAnalysisWidget.h">
+      <Filter>Core\Client\Teacher\CourseMangement\CourseAnalysis</Filter>
+    </QtMoc>
+    <QtMoc Include="Core\Client\Common\CourseAnalysis\courseAnalysisRankItemWidget.h">
+      <Filter>Core\Client\Common\CourseAnalysis</Filter>
+    </QtMoc>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Core\Model\course.h">
@@ -573,6 +614,12 @@
     <None Include="cpp.hint" />
     <None Include="Core\Client\conf.ini">
       <Filter>Core\Client</Filter>
+    </None>
+    <None Include="Resources\ECharts\echarts.js">
+      <Filter>Resource\ECharts</Filter>
+    </None>
+    <None Include="Resources\ECharts\lessonConcCmprChart.html">
+      <Filter>Resource\ECharts</Filter>
     </None>
   </ItemGroup>
 </Project>

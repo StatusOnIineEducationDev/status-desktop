@@ -6,6 +6,7 @@ TeacherCourseManagementWidget::TeacherCourseManagementWidget(QWidget *parent)
 	this->loadFunctionButtonWidget();
 	this->loadCourseOverviewWidget();
 	this->loadCourseResourceWidget();
+	this->loadCourseAnalysisWidget();
 }
 
 TeacherCourseManagementWidget::~TeacherCourseManagementWidget() {
@@ -54,6 +55,22 @@ void TeacherCourseManagementWidget::loadCourseResourceWidget() {
 	// ——信号绑定
 	this->connect(this->courseBasicWidget(), &CourseBasicWidget::courseSwitched,
 		this->m_course_resource_widget, &TeacherCourseResourceWidget::updateAllData);
+
+	return;
+}
+
+void TeacherCourseManagementWidget::loadCourseAnalysisWidget() {
+	// ——加载课程分析页
+	this->m_course_analysis_widget = new TeacherCourseAnalysisWidget(this);
+	this->m_ui.function_tabWidget->addTab(this->m_course_analysis_widget, "课程分析");
+
+	// ——首次显式刷新
+	this->m_course_analysis_widget->setCourseId(user->getCourseList().at(0).courseId());
+	this->connect(this->m_course_analysis_widget, &TeacherCourseAnalysisWidget::loadHtmlFinished,
+		this->m_course_analysis_widget, &TeacherCourseAnalysisWidget::updateAllData);
+	// ——信号绑定
+	this->connect(this->courseBasicWidget(), &CourseBasicWidget::courseSwitched,
+		this->m_course_analysis_widget, &TeacherCourseAnalysisWidget::updateAllData);
 
 	return;
 }

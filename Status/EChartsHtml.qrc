@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/CourseAnalysis">
+        <file>Resources/ECharts/lessonConcCmprChart.html</file>
+    </qresource>
+</RCC>
