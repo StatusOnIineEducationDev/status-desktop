@@ -57,6 +57,11 @@ void StudentMainWindow::switchOnlineClassroomWidget() {
 			&StudentOnlineClassroomWidget::quitLessonRequestSuccess,
 			this,
 			&StudentMainWindow::switchOnlineClassroomWidget);
+		// ¡ª¡ªÐÅºÅ°ó¶¨
+		this->connect(this->m_online_classroom_widget,
+			&StudentOnlineClassroomWidget::closeEnterDialog,
+			this->m_function_button_widget->ui().course_management_btn,
+			&QPushButton::click);
 	}
 	this->m_online_classroom_widget->show();
 

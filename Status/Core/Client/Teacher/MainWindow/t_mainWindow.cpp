@@ -51,6 +51,17 @@ void TeacherMainWindow::switchOnlineClassroomWidget() {
 	if (this->m_online_classroom_widget == nullptr) {
 		this->m_online_classroom_widget = new TeacherOnlineClassroomWidget(this);  // 动态创建子窗
 		this->m_ui.widget_layout->addWidget(this->m_online_classroom_widget);
+
+		// ——信号绑定
+		this->connect(this->m_online_classroom_widget,
+			&TeacherOnlineClassroomWidget::quitLessonRequestSuccess,
+			this,
+			&TeacherMainWindow::switchOnlineClassroomWidget);
+		// ——信号绑定
+		this->connect(this->m_online_classroom_widget,
+			&TeacherOnlineClassroomWidget::closeEnterDialog,
+			this->m_function_button_widget->ui().course_management_btn,
+			&QPushButton::click);
 	}
 	this->m_online_classroom_widget->show();
 

@@ -6,6 +6,7 @@
 #include "Interaction/t_interactionWidget.h"
 #include "Enter/t_enterDialog.h"
 #include "HandleRaiseHand/t_handleRaiseHandWidget.h"
+#include "../../Common/Tips/c_tipsDialog.h"
 
 
 class TeacherOnlineClassroomWidget : public OnlineClassroomWidget {
@@ -35,12 +36,15 @@ protected:
 	void handleLessonConnectionRecv() override;
 
 	void handleCommandCreateLesson(QJsonObject &data);
+	void handleCommandJoinInLesson(QJsonObject &data);
 	void handleCommandBeginLesson(QJsonObject &data);
 	void handleCommandEndLesson(QJsonObject &data);
 	//void handleCommandConcentrationFinalData(QJsonObject &data);
 
 	void createLesson(QString &course_id, QString &course_name);
+	void joinInLesson();
 	void beginLesson();
+	void endLessonInquire();
 	void endLesson();
 
 	void showHandleRaiseHandWidget();

@@ -27,7 +27,7 @@ public:
 	void setUsername(const QString &username) { this->m_username = username; return; };
 	void setCourseList(const QList<CourseBasic> &course_list) { this->m_course_list = course_list; return; };
 	void setAccountType(const AccountType &account_type) { this->m_account_type = account_type; return; };
-	void setUserStatus(const UserStatus &user_status) { this->m_user_status = m_user_status; return; };
+	void setUserStatus(const UserStatus &user_status) { this->m_user_status = user_status; return; };
 
 
 protected:

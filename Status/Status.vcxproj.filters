@@ -142,6 +142,9 @@
       <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
       <ParseFiles>true</ParseFiles>
     </Filter>
+    <Filter Include="Core\Client\Common\Tips">
+      <UniqueIdentifier>{4e3196ba-a73c-4014-ad97-9d6fe1dbe858}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <QtRcc Include="Status.qrc">
@@ -249,6 +252,9 @@
       <Filter>Resource\Ui</Filter>
     </QtUic>
     <QtUic Include="Resources\ui\c_courseAnalysisRankItemWidget.ui">
+      <Filter>Resource\Ui</Filter>
+    </QtUic>
+    <QtUic Include="Resources\ui\c_tipsDialog.ui">
       <Filter>Resource\Ui</Filter>
     </QtUic>
   </ItemGroup>
@@ -428,6 +434,9 @@
     <ClCompile Include="Core\Client\Common\CourseAnalysis\courseAnalysisRankItemWidget.cpp">
       <Filter>Core\Client\Common\CourseAnalysis</Filter>
     </ClCompile>
+    <ClCompile Include="Core\Client\Common\Tips\c_tipsDialog.cpp">
+      <Filter>Core\Client\Common\Tips</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="Core\Network\socket.h">
@@ -582,6 +591,9 @@
     </QtMoc>
     <QtMoc Include="Core\Client\Common\CourseAnalysis\courseAnalysisRankItemWidget.h">
       <Filter>Core\Client\Common\CourseAnalysis</Filter>
+    </QtMoc>
+    <QtMoc Include="Core\Client\Common\Tips\c_tipsDialog.h">
+      <Filter>Core\Client\Common\Tips</Filter>
     </QtMoc>
   </ItemGroup>
   <ItemGroup>

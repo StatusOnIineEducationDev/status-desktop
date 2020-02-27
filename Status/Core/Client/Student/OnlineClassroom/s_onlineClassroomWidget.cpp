@@ -11,10 +11,12 @@ StudentOnlineClassroomWidget::StudentOnlineClassroomWidget(QWidget *parent)
 	this->loadFunctionButtonWidget();
 	this->loadFunctionPageWidget();
 	this->loadInSpeechRemovableWidget();
+
+	this->createLessonConnection();
 }
 
 StudentOnlineClassroomWidget::~StudentOnlineClassroomWidget() {
-
+	this->distroyLessonConnection();
 }
 
 void StudentOnlineClassroomWidget::init() {
@@ -33,7 +35,9 @@ void StudentOnlineClassroomWidget::loadEnterDialog() {
 	QList<CourseBasic> course_basic_list = user->getCourseList();
 	this->m_enter_dialog = new StudentEnterDialog(this);
 	this->connect(this->m_enter_dialog, &StudentEnterDialog::joinInLesson,
-		this, &StudentOnlineClassroomWidget::joinInLesson);
+		this, &StudentOnlineClassroomWidget::tryToJoinIn);
+	this->connect(this->m_enter_dialog->ui().close_btn, &QPushButton::clicked,
+		this, &StudentOnlineClassroomWidget::emitSignalCloseEnterDialog);
 	// ——加载数据
 	for (int index = 0; index < course_basic_list.count(); index++) {
 		course = new QMap<QString, QVariant>;
@@ -58,7 +62,7 @@ void StudentOnlineClassroomWidget::loadFunctionButtonWidget() {
 	Ui::StudentOnlineClassroomFunctionButtonWidget btn_ui =
 		this->m_function_button_widget->ui();
 	this->connect(btn_ui.quit_lesson_btn, &QPushButton::clicked,
-		this, &StudentOnlineClassroomWidget::quitLesson);
+		this, &StudentOnlineClassroomWidget::quitLessonInquire);
 	this->connect(btn_ui.raise_hand_btn, &QPushButton::clicked,
 		this, &StudentOnlineClassroomWidget::raiseHand);
 
@@ -105,6 +109,8 @@ void StudentOnlineClassroomWidget::handleLessonConnectionRecv() {
 	TransportCmd cmd = TransportCmd(data["command"].toInt());
 
 	switch (cmd) {
+	case TransportCmd::TryToJoinIn:
+		this->handleCommandTryToJoinIn(data); break;
 	case TransportCmd::JoinInLesson: 
 		this->handleCommandJoinInLesson(data); break;
 	case TransportCmd::BeginLesson:
@@ -138,6 +144,28 @@ void StudentOnlineClassroomWidget::handleLessonConnectionRecv() {
 	return;
 }
 
+void StudentOnlineClassroomWidget::handleCommandTryToJoinIn(QJsonObject &data) {
+	CourseStatus course_status = CourseStatus::Waiting;
+	Toast *toast = new Toast;
+	TipsDialog *dialog = new TipsDialog;
+
+	// 存储返回数据
+	this->m_room["course_id"] = data["course_id"].toString();
+	this->m_room["course_name"] = data["course_name"].toString();
+
+	// 重新进入
+	dialog->setText(QString("您有一个正在进行的课堂，是否重新进入？"));
+	dialog->setConfirmText(QString("重新进入"));
+	dialog->setCancelText(QString("取消"));
+	this->connect(dialog, &TipsDialog::confirm,
+		this, &StudentOnlineClassroomWidget::joinInLesson);
+
+	dialog->setModal(true);  // 模态（这里与直接用exec()有区别）
+	dialog->show();
+
+	return;
+}
+
 void StudentOnlineClassroomWidget::handleCommandJoinInLesson(QJsonObject &data) {
 	CourseStatus course_status = CourseStatus(data["course_status"].toInt());
 	Toast *toast = new Toast;
@@ -148,7 +176,7 @@ void StudentOnlineClassroomWidget::handleCommandJoinInLesson(QJsonObject &data) 
 	switch (course_status) {
 	case CourseStatus::OffLine:
 		text = "课程未开始";
-		this->distroyLessonConnection();
+		//this->distroyLessonConnection();
 		break;
 	case CourseStatus::OnLine:
 		text = "进入成功";
@@ -176,7 +204,7 @@ void StudentOnlineClassroomWidget::handleCommandJoinInLesson(QJsonObject &data) 
 		break;
 	case CourseStatus::CantJoinIn:
 		text = "该课堂不允许中途加入";
-		this->distroyLessonConnection();
+		//this->distroyLessonConnection();
 		break;
 	case CourseStatus::Waiting:
 		text = "进入成功";
@@ -223,20 +251,27 @@ void StudentOnlineClassroomWidget::handleCommandEndLesson(QJsonObject &data) {
 
 	// ——结束成功
 	this->m_lesson_timer.stop();
-
-	this->m_ui.begin_lesson_btn->setText("已结束");
-
 	user->setUserStatus(UserStatus::Free);
 
-	toast->setInfoText(QString("课堂已结束"));
+	toast->setInfoText(QString("老师已结束课堂"));
 	toast->show();
 	this->connect(toast, &Toast::complete, toast, &Toast::deleteLater);
+
+	emit this->quitLessonRequestSuccess();
 
 	return;
 }
 
 void StudentOnlineClassroomWidget::handleCommandQuitLesson(QJsonObject &data) {
+	Toast *toast = new Toast;
+
+	// ——结束成功
+	this->m_lesson_timer.stop();
 	user->setUserStatus(UserStatus::Free);
+
+	toast->setInfoText(QString("您已经退出课堂"));
+	toast->show();
+	this->connect(toast, &Toast::complete, toast, &Toast::deleteLater);
 
 	emit this->quitLessonRequestSuccess();
 
@@ -327,15 +362,30 @@ void StudentOnlineClassroomWidget::handleCommandConcentrationFinalData(QJsonObje
 	return;
 }
 
-void StudentOnlineClassroomWidget::joinInLesson(QString &course_id, QString &course_name) {
+void StudentOnlineClassroomWidget::tryToJoinIn(QString &course_id, QString &course_name) {
 	QJsonObject request_json_obj;
 
-	this->createLessonConnection();
+	request_json_obj["command"] = TransportCmd::TryToJoinIn;
+	request_json_obj["account_type"] = AccountType::Teacher;
+	request_json_obj["course_id"] = course_id;
+	request_json_obj["course_name"] = course_name;
+	request_json_obj["uid"] = user->getUid();
+	request_json_obj["username"] = user->getUsername();
+
+	this->m_lesson_connection->realSend(request_json_obj);
+
+	return;
+}
+
+void StudentOnlineClassroomWidget::joinInLesson() {
+	QJsonObject request_json_obj;
+
+	//this->createLessonConnection();
 
 	request_json_obj["command"] = TransportCmd::JoinInLesson;
 	request_json_obj["account_type"] = AccountType::Student;
-	request_json_obj["course_id"] = course_id;
-	request_json_obj["course_name"] = course_name;
+	request_json_obj["course_id"] = this->m_room["course_id"].toString();
+	request_json_obj["course_name"] = this->m_room["course_name"].toString();
 	request_json_obj["uid"] = user->getUid();
 	request_json_obj["username"] = user->getUsername();
 
@@ -360,6 +410,21 @@ void StudentOnlineClassroomWidget::lessonBegin() {
 	this->m_ui.begin_lesson_btn->setText("正在上课");
 	toast->show();
 	this->connect(toast, &Toast::complete, toast, &Toast::deleteLater);
+
+	return;
+}
+
+void StudentOnlineClassroomWidget::quitLessonInquire() {
+	TipsDialog *dialog = new TipsDialog;
+
+	dialog->setText(QString("是否退出课堂？"));
+	dialog->setConfirmText(QString("确定"));
+	dialog->setCancelText(QString("取消"));
+	this->connect(dialog, &TipsDialog::confirm,
+		this, &StudentOnlineClassroomWidget::quitLesson);
+
+	dialog->setModal(true);  // 模态（这里与直接用exec()有区别）
+	dialog->show();
 
 	return;
 }

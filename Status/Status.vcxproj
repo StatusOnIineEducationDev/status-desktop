@@ -33,6 +33,7 @@
     <QtUic Include="Resources\ui\c_mainWindow.ui" />
     <QtUic Include="Resources\ui\c_onlineClassroomWidget.ui" />
     <QtUic Include="Resources\ui\c_textInfoCardWidget.ui" />
+    <QtUic Include="Resources\ui\c_tipsDialog.ui" />
     <QtUic Include="Resources\ui\c_uploadFileDialog.ui" />
     <QtUic Include="Resources\ui\s_courseManagementFunctionButtonWidget.ui" />
     <QtUic Include="Resources\ui\t_courseManagementFunctionButtonWidget.ui" />
@@ -70,6 +71,7 @@
     <ClCompile Include="Core\Client\Common\Login\loginWindow.cpp" />
     <ClCompile Include="Core\Client\Common\MainWindow\mainWindow.cpp" />
     <ClCompile Include="Core\Client\Common\OnlineClassroom\onlineClassroomWidget.cpp" />
+    <ClCompile Include="Core\Client\Common\Tips\c_tipsDialog.cpp" />
     <ClCompile Include="Core\Client\conf.cpp" />
     <ClCompile Include="Core\Client\Student\CourseManagement\CourseResource\s_courseResourceWidget.cpp" />
     <ClCompile Include="Core\Client\Student\CourseManagement\s_courseManagementFunctionButtonWidget.cpp" />
@@ -208,6 +210,10 @@
       <IncludePath Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCharts;$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtNetwork;$(QTDIR)\include\QtMultimedia;$(QTDIR)\include\QtMultimediaWidgets;$(QTDIR)\include\QtConcurrent</IncludePath>
     </QtMoc>
     <QtMoc Include="Core\Client\Common\Login\loginWindow.h" />
+    <QtMoc Include="Core\Client\Common\Tips\c_tipsDialog.h">
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCharts;$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtNetwork;$(QTDIR)\include\QtMultimedia;$(QTDIR)\include\QtMultimediaWidgets;$(QTDIR)\include\QtConcurrent;$(QTDIR)\include\QtWebEngine;$(QTDIR)\include\QtWebEngineCore;$(QTDIR)\include\QtWebEngineWidgets;$(QTDIR)\include\QtWebChannel</IncludePath>
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCharts;$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtNetwork;$(QTDIR)\include\QtMultimedia;$(QTDIR)\include\QtMultimediaWidgets;$(QTDIR)\include\QtConcurrent;$(QTDIR)\include\QtWebEngine;$(QTDIR)\include\QtWebEngineCore;$(QTDIR)\include\QtWebEngineWidgets;$(QTDIR)\include\QtWebChannel</IncludePath>
+    </QtMoc>
     <ClInclude Include="Core\Client\conf.h" />
     <ClInclude Include="Core\Client\onlineEdu.h" />
     <QtMoc Include="Core\Client\Student\MainWindow\s_functionButtonWidget.h">
@@ -232,7 +238,10 @@
     </QtMoc>
     <QtMoc Include="Core\Client\Teacher\MainWindow\t_functionButtonWidget.h" />
     <QtMoc Include="Core\Client\Teacher\MainWindow\t_mainWindow.h" />
-    <QtMoc Include="Core\Client\Teacher\OnlineClassroom\Enter\t_enterDialog.h" />
+    <QtMoc Include="Core\Client\Teacher\OnlineClassroom\Enter\t_enterDialog.h">
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCharts;$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtNetwork;$(QTDIR)\include\QtMultimedia;$(QTDIR)\include\QtMultimediaWidgets;$(QTDIR)\include\QtConcurrent;$(QTDIR)\include\QtWebEngine;$(QTDIR)\include\QtWebEngineCore;$(QTDIR)\include\QtWebEngineWidgets;$(QTDIR)\include\QtWebChannel</IncludePath>
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCharts;$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtNetwork;$(QTDIR)\include\QtMultimedia;$(QTDIR)\include\QtMultimediaWidgets;$(QTDIR)\include\QtConcurrent;$(QTDIR)\include\QtWebEngine;$(QTDIR)\include\QtWebEngineCore;$(QTDIR)\include\QtWebEngineWidgets;$(QTDIR)\include\QtWebChannel</IncludePath>
+    </QtMoc>
     <QtMoc Include="Core\Client\Teacher\OnlineClassroom\HandleRaiseHand\t_handleRaiseHandWidget.h" />
     <QtMoc Include="Core\Client\Teacher\OnlineClassroom\HandleRaiseHand\t_raiseHandItemWidget.h" />
     <QtMoc Include="Core\Client\Teacher\OnlineClassroom\Interaction\t_interactionWidget.h" />

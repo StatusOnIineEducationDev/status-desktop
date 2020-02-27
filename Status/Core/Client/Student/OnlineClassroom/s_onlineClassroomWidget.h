@@ -6,6 +6,7 @@
 #include "../../Common/OnlineClassroom/onlineClassroomWidget.h"
 #include "Interaction/s_interactionWidget.h"
 #include "Enter/s_enterDialog.h"
+#include "../../Common/Tips/c_tipsDialog.h"
 
 
 class StudentOnlineClassroomWidget : public OnlineClassroomWidget {
@@ -34,6 +35,7 @@ protected:
 
 	void handleLessonConnectionRecv() override;
 
+	void handleCommandTryToJoinIn(QJsonObject &data);
 	void handleCommandJoinInLesson(QJsonObject &data);
 	void handleCommandBeginLesson(QJsonObject &data);
 	void handleCommandConcentrationData(QJsonObject &data);
@@ -44,8 +46,10 @@ protected:
 	void handleCommandRemoveMemberFromInSpeech(QJsonObject &data);
 	void handleCommandConcentrationFinalData(QJsonObject &data);
 
-	void joinInLesson(QString &course_id, QString &course_name);
+	void tryToJoinIn(QString &course_id, QString &course_name);
+	void joinInLesson();
 	void lessonBegin();
+	void quitLessonInquire();
 	void quitLesson();
 
 	void raiseHand();

@@ -201,3 +201,9 @@ void OnlineClassroomWidget::updateDynamicAreaChat(
 
 	return;
 }
+
+void OnlineClassroomWidget::emitSignalCloseEnterDialog() {
+	emit this->closeEnterDialog();
+
+	return;
+}

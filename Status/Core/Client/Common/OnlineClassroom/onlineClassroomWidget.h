@@ -20,6 +20,7 @@ class OnlineClassroomWidget : public QWidget {
 
 signals:
 	void quitLessonRequestSuccess();
+	void closeEnterDialog();
 
 public:
 	OnlineClassroomWidget(QWidget *parent = nullptr);
@@ -47,6 +48,8 @@ protected:
 	void updateLastTime();
 	void updateCourseStatus(CourseStatus &course_status);
 	void updateDynamicAreaChat(int concentration_timestamp, int concentration_value);
+
+	void emitSignalCloseEnterDialog();
 
 	Ui::OnlineClassroomWidget m_ui;
 

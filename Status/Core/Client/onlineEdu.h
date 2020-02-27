@@ -18,7 +18,8 @@ enum TransportCmd {
 	ResultOfRaiseHand = 114,
 	RemoveMemberFromInSpeech = 115,
 	ConcentrationRealTimeData = 116,
-	QuitLesson = 117
+	QuitLesson = 117,
+	TryToJoinIn = 118
 };
 
 enum ErrorCode {
