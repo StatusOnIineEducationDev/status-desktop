@@ -16,11 +16,11 @@ public:
 	const Ui::LoadingMask& ui() const { return this->m_ui; };
 
 	void setTipsText(const QString &text) { this->m_ui.tips_text->setText(text); return; };
+	void resizeMask();
 
 protected:
 	Ui::LoadingMask m_ui;
-
-	void resizeMask(QWidget *parent);
+	
 	void animation();
 };
 

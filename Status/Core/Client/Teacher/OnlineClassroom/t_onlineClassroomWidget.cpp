@@ -1,7 +1,7 @@
 #include "t_onlineClassroomWidget.h"
 
 
-TeacherOnlineClassroomWidget::TeacherOnlineClassroomWidget(QWidget *parent)
+TeacherOnlineClassroomWidget::TeacherOnlineClassroomWidget(MainWindow *parent)
 	: OnlineClassroomWidget(parent), m_function_button_widget(nullptr),
 	m_interaction_widget(nullptr) {
 
@@ -11,6 +11,7 @@ TeacherOnlineClassroomWidget::TeacherOnlineClassroomWidget(QWidget *parent)
 	this->loadFunctionButtonWidget();
 	this->loadFunctionPageWidget();
 	this->loadHandleRaiseHandWidget();
+	this->loadWaitingMask();  // 这个一定要放在最后一项load
 
 	this->createLessonConnection();
 }
@@ -196,6 +197,7 @@ void TeacherOnlineClassroomWidget::handleCommandJoinInLesson(QJsonObject &data) 
 	case CourseStatus::OffLine:
 		text = "课程未开始";
 		//this->distroyLessonConnection();
+		this->m_enter_dialog->show();
 		break;
 	case CourseStatus::OnLine:
 		text = "进入成功";
@@ -221,6 +223,8 @@ void TeacherOnlineClassroomWidget::handleCommandJoinInLesson(QJsonObject &data) 
 		//QtConcurrent::run(this, &StudentOnlineClassroomWidget::openCamera);
 		this->m_enter_dialog->hide();
 		this->m_enter_dialog->deleteLater();
+
+		this->m_loading_mask->deleteLater();
 		
 		// ——建立画板连接
 		this->m_interaction_widget->whiteBoardWidget()->
@@ -231,6 +235,7 @@ void TeacherOnlineClassroomWidget::handleCommandJoinInLesson(QJsonObject &data) 
 	case CourseStatus::CantJoinIn:
 		text = "该课堂不允许中途加入";
 		//this->distroyLessonConnection();
+		this->m_enter_dialog->show();
 		break;
 	case CourseStatus::Waiting:
 		text = "进入成功";
@@ -251,6 +256,9 @@ void TeacherOnlineClassroomWidget::handleCommandJoinInLesson(QJsonObject &data) 
 		//QtConcurrent::run(this, &StudentOnlineClassroomWidget::openCamera);
 		this->m_enter_dialog->hide();
 		this->m_enter_dialog->deleteLater();
+
+		this->m_loading_mask->deleteLater();
+
 		break;
 	}
 	toast->setInfoText(text);
@@ -314,6 +322,9 @@ void TeacherOnlineClassroomWidget::createLesson(QString &course_id, QString &cou
 	request_json_obj["username"] = user->getUsername();
 
 	this->m_lesson_connection->realSend(request_json_obj);
+
+	this->m_enter_dialog->hide();
+	this->m_loading_mask->show();
 
 	return;
 }

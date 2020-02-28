@@ -1,10 +1,11 @@
 #include "onlineClassroomWidget.h"
 
 
-OnlineClassroomWidget::OnlineClassroomWidget(QWidget *parent)
+OnlineClassroomWidget::OnlineClassroomWidget(MainWindow *parent)
 	: QWidget(parent), m_camera_display_widget(nullptr), 
 	m_concentration_area_chart(nullptr), m_camera(nullptr), m_lesson_connection(nullptr) {
 	m_ui.setupUi(this);
+	m_main_win = parent;
 
 	this->loadCameraDisplayWidget();
 	this->loadConcentrationAreaChart();
@@ -14,6 +15,10 @@ OnlineClassroomWidget::OnlineClassroomWidget(QWidget *parent)
 	// ——信号绑定
 	this->connect(&this->m_lesson_timer, &QTimer::timeout,
 		this, &OnlineClassroomWidget::updateLastTime);
+	this->connect(this->m_ui.camera_checkBox, &QCheckBox::clicked,
+		this, &OnlineClassroomWidget::openCamera);
+	this->connect(this->m_ui.camera_checkBox, &QCheckBox::clicked,
+		this, &OnlineClassroomWidget::closeCamera);
 }
 
 OnlineClassroomWidget::~OnlineClassroomWidget() {
@@ -55,6 +60,16 @@ void OnlineClassroomWidget::loadConcentrationAreaChart() {
 	return;
 }
 
+void OnlineClassroomWidget::loadWaitingMask() {
+	// ——等待动画
+	this->m_loading_mask = new LoadingMask(this);
+	this->m_loading_mask->setTipsText("加载中...");
+	this->connect(this->m_main_win, &MainWindow::windowResized,
+		this->m_loading_mask, &LoadingMask::resizeMask);
+
+	return;
+}
+
 void OnlineClassroomWidget::createLessonConnection() {
 	this->m_lesson_connection = new Connection;
 	QThread *connection_thread = new QThread(this);
@@ -87,13 +102,31 @@ void OnlineClassroomWidget::distroyLessonConnection() {
 }
 
 void OnlineClassroomWidget::openCamera() {
-	this->m_camera = new Camera(this);
+	if (!this->m_ui.camera_checkBox->isChecked()) {
+		return;
+	}
 
-	this->m_camera->open();
+	if (this->m_camera == nullptr) {
+		this->m_camera = new Camera(this);
+		this->m_camera->open();
+		this->m_camera->start();
+		this->connect(this->m_camera, &Camera::readyRead,
+			this->m_camera_display_widget, &CameraDisplayWidget::mineCameraDisplay);
+	}
+	else {
+		this->m_camera->open();
+	}
+	
+	return;
+}
 
-	// ——信号连接
-	this->connect(this->m_camera, &Camera::readyRead,
-		this->m_camera_display_widget, &CameraDisplayWidget::mineCameraDisplay);
+void OnlineClassroomWidget::closeCamera() {
+	if (this->m_ui.camera_checkBox->isChecked()) {
+		return;
+	}
+
+	this->m_camera->close();
+	this->m_camera_display_widget->clear();
 
 	return;
 }

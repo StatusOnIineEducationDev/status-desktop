@@ -12,6 +12,7 @@ public:
 	const Ui::CameraDisplayWidget& ui() const { return this->m_ui; };
 	
 	void mineCameraDisplay(QImage &frame);
+	void clear() { this->m_ui.frame_label->clear(); };
 
 protected:
 	Ui::CameraDisplayWidget m_ui;

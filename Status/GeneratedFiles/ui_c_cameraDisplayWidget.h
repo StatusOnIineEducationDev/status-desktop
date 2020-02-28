@@ -49,6 +49,7 @@ public:
         frame_label->setStyleSheet(QString::fromUtf8("QFrame {\n"
 "	border:none;\n"
 "	background: #f2f2f2;\n"
+"	background-image: url(:/logo/Resources/material/logo/logo.png);\n"
 "}"));
         frame_label->setScaledContents(false);
 

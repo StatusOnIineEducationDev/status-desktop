@@ -13,6 +13,8 @@
 #include "Core/Network/socket.h"
 #include "Core/Model/user.h"
 #include "Core/Client/conf.h"
+#include "Core/Component/Loading/loading.h"
+#include "Core/Client/Common/MainWindow/mainWindow.h"
 
 
 class OnlineClassroomWidget : public QWidget {
@@ -23,7 +25,7 @@ signals:
 	void closeEnterDialog();
 
 public:
-	OnlineClassroomWidget(QWidget *parent = nullptr);
+	OnlineClassroomWidget(MainWindow *parent = nullptr);
 	~OnlineClassroomWidget();
 	const Ui::OnlineClassroomWidget& ui() const { return this->m_ui; };
 
@@ -32,12 +34,14 @@ public:
 protected:
 	void loadCameraDisplayWidget();
 	void loadConcentrationAreaChart();
+	void loadWaitingMask();
 
 	void createLessonConnection();
 	void distroyLessonConnection();
 	virtual void handleLessonConnectionRecv() {};
 
 	void openCamera();
+	void closeCamera();
 	void distroyCamera();
 	void sendMineCameraFrame();
 
@@ -51,10 +55,16 @@ protected:
 
 	void emitSignalCloseEnterDialog();
 
+	void setWarningText(const QString &text) 
+	{ this->m_ui.warning_text->setText(text); return; };
+
 	Ui::OnlineClassroomWidget m_ui;
 
 	CameraDisplayWidget *m_camera_display_widget;
 	AreaChartDynamic *m_concentration_area_chart;  // 专注度面积图（缩略）
+
+	LoadingMask *m_loading_mask;
+	MainWindow *m_main_win;
 
 	Camera *m_camera;  // 摄像头对象
 	QTimer m_lesson_timer;  // 1秒定时器
@@ -74,9 +84,6 @@ protected:
 		/*
 		|-info(m_final_data_list)
 			|-concentration_value(int)
-			|-fatigue_value(int)
-			|-toward_score(int)
-			|-emotion_score(int)
 			|-concentration_timestamp(int)
 	*/
 	QList<QMap<QString, QVariant>> m_final_data_list;  // 专注度数据

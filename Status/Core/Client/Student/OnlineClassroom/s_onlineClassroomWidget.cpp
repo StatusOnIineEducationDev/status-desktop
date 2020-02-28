@@ -1,7 +1,7 @@
 #include "s_onlineclassroomWidget.h"
 
 
-StudentOnlineClassroomWidget::StudentOnlineClassroomWidget(QWidget *parent) 
+StudentOnlineClassroomWidget::StudentOnlineClassroomWidget(MainWindow *parent) 
 	: OnlineClassroomWidget(parent), m_function_button_widget(nullptr),
 	m_in_speech_removeable_widget(nullptr), m_interaction_widget(nullptr) {
 	
@@ -11,6 +11,7 @@ StudentOnlineClassroomWidget::StudentOnlineClassroomWidget(QWidget *parent)
 	this->loadFunctionButtonWidget();
 	this->loadFunctionPageWidget();
 	this->loadInSpeechRemovableWidget();
+	this->loadWaitingMask();  // 这个一定要放在最后一项load
 
 	this->createLessonConnection();
 }
@@ -177,6 +178,7 @@ void StudentOnlineClassroomWidget::handleCommandJoinInLesson(QJsonObject &data) 
 	case CourseStatus::OffLine:
 		text = "课程未开始";
 		//this->distroyLessonConnection();
+		this->m_enter_dialog->show();
 		break;
 	case CourseStatus::OnLine:
 		text = "进入成功";
@@ -200,11 +202,15 @@ void StudentOnlineClassroomWidget::handleCommandJoinInLesson(QJsonObject &data) 
 		//QtConcurrent::run(this, &StudentOnlineClassroomWidget::openCamera);
 		this->m_enter_dialog->hide();
 		this->m_enter_dialog->deleteLater();
+
+		this->m_loading_mask->deleteLater();
+
 		this->lessonBegin();
 		break;
 	case CourseStatus::CantJoinIn:
 		text = "该课堂不允许中途加入";
 		//this->distroyLessonConnection();
+		this->m_enter_dialog->show();
 		break;
 	case CourseStatus::Waiting:
 		text = "进入成功";
@@ -225,6 +231,9 @@ void StudentOnlineClassroomWidget::handleCommandJoinInLesson(QJsonObject &data) 
 		//QtConcurrent::run(this, &StudentOnlineClassroomWidget::openCamera);
 		this->m_enter_dialog->hide();
 		this->m_enter_dialog->deleteLater();
+
+		this->m_loading_mask->deleteLater();
+
 		break;
 	}
 	toast->setInfoText(text);
@@ -347,17 +356,33 @@ void StudentOnlineClassroomWidget::handleCommandRemoveMemberFromInSpeech(QJsonOb
 }
 
 void StudentOnlineClassroomWidget::handleCommandConcentrationFinalData(QJsonObject &data) {
+	/*
+		|- command
+        |- is_succeed: 为False代表没有检测到人脸
+        |- course_id
+        |- lesson_id
+        |- uid
+        |- concentration_value: 为-1代表未收集够有效帧
+        |- emotion
+        |- concentration_timestamp
+	*/
 	QMap<QString, QVariant> info;
+	int concentration_value = data["concentration_value"].toInt(), 
+		concentration_timestamp = data["concentration_timestamp"].toInt();
+	qDebug() << data;
+	if (data["is_succeed"].toBool()) {
+		this->setWarningText("");
+		if (concentration_value != -1) {
+			info["concentration_value"] = concentration_value;
+			info["concentration_timestamp"] = concentration_timestamp;
+			this->m_final_data_list.append(info);
 
-	info["concentration_value"] = data["concentration_value"].toInt();
-	info["fatigue_value"] = data["fatigue_value"].toInt();
-	info["toward_score"] = data["toward_score"].toInt();
-	info["emotion_score"] = data["emotion_score"].toInt();
-	info["concentration_timestamp"] = data["concentration_timestamp"].toInt();
-	this->m_final_data_list.append(info);
-
-	this->updateDynamicAreaChat(data["concentration_timestamp"].toInt(), 
-		data["concentration_value"].toInt());
+			this->updateDynamicAreaChat(concentration_timestamp, concentration_value);
+		}
+	}
+	else {
+		this->setWarningText("未检测到人脸");
+	}
 
 	return;
 }
@@ -373,6 +398,9 @@ void StudentOnlineClassroomWidget::tryToJoinIn(QString &course_id, QString &cour
 	request_json_obj["username"] = user->getUsername();
 
 	this->m_lesson_connection->realSend(request_json_obj);
+
+	this->m_enter_dialog->hide();
+	this->m_loading_mask->show();
 
 	return;
 }

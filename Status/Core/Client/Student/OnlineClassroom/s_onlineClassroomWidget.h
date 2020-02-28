@@ -13,7 +13,7 @@ class StudentOnlineClassroomWidget : public OnlineClassroomWidget {
 	Q_OBJECT
 
 public:
-	StudentOnlineClassroomWidget(QWidget *parent = nullptr);
+	StudentOnlineClassroomWidget(MainWindow *parent = nullptr);
 	~StudentOnlineClassroomWidget();
 	StudentOnlineClassroomFunctionButtonWidget* functionButtonWidget() 
 	{ return this->m_function_button_widget; };

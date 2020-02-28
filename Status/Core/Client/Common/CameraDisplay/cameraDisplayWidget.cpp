@@ -13,6 +13,7 @@ CameraDisplayWidget::~CameraDisplayWidget() {
 
 void CameraDisplayWidget::mineCameraDisplay(QImage &frame) {
 	this->m_ui.frame_label->setPixmap(QPixmap::fromImage(frame));
+	this->m_ui.frame_label->setAlignment(Qt::AlignCenter);
 
 	return;
 }

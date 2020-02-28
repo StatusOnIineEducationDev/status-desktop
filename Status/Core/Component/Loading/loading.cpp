@@ -7,7 +7,7 @@ LoadingMask::LoadingMask(QWidget *parent)
 
 	this->setAttribute(Qt::WA_TranslucentBackground, true);
 
-	this->resizeMask(parent);
+	this->resizeMask();
 	this->animation();
 }
 
@@ -15,12 +15,12 @@ LoadingMask::~LoadingMask() {
 
 }
 
-void LoadingMask::resizeMask(QWidget *parent) {
-	if (parent == nullptr) {
+void LoadingMask::resizeMask() {
+	if (this->parentWidget() == nullptr) {
 		return;
 	}
 
-	this->setGeometry(0, 0, parent->width(), parent->height());
+	this->setGeometry(0, 0, this->parentWidget()->width(), this->parentWidget()->height());
 
 	return;
 }

@@ -47,6 +47,7 @@
       <string notr="true">QFrame {
 	border:none;
 	background: #f2f2f2;
+	background-image: url(:/logo/Resources/material/logo/logo.png);
 }</string>
      </property>
      <property name="text">

@@ -13,8 +13,8 @@ class Camera : public QThread {
 public:
 	Camera(QWidget *parent = nullptr);
 	virtual ~Camera();
-	void open() { this->m_cap.open(0); this->start(); return; };
-	void close() { this->m_cap.release(); return; };
+	void open() { this->m_cap.open(0); return; };
+	void close() { this->m_cap.release(); this->m_had_opened = false; return; };
 	bool isOpened() { return this->m_had_opened; };
 	void run();
 	void stop() { this->m_running_flag = false; return; };
