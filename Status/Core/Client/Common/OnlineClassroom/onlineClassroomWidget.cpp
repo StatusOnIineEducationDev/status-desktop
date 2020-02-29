@@ -14,7 +14,7 @@ OnlineClassroomWidget::OnlineClassroomWidget(MainWindow *parent)
 
 	// ¡ª¡ªÐÅºÅ°ó¶¨
 	this->connect(&this->m_lesson_timer, &QTimer::timeout,
-		this, &OnlineClassroomWidget::updateLastTime);
+		this, &OnlineClassroomWidget::sendCommandKeepAlive);
 	this->connect(this->m_ui.camera_checkBox, &QCheckBox::clicked,
 		this, &OnlineClassroomWidget::openCamera);
 	this->connect(this->m_ui.camera_checkBox, &QCheckBox::clicked,
@@ -163,6 +163,16 @@ void OnlineClassroomWidget::sendMineCameraFrame() {
 	json_obj["command"] = TransportCmd::StudentCameraFrameData;
 	json_obj["frame_mat"] = base64_str;
 	json_obj["concentration_timestamp"] = (int)QDateTime::currentDateTime().toTime_t();
+	this->lessonConnectionSend(json_obj);
+
+	return;
+}
+
+void OnlineClassroomWidget::sendCommandKeepAlive() {
+	QJsonObject json_obj;
+
+	json_obj["command"] = TransportCmd::KeepAlive;
+	json_obj["type"] = "user";
 	this->lessonConnectionSend(json_obj);
 
 	return;

@@ -44,6 +44,7 @@ protected:
 	void closeCamera();
 	void distroyCamera();
 	void sendMineCameraFrame();
+	void sendCommandKeepAlive();
 
 	void updateLessonInfo(QString &course_name, QString &course_id, 
 		QString &lesson_id, QString &teacher_name, QString &teacher_id, 

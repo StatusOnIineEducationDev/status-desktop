@@ -6,7 +6,6 @@ TeacherOnlineClassroomWidget::TeacherOnlineClassroomWidget(MainWindow *parent)
 	m_interaction_widget(nullptr) {
 
 	this->init();
-
 	this->loadEnterDialog();
 	this->loadFunctionButtonWidget();
 	this->loadFunctionPageWidget();
@@ -72,6 +71,8 @@ void TeacherOnlineClassroomWidget::loadFunctionButtonWidget() {
 void TeacherOnlineClassroomWidget::loadFunctionPageWidget() {
 	// ——加载互动页
 	this->loadInteractionPageWidget();
+	// ——加载课堂分析页
+	this->loadLessonAnalysisPageWidget();
 
 	return;
 }
@@ -84,6 +85,19 @@ void TeacherOnlineClassroomWidget::loadInteractionPageWidget() {
 	// ——信号绑定
 	this->connect(this->m_interaction_widget->chatAndInSpeechWidget(),
 		&ChatAndInSpeechWidget::lessonConnectionDataReady,
+		this, &TeacherOnlineClassroomWidget::lessonConnectionSend);
+
+	return;
+}
+
+void TeacherOnlineClassroomWidget::loadLessonAnalysisPageWidget() {
+	// ——加载课堂分析页
+	this->m_lesson_analysis_widget = new TeacherLessonAnalysisWidget(this);
+	this->m_ui.function_tabWidget->addTab(this->m_lesson_analysis_widget, "课堂");
+
+	// ——信号绑定
+	this->connect(this->m_lesson_analysis_widget, 
+		&TeacherLessonAnalysisWidget::lessonConnectionDataReady,
 		this, &TeacherOnlineClassroomWidget::lessonConnectionSend);
 
 	return;
@@ -140,6 +154,9 @@ void TeacherOnlineClassroomWidget::handleLessonConnectionRecv() {
 	case TransportCmd::ChatBan: 
 		this->m_interaction_widget->chatAndInSpeechWidget()->
 			handleCommandChatBan(data); break;
+
+	case TransportCmd::RefreshOnlineList:
+		this->m_lesson_analysis_widget->handleCommandRefreshOnlineList(data); break;
 	}
 
 	return;
@@ -217,7 +234,12 @@ void TeacherOnlineClassroomWidget::handleCommandJoinInLesson(QJsonObject &data) 
 
 		this->m_ui.begin_lesson_btn->setText("正在上课");
 
-		this->m_lesson_timer.start(1000);  // 开启定时器
+		// 开始计时
+		this->connect(&this->m_lesson_timer, &QTimer::timeout,
+			this, &TeacherOnlineClassroomWidget::updateLastTime);
+		// 开始刷新在线列表
+		this->connect(&this->m_lesson_timer, &QTimer::timeout,
+			this->m_lesson_analysis_widget, &TeacherLessonAnalysisWidget::refreshOnlineList);
 
 		this->openCamera();
 		//QtConcurrent::run(this, &StudentOnlineClassroomWidget::openCamera);
@@ -230,6 +252,8 @@ void TeacherOnlineClassroomWidget::handleCommandJoinInLesson(QJsonObject &data) 
 		this->m_interaction_widget->whiteBoardWidget()->
 			createPaintConnection(this->m_room["course_id"].toString(),
 				this->m_room["lesson_id"].toString());
+
+		this->m_lesson_timer.start(1000);  // 只要进入课室就要开启定时器
 
 		break;
 	case CourseStatus::CantJoinIn:
@@ -252,12 +276,18 @@ void TeacherOnlineClassroomWidget::handleCommandJoinInLesson(QJsonObject &data) 
 
 		user->setUserStatus(UserStatus::InRoom);
 
+		// 开始刷新在线列表
+		this->connect(&this->m_lesson_timer, &QTimer::timeout,
+			this->m_lesson_analysis_widget, &TeacherLessonAnalysisWidget::refreshOnlineList);
+
 		this->openCamera();
 		//QtConcurrent::run(this, &StudentOnlineClassroomWidget::openCamera);
 		this->m_enter_dialog->hide();
 		this->m_enter_dialog->deleteLater();
 
 		this->m_loading_mask->deleteLater();
+
+		this->m_lesson_timer.start(1000);  // 只要进入课室就要开启定时器
 
 		break;
 	}
@@ -277,6 +307,9 @@ void TeacherOnlineClassroomWidget::handleCommandBeginLesson(QJsonObject &data) {
 
 	toast->show();
 	this->connect(toast, &Toast::complete, toast, &Toast::deleteLater);
+
+	this->connect(&this->m_lesson_timer, &QTimer::timeout,
+		this, &TeacherOnlineClassroomWidget::updateLastTime);
 
 	// ——更新按钮功能
 	this->m_ui.begin_lesson_btn->setText("正在上课");

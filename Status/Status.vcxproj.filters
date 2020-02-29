@@ -145,6 +145,12 @@
     <Filter Include="Core\Client\Common\Tips">
       <UniqueIdentifier>{4e3196ba-a73c-4014-ad97-9d6fe1dbe858}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Core\Client\Common\Member">
+      <UniqueIdentifier>{3436a12b-43de-4efd-900e-04b53ce215e0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\Client\Teacher\OnlineClassroom\LessonAnalysis">
+      <UniqueIdentifier>{cd55fdea-b86f-4c22-a3b1-76db59cde886}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <QtRcc Include="Status.qrc">
@@ -255,6 +261,15 @@
       <Filter>Resource\Ui</Filter>
     </QtUic>
     <QtUic Include="Resources\ui\c_tipsDialog.ui">
+      <Filter>Resource\Ui</Filter>
+    </QtUic>
+    <QtUic Include="Resources\ui\c_memberItemWidget.ui">
+      <Filter>Resource\Ui</Filter>
+    </QtUic>
+    <QtUic Include="Resources\ui\c_memberWidget.ui">
+      <Filter>Resource\Ui</Filter>
+    </QtUic>
+    <QtUic Include="Resources\ui\t_lessonAnalysisWidget.ui">
       <Filter>Resource\Ui</Filter>
     </QtUic>
   </ItemGroup>
@@ -437,6 +452,15 @@
     <ClCompile Include="Core\Client\Common\Tips\c_tipsDialog.cpp">
       <Filter>Core\Client\Common\Tips</Filter>
     </ClCompile>
+    <ClCompile Include="Core\Client\Common\Member\memberItemWidget.cpp">
+      <Filter>Core\Client\Common\Member</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\Client\Common\Member\memberWidget.cpp">
+      <Filter>Core\Client\Common\Member</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\Client\Teacher\OnlineClassroom\LessonAnalysis\t_lessonAnalysisWidget.cpp">
+      <Filter>Core\Client\Teacher\OnlineClassroom\LessonAnalysis</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="Core\Network\socket.h">
@@ -594,6 +618,15 @@
     </QtMoc>
     <QtMoc Include="Core\Client\Common\Tips\c_tipsDialog.h">
       <Filter>Core\Client\Common\Tips</Filter>
+    </QtMoc>
+    <QtMoc Include="Core\Client\Common\Member\memberItemWidget.h">
+      <Filter>Core\Client\Common\Member</Filter>
+    </QtMoc>
+    <QtMoc Include="Core\Client\Common\Member\memberWidget.h">
+      <Filter>Core\Client\Common\Member</Filter>
+    </QtMoc>
+    <QtMoc Include="Core\Client\Teacher\OnlineClassroom\LessonAnalysis\t_lessonAnalysisWidget.h">
+      <Filter>Core\Client\Teacher\OnlineClassroom\LessonAnalysis</Filter>
     </QtMoc>
   </ItemGroup>
   <ItemGroup>

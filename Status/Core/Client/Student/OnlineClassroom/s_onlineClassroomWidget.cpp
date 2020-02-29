@@ -206,6 +206,8 @@ void StudentOnlineClassroomWidget::handleCommandJoinInLesson(QJsonObject &data) 
 		this->m_loading_mask->deleteLater();
 
 		this->lessonBegin();
+
+		this->m_lesson_timer.start(1000);  // 只要进入课室就要开启定时器
 		break;
 	case CourseStatus::CantJoinIn:
 		text = "该课堂不允许中途加入";
@@ -234,6 +236,7 @@ void StudentOnlineClassroomWidget::handleCommandJoinInLesson(QJsonObject &data) 
 
 		this->m_loading_mask->deleteLater();
 
+		this->m_lesson_timer.start(1000);  // 只要进入课室就要开启定时器
 		break;
 	}
 	toast->setInfoText(text);
@@ -428,7 +431,8 @@ void StudentOnlineClassroomWidget::lessonBegin() {
 
 	user->setUserStatus(UserStatus::InClass);
 
-	this->m_lesson_timer.start(1000);  // 开启定时器
+	this->connect(&this->m_lesson_timer, &QTimer::timeout,
+		this, &StudentOnlineClassroomWidget::updateLastTime);
 
 	// ——建立画板连接
 	this->m_interaction_widget->whiteBoardWidget()->

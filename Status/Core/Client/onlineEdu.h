@@ -1,6 +1,7 @@
 #pragma once
 
 enum TransportCmd {
+	KeepAlive = 0,
 	TestCommand = 100,
 	ConcentrationFinalData = 101,
 	StudentCameraFrameData = 102,
@@ -19,7 +20,8 @@ enum TransportCmd {
 	RemoveMemberFromInSpeech = 115,
 	ConcentrationRealTimeData = 116,
 	QuitLesson = 117,
-	TryToJoinIn = 118
+	TryToJoinIn = 118,
+	RefreshOnlineList = 119
 };
 
 enum ErrorCode {
