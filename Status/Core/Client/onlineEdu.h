@@ -21,7 +21,8 @@ enum TransportCmd {
 	ConcentrationRealTimeData = 116,
 	QuitLesson = 117,
 	TryToJoinIn = 118,
-	RefreshOnlineList = 119
+	RefreshOnlineList = 119,
+	GetStudentConc = 120
 };
 
 enum ErrorCode {

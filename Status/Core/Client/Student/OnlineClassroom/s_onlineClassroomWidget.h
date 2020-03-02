@@ -45,6 +45,7 @@ protected:
 	void handleCommandResultOfRaiseHand(QJsonObject &data);
 	void handleCommandRemoveMemberFromInSpeech(QJsonObject &data);
 	void handleCommandConcentrationFinalData(QJsonObject &data);
+	void handleCommandRefreshOnlineList(QJsonObject &data);
 
 	void tryToJoinIn(QString &course_id, QString &course_name);
 	void joinInLesson();

@@ -34,7 +34,7 @@ public:
     QScrollArea *scrollArea;
     QWidget *scrollAreaWidgetContents;
     QGridLayout *gridLayout_8;
-    QLabel *label_12;
+    QLabel *participants_text;
     QLabel *room_name_text;
     QWidget *widget_content;
     QtCharts::QChartView *concentration_area_chart_min_widget;
@@ -56,7 +56,7 @@ public:
     QLabel *label_18;
     QSpacerItem *verticalSpacer_5;
     QLabel *label_31;
-    QLabel *label_13;
+    QLabel *total_text;
     QLabel *begin_time_text;
     QLabel *create_time_text;
     QLabel *label_14;
@@ -167,20 +167,20 @@ public:
         gridLayout_8 = new QGridLayout(scrollAreaWidgetContents);
         gridLayout_8->setObjectName(QString::fromUtf8("gridLayout_8"));
         gridLayout_8->setContentsMargins(9, 9, -1, -1);
-        label_12 = new QLabel(scrollAreaWidgetContents);
-        label_12->setObjectName(QString::fromUtf8("label_12"));
+        participants_text = new QLabel(scrollAreaWidgetContents);
+        participants_text->setObjectName(QString::fromUtf8("participants_text"));
         QFont font;
         font.setFamily(QString::fromUtf8("\345\276\256\350\275\257\351\233\205\351\273\221"));
         font.setPointSize(10);
-        label_12->setFont(font);
-        label_12->setStyleSheet(QString::fromUtf8("QLabel {\n"
+        participants_text->setFont(font);
+        participants_text->setStyleSheet(QString::fromUtf8("QLabel {\n"
 "	border: none;\n"
 "	background: none;\n"
 "	color: #999999;\n"
 "}"));
-        label_12->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
+        participants_text->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
 
-        gridLayout_8->addWidget(label_12, 10, 2, 1, 2);
+        gridLayout_8->addWidget(participants_text, 10, 2, 1, 2);
 
         room_name_text = new QLabel(scrollAreaWidgetContents);
         room_name_text->setObjectName(QString::fromUtf8("room_name_text"));
@@ -393,17 +393,17 @@ public:
 
         gridLayout_8->addWidget(label_31, 6, 0, 1, 2);
 
-        label_13 = new QLabel(scrollAreaWidgetContents);
-        label_13->setObjectName(QString::fromUtf8("label_13"));
-        label_13->setFont(font);
-        label_13->setStyleSheet(QString::fromUtf8("QLabel {\n"
+        total_text = new QLabel(scrollAreaWidgetContents);
+        total_text->setObjectName(QString::fromUtf8("total_text"));
+        total_text->setFont(font);
+        total_text->setStyleSheet(QString::fromUtf8("QLabel {\n"
 "	border: none;\n"
 "	background: none;\n"
 "	color: #999999;\n"
 "}"));
-        label_13->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter);
+        total_text->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter);
 
-        gridLayout_8->addWidget(label_13, 10, 5, 1, 2);
+        gridLayout_8->addWidget(total_text, 10, 5, 1, 2);
 
         begin_time_text = new QLabel(scrollAreaWidgetContents);
         begin_time_text->setObjectName(QString::fromUtf8("begin_time_text"));
@@ -555,7 +555,7 @@ public:
     void retranslateUi(QWidget *OnlineClassroomWidget)
     {
         OnlineClassroomWidget->setWindowTitle(QCoreApplication::translate("OnlineClassroomWidget", "Form", nullptr));
-        label_12->setText(QCoreApplication::translate("OnlineClassroomWidget", "-", nullptr));
+        participants_text->setText(QCoreApplication::translate("OnlineClassroomWidget", "-", nullptr));
         room_name_text->setText(QCoreApplication::translate("OnlineClassroomWidget", "-", nullptr));
         last_time_text->setText(QCoreApplication::translate("OnlineClassroomWidget", "00:00:00", nullptr));
         teacher_name_text->setText(QCoreApplication::translate("OnlineClassroomWidget", "-", nullptr));
@@ -569,7 +569,7 @@ public:
         label_21->setText(QCoreApplication::translate("OnlineClassroomWidget", "\346\211\223\345\274\200\346\221\204\345\203\217\345\244\264", nullptr));
         label_18->setText(QCoreApplication::translate("OnlineClassroomWidget", "    \350\257\276\345\240\202\345\217\267\357\274\232", nullptr));
         label_31->setText(QCoreApplication::translate("OnlineClassroomWidget", "    \345\274\200\345\247\213\346\227\266\351\227\264\357\274\232", nullptr));
-        label_13->setText(QCoreApplication::translate("OnlineClassroomWidget", "-", nullptr));
+        total_text->setText(QCoreApplication::translate("OnlineClassroomWidget", "-", nullptr));
         begin_time_text->setText(QCoreApplication::translate("OnlineClassroomWidget", "-", nullptr));
         create_time_text->setText(QCoreApplication::translate("OnlineClassroomWidget", "-", nullptr));
         label_14->setText(QCoreApplication::translate("OnlineClassroomWidget", "/", nullptr));

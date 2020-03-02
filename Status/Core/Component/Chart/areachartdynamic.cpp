@@ -54,3 +54,10 @@ void AreaChartDynamic::append(int &timestamp, int &value) {
 
 	return;
 }
+
+void AreaChartDynamic::clear() {
+	this->m_line_series->clear();
+	this->m_origin_x = -1;
+
+	return;
+}

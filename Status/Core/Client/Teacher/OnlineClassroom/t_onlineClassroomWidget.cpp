@@ -156,7 +156,10 @@ void TeacherOnlineClassroomWidget::handleLessonConnectionRecv() {
 			handleCommandChatBan(data); break;
 
 	case TransportCmd::RefreshOnlineList:
+		this->handleCommandRefreshOnlineList(data);
 		this->m_lesson_analysis_widget->handleCommandRefreshOnlineList(data); break;
+	case TransportCmd::GetStudentConc:
+		this->m_lesson_analysis_widget->handleCommandGetStudentConc(data); break;
 	}
 
 	return;
@@ -234,12 +237,15 @@ void TeacherOnlineClassroomWidget::handleCommandJoinInLesson(QJsonObject &data) 
 
 		this->m_ui.begin_lesson_btn->setText("正在上课");
 
-		// 开始计时
+		// 开始计
 		this->connect(&this->m_lesson_timer, &QTimer::timeout,
 			this, &TeacherOnlineClassroomWidget::updateLastTime);
 		// 开始刷新在线列表
 		this->connect(&this->m_lesson_timer, &QTimer::timeout,
 			this->m_lesson_analysis_widget, &TeacherLessonAnalysisWidget::refreshOnlineList);
+		// 开始刷新学生专注度信息
+		this->connect(&this->m_lesson_timer, &QTimer::timeout,
+			this->m_lesson_analysis_widget, &TeacherLessonAnalysisWidget::getStudentConc);
 
 		this->openCamera();
 		//QtConcurrent::run(this, &StudentOnlineClassroomWidget::openCamera);
@@ -303,6 +309,10 @@ void TeacherOnlineClassroomWidget::handleCommandBeginLesson(QJsonObject &data) {
 
 	// ——开启成功
 	this->m_lesson_timer.start(1000);  // 开启定时器
+	// 开始刷新学生专注度信息
+	this->connect(&this->m_lesson_timer, &QTimer::timeout,
+		this->m_lesson_analysis_widget, &TeacherLessonAnalysisWidget::getStudentConc);
+
 	this->updateBeginTime((int)data["begin_timestamp"].toDouble());
 
 	toast->show();
@@ -338,6 +348,16 @@ void TeacherOnlineClassroomWidget::handleCommandEndLesson(QJsonObject &data) {
 	//this->connect(this->m_ui.begin_lesson_btn, &QPushButton::clicked,
 	//	this, &TeacherOnlineClassroomWidget::beginLesson);
 	emit this->quitLessonRequestSuccess();
+
+	return;
+}
+
+void TeacherOnlineClassroomWidget::handleCommandRefreshOnlineList(QJsonObject &data) {
+	if (data["has_username_json"].toBool()) {
+		this->m_ui.total_text->setText(QString::number(data["username_json"].toObject().count()));
+	}
+
+	this->m_ui.participants_text->setText(QString::number(data["online_list"].toArray().count()));
 
 	return;
 }

@@ -140,6 +140,9 @@ void StudentOnlineClassroomWidget::handleLessonConnectionRecv() {
 	case TransportCmd::ChatBan: 
 		this->m_interaction_widget->chatAndInSpeechWidget()->
 			handleCommandChatBan(data); break;
+
+	case TransportCmd::RefreshOnlineList:
+		this->handleCommandRefreshOnlineList(data); break;
 	}
 
 	return;
@@ -386,6 +389,16 @@ void StudentOnlineClassroomWidget::handleCommandConcentrationFinalData(QJsonObje
 	else {
 		this->setWarningText("Î´¼ì²âµ½ÈËÁ³");
 	}
+
+	return;
+}
+
+void StudentOnlineClassroomWidget::handleCommandRefreshOnlineList(QJsonObject &data) {
+	if (data["has_username_json"].toBool()) {
+		this->m_ui.total_text->setText(QString::number(data["username_json"].toObject().count()));
+	}
+
+	this->m_ui.participants_text->setText(QString::number(data["online_list"].toArray().count()));
 
 	return;
 }

@@ -45,6 +45,7 @@ protected:
 	void handleCommandJoinInLesson(QJsonObject &data);
 	void handleCommandBeginLesson(QJsonObject &data);
 	void handleCommandEndLesson(QJsonObject &data);
+	void handleCommandRefreshOnlineList(QJsonObject &data);
 	//void handleCommandConcentrationFinalData(QJsonObject &data);
 
 	void createLesson(QString &course_id, QString &course_name);
